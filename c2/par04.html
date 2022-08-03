@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+* { margin:0;	padding:0; }
+body, html { width:100%; height:100%; }
+
+ul { list-style:none; 		float:left; 		margin:30px}
+div { color:white; 	text-align:center; }
+#wrap { width:100%; height:100%; }
+.header { width:100%;	height:120px; 	background:black; 	border-bottom:4px solid gray; 
+	line-height:120px;	position:fixed; top:0; left:0; z-index:99;}
+.footer { width:100%;	height:120px; 	background:black; 	border-top:4px solid gray; 
+	line-height:120px;	position:fixed; bottom:0; left:0; z-index:99; }
+div.page { clear:both; width:100%;	height:100%; 	position:relative; }
+.page h1 { line-height:350px; }
+div.main { background:pink; }
+div.sub1 { background:lime; }
+div.sub2 { background:lightblue; }
+div.sub3 { background:yellow; }
+div.sub4 { background:violet; }
+div.sub5 { background:#cc3300; }
+
+#main_gnb { clear:both; width:960px; margin:0 auto; height:48px; }
+#main_gnb ul { margin:0; width:960px; }
+#main_gnb li { float:left; width:16%; }
+#main_gnb li a { display:block; line-height:48px; text-align:center;
+
+	font-size:18px; color:#fff; font-weight:bold; }
+#main_gnb li a.on { background:#fff; color:#333; }
+</style>
+<meta charset="UTF-8">
+<title>DOM 엘리멘트에 이벤트 적용하기</title>
+<link rel="stylesheet" href="par.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.js"></script>
+<script type="text/javascript" src="par.js"></script>
+</head>
+<body>   
+<header class="header">
+
+</header>
+ <div id="wrap">
+   <div class="page main" id="main" data-page="0">
+	<h1>여기는 메인입니다</h1>
+   </div>
+   <div class="page sub1" id="sub1" data-page="1">
+	<h1>여기는 서브1입니다</h1>
+   </div>
+   <div class="page sub2" id="sub2" data-page="2">
+	<h1>여기는 서브2입니다</h1>
+   </div>
+   <div class="page sub3" id="sub3" data-page="3">
+	<h1>여기는 서브3입니다</h1>
+   </div>
+   <div class="page sub4" id="sub4" data-page="4">
+	<h1>여기는 서브4입니다</h1>
+   </div>
+   <div class="page sub5" id="sub5" data-page="5">
+	<h1>여기는 서브5입니다</h1>
+   </div>
+</div>   
+<div class="footer">
+	<h1>여기는 푸터입니다</h1>
+</div>
+<section id="quick">
+	<a class="pageMove on" data-val="0">
+	    <span class="qtxt">1페이지</span>
+	    <span class="qbtn"></span>
+	</a>
+	<a class="pageMove" data-val="1">
+	    <span class="qtxt">2페이지</span>
+	    <span class="qbtn"></span>	    
+	</a>
+	<a class="pageMove" data-val="2">
+	    <span class="qtxt">3페이지</span>
+	    <span class="qbtn"></span>
+	</a>
+	<a class="pageMove" data-val="3">
+	    <span class="qtxt">4페이지</span>
+	    <span class="qbtn"></span>
+	</a>
+	<a class="pageMove" data-val="4">
+	    <span class="qtxt">5페이지</span>
+	    <span class="qbtn"></span>
+	</a>
+	<a class="pageMove" data-val="5">
+ 	    <span class="qtxt">6페이지</span>
+	    <span class="qbtn"></span>
+	</a>
+</section>
+<button id="quick_up" class="scrollBtn">▲</button>
+<button id="quick_down" class="scrollBtn">▼</button>
+</body>
+</html>

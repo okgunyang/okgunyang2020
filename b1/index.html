@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kim &amp; Chang | 김·장 법률사무소</title>
+    <meta name="title" content="">
+    <meta name="keywords" content="김앤장, 김&amp;장, 김엔장, 김장법률사무소, 법무법인, 로펌, 법률사무소, 외국변호사, 변리사, 한국 1위 로펌, 국내 최대 로펌, 세계 100대 로펌, Kim &amp; Chang, K&amp;C">
+    <meta name="description" content="김·장 법률사무소는 1973년 설립 이래 법률서비스의 선진화, 전문화를 선도하며 한국의 경제발전과 그 궤를 같이하며 성장해 온 국내 최대규모의 종합 법률사무소입니다.">
+    <meta property="og:title" content="">
+    <meta property="og:decription" content="">
+    <meta property="og:image" content="">
+    <link href="./data/farvicon_16x16.ico" type="image/x-icon" rel="shortcut icon">
+	<link rel="icon" type="image/png" sizes="32x32" href="./data/farvicon_32x32.png">
+    <link rel="shortcut icon" type="image/x-icon" href="./data/ico_kimchang.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./data/ico_kimchang.png">
+    <link rel="shortcut icon" type="image/png" sizes="180x180" href="./data/ico_kimchang.png">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <style>
+        
+    /* 메인 페이지 콘텐츠 스타일 */
+    #vdo { width:100%; height: 100%; }
+    #vd1 { display:block; width:100%; min-height:100%; } 
+    #cover_page {  position:absolute; width: 100%; height: 100%; z-index:10; top: 0; left: 0; }    
+    .tit { background-image:url("./data/main_sprite_pannel.png"); width: 444px; height: 55px;  margin:90px auto; margin-top: 200px; } 
+    #frm1 { width: 1000px; height: 80px; margin:0 auto; background-color:rgba(0,0,0,0.6); }  
+    #keyword { display:block; height: 70px; width:910px; font-size:18px; text-indent:24px; margin: 5px;  float:left; opacity:0.6; transition:0.5s;  } 
+    #search { display:block; width: 70px; height: 70px; float:right; margin: 5px; 
+        background-color:#777; background-image:url("./data/ico1.png"); text-indent:-9999px; background-size:44px 49px; background-position:center center; background-repeat:no-repeat; opacity:0.6;  transition:0.5s;  } 
+    #keyword:focus { opacity:1; width: 800px; }   
+    #keyword:focus ~ #search { opacity:1; }    
+    #page2, #page3 { background-image:url("./data/main_movie1.png"); background-repeat: no-repeat; background-size:cover; }    
+    #page2 { background-attachment: fixed; padding-top: 40px; }   
+    #insight { background-color:#f0f0f0;  height: 95%; } 
+    .page_tit { text-align:center; line-height:100px; font-size:48px; }
+    .thum_lst li { float:left; width: 373px; margin-left:40px; position:relative; overflow:hidden; height:320px; margin-top: 40px;  }
+    .thum_lst li.col8 { width:786px;   } 
+    .thum_lst li a { color:#333; display:block; width:360px; height:300px; 
+        overflow:hidden; border:3px solid transparent; margin:7px auto;
+        transition:0.6s; transition-delay:0.1s; background-color:#e1e1e1; } 
+    .thum_lst li a:after { content:"▶"; position:absolute; bottom:27px; right:24px; display:none; }
+    .thum_lst li a:hover { border:3px solid #fe3c08; background-color:#fff; 
+        color:#fe3c08; }   
+    .thum_lst li a:hover::after { display:block; }    
+    .cate_tit { padding: 14px; color:#fe3c08; text-decoration: underline;  } 
+    .lst_tit { padding:14px; }  
+    .lst_com { padding: 14px;    }  
+    .lst_date { padding: 14px; position:absolute; bottom:14px; left:5px; }    
+    .thum_lst li.col8 a { width:770px; color:#fff; 
+        background-image:url("./data/thumb_bg.png"); 
+        background-size:cover; } 
+        
+    #vs_con { padding-top: 50px; }    
+    #vs { width: 100%; overflow-x:hidden; background-color:#fff; padding-top: 50px; position:relative; }    
+    .img_box { width: 400%; }
+    .img_box li { float:left; width: 25%; }
+    .img_box li .pic { display:block; width:580px; float:left; margin-left: 40px; margin-bottom: 40px; }
+    .img_box li .tit_box { width: 580px; float: right; margin-right: 40px;  margin-bottom: 40px; }    
+    .vs_tit { padding: 24px; } 
+    .vs_com { padding: 24px; }  
+    .more { display:block; width:120px; height: 40px; border:2px solid #333;
+        color:#333; text-align:center; line-height: 40px;
+        margin: 24px; }  
+    .btn_box { position:absolute; right:100px; bottom:50px; z-index:50; width:500px; height:14px;  }
+    .btn_box li { width:150px; margin-left: 12px; float:left; }
+    .btn_box li button { display:block; width:150px; height:14px; background-color:#666; }    
+    .btn_box li.on button { background-color:#fe3c08; }  
+        
+    .ico_link { clear:both; margin-top:50px; width: 100%; height: 64px; background:#fff; } 
+    .ico_link li { float:left; width: 50%; height: 64px; }   
+    .ico_link li a { display:block; color:#333; font-size:22px; line-height: 64px; text-align: center; background:#fff; padding-left: 100px; }  
+    .ico_link li a.item2 { background:#f0f0f0; }  
+    .ico_link li a span { display:block; float:left; padding-left: 15px;  }    
+    .ico_link li a .ico { background-repeat: no-repeat;
+        background-image:url("./data/main_sprite_pannel.png"); margin-top: 5px; }
+    .ico_link li a.item1 .ico { background-position:0px -301px; width: 20px; height: 53px; }    
+    .ico_link li a.item2 .ico { background-position:-40px -301px; width:42px; height: 53px; }    
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <nav id="tnb">
+            <ul class="right menu">
+                <li><a href="license.html#page1">지식재산권</a></li>
+                <li><a href="license.html#page2">사회공헌</a></li>
+                <li><a href="license.html#page3">인재채용</a></li>
+            </ul>
+        </nav>
+        <input type="checkbox" id="ck1">
+        <label for="ck1" class="lst_btn">열기</label>
+        <nav id="gnb">
+            <label for="ck1" class="close_btn">닫기</label>
+            <ul class="main">
+                <li><a href="expertise.html">EXPERTISE</a></li>
+                <li><a href="professionals.html">PROFESSIONALS</a></li>
+                <li><a href="insights.html">INSIGHTS</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+            </ul>
+            <ul class="bottom">
+                <li><a href="license.html#page1">지식재산권</a></li>
+                <li><a href="license.html#page2">사회공헌</a></li>
+                <li><a href="license.html#page3">인재채용</a></li>
+            </ul>
+        </nav>
+        <div class="page" id="page1">
+            <figure id="vdo">
+                <video id="vd1" autoplay loop>
+                    <source src="./data/main_movie3.mp4" type="video/mp4">
+                    <source src="./data/main_movie3.webm" type="video/webm">
+                    <source src="./data/main_movie3.ogv" type="video/ogg">
+                </video>
+            </figure>
+            <section class="page_wrap" id="cover_page">
+                <h2 class="tit"><!-- 444x55 --></h2>
+                <form action="" id="frm1">
+                    <input type="text" id="keyword" placeholder="검색어를 입력해주세요">
+                    <input type="submit" id="search">
+                </form>
+            </section>
+        </div>
+        <div class="page" id="page2">
+            <section class="page_wrap" id="insight">
+                <h2 class="page_tit">INSIGHTS</h2>
+                <ul class="thum_lst">
+                    <li class="col4"><a href="insights.html#page1">
+                            <h4 class="cate_tit">뉴스레터</h4>
+                            <h3 class="lst_tit">‘산업기술의 유출방지 및 보호에 관한 법률’ 개정</h3>
+                            <p class="lst_com">'산업기술의 유출방지 및 보호에 관한 법률'("산업기술보호법") 개정안이 2019. 8. 20. 공포되어 20... </p>
+                            <span class="lst_date">2019.09.10</span>
+                        </a></li>
+                    <li class="col4"><a href="insights.html#page2">
+                            <h4 class="cate_tit">뉴스레터</h4>
+                            <h3 class="lst_tit">일·가정 양립 문화 정착 관련 고용노동부 정책 동향</h3>
+                            <p class="lst_com">고용노동부는 근로시간 단축 정책과 더불어 근로자들의 근무의욕을 고취시키고 유연한 근무환경을... </p>
+                            <span class="lst_date">2019.08.23</span>
+                        </a></li>
+                    <li class="col4"><a href="insights.html#page3">
+                            <h4 class="cate_tit">뉴스레터</h4>
+                            <h3 class="lst_tit">공정위, ‘공정거래 자율준수프로그램’  활성화 방안 마련</h3>
+                            <p class="lst_com">공정거래위원회(“공정위”)는 공정거래 관련 법규 준수를 위한 기업 내부준법시스템인 공정거래 자... </p>
+                            <span class="lst_date">2019.08.21</span>
+                        </a></li>
+                    <li class="col4"><a href="insights.html#page4">
+                            <h4 class="cate_tit">뉴스레터</h4>
+                            <h3 class="lst_tit">2019년 세법개정안 발표 </h3>
+                            <p class="lst_com">기획재정부는 2019. 7. 25., 2020년부터 시행될 개정 세법에 대한 정부안으로서 ‘2019년 세법 개정... </p>
+                            <span class="lst_date">2019.07.29</span>
+                        </a></li>
+                    <li class="col8"><a href="insights.html#page5">
+                            <h4 class="cate_tit">뉴스레터</h4>
+                            <h3 class="lst_tit">Kim & Chang Newszine (2019 Issue 2)</h3>
+                            <p class="lst_com">주요 기사 목록: 
+                            기업지배구조보고서 의무 공시제도 시행과 향후 전망 
+                            기술탈취 관련 최근 공정위 조사 동향 
+                            환경부, 불법폐기물 특별수사단 발족
+                            업종별 실태조사에 따른 향후 대리점거래 관련 집행 동향
+                            금리인하요구권 시행
+                            금융투자... </p>
+                            <span class="lst_date">2019.08.01</span>
+                        </a></li>
+                </ul>
+            </section>
+        </div>
+        <div class="page" id="page3">
+            <section class="page_wrap" id="vs_con">
+                <figure id="vs">
+                    <ul class="img_box">
+                        <li>
+                            <img src="./data/sl1.jpg" alt="배너1" class="pic">
+                            <div class="tit_box">
+                                <h3 class="vs_tit">아시아·태평양 지역 최우수 로펌 선정 - Asialaw Regional Awards 2019</h3>
+                                <p class="vs_com">김·장 법률사무소가 제2회 Asialaw Regional Awards에서 다시 한 번 ‘Asia-Pacific Firm of the Year (올해의 아시아 로펌 상)’ 을 수상하는 영예를 안았습니다.</p>
+                                <a href="expertise.html#page1" class="more">VIEW MORE</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./data/sl2.png" alt="배너2" class="pic">
+                            <div class="tit_box">
+                                <h3 class="vs_tit">국내 유일 8개 전 분야 ‘Band 1’ 선정 - Chambers Global 2019</h3>
+                                <p class="vs_com">김·장 법률사무소가 Chambers Global 2019년판에서 올해도 국내 로펌 중 유일하게 8개의 한국 대상 리서치 전 분야에서 'Band 1(선두 로펌)'으로 선정되었습니다.</p>
+                                <a href="expertise.html#page2" class="more">VIEW MORE</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./data/sl3.png" alt="배너3" class="pic">
+                            <div class="tit_box">
+                                <h3 class="vs_tit">글로벌 역량: 풍부한 업무 경험과 네트워크</h3>
+                                <p class="vs_com">한국과 아시아를 넘어 기업의 글로벌 법률파트너로 자리매김한 김·장 법률사무소의 축적된 업무 경험과 네트워크를 “글로벌 역량” 페이지에서 소개합니다.</p>
+                                <a href="expertise.html#page3" class="more">VIEW MORE</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="btn_box">
+                        <li class="on"><button></button></li>
+                        <li><button></button></li>
+                        <li><button></button></li>
+                    </ul>
+                </figure>
+                <ul class="ico_link">
+                    <li>
+                        <a href="about.html#page3" class="item1" tabindex="32">
+                            <span class="ico"></span>
+                            <span>사무소 위치</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.html#page4" class="item2" tabindex="33">
+                            <span class="ico"></span>
+                            <span>연락처</span>
+                        </a>
+                    </li>
+                </ul>
+                <footer id="ft">
+                    <ul class="fnb">
+                        <li><a href="about.html#page3">사무소위치</a></li>
+                        <li><a href="about.html#page4">연락처</a></li>
+                        <li><a href="member.html#page1">면책공고</a></li>
+                        <li><a href="member.html#page2">개인정보처리방침</a></li>
+                        <li><a href="member.html#page3" class="last">웹접근성</a></li>
+                    </ul>
+                    <p class="copyright">© 2019 Kim & Chang. All Rights Reserved.</p>
+                </footer>
+            </section>
+        </div>
+    </div>
+    <a href="#" id="totop">↑</a>
+</body>
+</html>

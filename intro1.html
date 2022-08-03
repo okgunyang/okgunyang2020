@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 문서 정보 등록 -->
+    <meta name="application-name" content="kmgt Portfolio">
+    <meta name="title" content="KMGT's 포트폴리오">
+    <meta name="description" content="KMGT's의 자바웹개발자 포트폴리오, 인트로, 보유기술, 갤러리, 컨택트, intro, technic, ability, skill, project, gallery, contact">
+    <meta name="keywords" content="웹 프로젝트, web project, 자바, java, jsp, 서블릿, servlet, MVC, MVC2, java framework, spring legacy, spring boot, spring cloud, sts, IntelliJ, html, haml, Markdown, Jade, Slim, css, scss/sass, less, Stylus, 웹표준, SVG, Web Animation, 웹 애니메이션, javascript, typescript, jQuery, Ajax, 자바스크립트, 마크다운, Node, angular, Vue, React, RDBMS, 관계형 데이터베이스, oracle, mysql, mariadb, H2, Postgree, MongoDB, SQLite, SQL Workbench, SQL Developer, mybatis, JSON, 오라클, 마리아DB, Business Logic, 비즈니스로직, Controller, Servicem, DAO, DTO, VO, Mapper, IoC, AOP, JPA, CRUD, Monolothic, DevOps, Cloud Native, AWS, Kubernetes, Azure, Agile, Docker, Jenkins, Git, Github, GitLab, bitbucket, App Deploy, Build, Maven, Gradle, JAR, WAR, EAR, jUnit, PMD, Sparrow, CodeMind, Heuristic, Selenium IDE, Trello, Jira, protoNow, Ovenapp, balsamiq, UML, USECASE, Class Diagram, Sequence Diagram, Amateras, ObjectAid, Task Flow, MindMap, User Scenarios, Comstomer Journey Map">
+    <!-- 파비콘 등록 -->
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <!-- 오픈 그래프 등록 -->
+    <meta property="og:title" content="kmgt Portfolio">
+    <meta property="og:url" content="https://okgunyang.github.io">
+    <meta property="og:description" content="KMGT's의 자바웹개발자 포트폴리오, 인트로, 보유기술, 갤러리, 컨택트, intro, technic, ability, skill, project, gallery, contact">
+    <meta property="og:image" content="portfolio_home.png">
+    <meta name="twitter:card" content="portfolio_card.mp4" /> 
+    <meta name="twitter:title" content="kmgt Portfolio" /> 
+    <meta name="twitter:description" content="KMGT's의 자바웹개발자 포트폴리오, 인트로, 보유기술, 갤러리, 컨택트, intro, technic, ability, skill, project, gallery, contact" /> 
+    <meta name="twitter:image" content="portfolio_home.png" /> 
+    <!-- 모바일 앱 연결시 오픈 그래프 -->
+    <!--iOS-->
+    <meta property="al:ios:url" content=" ios 앱 URL" />
+    <meta property="al:ios:app_store_id" content="ios 앱스토어 ID" /> 
+    <meta property="al:ios:app_name" content="ios 앱 이름" /> 
+    <!--Android-->
+    <meta property="al:android:url" content="안드로이드 앱 URL" />
+    <meta property="al:android:app_name" content="안드로이드 앱 이름" />
+    <meta property="al:android:package" content="안드로이드 패키지 이름" /> 
+    <meta property="al:web:url" content="안드로이드 앱 URL" />
+
+    <!-- 필요 폰트 가져오기 -->
+    <link rel="stylesheet" href="fonts.css">
+    <title>KMGT's 포트폴리오</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+    #home { position:fixed; right:50px; top:10px; z-index:999; line-height:60px; 
+    width:180px; height: 60px; text-align: center; font-size:24px; background-color:rgba(255,255,255,0.8); }
+    #home a { display:block; color:#333; font-family: 'CookieRun-Regular', cursive; }
+    .page_tit { text-align: center; padding-top: 3em; line-height: 2.4; font-size:36px; }   
+    #page1 .sec_wrap { clear:both; width: 100%; }
+    </style>
+    <style>
+    #quick { width:50px; height: 300px; position:fixed; z-index:999;
+    right:20px; top:100px; }
+    #quick li { clear:both; width: 50px; height: 50px; margin:12px auto; }
+    #quick li div { width: 45px; height: 45px; box-sizing: border-box;
+    overflow:hidden; margin:2px auto; border:3px solid #333; 
+border-radius:25px; cursor:pointer; }
+    #quick li.on div { border:3px solid deeppink; }
+    #quick li div img { display:block; width: 30px; height: 30px; }
+
+    #arrow_top { width:50px; height:50px; position:fixed; z-index:999;
+    right:20px; bottom:100px; border-radius:30px; border:3px solid #eee; 
+    line-height: 50px; text-align: center; font-size:32px; font-weight: bold;
+    cursor:pointer; display:none; }
+    #arrow_top.on { display:block; }
+    </style>
+    <link rel="stylesheet" href="intro1.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+        var tot = parseInt($(".wrap").height());
+        var wd = parseInt($(window).width());
+        var ht = parseInt($(window).height());
+        var hx = (parseInt($(window).width()) - 1280) / 2;
+        var ratio = wd / tot;
+        $(window).scroll(function(){
+            var sc = parseInt($(window).scrollTop());
+            console.log(sc);
+            $("#gage .gagebar").width(hx+(wd*sc/tot));
+            var cat = parseInt($("#page1").height())+parseInt($("#page2").height()) - 100; 
+            if(sc>=cat) {
+                $("#page3").addClass("on");
+            }
+            if(sc>=300){
+                $("#arrow_top").addClass("on");
+            } else {
+                $("#arrow_top").removeClass("on");
+            }
+        });
+        $(".page").each(function(index){
+            var cat = parseInt($(this).offset().top);
+            $("#quick li").eq(index).attr("data-scroll", cat);
+        });
+        $("#quick li").click(function(){
+            var sc_dep = parseInt($(this).attr("data-scroll"));
+            $("body, html").not(":animated").animate({"scrollTop":sc_dep+"px"});
+        });
+        $("#arrow_top").click(function(){
+            $("body, html").not(":animated").animate({"scrollTop":"0px"}, 1500);
+        });
+    });    
+    </script>
+    <script>
+    window.onload = function () {
+//            var elm = ".page";
+        $(".page").each(function (index) {
+            // 개별적으로 Wheel 이벤트 적용
+            var cat = $(this).attr("id");
+            $(this).on("mousewheel DOMMouseScroll", function (e) {
+                //$("#gnb li").removeClass("on");
+                //$("#gnb li").eq(index).addClass("on");
+                e.preventDefault();
+                var delta = 0;
+                if (!event) event = window.event;
+                if (event.wheelDelta) {
+                    delta = event.wheelDelta / 120;
+                    if (window.opera) delta = -delta;
+                } 
+                else if (event.detail)
+                    delta = -event.detail / 3;
+                var moveTop = $(window).scrollTop();
+                var elmSelecter = $(".page").eq(index);
+                // 마우스휠을 위에서 아래로
+                if (delta < 0) {
+                    if ($(elmSelecter).next() != undefined) {
+                        try{
+                            moveTop = $(elmSelecter).next().offset().top;
+                        }catch(e){}
+                    }
+                // 마우스휠을 아래에서 위로
+                } else {
+                    if ($(elmSelecter).prev() != undefined) {
+                        try{
+                            moveTop = $(elmSelecter).prev().offset().top;
+                        }catch(e){}
+                    }
+                }
+                    
+                // 화면 이동 0.8초(800)
+                $("html,body").stop().animate({
+                    scrollTop: moveTop + 'px'
+                }, {
+                    duration: 800, complete: function () {
+                    }
+                });
+            });
+        });
+    }
+    </script>
+</head>
+<body>
+<div class="wrap">
+    <header id="hd">
+        <nav id="gnb">
+            <ul>
+                <li><a href="intro.html" style="background:gold">인트로</a></li>
+                <li><a href="portfolio.html">포트폴리오</a></li>
+                <li><a href="ability.html">어빌리티</a></li>
+                <li><a href="contact.html">컨택트</a></li>
+            </ul>
+        </nav>
+        <nav id="home"><a href="index.html">메인으로</a></nav>
+    </header>
+    <main id="content">
+        <section class="page" id="page1">
+            <div class="page_wrap">
+                <h2 class="page_tit" style="opacity:0;visibility: hidden;"></h2>
+                <div class="sec_wrap">
+                    <ul>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                        <li class="snow"></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="page" id="page2">
+            <div class="page_wrap">
+                <h2 class="page_tit">Project & Portfolio</h2>
+
+            </div>
+        </section>
+        <section class="page" id="page3">
+            <div class="page_wrap">
+                <h2 class="page_tit" style="color:#333;">Ability</h2>
+                <h2 class="sec_tit" style="text-align:center;">Development Skill</h2> 
+            </div>
+        </section>
+        <section class="page" id="page4">
+            <div class="page_wrap">
+                <h2 class="page_tit">Contact</h2>
+
+            </div>
+        </section>
+    </main>
+    <footer id="ft">
+        <div class="ft_wrap">카피라이트 또는 주의사항, 당부사항</div>
+    </footer>
+</div>
+<div id="quick" class="quick">
+    <ul>
+        <li class="item1">
+            <div><img src="intro.png" alt="인트로 메인"></div>
+        </li>
+        <li class="item2">
+            <div><img src="portfolio.png" alt="인트로2"></div>
+        </li>
+        <li class="item3">
+            <div><img src="ability.png" alt="인트로3"></div>
+        </li>
+        <li class="item4">
+            <div><img src="cantact.png" alt="인트로4"></div>
+        </li>
+    </ul>
+</div>
+<div id="arrow_top">↑</div>
+</body>
+</html>

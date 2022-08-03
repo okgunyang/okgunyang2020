@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>::: LS 그룹에 오신 것을 환영합니다. :::</title>
+   <!-- 구형 브라우저 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./image/favicon16.ico">
+    <!-- 신형 브라우저와 안드로이드 폰 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./image/favicon32.png">
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="57x57" href="./image/favicon57.png">
+    <!-- 아이패드 -->
+    <link rel="apple-touch-icon" size="72x72" href="./image/favicon72.png">
+    <!-- 아이폰4 이상 -->
+    <link rel="apple-touch-icon" size="114x114" href="./image/favicon114.png">
+    <!-- IE10 이상 -->
+    <meta name="msapplication-TileColor" content="#FFFFFF"> 
+    <meta name="msapplication-TileImage" content="./image/favicon-144.png">
+    <!-- 웹 사이트 정보 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="LS Holdings Site">
+    <meta name="author" content="MR Cortez KIM">
+    <meta name="description" content="LS Group Management Potal Site">
+    <meta name="keywords" content="LS, LS Group, LS 그룹, LS 지주회사">
+    <!-- 모바일 사이트 및 반응형 사이트의 뷰포트 -->
+    <meta name="viewport"  content="width=device-width, initial-scale=1.0, user-scalable=no">
+    
+    <!--[if lt IE 9]> 
+        <script src="./js/html5shiv.js"></script>
+        <script>
+            //인터넷 익스플로러 9미만인 경우
+        </script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+        <script>
+            //인터넷 익스플로러 9이상인 경우
+        </script>
+    <!--[endif]-->
+    
+    <link rel="stylesheet" href="normalize.css">
+    <!-- 사용 폰트 연결 -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script|Nanum+Gothic|Nanum+Myeongjo|Noto+Sans+KR|Noto+Serif+KR" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="menu1.css">
+<!--    <link rel="stylesheet" href="menu2.css">-->
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script>
+    $(document).ready(function(){
+        
+    });    
+    </script>
+    <style>
+/*
+    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Nanum Brush Script', cursive;
+    font-family: 'Noto Serif KR', serif;
+*/
+   
+    
+    #page1 { background-image:url("./image/page2_bg1.jpg"); overflow:hidden; } 
+    
+    #page4 { background:rgba(128,128,128,0.4); }
+    .videoWrap { width: 100%; height:100%; overflow:hidden; }
+    .videoWrap video { display:block; width:auto; height:100%; min-height:1080px; }  
+    
+    .page { position:relative; clear: both; overflow:hidden; }    
+    .pageWrap { width: 1200px; margin:0 auto; }
+        
+    #page1 .pageWrap { position:absolute; top:0; 
+        left:calc(50% - 600px); } 
+    .titBox { clear:both; }
+    .pageTitle { color:#fff; font-size:60px; padding-top:210px; 
+        background-image:url("./image/icon_bar.png");
+        background-repeat: no-repeat; background-position:0px 180px; clear:both; line-height: 1.3; }    
+    .pageComent { color:#fff; font-size:16px; }
+    
+    #page1 .pageTitle { margin-top:100px; padding-top:200px;  }
+        
+    #frm1 { clear:both; padding-top:60px; }    
+    #keyword { border:0; outline:0; background:#fff;
+        display:block; width:500px; line-height:60px;
+        text-indent:30px;   float:left;    }
+    .frmBtn { outline:0; border:0; display:block; width: 60px; height:62px; line-height: 62px; float:left; 
+        background-color:#27d; 
+        background-repeat: no-repeat;
+        background-position:center center; } 
+        .searchBtn { background-image:url("./image/icon_search_4.png"); }
+        
+    .thumBox { position:absolute; right:100px; top:200px;
+        width: 200px; height: 600px; }
+    .thumBox li { clear:both; width: 200px; height: 200px; 
+        overflow:hidden; }
+    .thumBox li a { display:block; width:200px; text-align:center; }
+    .thumBox li .offBox, .thumBox li .onBox { 
+        width: 200px; height: 200px;  clear:both;     }
+    .thumBox li .onBox { display:none; }
+    .thumBox li:hover .onBox { display:block; }
+    .thumBox li .offBox { display:block; }
+    .thumBox li:hover .offBox { display:none; }
+    .thumBox li .offBox .txt1 { color:#fff; }    
+    .thumBox li .offBox .txt1:before { content:"";
+        display:block; width:58px;   height:55px; 
+        clear:both; margin:20px auto; background-position: center center; background-repeat: no-repeat; }
+    .thumBox li .item1 .offBox .txt1:before {
+        background-image:url("./image/quick_icon1.png");    }
+    .thumBox li .item2 .offBox .txt1:before {
+        background-image:url("./image/quick_icon2.png");    }
+    .thumBox li .item3 .offBox .txt1:before {
+        background-image:url("./image/quick_icon3.png");    }
+    .thumBox li .offBox .txt1:after {
+        background-image:url("./image/quick_arrow1.png");
+        content:"";  display:block; width:28px;   height:28px; 
+        clear:both; margin:20px auto; background-position: center center; background-repeat: no-repeat;    }
+    .thumBox li .onBox { background-position: center center;
+        background-repeat: repeat; background-size:100% 100%;
+        overflow:hidden; }
+    .thumBox li .item1 .onBox { background-image:url("./image/thum1.png"); }  
+    .thumBox li .item2 .onBox { background-image:url("./image/thum2.png"); }  
+    .thumBox li .item3 .onBox { background-image:url("./image/thum3.png"); } 
+    
+    .more { display:inline-block; padding:30px; border:2px solid #fff; color:#fff; margin-top: 20px; border-radius:40px; 
+        padding-right:30px; }    
+    .more:after { content:""; display:inline-block; width: 30px; height: 8px; background-image:url("./image/icon_arrow_bar1.png");
+        margin-left: 30px; 
+    }    
+    #page2 { background-image:url("./image/page2_bg2.jpg"); 
+         background-size:125% 125%; opacity:0.9; transition:1s;
+        transition-delay:0.2s; }    
+    #page3 { background-image:url("./image/page2_bg3.jpg"); 
+        background-size:125% 125%; opacity:0.9; transition:1s;
+        transition-delay:0.2s; }    
+    #page2:hover, #page3:hover { background-size:100% 100%; opacity:1; }    
+    .comentBox { width: 450px; border-radius:0px 0px 0px 100px; 
+        height:200px; background-color:#a02946;
+        margin-top:50px; }
+    .num { display:block; color:#f0f4eb; font-size:48px; 
+        text-indent:20px; padding-top:15px; }
+    .coment { padding:20px; color:#fff; padding-top: 10px; }
+    .imgBox { position:absolute; right:-500px; top:42%; width: 400px; height:400px; overflow:hidden; border-radius:220px;
+        box-shadow:0px 0px 100px #000; transform:rotate(0deg); 
+        transition:1s; opacity:0; }
+    .imgBox img { display:block; width: 100%; height: auto; }  
+    #page2:hover .imgBox, #page3:hover .imgBox { transform:rotate(720deg);  opacity:1; right:200px; }
+    #page3 .comentBox { background:#5fbbe2; }   
+        
+    .col3 { display:block; float:left; width:285px; margin-right:20px; box-sizing:border-box; }
+    .col3.first { clear:both; }    
+    .col3.last { margin-right:0; } 
+    .col6 { width:590px; margin-right:20px; float:left; } 
+    #page4 .titBox { position:relative; clear:both; }    
+    #page4 .pageTitle { background-image:url("./image/icon_arrow_bar2.png"); color:#333; padding-top: 10px; }
+    #page4 .pageComent { color:#333; }   
+    .row { clear:both; margin: 0; padding: 0;  }
+    .row a { color:#333; }
+    .row .wtxt { color:#fff; } 
+    .row.one { height:320px; margin-top:110px; }
+    .row.one .col3, .row.one .col6 { height:320px; }    
+    .row.two { height:225px; margin-top:30px; } 
+    .curBox { height:320px; width:590px; overflow:hidden; 
+        background-image:url("./image/business_img01.jpg");
+        background-repeat: no-repeat; background-size:100% auto;
+        position:relative; }   
+    .curBox a { display:block; padding:35px; }
+    .hvBox, .hvBox2, .hvBox3 { display: block; padding:35px;
+        position:relative; }
+    .hvBox { height: 250px; }    
+    .hvBox2, .hvBox3 { height:150px; }   
+    .curTit { font-size:28px; line-height:60px; overflow: hidden; white-space:nowrap; text-overflow:ellipsis;
+        text-shadow:0px 0px 15px #333; }    
+    .notiTit { overflow:hidden; white-space:normal; line-height: 1.2; height: 3.6em; word-wrap: break-word; text-overflow: ellipsis; line-clamp:3; -webkit-line-clamp:3; box-orient:vertical; -webkit-box-orient:vertical;  display:-webkit-box; font-size:22px; }  
+    .date { position:absolute; bottom:25px; left:35px; }
+    .notiBox1 { height:320px; border-radius: 0px; background-color:#08c; transition:0.4s; }
+    .notiBox1:hover { border-radius:0px 90px 0px 0px; }
+    .notiBox2 { height:225px; border-radius:0px; background-color:#09a; transition:0.4s; }
+    .notiBox2:hover { border-radius:0px 0px 0px 90px; }  
+    .notiBox3 { border:1px solid #999; overflow:hidden; }    
+    .notiBox3 a:before { content:""; display:block; width: 283px; height:222px; background-color:#d5edff; transition:0.3s;  position:absolute; top: 0; left:-285px; z-index:-1; } 
+    .notiBox3 a:hover::before { left: 0; }
+    .row.two .col3.last { background-color:#e4ebf0; height: 225px;  }  
+    .notiBox4 { padding: 35px; }    
+    .notiBox4 .notiTit { height: auto;  }
+    .snsLst { margin: 0; padding: 0; }    
+    .snsLst li { float:left; width:104px; box-sizing:border-box; }    
+    .snsTit { font-size:14px; font-weight:600; }
+    
+    .ft { clear:both; width: 100%; height: 180px; margin-top: 20px; padding-top: 20px; } 
+    .ftWrap { clear:both; width:100%; height: 100px; }
+    .ftWrap.first { height:80px; background-color:#333; } 
+    #relNav { width: 1200px; margin:0 auto; } 
+    #relNav ul { clear:both; margin: 0; padding: 0; }    
+    #relNav .col2 { width: 200px; float:left; height: 80px; 
+        overflow:hidden; box-sizing: border-box; }   
+    #relNav .col2 a { display:block; height:80px; } 
+    .bgIcon { background-size:80px auto; background-position:center center; background-repeat: no-repeat; 
+     color:#fff; text-align:center; }
+    #relNav .col2 a.item1 { border-left:1px solid #444; border-right:1px solid #444; background-image:url("./image/logo_1.png"); padding-top:50px; background-position:center 10px; }
+    #relNav .col2 a.item2 { background-image:url("./image/familysite_logo1.png"); } 
+    #relNav .col2 a.item3 { background-image:url("./image/familysite_logo2.png"); } 
+    #relNav .col2 a.item4 { background-image:url("./image/familysite_logo3.png"); } 
+    #relNav .col2 a.item5 { background-image:url("./image/familysite_logo4.png"); } 
+    #relNav .col2 a.item6 { background-image:url("./image/familysite_logo5.png"); } 
+    #relNav .col2 a.item1:hover { background-image:url("./image/logo_2.png"); }
+    #relNav .col2 a.item2:hover { background-image:url("./image/company_logo1.png"); } 
+    #relNav .col2 a.item3:hover { background-image:url("./image/company_logo2.png"); } 
+    #relNav .col2 a.item4:hover { background-image:url("./image/company_logo3.png"); } 
+    #relNav .col2 a.item5:hover { background-image:url("./image/company_logo4.png"); } 
+    #relNav .col2 a.item6:hover { background-image:url("./image/company_logo5.png"); } 
+        
+    #ftArea { width: 1200px; margin:0 auto; }
+    .copyright { width:70%; float:left; font-size:0.8em; 
+        line-height:1.6; padding-top: 35px; color:#777; }
+    .ftLink { width: 28%; float: right; font-weight:300;
+        padding-top: 45px; }
+    .ftLink ul { margin:0; padding:0; }
+    .spl:after { content:"|"; display:inline-block; padding-left:7px; padding-right:7px; }
+    .ftLink li { float:left; }
+    .ftLink li a { color:#444; padding:6px; font-size:0.8em; }
+    .ftLink li a.item1 { border-radius:40px; border:1px solid #333; color:#333; padding-left: 10px; padding-right: 10px; }
+    </style>
+    <link rel="stylesheet" href="par.css">
+    <script src="par.js"></script>
+</head>
+<body>
+<header class="hd">
+    <div class="hdWrap">
+        <a href="index.html" class="logo">로고</a>
+        <nav id="mainNav">
+            <ul>
+                <li class="mnItem1">
+                    <a href="sub1.html" class="mnDep1">LS 소개</a>
+                    <ul class="sub">
+                        <li><a href="sub1.html#page1">경영철학</a></li>
+                        <li><a href="sub1.html#page2">주요 경영진</a></li>
+                        <li><a href="sub1.html#page3">글로벌 네트워크</a></li>
+                        <li><a href="sub1.html#page4">사업분야</a></li>
+                        <li><a href="sub1.html#page5">LS 역사</a></li>
+                        <li><a href="sub1.html#page6">투자정보</a></li>
+                    </ul>
+                </li>
+                <li class="mnItem1">
+                    <a href="sub2.html" class="mnDep1">채용정보</a>
+                    <ul class="sub">
+                        <li><a href="sub2.html#page1">인재상</a></li>
+                        <li><a href="sub2.html#page2">인사제도</a></li>
+                        <li><a href="sub2.html#page3">채용안내</a></li>
+                    </ul>
+                </li>
+                <li class="mnItem1">
+                    <a href="sub3.html" class="mnDep1">홍보센터</a>
+                    <ul class="sub">
+                        <li><a href="sub3.html#page1">보도자료</a></li>
+                        <li><a href="sub3.html#page2">소셜미디어</a></li>
+                        <li><a href="sub3.html#page3">광고</a></li>
+                        <li><a href="sub3.html#page4">CI</a></li>
+                    </ul>
+                </li>
+                <li class="mnItem1">
+                    <a href="sub4.html" class="mnDep1">사회공헌</a>
+                    <ul class="sub">
+                        <li><a href="sub3.html#page1">LS사회공헌</a></li>
+                        <li><a href="sub3.html#page2">대학생 해외봉사단</a></li>
+                        <li><a href="sub3.html#page3">드림사이언스클래스</a></li>
+                        <li><a href="sub3.html#page4">대학생 기자단</a></li>
+                        <li><a href="sub3.html#page5">드림오케스트라</a></li>
+                        <li><a href="sub3.html#page6">LS 드림카</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <nav id="topNav">
+            <ul>
+                <li><a href="contact.html" class="dotSplit">Contact Us</a></li>
+                <li><a href="./eng">ENG</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="page" id="page1" data-page="0">
+    <div class="videoWrap">
+        <video autoplay loop muted>
+            <source src="./vdo/movie1.mp4" type="video/mp4">
+            <source src="./vdo/movie1.ogg" type="video/ogg">
+            <source src="./vdo/movie1.webm" type="video/webm">
+        </video>
+    </div>
+    <div class="pageWrap">
+        <div class="titBox">
+            <h1 class="pageTitle">Greater Value Together!</h1>
+            <p class="pageComent">LS는 미래 에너지 산업으로 지속 가능하고 더 큰 가치를 만들어 나갑니다.</p>
+        </div>
+        <form action="" id="frm1">
+            <input type="text" id="keyword" placeholder="검색어를 입력하세요" autofocus name="keyword">
+            <input type="submit" class="frmBtn searchBtn" value="">
+        </form>
+    </div>
+    <ul class="thumBox">
+        <li>
+            <a href="" class="item1">
+                <div class="offBox">
+                    <span class="txt1">사업분야</span>
+                </div>
+                <div class="onBox"></div>
+            </a>
+        </li>
+        <li>
+            <a href="" class="item2">
+                <div class="offBox">
+                    <span class="txt1">투자정보</span>
+                </div>
+                <div class="onBox"></div>
+            </a>
+        </li>
+        <li>
+            <a href="" class="item3">
+                <div class="offBox">
+                    <span class="txt1">채용안내</span>
+                </div>
+                <div class="onBox"></div>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="page" id="page2" data-page="1">
+    <div class="pageWrap">
+        <div class="titBox">
+            <h1 class="pageTitle">LS, 따뜻함과 행복을<br>
+            드립니다</h1>
+            <p class="pageComent"></p>
+        </div>
+        <a href="" class="more">계열사</a>
+        <div class="comentBox">
+            <span class="num">01</span>
+            <p class="coment">LS의 스마트에너지솔루션이 친환경에너지의 생산부터 저장, <br>
+            사용으로 세계의 미래를 밝힙니다.</p>
+        </div>
+        <div class="imgBox">
+            <img src="./image/business_img12.jpg" alt="이미지">
+        </div>
+    </div>
+</div>
+<div class="page" id="page3" data-page="2">
+    <div class="pageWrap">
+        <div class="titBox">
+            <h1 class="pageTitle">미래 세대를 후원하는 <br>
+            든든한 파트너</h1>
+            <p class="pageComent">
+            꾸준하고 진정성 있는 사회공헌 활동으로 <br>
+            지속 가능한 나눔을 실천합니다.</p>
+        </div>
+        <a href="" class="more">사회공헌 이야기</a>
+        <div class="comentBox">
+            <span class="num">02</span>
+            <p class="coment">세계 40여 개국 수출, 북미 딜러 만족도 1위의 LS 트랙터가 세계 <br>
+            농업의 미래를 열어 갑니다.</p>
+        </div>
+        <div class="imgBox">
+            <img src="./image/business_img13.jpg" alt="이미지">
+        </div>
+    </div>
+</div>
+<div class="page" id="page4" data-page="3">
+    <div class="pageWrap">
+        <ul class="row one">
+            <li class="col3 first">
+                <div class="titBox">
+                    <h1 class="pageTitle">LS 소식</h1>
+                    <p class="pageComent">LS의 최신 소식을 알려드립니다.</p>
+                </div>
+            </li>
+            <li class="col6">
+                <div class="curBox">
+                    <a href="">
+                        <h2 class="curTit wtxt">LS산전, 역대 최대 연간 매출 2조4,850억 달성</h2>
+                        <p class="date wtxt">2019-01-29</p>
+                    </a>
+                </div>
+            </li>
+            <li class="col3 last">
+                <div class="notiBox1">
+                    <a href="" class="hvBox">
+                        <h2 class="notiTit wtxt">LS, 대학생해외봉사∙과학캠프 등 미래세대 후원활동 지속</h2>
+                        <p class="date wtxt">2019-01-28</p>
+                    </a>
+                </div>
+            </li>
+        </ul>
+        <ul class="row two">   
+            <li class="col3 first">
+                <div class="notiBox2">
+                    <a href="" class="hvBox2">
+                        <h2 class="notiTit wtxt">구자균 회장 &quot;미래 담보할 새로운 길 만드는 &lsquo;경로 개척자&rsquo; 돼 달라&quot; 우리는 LS의 </h2>
+                        <p class="date wtxt">2019-01-23</p>
+                    </a>
+                </div>
+            </li>
+            <li class="col3">
+                <div class="notiBox3">
+                    <a href="" class="hvBox3">
+                        <h2 class="notiTit">LS그룹, 사회복지공동모금회에 불우이웃돕기 성금 20억 기탁</h2>
+                        <p class="date">2019-01-15</p>
+                    </a>
+                </div>
+            </li>
+            <li class="col3">
+                <div class="notiBox3">
+                    <a href="" class="hvBox3">
+                        <h2 class="notiTit">LS전선, 국내 최초 대만 해저케이블 시장 진출</h2>
+                        <p class="date">2019-01-07</p>
+                    </a>
+                </div>
+            </li>
+            <li class="col3 last">
+                <div class="notiBox4">
+                    <h2 class="notiTit">SNS</h2>
+                    <hr>
+                    <ul class="snsLst">
+                        <li class="snsCol">
+                            <h3 class="snsTit">대학생 기자단</h3>
+                            <a href="">
+                                <img src="./image/sns_facebook.png" alt="페이스북">
+                            </a>
+                            <a href="">
+                                <img src="./image/sns_blog.png" alt="블로그">
+                            </a>
+                        </li>
+                        <li class="snsCol">
+                            <h3 class="snsTit">해외 봉사단</h3>
+                            <a href="">
+                                <img src="./image/sns_facebook.png" alt="페이스북">
+                            </a>
+                            <a href="">
+                                <img src="./image/sns_cafe.png" alt="카페">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>   
+    </div>
+    <footer class="ft">
+        <div class="ftWrap first">
+            <nav id="relNav">
+                <ul>
+                    <li class="col2">
+                        <a href="" class="bgIcon item1">
+                            <span class="familyTxt">FAMILY SITE</span>
+                        </a>
+                    </li>
+                    <li class="col2">
+                        <a href="" class="bgIcon item2"></a>
+                    </li>
+                    <li class="col2">
+                        <a href="" class="bgIcon item3"></a>
+                    </li>
+                    <li class="col2">
+                        <a href="" class="bgIcon item4"></a>
+                    </li>
+                    <li class="col2">
+                        <a href="" class="bgIcon item5"></a>
+                    </li>
+                    <li class="col2">
+                        <a href="" class="bgIcon item6"></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="ftWrap">   
+            <div id="ftArea">
+                <div class="copyright">
+                    <p class="copy">
+                        <span class="spl">(주)LS 서울특별시 용산구 한강대로 92 LS용산타워 17~18층</span>
+                        <span class="spl">대표자  이광우</span>
+                        <span class="spl">Tel  02-2189-9782</span>
+                        <span class="spl">Fax  02-2189-9799</span>
+                        <span class="">사업자등록번호  116-81-19007</span>
+                        <br>
+                        COPYRIGHT ©LS Corp. ALL RIGHTS RESERVED</p>
+                </div>
+                <nav class="ftLink">
+                    <ul>
+                        <li><a href="" class="item1">개인정보처리방침</a></li>
+                        <li><a href="">사이버문고</a></li>
+                        <li><a href="">사이트맵</a></li>
+                        <li><a href="">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+</div>
+<section id="quick">
+    <a data-val="0" class="pageMove on">
+        <span class="qtxt">LS의 가치</span>
+        <span class="qbtn"></span>
+    </a>
+    <a data-val="1" class="pageMove">
+        <span class="qtxt">LS의 사업분야</span>
+        <span class="qbtn"></span>
+    </a>
+    <a data-val="2" class="pageMove">
+        <span class="qtxt">LS의 사회공헌</span>
+        <span class="qbtn"></span>
+    </a>
+    <a data-val="3" class="pageMove">
+        <span class="qtxt">LS의 소식</span>
+        <span class="qbtn"></span>
+    </a>
+</section>
+<button id="quick_up" class="scrollBtn">▲</button>
+<button id="quick_down" class="scrollBtn">▼</button>
+</body>
+</html>

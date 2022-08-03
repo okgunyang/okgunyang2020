@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>트랜지션 02 - transition-duration 02 </title>
+    <style>
+    * { margin: 0; padding: 0; }
+    ul { list-style: none; } 
+    #gal { width: 600px; height: 550px; margin: 40px auto; }   
+    #gal [class*=item] { float:left; width: 150px; height: 90px; }
+    #gal li { background-size:cover; background-repeat: no-repeat; }
+    #gal li.item1 { background-image: url("./images/img1.jpg"); }
+    #gal li.item2 { background-image: url("./images/img2.jpg"); }
+    #gal li.item3 { background-image: url("./images/img3.jpg"); }
+    #gal li.item4 { background-image: url("./images/img4.jpg"); }
+    #gal li a { display:block; width: 150px; height: 90px; }
+    #gal .box { clear:both; background-image: url("./images/img1.jpg"); background-repeat: no-repeat;
+    background-size:cover; width: 600px; height: 400px; transition-duration:0.6s; }
+    #gal li.item1:hover ~ .box { background-image: url("./images/img1.jpg"); }
+    #gal li.item2:hover ~ .box { background-image: url("./images/img2.jpg"); }
+    #gal li.item3:hover ~ .box { background-image: url("./images/img3.jpg"); }
+    #gal li.item4:hover ~ .box { background-image: url("./images/img4.jpg"); }
+    </style>
+</head>
+<body>
+    <nav id="gal">
+        <ul>
+            <li class="item1"><a href=""></a></li>
+            <li class="item2"><a href=""></a></li>
+            <li class="item3"><a href=""></a></li>
+            <li class="item4"><a href=""></a></li>
+            <li class="box"></li>
+        </ul>
+    </nav>
+</body>
+</html>

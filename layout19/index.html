@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Barbershop Borodinsky</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic,cyrillic-ext' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+
+        <div class="header">
+            <div class="layout-center-wrapper">
+                <ul class="top-menu">
+                    <li><a class="active" href="index.html">Главная</a></li>
+                    <li><a href="#">Информация</a></li>
+                    <li><a href="#">Новости</a></li>
+                    <li><a href="price.html">Прайс-лист</a></li>
+                    <li><a href="shop.html">Магазин</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+                <div class="account-menu">
+                    <a class="account-menu-enter" href="#">Вход</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="layout-center-wrapper">
+            <img class="logo" src="pic/logo.png">
+            <ul class="features">
+                <li>
+                    <div class="feature-title">Быстро</div>
+                    <p>Мы делаем свою работу быстро! Два часа пролетят
+                    незаметно и вы — счастливый обладетель
+                    стильной стрижки-минутки!</p>
+                </li>
+                <li>
+                    <div class="feature-title">Круто</div>
+                    <p>Забудьте, как вы стриглись раньше.<br>
+                    Мы сделаем из вас звезду футбола или кино!<br>
+                    Во всяком случае внешне.</p>
+                </li>
+                <li>
+                    <div class="feature-title">Дорого</div>
+                    <p>Наши мастера — профессионалы своего дела и не могут
+                    стоить дешево. К тому же, разве цена<br>
+                    не дает определеный статус?</p>
+                </li>
+            </ul>
+
+            <!-- Окно логина -->
+            <div class="login-popup">
+            Здесь будет форма логина
+            </div>
+
+            <div class="index-section">
+                <div class="index-left-column">
+                    <div class="index-section-title">Новости</div>
+                    <ul class="index-news">
+                        <li>
+                            <a href="#">Нам наконец завезли Ягермейстер!
+                            Теперь вы<br>
+                            можете пропустить стаканчик во время стрижки</a>
+                            <span class="date">25 сентября</span>
+                        </li>
+                        <li>
+                            <a href="#">В нашей команде пополнение, Борис «Бритва» Стригунец, обладетель множетсва титулов и<br>
+                            наград пополнил наши стройные ряды</a>
+                            <span class="date">19 сентября</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="btn">Все новости</a>
+                </div>
+                <div class="index-right-column separator">
+                    <div class="index-section-title">Фотогалерея</div>
+                    <div class="gallery">
+                        <div class="gallery-items">
+                            <div class="gallery-item"><img src="pic/gallery-item-1.jpg" alt="Интерьер"></div>
+                            <div class="gallery-item"><img src="" alt="Интерьер"></div>
+                            <div class="gallery-item"><img src="" alt="Интерьер"></div>
+                        </div>
+                        <div class="gallery-controls">
+                            <button class="btn btn-prev">Назад</button>
+                            <button class="btn btn-next">Вперед</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="index-section">
+                <div class="index-left-column">
+                    <div class="index-section-title">Контактная информация</div>
+                    <div class="contacts-address">
+                        <p><strong>Barbershop «Borodinski»</strong><br>
+                        Адрес: г. Москва, ул. Собаки Павлова, д. 13<br>
+                        Телефон: +7 (495) 666-02-666</p>
+                    </div>
+                    <div class="contacts-work-time">
+                        <p>Время работы: <br> пн — пт: с 10:00 до 22:00 <br>
+                        сб — вс: с 10:00 до 19:00</p>
+                    </div>
+                    <a href="#" class="btn btn-get-to">Как проехать</a>
+                    <a href="#" class="btn btn-feedback">Обратная связь</a>
+                </div>
+                <div class="index-right-column separator">
+                    <div class="index-section-title">Записаться</div>
+                    <p class="form-description">Укажите желаемую дату и время 
+                    и мы свяжемся с вами для подтверждения брони</p>
+                    <form class="book-form" action="/book" method="post">
+                        <input class="date-field" type="text" name="date" placeholder="Дата">
+                        <input class="time-field" type="text" name="time" placeholder="Время">
+                        <input class="name-field" type="text" name="name" placeholder="Ваше имя">
+                        <input class="phone-field" type="text" name="phone" placeholder="Телефон">
+                        <input type="submit" value="Отправить">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="layout-center-wrapper">
+                <div class="contacts-address">
+                    <strong>Barbershop «Borodinski»</strong>
+                    <p>Адрес: г. Москва, ул. Собаки Павлова, д. 13</p>
+                    <p>Телефон: +7 (495) 666-02-666</p>
+                </div>
+                <div class="social-buttons">
+                    <p>Давайте дружить!</p>
+                    <a href="http://vk.com" class="btn-social btn-social-vk"></a>
+                    <a href="http://facebook.com" class="btn-social btn-social-fb"></a>
+                    <a href="http://instagram.com" class="btn-social btn-social-inst"></a>
+                </div>
+                <div class="copyright">Дизайн сайта:<br><a class="btn" href="http://glukhanko.ru/">glukhanko.ru</a></div>
+            </div>
+        </div>
+
+    </body>
+</html>

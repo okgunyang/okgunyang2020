@@ -1,0 +1,531 @@
+@font-face { 
+  font-family: 'Century Gothic'; 
+  src: url('../font/8483_0.woff') format('woff');
+  src: url('../font/8483_0.ttf') format('truetype'); 
+  font-weight: bold; 
+  font-style: normal; 
+}
+@font-face { 
+  font-family: 'Century Gothic'; 
+  src: url('../font/GOTHIC_0.woff') format('woff');
+  src: url('../font/GOTHIC_0.ttf') format('truetype');
+  font-weight: 400; 
+  font-style: normal; 
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+}
+body{
+	font-family: Century Gothic, Arial ,sans-serif;
+	
+}
+
+.container{ 
+  max-width: 100%;
+  max-height: 100%;
+  padding-right: 15px;
+	padding-left: 15px;
+  overflow: hidden;
+  background-image: url('../img/bg-min.png');
+  background-size: cover; 
+  background-repeat: no-repeat;  
+}
+#scene{
+  top:-200px;
+}
+
+.layer img{
+  width: 100%;
+
+}
+.cloud img {
+  width: 65%;
+  left: 400px;
+  position: relative;
+  animation-name: layer;
+  animation-duration:20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes layer{
+from{
+  transform: translateX(-20px);
+}
+50%{
+   transform: translateX(20px);
+}
+to{
+   transform: translateX(-20px);
+}
+}
+/*//////////////////////////////////////////////////////////////*/
+.about{
+  margin-left: 230px;
+}
+h1 {
+	margin: 90px 0 50px;
+  font-weight: 900;
+	color: #fff;
+  font-size: 105px;
+	-webkit-animation-name: zoomIn;
+	        animation-name: zoomIn;
+  -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+            transform: scale3d(.3, .3, .3);
+  }
+
+  50% { 
+    opacity: 1;
+  }
+}
+
+/*////////////////////////////////////////////////////////////*/
+
+.list-site{
+	position: relative;
+	z-index: 1;
+  margin-left: 150px;
+	padding: 0;
+
+}
+.list-site li {
+	display: inline-block;
+  text-align: center;
+  width: 240px;       /*фиксированная ширина задана дизайнером*/
+	padding: 10px 0;
+	color: #40b49a;
+	font-size: 24px;
+	background-color: rgba(255, 255, 255, .95);
+	border-radius: 30px;
+	margin-right: 45px;
+	animation-name: bounceInUp;
+	animation-duration:3s;
+	position: relative;
+  cursor: pointer;
+}
+.list-site li:hover .nav{
+  display: block;
+ animation-name: opacity;
+ animation-duration: .8s;
+}
+@keyframes opacity {
+  from {
+   opacity: 0;
+  }
+25%{
+  opacity: 0.25;
+}
+50%{
+  opacity: 0.5;
+}
+75%{
+  opacity: 0.75;
+}
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounceInUp {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  from {
+    opacity: 0;
+    transform: translate3d(0, 3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, -20px, 0);
+  }
+
+  75% {
+    transform: translate3d(0, 10px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, -5px, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+.nav {
+  display: none;
+  position: absolute;
+  padding: 0;
+  text-align: center;
+
+}
+.nav li{
+  display: block;
+  animation:none;
+  background-color: transparent;
+  font-size: 18px;
+  padding: 0;
+  padding-top: 20px;
+   
+}
+.nav li:first-child{
+  margin-top: 15px;
+}
+.nav a { 
+	text-decoration: none;
+	color: #fff;
+	animation:none;
+}
+
+.nav li:hover {	
+  animation-name:pulse;
+	animation-duration: 1s;
+}
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+.nav li:hover a{
+  border-bottom: 1px solid #fff;
+}
+/*//////////////////////////////////////////////////////////////////////*/
+
+.boat{
+	position: relative;
+  bottom: 260px;
+  left: 32%;
+  min-height: 165px;
+}
+
+.boat-lg {
+  position: absolute;
+  display: inline-block;
+  animation-name: wave-1;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes wave-1{
+  from{
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 3deg);
+  }
+  15%{
+     transform: translate3d(5%, 0, 0) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30% {
+    transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, 3deg);
+  }
+
+  45% {
+    transform:  rotate3d(0, 0, 1, -3deg);
+  }
+
+  60% {
+    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 3deg);
+  }
+
+  75% {
+    transform: rotate3d(0, 0, 1, 3deg);
+  }
+  90%{
+     transform: rotate3d(0, 0, 1, -3deg);
+  }
+
+  to{
+     transform: rotate3d(0, 0, 1, 3deg);
+  }
+}
+.boat-md{
+  position: absolute;
+  left: 22%;
+  top:15%;
+  display: inline-block;
+  animation-name: wave-2;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes wave-2{
+  from, to{
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+  50% {
+    transform:  rotate3d(0, 0, 1, 5deg);
+  }
+}
+.boat-sm {
+  position: absolute;
+  left:40%;
+  top:25%;
+  animation-name: wave-3;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+   
+}
+
+@keyframes wave-3{
+  from, to{
+    transform: rotate3d(0, 0, 1, -2deg);
+  }
+  50% {
+    transform:  rotate3d(0, 0, 1, 2deg);
+  }
+}
+
+
+/*/////////////////////////////////////////////////////////////////*/
+
+.contact {
+ position: absolute;
+  width: 30px;
+  height: 30px;
+  background: url('../img/svg/designer-cup.svg') rgba(255, 255, 255, .5) 3px 3px no-repeat;
+  border-radius: 30%;
+  margin-right: 30px;
+  cursor: pointer;
+  top: 0;
+
+}
+
+.active {
+  background-color: #fff;
+  transition: .5s;
+}
+
+.text {
+  position: relative;
+  font-size: 14px;
+  top: 5px;
+  left: 35px;
+  display: none;
+  color:rgba(255, 255, 255, .7);
+}
+
+/*//////////////////////////////////////////////////////////////////////////////*/
+
+/*----------------Media queries------------*/
+@media only screen and (max-width: 1550px)   {
+  .boat {
+    bottom:250px;
+  }
+}
+@media only screen and (max-width: 1370px)   {
+  .about{
+    margin-left: 150px;
+  }
+  h1{
+    font-size: 90px;
+    margin-top: 70px;
+  }
+  .list-site{
+    margin-left: 75px;
+  }
+  .boat {
+    bottom:220px;
+  }
+   .boat-sm{
+    top:34%;
+    left: 40%;
+  }
+}
+
+@media only screen and (max-width: 1280px)   {
+     h1{
+    font-size: 80px;
+  
+  }
+  .boat {
+      bottom:200px;
+      left: 38%;
+  }
+   .boat-sm{
+    top:28%;
+    left: 40%;
+  }
+    .boat img{
+    transform: scale(.8);
+
+    }
+}
+@media only screen and (max-width: 1140px)   {
+ 
+  .list-site li {
+    padding: 10px 0;
+    font-size: 22px;
+  }
+    
+    .boat img{
+    transform: scale(.7);
+
+    } 
+    .boat {
+      bottom:170px;
+      left: 43%;
+  }
+  .boat-sm{
+    top:24%;
+    left: 40%;
+  }
+ 
+}
+
+@media only screen and (max-width: 960px)   {
+     #scene{
+    top:-150px;
+  }
+  h1{
+    font-size: 70px;
+  }
+  .list-site li {
+    font-size: 18px;
+    width: 200px;
+  }
+  .boat {
+    bottom: 150px;
+    left: 50%;
+  } 
+  .boat-sm{
+    top:25%;
+  }
+  .boat img{
+    transform: scale(.5);
+
+    }
+}
+@media only screen and (max-width: 880px)   {
+ 
+  .about{
+    margin-left: 100px;
+  }
+    h1{
+    font-size: 60px;
+  }
+  .list-site{
+    margin-left: 30px;
+  }
+  .list-site li {
+    font-size: 16px;
+  } 
+  .nav li{
+    font-size: 16px;
+}
+  .boat {
+    bottom: 130px;
+    left: 50%;
+  }
+   .boat-sm{
+    left: 40%;
+    top: 20%;
+  }
+}
+@media only screen and (max-width: 770px)   {
+  .about{
+
+    text-align: center;
+    margin-left: 0;
+  }
+    h1{
+    font-size: 50px;
+  
+  }
+  .list-site li {
+    font-size: 16px;
+    width: 170px;
+  }
+  #scene{
+    top:-80px;
+  }
+  .cloud img {
+  top: -80px;
+  left: 250px;
+
+  }
+  .boat {
+    bottom: 110px;
+    left: 50%;
+  }
+ 
+}
+@media only screen and (max-width: 680px)   {
+  #scene{
+    top:-80px;
+  }
+  .cloud img {
+  top: -80px;
+  left: 250px;
+
+  }
+  .boat-lg{
+    left: 20%;
+  }
+ .boat-sm, .boat-md{
+  display: none;
+ }
+}
+
+@media only screen and (max-width: 520px)   {
+  #scene{
+    top:0px;
+  }
+  .cloud img {
+  left: 150px;
+
+  }
+
+  .list-site li {
+    font-size: 16px;
+    margin-right: 15px;
+  } 
+  .nav li{
+  padding-top: 20px;
+   
+}
+}
+@media only screen and (max-width: 440px)   {
+
+  #scene{
+    top:-100px;
+  }
+  .cloud img{
+    top:-170px;
+  }
+ 
+  .boat-lg{
+    display: none;
+  }
+  .list-site li {
+    width: 130px;
+    padding: 10px 2px;
+    margin-bottom: 15px;
+  } 
+  .nav li{
+ 
+  font-size: 16px;
+  padding-top: 10px;
+   
+}
+}
+/*//////////////////////////////////////////////////////////////////////////////*/

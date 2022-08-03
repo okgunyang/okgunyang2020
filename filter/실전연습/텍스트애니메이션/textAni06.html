@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>텍스트 애니메이션6</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background-image: radial-gradient(#fff 25%, #bbb 75%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
+@import url("https://fonts.googleapis.com/css?family=Abril\+Fatface");
+h1 { color: #333;  font-family: source sans pro;  font-size: 3rem;
+  font-weight: 100;  line-height: 1.5;  text-transform: uppercase;
+  white-space: nowrap;  overflow: hidden;  position: relative;  width: 600px; }
+.message {  background-color: #fc0;  color: #333;
+  display: block;  font-weight: 900;  overflow: hidden;
+  position: absolute;  padding-left:0.6rem;  top: 0.2rem;
+  left:285px;  animation: openclose 5s ease-in-out infinite; }
+.word1 { font-family: Abril Fatface; }
+.word2 {  font-family: source code pro; }
+.word3 {  font-family: Permanent Marker; }
+@keyframes openclose {
+  0% { top: 0.2rem;  width: 0;  }
+  5% {    width: 0;  }
+  15% {    width: 260px;  }
+  30% {    top: 0.2rem;    width: 260px;  }
+  33% {    top: 0.2rem;    width: 0;  }
+  38% {    top: -4.5rem;    width: 0;  }
+  48% {    width: 230px;  }
+  62% {    top: -4.5rem;    width: 230px;  }
+  66% {    top: -4.5rem;    width: 0;    text-indent: 0;  }
+  71% {    top: -9rem;    width: 0;    text-indent: 5px;  }
+  86% {    width: 560px;  }
+  98% {    top: -9rem;    width: 560px;  }
+  99% {    text-indent: 5px;    top: -9rem;    width: 0;  }
+  100% {    text-indent: 0;    top: 0;    width: 0;  }
+}
+    </style>
+</head>
+<body>
+<h1>always be
+  <div class="message"> 
+    <div class="word1">Design</div>
+    <div class="word2">coding</div>
+    <div class="word3">creating</div>
+  </div>
+</h1>
+</body>
+</html>

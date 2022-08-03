@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>배너01</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR" rel="stylesheet">
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; font-family: 'Noto Sans KR', sans-serif; overflow-x:hidden; }
+    ul { list-style: none; }
+    a { color:#fff; text-decoration:none; }
+    button, input { border:0; outline:0; background:none; }
+    h2, h3, p { line-height: 1.6; }   
+    .wrap { clear:both; width: 100%; } 
+    .tit { line-height: 3; text-align:center; }    
+    .vs { clear:both; } 
+    .ban_box1 { position:relative; }    
+    .more { display:inline-block; font-size:20px; padding:12px 16px; 
+        border-radius:40px; border:3px solid #fff; color:#fff;
+        background:rgba(0,0,0,0.5);  position:absolute; right:80px; bottom:80px; }
+    
+    .visual1, .visual2 { width:600px; height:900px; margin: 0 auto; overflow:hidden; }
+    .visual1 .ban_box1, .visual2 .ban_box1 { width:500%; } 
+    .visual1 .ban_box1 .item, .visual2 .ban_box1 .item { float:left; width: 600px; position:relative; height:auto; }    
+    .visual1 .ban_box1 .item img, .visual2 .ban_box1 .item img { display:block; width: 600px; height:900px; }     
+    
+    .visual3 { width:600px; height:900px; margin: 0 auto; overflow:hidden; position:relative; }
+    .visual3 .ban_box1 { width:500%; } 
+    .visual3 .ban_box1 .item { float:left; width: 600px; position:relative; height:auto; }    
+    .visual3 .ban_box1 .item img { display:block; width: 600px; height:900px; }
+    .visual3 button { display:block; width:120px; height: 200px; 
+        position:absolute; top:50%; margin-top:-100px; cursor:pointer; }
+    .visual3 .prev { left:40px; }
+    .visual3 .next { left:560px; }
+    .visual3 button:before, .visual3 button:after { content:""; display:block; width: 4px; height: 50px; background:#333; }
+    .visual3 button:after { margin-top: -17px;  }    
+    .visual3 .prev:before { transform:rotate(45deg); }    
+    .visual3 .prev:after { transform:rotate(135deg); }    
+    .visual3 .next:before { transform:rotate(-45deg); }    
+    .visual3 .next:after { transform:rotate(-135deg); } 
+        
+    .visual4 { width:600px; height:900px; margin: 0 auto; overflow:hidden; position:relative; }
+    .visual4 .ban_box1 { width:500%; } 
+    .visual4 .ban_box1 .item { float:left; width: 600px; position:relative; height:auto; }    
+    .visual4 .ban_box1 .item img { display:block; width: 600px; height:900px; }
+    .visual4 button { display:block; width:120px; height: 200px; 
+        position:absolute; top:50%; margin-top:-100px; cursor:pointer; }
+    .visual4 .prev_btn { left:40px; }
+    .visual4 .next_btn { left:560px; }
+    .visual4 button:before, .visual4 button:after { content:""; display:block; width: 4px; height: 50px; background:#333; }
+    .visual4 button:after { margin-top: -17px;  }    
+    .visual4 .prev_btn:before { transform:rotate(45deg); }    
+    .visual4 .prev_btn:after { transform:rotate(135deg); }    
+    .visual4 .next_btn:before { transform:rotate(-45deg); }    
+    .visual4 .next_btn:after { transform:rotate(-135deg); }
+        
+    .visual5 { width:600px; height:900px; margin: 0 auto; overflow:hidden; position:relative; }
+    .visual5 .ban_box1 { width:500%; } 
+    .visual5 .ban_box1 .item { float:left; width: 600px; position:relative; height:auto; }    
+    .visual5 .ban_box1 .item img { display:block; width: 600px; height:900px; }
+    .visual5 button { display:block; width:12px; height:12px; 
+        border:4px solid transparent; border-radius:15px; cursor:pointer; 
+        position:absolute; top:10%; background:#fff; box-sizing:content-box; }
+    .visual5 li.on button { border-color:#fff; background-color:transparent; }  
+    .visual5 button.item1 { left: 200px; }
+    .visual5 button.item2 { left: 230px; }
+    .visual5 button.item3 { left: 260px; }    
+    .visual5 button.item4 { left: 290px; }    
+    .visual5 button.item5 { left: 320px; }     
+
+    .visual6 { width:600px; height:900px; margin: 0 auto; overflow:hidden; position:relative; }
+    .visual6 .ban_box1 { width:500%; } 
+    .visual6 .ban_box1 .item { float:left; width: 600px; position:relative; height:auto; }    
+    .visual6 .ban_box1 .item img { display:block; width: 600px; height:900px; }
+    .visual6 button { display:block; width:12px; height:12px; 
+        border:4px solid transparent; border-radius:15px; cursor:pointer; 
+        position:absolute; top:10%; background:#fff; box-sizing:content-box; }
+    .visual6 li.on button { border-color:#fff; background-color:transparent; }
+    .visual6 button.item1 { left: 200px; }
+    .visual6 button.item2 { left: 230px; }
+    .visual6 button.item3 { left: 260px; }    
+    .visual6 button.item4 { left: 290px; }    
+    .visual6 button.item5 { left: 320px; }
+    .visual6 button.prev_btn, .visual6 button.next_btn { display:block; width:120px; height: 200px; 
+        position:absolute; top:50%; margin-top:-100px; cursor:pointer; }
+    .visual6 .prev_btn { left:40px; }
+    .visual6 .next_btn { left:560px; }
+    .visual6 button:before, .visual4 button:after { content:""; display:block; width: 4px; height: 50px; background:#333; }
+    .visual6 button:after { margin-top: -17px;  }    
+    .visual6 .prev_btn:before { transform:rotate(45deg); }    
+    .visual6 .prev_btn:after { transform:rotate(135deg); }    
+    .visual6 .next_btn:before { transform:rotate(-45deg); }    
+    .visual6 .next_btn:after { transform:rotate(-135deg); }
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+        /* 두 번째 인터발 슬라이딩 */
+        function ani1() {
+            $(".visual2 .ban_box1").not(":animated").animate({"margin-left":"-600px"}, 500, function(){
+                $(".visual2 .ban_box1 .item").eq(0).appendTo($(".visual2 .ban_box1"));
+                $(".visual2 .ban_box1").css("margin-left", "0px");
+            });    
+        }
+        var intv1 = setInterval(function(){
+            ani1();
+        }, 3000);
+
+
+        /* 좌/우 버튼 슬라이딩 모션 */
+        function next_ani() {
+            $("#vs3 .ban_box1").not(":animated").animate({"margin-left":"-600px"}, 500, function(){
+                $("#vs3 .ban_box1 .item").eq(0).appendTo($("#vs3 .ban_box1"));
+                $("#vs3 .ban_box1").css("margin-left", "0px");
+            });    
+        }
+        function prev_ani() {
+            $("#vs3 .ban_box1 .item").eq(4).appendTo($("#vs3 .ban_box1"));
+            $("#vs3 .ban_box1").css("margin-left", "-600px");
+            $("#vs3 .ban_box1").not(":animated").animate({"margin-left":"0px"}, 500);    
+        }
+        $(".prev").click(function(){
+            prev_ani();
+        });
+        $(".next").click(function(){
+            next_ani();
+        });
+    });    
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h2 class="tit">슬라이드 배너1 - 이미지배치만</h2>
+        <figure class="visual1" id="vs1">
+            <ul class="ban_box1">
+                <li class="item">
+                    <img src="./r1.jpg" alt="이미지1">
+                    <a href="" class="more">MORE</a>
+                </li>
+                <li class="item">
+                    <img src="./r2.jpg" alt="이미지2">
+                    <a href="" class="more">MORE</a>
+                </li>
+                <li class="item">
+                    <img src="./r3.jpg" alt="이미지3">
+                    <a href="" class="more">MORE</a>
+                </li>
+                <li class="item">
+                    <img src="./r4.jpg" alt="이미지4">
+                    <a href="" class="more">MORE</a>
+                </li>
+                <li class="item">
+                    <img src="./r5.jpg" alt="이미지5">
+                    <a href="" class="more">MORE</a>
+                </li>
+            </ul>
+        </figure>
+    </div>
+    <div class="wrap">
+        <h2 class="tit">슬라이드 배너2 - 이미지만 자동슬라이딩</h2>
+        <div class="visual2" id="vs2">
+            <div class="ban_box1">
+                <div class="item">
+                    <img src="./ae1.jpg" alt="이미지1">
+                    <a href="" class="more">MORE</a>
+                </div>
+                <div class="item">
+                    <img src="./ae2.jpg" alt="이미지2">
+                    <a href="" class="more">MORE</a>
+                </div>
+                <div class="item">
+                    <img src="./ae3.jpg" alt="이미지3">
+                    <a href="" class="more">MORE</a>
+                </div>
+                <div class="item">
+                    <img src="./ae4.jpg" alt="이미지4">
+                    <a href="" class="more">MORE</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrap">
+        <h2 class="tit">슬라이드 배너1 + 이미지+좌/우 버튼</h2>
+        <figure class="visual3" id="vs3">
+            <ul class="ban_box1">
+                <li class="item a1">
+                    <img src="./r1.jpg" alt="이미지1">
+                    <a href="" class="more">MORE</a>
+                </li>
+                <li class="item a2">
+                    <img src="./r2.jpg" alt="이미지2">
+                    <a href="" class="more">MORE</a>
+                </li>
+                <li class="item a3">
+                    <img src="./r3.jpg" alt="이미지3">
+                    <a href="" class="more">MORE</a>
+                </li>
+                <li class="item a4">
+                    <img src="./r4.jpg" alt="이미지4">
+                    <a href="" class="more">MORE</a>
+                </li>
+                <li class="item a5">
+                    <img src="./r5.jpg" alt="이미지5">
+                    <a href="" class="more">MORE</a>
+                </li>
+            </ul>
+            <button class="prev"></button>
+            <button class="next"></button>
+        </figure>
+    </div>
+    <div class="wrap">
+        <h2 class="tit">슬라이드 배너1 + 이미지+좌/우 버튼(플러그인-자동슬라이딩)</h2>
+        <figure class="visual4" id="vs4">
+            <ul class="ban_box1">
+                <li class="item a1">
+                    <img src="./r1.jpg" alt="이미지1">
+                    <a href="" class="more">MORE</a>
+                </li>
+                <li class="item a2">
+                    <img src="./r2.jpg" alt="이미지2">
+                    <a href="" class="more">MORE</a>
+                </li>
+                <li class="item a3">
+                    <img src="./r3.jpg" alt="이미지3">
+                    <a href="" class="more">MORE</a>
+                </li>
+                <li class="item a4">
+                    <img src="./r4.jpg" alt="이미지4">
+                    <a href="" class="more">MORE</a>
+                </li>
+                <li class="item a5">
+                    <img src="./r5.jpg" alt="이미지5">
+                    <a href="" class="more">MORE</a>
+                </li>
+            </ul>
+            <button class="prev_btn"></button>
+            <button class="next_btn"></button>
+        </figure>
+        <script src="plugin1.js"></script>
+        <script>
+        $(function(){
+           $("#vs4 .ban_box1").sliding({spd:500, intv:3000, chd:"li.item", next:".next_btn", prev:".prev_btn"}); 
+        });    
+        </script>
+    </div>
+    <div class="wrap">
+        <h2 class="tit">슬라이드 배너1 + 이미지+좌/우 버튼(플러그인-자동슬라이딩)</h2>
+        <figure class="visual5" id="vs5">
+            <ul class="ban_box1">
+                <li class="item b1">
+                    <img src="./r1.jpg" alt="이미지1">
+                    <a href="" class="more">MORE</a>
+                </li>
+                <li class="item b2">
+                    <img src="./r2.jpg" alt="이미지2">
+                    <a href="" class="more">MORE</a>
+                </li>
+                <li class="item b3">
+                    <img src="./r3.jpg" alt="이미지3">
+                    <a href="" class="more">MORE</a>
+                </li>
+                <li class="item b4">
+                    <img src="./r4.jpg" alt="이미지4">
+                    <a href="" class="more">MORE</a>
+                </li>
+                <li class="item b5">
+                    <img src="./r5.jpg" alt="이미지5">
+                    <a href="" class="more">MORE</a>
+                </li>
+            </ul>
+            <ul class="num_box">
+                <li class="on"><button class="item1"></button></li>
+                <li><button class="item2"></button></li>
+                <li><button class="item3"></button></li>
+                <li><button class="item4"></button></li>
+                <li><button class="item5"></button></li>
+            </ul>
+        </figure>
+        <script src="plugin2.js"></script>
+        <script>
+        $(function(){
+           $("#vs5 .ban_box1").sliding2({spd:700, intv:4000, chd:"li.item", numbox:".num_box li", numfr:".num_box"}); 
+        });    
+        </script>
+    </div>
+    <div class="wrap">
+        <h2 class="tit">슬라이드 배너1 + 이미지+좌/우 버튼(플러그인-자동슬라이딩)</h2>
+        <figure class="visual6" id="vs6">
+            <ul class="ban_box1">
+                <li class="item b1">
+                    <img src="./r1.jpg" alt="이미지1">
+                    <a href="" class="more">MORE</a>
+                </li>
+                <li class="item b2">
+                    <img src="./r2.jpg" alt="이미지2">
+                    <a href="" class="more">MORE</a>
+                </li>
+                <li class="item b3">
+                    <img src="./r3.jpg" alt="이미지3">
+                    <a href="" class="more">MORE</a>
+                </li>
+                <li class="item b4">
+                    <img src="./r4.jpg" alt="이미지4">
+                    <a href="" class="more">MORE</a>
+                </li>
+                <li class="item b5">
+                    <img src="./r5.jpg" alt="이미지5">
+                    <a href="" class="more">MORE</a>
+                </li>
+            </ul>
+            <ul class="num_box">
+                <li class="on"><button class="item1"></button></li>
+                <li><button class="item2"></button></li>
+                <li><button class="item3"></button></li>
+                <li><button class="item4"></button></li>
+                <li><button class="item5"></button></li>
+            </ul>
+            <button class="prev_btn"></button>
+            <button class="next_btn"></button>
+        </figure>
+        <script src="plugin2.js"></script>
+        <script>
+        $(function(){
+           $("#vs6 .ban_box1").sliding2({spd:700, intv:4000, chd:"li.item", numbox:".num_box li", numfr:".num_box", next:".next_btn", prev:".prev_btn"}); 
+        });    
+        </script>
+    </div>
+</body>
+</html>

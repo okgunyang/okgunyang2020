@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform 03 - 2D Transform Rotation example</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; min-height: 100%; }
+    ul { list-style: none; }
+    a { text-decoration: none; }
+    button, input { outline:0; border:0; background: none; }
+    .wrap { clear:both; width: 100%; min-height: 100vh; }
+    .tit { text-align: center; line-height: 1.6; padding-top: 1em; padding-bottom: 1em; }
+    .wrap:after, .box_wrap1:after { content:""; display:block; clear: both ;}
+    .box_wrap1  { clear:both; width:368px; margin:50px auto; position:relative;  }
+    .box_wrap1 li { width:368px; height:500px; position:absolute; left: 0; top: 0;
+    transition-duration:1.2s; transform-origin:center bottom; }
+    .box_wrap1:hover li.item1 { transform:rotate(40deg); }
+    .box_wrap1:hover li.item2 { transform:rotate(20deg); }
+    .box_wrap1:hover li.item3 { transform:rotate(-20deg); }
+    .box_wrap1:hover li.item4 { transform:rotate(-40deg); }
+    .box_wrap1 li a { display:block; }
+    .box_wrap1 li a img { display:block; width: 100%; }
+    /* transform-origin : 가로위치 세로위치; - 중심점의 위치 지정 */
+    #character { position:relative; }
+    .char_fr { width: 200px; height: 200px; border-radius:120px; overflow:hidden; 
+    position:absolute; top: 0; left: 0; box-shadow:0px 0px 30px #444;
+     border:2px solid #444;  transform-origin:45% 45%;  transition-duration:0.8s; }
+    .char_fr img { display:block; width: 100%; height:auto; }
+    .wrap:hover .char_fr { transform:translateX(500px) rotate(1800deg); }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h2 class="tit">이미지 회전 애니메이션</h2>
+        <ul class="box_wrap1">
+            <li class="item1"><a href=""><img src="./image/cart01.png" alt="카드1"></a></li>
+            <li class="item2"><a href=""><img src="./image/cart02.png" alt="카드2"></a></li>
+            <li class="item3"><a href=""><img src="./image/cart03.png" alt="카드3"></a></li>
+            <li class="item4"><a href=""><img src="./image/cart04.png" alt="카드4"></a></li>
+        </ul><br><br>
+
+        <figure id="character">
+            <div class="char_fr">
+                <img src="./image/stayc/j.jpg" alt="재이">
+            </div>
+        </figure>
+
+    </div>
+</body>
+</html>

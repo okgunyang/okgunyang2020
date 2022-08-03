@@ -1,0 +1,125 @@
+/* sub1.css - intro.html을 위한 스타일 */
+@charset "utf-8";
+.page { background:#f1f1f1; }
+/* #page1  */
+.sec11 { height:400px; padding:150px 0px; 
+background-image:url("./img/intro_vs11.jpg");
+    background-position:center center;
+    padding-left: 200px; 
+}
+.sec11.wtxt { color:#fff; }
+.secTitle { font-size:34px; }
+.secCom { font-size:20px; line-height:3; }
+.rtxt, .wtxt .rtxt { color:#e92a96; }
+.secCom2 { line-height: 2; padding-top: 30px; }
+
+.sec12 { clear:both; width: 100%; background-image:url("./img/intro_vs12.jpg");
+    background-position:center center; 
+padding:160px 0px 300px 0px; height:1200px; 
+background-size:auto 100%; }
+.sec12 .secFrm { width: 1200px; margin: 0 auto; }
+.sec12 .secFrm li { clear:both; width:100%; }
+.sec12 .secFrm .left { float:left; 
+text-align: left; }
+.sec12 .secFrm .right { float:right; 
+text-align: right; }
+.sec12 .secFrm .imgFrame { width:40%; }
+.sec12 .secFrm .imgFrame img { display:block; 
+width: 100%; height: auto; }
+.sec12 .secFrm .txtFrame { width:60%; }
+.sec12.wtxt { color:#fff; }
+.itemTitle { font-size:28px; line-height: 3; padding-top:70px; }
+
+/* #page2  */
+.btnFrame { width:1200px; margin:0 auto; }
+.btnFrame li { float:left; width: 33.33333%;}
+.btnFrame li.col6 { width: 50%; }
+.raBtn { display:block;  height: 40px; line-height: 40px; text-align: center;  border-right:1px solid #ddd; border-top:1px solid #ddd;  border-bottom:1px solid #ddd; cursor:pointer; color:#666; }
+.raBtn.on { background:#28b690; color:#fff; }
+.raBtn:first-of-type { border-left:1px solid #ddd; }
+#ra21:checked ~ .btnFrame .raBtn.item1 { background:#28b690; color:#fff; }
+#ra22:checked ~ .btnFrame .raBtn.item2 { background:#28b690; color:#fff; }
+#ra23:checked ~ .btnFrame .raBtn.item3 { background:#28b690; color:#fff; }
+.raItem { display:none; }
+.conFrame { width:1200px; margin:0px auto; margin-top:100px; clear:both; }
+.conFrame .itemFrame { clear:both; width:100%; height: 1400px; padding-top: 50px; }
+.conFrame li .imgItem { display:block; width: 100%; }
+.itemFrame { display:none; position:relative; }
+#ra21:checked ~ .conFrame .itemFrame.item1 { display:block;  }
+#ra22:checked ~ .conFrame .itemFrame.item2 { display:block;  }
+#ra23:checked ~ .conFrame .itemFrame.item3 { display:block;  }
+.titBox { width:520px; height: 200px; background:#fff; color:#333; position:absolute; border:1px solid #ddd; 
+right:0px; top:650px; }
+.tbTitle { text-align:center; line-height:3; 
+font-size:24px; font-weight:400; }
+.tbComent { font-size:14px; padding:30px; text-align: center; }
+.tbImgFrm { width:1200px; height:700px; overflow:hidden; }
+.tbImgFrm li { width:1200px; height:700px; opacity:0;
+overflow:hidden; position:absolute; left:0; top:80px; 
+transition:0.5s; }
+.conRa1:checked ~ .tbImgFrm .raCon1 { opacity:1; }
+.conRa2:checked ~ .tbImgFrm .raCon2 { opacity:1; }
+.conRa3:checked ~ .tbImgFrm .raCon3 { opacity:1; }
+.conRa4:checked ~ .tbImgFrm .raCon4 { opacity:1; }
+.conRa5:checked ~ .tbImgFrm .raCon5 { opacity:1; }
+.conRa6:checked ~ .tbImgFrm .raCon6 { opacity:1; }
+.conRa7:checked ~ .tbImgFrm .raCon7 { opacity:1; }
+.conRa8:checked ~ .tbImgFrm .raCon8 { opacity:1; }
+.conRa9:checked ~ .tbImgFrm .raCon9 { opacity:1; }
+.conRa10:checked ~ .tbImgFrm .raCon10 { opacity:1; }
+.conRa11:checked ~ .tbImgFrm .raCon11 { opacity:1; }
+.thumBox { width:1200px; margin-top:150px; }
+.thumBox li { width: 224px; margin-right:20px; float:left; height:150px; }
+.thumBox li:nth-child(5n) { margin-right:0; }
+.thumBox li label { display:block; width:100%; cursor:pointer; }
+.thumBox li label img { display:block; width:100%; height:auto; }
+
+/* #page3 */
+#page3 .pageTitle { border-bottom:1px solid #666; }
+.subBox { width: 1200px; margin:0 auto; color:#666; 
+padding-bottom: 100px; height: 280px; }
+.subTit { line-height:2; padding-top: 50px; padding-left: 20px;  font-weight: 400; padding-top: 30px;  }
+.subTit:before { content:""; display:block; width: 3px; height: 30px; background:#28b690; float:left; margin-left: -10px;
+margin-top: 10px; clear:both; }
+.subCom { line-height: 2; font-size:14px; padding-left: 20px; }
+.subConTit { font-size:18px; font-weight:400; line-height: 3; padding-top: 40px;  padding-left:12px; }
+.subConTit:before { content:"■"; display:block; width:18px; height:18px; color:#28b690; float:left; margin-left: -25px;
+ font-size:10px; margin-top: 12px; }
+.subLst dl { clear:both; border-top:1px solid #ccc; width: 482px; border-left:1px solid #fff; }
+.subLst dt, .subLst dd { float:left; width:240px; text-align:center; line-height: 48px; }
+.subLst dt { clear:both; background:#666; color:#fff; 
+border-bottom:1px solid #fff; border-right:1px solid #fff; }
+.subLst dd { background:#fff; border-right:1px solid #ccc; 
+border-bottom:1px solid #ccc; }
+.subLastCom { clear:both; font-size:14px; line-height: 1.8; font-weight: 400; padding-top:40px; }
+
+/* #page4 */
+.subTable1 { width: 100%; border-top:2px solid #28b690; margin-top: 30px; }
+.subTable1 th, .subTable1 td { line-height:4; font-size:14px; 
+border-bottom:1px solid #ccc; }
+.subTable1 th { background:#fff; }
+.subTable1 td { text-indent: 30px; }
+.blank2 { clear:both; width: 100%;  height: 60px; }
+.imgFrame { width: 100%; height: auto; }
+.imgFrame img { display:block; width: 100%; height: auto; }
+.tdItem { display:block; width:60px; line-height:20px;
+color:#fff; border-radius:10px; float:left; margin-left: 25px; margin-top: 18px; font-size:12px; text-align:center; text-indent:0; }
+.data1 { background:#576615; }
+.data2 { background:#368d40; }
+.data3 { background:#2dba3a; }
+.data4 { background:#448cf0; }
+
+/* #page5 */
+.subTable2 { width:1200px; margin-top:30px auto; }
+.subTable2 th, .subTable2 td { line-height:4; font-size:14px;  box-sizing: border-box; 
+border-bottom:1px solid #ccc; }
+.subTable2 th { background:#28b690; color:#fff; }
+.subTable2 td { text-align:center; color:#666; }
+.subTable2 th:nth-child(2), .subTable2 td:nth-child(2) { border-left:1px solid #ccc; border-right:1px solid #ccc; }
+.subTable2 tbody tr:nth-child(2n) { background:#fff; }
+
+/* #page6 */
+.linkLst { clear:both; width: 100%; padding-bottom: 50px; height: 720px; }
+.linkLst a { display:block; text-align:center; padding-top:40px; }
+.linkTit { display:block; text-align: center; font-size:14px; line-height:3.2; color:#666; }
+.linkLst a img { border:1px solid #ccc; }

@@ -1,0 +1,341 @@
+/* css */
+/* 구글 웹폰트 */
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700,900');
+@import url('font-awesome-animation.min.css');
+*{
+	margin: 0; padding: 0;
+	box-sizing: border-box;
+}
+body{
+	font-family: 'Raleway', '맑은 고딕', sans-serif;
+	text-align: center;
+	font-size: 100%;
+}
+.container{
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+/*	border: 1px solid red;*/
+	padding: 20px;
+	overflow: hidden;
+}
+li{ list-style-type: none;}
+a{ 
+	text-decoration: none;
+	color: inherit;
+}
+.clearfix:after,
+section:after,
+footer:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+
+/* Typography */
+h1{
+	font-weight: 300;
+	font-size: 2.4rem; /* em(부모 기준), rem무조건 body기준 */
+}
+p{
+	line-height: 1.5em;
+	line-height: 1.5rem;	
+}
+
+/* 레이아웃 시스템 */
+[class^=col-]{
+	width: 100%;
+}
+
+
+/* 헤더 */
+#main_header{
+	position: relative;
+/*	border: 1px solid green;*/
+	height: 140px;
+}
+
+/* 스크롤시 고정 메뉴 */
+#main_gnb.fixed{
+	position: fixed;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	background: #000;
+	color: #fff;
+	left: 0; bottom: 0;
+	z-index: 99;
+}
+
+#main_gnb{ margin-top: 30px;}
+#main_gnb li { display: inline-block;}
+#main_gnb li > a{ 
+	padding: 0 30px;
+	opacity: 0.8;
+	transition: 0.2s;
+}
+#main_gnb li > a:hover,
+#main_gnb li > a:active{ opacity: 1;}
+
+
+/* 섹션 여백 설정 */
+#visual, #about, #works, #skill{
+	margin-bottom: 60px;
+}
+
+/* 메인 비주얼 영역 */
+#visual{
+	position: relative;
+	max-width: 1920px;
+	margin: 0 auto;
+	height: calc(100vh - 140px);
+	background: #000;
+	background-image: 
+		url(../images/bg-top_tri.png),
+		url(../images/visual1.jpg);
+	background-repeat: no-repeat;
+	background-size: contain, cover;
+	color: #fff;
+	background-position: center bottom, center;
+	background-attachment: scroll, fixed;
+	
+}
+#visual > .visual_txt{
+	position: absolute;
+	background: rgba(0,0,0,0.2);
+	text-align: center;
+	font-weight: 700;
+	padding: 60px 30px;
+	left: -100%; top: 50%;
+	transform: translate(-50%, -50%);
+	
+	/* 애니메이션 설정 */
+	animation-name: visual_txt; /* 키프레임명 */
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+}
+/* 텍스트박스 키프레임 */
+@keyframes visual_txt{
+	from{
+		left: -200%;
+		transform: rotate(-180deg);
+	}
+	to{
+		left: 50%;
+		transform: rotate(0deg) translate(-50%, -50%);
+	}
+}
+
+
+
+#visual .cta{
+	position: absolute;
+	display: inline-block;
+	bottom: 100px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	background: #333;
+	padding: 10px 20px;
+}
+#visual .cta:hover,
+#visual .cta:active{
+	background: rgba(51,51,51, 0.8);
+}
+
+/* 자기소개란 */
+#about{
+	padding-top: 40px;
+}
+#about .col-3 > p{ margin-top: 40px;}
+#about .fab{ font-size: 140px;}
+#about .col-3{ margin-bottom: 40px;}
+
+
+/* 스킬(직무능력) */
+#skill{
+	background-image: url('../images/me.jpg');
+	background-size: cover;
+	background-position: center 0;
+	background-attachment: fixed;
+	padding: 60px 0;
+	margin-bottom: 0;
+	color: #fff;
+}
+#skill > h1{margin-bottom: 40px;}
+#skill .skill_list > li{
+	position: relative;
+	width: 90%;
+	height: 5px;
+	text-align: left;
+	margin: 40px 0 20px 0;
+	background: #000;
+/*	border: 1px solid red;*/
+}
+#skill .skill_list span{
+	position: absolute;
+	left: 0; top: 0;
+	display: block;
+	background: #fff;
+	width: 0%; height: 100%;
+}
+#skill .skill_list b{
+	position: relative;
+	font-weight: normal;
+	top: -1.5em;
+}
+
+
+/* 작품소개 */
+#works{
+	background: #efefef;
+}
+#works h1{
+/*	background: #204260;*/
+	color: #333;
+	padding: 60px 0;
+}
+#works .work_list > li{
+	margin-bottom: 40px;
+	box-shadow: 1px 2px 4px rgba(100,100,100,0.3);
+}
+#works .work_list img{
+	width: 100%;
+	display: block;
+}
+#works ul a{
+	display: block;
+	position: relative;
+}
+#works .textbox{
+	background: #000;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	color: #fff;
+	padding: 10px;
+}
+#works .textbox > p{
+	font-size: small;
+	margin-top: 8px;
+}
+#main_footer{
+	font-size: small;
+	color: #999;
+}
+#main_footer > .sns{
+	margin-bottom: 50px;
+}
+#main_footer > .sns > a{
+	display: inline-block;
+	margin-right: 30px;
+}
+#main_footer > #to_top{
+	background: #ececec;
+	padding: 20px 0;
+}
+#main_footer > #to_top > a{
+	display: inline-block;
+}
+#to_top .fa-arrow-up{
+	font-size: 24px;
+}
+#main_footer > .copy{
+	background: #3c3c3c;
+	padding: 50px 0;
+	padding-bottom: 100px;
+}
+
+/* 모바일 */
+@media (max-width: 767px){
+
+	#main_header{
+		height: 120px;
+		position: relative;
+	}	
+	#main_gnb{ 
+		margin-top: 20px;
+	}
+	#main_gnb li > a{ 
+		padding: 0 10px;
+	}
+	#visual{
+		height: calc(100vh - 120px);
+	}	
+	#skill .col-2:last-child{ margin-top: 60px;}
+}
+
+/* 중간크기 이상(컬럼이 형성) */
+@media (min-width: 768px){	
+	/* 레이아웃 시스템 */
+	.col-1{
+		width: 100%;
+	}
+	.col-2{
+		width: 50%;
+		float: left;
+	}
+	.col-3{
+		width: 33.33%;
+		float: left;
+	}
+	.col-4{
+		width: 25%;
+		float: left;
+	}
+	
+	#about .col-3:first-child{
+		padding-right: 40px;
+	}
+	#about .col-3:last-child{
+		padding-left: 40px;
+	}
+	#about .col-3:nth-child(2){
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	
+	#works .col-3{
+		width: 32%;
+		margin-right: 2%;
+	}
+	#works .col-3:nth-child(3n){
+		margin-right: 0;
+	}
+	#works li img{ 
+		max-width: 100%;
+		height: 300px;
+	}
+
+}
+/* -------- */
+
+iframe{
+	width: 100%;
+}
+#skill .col-2:last-child{
+	position: relative;
+	border: 3px solid rgba(0,0,0,.2);
+}
+#skill .col-2:last-child i{
+	position: absolute;
+	font-size: 6em;
+	left: 50%; top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 99;
+	cursor: pointer;
+
+}
+#skill iframe{
+	opacity: 0;
+}
+
+#works .btn_all, #works .btn_close{
+	background: #333;
+	color: #fff;
+	display: inline-block;
+	padding: 10px 30px;
+}
+
+

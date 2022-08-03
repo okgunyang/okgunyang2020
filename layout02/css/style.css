@@ -1,0 +1,235 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	transition: 0.2s;
+}
+ul{
+	list-style-type: none;
+}
+a{ text-decoration: none;}
+.clear{ clear: both;}
+.container{
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+	overflow: hidden;
+}
+#main_header{
+	position: relative;
+	background: #efefef;
+	width: 100%;
+/*	max-width: 1200px;*/
+	margin: 0 auto;
+	height: 100vh;
+	overflow: hidden;
+}
+#gnb{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+/*	border: 3px solid green;*/
+	overflow: hidden;
+}
+#gnb h1{ font-size: 1.5em;}
+
+#gnb li{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50vh;
+	padding: 20px;
+	color: #fff;
+	text-align: center;
+}
+#gnb li [class^='fa']{ 
+	font-size: 100px;
+}
+#gnb li a{ 
+	color: #fff;
+	font-size: 2em;
+	display: block;
+}
+#gnb li a:hover{
+	color: rgba(255,255,255,0.8);
+}
+#gnb li a span{
+	display: inline-block;
+	margin-bottom: 0.5em;
+}
+#gnb li a i{
+	display: block;
+	border: 3px solid #fff;
+	padding: 40px;
+	border-radius: 50%;
+}
+#gnb li:first-child{
+	background: #746386;
+}
+#gnb li:nth-child(2){
+	background: #a93536;
+}
+#gnb li:nth-child(3){
+	background: #149ca8;
+}
+#gnb li:nth-child(4){
+	background: #ccb361;
+}
+
+
+/* 섹션 제목 공통 */
+#about h1, #portfolio h1, 
+#contact h1, #main_footer h1{ 
+	font-size: 2em;
+	margin-bottom: 1em;
+}
+section{
+	padding: 40px 0;
+}
+section h1{ position: relative;}
+section h1:after{
+	content: "";
+	display: block;
+	position: absolute;
+	width: 1.1em;
+	left: 0; bottom: -15px;
+	border-bottom: 5px solid red;
+}
+
+/* #about*/
+#about{
+	clear: both;
+}
+#about .container article{
+	overflow: hidden;
+}
+#about .col-3 img{
+	display: block;
+	box-shadow: 1px 4px 10px rgba(0,0,0,0.7);
+	margin-bottom: 20px;
+}
+#about .col-3-2{ padding-left: 30px;}
+
+#about p{ 
+	font-size: 26px;
+	color: #666;
+}
+
+
+/* 파이차트 */
+#about .skill_graph{
+	text-align: center;
+	padding: 40px 0;
+	overflow: hidden;
+}
+#about .skill_graph li{
+	margin-bottom: 40px;
+}
+#about article.skill_graph [class^='chart']{
+	
+}
+#about .skill_graph li span{ display: block;}
+[class^='chart']{
+	position: relative;
+}
+
+/* 파이차트 내부 % 표시자 */
+[class^='chart'] > span{
+	position: absolute;
+	left: 50%; top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+/* portfolio */
+#portfolio{
+	background: #ccb361;
+}
+#portfolio h1{ color: #fff;}
+#portfolio p{ 
+	font-size: 26px;
+	color: #fff;
+}
+#portfolio nav.portfolio_nav{
+	background: rgba(0,0,0, 0.8);
+	padding: 20px 0;
+	margin: 50px 0;
+	text-align: center;
+}
+#portfolio nav.portfolio_nav a{
+	color: #fff;
+	padding: 0 15px;
+}
+#portfolio #list li.col-3{
+	padding: 10px;
+}
+#portfolio #list img{
+	width: 100%;
+	border-radius: 50%;
+}
+
+
+/* CONNECT ME */
+#contact{ margin-bottom: 50px;}
+#contact h1{ margin-bottom: 50px;}
+#contact figure{
+}
+#contact figure img{
+	border-radius: 50%;
+}
+#contact div:last-of-type{
+	font-size: 26px;
+}
+#contact div:last-of-type a{
+	color: #666;
+}
+#contact .address{
+	margin-bottom: 0.5em;
+}
+#contact .sns li{
+	display: inline-block;
+	margin-right: 10px;
+	font-size: 1.4em;
+}
+
+#main_footer{
+	text-align: center;
+	background: #333;
+	color: #ccc;
+}
+
+
+
+/* 모바일 */
+@media (max-width: 767px){
+	#gnb h1{ font-size: 1.5em;}
+	#gnb li:not(:first-child){
+		height: 16.66vh;
+		text-align: left;
+	}
+	#gnb li a{ 
+		width: 100%;
+	}	
+	#gnb li a span{
+		float: right;
+		margin-top: 5px;
+	}	
+	#gnb li:not(:first-child) a i{
+		padding: 12px;
+		border-radius: 50%;
+		font-size: 1em;
+		float: left;
+	}	
+	
+	#contact div:first-of-type{
+		margin-bottom: 50px;
+		text-align: center;
+	}
+	#contact div:last-of-type{
+		text-align: center;
+	}	
+}
+
+
+

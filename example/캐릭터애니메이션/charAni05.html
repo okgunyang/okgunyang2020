@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" class="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>캐릭터 애니메이션 5</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+* {margin:0; padding:0;}
+.bg {	background:#FFD720; animation: bgch 8.5s infinite;	animation-fill-mode: forwards;  }
+.wrapper {	width: 1024px;	margin:0 auto; }
+.eyelids { /* 왼쪽 눈꺼풀 */
+    border-radius: 50%;    height: 350px;    position: absolute;
+    top: 0;    overflow: hidden;    width: 350px; }
+.eyelids:after { /* 왼쪽 깜빡이는 위 도형 */
+	content: "";	overflow: hidden;	height: 350px;	width:370px;
+	background:#FFD720;	position:absolute;	border-radius: 45% / 50%;
+	overflow: hidden;	z-index: 999;	margin-top: -350px;
+	margin-left: -9px;	box-shadow: 446px 0 0 0 #FFD720; 
+	animation: blink 1.7s infinite, bgch 8.5s infinite;	animation-fill-mode: forwards;  }
+.eyelids:before {  /* 왼쪽 깜빡이는 아래 도형 */
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0); border-radius: 50%;
+    box-shadow: 0 83px 0 1px #FFD720;     content: "";
+    height: 350px;    margin-left: -7px;    margin-top: 0px;
+    position: absolute;    width: 364px;
+	animation: blink2 1.7s infinite, bgchE 8.5s infinite; animation-fill-mode: forwards;  }
+.eyelids2 { /* 오른쪽 눈꺼풀 */    
+    border-radius: 50%;    height: 350px;    margin-left: 446px;
+    overflow: hidden;    position: absolute;    top: 0;    width: 350px; }
+.eyelids2:after { 	/* 오른쪽 깜빡이는 위 도형 */
+    content: "";	overflow: hidden;	height: 350px;
+	width:370px;	background:#FFD720;	position:absolute;
+	border-radius: 45% / 50%;	overflow: hidden;	z-index: 999;
+	margin-top: -350px;	margin-left: -9px;	box-shadow: 446px 0 0 0 #FFD720; 
+	animation: blink 1.7s infinite, bgch 8.5s infinite;	animation-fill-mode: forwards;  }
+.eyelids2:before { /* 오른쪽 깜빡이는 아래 도형 */
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0); 
+    border-radius: 50%;    box-shadow: 0 83px 0 1px #FFD720;     content: "";
+    height: 350px;    margin-left: -7px;    margin-top: 0px;    position: absolute;
+    width: 364px;	animation: blink2 1.7s infinite, bgchE 8.5s infinite;
+	animation-fill-mode: forwards;  }
+.eye { 	margin-top: 40px;	height: 350px;	width:350px;	background:#000000;
+	position:relative;	border-radius: 50%;	margin-left: 114px;
+    box-shadow: 446px 0 0 0 #000000; 	animation: bgchEYE 8.5s infinite;
+	animation-fill-mode: forwards; }
+.eye:before { background: none repeat scroll 0 0 #FFFFFF;   border-radius: 50%;
+    content: "";    display: block;	  position:relative;    top: 100px;
+    height: 150px;    width: 150px;    margin: 100px auto 0;  box-shadow:440px 0 0 1px #FFFFFF; 
+	animation: bgchPUP 8.5s infinite;
+	animation-fill-mode: forwards; }
+.eye:after { background: none repeat scroll 0 0 #F61037;  border-radius: 50%;
+    content: "";   height: 230px;   width: 230px;    margin-left: -120px;
+    margin-top: 170px;    position: absolute;    box-shadow: 810px 0 0 1px #F61037; 
+    z-index: 1000;	animation: bgchch 8.5s infinite; animation-fill-mode: forwards;  }
+.nose {	position: relative;	margin: -28px auto 0;    border-left: 25px solid rgba(0, 0, 0, 0);
+    border-right: 25px solid rgba(0, 0, 0, 0);    border-top: 28px solid #000000;
+    height: 0;    width: 0; }
+.mouth {	position: relative;	margin:0 auto;
+	margin-top: 50px;    border-left: 50px solid rgba(0, 0, 0, 0);
+    border-right: 50px solid rgba(0, 0, 0, 0); border-bottom: 67px solid #000000;
+    height: 0;    width: 0; }
+.mouth:before {	border-bottom: 54px solid #FFD720;    border-left: 50px solid rgba(0, 0, 0, 0);
+    border-right: 50px solid rgba(0, 0, 0, 0);    content: "";
+    left: -50px;    margin-top: 13px;    position: absolute;
+	animation:bgchm 8.5s infinite;	animation-fill-mode: forwards;  }
+
+@keyframes bgchm {  /* 입의 색 모양 애니메이션 */
+	15.945330296127564% {border-bottom: 54px solid #FFD720;} /*wait*/
+	16% {border-bottom: 54px solid #0099cc;} /*change*/
+	35% {border-bottom: 54px solid #0099cc;} /*wait*/
+	36% {border-bottom: 54px solid #ff6699;} /*change*/
+	55% {border-bottom: 54px solid #ff6699;} /*wait*/
+	56% {border-bottom: 54px solid #FFD720;} /*change*/
+	75% {border-bottom: 54px solid #FFD720;} /*wait*/
+	76% {border-bottom: 54px solid #0099cc;} /*change*/
+	95% {border-bottom: 54px solid #0099cc;} /*wait*/
+	96% {border-bottom: 54px solid #FFD720;} /*change*/
+}
+/* 양쪽 볼 애니메이션 */
+@keyframes bgchch {
+	15.945330296127564% {background:#F61037; box-shadow: 810px 0 0 1px #F61037;} /*wait*/
+	16% {background:#66cc99; box-shadow: 810px 0 0 1px #66cc99;} /*change*/
+	35% {background:#66cc99; box-shadow: 810px 0 0 1px #66cc99;} /*wait*/
+	36% {background:#66ffff; box-shadow: 810px 0 0 1px #66ffff;} /*change b*/
+	55% {background:#66ffff; box-shadow: 810px 0 0 1px #66ffff;} /*wait b*/
+	56% {background:#F61037; box-shadow: 810px 0 0 1px #F61037;} /*change*/
+	75% {background:#F61037; box-shadow: 810px 0 0 1px #F61037;} /*wait*/
+	76% {background:#66cc99; box-shadow: 810px 0 0 1px #66cc99;} /*change*/
+	95% {background:#66cc99; box-shadow: 810px 0 0 1px #66cc99;} /*wait*/
+	96% {background:#F61037; box-shadow: 810px 0 0 1px #F61037;} /*change*/
+}
+/* 위 눈 깜빡임 애니메이션 */
+@keyframes blink {
+	74.07407407407408% {margin-top: -350px; border-radius: 45% / 50%;}
+	79% { margin-top: -50px;border-radius: 50% / 21%;}
+	83% { margin-top: -350px;}		
+}
+/* 아래 눈 깜빡임 */
+@keyframes blink2	 {
+	74.07407407407408% {margin-top: 0px; border-radius:50%;}
+	79% { margin-top: -50px;border-radius: 50% / 21%;}
+	83% {margin-top: 0px; border-radius:50%;}
+}
+/* 눈 전체 깜빡임 애니메이션 */
+@keyframes bgchPUP {
+	15.945330296127564% {background:#FFFFFF; box-shadow: 440px 0 0 1px #FFFFFF;} /*wait*/
+	16% {background:#3333cc; box-shadow: 440px 0 0 1px #3333cc;} /*change*/
+	35% {background:#3333cc; box-shadow: 440px 0 0 1px #3333cc;} /*wait*/
+	36% {background:#ff0000; box-shadow: 440px 0 0 1px #ff0000;} /*change*/
+	55% {background:#ff0000; box-shadow: 440px 0 0 1px #ff0000;} /*wait*/
+	56% {background:#FFFFFF; box-shadow: 440px 0 0 1px #FFFFFF;} /*change*/
+	75% {background:#FFFFFF; box-shadow: 440px 0 0 1px #FFFFFF;} /*wait*/
+	76% {background:#3333cc; box-shadow: 440px 0 0 1px #3333cc;} /*change*/
+	95% {background:#3333cc; box-shadow: 440px 0 0 1px #3333cc;} /*wait*/
+	96% {background:#FFFFFF; box-shadow: 440px 0 0 1px #FFFFFF;} /*change*/
+}
+@keyframes bgchEYE { /* 눈의 애니메이션 */
+	15.945330296127564% {background:#000000; box-shadow: 446px 0 0 0 #000000;} /*wait*/
+	16% {background:#fdb907; box-shadow: 446px 0 0 0 #fdb907;} /*change*/
+	35% {background:#fdb907; box-shadow: 446px 0 0 0 #fdb907;} /*wait*/
+	36% {background:#66ff00; box-shadow: 446px 0 0 0 #66ff00;} /*change*/
+	55% {background:#66ff00; box-shadow: 446px 0 0 0 #66ff00;} /*wait*/
+	56% {background:#000000; box-shadow: 446px 0 0 0 #000000;} /*change*/
+	75% {background:#000000; box-shadow: 446px 0 0 0 #000000;} /*wait*/
+	76% {background:#fdb907; box-shadow: 446px 0 0 0 #fdb907;} /*change*/
+	95% {background:#fdb907; box-shadow: 446px 0 0 0 #fdb907;} /*wait*/
+	96% {background:#000000; box-shadow: 446px 0 0 0 #000000;} /*change*/
+}
+@keyframes bgch {  /* 전체 변형 애니메이션 */
+	15.945330296127564% {background:#FFD720; box-shadow: 446px 0 0 0 #FFD720;} /*wait*/
+	16% {background:#0099cc; box-shadow: 446px 0 0 0 #0099cc;} /*change*/
+	35% {background:#0099cc; box-shadow: 446px 0 0 0 #0099cc;} /*wait*/
+	36% {background:#ff6699; box-shadow: 446px 0 0 0 #ff6699;} /*change*/
+	55% {background:#ff6699; box-shadow: 446px 0 0 0 #ff6699;} /*wait*/
+	56% {background:#FFD720; box-shadow: 446px 0 0 0 #FFD720;} /*change*/
+	75% {background:#FFD720; box-shadow: 446px 0 0 0 #FFD720;} /*wait*/
+	76% {background:#0099cc; box-shadow: 446px 0 0 0 #0099cc;} /*change*/
+	95% {background:#0099cc; box-shadow: 446px 0 0 0 #0099cc;} /*wait*/
+	96% {background:#FFD720; box-shadow: 446px 0 0 0 #FFD720;} /*change*/
+}
+@keyframes bgchE {  /* 눈 깜빡임 */
+	15.945330296127564% {box-shadow: 0 83px 0 1px #FFD720;} /*wait yellow*/ 
+	16% {box-shadow: 0 83px 0 1px #0099cc;} /*change blue*/
+	35% {box-shadow: 0 83px 0 1px #0099cc;} /*wait blue*/
+	36% {box-shadow: 0 83px 0 1px #ff6699;} /*change pink*/
+	55% {box-shadow: 0 83px 0 1px #ff6699;} /*wait*/
+	56% {box-shadow: 0 83px 0 1px #FFD720;} /*change*/
+	75% {box-shadow: 0 83px 0 1px #FFD720;} /*wait*/
+	76% {box-shadow: 0 83px 0 1px #0099cc;} /*change*/
+	95% {box-shadow: 0 83px 0 1px #0099cc;} /*wait*/
+	96% {box-shadow: 0 83px 0 1px #FFD720;} /*change*/
+}    
+    </style>
+</head>
+<body>
+<div class="wrapper">
+	<div class="eye">
+		<div class="eyelids"></div>
+		<div class="eyelids2"></div>
+	</div>
+	<div class="nose"></div>
+	<div class="mouth"></div>
+</div>
+</body>
+</html>

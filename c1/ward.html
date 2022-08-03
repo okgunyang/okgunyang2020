@@ -1,0 +1,743 @@
+<?php
+    @session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SRC 병원 - 병동안내</title>
+    <!-- 구형 브라우저 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <!-- 신형 브라우저와 안드로이드 폰 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.png">
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="57x57" href="./ico/favicon57.png">
+    <!-- 아이패드 -->
+    <link rel="apple-touch-icon" size="72x72" href="./ico/favicon72.png">
+    <!-- 아이폰4 이상 -->
+    <link rel="apple-touch-icon" size="114x114" href="./ico/favicon114.png">
+    <!-- IE10 이상 -->
+    <meta name="msapplication-TileColor" content="#FFFFFF"> 
+    <meta name="msapplication-TileImage" content="./ico/favicon-144.png">
+
+    <!-- 메타데이터 개발 공통 사항 -->
+    <!-- 데스크탑에서 IE로 웹 문서를 열 때 가장 최신 버전으로 실행 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    
+    <!-- 앱(웹 사이트)의 이름 -->
+    <meta name="application-name" content="SRC hospital Site">
+    <!-- 웹 사이트 저작자의 이름 -->
+    <meta name="author" content="kitae Kim">
+    <!-- 현재 문서의 설명 -->
+    <meta name="description" content="SRC hospital Site Mainpage"> 
+    <!-- 현재 문서의 저작도구 -->
+    <meta name="generator" content="Brackts">
+    <!-- 검색엔진에서 검색되게할 키워드 -->
+    <meta name="keywords" content="SRC 병원, 건강관리, 휴양">
+    
+    <!-- 반응형, 모바일, 태블릿 사이트 일 경우 뷰포트 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Noto+Serif+KR" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Jua|Noto+Sans+KR|Noto+Serif+KR" rel="stylesheet">
+    <link rel="stylesheet" href="com.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="sub.css">
+    <link rel="stylesheet" href="sub3.css">
+    <style>
+    body, html { -ms-overflow-style:none; }
+    ::-webkit-scrollbar { display:none; }    
+    ::-o-scrollbar { display:none; } 
+    ::-moz-scrollbar { display:none; }     
+    </style>
+<!--    <script src="https://code.jquery.com/jquery-latest.js"></script>-->
+    <script src="./js/jquery-1.11.1.js"></script>
+    
+    <script>
+    /* 여기가 스크립트 처리 구간 */    
+    $(function(){
+        var intv = setInterval(function(){ lAni(); }, 3000);
+        function lAni(){
+            $(".imgBox").not(":animated").animate({"margin-left":"-510px"}, 800, function(){
+                $(".imgBox li").eq(0).appendTo($(".imgBox"));
+                $(".imgBox").css("margin-left", "0px");
+            });
+            
+        }
+    });    
+    </script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcG6XLlvSL0DQtg1G38wiT_r8BYN3RbWQ&callback=initMap"></script> -->
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpo7PlmFhN57HAxDlD8MTLI4DT1bL9VFY&callback=initMap"></script>-->
+<!--
+1) 구글 지도 api key 발급 사이트로 이동하여 지도 API 서비스 신청
+2) https://console.cloud.google.com/getting-started?pli=1
+3) [API 및 서비스] -> [사용자 인증 정보] -> 인증 키 발급
+-->
+<script> 
+//좌표 값을 바꿔서 입력 36.3491563,127.3776857
+function initialize() {
+  var myLatlng = new google.maps.LatLng(37.4931346, 126.92737779999993);
+  var mapOptions = {
+    zoom: 17,
+    center: myLatlng
+  }
+
+  var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'SRC병원'	  //레이블을 바꿔서 입력
+  });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+ </script>
+<script>
+$(function(){
+//   setTimeout(function(){
+//       $("#map_canvas > div:last-child").css("display", "none", "z-index", "-1");
+//   }, 1000); 
+});    
+</script>
+</head>
+<body onload="initialize()">
+<div class="hdFrame on"></div>
+<header id="hd">
+    <div class="wrap">
+        <a href="index.html" class="logo">
+            <img src="./img/img_logo.png" alt="앰블럼">
+        </a>
+        <nav id="gnb">
+            <ul>
+                <li><a href="intro.html#page1" class="on">병원안내</a></li>
+                <li><a href="physical.html#page1" class="on">재활치료</a></li>
+                <li><a href="ward.html#page1" class="on">병동안내</a></li>
+                <li><a href="news.html#page1" class="on">병원소식</a></li>
+                <li><a href="speech.html#page1" class="on">치료연계안내</a></li>
+            </ul>
+        </nav>
+        <label for="ck" class="lstBtn">
+            <span class="item1 on"></span>
+            <span class="item2 on"></span>
+            <span class="item3 on"></span>
+            <span class="item4 on"></span>
+        </label>
+    </div>
+</header>    
+<main id="content">
+    <div class="blank"></div>
+    <div class="page" id="page1">
+        <a href="#page1" class="btn1 item1">병동안내</a>
+        <div class="con">
+            <figure class="vsBox">
+                <ul class="row">
+                    <li class="col6 vsImg">
+                        <img src="./img/ward_info01.png" alt="병동배너">
+                    </li>
+                    <li class="col6 vsTitBox">
+                        <h1 class="vsTitle">
+                            <span class="gtxt">SRC 병동</span>이란?
+                        </h1>
+                        <p class="vsComent">낮시간 동안 입원하여 재활치료를 받고, 저녁에는 가정으로 돌아가 생활하는 형태로, 집중적인 재활치료 프로그램을 통한 치료 효과 증대 및 가족 유대감 강화와 정서적인 안정 효과를 기대할 수 있는 장점이 있습니다. 
+                        </p>
+                        <p class="vsComent">재활치료 프로그램에는 재활의학과 전문의, 재활간호사, 물리치료사, 작업치료사, 언어치료사 등 각 분야의 전문가들이 아동에 맞는 1:1 치료를 시행하게 되어 장애 개선에 큰 도움을 줄 수 있습니다. 
+                        </p>
+                    </li>
+                </ul>       
+            </figure>
+            <section class="sec1">
+                <div class="subBox">
+                    <h2 class="subTit">SRC 병동안내</h2>
+                    <ul class="picLst">
+                        <li class="col6">
+                            <img src="./img/ward01_1.jpg" alt="병동안내이미지1">
+                            <p class="picTit">
+                                <span class="picNum">1</span>
+                                소아 중심 독립적 치료실
+                            </p>
+                            <p class="subCom">성인 및 청소년 치료실을 소아치료실과 분리하여 전문성은 물론 보다 집중된 재활치료 환경 조성</p>
+                        </li>
+                        <li class="col6">
+                            <img src="./img/ward01_2.jpg" alt="병동안내이미지2">
+                            <p class="picTit">
+                                <span class="picNum">2</span>
+                                소아 전담 치료진
+                            </p>
+                            <p class="subCom">중추신경계 발달치료 자격을 취득한 전문치료사로 구성</p>
+                        </li>
+                        <li class="col6">
+                            <img src="./img/ward01_3.jpg" alt="병동안내이미지3">
+                            <p class="picTit">
+                                <span class="picNum">3</span>
+                                쾌적하고 위생적인 입원환경
+                            </p>
+                            <p class="subCom">공기청정시스템(치료실) 및 산소발생시스템(입원실) 설치</p>
+                        </li>
+                        <li class="col6">
+                            <img src="./img/ward01_4.jpg" alt="병동안내이미지4">
+                            <p class="picTit">
+                                <span class="picNum">4</span>
+                                맞춤형 식단
+                            </p>
+                            <p class="subCom">소아식(고춧가루 제외), 연하장애식(다진음식/고춧가루 제외), 일반식 구분하여 중식 제공</p>
+                        </li>
+                        <li class="col6">
+                            <img src="./img/ward01_5.jpg" alt="병동안내이미지5">
+                            <p class="picTit">
+                                <span class="picNum">5</span>
+                                ALL IN ONE SERVIES
+                            </p>
+                            <p class="subCom">단일건물 내 SRC언어·심리상담센터(놀이, 인지, 미술, 심리 외 기타 치료가능)와 SRC스포츠센터(수영장)의 재활 프로그램 연계</p>
+                        </li>
+                        <li class="col6">
+                            <img src="./img/ward01_6.jpg" alt="병동안내이미지6">
+                            <p class="picTit">
+                                <span class="picNum">6</span>
+                                긴밀한 의료협력
+                            </p>
+                            <p class="subCom">SRC병원(광주), 보라매 서울대병원, 중앙대 병원, 연세 세브란스병원 등과의 의료협력을 통한 전문재활치료</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="page" id="page2">
+        <a href="#page2" class="btn1 item2">입원안내</a>
+        <div class="con">
+            <h1 class="pageTitle">입원안내</h1>
+            <section class="sec2">
+                <div class="subBox">
+                    <h2 class="subTit">필수 안내사항</h2>
+                    <table class="subTable3">
+                        <thead>
+                            <tr>
+                                <th class="col3">구분</th>
+                                <th class="col9">상세내용</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col3">선정기준</td>
+                                <td class="col9">
+                                    <p class="tbCon">
+                                        <span class="tbNum">1</span>
+                                        기존 치료중인 소아는 출석률을 반영하여 낮병동 연장 여부 결정
+                                    </p>
+                                    <p class="tbCon">
+                                        <span class="tbNum">2</span>
+                                        소아별 처방이나 외래 소아 변동에 따라 탄력적 조정
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col3">입/퇴원</td>
+                                <td class="col9">
+                                    <p class="tbCon">
+                                        <span class="tbNum">1</span>
+                                        대기자수에 따라서 입원일이 변동될 수 있으며 확정시 사전 개별통보
+                                    </p>
+                                    <p class="tbCon">
+                                        <span class="tbNum">2</span>
+                                        운영기간 : 주 5일 / 1일 6시간 기준
+                                    </p>
+                                    <p class="tbCon">
+                                        <span class="tbNum">3</span>
+                                        운영시간 : 매일 오전 09:00 ~ 17:30 ( 점심시간 1시간 포함, 개인별 입퇴원 시간 체크)
+                                    </p>
+                                    <p class="tbCon">
+                                        <span class="tbNum">4</span>
+                                        검사항목 : 운동평가: 관절가동범위 및 도수근력 평가 작업평가: 시지각평가, 손기능평가, 덴버발달평가, 일상생활평가, 베일리 검사, 섭식평가
+                                    </p>
+                                    <p class="tbCon">
+                                        <span class="tbNum">5</span>
+                                        준비물품 : 입원 및 낮병동 시 필요한 개인물품
+                                    </p>
+                                    <p class="tbCon">
+                                        <span class="tbNum">6</span>
+                                        퇴원안내 : 퇴원예정 최소 1주일 전 간호사실에 신청
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col3">치료관련</td>
+                                <td class="col9">
+                                    <p class="tbCon">
+                                        <span class="tbNum">1</span>
+                                        모든 치료는 1:1 독립적으로 시행되며, 전담치료사가 진행합니다.
+                                    </p>
+                                    <p class="tbCon">
+                                        <span class="tbNum">2</span>
+                                        아동별 발달 상태에 맞는 프로세스를 통해 집중재활치료가 진행됩니다.
+                                    </p>
+                                    <p class="tbCon">
+                                        <span class="tbNum">3</span>
+                                        치료사를 임의로 변경하거나 치료중 특정(다른) 치료사를 지정하실 수 없습니다.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col3">결석관리</td>
+                                <td class="col9">
+                                    <p class="tbCon">
+                                        <span class="tbNum">1</span>
+                                        정기외진, 타 병원 입원을 제외한 기타 개인사유로 인한 미출은 출석률에 모두 포함 <br>
+                                        (외진 및 입원 영수증 확인 시 출석률 반영제외)
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col3">식사시간</td>
+                                <td class="col9">
+                                    <p class="tbCon">
+                                        <span class="tbNum">1</span>
+                                        소아식(다진반찬) 제공
+                                        점심 : 낮 12시 ∼ 13시
+                                        <span class="remark">보호자 식사 신청 (간호사 데스크 문의)</span>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col3">입원실 배정</td>
+                                <td class="col9">
+                                    <p class="tbCon">
+                                        <span class="tbNum">1</span>
+                                        연령에 따라 입원실이 구분되어 배정됩니다.
+                                    </p>
+                                    <p class="tbCon">
+                                        <span class="tbNum">2</span>
+                                        아동 1명 - 보호자 1인 상주를 원칙으로 하며, 타인의 입실은 제한됩니다.
+                                    </p>
+                                    <p class="tbCon">
+                                        <span class="tbNum">3</span>
+                                        불편사항 또는 문의사항은 재활치료실( 02-871-3651 ) 통해 문의하실 수 있습니다.
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="page" id="page3">
+        <a href="#page3" class="btn1 item3">치료/평가항목</a>
+        <div class="con">
+            <h1 class="pageTitle">치료/평가항목</h1>
+            <section class="sec2">
+                <div class="subBox">
+                    <h2 class="subTit">재활치료</h2>
+                    <table class="subTable3">
+                        <thead>
+                            <th class="col3">치료명</th>
+                            <th class="col9">치료목적 및 효과</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col3">중추신경계발달치료</td>
+                                <td class="col9"><p>아동의 근육 기잔도를 정상화시키며, 원시반사를 억제, 자발적 반응을 촉진시티는 치료</p></td>
+                            </tr>
+                            <tr>
+                                <td class="col3">GAIT</td>
+                                <td class="col9"><p>아동의 관절가동범위와 근육길이를 정상화시키고, 연습과 반복을 통해 보행 패턴을 교정하는 치료</p></td>
+                            </tr>
+                            <tr>
+                                <td class="col3">MAT</td>
+                                <td class="col9"><p>씹고, 삼키는 능력이 저하된 환아들에게 감각 자극, 안면근 훈련, 식사 훈련을 시행하는 치료</p></td>
+                            </tr>
+                            <tr>
+                                <td class="col3">작업치료</td>
+                                <td class="col9"><p>연하 곤란을 가진 아동에 대한 전기자극을 통해 연하 능력을 증진 및 회복하는 치료</p></td>
+                            </tr>
+                            <tr>
+                                <td class="col3">연하치료</td>
+                                <td class="col9"><p>연하 곤란을 가진 아동에 대한 전기자극을 통해 연하 능력을 증진 및 회복하는 치료</p></td>
+                            </tr>
+                            <tr>
+                                <td class="col3">작업치료</td>
+                                <td class="col9"><p>적절한 보조도구 제공 및 올바른 자세 교육 등을 통한 환아의 일상생활 참여도를 증진시키는 치료</p></td>
+                            </tr>
+                            <tr>
+                                <td class="col3">연하치료</td>
+                                <td class="col9"><p>전기적 자극을 마비된 근육 또는 신경에 가하여 근육의 기능적인 움직임을 얻도록 도와주는 치료</p></td>
+                            </tr>
+                            <tr>
+                                <td class="col3">작업치료</td>
+                                <td class="col9"><p>아동의 중력에 대항하는 능력을 증진하고 아동의 관절 구축 및 변형 방지를 위해 사용되는 기구 치료</p></td>
+                            </tr>
+                            <tr>
+                                <td class="col3">연하치료</td>
+                                <td class="col9"><p>하지 근력이 약하여 서기 어려운 환아에게 사용하여 가슴, 골반, 다리를 지탱해주는 훈련</p></td>
+                            </tr>
+                            <tr>
+                                <td class="col3">작업치료</td>
+                                <td class="col9"><p>감각 자극을 통해 중추신경계 능력의 향상을 목표로 하는 치료</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="subBox">
+                    <h2 class="subTit">치료별 평가항목</h2>
+                    <table class="subTable3 item2" style="min-height:540px;background:#fff;">
+                        <thead>
+                            <th class="col2">치료명</th>
+                            <th class="col2">평가항목</th>
+                            <th class="col8">평가내용</th>
+                        </thead>
+                        <tbody>
+                            <tr class="bg1">
+                                <td class="col2" rowspan="3">운동치료평가</td>
+                                <td class="col2">관절가동범위</td>
+                                <td class="col8"><p>접합 부분의 동작의 정도(각도)를 측정하는 기초적 기술로 ROM은 동작의 양을 유지 또는 증가 시키도록 설계된 <br>능동적,수동적 평가1일 6시간 기준</p></td>
+                            </tr>
+                            <tr class="bg1">
+                                <td class="col2">&nbsp;</td>
+                                <td class="col2">도수근력검사</td>
+                                <td class="col8"><p>중력, 저항, 관절운’동범위의 세 가지 요인을 기초로 저항을 달리하여 근육이 이겨내는 힘에 따라 <br>
+                                다섯 가지로 분류하는 평가</p></td>
+                            </tr>
+                            <tr class="bg1">
+                                <td class="col2">&nbsp;</td>
+                                <td class="col2">대동작기능평가</td>
+                                <td class="col8"><p>뇌성마비 아동의 대동작기능의 변화를 측정하기 위한 임상평가</p></td>
+                            </tr>
+                            <tr class="bg2" style="border:0px;">
+                                <td class="col2" rowspan="4" style="border-bottom:1px solid #fff;">작업치료평가</td>
+                                <td class="col2">발달평가</td>
+                                <td class="col8"><p>아동의 연령에 따른 개인 사회성, 손 기능, 언어, 대근육 영역에 대한 평가로 아동의 현재 발달 수준을 평가</p></td>
+                            </tr>
+                            <tr class="bg2">
+                                <td class="col2">&nbsp;</td>
+                                <td class="col2">일상생활수행능력평가</td>
+                                <td class="col8"><p>식사, 옷 입기, 몸단장 등의 일상생활동작을 평가한 후 아동의 현 수준과 문제점을 파악하는 평가</p></td>
+                            </tr>
+                            <tr class="bg2">
+                                <td class="col2">&nbsp;</td>
+                                <td class="col2">손기능평가</td>
+                                <td class="col8"><p>아동의 연령에 따른 쥐기, 놓기, 조작능력 등 다양한 손 기능의 발달 수준을 파악하는 평가</p></td>
+                            </tr>
+                            <tr class="bg2">
+                                <td class="col2">&nbsp;</td>
+                                <td class="col2">시지각 발달평가</td>
+                                <td class="col8"><p>아동의 공간관계, 공간위치, 시각구별 등 시지각이나 시각운동 문제를 확인하고 판별하는 평가</p></td>
+                            </tr>
+                            <tr class="bg1" style="background:#ccc; height:60px; ">
+                                <td class="col4" colspan="2" style="background:#ccc; height:45px; ">언어치료평가</td>
+                                <td class="col8" style="text-align: left; padding-bottom:0px; background:#ccc; height:60px;">
+                                <p>영유아 언어발달검사, 수용언어 및 표현언어발달척도, 언어문제해결력검사 구문의미이해력평가, <br> 수용/표현 어휘력 검사, 한국어 표준그림 조음음운 검사 구강조음기관의 기능선별검사</p>    </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="page" id="page4">
+        <a href="#page4" class="btn1 item4">자주하는 질문</a>
+        <div class="con">
+            <h1 class="pageTitle">자주하는 질문</h1>
+            <section class="sec2">
+                <div class="subBox">
+                    <ul class="qnaBox">
+                        <li class="item1">
+                            <input type="radio" name="qnaRa" id="qnaRa1">
+                            <label for="qnaRa1" class="qnaBtn">
+                            낮병동 입원시간에 타병원 진료도 가능한가요?		
+                            </label>
+                            <div class="qnaTxt">
+                            입원시간(6시간)동안은 타 병원 외래진료를 볼 수 없습니다. 입원시간 종결 후에 타 병원 진료가 가능합니다.
+  
+                            </div>
+                        </li>
+                        <li class="item2">
+                            <input type="radio" name="qnaRa" id="qnaRa2">
+                            <label for="qnaRa2" class="qnaBtn">
+                            진단서 및 소견서 등의 발급 절차는 무엇인가요?			
+                            </label>
+                            <div class="qnaTxt">
+진단서 및 소견서 등의 서류가 필요하실 경우 아래 안내사항을 참고해 주세요.
+                            <br><br><br>
+                            1) 원무과 발급신청 및 접수
+                            <br><br>
+                            2) 담당 진료의사 진료
+                            <br><br>
+                            3) 담당 진료의사 증명서 작성
+                            <br><br>
+                            4) 원무과 재증명 담당자 직인 또는 날인
+                            <br><br>
+                            5) 진찰료 및 발급수수료 수납
+                            <br><br>
+                               ※ 대리인을 통해 발급하실 경우 위임장과 인감증명서를 지참하시기 바랍니다. 
+                                
+                            </div>
+                        </li>
+                        <li class="item3">
+                            <input type="radio" name="qnaRa" id="qnaRa3">
+                            <label for="qnaRa3" class="qnaBtn">
+                            치료 중 응급상황이 발생하면 절차가 어떻게 되나요?		    
+                            </label>
+                            <div class="qnaTxt">
+                            치료실 내 응급상황이 발생하면 보호자에게 아동의 상태를 연락드린 후, 주치의 진료 및 응급처치를 진행합니다.
+                                
+                            </div>
+                        </li>
+                        <li class="item4">
+                            <input type="radio" name="qnaRa" id="qnaRa4">
+                            <label for="qnaRa4" class="qnaBtn">
+                            치료 상태나 평가내용을 주기적으로 알고 싶습니다.    
+                            </label>
+                            <div class="qnaTxt">
+                            치료시간 내 담당치료사와 주기적으로 변화하는 아동의 상태를 상담가능 하시며, 정기적으로 진행되는 평가와 전 평가와 비교해드리며 설명드립니다.    
+                            </div>
+                        </li>
+                        <li class="item5">
+                            <input type="radio" name="qnaRa" id="qnaRa5">
+                            <label for="qnaRa5" class="qnaBtn">
+                            낮병동 입원시 식사 제공이 되나요?    
+                            </label>
+                            <div class="qnaTxt">
+                            식사는 입원하신 병동에서 소아식(다진반찬/고추가룻X) 및 보호자 식사도 신청가능 하십니다. <br><br>
+                            (식사제공 시간 : 12시~13시 사이에 제공됩니다)    
+                            </div>
+                        </li>
+                        <li class="item6">
+                            <input type="radio" name="qnaRa" id="qnaRa6">
+                            <label for="qnaRa6" class="qnaBtn">
+                            낮병동 출석률 관리를 따로 하시나요?    
+                            </label>
+                            <div class="qnaTxt">
+                            1. 정기외진, 타 병원 입원을 제외한 기타 개인사유로 인한 미출석은 출석률에 모두 포함됩니다. (외진 및 입원 영수증 확인 시 출석률 반영제외) <br> <br>
+                            2. 출석결과에 따라 보강치료의 우선순위가 결정됩니다.    
+                            </div>
+                        </li>
+                        <li class="item7">
+                            <input type="radio" name="qnaRa" id="qnaRa7">
+                            <label for="qnaRa7" class="qnaBtn">
+                            낮병동 접수 절차 중 주치의 진료시 필요 서류는 무엇인가요?    
+                            </label>
+                            <div class="qnaTxt">
+                            진단서, 검사결과지, 약 처방전 등이 있습니다.    
+                            </div>
+                        </li>
+                        <li class="item8">
+                            <input type="radio" name="qnaRa" id="qnaRa8">
+                            <label for="qnaRa8" class="qnaBtn">
+                            낮병동 접수절차는 어떻게 진행되나요?    
+                            </label>
+                            <div class="qnaTxt">
+                            접수절차는 다음과 같습니다. <br> <br>
+                            전화문의 → 주치의진료 → 낮병동 대기 → 스케줄 가능시 연락    
+                            </div>
+                        </li>
+                        <li class="item9">
+                            <input type="radio" name="qnaRa" id="qnaRa9">
+                            <label for="qnaRa9" class="qnaBtn">
+                            낮병동이란 무엇인가요?    
+                            </label>
+                            <div class="qnaTxt" style="">
+                            입원 치료와 외래치료의 장점을 통합한 형태의 재활치료로, 낮에 6시간 동안 병원에 머무르면서 단기간 동안 집중적이고, 구조화된 치료를 받으면서 근거리에 위치하고 있는 아동들이 가정에서 심리적 안정을 취할 수 있도록 계획된 프로그램입니다. 이러한 낮병동 프로그램은 아동들의 치료효과 증대와 함께 가정생활에 대한 적응과 정서적 안정에도 도움을 주는 시스템입니다.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>        
+    <div class="page" id="lastPage">
+        <div class="wrap">
+            <ul>
+                <li class="col4 item1 first">
+                    <h2 class="itemTitle">SRC병원</h2>
+                    <h1 class="telTxt">02-871-3636</h1>
+                    <p class="itemData">
+                        서울특별시 관악구 보라매로 44(봉천동722-19) <br> SRC병원 부설의원 1~3층
+                    </p>
+                    <p class="itemData" style="padding-bottom:40px;">
+                        팩스번호 02-876-3202 대표자 이영상 <br>
+                        고유번호증 129-82-11729
+                    </p>
+                </li>
+                <li class="col4 item2">
+                    <h2 class="itemTitle">진료시간</h2>
+                    <p class="itemData">
+                        평일 진료AM 09:00 ~ PM 06:00 <br>
+                        토요일 진료AM 09:00 ~ PM 01:00 <br>
+                        점심시간PM 12:00 ~ PM 01:00 <br>
+                    </p>
+                    <p class="itemData">※ 일요일 및 공휴일은 휴진입니다</p>                    
+                </li>
+                <li class="col4 item3">
+                    <h2 class="itemTitle">찾아오시는 길</h2>
+                    <div id="mapFrame">
+                        <div class="maps" id="fmaps" style="min-height: 147px; position: relative; overflow: hidden; background: url(&quot;http://static.naver.net/maps/mantle/1x/pattern_1.png&quot;) 0px 0px repeat transparent; width: 370px; height: 147px;">
+                        
+                    <div style="position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; overflow: visible; width: 100%; height: 100%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); z-index: 0; cursor: url(&quot;http://static.naver.net/maps/mantle/1x/openhand.cur&quot;), default;"><div style="position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; overflow: visible; width: 100%; height: 100%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); z-index: 0;"><div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 13px; left: -4px; z-index: 1;"><div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: none; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 0; user-select: none;"></div><div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 1; user-select: none;"><div style="position: absolute; top: 0px; left: 0px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; display: block; width: 0px; height: 0px; overflow: visible; box-sizing: content-box !important;"><div draggable="false" unselectable="on" style="position: absolute; top: -5px; left: 55px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"><img draggable="false" unselectable="on" alt="" width="256" height="256" src="http://onetile2.map.naver.net/get/197/0/0/12/3356/2933/bl_vc_bg/ol_vc_an" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;"></div><div draggable="false" unselectable="on" style="position: absolute; top: 251px; left: 55px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"><img draggable="false" unselectable="on" alt="" width="256" height="256" src="http://onetile1.map.naver.net/get/197/0/0/12/3356/2932/bl_vc_bg/ol_vc_an" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;"></div><div draggable="false" unselectable="on" style="position: absolute; top: -261px; left: 55px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"><img draggable="false" unselectable="on" alt="" width="256" height="256" src="http://onetile3.map.naver.net/get/197/0/0/12/3356/2934/bl_vc_bg/ol_vc_an" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;"></div><div draggable="false" unselectable="on" style="position: absolute; top: -261px; left: 311px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"><img draggable="false" unselectable="on" alt="" width="256" height="256" src="http://onetile4.map.naver.net/get/197/0/0/12/3357/2934/bl_vc_bg/ol_vc_an" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;"></div><div draggable="false" unselectable="on" style="position: absolute; top: 251px; left: -201px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"><img draggable="false" unselectable="on" alt="" width="256" height="256" src="http://onetile4.map.naver.net/get/197/0/0/12/3355/2932/bl_vc_bg/ol_vc_an" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;"></div><div draggable="false" unselectable="on" style="position: absolute; top: -5px; left: 311px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"><img draggable="false" unselectable="on" alt="" width="256" height="256" src="http://onetile3.map.naver.net/get/197/0/0/12/3357/2933/bl_vc_bg/ol_vc_an" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;"></div><div draggable="false" unselectable="on" style="position: absolute; top: -5px; left: -201px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"><img draggable="false" unselectable="on" alt="" width="256" height="256" src="http://onetile1.map.naver.net/get/197/0/0/12/3355/2933/bl_vc_bg/ol_vc_an" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;"></div><div draggable="false" unselectable="on" style="position: absolute; top: 251px; left: 311px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"><img draggable="false" unselectable="on" alt="" width="256" height="256" src="http://onetile2.map.naver.net/get/197/0/0/12/3357/2932/bl_vc_bg/ol_vc_an" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;"></div><div draggable="false" unselectable="on" style="position: absolute; top: -261px; left: -201px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"><img draggable="false" unselectable="on" alt="" width="256" height="256" src="http://onetile2.map.naver.net/get/197/0/0/12/3355/2934/bl_vc_bg/ol_vc_an" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;"></div></div></div><div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 100;"><div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 101;"></div><div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 103;"><div title="" style="position: absolute; overflow: hidden; box-sizing: content-box !important; cursor: inherit; left: 174px; top: 39px; width: 22px; height: 35px;"><img draggable="false" unselectable="on" src="https://navermaps.github.io/maps.js/docs/img/example/pin_default.png" alt="" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; position: absolute; cursor: pointer; width: 22px; height: 35px; left: 0px; top: 0px;"></div></div><div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 106;"></div></div></div><div style="position: absolute; display: none; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; overflow: visible; width: 100%; height: 100%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); background-color: rgb(255, 255, 255); z-index: 10000; opacity: 0.5;"></div></div></div><div style="position: absolute; z-index: 100; margin: 0px; padding: 0px; pointer-events: none; bottom: 0px; right: 0px;"><div style="border: 0px none; margin: 0px; padding: 0px; pointer-events: none; float: right; height: 22px;"><a href="https://ssl.pstatic.net/static/maps/mantle/notice/legal.html" target="_blank" style="display: block; width: 48px; height: 17px; overflow: hidden; margin: 0px 5px 5px 12px; pointer-events: auto;"><img src="http://static.naver.net/maps/mantle/1x/naver-normal-new.png" width="48" height="17" alt="NAVER" style="display:block;width:48px;height:17px;overflow:hidden;border:0 none;margin:0;padding:0;max-width:none !important;max-height:none !important;min-width:0 !important;min-height:0 !important;"></a></div></div></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=b_mLerQcOU2S8p4Sze6v"></script>
+    </div>
+</main>
+<footer id="ft">
+    <div class="wrap">
+        <p class="copyright">ⓒ 2018 SRC병원. ALL RIGHT RESERVED. SITE BY MOVEMENT K GROUP.</p>
+        <div class="ftLogo"></div>
+    </div>
+</footer>
+<input type="checkbox" id="ck">
+<div id="popFrm">
+    <label for="ck" class="closeBtn">닫기</label>
+    <div class="popBox">
+        <ul class="item1">
+            <li>
+                <h2>
+                    <a href="intro.html#page1">병원안내</a>
+                </h2>
+            </li>
+            <li>
+                <a href="intro.html#page1">병원소개</a>
+            </li>
+            <li>
+                <a href="intro.html#page2">시설안내</a>
+            </li>
+            <li>
+                <a href="intro.html#page3">부서별 연락처</a>
+            </li>
+            <li>
+                <a href="intro.html#page4">오시는길</a>
+            </li>
+            <li>
+                <a href="intro.html#page5">비급여 안내</a>
+            </li>
+            <li>
+                <a href="intro.html#page6">협력기관</a>
+            </li>
+        </ul>
+        <ul class="item2">
+            <li>
+                <h2>
+                    <a href="physical.html#page1">재활치료</a>
+                </h2>
+            </li>
+            <li>
+                <a href="physical.html#page1">소아</a>
+            </li>
+            <li>
+                <a href="physical.html#page2">청소년</a>
+            </li>
+            <li>
+                <a href="physical.html#page3">성인</a>
+            </li>
+        </ul>
+        <ul class="item3">
+            <li>
+                <h2>
+                    <a href="ward.html#page1">병동안내</a>
+                </h2>
+            </li>
+            <li>
+                <a href="ward.html#page1">낮병동소개</a>
+            </li>
+            <li>
+                <a href="ward.html#page2">입원안내</a>
+            </li>
+            <li>
+                <a href="ward.html#page3">치료항목</a>
+            </li>
+            <li>
+                <a href="ward.html#page4">자주하시는질문</a>
+            </li>
+        </ul>
+        <ul class="item4">
+            <li>
+                <h2>
+                    <a href="news.html#page1">병원소식</a>
+                </h2>
+            </li>
+            <li>
+                <a href="news.html#page1">공지사항</a>
+            </li>
+            <li>
+                <a href="news.html#page2">SRC뉴스레터</a>
+            </li>
+            <li>
+                <a href="news.html#page3">사회공헌사업</a>
+            </li>
+            <li>
+                <a href="news.html#page4">재활/건강정보</a>
+            </li>
+        </ul>
+        <ul class="item5">
+            <li>
+                <h2>
+                    <a href="speech.html#page1">치료연계센터</a>
+                </h2>
+            </li>
+            <li>
+                <a href="speech.html#page1">SRC심리상담센터</a>
+            </li>
+            <li>
+                <a href="speech.html#page2">SRC스포츠센터</a>
+            </li>
+        </ul>
+    </div>
+</div>        
+<aside id="quick">
+    <div class="qWrap">
+        <ul class="top">
+            <li>
+                <a href="index.html" class="qlogo"></a>
+            </li>
+<?php 
+        if($_SESSION['userid']=="admin") {         
+?>           
+            <li>
+                <a href="#" class="hv">관리자페이지로</a>
+            </li>
+            <li>   
+                <a href="logout.php" class="hv">로그아웃</a>
+            </li>
+<?php
+         } else if(isset($_SESSION['userid'])) {
+?>                                 
+            <li>
+                <a href="logout.php" class="hv">로그아웃</a>
+            </li>
+            <li>   
+                <a href="#" class="hv">정보수정</a>
+            </li>
+<?php
+        } else {
+?>                       
+            <li>
+                <a href="joinForm.html" class="hv">회원가입</a>
+            </li>
+            <li>   
+                <a href="loginForm.html" class="hv">로그인</a>
+            </li>
+<?php
+        }
+?> 
+            <li>       
+                <a href="intro.html#page5" class="hv">비급여안내</a>
+            </li>
+            <li>       
+                <a href="intro.html#page4" class="hv">오시는길</a>
+            </li>
+        </ul>
+        <ul class="bottom">
+            <li>
+                <a href="speech.html#page1" class="yellow">심리상담센터</a>
+            </li>
+            <li>
+                <a href="speech.html#page2" class="cyan">스포츠센터</a>
+            </li>
+            <li><a href="#page1" class="toTop">위로</a></li>
+        </ul>
+    </div>
+</aside>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>캐릭터 애니메이션 14</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+body {
+  background: #eee;
+}
+
+.me {
+  top: 10%;
+  width: 110px;
+  right: 0;
+  left: 0;
+  margin: 0px auto;
+  position: absolute;
+}
+
+.me:after {
+  content: "";
+  width: 5px;
+  height: 2px;
+  position: absolute;
+  z-index: 99;
+  box-shadow: 18px 33px 0 #E68273, 20px 33px 0 #E68273, 25px 33px 0 #E68273, 15px 45px 0 #e5b187, 15px 47px 0 #e5b187, 18px 45px 0 #e5b187;
+  zoom: 200%;
+}
+
+.blinking {
+  width: 7px;
+  height: 5px;
+  position: absolute;
+  margin-left: -10px;
+  z-index: 999;
+  zoom: 200%;
+  box-shadow: 19px 15px 0 #FBCAA0, 19px 25px 0 #FBCAA0, 39px 15px 0 #FBCAA0, 39px 25px 0 #FBCAA0;
+  -webkit-animation: blink 3s infinite;
+  animation: blink 3s infinite;
+}
+
+.blinking:after {
+  content: "";
+  width: 4px;
+  height: 2px;
+  position: absolute;
+  z-index: 99;
+  transform: rotate(13deg);
+  box-shadow: 31px 26.2px 0 #E68273;
+}
+
+.blinking:before {
+  -webkit-animation: moveArm 5s infinite;
+  animation: moveArm 5s infinite;
+  content: '';
+  width: 5px;
+  height: 5px;
+  margin-left: 10px;
+  -webkit-animation-delay: 1.7s;
+  animation-delay: 0.7s;
+  position: absolute;
+  z-index: 90;
+  box-shadow: -10px 40px #FBCAA0, -10px 45px #FBCAA0;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    box-shadow: 19px 15px 0 #FBCAA0, 19px 25px 0 #FBCAA0, 39px 15px 0 #FBCAA0, 39px 25px 0 #FBCAA0;
+  }
+  5% {
+    box-shadow: 19px 17px 0 #FBCAA0, 19px 23px 0 #FBCAA0, 39px 17px 0 #FBCAA0, 39px 23px 0 #FBCAA0;
+  }
+  10% {
+    box-shadow: 19px 15px 0 #FBCAA0, 19px 25px 0 #FBCAA0, 39px 15px 0 #FBCAA0, 39px 25px 0 #FBCAA0;
+  }
+  100% {
+    box-shadow: 19px 15px 0 #FBCAA0, 19px 25px 0 #FBCAA0, 39px 15px 0 #FBCAA0, 39px 25px 0 #FBCAA0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    box-shadow: 19px 15px 0 #FBCAA0, 19px 25px 0 #FBCAA0, 39px 15px 0 #FBCAA0, 39px 25px 0 #FBCAA0;
+  }
+  5% {
+    box-shadow: 19px 17px 0 #FBCAA0, 19px 23px 0 #FBCAA0, 39px 17px 0 #FBCAA0, 39px 23px 0 #FBCAA0;
+  }
+  10% {
+    box-shadow: 19px 15px 0 #FBCAA0, 19px 25px 0 #FBCAA0, 39px 15px 0 #FBCAA0, 39px 25px 0 #FBCAA0;
+  }
+  100% {
+    box-shadow: 19px 15px 0 #FBCAA0, 19px 25px 0 #FBCAA0, 39px 15px 0 #FBCAA0, 39px 25px 0 #FBCAA0;
+  }
+}
+
+.me:before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  z-index: 90;
+  zoom: 200%;
+  box-shadow: 5px 0 #5f4527, 10px 0 #5f4527, 15px 0 #5f4527, 20px 0 #5f4527, 25px 0 #5f4527, 30px 0 #5f4527, 35px 0 #5f4527, 0 5px #5f4527, 5px 5px #5f4527, 10px 5px #5f4527, 15px 5px #5f4527, 20px 5px #5f4527, 25px 5px #5f4527, 30px 5px #5f4527, 35px 5px #5f4527, 40px 5px #5f4527, -5px 10px #5f4527, 0 10px #5f4527, 5px 10px #FBCAA0, 10px 10px #FBCAA0, 15px 10px #FBCAA0, 20px 10px #FBCAA0, 25px 10px #FBCAA0, 30px 10px #FBCAA0, 35px 10px #FBCAA0, 40px 10px #5f4527, 45px 10px #5f4527, -5px 15px #5f4527, 0 15px #FBCAA0, 5px 15px #FBCAA0, 10px 15px #FBCAA0, 15px 15px #FBCAA0, 20px 15px #FBCAA0, 25px 15px #FBCAA0, 30px 15px #FBCAA0, 35px 15px #FBCAA0, 40px 15px #FBCAA0, 45px 15px #5f4527, -5px 20px #5f4527, 0 20px #FBCAA0, 5px 20px #FBCAA0, 10px 20px #b28960, 15px 20px #FBCAA0, 20px 20px #FBCAA0, 25px 20px #FBCAA0, 30px 20px #b28960, 35px 20px #FBCAA0, 40px 20px #FBCAA0, 45px 20px #5f4527, -5px 25px #5f4527, 0 25px #FBCAA0, 5px 25px #FBCAA0, 10px 25px #FBCAA0, 15px 25px #FBCAA0, 20px 25px #FBCAA0, 25px 25px #FBCAA0, 30px 25px #FBCAA0, 35px 25px #FBCAA0, 40px 25px #FBCAA0, 45px 25px #5f4527, -5px 30px #5f4527, 0 30px #FBCAA0, 5px 30px #FBCAA0, 10px 30px #FBCAA0, 15px 30px #FBCAA0, 20px 30px #FBCAA0, 25px 30px #FBCAA0, 30px 30px #FBCAA0, 35px 30px #FBCAA0, 40px 30px #FBCAA0, 45px 30px #5f4527, -5px 35px #5f4527, 0 35px #5f4527, 5px 35px #FBCAA0, 10px 35px #FBCAA0, 15px 35px #FBCAA0, 20px 35px #FBCAA0, 25px 35px #FBCAA0, 30px 35px #FBCAA0, 35px 35px #FBCAA0, 40px 35px #5f4527, 45px 35px #5f4527, -5px 40px #5f4527, 0 40px #5f4527, 5px 40px #5f4527, 10px 40px #FBCAA0, 15px 40px #FBCAA0, 20px 40px #FBCAA0, 25px 40px #FBCAA0, 30px 40px #FBCAA0, 35px 40px #5f4527, 40px 40px #5f4527, 45px 40px #5f4527, -5px 45px #5f4527, 0 45px #5f4527, 5px 45px #5f4527, 10px 45px #5f4527, 15px 45px #FBCAA0, 20px 45px #FBCAA0, 25px 45px #FBCAA0, 30px 45px #5f4527, 35px 45px #5f4527, 40px 45px #5f4527, 45px 45px #5f4527, -10px 50px #FBCAA0, -5px 50px #FBCAA0, 0 50px #adadad, 5px 50px #adadad, 10px 50px #adadad, 15px 50px #adadad, 20px 50px #adadad, 25px 50px #adadad, 30px 50px #adadad, 35px 50px #adadad, 40px 50px #adadad, 45px 50px #5f4527, -5px 55px #5f4527, 0 55px #adadad, 5px 55px #adadad, 10px 55px #adadad, 15px 55px #adadad, 20px 55px #adadad, 25px 55px #adadad, 30px 55px #adadad, 35px 55px #adadad, 40px 55px #adadad, 45px 55px #5f4527, -5px 60px #5f4527, 0 60px #5f4527, 5px 60px #adadad, 10px 60px #adadad, 15px 60px #adadad, 20px 60px #adadad, 25px 60px #adadad, 30px 60px #adadad, 35px 60px #adadad, 40px 60px #FBCAA0, 45px 60px #5f4527, -5px 65px #5f4527, 0 65px #5f4527, 5px 65px #adadad, 10px 65px #adadad, 15px 65px #adadad, 20px 65px #adadad, 25px 65px #adadad, 30px 65px #adadad, 35px 65px #adadad, 40px 65px #FBCAA0, 45px 65px #5f4527, -5px 70px #5f4527, 0 70px #5f4527, 5px 70px #adadad, 10px 70px #adadad, 15px 70px #adadad, 20px 70px #adadad, 25px 70px #adadad, 30px 70px #adadad, 35px 70px #adadad, 40px 70px #FBCAA0, 45px 70px #5f4527, 5px 75px #adadad, 10px 75px #adadad, 15px 75px #adadad, 20px 75px #adadad, 25px 75px #adadad, 30px 75px #adadad, 35px 75px #adadad, 40px 75px #FBCAA0, 5px 80px #274B66, 10px 80px #274B66, 15px 80px #274B66, 20px 80px #274B66, 25px 80px #274B66, 30px 80px #274B66, 35px 80px #274B66, 40px 80px #FBCAA0, 5px 85px #274B66, 10px 85px #274B66, 15px 85px #274B66, 20px 85px #274B66, 25px 85px #274B66, 30px 85px #274B66, 35px 85px #274B66, 5px 90px #274B66, 10px 90px #274B66, 15px 90px #274B66, 25px 90px #274B66, 30px 90px #274B66, 35px 90px #274B66, 5px 95px #274B66, 10px 95px #274B66, 15px 95px #274B66, 25px 95px #274B66, 30px 95px #274B66, 35px 95px #274B66, 5px 100px #274B66, 10px 100px #274B66, 15px 100px #274B66, 25px 100px #274B66, 30px 100px #274B66, 35px 100px #274B66, 5px 105px #274B66, 10px 105px #274B66, 15px 105px #274B66, 25px 105px #274B66, 30px 105px #274B66, 35px 105px #274B66, 5px 110px #232526, 10px 110px #232526, 15px 110px #232526, 25px 110px #232526, 30px 110px #232526, 35px 110px #232526;
+}
+
+@-webkit-keyframes moveArm {
+  0% {
+    box-shadow: -10px 40px #FBCAA0, -10px 45px #FBCAA0
+  }
+  5% {
+    box-shadow: -20px 50px #FBCAA0, -15px 50px #FBCAA0;
+  }
+  10% {
+    box-shadow: -10px 40px #FBCAA0, -10px 45px #FBCAA0
+  }
+  15% {
+    box-shadow: -20px 50px #FBCAA0, -15px 50px #FBCAA0;
+  }
+  20% {
+    box-shadow: -10px 40px #FBCAA0, -10px 45px #FBCAA0
+  }
+  100% {
+    box-shadow: -10px 40px #FBCAA0, -10px 45px #FBCAA0
+  }
+}
+
+@keyframes moveArm {
+  0% {
+    box-shadow: -10px 40px #FBCAA0, -10px 45px #FBCAA0
+  }
+  5% {
+    box-shadow: -20px 50px #FBCAA0, -15px 50px #FBCAA0;
+  }
+  10% {
+    box-shadow: -10px 40px #FBCAA0, -10px 45px #FBCAA0
+  }
+  15% {
+    box-shadow: -20px 50px #FBCAA0, -15px 50px #FBCAA0;
+  }
+  20% {
+    box-shadow: -10px 40px #FBCAA0, -10px 45px #FBCAA0
+  }
+  100% {
+    box-shadow: -10px 40px #FBCAA0, -10px 45px #FBCAA0
+  }
+}
+    </style>
+</head>
+<body>
+<div class="me">
+  <div class="blinking"></div>
+</div> 
+</body>
+</html>

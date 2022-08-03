@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 문서 정보 설정 : 검색 엔진 최적화 -->
+    <!-- 파비콘 -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <title>관공서 사이트</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+    .con { clear:both; }
+    #visual { width:100vw; min-height:420px; background-image:url("./img/main_visual04.png"); background-size:100% auto; background-position:center bottom; }   
+    #visual .wrap { padding-top: 50px; padding-left:300px; position:relative;
+        box-sizing:border-box; }    
+    #login { position:absolute; right:0px; top:14px; z-index:20; 
+        width: 280px; height:315px; background:#fff; padding-top:16px; } 
+    .rd_item { display:none; } 
+    .login_box .box { display:none; }
+    #rd1:checked ~ .login_box .type1 { display:block; }    
+    #rd2:checked ~ .login_box .type2 { display:block; }  
+    .login_type { margin-top: 18px;  border:1px solid #333; width:242px; height:40px; margin:0 auto; }    
+    .login_type label { display:block; float:left; width:120px; text-align:center;
+        line-height:24px; color:#333; margin-top:8px; font-size:14px; font-weight:bold; 
+        cursor:pointer; }
+    .type_btn1 { border-right:1px solid #333; }  
+    #rd1:checked ~ .login_type .type_btn1 {color:deeppink; }   
+    #rd2:checked ~ .login_type .type_btn2 {color:deeppink; } 
+    
+    .gobtn { display:block; width: 240px; margin:10px auto; line-height: 38px;
+        height:38px; background:navy; color:#fff; text-align:center; font-weight:bold; 
+        font-size:14px;  }    
+    .inputfrm { display:block; width:238px; margin:10px auto; line-height: 38px; 
+        height:38px; border:1px solid #333; color:#333; text-indent:14px; 
+        font-weight:bold; }    
+    .log { display:block; width:240px; margin:10px auto; line-height:38px; text-align:right; font-size:13px; color:#666; padding-right:2px;  }  
+    .log_allim { width:240px; margin:5px auto; }  
+    .allimal { font-size:14px; }
+    .allimjang { font-size:12px; }    
+    .type1 .log_allim { box-sizing:border-box; padding:28px 8px 28px 90px; 
+        background-color:#3a85f1; background-image:url("./img/ico-login-infor2.png");
+        background-repeat:no-repeat; background-position:left bottom; border-radius:10px; position:relative; }   
+        
+    .type1 .log_allim:before { content:""; display:block; width: 57px; height: 20px; 
+        background-image:url("./img/ico-login-infor-arrow.png"); top:-20px; left:calc(50% - 30px); 
+        position:absolute; }   
+    .type1 .allimal { color:#eecc18; }
+    .type1 .allimjang { color:#fff; }   
+    
+    .main_con { clear:both; }    
+    .search { clear:both; box-shadow:0px 0px 15px #333; min-height:360px; }  
+    .search_tab { clear:both; position:relative; }    
+    .search_tab .search_item { display:none;  width:1200px; position:absolute; 
+        top: 0; left:0px; 
+        clear:both; min-height:300px; background:#fff; color:#333;  }    
+    #ra1:checked ~ .search_tab .search_type1 { display:block; }    
+    #ra2:checked ~ .search_tab .search_type2 { display:block; }  
+        
+    #tot_search { width:960px; margin:10px auto; height:70px; border:5px solid #233671;  box-sizing:border-box; position:relative; margin-top: 90px; }  
+    #tot_sel { display:block; width:200px; height:60px; float:left; 
+            background-color:#d0dcea; background-image: url(./img/ico-select-arrow.png); background-repeat: no-repeat; background-position:160px center; 
+        font-size:18px;  color:#233671; text-indent:18px; line-height:60px; font-weight:bold; } 
+    #tot_keyword { display:block; float:left; width: 620px; height: 60px;   
+        padding:0px 14px; font-size:16px;  color:#333;    background-color: transparent; }    
+    #tot_sel option { display:block; color:#233671; font-size:18px; text-indent:18px; 
+        line-height: 60px; width: 200px; }
+    #tot_submit { position: absolute;  right: 0px;  top: 0px;   z-index: 1;
+    width: 100px;   height: 60px;    border: 0px;  text-indent:-9999px; cursor:pointer;
+    background: url("./img/ico-search-btn.png") #233671 no-repeat center center; }    
+    .hash_tag { text-align:center; line-height: 2.4; }
+    .hash_tag a {  color:#666; padding-right: 24px; }    
+        
+    .search_frm_tit { font-size:18px; color:#666; width: 960px; margin:10px auto; line-height:22px; }
+    .search_frm_tit:after { content:""; display:block; width: 960px; height:12px; clear:both; background-image:url("./img/ico-search-patten.png"); margin:0 auto; 
+        margin-top: 18px; }    
+    .search_data { width:960px; height:90px; margin:0 auto; }
+    .search_data a { display:block; float:left; position: relative;
+    height: 55px;    line-height: 55px;    border: 5px solid #7791bc;
+    text-align: center;    font-size: 20px;    font-weight: bold;
+    color: #7791bc;    margin-left: 30px; width: 150px; margin-top: 24px; }    
+    .search_submit_btn { clear:both; display:block; height: 50px; line-height: 50px; width: 340px; background-color: #233671; margin:10px auto; color:#fff; text-align:center; margin-top: 24px; }    
+    .utxt { display:block; line-height:50px; float:left; border-bottom:1px solid #233671;
+        color:#233671; font-size:30px; margin-top:24px; margin-left: 28px; }    
+    .btn_wrap { margin:0 auto; margin-top:-60px; height:60px; width:1200px; }    
+    .btn_wrap label { display:block; width: 50%; float:left; height:60px; line-height: 60px;  text-align:center; font-size:20px; color:#000; background:#b9d6ff; 
+        position:relative; cursor:pointer; } 
+    .btn_wrap label:after { content:""; display:block; width: 120px; height: 4px; margin:0 auto; margin-top:-10px;
+        background-color:transparent; }    
+    #ra1:checked ~ .btn_wrap .ra_btn1 { background:#f1f1f1; }    
+    #ra2:checked ~ .btn_wrap .ra_btn2 { background:#f1f1f1; }   
+    #ra1:checked ~ .btn_wrap .ra_btn1:after { background-color:#1c9cfc; }
+    #ra2:checked ~ .btn_wrap .ra_btn2:after { background-color:#1c9cfc; }
+           
+    </style>
+ <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+ <script> 
+  function initialize() { 
+      var myLatlng = new google.maps.LatLng(36.3623,127.3561); 
+      var mapOptions = { 
+            zoom: 17, 
+            center: myLatlng, 
+            mapTypeId: google.maps.MapTypeId.ROADMAP 
+      } 
+      var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions); 
+      var marker = new google.maps.Marker({ position: myLatlng, map: map,
+        title: '유성구청'   
+      });
+  } 
+ </script> 
+ <style>
+ .breadcrumb { clear:both; height:40px;  width:100%; padding:18px 14px 24px 240px; 
+     border-bottom:4px solid #ccc; } 
+ .breadcrumb:after { content:""; clear:both; display:block; height: 2px; }
+ .breadcrumb a { display:block; float:left; width: 200px;   
+     background-color: #d0dcea;   font-size: 18px;    color: #233671;    text-indent: 18px;   line-height: 46px;    font-weight: bold; border:2px solid #28c; 
+     border-right:none; }
+ .breadcrumb span { display:none; float:left; height:50px;  line-height: 50px;    font-weight: bold;  background-color: #d0dcea; }     
+ #sub_select { display: block;  width: 200px;  height: 50px;    float: left;
+    background-color: #d0dcea;    background-image: url(./img/ico-select-arrow.png);
+    background-repeat: no-repeat;    background-position: 160px center;
+    font-size: 18px;    color: #233671;    text-indent: 18px;
+    line-height: 50px;    font-weight: bold; border:2px solid #28c; cursor:pointer;  }     
+ #sub_select span { display:block; font-size:18px;    }
+ .con_wrap { width:960px; float:right; }     
+ .left_side { width:240px; float:left; }  
+ #lnb { min-height:600px; background:#ddd; padding-top:40px; }  
+ #lnb li a { display:block; line-height: 32px; font-size:16px; color:#444; } 
+ #lnb li a.col_dep1 { padding-left:14px; } 
+ #lnb li:hover a.col_dep1 { color:#222; font-weight:bold; font-size:17px; } 
+ #lnb li .col_sub { height: 0; overflow:hidden; transition:0.6s; }     
+ #lnb li:hover .col_sub { height:100px; }    
+ #lnb li .col_sub a { padding-left: 28px; }   
+ #lnb li .col_sub a:hover { color:#1c8dd3; font-weight:bold; }     
+ </style>
+</head>
+<body onload="initialize()">
+<header class="hd">
+    <div class="hd_row" id="hd1">
+        <div class="wrap">
+            <ul class="tnb left">
+                <li><a href="">어린이</a></li>
+            </ul>
+            <ul class="tnb right">
+                <li><a href="">디지털원패스</a></li>
+                <li><a href="">로그인</a></li>
+                <li><a href="">회원가입</a></li>
+                <li><a href="">정부24소개</a></li>
+                <li><a href="">For Foreigners</a></li>
+                <li><a href="">사이트맵</a></li>
+                <li>화면크기 
+                    <button class="zoomin">+</button> 
+                    <span class="zoomtxt">100%</span>
+                    <button class="zoomout">-</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="hd_row" id="hd2">
+        <div class="wrap">
+            <a href="index.html" class="logo">
+                <img src="./img/img-gov-logo.png" alt="logo">
+            </a>
+            <nav id="gnb">
+                <ul class="menu">
+                    <li class="item1">
+                        <a href="" class="dep1">서비스</a>
+                        <ul class="sub">
+                            <li class="thumbnail">
+
+                            </li>
+                            <li class="submenu">
+                                <h3 class="thumb_tit">신청/확인/공유</h3>
+                                <ul class="menulst">
+                                    <li><a href="sub1.html">신청.조회.발급</a></li>
+                                    <li><a href="">사실/진위확인</a></li>
+                                    <li><a href="">공공자원 공유</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <h3 class="thumb_tit">찾기/안내</h3>
+                                <ul class="menulst">
+                                    <li><a href="">생애주기/꾸러미 서비스</a></li>
+                                    <li><a href="">연령/대상별 서비스</a></li>
+                                    <li><a href="">분야별 서비스</a></li>
+                                    <li><a href="">키워드로 보는 서비스</a></li>
+                                    <li><a href="">기업단체 서비스</a></li>
+                                    <li><a href="">외국인 서비스</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="item2">
+                        <a href="" class="dep1">정책정보</a>
+                        <ul class="sub">
+                            <li class="thumbnail">
+                            
+                            </li>
+                            <li class="submenu">
+                                <ul class="menulst">
+                                    <li><a href="">분야별 정책정보</a></li>
+                                    <li><a href="">정책뉴스</a></li>
+                                    <li><a href="">연구보고서</a></li>
+                                    <li><a href="">간행물</a></li>
+                                    <li><a href="">정책자료</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="item3">
+                        <a href="" class="dep1">기관정보</a>
+                        <ul class="sub">
+                            <li class="thumbnail">
+
+                            </li>
+                            <li class="submenu">
+                                <ul class="menulst">
+                                    <li><a href="">정부/지자체 조직도</a></li>
+                                    <li><a href="">정부/지자체 운영사이트</a></li>
+                                    <li><a href="">지자체소식</a></li>
+                                    <li><a href="">지자체 축제/행사</a></li>
+                                    <li><a href="">공모전</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="item4">
+                        <a href="" class="dep1">고객센터</a>
+                        <ul class="sub">
+                            <li class="thumbnail">
+
+                            </li>
+                            <li class="submenu">
+                                <ul class="menulst">
+                                    <li><a href="">정부24 이용방법</a></li>
+                                    <li><a href="">공지사항</a></li>
+                                    <li><a href="">자료실</a></li>
+                                    <li><a href="">서비스지원</a></li>
+                                    <li><a href="">자주묻는질문(FAQ)</a></li>
+                                    <li><a href="">개선의견수렴</a></li>
+                                    <li><a href="">온라인 상담예약</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <a href="" class="guide">처음 오셨나요?</a>
+        </div>
+    </div>
+</header> 
+<main class="con">
+    <figure class="vs" id="visual">
+        <div class="wrap">
+<!--            <img src="./img/img-visual-txt03.png" alt="타이틀">-->
+            <aside id="login">
+                <input type="radio" name="rdo1" class="rd_item" id="rd1" checked>
+                <input type="radio" name="rdo1" class="rd_item" id="rd2">
+                <div class="login_type">
+                    <label for="rd1" class="type_btn1">공인인증서</label>
+                    <label for="rd2" class="type_btn2">아이디</label>
+                </div>
+                <div class="login_box">
+                    <div class="type1 box">
+                        <button class="gobtn go1">공인인증서 로그인</button>
+                        <a href="" class="log">공인인증서 등록</a>
+                        <div class="log_allim">
+                            <h4 class="allimal">나의 생활정보</h4>
+                            <p class="allimjang">휴면예금, 여권만료일 등 생활정보 56여종을 한번에 확인할 수 있습니다.</p>
+                        </div>
+                    </div>
+                    <div class="type2 box">
+                        <form action="">
+                            <input type="text" id="id" class="inputfrm" placeholder="아이디 입력" autofocus>
+                            <input type="password" id="pw" class="inputfrm" placeholder="패스워드 입력">
+                            <input type="submit" class="gobtn go2" value="아이디 로그인">
+                        </form>
+                        <a href="" class="log">회원가입</a>
+                        <div class="log_allim">
+                            <h4 class="allimal">나의 생활정보</h4>
+                            <p class="allimjang">휴면예금, 여권만료일 등 생활정보 56여종을 한번에 확인할 수 있습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </figure>
+    <div class="breadcrumb">
+        <p>
+            <a href="index.html">HOME</a><span>&gt;</span>
+            <select name="" id="sub_select">
+                <option value=""><span>회사소개</span></option>
+                <option value="sub2.html"><span>제품소개</span></option>
+                <option value="sub3.html"><span>서비스소개</span></option>
+                <option value="sub4.html"><span>고객센터</span></option>
+                <option value="sub5.html"><span>공지사항</span></option>
+            </select>
+        </p>
+    </div>
+    <div class="main_con" id="page1">
+        <aside class="left_side">
+            <nav id="lnb">
+                <ul class="accr">
+                    <li class="it">
+                        <a href="" class="col_dep1">회사소개</a>
+                        <ul class="col_sub">
+                            <li><a href="">서브11</a></li>
+                            <li><a href="">서브12</a></li>
+                            <li><a href="">서브13</a></li>
+                        </ul>
+                    </li>
+                    <li class="it">
+                        <a href="" class="col_dep1">제품소개</a>
+                        <ul class="col_sub">
+                            <li><a href="">서브21</a></li>
+                            <li><a href="">서브22</a></li>
+                            <li><a href="">서브23</a></li>
+                        </ul>
+                    </li>
+                    <li class="it">
+                        <a href="" class="col_dep1">서비스소개</a>
+                        <ul class="col_sub">
+                            <li><a href="">서브31</a></li>
+                            <li><a href="">서브32</a></li>
+                            <li><a href="">서브33</a></li>
+                        </ul>
+                    </li>
+                    <li class="it">
+                        <a href="" class="col_dep1">고객센터</a>
+                        <ul class="col_sub">
+                            <li><a href="">서브41</a></li>
+                            <li><a href="">서브42</a></li>
+                            <li><a href="">서브43</a></li>
+                        </ul>
+                    </li>
+                    <li class="it">
+                        <a href="" class="col_dep1">공지사항</a>
+                        <ul class="col_sub">
+                            <li><a href="">서브51</a></li>
+                            <li><a href="">서브52</a></li>
+                            <li><a href="">서브53</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <div class="con_wrap">
+            <h2>찾아 오시는 길</h2>
+            <br>
+            <div class="map_wrap">  
+                <div id="map_canvas"style="width:600px; height:400px;"></div> 
+            </div>     
+            <br>
+        </div>       
+    </div>
+</main>
+<footer class="ft">
+    <div class="ft1">
+        <div class="wrap">
+            <ul class="footer-menu">
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+                <li><a href="#">고객센터</a></li>
+                <li><a href="#">개선의견수렴</a></li>
+                <li><a href="#">open API</a></li>
+            </ul>
+            <ul class="footer-sns">
+                <li class="blog"><a href="https://blog.naver.com/korea_gov" class="blog" target="_blank" title="정부24 네이버 블로그-새창"><span class="hd-element">블로그</span></a></li>
+                <li class="tw"><a href="https://twitter.com/govkorea" class="twitter" target="_blank" title="정부24 트위터-새창"><span class="hd-element">트위터</span></a></li>
+                <li class="fb"><a href="https://www.facebook.com/govkorea" class="facebook" target="_blank" title="정부24 페이스북-새창"><span class="hd-element">페이스북</span></a></li>
+                <li class="ks"><a href="https://story.kakao.com/ch/governmentkorea" target="_blank"><span class="hd-element" title="정부24 카카오스토리-새창">카카오스토리</span></a></li>
+                   <li class="cb"><a href="#" title="정부24 쳇봇-새창"><span class="hd-element">쳇봇</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="ft2">
+        <div class="wrap">
+            <p class="footer-logo"><a href="/portal/main"><img src="./img/img-footer-logo.png" alt="정부24"></a></p>
+            <p class="footer-infor">
+                03171 서울특별시 세종대로 209 (세종로) 행정안전부<br>
+                정부24 콜센터 1588-2188 (09:00 ~ 18:00 평일) 정부민원안내콜센터 국번없이 110 (365일 24시간)<br> 
+                Copyright © Ministry of the Interior and Safety. All Rights reserved.
+            </p>
+        </div>
+    </div>       
+</footer>
+</body>
+</html>

@@ -1,0 +1,187 @@
+/*Mob*/
+body{
+background-color: black;
+}
+
+#mMenu{
+	position: absolute;
+	z-index:2;
+	top: 45%;
+	left: 8%;
+}
+#dMenu{
+	display:none;
+}
+
+#textPart{
+	position: absolute;
+	z-index:2;
+	color: light-blue;
+	top: 118%;
+	width:70%;
+	right: 7%;
+	font-size: 5.3vw;
+}
+
+#gh{
+	position:absolute;
+	z-index: 2;
+	top: 220%;
+	left: 5%;
+	width: 35%;
+}
+#sg{
+		position:absolute;
+	z-index: 2;
+	top: 240%;
+	left: 55%;
+	width: 35%;
+}
+#we{
+	position:absolute;
+	z-index: 2;
+	top: 212%;
+	left: 50%;
+	width: 45%;
+}
+
+.lim{
+	width: 20%;
+	margin-left: 2%;
+}
+
+#foot{
+	margin-left:5%;
+	margin-top: 2%;
+}
+#co{
+   color:orange;
+   text-align: center;   
+}
+
+/*Mobile adapt*/
+@media screen and (min-width: 375px){
+	#mMenu{
+		left: 10%;
+	}
+	@media screen and (min-height: 812px){
+		#mMenu{
+			top:38%;
+		}
+		#textPart{
+			top: 95%;
+		}
+		#gh{
+			top: 180%;
+		}
+		#sg{
+			top:200%;
+		}
+		#we{
+			top: 174%;
+		}
+	}
+}
+
+@media screen and (min-width: 412px){
+	#mMenu{
+		left:13.5%;
+	}
+}
+
+/*tablet*/
+@media screen and (min-width: 768px){
+	 #mMenu{
+		display:none;
+	}
+	
+	#dMenu{
+		display:block;
+		position: absolute;
+		z-index: 2;
+		top: 29.5%;
+		left: 9.5%;
+	    width: 62%;
+	}
+	#textPart{
+		top:44%;
+		width: 40%;
+		font-size: 3.1vw;
+	}
+	#gh{
+		top:92%;
+		width:25%;
+	}
+	#sg{
+		top:88%;
+		width: 20%;
+		left: 42%;
+	}
+	#we{
+		top: 104%;
+		left:28%;
+		width: 25%;
+	}
+	.lim{
+		width: 13%;
+		margin-left:9%;
+	}
+	/*Laptop adapt*/
+	@media screen and (max-height: 800px){
+		#dMenu{
+			top:62%;
+		}
+		#textPart{
+			top: 91%;
+		}
+		#gh{
+			top:182%;
+		}
+		#sg{
+			top:200%;
+		}
+		#we{
+			top:222%;
+			left:15%;
+		}
+		.lim{
+			width: 7%;
+			margin-left: 14%;
+		}	
+}
+
+ /*Desktop*/
+ 
+@media screen and (min-width:1366px){
+	
+	#textPart{
+		top: 102%;
+		font-size:3.3vw;
+        width :43%;	
+        right: 6%;		
+	}
+	#dMenu{
+		top:71%;
+	}
+	.lim{
+	width: 5%;
+	margin-left: 15%;
+   }
+
+   #gh{
+	   top:247%;
+	   width: 15%;
+   }
+   #sg{
+		top:246%;
+		width: 18%;
+		left: 38%;
+	}
+	#we{
+		top: 210%;
+		left:22%;
+		width: 20%;
+	}
+}
+
+

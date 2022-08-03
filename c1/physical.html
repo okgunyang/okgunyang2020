@@ -1,0 +1,977 @@
+<?php
+    @session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SRC 병원 - 재활치료</title>
+    <!-- 구형 브라우저 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <!-- 신형 브라우저와 안드로이드 폰 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.png">
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="57x57" href="./ico/favicon57.png">
+    <!-- 아이패드 -->
+    <link rel="apple-touch-icon" size="72x72" href="./ico/favicon72.png">
+    <!-- 아이폰4 이상 -->
+    <link rel="apple-touch-icon" size="114x114" href="./ico/favicon114.png">
+    <!-- IE10 이상 -->
+    <meta name="msapplication-TileColor" content="#FFFFFF"> 
+    <meta name="msapplication-TileImage" content="./ico/favicon-144.png">
+
+    <!-- 메타데이터 개발 공통 사항 -->
+    <!-- 데스크탑에서 IE로 웹 문서를 열 때 가장 최신 버전으로 실행 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    
+    <!-- 앱(웹 사이트)의 이름 -->
+    <meta name="application-name" content="SRC hospital Site">
+    <!-- 웹 사이트 저작자의 이름 -->
+    <meta name="author" content="kitae Kim">
+    <!-- 현재 문서의 설명 -->
+    <meta name="description" content="SRC hospital Site Mainpage"> 
+    <!-- 현재 문서의 저작도구 -->
+    <meta name="generator" content="Brackts">
+    <!-- 검색엔진에서 검색되게할 키워드 -->
+    <meta name="keywords" content="SRC 병원, 건강관리, 휴양">
+    
+    <!-- 반응형, 모바일, 태블릿 사이트 일 경우 뷰포트 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Noto+Serif+KR" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Jua|Noto+Sans+KR|Noto+Serif+KR" rel="stylesheet">
+    <link rel="stylesheet" href="com.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="sub.css">
+    <link rel="stylesheet" href="sub2.css">
+    <style>
+    body, html { -ms-overflow-style:none; }
+    ::-webkit-scrollbar { display:none; }    
+    ::-o-scrollbar { display:none; } 
+    ::-moz-scrollbar { display:none; }     
+    </style>
+<!--    <script src="https://code.jquery.com/jquery-latest.js"></script>-->
+    <script src="./js/jquery-1.11.1.js"></script>
+    
+    <script>
+    /* 여기가 스크립트 처리 구간 */    
+    $(function(){
+        var intv = setInterval(function(){ lAni(); }, 3000);
+        function lAni(){
+            $(".imgBox").not(":animated").animate({"margin-left":"-510px"}, 800, function(){
+                $(".imgBox li").eq(0).appendTo($(".imgBox"));
+                $(".imgBox").css("margin-left", "0px");
+            });
+            
+        }
+    });    
+    </script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcG6XLlvSL0DQtg1G38wiT_r8BYN3RbWQ&callback=initMap"></script> -->
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpo7PlmFhN57HAxDlD8MTLI4DT1bL9VFY&callback=initMap"></script>-->
+<!--
+1) 구글 지도 api key 발급 사이트로 이동하여 지도 API 서비스 신청
+2) https://console.cloud.google.com/getting-started?pli=1
+3) [API 및 서비스] -> [사용자 인증 정보] -> 인증 키 발급
+-->
+<script> 
+//좌표 값을 바꿔서 입력 36.3491563,127.3776857
+function initialize() {
+  var myLatlng = new google.maps.LatLng(37.4931346, 126.92737779999993);
+  var mapOptions = {
+    zoom: 17,
+    center: myLatlng
+  }
+
+  var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'SRC병원'	  //레이블을 바꿔서 입력
+  });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+ </script>
+<script>
+$(function(){
+//   setTimeout(function(){
+//       $("#map_canvas > div:last-child").css("display", "none", "z-index", "-1");
+//   }, 1000); 
+});    
+</script>
+</head>
+<body onload="initialize()">
+<div class="hdFrame on"></div>
+<header id="hd">
+    <div class="wrap">
+        <a href="index.html" class="logo">
+            <img src="./img/img_logo.png" alt="앰블럼">
+        </a>
+        <nav id="gnb">
+            <ul>
+                <li><a href="intro.html#page1" class="on">병원안내</a></li>
+                <li><a href="physical.html#page1" class="on">재활치료</a></li>
+                <li><a href="ward.html#page1" class="on">병동안내</a></li>
+                <li><a href="news.html#page1" class="on">병원소식</a></li>
+                <li><a href="speech.html#page1" class="on">치료연계안내</a></li>
+            </ul>
+        </nav>
+        <label for="ck" class="lstBtn">
+            <span class="item1 on"></span>
+            <span class="item2 on"></span>
+            <span class="item3 on"></span>
+            <span class="item4 on"></span>
+        </label>
+    </div>
+</header>    
+<main id="content">
+    <div class="blank"></div>
+    <div class="page" id="page1">
+        <a href="#page1" class="btn1 item1">소아</a>
+        <div class="con">
+            <figure class="vsBox">
+                <img src="./img/physical_vs1.jpg" alt="소아재활치료" class="vsImg">
+                <div class="vsTitBox">
+                    <h1 class="vsTitle">소아재활치료</h1>
+                    <p class="vsComent">팔 다리 신체기능에 장애가 발생한 경우 운동장애를 가진 환우분들에게 <br>
+                    전문과정을 이수한 전문치료사들이 1:1로 다양하고 정확한 평가 후 치료를 실시합니다.</p>
+                </div>
+            </figure>
+            <section class="sec1">
+                <input type="radio" name="ra11" id="ra11" class="raItem raItem1" checked>
+                <input type="radio" name="ra11" id="ra12" class="raItem raItem2">
+                <input type="radio" name="ra11" id="ra13" class="raItem raItem3">
+                <input type="radio" name="ra11" id="ra14" class="raItem raItem4">                
+                <ul class="btnFrame">
+                    <li><label for="ra11" class="raBtn item1">물치치료</label></li>
+                    <li><label for="ra12" class="raBtn item2">작업치료</label></li>
+                    <li><label for="ra13" class="raBtn item3">감각통합치료</label></li>
+                    <li><label for="ra14" class="raBtn item4">언어치료</label></li>
+                </ul>
+                <div class="subBox item1">
+                    <h1 class="subTit">소아물리치료</h1>
+                    <p class="subCom">소아물리치료 프로그램에서는 보바스치료, 기능적 건기자극치료 등을 동하여 아동의 정상적인 자세화 움직임을 유도하며, 아동이 안정된 발달을 할 수 있도록 하는데 초점을 두고 있습니다. 모든 아이들은 출생, 출생 전 후 에 대한 시기적 차이와 뇌의 손상부위와 정도, 자세긴장과 움직임, 나이, 성격, 가정환경 등 이와 같은 다양한 요인으로 서로 다른 모습들을 가지고 있습니다. </p>
+                    <p class="subCom">아동의 비정상적인 움직임이나 자세를 올바르고 정상적인 움직임의 형태로 아동에게 가르쳐 스스로 조절할 수 있도록 다양한 치료방법과 치료기구를 사용하여 치료합니다.</p>
+                    <ul class="thumLst">
+                        <li class="item1">
+                            <h3 class="thumTitle">치료대상</h3>
+                            <p class="thumCom">
+                                <span class="thumNum">1</span>
+                                뇌성마미, 뇌손상, 척수손상 등의 중추신경계질환으로 인한 발달 장애 아동
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">2</span>
+                                근육병, 사경, 염색체이상과 같은 질환의 아동
+                            </p>
+                        </li>
+                        <li class="item2">
+                            <h3 class="thumTitle">평가항목</h3>
+                            <p class="thumCom">
+                                현재 아동이 할 수 있는 능력과 하기 어려운 능력을 판별하고 그에 따른 비정상적 근긴장도 및 움직임의 양상, 그와 연관된 감각 영역의 문제점에 대한 평가가 치료세션마다 이루어집니다. 이를 위해 정상 움직임의 발달 즉, 어떻게 발달하고 어떻게 움직이는 것을 배우는지에 대한 연구가 중요합니다. 이러한 평가는 매 치료시마다 이루어지며 그에 따라 치료 또한 달라 질 수 있습니다.
+                            </p>
+                        </li>
+                        <li class="item3">
+                            <h3 class="thumTitle">치료내용</h3>
+                            <p class="thumCom">
+                                <span class="thumNum">1</span>
+                                중추신경게 및 근골격계 장애를 가진 아동들의 대상으로 신체 재활치료를 실시하고 있습니다. <br>
+                                개별 아동의 신체기능 평가를 통하여 해당 아동의 문제점을 질적으로 연구 분석하고 그에 따라 <br>
+                                신경발달적 접근치료법을 사용하기 때문에 매우 효과적입니다.
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">2</span>
+                                가정 및 기타 외적 환경을 고려한 부모 교육도 병행하여 실시함으로써, 아동에 근본적 이해가 가능하며, <br>
+                                그에 따라 문제를 해결해 나가기 때문에 치료 경과도 좋습니다.
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">3</span>
+                                1:1 개별치료로 이루어지며, 경험해보지 못했거나 비정상적인 자세와 신체 움직임의 방향을 옳은 방향으로 <br>
+                                움직일 수 있도록 도와주어 스스로 움직임을 경험하고 습득할 수 있도록 해줍니다.
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="itemFrame item1">
+                        <input type="radio" class="raItem conRa1" id="ra201" name="conRaOne" checked>
+                        <input type="radio" class="raItem conRa2" id="ra202" name="conRaOne">
+                        <input type="radio" class="raItem conRa3" id="ra203" name="conRaOne">
+                        <ul class="tbImgFrm">
+                            <li class="raCon1">
+                                <img src="./img/physical01_01_1.jpg" alt="배너이미지1" class="imgItem">
+                            </li>
+                            <li class="raCon2">
+                                <img src="./img/physical01_01_2.jpg" alt="배너이미지2" class="imgItem">
+                            </li>
+                            <li class="raCon3">
+                                <img src="./img/physical01_01_3.jpg" alt="배너이미지3" class="imgItem">
+                            </li>
+                        </ul>
+                        <div class="titBox">
+                            <h3 class="tbTitle">소아물리치료</h3>
+                            <p class="tbComent">소아물리치료 프로그램에서는 보바스치료, 기능적 건기자극치료 등을 동하여 아동의 정상적인 자세화 움직임을 유도하며, 아동이 안정된 발달을 할 수 있도록 하는데 초점을 두고 있습니다. </p>
+                        </div>
+                        <ul class="thumBox">
+                            <li class="thumBtn1">
+                                <label for="ra201">
+                                    <img src="./img/physical01_01_1.jpg" alt="썸네일버튼1">
+                                </label>
+                            </li>
+                            <li class="thumBtn2">
+                                <label for="ra202">
+                                    <img src="./img/physical01_01_2.jpg" alt="썸네일버튼2">
+                                </label>
+                            </li>
+                            <li class="thumBtn3">
+                                <label for="ra203">
+                                    <img src="./img/physical01_01_3.jpg" alt="썸네일버튼3">
+                                </label>
+                            </li>
+                        </ul>       
+                    </div>
+                </div>
+                <div class="subBox item2">
+                    <h1 class="subTit">소아작업치료</h1>
+                    <p class="subCom">여러가지 목적있는 활동과 감각 활동을 제공하여, 정상적인 움직임과 감각의 발달을 경험시켜 감각 운동기능, 지각 인지기능, 일상생활 활동 <br>
+                    (식사, 옷 입고 벗기, 그리기 및 쓰기활동,개인위해 등), 놀이기술 등을 향상시킵니다. </p>
+                    <p class="subCom">또한 적절한 보조도구 및 가구를 제공하여 변형을 예방하고, 독립적인 생활과 치료의 효과를 높이며, 보호자 교육을 통하여 아동이 가정이나 유치원, 학교에서 올바로 양육되고, 치료와 연결될 수 있게 합니다.</p>
+                    <ul class="thumLst">
+                        <li class="item1">
+                            <h3 class="thumTitle">치료대상</h3>
+                            <p class="thumCom">
+                                <span class="thumNum">1</span>
+                                발달지연, 뇌성마비, 외상성 뇌손상, 척수손상, 근육질환, 염색체 이상 등으로 발달에 문제가 있는 아동
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">2</span>
+                                감각통합에 어려움이 있는 아동, 학습장애아동, 발달장애아동, 기타 일상생활의 작업 수행에 어려움이 있는 아동
+                            </p>
+                        </li>
+                        <li class="item2">
+                            <h3 class="thumTitle">평가항목</h3>
+                            <p class="thumCom">
+                                발달평가, 일상생활수행능력평가, 손기능 평가, 인지평가, 시지각 발당평가
+                            </p>
+                        </li>
+                        <li class="item3">
+                            <h3 class="thumTitle">치료내용</h3>
+                            <p class="thumCom">
+                                <span class="thumNum">1</span>
+                                아동들이 의미있는 일상의 다양한 활동과 놀이활동, 학습과 관련된 활동을 배우고 익히며 발달시켜나갈 수 있도록 돕는 것에 초점을 두고 있습니다. 
+                                <br> 따라서 아동의 전반적인 발달정도, 놀이와 일상생활, 작업의 수행에 영향을 주는 여러 요소들에 대한 평가를 실시한 후 각 아동에게 알맞은 목표를 정하여 치료를 하게 됩니다.
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">2</span>
+                                구체적인 치료방법으로는 감각자극, 지각의 발달을 위한 치료, 인지치료, 세밀한 균형감각과 협응능력 증진을 위한 치료, <br>
+                                손 기능의 향상을 위한 치료, 구강기능의 향상을 위한 치료, 보조도구의 제작과 적용, 감각통합치료, 보호자 교육 등이 있습니다. <br>
+                                각 아동의 문제에 따라 적합한 프로그램으로 진행되는 1:1 개별치료를 기본으로 하며, 필요와 목적에 따라 다양한 치료를 제공합니다.
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="itemFrame item1">
+                        <input type="radio" class="raItem conRa1" id="ra211" name="conRaTwo" checked>
+                        <input type="radio" class="raItem conRa2" id="ra212" name="conRaTwo">
+                        <input type="radio" class="raItem conRa3" id="ra213" name="conRaTwo">
+                        <ul class="tbImgFrm">
+                            <li class="raCon1">
+                                <img src="./img/physical01_02_1.jpg" alt="배너이미지1" class="imgItem">
+                            </li>
+                            <li class="raCon2">
+                                <img src="./img/physical01_02_2.jpg" alt="배너이미지2" class="imgItem">
+                            </li>
+                            <li class="raCon3">
+                                <img src="./img/physical01_02_3.jpg" alt="배너이미지3" class="imgItem">
+                            </li>
+                        </ul>
+                        <div class="titBox">
+                            <h3 class="tbTitle">소아작업치료</h3>
+                            <p class="tbComent">여러가지 목적있는 활동과 감각 활동을 제공하여, 정상적인 움직임과 감각의 발달을 경험시켜 감각 운동기능, 지각 인지기능, 일상생활 활동 <br> </p>
+                        </div>
+                        <ul class="thumBox">
+                            <li class="thumBtn1">
+                                <label for="ra211">
+                                    <img src="./img/physical01_02_1.jpg" alt="썸네일버튼1">
+                                </label>
+                            </li>
+                            <li class="thumBtn2">
+                                <label for="ra212">
+                                    <img src="./img/physical01_02_2.jpg" alt="썸네일버튼2">
+                                </label>
+                            </li>
+                            <li class="thumBtn3">
+                                <label for="ra213">
+                                    <img src="./img/physical01_02_3.jpg" alt="썸네일버튼3">
+                                </label>
+                            </li>
+                        </ul>       
+                    </div>
+                </div>
+                <div class="subBox item3">
+                    <h1 class="subTit">감각통합치료</h1>
+                    <p class="subCom">감각통합은 자신의 신체와 환경으로부터 주어지는 감각들을 조직화하고 그 환경 속에서 신체를 효과적으로 사용할 수 있도록 하는 신경학적 과정입니다. <br>
+                    이것은 개개인의 능력에 의존하게,중추신경계에서 행동을 조직화하고 계획하기 위해 감각정보를 사용하여 정보처리를 진행하고 통합해가는 것 입니다.</p>
+                    <ul class="thumLst">
+                        <li class="item1">
+                            <h3 class="thumTitle">치료대상</h3>
+                            <p class="thumCom">
+                                <span class="thumNum">1</span>
+                                감각정보의 수용과 처리의 어려움으로 인해 정상발달이 어려운 아동(발달장애, 주의력결핍, 과잉행동장애(ADHD)
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">2</span>
+                                학습장애아동
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">3</span>
+                                반응성애착장애아동
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">4</span>
+                                감각통합기능장애아동(각성조절이 어려운 아동, 행동이 더딘 아동)
+                            </p>
+                        </li>
+                        <li class="item2">
+                            <h3 class="thumTitle">평가항목</h3>
+                            <p class="thumCom">
+                                발달평가, 일상생활수행능력평가, 손기능 평가, 인지평가, 시지각 발당평가
+                            </p>
+                        </li>
+                        <li class="item3">
+                            <h3 class="thumTitle">치료내용</h3>
+                            <p class="thumCom">
+                                <span class="thumNum">1</span>
+                                감각통합에 어려움이 있는 아동들을 대상으로 가 아동에게 맞는 개별적인 치료프로그램으로 시행되며, 촉각, 진정감각, 고유수용감각, <br>
+                                청각, 시각, 미각, 등 감각자극을 향상시키기 위한 다양한 기회를 제공하고 이를 통해 적응반응을 계획, 조직화하여 의미 있는 활동들을 이끌어 낼 수 있도록 유도함으로써 감각자극을 처리하고 통합하는 중추신경계 능력을 향상시키고자 합니다.
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">2</span>
+                                아동이 스스로 원하는 활동을 하면서 아이가 흥미를 느낄 수 있도록 유도하고, 아동이 적응반응을 보일 수 있도록 활동의 종류와 <br>
+                                난이도를 조절하여 제공합니다.
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="itemFrame item1">
+                        <input type="radio" class="raItem conRa1" id="ra221" name="conRaThree" checked>
+                        <input type="radio" class="raItem conRa2" id="ra222" name="conRaThree">
+                        <input type="radio" class="raItem conRa3" id="ra223" name="conRaThree">
+                        <ul class="tbImgFrm">
+                            <li class="raCon1">
+                                <img src="./img/physical01_03_1.jpg" alt="배너이미지1" class="imgItem">
+                            </li>
+                            <li class="raCon2">
+                                <img src="./img/physical01_03_2.jpg" alt="배너이미지2" class="imgItem">
+                            </li>
+                            <li class="raCon3">
+                                <img src="./img/physical01_03_3.jpg" alt="배너이미지3" class="imgItem">
+                            </li>
+                        </ul>
+                        <div class="titBox">
+                            <h3 class="tbTitle">감각통합치료</h3>
+                            <p class="tbComent">감각통합은 자신의 신체와 환경으로부터 주어지는 감각들을 조직화하고 그 환경 속에서 신체를 효과적으로 사용할 수 있도록 하는 신경학적 과정입니다. </p>
+                        </div>
+                        <ul class="thumBox">
+                            <li class="thumBtn1">
+                                <label for="ra221">
+                                    <img src="./img/physical01_03_1.jpg" alt="썸네일버튼1">
+                                </label>
+                            </li>
+                            <li class="thumBtn2">
+                                <label for="ra222">
+                                    <img src="./img/physical01_03_2.jpg" alt="썸네일버튼2">
+                                </label>
+                            </li>
+                            <li class="thumBtn3">
+                                <label for="ra223">
+                                    <img src="./img/physical01_03_3.jpg" alt="썸네일버튼3">
+                                </label>
+                            </li>
+                        </ul>       
+                    </div>
+                </div>
+                <div class="subBox item4">
+                    <h1 class="subTit">소아언어치료</h1>
+                    <p class="subCom">언어장애란 언어를 이해하고 표현하며 사용하는데 어려움을 보이는 것을 말합니다. 언어장애의 종류는 언어발달장애, 조음장애, 유창성장애, 신경언어장애, <br>
+                    음성장애로 나누어 볼 수 있습니다. 언어치료는 공식적인 언어검사를 통하여 아동의 언어발달수준 및 장애유형을 진단하여 치료 및 교육을 실시하는 것을 말합니다.  <br>
+                    또한 아동의 부모에게 아동언어상담 및 교육방법을 제공하여 드림으로써 치료실 밖의 일상생활에서도 아동의 언어발달을 촉진시킬 수 있도록 하는 것입니다.</p>
+                    <p class="subCom">아동의 비정상적인 움직임이나 자세를 올바르고 정상적인 움직임의 형태로 아동에게 가르쳐 스스로 조절할 수 있도록 다양한 치료방법과 치료기구를 사용하여 치료합니다.</p>
+                    <ul class="thumLst">
+                        <li class="item1">
+                            <h3 class="thumTitle">치료대상</h3>
+                            <p class="thumCom">
+                                <span class="thumNum">1</span>
+                                언어발달지체 및 장애
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">2</span>
+                                구개파열로 인한 언어장애
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">3</span>
+                                청각장애 및 조음음운장애(발음장애)
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">4</span>
+                                정신지체로 인한 언어장애
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">5</span>
+                                유창성장애
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">6</span>
+                                자폐로 인한 언어장애
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">7</span>
+                                기타 정서, 행동, 사회성의 문제로 인한 언어발달장애
+                            </p>
+                        </li>
+                        <li class="item2">
+                            <h3 class="thumTitle">평가항목</h3>
+                            <p class="thumCom">
+                                영유아 언어발달검사, 수용언어 및 표현언어발달척도, 언어문제해결력, 구문의미이해력, 수용/표현 어휘력, 한국어 표준그림 조음음운, <br>
+                                구강조음기관의 기능선별, 보호자 면담 및 검사자의 관찰
+                            </p>
+                        </li>
+                        <li class="item3">
+                            <h3 class="thumTitle">치료내용</h3>
+                            <p class="thumCom">
+                                아동의 언어능력을 평가하기 위해 보호자 면담 및 검사자의 관찰, 표준화/비표준화 검사 도구를 이용하여 실시하며 소요시간은 <br>
+                                약 40분~1시간 정도입니다. <br>
+                                검사 후 검사 결과를 알려주고 아동 및 성인의 증상에 적절한 교육과 전문적인 치료방향을 수립합니다.
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="itemFrame">
+                        <input type="radio" class="raItem conRa1" id="ra231" name="conRaFour" checked>
+                        <input type="radio" class="raItem conRa2" id="ra232" name="conRaFour">
+                        <ul class="tbImgFrm">
+                            <li class="raCon1">
+                                <img src="./img/physical01_04_1.jpg" alt="배너이미지1" class="imgItem">
+                            </li>
+                            <li class="raCon2">
+                                <img src="./img/physical01_04_2.jpg" alt="배너이미지2" class="imgItem">
+                            </li>
+                        </ul>
+                        <div class="titBox">
+                            <h3 class="tbTitle">소아언어치료</h3>
+                            <p class="tbComent">언어장애란 언어를 이해하고 표현하며 사용하는데 어려움을 보이는 것을 말합니다. 언어장애의 종류는 언어발달장애, 조음장애, 유창성장애, 신경언어장애, 음성장애로 나누어 볼 수 있습니다. </p>
+                        </div>
+                        <ul class="thumBox">
+                            <li class="thumBtn1">
+                                <label for="ra231">
+                                    <img src="./img/physical01_04_1.jpg" alt="썸네일버튼1">
+                                </label>
+                            </li>
+                            <li class="thumBtn2">
+                                <label for="ra232">
+                                    <img src="./img/physical01_04_2.jpg" alt="썸네일버튼2">
+                                </label>
+                            </li>
+                        </ul>       
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="page" id="page2">
+        <a href="#page2" class="btn1 item2">청소년</a>
+        <div class="con">
+            <figure class="vsBox">
+                <img src="./img/physical_vs2.jpg" alt="청소년재활치료" class="vsImg">
+                <div class="vsTitBox">
+                    <h1 class="vsTitle">청소년 재활치료</h1>
+                    <p class="vsComent">팔 다리 신체기능에 장애가 발생한 경우 운동장애를 가진 환우분들에게 <br> 
+                    전문과정을 이수한 전문치료사들이 1:1로 다양하고 정확한 평가 후 치료를 실시합니다.</p>
+                </div>
+            </figure>
+            <section class="sec2">
+                <input type="radio" name="ra21" id="ra21" class="raItem raItem1" checked>
+                <input type="radio" name="ra21" id="ra22" class="raItem raItem2">
+                <input type="radio" name="ra21" id="ra23" class="raItem raItem3">               
+                <ul class="btnFrame">
+                    <li><label for="ra21" class="raBtn item1">청소년치료실</label></li>
+                    <li><label for="ra22" class="raBtn item2">물리치료</label></li>
+                    <li><label for="ra23" class="raBtn item3">작업치료</label></li>
+                </ul>
+                <div class="subBox item1">
+                    <ul class="secFrm">
+                        <li>
+                            <div class="left imgFrame">
+                                <img src="./img/physical_info01.png" alt="광주병원 썸네일">
+                            </div>
+                            <div class="right txtFrame">
+                                <h2 class="secTitle">청소년 치료실이 필요한 <span class="gtxt">이유</span></h2>
+                                <p class="itemComent">소아·성인만으로 구분하여 치료하는 병원은 많으나, 성장기의 청소년을 위한 세팅도구와 <br>
+                                장비로 차별성과 전문성이 있는 치료를 하는 병원은 전무한 실정입니다. <br>
+                                특히 연령에 따른 적절한 치료를 위한 공간의 분리와 학교생활과 관련한 치료적 접근은 <br>
+                                반드시 필요합니다. 가령 치료의 접근성이 부족해지거나 휠체어 생활의 시간이 늘어나는 <br>
+                                청소년기에 관절 변형 및 관절 구축, 또한 기능 저하 등 2차적 문제가 현저히 늘어나 <br>
+                                이에 맞는 전문적인 치료적 접근이 필요합니다</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="left txtFrame">
+                                <h3 class="secTitle">청소년 치료실만의 <span class="gtxt">장점</span></h3>
+                                <p class="itemComent">소아치료실에서 성인치료실로 전환되는 과정에서 소아치료에 대한 경험이 부족한 <br>
+                                성인치료사들이 소아치료에서 진행되어 온 치료 접근 관점 및 방법과 다른 경우가 많습니다. <br>
+                                본 원의 청소년 치료실은 소아치료에 대한 풍부한 경험과 소아치료실과의 원활한 소통으로
+                                <br>
+                                치료의 연계성을 가지고 성인치료까지 이어갑니다. <br>
+                                독립된 공간에서 대상자의 집중력을 증진시킬 수 있으며, <br>
+                                소아·청소년·성인치료실이 한 건물에 위치하여 치료의 단절없이 연속성있게 진행됩니다. <br>
+                                뿐만 아니라 언어, 음악, 미술, 수영 등의 다양한 프로그램도 함께 진행할 수 있다는 <br>
+                                장점도 있습니다.</p>
+                            </div>
+                            <div class="right imgFrame">
+                                <img src="./img/physical_info02.png" alt="재활병원 썸네일">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="subBox item2">
+                    <h1 class="subTit">청소년물리치료</h1>
+                    <p class="subCom">청소년 물리치료는 아이들의 성장에 맞추어 치료를 전문적으로 하는 것에 목표로 합니다. 보바스치료, 고유수용성 신경근촉진법, 중추 신경 발달학 치료 등을 통하여 학교생활이 늘어나치료의 접근성이 부족해지거나 휠체어 생활의 시간이 늘어나는 청소년기에 관절 변형 및 관절 구축, 또한 기능 저하 등 2차적 문제를 해결하고자 청소년에 맞는 세팅도구, 장비를 통한차별성과 전문적인 치료로 접근합니다.</p>
+                    <ul class="thumLst">
+                        <li class="item1">
+                            <h3 class="thumTitle">치료대상</h3>
+                            <p class="thumCom">
+                                뇌성마미, 뇌손상, 척수손상 등의 중추신경계질환으로 인한 발당 장애 아동들과 근육병, 사경, 염색체이상과 같은 질환의 아동들을 대상
+                            </p>
+                        </li>
+                        <li class="item2">
+                            <h3 class="thumTitle">평가항목</h3>
+                            <p class="thumCom">
+                                <span class="thumNum">1</span>
+                                소아치료와 연계하여 치료 접근법이 연결되는 치료를 위하여 동일한 평가도구를 이용하여 평가합니다. <br>
+                                그리고 청소년기에 올 수 있는 2차적 문제와 변형에 대해 미리 예방할 수 있도록 접근하고 있습니다.
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">2</span>
+                                전문적 평가 지식을 습득한 물리치료사가 직접 진행하며 대운동 기능평가와 관절가동범위 검사, 도수근력검사를 통하여 객관적으로 접근하며 이를 바탕으로 치료접근 방법과 질적 향상을 위해 기본 자료로 적용합니다.
+                            </p>
+                        </li>
+                        <li class="item3">
+                            <h3 class="thumTitle">치료내용</h3>
+                            <p class="thumCom">
+                                성장이 멈추는 성인 전 최소한의 변형 예방과 성인이 된 후 자립을 위한 스스로의 이동이나 자세유지를 익힐 수 있도록 청소년기의 신체발달에 따라 보다 폭 넓고 전문적인 접근을 하고 있습니다. 관절 변형 및 구축 예방, 휠체어 워커 등에 따른 기구 이용시 바른 자세 지도, 독립된 수행의 기능 향상 유도하며 가정 및 학교 등 내/외적 환경을 고려하여 부모교육도 동시에 실시하고 있습니다.
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="itemFrame item1">
+                        <input type="radio" class="raItem conRa1" id="ra251" name="conRa2_two" checked>
+                        <input type="radio" class="raItem conRa2" id="ra252" name="conRa2_two">
+                        <input type="radio" class="raItem conRa3" id="ra253" name="conRa2_two">
+                        <ul class="tbImgFrm">
+                            <li class="raCon1">
+                                <img src="./img/physical02_02_1.jpg" alt="배너이미지1" class="imgItem">
+                            </li>
+                        </ul>
+                        <div class="titBox">
+                            <h3 class="tbTitle">청소년물리치료</h3>
+                            <p class="tbComent">청소년 물리치료는 아이들의 성장에 맞추어 치료를 전문적으로 하는 것에 목표로 합니다. </p>
+                        </div>
+                        <ul class="thumBox">
+                            <li class="thumBtn1">
+                                <label for="ra251">
+                                    <img src="./img/physical02_02_1.jpg" alt="썸네일버튼1">
+                                </label>
+                            </li>
+                        </ul>       
+                    </div>
+                </div>
+                <div class="subBox item3">
+                    <h1 class="subTit">청소년작업치료</h1>
+                    <p class="subCom">상지 관절운동 및 연하치료, 시지각 활동 및 인지활동, 일상생활에 관련된 활동의 연습 및 실제에 적용하기 등이 이루어집니다.</p>
+                    <ul class="thumLst">
+                        <li class="item1">
+                            <h3 class="thumTitle">치료대상</h3>
+                            <p class="thumCom">
+                                13~19살까지의 학령기 장애아동
+                            </p>
+                        </li>
+                        <li class="item2">
+                            <h3 class="thumTitle">평가항목</h3>
+                            <p class="thumCom">
+                                <span class="thumNum">1</span>
+                                지기능검사(상지의 관절가동범위 및 근력, 잡기, 집기와 같은 기능적 움직임 평가)
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">2</span>
+                                페그보드검사(세밀한 손 동작 및 집기능력과 같은 소근육 기능 평가)
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">3</span>
+                                일상생활동작검사(일상생활활동에 대한 자립도 검사)
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">4</span>
+                                작업치료평가지(수행배경, 수행요소, 지각 및 인지적인 요소 분석)
+                            </p>
+                        </li>
+                        <li class="item3">
+                            <h3 class="thumTitle">치료내용</h3>
+                            <p class="thumCom">
+                                <span class="thumNum">1</span>
+                                학습과 관련한 다양한 부분 평가 및 중재 (글쓰기, 읽기, 그리기, 가위질 하기, 계산하기 등)
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">2</span>
+                                대근육 운동기술, 소근육 운동기술, 시지각기능, 인지기능, 연하기능 등 아동 개개인에 맞는 작업수행 및 수행기능 향상을 위한 활동
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">3</span>
+                                과제의 반복 수행을 통하여 수행능력 향상 및 과제 난이도 향상
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="itemFrame item1">
+                        <input type="radio" class="raItem conRa1" id="ra261" name="conRa2_three" checked>
+                        <input type="radio" class="raItem conRa2" id="ra262" name="conRa2_three">
+                        <input type="radio" class="raItem conRa3" id="ra263" name="conRa2_three">
+                        <ul class="tbImgFrm">
+                            <li class="raCon1">
+                                <img src="./img/physical02_03_1.jpg" alt="배너이미지1" class="imgItem">
+                            </li>
+                        </ul>
+                        <div class="titBox">
+                            <h3 class="tbTitle">청소년작업치료</h3>
+                            <p class="tbComent">상지 관절운동 및 연하치료, 시지각 활동 및 인지활동, 일상생활에 관련된 활동의 연습 및 실제에 적용하기 등이 이루어집니다.</p>
+                        </div>
+                        <ul class="thumBox">
+                            <li class="thumBtn1">
+                                <label for="ra261">
+                                    <img src="./img/physical02_03_1.jpg" alt="썸네일버튼1">
+                                </label>
+                            </li>
+                        </ul>       
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="page" id="page3">
+        <a href="#page3" class="btn1 item3">성인</a>
+        <div class="con">
+            <figure class="vsBox">
+                <img src="./img/physical_vs3.jpg" alt="성인재활치료" class="vsImg">
+                <div class="vsTitBox">
+                    <h1 class="vsTitle">성인 재활치료</h1>
+                    <p class="vsComent">팔 다리 신체기능에 장애가 발생한 경우 운동장애를 가진 환우분들에게 <br> 
+                    전문과정을 이수한 전문치료사들이 1:1로 다양하고 정확한 평가 후 치료를 실시합니다.</p>
+                </div>
+            </figure>
+            <section class="sec2">
+                <input type="radio" name="ra31" id="ra31" class="raItem raItem2" checked>
+                <input type="radio" name="ra31" id="ra32" class="raItem raItem3">              
+                <ul class="btnFrame">
+                    <li><label for="ra31" class="raBtn item2">청소년치료실</label></li>
+                    <li><label for="ra32" class="raBtn item3">물리치료</label></li>
+                </ul>
+                <div class="subBox item2">
+                    <h1 class="subTit">성인물리치료</h1>
+                    <p class="subCom">운동치료 전문과정을 이수한 재활 전문 물리치료사들이 환자의 상태에 맞는 치료법으로 관절의 강직, 근육 위축 등의 신체 기능저하를 예방하고, <br>
+                    정상적인 근긴장도 및 신체 균형의 유지, 증진 근력증가 통증완화를 위하여 치료합니다. <br>
+                    또한 중추신경계발달재활치료, 매트 및 이동훈련, 보행훈련, 근력강화 및 지구력 훈련, 호흡재활, 기능적 전기 자극치료 슬링 치료 등을 통하여 <br>
+                    비정상적인 긴장도 및 동작, 패턴을 정상적인 동작의 촉진을 통한 기능의 최적화에 목표를 두고 치료효과를 극대화시켜 삶의 질을 향상시키고자 최선을 다하고 있습니다.</p>
+                    <ul class="thumLst">
+                        <li class="item1">
+                            <h3 class="thumTitle">치료대상</h3>
+                            <p class="thumCom">
+                                뇌졸증, 외상성 뇌손상, 척수 손상, 파킨슨병 등의 중추 및 말초신경계 손상장애, 만성 노인성 질환, 근골격계 질환자
+                            </p>
+                        </li>
+                        <li class="item2">
+                            <h3 class="thumTitle">평가항목</h3>
+                            <p class="thumCom">
+                                환자에 대한 주관, 객관적인 자료를 얻기 위하여 의식, 지남력, 주의력, 판단력, 문제해결능력, 의사소통, 지각, 정서감각 등의 신경생리학적인 검사와 관절가동범위, 도수근력검사,근육의 긴장도 및 정상적인 움직임과 비정상적인 움직임의 평가를 통하여 움직임에 대한 반응과 동작의 분석을 찾아내고 기능적 활동과 균형능력 정도를 분석하여 일상생활 수행능력을 평가합니다.
+                            </p>
+                        </li>
+                        <li class="item3">
+                            <h3 class="thumTitle">치료내용</h3>
+                            <p class="thumCom">
+                                중추신경계 및 근곤결계 손상으로 인한 마비와 경직의 치료, 기능회복을 목적으로 환자의 상태를 정확하게 평가하여 장,단기적 목표를 세우고, <br>
+                                적절한 근 긴장도의 유지 및 움직임의 재 학습과 자세조절능력 그리고 환자의 기능적 상태에 가장 적합한 잔존 능력을 개발하는데 역점을 두고 치료합니다. 본원 재활치료실에서는 보바스(Bobath) 및 고유수용성 신경근촉진법(PNF), 중추 신경발달학치료(NDT) 등의 교육과정을 120시간 이상 이수한 물리치료사가 1인의 환자를 1:1로 중점적으로 운동치료를 시행합니다.
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="itemFrame item1">
+                        <input type="radio" class="raItem conRa1" id="ra271" name="conRa3_two" checked>
+                        <input type="radio" class="raItem conRa2" id="ra272" name="conRa3_two">
+                        <input type="radio" class="raItem conRa3" id="ra273" name="conRa3_two">
+                        <ul class="tbImgFrm">
+                            <li class="raCon1">
+                                <img src="./img/physical03_01_1.jpg" alt="배너이미지1" class="imgItem">
+                            </li>
+                        </ul>
+                        <div class="titBox">
+                            <h3 class="tbTitle">성인물리치료</h3>
+                            <p class="tbComent">운동치료 전문과정을 이수한 재활 전문 물리치료사들이 환자의 상태에 맞는 치료법으로 관절의 강직, 근육 위축 등의 신체 기능저하를 예방하고, <br>
+                            정상적인 근긴장도 및 신체 균형의 유지, 증진 근력증가 통증완화를 위하여 치료합니다.</p>
+                        </div>
+                        <ul class="thumBox">
+                            <li class="thumBtn1">
+                                <label for="ra271">
+                                    <img src="./img/physical03_01_1.jpg" alt="썸네일버튼1">
+                                </label>
+                            </li>
+                        </ul>       
+                    </div>
+                </div>
+                <div class="subBox item3">
+                    <h1 class="subTit">성인작업치료</h1>
+                    <p class="subCom">작업치료는 신체적 정신적인 장애나 발달장애가 있는 환자들이 일상생활 중 요구되는 활동을 스스로 수행할 수 있도록 그 기능의 회복을 도와주는 치료 프로그램입니다. <br>
+                    적절하고 의미있고 유용한 작업을 수행함으로써 불완전한 기능을 보다 나은 상태로 만들고, 더 이상의 악화를 예방하고자 실시합니다. <br>
+                    환자분들의 발달 및 장애 상태직업이나 활동영역 등을 고려하여, 장애는 교정을 통해 최소화시키고 남아있는 신체 기능은 반복훈련을 통해 최대한 끌어내 <br>
+                    약화된 일상생활활동을 수행할 수 있도록 개개인의 능력에 맞게 서비스를 제공하는 것입니다.</p>
+                    <ul class="thumLst">
+                        <li class="item1">
+                            <h3 class="thumTitle">치료대상</h3>
+                            <p class="thumCom">
+                                뇌졸증, 외상성 뇌손상, 척수손상, 심폐질환, 근골격계 질환(근육질환, 화상, 절단), 노인성 질환(치매, 퇴행성 질환), 정신과 질환(우울증, 신경증) 등을 대상으로 실시합니다.
+                            </p>
+                        </li>
+                        <li class="item2">
+                            <h3 class="thumTitle">평가항목</h3>
+                            <p class="thumCom">
+                                <span class="thumNum">1</span>
+                                수지기능검사 : 쥐는 힘, 다양한 쥐기 능력, 손안에서의 물체를 다루는 능력
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">2</span>
+                                감각검사 : 촉각, 통증/온도 감각, 구별감각(고유수용성감각 등)
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">3</span>
+                                인지 및 시지각 검사 :시지각, 신체인지, 지남력, 주의집중력, 기억력, 판별력, 문제해결능력, 수리력
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">4</span>
+                                일상생활수행능력 평가 :개인위생, 먹기, 입기, 화장실 사용, 이동방법, 휠체어의 사용, 의사소통 가사활동, 여가생활 등을 평가합니다.
+                            </p>
+                        </li>
+                        <li class="item3">
+                            <h3 class="thumTitle">치료내용</h3>
+                            <p class="thumCom">
+                                상지기능향상 훈련, 근력증진, 지구력증진, 미세운동협응 훈련, 균형 훈련, 시지각 훈련 및 인지기능 향상 훈련 등, 환자의 손상된 기능 회복과 관련된 치료와 일상생활동작 증진을 통한 삶의 질 향상을 목적으로 환자의 특성에 맞는 다양한 훈련을 진행합니다.
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="itemFrame item1">
+                        <input type="radio" class="raItem conRa1" id="ra281" name="conRa3_three" checked>
+                        <input type="radio" class="raItem conRa2" id="ra282" name="conRa3_three">
+                        <input type="radio" class="raItem conRa3" id="ra283" name="conRa3_three">
+                        <ul class="tbImgFrm">
+                            <li class="raCon1">
+                                <img src="./img/physical03_02_1.jpg" alt="배너이미지1" class="imgItem">
+                            </li>
+                        </ul>
+                        <div class="titBox">
+                            <h3 class="tbTitle">성인작업치료</h3>
+                            <p class="tbComent">작업치료는 신체적 정신적인 장애나 발달장애가 있는 환자들이 일상생활 중 요구되는 활동을 스스로 수행할 수 있도록 그 기능의 회복을 도와주는 치료 프로그램입니다. </p>
+                        </div>
+                        <ul class="thumBox">
+                            <li class="thumBtn1">
+                                <label for="ra281">
+                                    <img src="./img/physical03_02_1.jpg" alt="썸네일버튼1">
+                                </label>
+                            </li>
+                        </ul>       
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="page" id="lastPage">
+        <div class="wrap">
+            <ul>
+                <li class="col4 item1 first">
+                    <h2 class="itemTitle">SRC병원</h2>
+                    <h1 class="telTxt">02-871-3636</h1>
+                    <p class="itemData">
+                        서울특별시 관악구 보라매로 44(봉천동722-19) <br> SRC병원 부설의원 1~3층
+                    </p>
+                    <p class="itemData" style="padding-bottom:40px;">
+                        팩스번호 02-876-3202 대표자 이영상 <br>
+                        고유번호증 129-82-11729
+                    </p>
+                </li>
+                <li class="col4 item2">
+                    <h2 class="itemTitle">진료시간</h2>
+                    <p class="itemData">
+                        평일 진료AM 09:00 ~ PM 06:00 <br>
+                        토요일 진료AM 09:00 ~ PM 01:00 <br>
+                        점심시간PM 12:00 ~ PM 01:00 <br>
+                    </p>
+                    <p class="itemData">※ 일요일 및 공휴일은 휴진입니다</p>                    
+                </li>
+                <li class="col4 item3">
+                    <h2 class="itemTitle">찾아오시는 길</h2>
+                    <div id="mapFrame">
+                        <div id="map_canvas" style="width:360px; height:180px"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>
+<footer id="ft">
+    <div class="wrap">
+        <p class="copyright">ⓒ 2018 SRC병원. ALL RIGHT RESERVED. SITE BY MOVEMENT K GROUP.</p>
+        <div class="ftLogo"></div>
+    </div>
+</footer>
+<input type="checkbox" id="ck">
+<div id="popFrm">
+    <label for="ck" class="closeBtn">닫기</label>
+    <div class="popBox">
+        <ul class="item1">
+            <li>
+                <h2>
+                    <a href="intro.html#page1">병원안내</a>
+                </h2>
+            </li>
+            <li>
+                <a href="intro.html#page1">병원소개</a>
+            </li>
+            <li>
+                <a href="intro.html#page2">시설안내</a>
+            </li>
+            <li>
+                <a href="intro.html#page3">부서별 연락처</a>
+            </li>
+            <li>
+                <a href="intro.html#page4">오시는길</a>
+            </li>
+            <li>
+                <a href="intro.html#page5">비급여 안내</a>
+            </li>
+            <li>
+                <a href="intro.html#page6">협력기관</a>
+            </li>
+        </ul>
+        <ul class="item2">
+            <li>
+                <h2>
+                    <a href="physical.html#page1">재활치료</a>
+                </h2>
+            </li>
+            <li>
+                <a href="physical.html#page1">소아</a>
+            </li>
+            <li>
+                <a href="physical.html#page2">청소년</a>
+            </li>
+            <li>
+                <a href="physical.html#page3">성인</a>
+            </li>
+        </ul>
+        <ul class="item3">
+            <li>
+                <h2>
+                    <a href="ward.html#page1">병동안내</a>
+                </h2>
+            </li>
+            <li>
+                <a href="ward.html#page1">낮병동소개</a>
+            </li>
+            <li>
+                <a href="ward.html#page2">입원안내</a>
+            </li>
+            <li>
+                <a href="ward.html#page3">치료항목</a>
+            </li>
+            <li>
+                <a href="ward.html#page4">자주하시는질문</a>
+            </li>
+        </ul>
+        <ul class="item4">
+            <li>
+                <h2>
+                    <a href="news.html#page1">병원소식</a>
+                </h2>
+            </li>
+            <li>
+                <a href="news.html#page1">공지사항</a>
+            </li>
+            <li>
+                <a href="news.html#page2">SRC뉴스레터</a>
+            </li>
+            <li>
+                <a href="news.html#page3">사회공헌사업</a>
+            </li>
+            <li>
+                <a href="news.html#page4">재활/건강정보</a>
+            </li>
+        </ul>
+        <ul class="item5">
+            <li>
+                <h2>
+                    <a href="speech.html#page1">치료연계센터</a>
+                </h2>
+            </li>
+            <li>
+                <a href="speech.html#page1">SRC심리상담센터</a>
+            </li>
+            <li>
+                <a href="speech.html#page2">SRC스포츠센터</a>
+            </li>
+        </ul>
+    </div>
+</div>        
+<aside id="quick">
+    <div class="qWrap">
+        <ul class="top">
+            <li>
+                <a href="index.html" class="qlogo"></a>
+            </li>
+<?php 
+        if($_SESSION['userid']=="admin") {         
+?>           
+            <li>
+                <a href="#" class="hv">관리자페이지로</a>
+            </li>
+            <li>   
+                <a href="logout.php" class="hv">로그아웃</a>
+            </li>
+<?php
+         } else if(isset($_SESSION['userid'])) {
+?>                                 
+            <li>
+                <a href="logout.php" class="hv">로그아웃</a>
+            </li>
+            <li>   
+                <a href="#" class="hv">정보수정</a>
+            </li>
+<?php
+        } else {
+?>                       
+            <li>
+                <a href="joinForm.html" class="hv">회원가입</a>
+            </li>
+            <li>   
+                <a href="loginForm.html" class="hv">로그인</a>
+            </li>
+<?php
+        }
+?> 
+            <li>       
+                <a href="intro.html#page5" class="hv">비급여안내</a>
+            </li>
+            <li>       
+                <a href="intro.html#page4" class="hv">오시는길</a>
+            </li>
+        </ul>
+        <ul class="bottom">
+            <li>
+                <a href="speech.html#page1" class="yellow">심리상담센터</a>
+            </li>
+            <li>
+                <a href="speech.html#page2" class="cyan">스포츠센터</a>
+            </li>
+            <li><a href="#page1" class="toTop">위로</a></li>
+        </ul>
+    </div>
+</aside>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>내비게이션01 - 1단 메뉴</title>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; }
+    ul { list-style: none; }
+    a { text-decoration: none; }
+    .navi_fr { clear: both; width:1440px; min-height:200px; padding-bottom: 100px; border-top:3px solid #333;  margin: 0 auto; }    
+    .navi_tit { font-size:32px; text-align:center; border-bottom:1px dotted #333; text-transform:capitalize; }
+    .menu { width: 1280px; margin:10px auto; }    
+    .menu:after, .navi_fr:after, .menu ul { content:""; clear:both; display:block; width:100%; }
+
+    /* same spacing : 동일 간격으로 좌우 메뉴의 거리가 일정함 */
+    .navi1 li { float:left; padding: 20px; }
+    .navi1 li a { font-size:20px; font-weight:bold; color:#333; } 
+        
+    /* same width : 모든 메뉴의 너비가 동일함 */
+    .navi2 li { float:left; width: 20%; }
+    .navi2 li a { display:block; font-size:20px; font-weight:bold; color:#333; text-align:center; }
+        
+    /* same spacing & centered : 동일 간격으로 메뉴들이 배치되고, 메뉴 전체가 가운데로 정렬 */
+    .navi3 { width: 600px; margin:20px auto; } 
+    .navi3 li { float:left; padding: 20px; }
+    .navi3 li a { font-size:20px; font-weight:bold; color:#333; } 
+        
+    /* same spacing & left : 동일 간격으로 메뉴들이 배치되고, 메뉴 전체가 왼쪽으로 정렬 */
+    .navi4 { margin:0; float:left; } 
+    .navi4 li { float:left; margin: 20px; }
+    .navi4 li a { font-size:20px; font-weight:bold; color:#333; }
+    
+    /* same spacing & right : 동일 간격으로 메뉴들이 배치되고, 메뉴 전체가 오른쪽으로 정렬 */
+    .navi5 { margin:0px; float:right; } 
+    .navi5 li { float:left; margin: 20px; }
+    .navi5 li a { font-size:20px; font-weight:bold; color:#333; }
+    
+    /* hover text color transition */
+    .navi6 { width: 600px; margin:20px auto; } 
+    .navi6 li { float:left; padding:14px; }
+    .navi6 li a { font-size:20px; font-weight:bold; color:#333; transition-duration:0.4s; }  
+    .navi6 li:hover a { color:deeppink; font-size:24px; }    
+    
+    /* hover bgcolor transition */
+    .navi7 { width: 550px; margin:20px auto; } 
+    .navi7 li { float:left; }
+    .navi7 li a { display:block; font-size:20px; font-weight:bold; color:#333; 
+        padding:14px;  transition-duration:0.4s; }  
+    .navi7 li:hover a { background-color: deeppink; color:#fff; } 
+    
+    /* hover bar(border) transition */
+    .navi8 { width: 550px; margin:20px auto; } 
+    .navi8 li { float:left; }
+    .navi8 li a { display:block; font-size:20px; font-weight:bold; color:#333; padding:14px; border-top:2px solid transparent; 
+        border-bottom:2px solid transparent; transition-duration:0.4s; }  
+    .navi8 li:hover a { border-top:2px solid deeppink; 
+        border-bottom:2px solid deeppink;  } 
+        
+
+    .navi9 { width: 550px; margin: 20px auto; }
+    .navi9 li { float:left; }
+    .navi9 li a { display:block; font-size:20px; font-weight:bold; color:#333; padding:14px; line-height: 36px; position:relative; }
+   
+        /* 가운데에서 스트레칭 시작 */
+/* 
+    .navi9 li a:before, .navi9 li a:after { content:""; display:block; height: 3px; background:deeppink; width: 0px; margin:0 auto; 
+        transition:0.6s; }
+*/
+        /* 가운데에서 스트레칭 끝 */
+        
+        /* 왼쪽과 오른쪽에서 스트레칭 시작  */
+    .navi9 li a:before, .navi9 li a:after { content:""; display:block; height: 3px; background:deeppink; width: 0px;  
+        transition:0.6s; position:absolute; }
+    .navi9 li a:before { left:0; top:0px; }
+    .navi9 li a:after { right:0; bottom:0px; }  
+    /* 왼쪽과 오른쪽에서 스트레칭 끝  */    
+    .navi9 li:hover a:before, .navi9 li:hover a:after { width:100%; }   
+        
+    /* hover bar-Follow : position을 활용하여 hover 전에는 정적(static), hover 시에는
+    상대적(relative)로 변경 */
+    .navi10 { width: 550px; margin: 20px auto; position:relative; 
+        height:66px; overflow-x:hidden; }
+    .navi10 li { float:left; }
+    .navi10 li a { display:block; font-size:20px; font-weight:bold; color:#333;
+         padding:14px; line-height: 36px; position:static; } 
+    .navi10 li a:before, .navi10 li a:after { content:""; display:block; height: 3px; background:deeppink; width:0px; margin:0 auto; 
+        transition:0.6s; transition-timing-function: ease-out;  position:absolute; right:-3000px; }
+    .navi10 li a:before { top:0px; }
+    .navi10 li a:after { bottom:0px; } 
+    .navi10 li:hover a { position:relative; }
+    .navi10 li:hover a:before, .navi10 li:hover a:after { right:0; 
+        width: 100%; } 
+        
+    /* hover sliding up menu : 호버시 a요소의 margin-top을 -(음수)로 지정 */ 
+    .navi11 { width: 710px; margin: 20px auto; position:relative; }
+    .navi11 li { float:left; height: 40px; overflow:hidden; 
+        background-image:url("./bar.png"); /* 크기 2x20 */
+        background-repeat: no-repeat; background-position: right center; }
+    .navi11 li:last-child { background-image: none; }    
+    .navi11 li a { display:block; font-size: 20px; font-weight: bold; 
+        text-align:center; padding:0px 15px; color:#333; transition: 0.4s;
+        text-transform:uppercase;  }    
+    .navi11 li:hover a { margin-top: -40px;  }    
+    .navi11 li a span { display:block; height: 40px; line-height: 40px; } 
+      
+    .navi12 { width: 1000px; margin: 20px auto; position:relative; }
+    .navi12 .left { float:left; }
+    .navi12 .right { float:right; }
+    .navi12 li { float:left; line-height: 80px; } 
+    .navi12 li a { font-size:20px; color:#333; font-weight:bold; }  
+    .navi12 .left li { padding-right: 20px; }    
+    .navi12 .right li { padding-left: 20px; }
+    .navi12 .logo { position:absolute; top:0px; left:50%; margin-left: -100px; }    
+      
+    .navi13 { width: 560px; margin: 20px auto; position:relative; }
+    .navi13 li { float:left; margin:20px 40px; }
+    .navi13 li a { display:block; width: 60px; height: 60px; 
+        border-radius:36px; background-repeat: no-repeat; background-position:center center; text-indent:-9999px; background-color: #7a9faf; }
+    .navi13 li.item1 a { background-image:url("./btn_ico_1.png"); }    
+    .navi13 li.item2 a { background-image:url("./btn_ico_2.png"); }
+    .navi13 li.item3 a { background-image:url("./btn_ico_3.png"); }
+    .navi13 li.item4 a { background-image:url("./btn_ico_4.png"); }  
+    .navi13 li:hover a { background-color:deeppink; }   
+        
+    .navi14 { width: 1000px; margin: 20px auto; position:relative; }
+    .navi14 li { float:left; margin:25px 25px; position:relative; }
+    .navi14 li a { display:block; }
+    .navi14 li a img { display:block; width:150px; height:auto;
+        -webkit-filter: grayscale(100%); filter: gray; 
+        transition:0.5s; }
+    .navi14 li a:hover img { -webkit-filter: grayscale(0%); filter: none; } 
+    .navi14 li a:hover::after { content:attr(data); padding:8px; display:block; background:rgba(0,0,0,0.6); position:absolute; top:30px; left:30px; color:#fff; border-radius:20px; border:2px solid #eee; z-index:99; }
+    </style>    
+    
+    <!--
+        에스파
+        ae1.jpg 카리나
+        ae2.jpg 지젤
+        ae3.jpg 윈터
+        ae4.jpg 닝닝
+    -->
+</head>
+<body>
+<!--    div.navi_fr>nav.menu.navi1>ul>li*5>a{메뉴$}-->
+    <div class="navi_fr">
+        <h2 class="navi_tit">1단 메뉴 - same spacing</h2>
+        <nav class="menu navi1">
+            <ul>
+                <li><a href="">메뉴1</a></li>
+                <li><a href="">주메뉴2</a></li>
+                <li><a href="">주메인메뉴만들기3</a></li>
+                <li><a href="">메뉴4</a></li>
+                <li><a href="">메뉴5</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!--    div.navi_fr>nav.menu.navi2>ul>li*5>a{메뉴$}-->
+    <div class="navi_fr">
+        <h2 class="navi_tit">1단 메뉴 - same with</h2>
+        <nav class="menu navi2">
+            <ul>
+                <li><a href="">메뉴1</a></li>
+                <li><a href="">주메뉴2</a></li>
+                <li><a href="">주메인메뉴만들기3</a></li>
+                <li><a href="">메뉴4</a></li>
+                <li><a href="">메뉴5</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!--    div.navi_fr>nav.menu.navi3>ul>li*5>a{메뉴$} -->
+    <div class="navi_fr">
+        <h2 class="navi_tit">1단 메뉴 - same spacing &amp; centered</h2>
+        <nav class="menu navi3">
+            <ul>
+                <li><a href="">메뉴1</a></li>
+                <li><a href="">주메뉴2</a></li>
+                <li><a href="">주메인메뉴만들기3</a></li>
+                <li><a href="">메뉴4</a></li>
+                <li><a href="">메뉴5</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!--    div.navi_fr>nav.menu.navi4>ul>li*5>a{메뉴$}-->
+    <div class="navi_fr">
+        <h2 class="navi_tit">1단 메뉴 - same spacing &amp; left</h2>
+        <nav class="menu navi4">
+            <ul>
+                <li><a href="">메뉴1</a></li>
+                <li><a href="">주메뉴2</a></li>
+                <li><a href="">주메인메뉴만들기3</a></li>
+                <li><a href="">메뉴4</a></li>
+                <li><a href="">메뉴5</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!--    div.navi_fr>nav.menu.navi5>ul>li*5>a{메뉴$}-->
+    <div class="navi_fr">
+        <h2 class="navi_tit">1단 메뉴 - same spacing &amp; right</h2>
+        <nav class="menu navi5">
+            <ul>
+                <li><a href="">메뉴1</a></li>
+                <li><a href="">주메뉴2</a></li>
+                <li><a href="">주메인메뉴만들기3</a></li>
+                <li><a href="">메뉴4</a></li>
+                <li><a href="">메뉴5</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!--    div.navi_fr>nav.menu.navi6>ul>li*5>a{메뉴$}-->
+    <div class="navi_fr">
+        <h2 class="navi_tit">1단 메뉴 - text color hover interaction </h2>
+        <nav class="menu navi6">
+            <ul>
+                <li><a href="">메뉴1</a></li>
+                <li><a href="">주메뉴2</a></li>
+                <li><a href="">주메인메뉴만들기3</a></li>
+                <li><a href="">메뉴4</a></li>
+                <li><a href="">메뉴5</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!--    div.navi_fr>nav.menu.navi7>ul>li*5>a{메뉴$}-->
+    <div class="navi_fr">
+        <h2 class="navi_tit">1단 메뉴 - bg-color hover interaction </h2>
+        <nav class="menu navi7">
+            <ul>
+                <li><a href="">메뉴1</a></li>
+                <li><a href="">주메뉴2</a></li>
+                <li><a href="">주메인메뉴만들기3</a></li>
+                <li><a href="">메뉴4</a></li>
+                <li><a href="">메뉴5</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!--    div.navi_fr>nav.menu.navi8>ul>li*5>a{메뉴$}-->
+    <div class="navi_fr">
+        <h2 class="navi_tit">1단 메뉴 - bar hover interaction </h2>
+        <nav class="menu navi8">
+            <ul>
+                <li><a href="">메뉴1</a></li>
+                <li><a href="">주메뉴2</a></li>
+                <li><a href="">주메인메뉴만들기3</a></li>
+                <li><a href="">메뉴4</a></li>
+                <li><a href="">메뉴5</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!--    div.navi_fr>nav.menu.navi9>ul>li*5>a{메뉴$}-->
+    <div class="navi_fr">
+        <h2 class="navi_tit">1단 메뉴 - bar-stretching hover interaction</h2>
+        <nav class="menu navi9">
+            <ul>
+                <li><a href="">메뉴1</a></li>
+                <li><a href="">주메뉴2</a></li>
+                <li><a href="">주메인메뉴만들기3</a></li>
+                <li><a href="">메뉴4</a></li>
+                <li><a href="">메뉴5</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!--    div.navi_fr>nav.menu.navi10>ul>li*5>a{메뉴$}-->
+    <div class="navi_fr">
+        <h2 class="navi_tit">1단 메뉴 - bar-Follow hover interaction</h2>
+        <nav class="menu navi10">
+            <ul>
+                <li><a href="">메뉴1</a></li>
+                <li><a href="">주메뉴2</a></li>
+                <li><a href="">주메인메뉴만들기3</a></li>
+                <li><a href="">메뉴4</a></li>
+                <li><a href="">메뉴5</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!--    div.navi_fr>nav.menu.navi11>ul>li*5>a>span.e{menu$}+span.k{메뉴$}-->
+    <div class="navi_fr">
+        <h2 class="navi_tit">1단 메뉴 - multi-language hover interaction</h2>
+        <nav class="menu navi11">
+            <ul>
+                <li>
+                    <a href="">
+                        <span class="e">menu1</span>
+                        <span class="k">메뉴1</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="e">host menu2</span>
+                        <span class="k">주메뉴2</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="e">home main menu3</span>
+                        <span class="k">주메인메뉴만들기3</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="e">menu4</span>
+                        <span class="k">메뉴4</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="e">menu5</span>
+                        <span class="k">메뉴5</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="navi_fr">
+        <h2 class="navi_tit">1단 메뉴 - split menu &amp; Center Logo</h2>
+        <nav class="menu navi12">
+            <ul class="left">
+                <li class="item1"><a href="">메뉴1</a></li>
+                <li class="item2"><a href="">메뉴2</a></li>
+            </ul>
+            <a href="" class="logo">
+                <img src="https://placehold.it/200x80/FF1493/fff" alt="로고">
+            </a>
+            <ul class="right">       
+                <li class="item4"><a href="">메뉴4</a></li>
+                <li class="item5"><a href="">메뉴5</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="navi_fr">
+        <h2 class="navi_tit">1단 메뉴 - icon menu(bg사용)</h2>
+        <nav class="menu navi13">
+            <ul>
+                <li class="item1"><a href="">메뉴1</a></li>
+                <li class="item2"><a href="">주메뉴2</a></li>
+                <li class="item3"><a href="">주메인메뉴만들기3</a></li>
+                <li class="item4"><a href="">메뉴4</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="navi_fr">
+        <h2 class="navi_tit">1단 메뉴 - thumbnail menu(img 태그사용)</h2>
+        <nav class="menu navi14">
+            <ul>
+                <li class="item1"><a href="" data="아이린"><img src="r1.jpg" alt="아이린"></a></li>
+                <li class="item2"><a href="" data="슬기"><img src="r2.jpg" alt="슬기"></a></li>
+                <li class="item3"><a href="" data="웬디"><img src="r3.jpg" alt="웬디"></a></li>
+                <li class="item4"><a href="" data="조이"><img src="r4.jpg" alt="조이"></a></li>
+                <li class="item5"><a href="" data="예리"><img src="r5.jpg" alt="예리"></a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

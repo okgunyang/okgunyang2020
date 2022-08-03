@@ -1,0 +1,320 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+  .container
+    max-width: 992px
+    padding:
+      left: 10px!important
+      right: 10px!important
+  .main-header
+    min-height: auto
+  .header-content
+    .h1
+      font-size: 60px
+
+.s-contacts
+  .contacts-wrap
+    .contact
+      span:first-child
+      .contact-value
+        font-size: 22px
+
+  /**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+  .container
+    max-width: 768px
+
+  .mobile-mnu-btn
+    display: block
+  .main-header .navbar-wrap .menu
+    display: none
+
+  .s-default
+    padding: 60px 0 80px
+    .s-header
+      padding: 0 10px
+      .h2
+        font-size: 50px
+      .s-description
+        font-size: 14px
+    .s-content
+      margin-top: 70px
+  .s-slider
+    .slider-wrap
+      .owl-nav
+        bottom: 25%
+        .owl-next
+         right: 15px
+        .owl-prev
+          left: 15px
+      .slide
+        height: 100vh
+        .slide-text
+          padding: 30px 20px
+          .date::before
+            bottom: 30%
+
+  .s-blog
+    .container
+      max-width: 95%
+    .s-content
+      margin-top: 30px
+    .blog-grid
+      grid-template-columns: repeat(2, 1fr)
+      grid-template-rows: repeat(3, 1fr)
+      padding: 0 30px
+      .tag
+        left: -60px
+      .blog-item:nth-of-type(1)
+        grid-column: 1 / 3
+
+  .s-contacts
+    .contacts-wrap
+      flex-direction: column
+      .contact
+        padding: 60px 0 30px
+        text-align: center
+        &::before
+          width: 50px
+          height: 50px
+          background-position: 0 0
+          top: 0
+          left: 50%
+          margin-left: -25px
+        &.addr
+          &::before
+            background-position: 58px 0
+        &.phone
+          &::before
+            background-position: -62px 0
+        &.email
+          &::before
+            background-position: -7px 0
+        .contact-value
+          font-size: 24px
+  /**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+
+
+
+  .container
+    max-width: 480px
+
+  .top-line
+    .social
+      display: none
+
+  .header-content
+    margin-top: 170px
+    .h1
+      font-size: 50px
+    p
+      font-size: 14px
+
+  .s-services
+    .teasers-wrap
+      flex-wrap: wrap
+      justify-content: flex-start
+      .teaser
+        flex-basis: 50%
+    .info-block
+      flex-wrap: wrap
+      justify-content: center
+      margin-top: 20px
+      .img-wrap
+        flex-basis: 100%
+      .text-block
+        margin: 30px 0 0
+        flex-basis: 100%
+  .s-slider
+    .slider-wrap
+      .slide
+        .slide-text
+          flex-wrap: wrap
+          .date
+            border-right: none
+            &::before
+              left: inherit
+              bottom: 5px
+              right: 0
+          .text
+            margin-top: 10px
+            font-size: 14px
+  .s-blog
+    .controls
+      text-align: center
+      li
+        &:not(:last-child)
+          margin-right: 20px
+  .s-blog
+    .blog-grid
+      grid-template-columns: 1fr
+      grid-template-rows: auto
+      padding: 0 30px
+      .tag
+        left: -60px
+      .blog-item:nth-of-type(1)
+        grid-column: auto
+
+  .main-footer
+    padding: 30px 0
+    .footer-content
+      text-align: center
+      nav
+        // text-align: left
+        margin-bottom: 60px
+        li
+          display: block
+          margin-right: 0
+          padding: 10px
+          transition: all .5s ease
+          &:hover
+            background-color: lighten(#3a3a3a, 10%)
+        a
+          text-transform: uppercase
+          font-size: 18px
+          &:hover
+            color: #fff
+      .logo
+        img
+          height: 30px
+      .soc-links
+        text-align: center
+        margin-top: 10px
+        a
+          color: #fff
+          &:hover
+            text-decoration: underline
+          &:not(:last-child)
+            &::after
+              content: ' /'
+              color: #fff
+              text-decoration: none
+  /**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+  .container
+    max-width: 320px
+
+  .top-line
+    .contacts
+      span
+        margin-right: 6px
+        padding-left: 15px
+
+  .header-content
+    margin-top: 10%
+    .h1
+      font-size: 40px
+      margin-bottom: 15px
+    .header-buttons
+      margin-top: 20px
+      .button
+        margin: 10px 0 0
+
+  .s-services
+    .teasers-wrap
+      flex-wrap: wrap
+      justify-content: center
+      .teaser
+        flex-basis: 50%
+        height: 30vh
+    .info-block
+      .img-wrap
+        min-height: 200px
+  .s-slider
+    .owl-nav
+      bottom: 25%
+      .owl-next
+        right: 15px
+      .owl-prev
+        left: 15px
+    .slider-wrap
+      .slide
+        .slide-text
+          padding: 30px 0
+          .date
+            &::before
+              left: inherit
+              bottom: 5px
+              right: 0
+          .text
+            margin-top: 10px
+            font-size: 14px
+
+  .s-channel
+    .s-content
+      margin-top: 30px
+
+  .s-blog
+    .controls
+      text-align: left
+      li
+        margin-top: 10px
+        font-size: 16px
+        &:not(:last-child)
+          margin-right: 30px
+  .s-blog .blog-grid
+    grid-gap: $gutter*1.5
+    .tag
+      font-size: 12px
+      left: -55px
+    .blog-item img
+      height: auto
+  /**/
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+  .container
+    max-width: 320px
+  .top-line
+    height: auto
+    .contacts
+      text-align: left
+      span
+        text-align: left
+        font-size: 16px
+        margin-right: 6
+        padding-left: 20px
+
+
+  /**/
+
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+  /**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+  /**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+  /**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+  /**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+  /**/

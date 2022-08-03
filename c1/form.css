@@ -1,0 +1,212 @@
+.frmBox {
+	clear:both;
+	width:100%;		 
+}
+
+h1.frmTitle {
+	text-align:center;
+	line-height:3;
+}
+
+.frmFrame {
+	list-style:none;
+	width:80%;
+	margin:0 auto;
+	border:2px solid #333;
+	padding-bottom:30px;
+}
+
+.frmFrame li {
+	clear:both;
+	padding:20px 0px;
+}
+
+.loginFrm {
+	width:400px;
+}
+
+.joinFrm {
+	width:800px;
+	padding-top:50px;
+	padding-bottom:60px;
+}
+
+.frmFrame.joinFrm li {
+	border-top:1px solid #c9c9c9; 
+	height:auto;
+	margin:30px auto;
+}
+
+.frmHalf {
+	float:left;
+	width:50%;
+}
+
+.frmFull {
+	clear:both;
+	width:100%;
+}
+
+.frmW30 {
+	clear:both;
+	float:left;
+	width:30%;
+}
+
+.frmW70 {
+	float:left;
+	width:70%;
+}
+.frmW70.pd55 {
+	box-sizing:border-box;
+	padding-left:50px;
+}
+
+.inLabel {
+	display:block;
+	width:80%;
+	line-height:36px;
+	height:36px;
+	text-indent:15px;
+}
+
+.inRaLabel {
+	display:block;
+	width:65px;
+	line-height:36px;
+	height:36px;
+	text-align:center;
+	float:left;
+	margin-right:20px;	 
+}
+.inRaLabel:first-child {
+	margin-left:55px;	
+}
+
+.inRaLabel:before {
+	content:"";
+	display:block;
+	width:36px;
+	line-height:36px;
+	height:36px;
+	background-image:url("./frmImg/raOff.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	float:left;
+}
+
+.inRa {
+	display:none;
+}
+
+.inRa:checked + .inRaLabel:before {
+	background-image:url("./frmImg/raOn.png");
+}
+
+.inData {
+	display:block;
+	line-height:36px;
+	height:36px;
+	width:80%;
+	margin:0 auto;
+	text-indent:15px;
+	outline:0;
+	border:1px solid #333;
+	background:transparent;
+}
+
+.inData.btn {
+	text-indent:0px;
+	text-align:center;
+	color:#fff;
+	background:#28b690;
+	outline:0;
+	font-size:16px;
+	border:0;
+}
+
+.inData.btn2 {
+	width:120px;
+	text-indent:0px;
+	text-align:center;
+	color:#fff;
+	background:#28b690;
+	outline:0;
+	font-size:16px;
+	border:0;
+}
+
+.inData2 {
+	display:block;
+	line-height:36px;
+	height:36px;
+	width:40%;
+	margin:0px 0px 0px 15px;
+	text-indent:15px;
+	outline:0;
+	border:1px solid #333;
+	background:transparent;
+	float:left;
+}
+
+.inData2.btn2 {
+	display:block;
+	width:120px;
+	text-indent:0px;
+	text-align:center;
+	color:#fff;
+	background:#28b690;
+	outline:0;
+	font-size:16px;
+	border:0;
+	float:left;
+}
+
+.inData3 {
+	display:block;
+	line-height:36px;
+	height:36px;
+	width:60%;
+	margin:0px 0px 0px 15px;
+	text-indent:15px;
+	outline:0;
+	border:1px solid #333;
+	background:transparent;
+	float:left;
+}
+
+.selData {
+	display:block;
+	line-height:36px;
+	height:36px;
+	width:40%;
+	margin:0px 15px 0px 0px;
+	text-indent:15px;
+	outline:0;
+	border:1px solid #333;
+	background:transparent;
+	float:left;
+}
+
+.frmSep {
+	display:block;
+	width:20px;
+	text-align:center;
+	color:#333;
+	float:left;
+	line-height:36px;
+}
+
+.frmLnk {
+	text-decoration:none;
+	display:block;
+	color:#28b690;
+	text-align:center;
+	font-size:14px;
+	line-height:36px;
+	font-weight:bold;
+}
+
+.frmBg1 {
+	background:#bbfdeb;
+}

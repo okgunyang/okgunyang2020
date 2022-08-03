@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform 01 - 2D transform</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; min-height: 100%; }
+    ul { list-style: none; }
+    a { text-decoration: none; }
+    button, input { outline:0; border:0; background: none; }
+    .wrap { clear:both; width: 100%; min-height: 100%; }
+    .box_wrap { clear:both; width: 100vw; height: 100vh; }
+    .wrap:after, .box_wrap:after { content:""; display:block; clear: both ;}
+    .box { width: 100px; height: 100px; margin: 10px;  color:#333; text-align: center; 
+        line-height: 100px; 
+        transition-duration:1s; }
+    .item1 { background-color: aqua; }
+    .item2 { background-color: blanchedalmond; }
+    .item3 { background-color: burlywood; }
+    .item4 { background-color: chartreuse; }
+    .item5 { background-color: darkgreen; }
+    .item6 { background-color: deeppink; }
+    .item7 { background-color: deeppink; }
+    .box_wrap:hover .box.item1 { transform:translateX(500px); }    
+    .box_wrap:hover .box.item2 { transform:translateY(1000px); }   
+    .box_wrap:hover .box.item3 { transform:scale(2); }    
+    .box_wrap:hover .box.item4 { transform:scaleX(2) skewX(180deg); }    
+    .box_wrap:hover .box.item5 { transform:scaleY(0.75) scaleX(0.3); }   
+    .box_wrap:hover .box.item6 { transform:rotate(720deg); } 
+    .box_wrap:hover .box.item7 { transform:matrix(2, 2, -1, 1.5, 500, 200); } 
+    
+    /*
+    2D transform
+    이동 : translate(X축px단위이동량, Y축px단위이동량), translateX(px단위이동량), translateY(px단위이동량)
+    확대/축소 : scale(배수), scaleX(배수), scaleY(배수)
+    기울이기 : skew(deg단위), skewX(deg단위), skewY(deg단위)
+    회전 : rotate(deg단위)
+    통합 : matrix(scaleX:배수, skewY:바퀴수, skewX:바퀴수, scaleY:배수, translateX:x이동량, translateY:y이동량)
+    음수 값일 경우는 반대 방향으로 진행됨
+    */
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul class="box_wrap">
+            <li class="box item1">1</li>
+            <li class="box item2">2</li>
+            <li class="box item3">3</li>
+            <li class="box item4">4</li>
+            <li class="box item5">5</li>
+            <li class="box item6">6</li>
+            <li class="box item7">7</li>
+        </ul>
+    </div>
+</body>
+</html>

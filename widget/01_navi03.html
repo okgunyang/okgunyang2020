@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>navigation</title>
+    <link rel="stylesheet" href="flex-layout-attribute.min.css">
+    <link rel="stylesheet" href="./navi01_style.css">
+    <link rel="stylesheet" href="navi02_style.css">
+    <style>
+    .wrap { width: 100%; min-height:40vh; clear:both; position:relative;  }    
+    </style>
+</head>
+<body>
+<div class="wrap" id="item1">
+    <div class="container">
+        <div class="selector" self="size-x1" layout="row center-left">
+            <div class="highlight"></div>
+            <div class="selector-item" onclick="selectItem(event)">Home</div>
+            <div class="selector-item" onclick="selectItem(event)">Messages</div>
+            <div class="selector-item" onclick="selectItem(event)">Account</div>
+        </div>
+    </div>
+    <script src="navi01.js"></script>
+</div>
+<div class="wrap" id="item2">
+    <div class="container">
+      <div class="tabs">
+        <input type="radio" id="radio-1" name="tabs" checked />
+        <label class="tab" for="radio-1">Upcoming<span class="notification">2</span></label>
+        <input type="radio" id="radio-2" name="tabs" />
+        <label class="tab" for="radio-2">Development</label>
+        <input type="radio" id="radio-3" name="tabs" />
+        <label class="tab" for="radio-3">Completed</label>
+        <span class="glider"></span>
+      </div>
+    </div>
+</div>    
+</body>
+</html>

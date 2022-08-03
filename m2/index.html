@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>기태건설에 오신 것을 환영합니다.</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon16.png">
+    <!-- 신형 브라우저와 안드로이드 폰 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon32.png">
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="48x48" href="./img/favicon48.png">
+    <!-- 아이패드 -->
+    <link rel="apple-touch-icon" size="72x72" href="./img/favicon72.png">
+    <!-- 아이폰4 이상 -->
+    <link rel="apple-touch-icon" size="114x114" href="./img/favicon114.png">
+    <link rel="stylesheet" href="font.css">
+    <link rel="stylesheet" href="icon.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; height: 100%; font-family: 'Noto Sans KR', sans-serif; font-weight:400; }
+    ul { list-style: none; }    
+    a { text-decoration:none; }    
+    button, label, input { outline: 0; border:0; background:transparent; }
+    .ckItem, .raItem { display:none; }   
+    #hd { width: 100%; height:60px; background:#222; position:absolute; top: 0; left: 0; z-index:80; }
+    .logo { display:block; width:calc(100% - 62px); height:60px; 
+        background-repeat:no-repeat; background-image:url("./img/logoType.png"); background-position:0px center; float:left; border-right:1px solid #000; }
+    .lstBtn { display:block; border-left:1px solid #444; width: 60px; height:60px; float:right; position:relative; }
+    .lstBtn span { display:block; width:28px; height:2px; clear:both;  right:15px; float:right; background:#fff; position:absolute; }
+    .lstBtn .lst1 { top: 15px; }    
+    .lstBtn .lst2 { top: 27px; } 
+    .lstBtn .lst3 { top: 39px; } 
+    #lstCall:checked ~ #container .lstBtn .lst1 { transform:rotate(45deg); top:27px; }
+    #lstCall:checked ~ #container .lstBtn .lst2 { display:none; }
+    #lstCall:checked ~ #container .lstBtn .lst3 { transform:rotate(135deg); top:27px; }    
+        
+    #gnb { width:calc(100% - 60px); height:100%; 
+        background:#181818; color:#fff; position:fixed; top:0; left:-100%; z-index:90; transition:0.6s; }
+    #lstCall:checked ~ #gnb { left:0; }    
+        
+    .lbItem { width:100%; border-bottom:1px solid #333; 
+        height: 59px; }    
+    .lbItem li { float:left; width:20%; height:60px; }    
+    .lbItem li label { display:block; width:30px; height:30px; padding: 15px; background-repeat: no-repeat; background-position:center center; font-size:20px; }    
+    .closeBtn { background-image:url("./img/closeBtn.png"); } 
+    .langBtn { background-image:url("./img/ko.png"); background-size:20px 20px; }    
+    .mainItem { clear:both; width: 100%; } 
+    .mainItem li { line-height:3.6; border-top:1px solid #333; border-bottom:1px solid #000; }
+    .mainItem li a { display:block; text-indent:3em; color:#fff; font-size:1.1em; }    
+    #search, #login { width:100%; height:100%; background:rgba(0,0,0,0.85); position:fixed; top:-100%; left: 0; color:#fff; z-index:100; transition:0.6s; }
+    #search label { display:block; float:right; margin-right:50px; 
+        margin-top:50px; margin-bottom:50px; width: 30px; height: 30px; padding:15px; background-position:center center; background-repeat: no-repeat; }
+    .inputItem { clear:both; display:block; line-height:50px; width:70%; border-radius:5px 0px 0px 5px; 
+        background:#fff; color:#999; text-indent:1em; font-size:1em; 
+        margin-left:7%; float:left; }
+    .searchBtn { display:block; width:50px; height:50px; color:#999; background:#fff; float:left; border-radius:0px 5px 5px 0px; } 
+    .loginBox { width:85%; padding:20px; background:rgba(250, 250, 250, 0.8); margin:30px auto; clear:both; }    
+    .loginLock { font-size:3em; padding:1em; text-align:center; } 
+    #login label { display:block; } 
+    #login .closeBtn { width:30px; height:30px; margin-top: 50px; margin-right: 50px; margin-bottom: 50px; float:right; }    
+    #login .inputItem { margin:20px auto; clear:both; border-radius:5px 5px 5px 5px; float: none; width:80%; } 
+    .loginBtn, .contactBtn { display:block; width: 80%; line-height:40px; background:#38b5c7; color:#fff; text-align:center; font-size:1em; 
+        margin:10px auto; border:5px 5px 5px 5px; }
+    #searchRa:checked ~ #search { top:0; }    
+    #loginRa:checked ~ #login { top:0; }  
+    #closeRa:checked ~ #search { top:-100%; } 
+    #closeRa:checked ~ #login { top:-100%; } 
+
+    #container { clear:both; width:100%; height: 100%; }
+    #visual { width: 100%; height: 100%; overflow:hidden; }    
+    .vsFrame { width:400%; height: 100%; }
+    .vsFrame li { float:left; width:25%; height: 100%; 
+        background-repeat:no-repeat; background-position:center center; background-size:cover; transition:0.5s;  }
+    .vsFrame li.on {  padding-top:0; opacity:1; }    
+    .vsFrame .item1 { background-image:url("./img/slider1.jpg")} 
+    .vsFrame .item2 { background-image:url("./img/slider2.jpg")} 
+    .vsFrame .item3 { background-image:url("./img/slider3.jpg")} 
+    .vsFrame .item4 { background-image:url("./img/slider4.jpg")} 
+    .vsFrame li .vsTit { text-align: center; padding:2em; padding-top:3em; color:#fff; font-size:2.4em; padding-bottom:0.5em; margin-top: 100%; opacity:0; transition:0.6s; transition-property:margin-top, opacity; transition-delay:0s, 0.6s; } 
+    .vsFrame li .vsCom { text-align:center; padding:2em; font-size:1.2em; color:#fff; text-shadow:1px 1px 5px #333, -1px -1px 5px #333; } 
+    .vsFrame li .vsMore { display:block; width:100px; line-height:2; margin:15px auto; border-bottom:2px solid rgba(255, 255, 255, 0.6); text-align:center; color:#fff; font-size:1.1em; }  
+    .vsFrame li.on .vsTit { margin-top:0; opacity:1; }            
+    .btnFrame { position:relative; width:30%; margin:15px auto;  z-index:50; } 
+    .btnFrame li { position:absolute; width:25%; height:10px; z-index:50; top:-80px; }
+    .btnFrame li.item1 { left:0; }   
+    .btnFrame li.item2 { left:25%; }  
+    .btnFrame li.item3 { left:50%; }  
+    .btnFrame li.item4 { left:75%; }  
+    .btnFrame li label { display:block; width:10px; height:10px; border-radius:5px; background:#333; margin:0 auto; }
+    .btnFrame li label.on { background:#38b5c7; width:90%; } 
+        
+    .page { clear:both; width: 100%; min-height:100%; padding-bottom: 30px; }
+    .page:nth-child(2n+1) { background:#f1f1f1; }    
+    .pageTit { font-size:1.6em; padding:1em; text-align:center; color:#444; padding-top:1.2em; border-top:3px solid #efefef; }
+    .pageTit .upper { border-top:1px solid #444; }    
+    .pageTit .downer { border-bottom:1px solid #444; }   
+        
+    .pageLst { clear:both; width:100%; }    
+    .pageLst a { display:block; height:auto; text-align:center; padding:10px; }    
+    .pageLst a img { display:block; width:90%; margin:0 auto; height: auto; }
+    .pageMore {  display:block; margin:0 auto; margin-top:20px; color:#333; font-size:1.1em; text-align:center; padding:15px; 
+        border:2px solid #333; width:180px;}  
+    .pageLst li a { position:relative; }    
+    .pageLst li a:after { content:attr(data-value); display:block; min-width:240px; line-height:40px; font-size:1.1em; text-align:center; position:absolute; top:5em; z-index:30; color:#f1d30b; padding:2em;
+        text-shadow:2px 2px 2px #333, -2px -2px 2px #333;  }
+    .frmLst li { min-height:32px; padding-top: 10px; padding-bottom: 10px; clear:both; width:100%; }    
+    .coment { padding:10px 30px; color:#999; font-size:0.9em; text-align:center; }    
+    #contact .inputItem { border:1px solid #999; color:#999; margin: 10px auto; display:block; float:none; }
+    
+    #ft { width: 100%; clear: both; height:160px; background:#222; 
+        color:#fff; }    
+    #fnb { width:80%; height:42px; margin:0 auto; }
+    #fnb li { width: 16.666666%; float:left; height:42px; }    
+    #fnb li a { color:#fff;  display:block; text-align:center; line-height:42px;  font-size:1.1em; }    
+    .ftWrap { height: 126px; background:#fff; padding: 3em; 
+        color:#222; line-height:2.4; }
+        
+    #splash { width: 100%; height: 100%; position:fixed; top: 0; left: 0; z-index:999; background:#fff; }
+    .splashWrap { width:90%; height: 90%; margin:5%; 
+        background-repeat:no-repeat; background-size:cover; background-position:center center; background-image:url("./img/slider5.jpg"); }    
+        
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+        var wd = parseInt($("#visual").width());
+        function nextAni(){
+            $(".vsFrame").not(":animated").animate({"margin-left":-wd+"px"}, 600, function(){
+                $(".vsFrame li").removeClass("on");
+                $(".vsFrame li").eq(0).appendTo($(".vsFrame"));
+                $(".vsFrame").css("margin-left", "0px");
+                $(".vsFrame li").eq(0).addClass("on");
+                $(".btnFrame li").eq(0).appendTo($(".btnFrame"));
+                $(".btnFrame li label").removeClass("on");
+                $(".btnFrame li").eq(0).find("label").addClass("on");
+            });
+        }
+        var intv = setInterval(function(){
+            nextAni();
+        }, 3200); 
+        
+        var loadingToSplash = setTimeout(function(){
+            loadSplash();
+        }, 1000);
+        
+        function loadSplash(){
+            $("#splash").animate({"opacity":"0", "left": "-101%"}, 600, function(){
+                $("#splach").fadeOut();
+            });
+        }
+    });    
+    </script>
+</head>
+<body>
+<input type="checkbox" id="lstCall" class="ckItem">
+<input type="radio" name="raItem" id="closeRa" class="raItem" checked>
+<input type="radio" name="raItem" id="searchRa" class="raItem">
+<input type="radio" name="raItem" id="loginRa" class="raItem">
+<div id="search">
+    <form action="" name="searchFrm">
+        <label for="closeRa" class="closeBtn"></label>
+        <div class="searchBox">
+            <input type="text" name="kewyword" placeholder="검색할 단어를 입력합니다" class="inputItem">
+            <button type="submit" class="searchBtn">
+                <i class="ki-search"></i>
+            </button>
+        </div>
+    </form>
+</div>
+<div id="login">
+    <form action="" name="loginFrm">
+        <label for="closeRa" class="closeBtn"></label>
+        <br>
+        <div class="loginBox">
+            <label class="loginLock">
+                <i class="ki-unlock"></i>
+            </label>
+            <input type="text" name="id" placeholder="아이디를 입력하세요" class="inputItem">
+            <input type="password" name="pw" placeholder="비밀번호를 입력하세요" class="inputItem">
+            <br>
+            <input type="submit" value="로그인" class="loginBtn">
+        </div>
+    </form>
+</div>
+<nav id="gnb">
+    <ul class="lbItem">
+        <li><label for="" class="langBtn"></label></li>
+        <li>
+            <label for="searchRa"><i class="ki-search"></i></label>
+        </li>
+        <li>
+            <label for="loginRa"><i class="ki-user-o"></i></label>
+        </li>
+        <li></li>
+        <li><label for="lstCall" class="closeBtn"></label></li>
+    </ul>
+    <ul class="mainItem">
+        <li><a href="#about">About</a></li>
+        <li><a href="#service">Service</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Conatct</a></li>
+    </ul>
+</nav>
+<main id="container">
+    <header id="hd">
+        <a href="" class="logo"></a>
+        <label for="lstCall" class="lstBtn">
+            <span class="lst1"></span>
+            <span class="lst2"></span>
+            <span class="lst3"></span>
+        </label>
+    </header>
+    <figure id="visual">
+        <ul class="vsFrame">
+            <li class="item1 on">
+                <div class="vsTitFrame">
+                    <h3 class="vsTit">USING THE POWER OF DESIGN</h3>
+                    <p class="vsCom">한 층더 새로워진 힘찬 건설~!</p>
+                    <a href="" class="vsMore">VIEW MORE</a>
+                </div>
+            </li>
+            <li class="item2">
+                <div class="vsTitFrame">
+                    <h3 class="vsTit">BEAUTIFUL STYLISH DESIGN</h3>
+                    <p class="vsCom">아름다운 스타일의 감각적인 건설~!</p>
+                    <a href="" class="vsMore">VIEW MORE</a>
+                </div>
+            </li>
+            <li class="item3">
+                <div class="vsTitFrame">
+                    <h3 class="vsTit">EASY CUSTOM DESIGN</h3>
+                    <p class="vsCom">쉽게 빠르게 사용자에게 맞추는 건설~!</p>
+                    <a href="" class="vsMore">VIEW MORE</a>
+                </div>
+            </li>
+            <li class="item4">
+                <div class="vsTitFrame">
+                    <h3 class="vsTit">FULLEY SUPPORTS SERVICE</h3>
+                    <p class="vsCom">만족의 최선을 다하는 서비스 지원~!</p>
+                    <a href="" class="vsMore">VIEW MORE</a>
+                </div>
+            </li>
+        </ul>
+        <ul class="btnFrame">
+            <li class="item1"><label for="" class="on"></label></li>
+            <li class="item2"><label for=""></label></li>
+            <li class="item3"><label for=""></label></li>
+            <li class="item4"><label for=""></label></li>
+        </ul>
+    </figure>
+    <section class="page" id="about">
+        <h2 class="pageTit">
+            <span class="upper">About</span>
+            <span class="downer">KITAE</span>
+        </h2>
+        <ul class="pageLst">
+            <li class="item">
+                <a href=""><img src="./img/about-1.jpg" alt="KITAE1"></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="./img/about-2.jpg" alt="KIMTAE2"></a>
+            </li>
+        </ul>
+        <a href="" class="pageMore">CLICK TO MORE</a>
+    </section>
+    <section class="page" id="service">
+        <h2 class="pageTit">
+            <span class="upper">SERVICE</span> OF
+            <span class="downer">KITAE</span>
+        </h2>
+        <ul class="pageLst">
+            <li class="item">
+                <a href=""><img src="./img/service1.jpg" alt="서비스1"></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="./img/service2.jpg" alt="서비스2"></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="./img/service3.jpg" alt="서비스3"></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="./img/service4.jpg" alt="서비스4"></a>
+            </li>
+        </ul>
+        <a href="" class="pageMore">CLICK TO MORE</a>
+    </section>
+    <section class="page" id="news">
+        <h2 class="pageTit">
+            <span class="upper">KITAE's </span>
+            <span class="downer">NEWS</span>
+        </h2>
+        <ul class="pageLst">
+            <li class="item">
+                <a href="" data-value="미래를 앞서가는 기태건설~!"><img src="./img/news1.jpg" alt="뉴스1"></a>
+            </li>
+            <li class="item">
+                <a href="" data-value="조금 더 아름다운 기태건설~!"><img src="./img/news2.jpg" alt="뉴스2"></a>
+            </li>
+            <li class="item">
+                <a href="" data-value="건설 법규를 수호하는 기태건설~!"><img src="./img/news3.jpg" alt="뉴스3"></a>
+            </li>
+            <li class="item">
+                <a href="" data-value="소비자에게 우수품질로 보답하는 기태건설~!"><img src="./img/news4.jpg" alt="뉴스4"></a>
+            </li>
+            <li class="item">
+                <a href="" data-value="최고의 기술진과 최상의 품질을 자랑하는 기태건설~!"><img src="./img/news5.jpg" alt="뉴스5"></a>
+            </li>
+            <li class="item">
+                <a href="" data-value="소비자 만족도 1위~! 기태건설~!"><img src="./img/news6.jpg" alt="뉴스6"></a>
+            </li>
+        </ul>
+        <a href="" class="pageMore">CLICK TO MORE</a>
+    </section>
+    <section class="page" id="contact">
+        <h2 class="pageTit">
+            <span class="upper">FROM</span>
+            <span class="downer">KITAE</span>
+        </h2>
+        <form action="" id="cont">
+            <ul class="pageLst frmLst">
+                <li class="contCom">
+                    <p class="coment">(기태건설에 하고 싶은 말을 입력해주세요)</p>
+                </li>
+                <li class="item">
+                    <input type="text" class="inputItem" placeholder="제목을 입력하세요">
+                </li>
+                <li class="item">
+                    <input type="email" class="inputItem" placeholder="본인 이메일을 입력하세요">
+                </li>
+                <li class="item">
+                    <textarea name="memo" id="memo" cols="40" rows="7" class="inputItem"></textarea>
+                </li>
+                <li class="item">
+                    <input type="submit" value="글쓰기" class="contactBtn">
+                </li>
+            </ul>
+        </form>
+    </section>
+    <footer id="ft">
+        <nav id="fnb">
+            <ul class="footerlink">
+                <li>
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener"><i class="ki-facebook"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com" target="_blank" rel="noopener"><i class="ki-twitter"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener"><i class="ki-instagram"></i>
+                    </a>
+                </li>								
+                <li>
+                    <a href="https://plus.google.com" target="_blank" rel="noopener"><i class="ki-google-play"></i>
+                    </a>
+                </li>								
+                <li>
+                    <a href="https://www.youtube.com" target="_blank" rel="noopener"><i class="ki-youtube"></i>
+                    </a>
+                </li>								
+                <li>
+                    <a href="https://vimeo.com" target="_blank" rel="noopener"><i class="ki-vimeo"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <div class="ftWrap">
+            <p class="copyright">©kitae.com All Rights Reserved</p>
+        </div>
+    </footer>
+</main>
+<div id="splash">
+    <div class="splashWrap"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+* { margin:0;	padding:0; }
+body, html { width:100%; height:100%;  -ms-scroll-style:none; }
+::-webkit-scrollbar { display:none; }
+::-ms-scrollbar { display:none; }
+::-moz-scrollbar { display:none; }
+::-o-scrollbar { display:none; }
+ul { list-style:none; 		float:left; 		margin:30px}
+div { color:white; 	text-align:center; }
+#wrap { width:100%; height:100%; }
+.header { width:100%;	height:120px; 	background:black; 	border-bottom:4px solid gray; 
+	line-height:120px;	position:fixed; top:0; left:0; z-index:99;}
+.footer { width:100%;	height:120px; 	background:black; 	border-top:4px solid gray; 
+	line-height:120px;	position:fixed; bottom:0; left:0; z-index:99; }
+div.page { clear:both; width:100%;	height:100%; 	position:relative; }
+.page h1 { line-height:350px; }
+div.main { background:pink; }
+div.sub1 { background:lime; }
+div.sub2 { background:lightblue; }
+div.sub3 { background:yellow; }
+div.sub4 { background:violet; }
+div.sub5 { background:#cc3300; }
+#quick { position:fixed;	top:150px;	right:50px; 	width:50px;
+	background:#333; 	border:3px solid white; }
+#quick a { display:block; 	width:32px;	height:32px;  text-align:center;
+	background-repeat:no-repeat; margin-left:10px; color:#fff; cursor:pointer;
+	border:3px solid #fff; border-radius:19px;  line-height:32px; }
+#quick a.on { background-color:#fff; color:#333; }
+#main_gnb { clear:both; width:960px; margin:0 auto; height:48px; }
+#main_gnb ul { margin:0; width:960px; }
+#main_gnb li { float:left; width:16%; }
+#main_gnb li a { display:block; line-height:48px; text-align:center;
+
+	font-size:18px; color:#fff; font-weight:bold; }
+#main_gnb li a.on { background:#fff; color:#333; }
+</style>
+<meta charset="UTF-8">
+<title>DOM 엘리멘트에 이벤트 적용하기</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.js"></script>
+<script type="text/javascript">
+$(function(){
+	var win_h = $(window).height();
+	$("#quick a").click(function(){ //퀵 또는 메인메뉴 버튼 클릭시 스크롤링
+		var aPage = parseInt($(this).attr("data-val"));
+		$("body, html").not(":animated").animate({"scrollTop" : aPage*win_h }, 1200);
+		$("#quick a").removeClass("on");
+		$("#quick a[data-val]").eq(aPage).addClass("on");
+	});
+	$('.page').each(function(index){  //각 페이지 data-page 값=스크롤 값을 계산해서 넣기
+	    $(this).attr("data-page",win_h*index);
+	});
+	$('.page').on("mousewheel",function(e){ //마우스 휠로 스크롤할 때 한 페이지씩 스크롤링
+	    var sectionPos = parseInt($(this).attr("data-page"));
+	    if(e.originalEvent.wheelDelta >= 0) {  //위로 스크롤시 0, +1
+	        $("body, html").stop().animate({scrollTop:sectionPos - win_h});
+
+	    return false;
+	    } else if (e.originalEvent.wheelDelta < 0) {  //아래로 스크롤시 -1
+	        $("body, html").stop().animate({scrollTop:sectionPos + win_h});
+	    return false; 
+	    }
+	});  	 
+	$(window).scroll(function(){  //스크롤링 될 때 메인메뉴 버튼, 퀵 버튼 활성화
+		var cnt = parseInt($(window).scrollTop() / win_h);
+		$("#quick a").removeClass("on");
+		$("#quick a.pageMove").eq(cnt).addClass("on");
+	});
+	$("#quick a.up").click(function(){ //퀵 메뉴에서 위로 버튼 눌렀을 때 가장 위로 스크롤링
+		$("body, html").not(":animated").animate({"scrollTop" : "0px" }, 1200);
+	});
+	var pageCnt = $(".page").length - 1;
+	$("#quick a.down").click(function(){ //퀵 메뉴에서 아래로 버튼 눌렀을 때 가장 끝으로 
+		$("body, html").animate({"scrollTop" : win_h*5 }, 1200);
+	});
+});
+</script>
+</head>
+<body>   
+<header class="header">
+
+</header>
+ <div id="wrap">
+   <div class="page main" id="main" data-page="0">
+	<h1>여기는 메인입니다</h1>
+   </div>
+   <div class="page sub1" id="sub1" data-page="1">
+	<h1>여기는 서브1입니다</h1>
+   </div>
+   <div class="page sub2" id="sub2" data-page="2">
+	<h1>여기는 서브2입니다</h1>
+   </div>
+   <div class="page sub3" id="sub3" data-page="3">
+	<h1>여기는 서브3입니다</h1>
+   </div>
+   <div class="page sub4" id="sub4" data-page="4">
+	<h1>여기는 서브4입니다</h1>
+   </div>
+   <div class="page sub5" id="sub5" data-page="5">
+	<h1>여기는 서브5입니다</h1>
+   </div>
+</div>   
+<div class="footer">
+	<h1>여기는 푸터입니다</h1>
+</div>
+<section id="quick">
+	<a class="up">▲</a>
+	<a class="pageMove home on" data-val="0">0</a>
+	<a class="pageMove sub1_move" data-val="1">1</a>
+	<a class="pageMove sub2_move" data-val="2">2</a>
+	<a class="pageMove sub3_move" data-val="3">3</a>
+	<a class="pageMove sub4_move" data-val="4">4</a>
+	<a class="pageMove sub5_move" data-val="5">5</a>
+	<a class="down">▼</a>
+</section>
+</body>
+</html>

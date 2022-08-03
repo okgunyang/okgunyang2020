@@ -1,0 +1,44 @@
+{
+  "short_name": "Kitae",   //바로가기 이름
+  "name": "Kitae Multi App",  //정식 앱 이름
+  "icons": [
+    {
+      "src": "img/favicon57.png",
+      "type": "image/png",
+      "sizes": "57x57"
+    },
+    {
+      "src": "img/favicon72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "img/favicon144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+        "src": "img/icon-128x128.png",
+        "type": "image/png",
+        "sizes": "128x128"
+    }, {
+        "src": "img/apple-touch-icon.png",
+        "type": "image/png",
+        "sizes": "152x152"
+    }, {
+        "src": "img/ms-touch-icon-144x144-precomposed.png",
+        "type": "image/png",
+        "sizes": "144x144"
+    }, {
+        "src": "img/chrome-touch-icon-192x192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+    }
+  ],
+  "start_url": "index.html?launcher=true",  //브라우저 시작 주소
+  "background_color": "#6a4928",  //현재 페이지 배경색 지정
+  "theme_color": "#6a4928",  //전체 테마 컬러 지정    
+  "display": "standalone", //브라우저 UI 숨기기
+  //"display": "browser",  //브라우저 UI 표시
+  "orientation": "landscape" //기기의 초기화면 모드    
+}

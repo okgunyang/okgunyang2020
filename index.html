@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 문서 정보 등록 -->
+    <meta name="application-name" content="kmgt Portfolio">
+    <meta name="title" content="KMGT's 포트폴리오">
+    <meta name="description" content="KMGT's의 자바웹개발자 포트폴리오, 인트로, 보유기술, 갤러리, 컨택트, intro, technic, ability, skill, project, gallery, contact">
+    <meta name="keywords" content="웹 프로젝트, web project, 자바, java, jsp, 서블릿, servlet, MVC, MVC2, java framework, spring legacy, spring boot, spring cloud, sts, IntelliJ, html, haml, Markdown, Jade, Slim, css, scss/sass, less, Stylus, 웹표준, SVG, Web Animation, 웹 애니메이션, javascript, typescript, jQuery, Ajax, 자바스크립트, 마크다운, Node, angular, Vue, React, RDBMS, 관계형 데이터베이스, oracle, mysql, mariadb, H2, Postgree, MongoDB, SQLite, SQL Workbench, SQL Developer, mybatis, JSON, 오라클, 마리아DB, Business Logic, 비즈니스로직, Controller, Servicem, DAO, DTO, VO, Mapper, IoC, AOP, JPA, CRUD, Monolothic, DevOps, Cloud Native, AWS, Kubernetes, Azure, Agile, Docker, Jenkins, Git, Github, GitLab, bitbucket, App Deploy, Build, Maven, Gradle, JAR, WAR, EAR, jUnit, PMD, Sparrow, CodeMind, Heuristic, Selenium IDE, Trello, Jira, protoNow, Ovenapp, balsamiq, UML, USECASE, Class Diagram, Sequence Diagram, Amateras, ObjectAid, Task Flow, MindMap, User Scenarios, Comstomer Journey Map">
+    <!-- 파비콘 등록 -->
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <!-- 오픈 그래프 등록 -->
+    <meta property="og:title" content="kmgt Portfolio">
+    <meta property="og:url" content="https://okgunyang.github.io">
+    <meta property="og:description" content="KMGT's의 자바웹개발자 포트폴리오, 인트로, 보유기술, 갤러리, 컨택트, intro, technic, ability, skill, project, gallery, contact">
+    <meta property="og:image" content="portfolio_home.png">
+    <meta name="twitter:card" content="portfolio_card.mp4" /> 
+    <meta name="twitter:title" content="kmgt Portfolio" /> 
+    <meta name="twitter:description" content="KMGT's의 자바웹개발자 포트폴리오, 인트로, 보유기술, 갤러리, 컨택트, intro, technic, ability, skill, project, gallery, contact" /> 
+    <meta name="twitter:image" content="portfolio_home.png" /> 
+    <!-- 모바일 앱 연결시 오픈 그래프 -->
+    <!--iOS-->
+    <meta property="al:ios:url" content=" ios 앱 URL" />
+    <meta property="al:ios:app_store_id" content="ios 앱스토어 ID" /> 
+    <meta property="al:ios:app_name" content="ios 앱 이름" /> 
+    <!--Android-->
+    <meta property="al:android:url" content="안드로이드 앱 URL" />
+    <meta property="al:android:app_name" content="안드로이드 앱 이름" />
+    <meta property="al:android:package" content="안드로이드 패키지 이름" /> 
+    <meta property="al:web:url" content="안드로이드 앱 URL" />
+
+    <!-- 필요 폰트 가져오기 -->
+    <link rel="stylesheet" href="fonts.css">
+    <title>KMGT's 포트폴리오</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+    .page_tit { text-align: center; padding-top: 3em; line-height: 2.4; font-size:36px; }    
+    .sec_wrap { clear:both; width: 1280px; margin: 0 auto; }
+    .sec_wrap .col { width: 50%; box-sizing: border-box; height:60vh; margin-top: 50px; }
+    .left_con {  float:left;  }
+    .right_con {  float:right;  }
+    .sec_tit { line-height: 2.8; }
+    #page1 .left_con { background-image: url("./character_img1.gif"); background-repeat: no-repeat; background-position:center center; text-indent:-9999px; }
+
+    #page2 { clear:both; }
+    .portfolio_lst { clear:both; width: 1280px; margin: 0 auto; }
+    .portfolio_lst li { float:left; width: 20%; min-height:100px; box-sizing: border-box; }
+    .portfolio_lst li a { display:block; width: 200px; margin: 28px auto; }
+    .portfolio_lst li a img { display:block; width: 100%; height:auto; opacity:0.8; transition-duration:0.4s; }
+    .portfolio_lst li a:hover img { opacity:1; }
+    #page3 .page_tit { color:#fff; }
+    #page3 .page_wrap { width: 100%; }
+    .skill_graph { clear:both; width: 1280px; margin: 0 auto; display:flex;
+    justify-content: center; align-items: center; min-height:35vh;  }
+    .skill { display:flex; justify-content: space-around; align-items: center; 
+    flex-wrap: wrap; min-width:270px; width: 100%; min-height: 100%; }
+    .skill li { position:relative; width:200px; height:200px; margin:0.5em; 
+    transform:rotate(-90deg); }
+    .skill li .progress { width: 170px; height: 170px;  }
+    .skill li .progress_svg { position:relative; width: 100%; height: 100%; }
+    .skill li .progress_svg circle { width: 100%; height: 100%; 
+    fill:none; stroke-width: 10; stroke-dasharray: 440;
+stroke-dashoffset: 440; stroke: white; stroke-linecap: round; transform:translate(5px, 5px); animation-duration: 1s; animation-timing-function: ease-in-out; animation-fill-mode: forwards; }
+    #page3.on .skill li.item1 .progress_svg circle { 
+        /* filter:drop-shadow(0 0 5px #ff6633);  */
+    animation-name:item1; stroke:deeppink; }
+    #page3.on .skill li.item2 .progress_svg circle { 
+        /* filter:drop-shadow(0 0 5px #33bbff);  */
+        animation-name:item2; stroke:deepskyblue; }
+    #page3.on .skill li.item3 .progress_svg circle { 
+        /* filter:drop-shadow(0 0 5px #ff33ff);  */
+        animation-name:item3; stroke:gold; }
+    #page3.on .skill li.item4 .progress_svg circle { 
+        /* filter:drop-shadow(0 0 5px #ffff33);  */
+        animation-name:item4;  stroke:coral; }
+    #page3.on .skill li.item5 .progress_svg circle { 
+        /* filter:drop-shadow(0 0 5px #3377ff);  */
+        animation-name:item5; stroke:cadetblue; }
+    #page3.on .skill li.item6 .progress_svg circle { 
+        /* filter:drop-shadow(0 0 5px #55ff33);  */
+        animation-name:item6; stroke:burlywood; }
+    #page3.on .skill li.item7 .progress_svg circle { 
+        /* filter:drop-shadow(0 0 5px #33ffff);  */
+        animation-name:item7; stroke:crimson; }
+    
+    .skill li .progress_text { top: 44%; left: 44%; padding: 0.25em 0.5em; color:#333; border-radius:0.25em; 
+    transform:translate(-50%, -50%) rotate(90deg); position:absolute; }
+
+    @keyframes item1 {        to { stroke-dashoffset: 22; }    }
+    @keyframes item2 {        to { stroke-dashoffset: 55; }    }
+    @keyframes item3 {        to { stroke-dashoffset: 44; }    }
+    @keyframes item4 {        to { stroke-dashoffset: 66; }    }
+    @keyframes item5 {        to { stroke-dashoffset: 88; }    }
+    @keyframes item6 {        to { stroke-dashoffset: 77; }    }
+    @keyframes item7 {        to { stroke-dashoffset: 66; }    }
+
+    .ability_lst { width: 1280px; margin: 0 auto; }
+    .ability_lst:after { content:""; display:block; clear:both; }
+    .ability_lst li { width:20%; height:256px; box-sizing: border-box; 
+    overflow:hidden; float:left; }
+    .ability_lst li a { display:block; background-repeat: no-repeat; 
+    background-position: center center; background-size:100% auto; width:200px; height:200px; margin:28px auto;  border-radius:50%; border:5px solid #f1f1f1; }
+    .ability_lst li.item1 a { background-image: url("java.png"); }
+    .ability_lst li.item2 a { background-image: url("spring.png"); }
+    .ability_lst li.item3 a { background-image: url("html5+css3.png"); }
+    .ability_lst li.item4 a { background-image: url("js+jquery.png"); }
+    .ability_lst li.item5 a { background-image: url("oracle.png"); background-size: 50%; border-radius:50%; overflow:hidden; }
+
+    #contact_area, #map_area { clear:both; width: 1280px; min-height:300px; margin: 5px auto;     }
+    #map_area { background-color:rgba(11,11,11,0.1); }
+    #contact_area { width: 440px; }
+    #title, #memo { display:block; width:400px; margin:20px auto; min-height:40px; }
+    #title { line-height:40px; font-size:20px; text-indent:0.5rem; }
+
+    #sns_area { clear:both; width:550px; margin:0 auto; height: 80px; }
+    #sns_area li { width:80px; height: 80px; float:left; box-sizing: border-box;
+    overflow:hidden; margin:15px; }
+    #sns_area li a { display:block; padding: 15px; }
+    #sns_area li a img { display:block; width: 100%; height: auto; border-radius:50px; overflow: hidden; }
+    </style>
+    <style>
+    #quick { width:50px; height: 300px; position:fixed; z-index:999;
+    right:20px; top:100px; }
+    #quick li { clear:both; width: 50px; height: 50px; margin:12px auto; }
+    #quick li div { width: 45px; height: 45px; box-sizing: border-box;
+    overflow:hidden; margin:2px auto; border:3px solid #333; 
+border-radius:25px; cursor:pointer; }
+    #quick li.on div { border:3px solid deeppink; }
+    #quick li div img { display:block; width: 30px; height: 30px; }
+
+    #arrow_top { width:50px; height:50px; position:fixed; z-index:999;
+    right:20px; bottom:100px; border-radius:30px; border:3px solid #eee; 
+    line-height: 50px; text-align: center; font-size:32px; font-weight: bold;
+    cursor:pointer; display:none; }
+    #arrow_top.on { display:block; }
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+        var tot = parseInt($(".wrap").height());
+        var wd = parseInt($(window).width());
+        var ht = parseInt($(window).height());
+        var hx = (parseInt($(window).width()) - 1280) / 2;
+        var ratio = wd / tot;
+        $(window).scroll(function(){
+            var sc = parseInt($(window).scrollTop());
+            console.log(sc);
+            $("#gage .gagebar").width(hx+(wd*sc/tot));
+            var cat = parseInt($("#page1").height())+parseInt($("#page2").height()) - 100; 
+            if(sc>=cat) {
+                $("#page3").addClass("on");
+            }
+            if(sc>=300){
+                $("#arrow_top").addClass("on");
+            } else {
+                $("#arrow_top").removeClass("on");
+            }
+        });
+        $(".page").each(function(index){
+            var cat = parseInt($(this).offset().top);
+            $("#quick li").eq(index).attr("data-scroll", cat);
+        });
+        $("#quick li").click(function(){
+            var sc_dep = parseInt($(this).attr("data-scroll"));
+            $("body, html").not(":animated").animate({"scrollTop":sc_dep+"px"});
+        });
+        $("#arrow_top").click(function(){
+            $("body, html").not(":animated").animate({"scrollTop":"0px"}, 1500);
+        });
+    });    
+    </script>
+    <script>
+    window.onload = function () {
+//            var elm = ".page";
+        $(".page").each(function (index) {
+            // 개별적으로 Wheel 이벤트 적용
+            var cat = $(this).attr("id");
+            $(this).on("mousewheel DOMMouseScroll", function (e) {
+                //$("#gnb li").removeClass("on");
+                //$("#gnb li").eq(index).addClass("on");
+                e.preventDefault();
+                var delta = 0;
+                if (!event) event = window.event;
+                if (event.wheelDelta) {
+                    delta = event.wheelDelta / 120;
+                    if (window.opera) delta = -delta;
+                } 
+                else if (event.detail)
+                    delta = -event.detail / 3;
+                var moveTop = $(window).scrollTop();
+                var elmSelecter = $(".page").eq(index);
+                // 마우스휠을 위에서 아래로
+                if (delta < 0) {
+                    if ($(elmSelecter).next() != undefined) {
+                        try{
+                            moveTop = $(elmSelecter).next().offset().top;
+                        }catch(e){}
+                    }
+                // 마우스휠을 아래에서 위로
+                } else {
+                    if ($(elmSelecter).prev() != undefined) {
+                        try{
+                            moveTop = $(elmSelecter).prev().offset().top;
+                        }catch(e){}
+                    }
+                }
+                    
+                // 화면 이동 0.8초(800)
+                $("html,body").stop().animate({
+                    scrollTop: moveTop + 'px'
+                }, {
+                    duration: 800, complete: function () {
+                    }
+                });
+            });
+        });
+    }
+    </script>
+</head>
+<body>
+<div class="wrap">
+    <header id="hd">
+        <nav id="gnb">
+            <ul>
+                <li><a href="intro.html">인트로</a></li>
+                <li><a href="portfolio.html">포트폴리오</a></li>
+                <li><a href="ability.html">어빌리티</a></li>
+                <li><a href="contact.html">컨택트</a></li>
+            </ul>
+        </nav>
+        <div id="gage">
+            <div class="gagebar"></div>
+        </div>
+    </header>
+    <main id="content">
+        <section class="page" id="page1">
+            <div class="page_wrap">
+                <h2 class="page_tit">Intro</h2>
+                <div class="sec_wrap">
+                    <div class="col left_con">사진</div>
+                    <div class="col right_con">
+                        <h3 class="sec_tit">이름 : </h3>
+                        <h3 class="sec_tit">나이 : </h3>
+                        <h3 class="sec_tit">성격 : </h3>
+                        <h3 class="sec_tit">하고 싶은 것 : </h3>
+                        <h3 class="sec_tit">되고 싶은 것 : </h3>
+                        <h3 class="sec_tit">바라는 것 : </h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page" id="page2">
+            <div class="page_wrap">
+                <h2 class="page_tit">Project & Portfolio</h2>
+                <ul class="portfolio_lst">
+                    <li><a href="portfolio.html#page1"><img src="web01.png" alt="삼성 디스플레이"></a></li>
+                    <li><a href="portfolio.html#page2"><img src="web02.png" alt="여수 문화관광"></a></li>
+                    <li><a href="portfolio.html#page3"><img src="web03.png" alt="그리팅몰"></a></li>
+                    <li><a href="portfolio.html#page4"><img src="web04.png" alt="하나이비인후과병원"></a></li>
+                    <li><a href="portfolio.html#page5"><img src="web05.png" alt="소녀나라"></a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="page" id="page3">
+            <div class="page_wrap">
+                <h2 class="page_tit" style="color:#333;">Ability</h2>
+                <h2 class="sec_tit" style="text-align:center;">Development Skill</h2>
+                <div class="skill_graph">
+                    <ul class="skill">
+                        <li class="item1">
+                            <div class="progress">
+                                <svg class="progress_svg">
+                                    <circle cx="80" cy="80" r="70"></circle>
+                                    <span class="progress_text">JAVA<br>98%</span>
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="item2">
+                            <div class="progress">
+                                <svg class="progress_svg">
+                                    <circle cx="80" cy="80" r="70"></circle>
+                                    <span class="progress_text">JSP<br>89%</span>
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="item3">
+                            <div class="progress">
+                                <svg class="progress_svg">
+                                    <circle cx="80" cy="80" r="70"></circle>
+                                    <span class="progress_text">SPRING<br>95%</span>
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="item4">
+                            <div class="progress">
+                                <svg class="progress_svg">
+                                    <circle cx="80" cy="80" r="70"></circle>
+                                    <span class="progress_text">HTML/CSS<br>86%</span>
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="item5">
+                            <div class="progress">
+                                <svg class="progress_svg">
+                                    <circle cx="80" cy="80" r="70"></circle>
+                                    <span class="progress_text">JAVASCRIPT<br>80%</span>
+                                </svg>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <h2 class="sec_tit" style="text-align:center;">Development Ability</h2>
+                <ul class="ability_lst">
+                    <li class="item1"><a href="ability.html#page1"></a></li>
+                    <li class="item2"><a href="ability.html#page2"></a></li>
+                    <li class="item3"><a href="ability.html#page3"></a></li>
+                    <li class="item4"><a href="ability.html#page4"></a></li>
+                    <li class="item5"><a href="ability.html#page5"></a></li>
+                </ul>   
+            </div>
+        </section>
+        <section class="page" id="page4">
+            <div class="page_wrap">
+                <h2 class="page_tit">Contact</h2>
+                <h2 class="sec_tit" style="text-align:center;">My TOWN</h2>
+                <div id="map_area">
+                    동네 지도
+                </div>
+            </div>
+        </section>
+        <section class="page" id="page5">
+            <div class="page_wrap">
+                <div id="contact_area">
+                    <h2 class="sec_tit" style="text-align:center;">To Say</h2>
+                    <form action="">
+                        <input type="text" id="title" name="title" style="width:400px;margin-bottom:20px" placeholder="제목을 입력"/><br>
+                        <textarea rows="8" cols="100" id="memo" name="memo" style="width:400px" placeholder="내용을 입력"></textarea> <br>
+                        <button type="submit" class="btn">보내기</button>
+                        <button type="reset" class="btn">취소</button>
+                    </form>
+                </div>
+                <div id="sns_area">
+                    <h2 class="sec_tit" style="text-align:center;">SNS AREA</h2>
+                    <ul>
+                        <li><a href=""><img src="facebook.png" alt="페이스북"></a></li>
+                        <li><a href=""><img src="tw.png" alt="트위터"></a></li>
+                        <li><a href=""><img src="blog.png" alt="블로그"></a></li>
+                        <li><a href=""><img src="cacaotalk.png" alt="카카오"></a></li>
+                        <li><a href=""><img src="email.png" alt="이메일"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="ft">
+        <div class="ft_wrap">Copyright 2022. Kmgt inc. All rights reserved.</div>
+    </footer>
+</div>
+<div id="quick" class="quick">
+    <ul>
+        <li class="item1">
+            <div><img src="intro.png" alt="인트로"></div>
+        </li>
+        <li class="item2">
+            <div><img src="portfolio.png" alt="포트폴리오"></div>
+        </li>
+        <li class="item3">
+            <div><img src="ability.png" alt="능력치"></div>
+        </li>
+        <li class="item4">
+            <div><img src="cantact.png" alt="컨택트"></div>
+        </li>
+    </ul>
+</div>
+<div id="arrow_top">↑</div>
+</body>
+</html>

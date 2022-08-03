@@ -1,0 +1,389 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>3D효과 예시2</title>
+    <script src="prefixfree.min.js"></script> 
+    <style>
+    @charset "utf-8";
+    @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
+
+    /* 초기화 */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+    p {
+        color:#333;
+        font-weight:bold;
+    }
+
+    body {
+        font: 17px 'Nanum Gothic', sans-serif;
+    }
+
+    body>div {
+        float: left;
+        width: 200px;
+        height: 200px;
+        margin: 20px;
+        text-align: center;
+        background: #fff;
+        box-shadow: 5px 5px 15px 1px #777;
+    }
+    a {
+        display: block;
+        width: 100px;
+        height: 100px;
+        margin: 30px auto 0;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 100px;
+        color:#fff;
+        text-decoration: none;
+        background: #eee;
+    }
+
+    a.perspective {
+        perspective: 100px;
+    }
+
+    a.perspective2 {
+        perspective: 80px;
+    }
+
+    a>div {
+        width: 100px;
+        height: 100px;
+/*        background:#1d8cd9;*/
+        background:#e0378f;
+        opacity: 0.5;
+        transition: all 0.5s;
+    }
+
+    p {
+        padding-top: 20px;
+        font-size: 17px;
+    }
+
+    span {
+        color:hotpink;
+    }
+
+    a:hover .cov1 {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
+
+    a:hover .cov2 {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
+
+    a:hover .cov3 {
+        transform: perspective(200px) rotateX(45deg);
+    }
+
+    a:hover .cov4 {
+        transform: perspective(200px) rotateY(45deg);
+        -webkit-transform: perspective(200px) rotateY(45deg);
+    }
+
+    a:hover .cov5 {
+        transform: rotateZ(90deg);
+        -webkit-transform: rotateZ(90deg);
+    }
+
+    a:hover .cov6 {
+        transform: scale(1.5, 1.5);
+        -webkit-transform: scale(1.5, 1.5);
+    }
+
+    a:hover .cov7 {
+        transform: scale(0.5, 0.5);
+        -webkit-transform: scale(0.5, 0.5);
+    }
+
+    a:hover .cov8 {
+        transform: scale(-1, -1);
+        -webkit-transform: scale(-1, -1);
+    }
+
+    a:hover .cov9 {
+        transform: scale(2, 1);
+        -webkit-transform: scale(2, 1);
+    }
+
+    a:hover .cov10 {
+        transform: skew(45deg, 45deg);
+        -webkit-transform: skew(45deg, 45deg);
+    }
+
+    a:hover .cov11 {
+        transform: skew(-45deg, -45deg);
+        -webkit-transform: skew(-45deg, -45deg);
+    }
+
+    a:hover .cov12 {
+        transform: skewX(45deg);
+        -webkit-transform: skewX(45deg);
+    }
+
+    a:hover .cov13 {
+        transform: skewY(45deg);
+        -webkit-transform: skewY(45deg);
+    }
+
+    a:hover .cov14 {
+        transform: translate(45px,45px);
+        -webkit-transform: translate(45px,45px);
+    }
+
+    a:hover .cov15 {
+        transform: translateX(45px);
+        -webkit-transform: translateX(45px);
+    }
+
+    a:hover .cov16 {
+        transform: translateY(45px);
+        -webkit-transform: translateY(45px);
+    }
+
+    a:hover .cov17 {
+        transform: rotateX(45deg);
+        -webkit-transform: rotateX(45deg);
+    }
+
+    a:hover .cov18 {
+        transform: rotateY(45deg);
+        -webkit-transform: rotateY(45deg);
+    }
+
+    a:hover .cov19 {
+        transform: rotateX(-90deg);
+        -webkit-transform: rotateX(-90deg);
+    }
+
+    a:hover .cov20 {
+        transform: rotateY(-90deg);
+        -webkit-transform: rotateY(-90deg);
+    }
+
+    a:hover .cov21 {
+        transform: matrix(1,0,0,1,0,0);
+        -webkit-transform: matrix(1,0,0,1,0,0);
+    }
+
+    a:hover .cov22 {
+        transform: matrix(1,1,0,1,0,0);
+        -webkit-transform: matrix(1,1,0,1,0,0);
+    }
+
+    a:hover .cov23 {
+        transform: matrix(1,0,1,1,0,0);
+        -webkit-transform: matrix(1,0,1,1,0,0);
+    }
+
+    a:hover .cov24 {
+        transform: matrix(1,0,0,1,50,0);
+        -webkit-transform: matrix(1,0,0,1,50,0);
+    }
+
+    a:hover .cov25 {
+        transform: matrix(1,0,0,1,0,50);
+        -webkit-transform: matrix(1,0,0,1,0,50);
+    }
+
+    a:hover .cov26 {
+        transform: matrix(0.5,0,0,0.5,0,0);
+        -webkit-transform: matrix(0.5,0,0,0.5,0,0);
+    }
+
+    a:hover .cov27 {
+        transform: matrix(2,1,-1,1.5,30,-45);
+        -webkit-transform: matrix(2,1,-1,1.5,30,-45);
+    }
+
+    a:hover .cov28 {
+        transform: translateZ(50px);
+        -webkit-transform: translateZ(50px);
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <a href="#">
+            <div class="cov1">CSS3</div>
+        </a>
+        <p>rotate(45deg)</p>
+    </div>
+    <div>
+        <a href="#">
+            <div class="cov2">CSS3</div>
+        </a>
+        <p>rotate(-45deg)</p>
+    </div>
+    <div>
+        <a href="#">
+            <div class="cov3">CSS3</div>
+        </a>
+        <p>rotateX(45deg)</p>
+    </div>
+    <div>
+        <a href="#">
+            <div class="cov4">CSS3</div>
+        </a>
+        <p>rotateY(45deg)</p>
+    </div>
+    <div>
+        <a href="#">
+            <div class="cov5">CSS3</div>
+        </a>
+        <p>rotateZ(90deg)</p>
+    </div>
+    <div>
+        <a href="#">
+            <div class="cov6">CSS3</div>
+        </a>
+        <p>scale(1.5, 1.5)</p>
+    </div>
+    <div>
+        <a href="#">
+            <div class="cov7">CSS3</div>
+        </a>
+        <p>scale(0.5, 0.5)</p>
+    </div>
+    <div>
+        <a href="#">
+            <div class="cov8">CSS3</div>
+        </a>
+        <p>scale(-1, -1)</p>
+    </div>
+    <div>
+        <a href="#">
+            <div class="cov9">CSS3</div>
+        </a>
+        <p>scale(2, 1)</p>
+    </div>
+    <div>
+        <a href="#">
+            <div class="cov10">CSS3</div>
+        </a>
+        <p>skew(45deg, 45deg)</p>
+    </div>
+    <div>
+        <a href="#">
+            <div class="cov11">CSS3</div>
+        </a>
+        <p>skew(-45deg, -45deg)</p>
+    </div>
+    <div>
+        <a href="#">
+            <div class="cov12">CSS3</div>
+        </a>
+        <p>skewX(45deg)</p>
+    </div>
+    <div>
+        <a href="#">
+            <div class="cov13">CSS3</div>
+        </a>
+        <p>skewY(45deg)</p>
+    </div>
+    <div>
+        <a href="#">
+            <div class="cov14">CSS3</div>
+        </a>
+        <p>translate(45px,45px)</p>
+    </div>
+    <div>
+        <a href="#">
+            <div class="cov15">CSS3</div>
+        </a>
+        <p>translateX(45px)</p>
+    </div>
+    <div>
+        <a href="#">
+            <div class="cov16">CSS3</div>
+        </a>
+        <p>translateY(45px)</p>
+    </div>
+    <div>
+        <a href="#" class="perspective">
+            <div class="cov17">CSS3</div>
+        </a>
+        <p>perspective(100px) rotateX(45deg)</p>
+    </div>
+    <div>
+        <a href="#" class="perspective">
+            <div class="cov18">CSS3</div>
+        </a>
+        <p>perspective(100px) rotateY(45deg)</p>
+    </div>
+    <div>
+        <a href="#" class="perspective2">
+            <div class="cov19">CSS3</div>
+        </a>
+        <p>perspective(80px) rotateX(-90deg)</p>
+    </div>
+    <div>
+        <a href="#" class="perspective2">
+            <div class="cov20">CSS3</div>
+        </a>
+        <p>perspective(80px) rotateY(-90deg)</p>
+    </div>
+    <div>
+        <a href="#">
+            <div class="cov21">CSS3</div>
+        </a>
+        <p>matrix(1,0,0,1,0,0)<br><span>default (No Change)</span></p>
+        <!-- matrix (scaleX, skewX, skewY, scaleY, translateX, translateY) -->
+    </div>
+    <div>
+        <a href="#">
+            <div class="cov22">CSS3</div>
+        </a>
+        <p>matrix(1,1,0,1,0,0)</p>
+    </div>
+    <div>
+        <a href="#">
+            <div class="cov23">CSS3</div>
+        </a>
+        <p>matrix(1,0,1,1,0,0)</p>
+    </div>
+    <div>
+        <a href="#">
+            <div class="cov24">CSS3</div>
+        </a>
+        <p>matrix(1,0,0,1,50,0)</p>
+    </div>
+    <div>
+        <a href="#">
+            <div class="cov25">CSS3</div>
+        </a>
+        <p>matrix(1,0,0,1,0,50)</p>
+    </div>
+    <div>
+        <a href="#">
+            <div class="cov26">CSS3</div>
+        </a>
+        <p>matrix(0.5,0,0,0.5,0,0)</p>
+    </div>
+    <div>
+        <a href="#">
+            <div class="cov27">CSS3</div>
+        </a>
+        <p>matrix<br>(2,1,-1,1.5,30,-45)</p>
+    </div>
+    <div>
+        <a href="#" class="perspective">
+            <div class="cov28">CSS3</div>
+        </a>
+        <p>perspective(100px) translateZ(-50px)</p>
+    </div>
+</body>
+</html>

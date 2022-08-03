@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>360 VR 콘텐츠</title>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; height: 100%; }
+    .vr_box { width:600px; height:600px; margin:50px auto; }
+    .vr_box img { width:100%; height:auto; }    
+    .vr_img { display:none; }
+    .vr_img.on { display:block; } 
+    
+    .btn_box { clear: both;  width: 230px; margin:10px auto; }
+    .btn_box button { display:block; width: 100px; height: 40px; 
+        line-height: 40px; text-align:center; background:#222; color:#fff;
+        border:0; outline:0; float:left; cursor:pointer; }    
+    .spicy { margin-right: 30px; }  
+    .btn_box button.on { background:navy; }    
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+        var vr_cnt=0;
+        var vr_src;
+        var vrIntv = setInterval(function(){ 
+            vr_cnt++;
+            if(vr_cnt>39){
+                vr_cnt=0;
+            }
+            vrAni(vr_cnt);
+        }, 40);
+        function vrAni(vrNum){
+            if(vrNum>=10){
+                $("#vr_con1").attr("src", "./rotate/H.00"+vrNum+".png");
+                $("#vr_con2").attr("src", "./rotate/L.00"+vrNum+".png");
+            } else {
+                $("#vr_con1").attr("src", "./rotate/H.000"+vrNum+".png");
+                $("#vr_con2").attr("src", "./rotate/L.000"+vrNum+".png");
+            }
+        }
+        $(".btn_box button").click(function(){
+            $(".btn_box button").removeClass("on");
+            $(this).addClass("on");
+            $(".vr_img").removeClass("on");
+            $("#vr_con1").toggleClass("on");
+        });
+        $(".btn_box .mild").click(function(){
+            $(".btn_box button").removeClass("on");
+            $(this).addClass("on");
+            $(".vr_img").removeClass("on");
+            $("#vr_con2").addClass("on");
+        });
+    });    
+    </script>
+</head>
+<body>
+    <div class="vr_box">
+        <img src="./rotate/H.0000.png" alt="VR 스파이시" class="vr_img on" id="vr_con1">
+        <img src="./rotate/L.0000.png" alt="VR 마일드" class="vr_img" id="vr_con2">
+    </div>
+    <div class="btn_box">
+        <button class="spicy on">스파이시</button>
+        <button class="mild">마일드</button>
+    </div>
+</body>
+</html>

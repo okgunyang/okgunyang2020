@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS3 Hover Effects</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/aero-style.css" charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" charset="utf-8">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+  <style type="text/css">.scrollax-performance, .scrollax-performance *, .scrollax-performance *:before, .scrollax-performance *:after { pointer-events: none !important; -webkit-animation-play-state: paused !important; animation-play-state: paused !important; };</style></head>
+  <body>
+
+    <!-- Page Loader -->
+    <div class="page-loader load-complete"><span class="load-icon"></span></div>
+
+    <!-- Slide Menu -->
+    <section class="slide-menu">
+      <span class="menu-title">Menu<span class="separator"></span></span>
+  		<ul>
+  			<li><a href="index.html#trans-effect"><i class="fa fa-dot-circle-o"></i> 01 Trans Effect</a></li>
+  			<li><a href="index.html#fade-in-effect"><i class="fa fa-dot-circle-o"></i> 02 Fade In Effect</a></li>
+  			<li><a href="index.html#over-trans-effect"><i class="fa fa-dot-circle-o"></i> 03 Over Trans Effect</a></li>
+  			<li><a href="index.html#zoom-out-effect"><i class="fa fa-dot-circle-o"></i> 04 Zoom Out Effect</a></li>
+  			<li><a href="index.html#flip-effect"><i class="fa fa-dot-circle-o"></i> 05 Flip Effect</a></li>
+  			<li><a href="set2.html#bubble-effect"><i class="fa fa-dot-circle-o"></i> 06 Bubble Effect</a></li>
+  			<li><a href="set2.html#zoom-in-effect"><i class="fa fa-dot-circle-o"></i> 07 Zoom In Effect</a></li>
+  			<li><a href="set2.html#square-spin-effect"><i class="fa fa-dot-circle-o"></i> 08 Square Spin Effect</a></li>
+  			<li><a href="set2.html#over-flip-effect"><i class="fa fa-dot-circle-o"></i> 09 Over Flip Effect</a></li>
+  			<li><a href="set2.html#rotate-switch-effect"><i class="fa fa-dot-circle-o"></i> 10 Rotate Switch Effect</a></li>
+  			<li><a href="#grid-reveal-effect" class="new"><i class="fa fa-dot-circle-o"></i> 11 Grid Reveal Effect</a></li>
+  			<li><a href="#swipe-effect" class="new"><i class="fa fa-dot-circle-o"></i> 12 Swipe Effect</a></li>
+  			<li><a href="#flip-back-effect" class="new"><i class="fa fa-dot-circle-o"></i> 13 Flip Back Effect</a></li>
+  			<li><a href="#switch-3d-effect" class="new"><i class="fa fa-dot-circle-o"></i> 14 Switch 3D Effect</a></li>
+  			<li><a href="#flip-forward-effect" class="new"><i class="fa fa-dot-circle-o"></i> 15 Flip Forward Effect</a></li>
+        <li><a href="set4.html#slow-zoom-effect" class="new"><i class="fa fa-dot-circle-o"></i> 16 Slow Zoom Effect</a></li>
+        <li><a href="set4.html#tada-effect" class="new"><i class="fa fa-dot-circle-o"></i> 17 TaDa Effect</a></li>
+        <li><a href="set4.html#flip-in-x-effect" class="new"><i class="fa fa-dot-circle-o"></i> 18 Flip In X Effect</a></li>
+        <li><a href="set4.html#jello-effect" class="new"><i class="fa fa-dot-circle-o"></i> 19 Jello Effect</a></li>
+        <li><a href="set4.html#wobble-effect" class="new"><i class="fa fa-dot-circle-o"></i> 20 Wobble Effect</a></li>
+        <li><a href="set4.html#bounce-in-effect" class="new"><i class="fa fa-dot-circle-o"></i> 21 Bounce In Effect</a></li>
+  		</ul>
+    </section>
+
+    <!-- Toggle Menu Button -->
+    <span class="toggle-menu-btn"><span></span></span>
+
+    <!-- Site Header -->
+    <header class="site-header" id="top" data-scrollax-parent="true">
+
+      <div class="cover" data-scrollax="properties: { translateY: '45%' }" style="transform: translateZ(0px) translateY(0%);">
+        <img src="images/bg.jpg" alt="Gleesik Aero Effects">
+      </div>
+
+      <div class="header-info site-container" data-scrollax-parent="true">
+        <img src="images/gleesik-logo.svg" class="gleesik-logo" width="400" alt="Aero Logo | Gleesik" data-scrollax="properties: { 'translateY': '120%', 'opacity': 0.85 }" style="opacity: 1; transform: translateZ(0px) translateY(0%);">
+      </div>
+
+      <div class="header-wrapper site-container">
+        <img src="images/logo.svg" class="aero-logo" width="600" alt="Aero Logo | Gleesik" data-scrollax="properties: { 'translateY': '100%', 'opacity': 0.85 }" style="opacity: 1; transform: translateZ(0px) translateY(0%);">
+      </div>
+
+      <section class="button-start-pos">
+        <a href="#content" class="button-start" data-scrollax="properties: { 'translateY': '150%', 'opacity': 3 }" style="opacity: 1; transform: translateZ(0px) translateY(0%);">
+          <i class="fa fa-angle-double-down"></i>
+        </a>
+      </section>
+
+    </header>
+
+    <!-- Site Content -->
+    <main class="site-content clearfix" id="content">
+
+        <!-- Section Intro -->
+        <div class="section-wrap-intro section-content" data-scrollax-parent="true">
+
+          <span class="intro-logo">
+            <img src="images/logo_flat.svg" class="gleesik-logo-intro" width="180" alt="Aero Logo | Gleesik">
+          </span>
+
+          <section class="intro clearfix" id="intro" data-scrollax-parent="true">
+
+            <div class="cover" data-scrollax="properties: { translateY: '40%' }" style="transform: translateZ(0px) translateY(-40%);">
+              <img src="images/bg-intro-min.jpg" alt="Gleesik Aero Effects">
+            </div>
+
+            <div class="section-content center-content text-center">
+              <header class="section-header" data-scrollax="properties: { 'translateY': '60%', 'opacity': 0.5 }" style="opacity: 0.5; transform: translateZ(0px) translateY(-60%);">
+                <h1 class="text-bold bg-highlight">Introduce to Kt</h1>
+                <hr>
+                <h2 class="bg-highlight">A complete new generation of hover effects!</h2>
+              </header>
+            </div>
+
+          </section>
+        </div>
+
+        <!-- Section Effects Strucure -->
+        <section class="effects-structure section-content" data-scrollax-parent="true">
+
+          <div class="structure-icon">
+            <img src="images/structure-icon.svg" alt="structure icon" width="250">
+          </div>
+
+          <div class="effects-wrap">
+            <div class="container-effects clearfix" data-scrollax="properties: { opacity: '1.3' }">
+              <div class="layer layer-1" data-scrollax="properties: { translateY: '40%' }">
+                <img src="images/structure/01.png" alt="Gleesik Aero Effects">
+              </div>
+              <div class="layer layer-2" data-scrollax="properties: { translateY: '55%' }">
+                <img src="images/structure/02.png" alt="Gleesik Aero Effects">
+              </div>
+              <div class="layer layer-3" data-scrollax="properties: { translateY: '70%' }">
+                <img src="images/structure/03.png" alt="Gleesik Aero Effects">
+              </div>
+              <div class="layer layer-4" data-scrollax="properties: { translateY: '85%'  }">
+                <img src="images/structure/04.png" alt="Gleesik Aero Effects">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Pagination -->
+        <section class="pagination" id="set-3">
+          <div class="row page-items">
+            <a href="index.html#set-1">Set 1</a>
+            <a href="set2.html#set-2">Set 2</a>
+            <a href="#set-3" class="current">Set 3</a>
+            <a href="set4.html#set-4">Set 4</a>
+          </div>
+        </section>
+
+        <!-- Effect 11 - Grid Reveal Effect -->
+        <section class="row text-center section-effects-wrap section-content" id="grid-reveal-effect">
+
+          <div class="site-container">
+
+            <header class="section-header">
+              <h2 class="text-bold">- Grid Reveal Effect -</h2>
+              <hr>
+              <h4 class=""><code>2 Axis</code></h4>
+            </header>
+
+            <span class="separator">
+              <h3>Square Box</h3>
+              <hr class="short">
+            </span>
+
+            <div class="row">
+              <div class="col-xm-3">
+                <div class="grid-reveal-effect effect top vertical">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-des-5.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="grid-reveal-effect effect left horizontal">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-des-6.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="grid-reveal-effect effect bottom vertical">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-des-7.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="grid-reveal-effect effect right horizontal">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-des-8.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <span class="separator">
+              <h3>Round Box</h3>
+              <hr class="short">
+            </span>
+
+            <div class="row">
+              <div class="col-xm-3">
+                <div class="grid-reveal-effect effect round top vertical">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-des-8.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="grid-reveal-effect effect round left horizontal">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-des-7.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="grid-reveal-effect effect round bottom vertical">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-des-6.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="grid-reveal-effect effect round right horizontal">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-des-5.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Effect 12 - Swipe Effect -->
+        <section class="row text-center section-effects-wrap section-content" id="swipe-effect">
+
+          <div class="site-container">
+
+            <header class="section-header">
+              <h2 class="text-bold">- Swipe Effect -</h2>
+              <hr>
+              <!-- <h4 class=""><code>4 Directions</code></h4> -->
+            </header>
+
+            <span class="separator">
+              <h3>Square Box</h3>
+              <hr class="short">
+            </span>
+
+            <div class="row">
+              <div class="col-xm-3">
+                <div class="swipe-effect effect top">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-1.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="swipe-effect effect left">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-2.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="swipe-effect effect bottom">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-3.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="swipe-effect effect right">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-4.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <span class="separator">
+              <h3>Round Box</h3>
+              <hr class="short">
+            </span>
+
+            <div class="row">
+              <div class="col-xm-3">
+                <div class="swipe-effect effect round top">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-4.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="swipe-effect effect round left">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-3.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="swipe-effect effect round bottom">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-2.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="swipe-effect effect round right">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-1.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Effect 13 - Flip Back Effect -->
+        <section class="row text-center section-effects-wrap section-content" id="flip-back-effect">
+
+          <div class="site-container">
+
+            <header class="section-header">
+              <h2 class="text-bold">- Flip Back Effect -</h2>
+              <hr>
+              <h4 class=""><code>4 Directions</code></h4>
+            </header>
+
+            <span class="separator">
+              <h3>Square Box</h3>
+              <hr class="short">
+            </span>
+
+            <div class="row">
+              <div class="col-xm-3">
+                <div class="flip-back-effect effect top">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-5.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="flip-back-effect effect left">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-6.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="flip-back-effect effect bottom">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-7.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="flip-back-effect effect right">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-1.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <span class="separator">
+              <h3>Round Box</h3>
+              <hr class="short">
+            </span>
+
+            <div class="row">
+              <div class="col-xm-3">
+                <div class="flip-back-effect effect round top">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-8.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="flip-back-effect effect round left">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-7.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="flip-back-effect effect round bottom">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-6.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="flip-back-effect effect round right">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-5.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Effect 14 - Switch 3D Effect -->
+        <section class="row text-center section-effects-wrap section-content" id="switch-3d-effect">
+
+          <div class="site-container">
+
+            <header class="section-header">
+              <h2 class="text-bold">- Switch 3D Effect -</h2>
+              <hr>
+              <h4 class=""><code>4 Directions</code></h4>
+            </header>
+
+            <span class="separator">
+              <h3>Square Box</h3>
+              <hr class="short">
+            </span>
+
+            <div class="row">
+              <div class="col-xm-3">
+                <div class="switch-3d-effect effect top">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-des-1.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="switch-3d-effect effect left">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-des-2.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="switch-3d-effect effect bottom">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-des-3.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="switch-3d-effect effect right">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-des-4.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <span class="separator">
+              <h3>Round Box</h3>
+              <hr class="short">
+            </span>
+
+            <div class="row">
+              <div class="col-xm-3">
+                <div class="switch-3d-effect effect round top">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-des-4.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="switch-3d-effect effect round left">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-des-3.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="switch-3d-effect effect round bottom">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-des-2.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="switch-3d-effect effect round right">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-des-1.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Effect 15 - Flip Forward Effect -->
+        <section class="row text-center section-effects-wrap section-content" id="flip-forward-effect">
+
+          <div class="site-container">
+
+            <header class="section-header">
+              <h2 class="text-bold">- Flip Forward Effect -</h2>
+              <hr>
+              <h4 class=""><code>4 Directions</code></h4>
+            </header>
+
+            <span class="separator">
+              <h3>Square Box</h3>
+              <hr class="short">
+            </span>
+
+            <div class="row">
+              <div class="col-xm-3">
+                <div class="flip-forward-effect effect top">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-1.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="flip-forward-effect effect left">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-2.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="flip-forward-effect effect bottom">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-3.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="flip-forward-effect effect right">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-4.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <span class="separator">
+              <h3>Round Box</h3>
+              <hr class="short">
+            </span>
+
+            <div class="row">
+              <div class="col-xm-3">
+                <div class="flip-forward-effect effect round top">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-4.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="flip-forward-effect effect round left">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-3.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="flip-forward-effect effect round bottom">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-2.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xm-3">
+                <div class="flip-forward-effect effect round right">
+                  <div class="effect-wrapper">
+                    <div class="img-box">
+                      <img src="images/demo/img-8.jpg" alt="Image Effect">
+                    </div>
+                    <div class="info-box">
+                      <div class="info-content">
+                        <h3>Lara Smith</h3>
+                        <hr>
+                        <p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+                        <hr>
+                        <div class="social-media">
+                          <a href="#" target="_blank"><i class="fa fa-facebook fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-youtube fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-twitter fa-lg margin-right-5px"></i></a>
+                          <a href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Pagination -->
+        <section class="pagination" id="set-1">
+          <div class="row page-items">
+            <a href="#set-1" class="current">Set 1</a>
+            <a href="set2.html#set-2">Set 2</a>
+            <a href="set3.html#set-3">Set 3</a>
+            <a href="set4.html#set-4">Set 4</a>
+          </div>
+        </section>
+
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+      <div class="site-container">
+
+        <div class="copyright">
+          <p>Copyright © 2019 | <a href="#" target="_blank">UI/UX DESIGN™</a></p>
+          <p>All Rights Reserved!</p>
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- Go To Top Button -->
+    <a href="#top" class="go-to-top-button"><i class="fa fa-angle-up"></i></a>
+
+    <!-- Pop Up Alert -->
+    <div class="pop-up-alert">
+    	<div class="wrapper">
+    		<span class="icon"><h1><i class="fa fa-eye-slash fa-3x"></i></h1></span><br><br>
+    		<h2 class=""><strong>CSS IMAGE ANIMATION!</strong><br><small>you can see the full code and documentation!<small></small></small></h2><small><small><br><br>
+        <span class="close-btn"><span></span></span>
+    	</small></small></div><small><small>
+    </small></small></div><small><small>
+
+  
+
+<!-- Scripts Importing -->
+<script src="js/jquery-2.2.0.min.js" charset="utf-8"></script>
+<script src="js/smoothscroll.min.js" charset="utf-8"></script>
+<script src="js/scrollax.min.js" charset="utf-8"></script>
+<script src="js/main.js" charset="utf-8"></script>
+
+
+</small></small></body></html>

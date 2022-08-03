@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>트랜지션 06 - transition 통합속성 </title>
+    <script src="./prefixfree.min.js"></script>
+    <style>
+    * { margin: 0; padding: 0; }
+    ul { list-style: none; }
+    #graph { clear:both; width: 900px; margin: 50px auto; cursor:pointer; }
+    #graph li { clear:both; margin-top: 20px; line-height: 40px; text-indent:10px; }
+    #graph li.bar { width: 70px; height: 40px;  background-color:#000;
+        /* transition : property duration timing-function delay */
+        transition:background 3s ease-in, width 1s ease-out 1s; }    
+    #graph:hover li:first-child { background-color: cadetblue; width:400px; }
+    #graph:hover li:nth-child(2) { background-color:blueviolet; width: 300px; }
+    #graph:hover li:nth-child(3) { background-color:hotpink; width: 500px;  }
+    #graph:hover li:nth-child(4) { background-color:chocolate; width: 900px;}
+    #graph:hover li:nth-child(5) { background-color:deepskyblue;  width: 200px; }
+    #graph:hover li:last-child { background-color:orange; width: 600px;}
+    </style>
+</head>
+<body>
+    <nav id="graph">
+        <ul class="canvas">
+            <li class="bar">김예은</li>
+            <li class="bar">조수민</li>
+            <li class="bar">신길호</li>
+            <li class="bar">이규진</li>
+            <li class="bar">정우희</li>
+            <li class="bar">조재영</li>
+        </ul>
+    </nav>
+</body>
+</html>

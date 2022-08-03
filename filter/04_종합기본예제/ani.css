@@ -1,0 +1,119 @@
+@charset "utf-8";
+* { margin: 0; padding: 0;}
+li { list-style: none; }
+p { color:#333; font-weight:bold; }
+body { font-size:16px; }
+body > div { float:left; 
+width: 200px; height: 200px; 
+margin: 20px; text-align:center;
+background:#fff; 
+box-shadow:5px 5px 15px 1px #777; }
+a { display:block;
+    width: 100px; 
+    height: 100px; 
+    margin: 30px auto 0;
+    font-size:20px;
+    font-weight: bold;
+    line-height: 100px;
+    color:#fff;
+    text-decoration: none;
+    background:#c2d3e4;
+}
+a > div { width: 100px;
+    height: 100px;
+    background:#e0378f;
+    opacity:0.6;
+    font-size:14px;
+    transition:all 0.5s;
+}
+p {
+    padding-top: 20px; 
+    font-size:16px;
+}
+span {
+    color:hotpink;
+}
+a:hover .cov1 {
+    transform:rotate(45deg);
+}
+a:hover .cov2 {
+    transform:rotate(-45deg);
+}
+a:hover .cov3 {
+    transform:perspective(200px) rotateX(45deg);
+}
+a:hover .cov4 {
+    transform:perspective(200px) rotateY(45deg);
+}
+a:hover .cov5 {
+    transform:perspective(200px) rotateZ(90deg);
+}
+a:hover .cov6 {
+    transform:perspective(200px) scale(0.5);
+}
+a:hover .cov7 {
+    transform:perspective(200px) scale(1.5);
+}
+a:hover .cov8 {
+    transform:perspective(200px) scale(-1);
+}
+a:hover .cov9 {
+    transform:perspective(200px) scale(2, 1);
+}
+a:hover .cov10 {
+    transform:perspective(200px) skew(45deg, 45deg);
+}
+a:hover .cov11 {
+    transform:perspective(200px) skew(-45deg, -45deg);
+}
+a:hover .cov12 {
+    transform:perspective(200px) skewX(45deg);
+}
+a:hover .cov13 {
+    transform:perspective(200px) skewY(45deg);
+}
+a:hover .cov14 {
+    transform:perspective(200px) translate(45px,45px);
+}
+a:hover .cov15 {
+    transform:perspective(200px) translateX(45px);
+}
+a:hover .cov16 {
+    transform:perspective(200px) translateY(45px);
+}
+a:hover .cov17 {
+    transform:perspective(200px) translateZ(45px);
+}
+a:hover .cov18 {
+    transform:perspective(200px) scaleX(0.5);
+}
+a:hover .cov19 {
+    transform:perspective(200px) scaleY(2);
+}
+a:hover .cov20 {
+    transform:perspective(200px) scale3d(0.5);
+}
+a:hover .cov21 {
+   transform:rotate3d(45deg,90deg,0deg);
+}
+a:hover .cov22 {
+    transform:perspective(200px) matrix(1,0,0,1,0,0);
+}
+a:hover .cov23 {
+    transform:perspective(200px) matrix(1,0,1,1,0,0);
+}
+a:hover .cov24 {
+    transform:perspective(200px) matrix(1,1,0,1,0,0);
+}
+a:hover .cov25 {
+    transform:perspective(200px) matrix(1,0,0,1,50,0);
+}
+a:hover .cov26 {
+    transform:perspective(200px) matrix(1,0,0,1,0,50);
+}
+a:hover .cov27 {
+    transform:perspective(200px) matrix(0.5,0,0,1,0,0);
+}
+a:hover .cov28 {
+    transform:perspective(200px) matrix(2,1,-1,1.5,30,-45);
+}

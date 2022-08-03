@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>헤더와 푸터</title>
+    <style>
+    /* 초기화 */
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; }
+    ul { list-style: none; }
+    a { text-decoration: none; color:#333; }
+    .wrap { clear:both; width: 100%; }
+
+    /* 헤더 영역 */
+    #hd { clear:both; width: 100%; height: 80px; position:fixed; left: 0; 
+    top: 0; z-index:999; background-color:rgba(255,255,255,0.8); }
+    .hd_wrap { clear:both; width: 1200px; margin: 0 auto; }
+    .logo { display:block; width: 170px; height:auto; float:left; margin-top: 20px;  }
+    .logo img { display:block; width: 100%; }
+    .gnb { float:left; margin-left:40px; margin-top:16px;  }
+    .gnb li { float:left; width:160px; position:relative; }
+    .gnb li .dp1 { display:block; line-height: 36px; height: 36px; 
+    background-color: #333; color:#fff; text-align:center; }
+    .gnb li:hover .dp1 { background-color:deeppink; font-size:16px; }
+    .gnb li .sub { display:none; position:absolute; top:36px; left: 0; z-index:999; 
+    width: 160px; height: 148px; }
+    .gnb li:hover .sub { display:block; }
+    .gnb li .sub li { clear: both; line-height: 32px; height: 32px; 
+    text-align:center; }
+    .gnb li .sub li a { display:block; background-color:#333; text-align:center; 
+    line-height: 32px; color:#fff; font-size:14px; }
+    .gnb li .sub li a:hover {  background-color:deepskyblue; }
+    .tnb { float:right; margin-top: 20px; }
+    .tnb a { padding-left:14px; }
+    .tnb a:hover { color:deepskyblue; }
+
+    /* 콘텐츠 영역 공통 */
+    #content { clear:both; width: 100%; }
+    .page { clear:both; width: 100%; display:none; }
+    .sub_ban { clear:both; width: 100%; }
+    .sub_ban img { display:block; width: 100%; }
+    .bread_box { clear:both; width: 100%; border-top:2px solid #eee; 
+    border-bottom:2px solid #eee; }
+    .bread_wrap { clear: both; width: 1200px; margin: 0 auto; height: 40px; 
+    padding-top: 1em; padding-bottom: 1em; line-height: 40px; font-size:18px; }
+    .bread_wrap a { padding-right: 10px; }
+    .bread_wrap a:after { content:">"; padding-left: 10px;  }
+    .sel option { font-size:18px; }
+    .con_wrap { clear:both; width: 100%; }
+    .page_wrap { clear:both; width: 1200px; margin: 0 auto; }
+    .page_tit { font-size:40px; line-height: 2.4; padding-top: 1em; 
+    padding-bottom: 0.5em; }
+    .page:target { display:block; }
+
+    /* 내부 콘텐츠 테이블 목록1 */
+    .sec_tit { text-align: center; font-size: 30px; line-height: 2.4; padding-top: 1em; 
+    padding-bottom: 0.25em; }
+    .tb1 { display:table; width: 800px; margin: 0 auto; border-collapse: collapse; 
+    margin-bottom: 50px; }
+    .tb1 tr { display:table-row; }
+    .tb1 th, .tb1 td { display:table-cell; line-height:32px; border-bottom:1px solid #333;
+    font-size:14px;  }
+    .tb1 th { border-top:2px solid #333; background-color: #eee; }    
+    .tb1 .c1 { width:80px; text-align:center; }
+    .tb1 .c3, .tb1 .c4 { width:100px; text-align:center; border-left:1px solid #333; }
+    .tb1 .c2 { border-left:1px solid #333; }
+    .tb1 td.c2 { text-align: left;  }
+    .tb1 td.c2 a { padding-left:1em; }
+    .tb1 td.c2 a:hover { color:deepskyblue; font-weight:bold; }
+    .tb1 tr:last-child td { border-bottom:2px solid #333; }
+
+    /* 내부 콘텐츠 테이블 목록2  */
+    .tb2 { display:table; width: 640px; margin: 0 auto; margin-bottom: 60px; 
+    border-collapse: collapse;  }
+    .tb2 tr { display:table-row; }
+    .tb2 th, .tb2 td { display:table-cell; border-bottom:1px solid #333; 
+    line-height:36px; }
+    .tb2 th { background-color:#ececec; }
+    .tb2 td { padding-left: 1em; }
+    .tb2 tr:first-child th, .tb2 tr:first-child td { border-top:2px solid #333; }
+    .tb2 .d1, .tb2 .d3 { width: 100px; }
+    .tb2 .d1, .tb2 .d2, .tb2 .d3 { border-right:1px solid #333; }
+    .tb2 tr:last-child th, .tb2 tr:last-child td { border-bottom:2px solid #333; }
+
+    /* 내부 콘텐츠 테이블 목록3  */
+    .tb3 { display:table; width: 700px; margin: 0 auto; margin-bottom: 80px; }
+    .tb3 .tr { display:table-row; }
+    .tb3 .th, .tb3 .td { display:table-cell;  border-bottom:1px solid #333; 
+    line-height: 40px; }
+    .tb3 .tr:first-child .th, .tb3 .tr:first-child .td { border-top:3px solid deepskyblue; }
+    .tb3 .th { text-align:center; font-weight: bold; }
+    .tb3 .td { padding-left: 1em; }
+    .tb3 .tr:last-child .th, .tb3 .tr:last-child .td { border-bottom:3px solid deepskyblue; }
+    .tb3 .th.e1, .tb3 .td.e2, .tb3 .th.e3 { border-right:1px solid #333; }
+    .tb3 .th.e1, .tb3 .th.e3 { width:100px; }
+
+    /* 썸네일 목록1 */
+    .lst1 { clear:both; width: 1200px; margin: 0 auto; margin-bottom: 100px; }
+    .lst1:after { content:""; display:block; width: 100%; clear:both; }
+    .lst1 li { float:left; width: 300px; height: 300px; overflow:hidden; box-sizing:border-box; }
+    .lst1 li.tit { background-color: deepskyblue; color:#fff; font-size:48px;
+        text-align: center; line-height: 300px; font-weight: bold; }
+
+    /* 썸네일 목록2 */
+    .lst2 { clear:both; width: 1260px; margin: 0 auto; margin-bottom: 100px; }
+    .lst2:after { content:""; display:block; width: 100%; clear:both; }
+    .lst2 li { width: 400px; height: 400px; float:left; margin-right: 30px; 
+    overflow:hidden; box-sizing: border-box; background-repeat: no-repeat;
+    background-position:center center; background-size:100% 100%; 
+    margin-bottom: 30px; }
+    .lst2 li:nth-child(3n) { margin-right: 0; }
+    .lst2 li.item1 { background-image: url("oled_list01.jpg"); }
+    .lst2 li.item2 { background-image: url("oled_list02.jpg"); }
+    .lst2 li.item3 { background-image: url("oled_list03.jpg"); }
+    .lst2 li.item4 { background-image: url("oled_list04.jpg"); }
+    .lst2 li.item5 { background-image: url("oled_list05.jpg"); }
+    .lst2 li.item6 { background-image: url("oled_list06.jpg"); }
+
+
+    /* 아이콘 리스트1 */
+    .lst3 { clear:both; width: 360px; margin: 0 auto; margin-bottom: 100px; }
+    .lst3:after { content:""; display:block; width: 100%; clear:both; }
+    .lst3 li { float:left; width: 60px; height: 60px; line-height: 60px; 
+    text-align:center; }
+
+    /* 아이콘 리스트2 */
+    .lst4 { clear:both; width: 360px; margin: 0 auto; margin-bottom: 100px; }
+    .lst4:after { content:""; display:block; width: 100%; clear:both; }
+    .lst4 li { float:left; width: 60px; height: 60px; line-height: 60px; 
+    text-align:center; background-position:center center; background-repeat: no-repeat; }
+    .lst4 li.item1 { background-image: url("icon01.png"); }
+    .lst4 li.item2 { background-image: url("icon02.png"); }
+    .lst4 li.item3 { background-image: url("icon03.png"); }
+    .lst4 li.item4 { background-image: url("icon04.png"); }
+    .lst4 li.item5 { background-image: url("icon05.png"); }
+    .lst4 li.item6 { background-image: url("icon06.png"); }
+
+    /* 아이콘 리스트3 */
+    .lst5 { clear:both; width: 240px; margin: 0 auto; margin-bottom: 100px; }
+    .lst5:after { content:""; display:block; width: 100%; clear:both; }
+    .lst5 li { float:left; width: 40px; height: 40px; line-height: 40px; 
+    text-align:center;  background-repeat: no-repeat; background-image: url("iconset.png");}
+    .lst5 li.item1 { background-position: 0 0; }
+    .lst5 li.item2 { background-position: -40px 0; }
+    .lst5 li.item3 { background-position: 0px -40px; }
+    .lst5 li.item4 { background-position: -80px -40px; }
+    .lst5 li.item5 { background-position: -80px -80px; }
+    .lst5 li.item6 { background-position: -40px -80px; }
+
+    /* 푸터 영역 */
+    #ft { clear:both; width: 100%; height: 80px; border-top:3px solid #f0f0f0; }
+    .ft_wrap { clear:both; width: 1200px; margin: 0 auto; padding-top: 1em; }
+    .fnb { float:left; }
+    .fnb li { float:left; padding-right: 20px; }
+    .snb { float:right; }
+    .snb a { padding-left: 20px; }
+    .copyright { clear:both; height: 28px; font-size:14px; padding-bottom:1em; 
+        padding-top: 1em; }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <header id="hd">
+        <div class="hd_wrap">
+            <a href="" class="logo"><img src="./img/samsung_logo.svg" alt="로고"></a>
+            <!-- nav.gnb>ul>li*5>a.dp1+(ul.sub>li*4>a) -->
+            <nav class="gnb">
+                <ul>
+                    <li>
+                        <a href="" class="dp1">메인1</a>
+                        <ul class="sub">
+                            <li><a href="web01.html#page1">서브11</a></li>
+                            <li><a href="web01.html#page2">서브12</a></li>
+                            <li><a href="web01.html#page3">서브13</a></li>
+                            <li><a href="web01.html#page4">서브14</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" class="dp1">메인2</a>
+                        <ul class="sub">
+                            <li><a href="">서브21</a></li>
+                            <li><a href="">서브22</a></li>
+                            <li><a href="">서브23</a></li>
+                            <li><a href="">서브24</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" class="dp1">메인3</a>
+                        <ul class="sub">
+                            <li><a href="">서브31</a></li>
+                            <li><a href="">서브32</a></li>
+                            <li><a href="">서브33</a></li>
+                            <li><a href="">서브34</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" class="dp1">메인4</a>
+                        <ul class="sub">
+                            <li><a href="">서브41</a></li>
+                            <li><a href="">서브42</a></li>
+                            <li><a href="">서브43</a></li>
+                            <li><a href="">서브44</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" class="dp1">메인5</a>
+                        <ul class="sub">
+                            <li><a href="">서브51</a></li>
+                            <li><a href="">서브52</a></li>
+                            <li><a href="">서브53</a></li>
+                            <li><a href="">서브54</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <!-- p.tnb>a{상단$}*3 -->
+            <p class="tnb">
+                <a href="">상단1</a>
+                <a href="">상단2</a>
+                <a href="">상단3</a>
+            </p>
+        </div>    
+    </header>
+    <div id="content">
+        <!-- section#page$*4>(figure.sub_ban>img)+(div.bread_box>a{Home}*3)+(div.con_wrap>div.page_wrap) -->
+        <section id="page1" class="page">
+            <figure class="sub_ban"><img src="./img/company1.jpg" alt="서브배너"></figure>
+            <div class="bread_box">
+                <div class="bread_wrap">
+                    <a href="">Home</a><a href="">메인메뉴</a>
+                    <select name="sel" id="sel1" class="sel">
+                        <option value="web01.html#page1" selected>페이지1</option>
+                        <option value="web01.html#page2">페이지2</option>
+                        <option value="web01.html#page3">페이지3</option>
+                        <option value="web01.html#page4">페이지4</option>
+                    </select>
+                </div>
+            </div>
+            <div class="con_wrap">
+                <div class="page_wrap">
+                    <h2 class="page_tit">페이지1 제목</h2>
+                    <h3 class="sec_tit">테이블 제목1</h3>
+                    <table class="tb1">
+                        <thead>
+                            <tr>
+                                <th class="c1">번호</th>
+                                <th class="c2">제목</th>
+                                <th class="c3">작성자</th>
+                                <th class="c4">작성일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="c1">4</td>
+                                <td class="c2"><a href="">글 제목4</a></td>
+                                <td class="c3">관리자</td>
+                                <td class="c4">2022-05-02</td>
+                            </tr>
+                            <tr>
+                                <td class="c1">3</td>
+                                <td class="c2"><a href="">글 제목3</a></td>
+                                <td class="c3">관리자</td>
+                                <td class="c4">2022-05-02</td>
+                            </tr>
+                            <tr>
+                                <td class="c1">2</td>
+                                <td class="c2"><a href="">글 제목2</a></td>
+                                <td class="c3">관리자</td>
+                                <td class="c4">2022-05-02</td>
+                            </tr>
+                            <tr>
+                                <td class="c1">1</td>
+                                <td class="c2"><a href="">글 제목1</a></td>
+                                <td class="c3">관리자</td>
+                                <td class="c4">2022-05-02</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="page_wrap">
+                    <h3 class="sec_tit">테이블2 제목</h3>
+                    <table class="tb2">
+                        <tbody>
+                            <tr>
+                                <th class="d1">항목명</th>
+                                <td class="d2">항목데이터</td>
+                                <th class="d3">항목명</th>
+                                <td class="d4">항목데이터</td>
+                            </tr>
+                            <tr>
+                                <th class="d1">항목명</th>
+                                <td class="d2">항목데이터</td>
+                                <th class="d3">항목명</th>
+                                <td class="d4">항목데이터</td>
+                            </tr>
+                            <tr>
+                                <th class="d1">항목명</th>
+                                <td class="d2">항목데이터</td>
+                                <th class="d3">항목명</th>
+                                <td class="d4">항목데이터</td>
+                            </tr>
+                            <tr>
+                                <th class="d1">항목명</th>
+                                <td class="d2">항목데이터</td>
+                                <th class="d3">항목명</th>
+                                <td class="d4">항목데이터</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="page_wrap">
+                    <h3 class="sec_tit">테이블3 제목</h3>
+                    <div class="tb3">
+                        <ul class="tr">
+                            <li class="th e1">항목명</li>
+                            <li class="td e2">항목 내용</li>
+                            <li class="th e3">항목명</li>
+                            <li class="td e4">항목 내용</li>
+                        </ul>
+                        <ul class="tr">
+                            <li class="th e1">항목명</li>
+                            <li class="td e2">항목 내용</li>
+                            <li class="th e3">항목명</li>
+                            <li class="td e4">항목 내용</li>
+                        </ul>
+                        <ul class="tr">
+                            <li class="th e1">항목명</li>
+                            <li class="td e2">항목 내용</li>
+                            <li class="th e3">항목명</li>
+                            <li class="td e4">항목 내용</li>
+                        </ul>
+                        <ul class="tr">
+                            <li class="th e1">항목명</li>
+                            <li class="td e2">항목 내용</li>
+                            <li class="th e3">항목명</li>
+                            <li class="td e4">항목 내용</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="page2" class="page">
+            <figure class="sub_ban"><img src="./img/company2.jpg" alt="서브배너"></figure>
+            <div class="bread_box">
+                <div class="bread_wrap">
+                    <a href="">Home</a><a href="">메인메뉴</a>
+                    <select name="sel" id="sel2" class="sel">
+                        <option value="web01.html#page1">페이지1</option>
+                        <option value="web01.html#page2" selected>페이지2</option>
+                        <option value="web01.html#page3">페이지3</option>
+                        <option value="web01.html#page4">페이지4</option>
+                    </select>
+                </div>
+            </div>
+            <div class="con_wrap">
+                <div class="page_wrap">
+                    <h2 class="page_tit">페이지2 제목</h2>
+                    <h3 class="sec_tit">썸네일 목록1</h3>
+                    <ul class="lst1">
+                        <li class="tit">썸네일1</li>
+                        <li class="item2"><img src="oled_list01.jpg" alt=""></li>
+                        <li class="item3"><img src="oled_list02.jpg" alt=""></li>
+                        <li class="item4"><img src="oled_list03.jpg" alt=""></li>
+                        <li class="blank_box"><img src="" alt=""></li>
+                        <li class="item6"><img src="oled_list04.jpg" alt=""></li>
+                        <li class="item7"><img src="oled_list05.jpg" alt=""></li>
+                        <li class="item8"><img src="oled_list06.jpg" alt=""></li>
+                        <li class="tit">썸네일2</li>
+                        <li class="item10"><img src="oled_list03.jpg" alt=""></li>
+                        <li class="item11"><img src="oled_list05.jpg" alt=""></li>
+                        <li class="item12"><img src="oled_list02.jpg" alt=""></li>
+                        <li class="blank_box"></li>
+                        <li class="item14"><img src="oled_list04.jpg" alt=""></li>
+                    </ul>
+                </div>
+                <div class="page_wrap">
+                    <h3 class="sec_tit">썸네일 목록2</h3>
+                    <ul class="lst2">
+                        <li class="item1"></li>
+                        <li class="item2"></li>
+                        <li class="item3"></li>
+                        <li class="item4"></li>
+                        <li class="item5"></li>
+                        <li class="item6"></li>
+                        <li class="item1"></li>
+                        <li class="item2"></li>
+                        <li class="item3"></li>
+                    </ul>
+                </div>
+                <div class="page_wrap">
+                    <h3 class="sec_tit">아이콘 리스트1</h3>
+                    <ul class="lst3">
+                        <li class="item1"><img src="icon01.png" alt=""></li>
+                        <li class="item2"><img src="icon02.png" alt=""></li>
+                        <li class="item3"><img src="icon03.png" alt=""></li>
+                        <li class="item4"><img src="icon04.png" alt=""></li>
+                        <li class="item5"><img src="icon05.png" alt=""></li>
+                        <li class="item6"><img src="icon06.png" alt=""></li>
+                    </ul>
+                </div>
+                <div class="page_wrap">
+                    <h3 class="sec_tit">아이콘 리스트2</h3>
+                    <ul class="lst4">
+                        <li class="item1"></li>
+                        <li class="item2"></li>
+                        <li class="item3"></li>
+                        <li class="item4"></li>
+                        <li class="item5"></li>
+                        <li class="item6"></li>
+                    </ul>
+                </div>
+                <div class="page_wrap">
+                    <h3 class="sec_tit">아이콘 리스트3</h3>
+                    <ul class="lst5">
+                        <li class="item1"></li>
+                        <li class="item2"></li>
+                        <li class="item3"></li>
+                        <li class="item4"></li>
+                        <li class="item5"></li>
+                        <li class="item6"></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="page3" class="page">
+            <figure class="sub_ban"><img src="./img/company3.jpg" alt="서브배너"></figure>
+            <div class="bread_box">
+                <div class="bread_wrap">
+                    <a href="">Home</a><a href="">메인메뉴</a>
+                    <select name="sel" id="sel3" class="sel">
+                        <option value="web01.html#page1">페이지1</option>
+                        <option value="web01.html#page2">페이지2</option>
+                        <option value="web01.html#page3" selected>페이지3</option>
+                        <option value="web01.html#page4">페이지4</option>
+                    </select>
+                </div>
+            </div>
+            <div class="con_wrap">
+                <div class="page_wrap">
+                    <h2 class="page_tit">페이지3 제목</h2>
+                </div>
+            </div>
+        </section>
+        <section id="page4" class="page">
+            <figure class="sub_ban"><img src="./img/company4.jpg" alt="서브배너"></figure>
+            <div class="bread_box">
+                <div class="bread_wrap">
+                    <a href="">Home</a><a href="">메인메뉴</a>
+                    <select name="sel" id="sel4" class="sel">
+                        <option value="web01.html#page1">페이지1</option>
+                        <option value="web01.html#page2">페이지2</option>
+                        <option value="web01.html#page3">페이지3</option>
+                        <option value="web01.html#page4" selected>페이지4</option>
+                    </select>
+                </div>
+            </div>
+            <div class="con_wrap">
+                <div class="page_wrap">
+                    <h2 class="page_tit">페이지4 제목</h2>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+    var sel = document.getElementsByClassName("sel"); 
+
+    sel[0].addEventListener("change", function(){
+        location.href = sel[0].value;
+    });   
+    sel[1].addEventListener("change", function(){
+        location.href = sel[1].value;
+    });   
+    sel[2].addEventListener("change", function(){
+        location.href = sel[2].value;
+    });   
+    sel[3].addEventListener("change", function(){
+        location.href = sel[3].value;
+    });   
+    </script>
+    <footer id="ft">
+        <div class="ft_wrap">
+            <nav class="fnb">
+                <ul>
+                    <li><a href="">링크1</a></li>
+                    <li><a href="">링크2</a></li>
+                    <li><a href="">링크3</a></li>
+                    <li><a href="">링크4</a></li>
+                    <li><a href="">링크5</a></li>
+                </ul>
+            </nav>
+            <p class="snb"><a href="">소셜1</a><a href="">소셜2</a><a href="">소셜3</a></p>
+            <p class="copyright">All Copyrights by Company</p>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

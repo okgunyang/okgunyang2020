@@ -1,0 +1,527 @@
+<?php
+    @session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SRC 병원 - 치료연계센터</title>
+    <!-- 구형 브라우저 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <!-- 신형 브라우저와 안드로이드 폰 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.png">
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="57x57" href="./ico/favicon57.png">
+    <!-- 아이패드 -->
+    <link rel="apple-touch-icon" size="72x72" href="./ico/favicon72.png">
+    <!-- 아이폰4 이상 -->
+    <link rel="apple-touch-icon" size="114x114" href="./ico/favicon114.png">
+    <!-- IE10 이상 -->
+    <meta name="msapplication-TileColor" content="#FFFFFF"> 
+    <meta name="msapplication-TileImage" content="./ico/favicon-144.png">
+
+    <!-- 메타데이터 개발 공통 사항 -->
+    <!-- 데스크탑에서 IE로 웹 문서를 열 때 가장 최신 버전으로 실행 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    
+    <!-- 앱(웹 사이트)의 이름 -->
+    <meta name="application-name" content="SRC hospital Site">
+    <!-- 웹 사이트 저작자의 이름 -->
+    <meta name="author" content="kitae Kim">
+    <!-- 현재 문서의 설명 -->
+    <meta name="description" content="SRC hospital Site Mainpage"> 
+    <!-- 현재 문서의 저작도구 -->
+    <meta name="generator" content="Brackts">
+    <!-- 검색엔진에서 검색되게할 키워드 -->
+    <meta name="keywords" content="SRC 병원, 건강관리, 휴양">
+    
+    <!-- 반응형, 모바일, 태블릿 사이트 일 경우 뷰포트 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Noto+Serif+KR" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Jua|Noto+Sans+KR|Noto+Serif+KR" rel="stylesheet">
+    <link rel="stylesheet" href="com.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="sub.css">
+    <link rel="stylesheet" href="sub5.css">
+    <link rel="stylesheet" href="iconfont.css">
+    <style>
+    body, html { -ms-overflow-style:none; }
+    ::-webkit-scrollbar { display:none; }    
+    ::-o-scrollbar { display:none; } 
+    ::-moz-scrollbar { display:none; }     
+    </style>
+<!--    <script src="https://code.jquery.com/jquery-latest.js"></script>-->
+    <script src="./js/jquery-1.11.1.js"></script>
+    
+    <script>
+    /* 여기가 스크립트 처리 구간 */    
+    $(function(){
+        var intv = setInterval(function(){ lAni(); }, 3000);
+        function lAni(){
+            $(".imgBox").not(":animated").animate({"margin-left":"-510px"}, 800, function(){
+                $(".imgBox li").eq(0).appendTo($(".imgBox"));
+                $(".imgBox").css("margin-left", "0px");
+            });
+            
+        }
+    });    
+    </script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcG6XLlvSL0DQtg1G38wiT_r8BYN3RbWQ&callback=initMap"></script> -->
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpo7PlmFhN57HAxDlD8MTLI4DT1bL9VFY&callback=initMap"></script>-->
+<!--
+1) 구글 지도 api key 발급 사이트로 이동하여 지도 API 서비스 신청
+2) https://console.cloud.google.com/getting-started?pli=1
+3) [API 및 서비스] -> [사용자 인증 정보] -> 인증 키 발급
+-->
+<script> 
+//좌표 값을 바꿔서 입력 36.3491563,127.3776857
+function initialize() {
+  var myLatlng = new google.maps.LatLng(37.4931346, 126.92737779999993);
+  var mapOptions = {
+    zoom: 17,
+    center: myLatlng
+  }
+
+  var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'SRC병원'	  //레이블을 바꿔서 입력
+  });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+ </script>
+<script>
+$(function(){
+//   setTimeout(function(){
+//       $("#map_canvas > div:last-child").css("display", "none", "z-index", "-1");
+//   }, 1000); 
+});    
+</script>
+</head>
+<body onload="initialize()">
+<div class="hdFrame on"></div>
+<header id="hd">
+    <div class="wrap">
+        <a href="index.html" class="logo">
+            <img src="./img/img_logo.png" alt="앰블럼">
+        </a>
+        <nav id="gnb">
+            <ul>
+                <li><a href="intro.html#page1" class="on">병원안내</a></li>
+                <li><a href="physical.html#page1" class="on">재활치료</a></li>
+                <li><a href="ward.html#page1" class="on">병동안내</a></li>
+                <li><a href="news.html#page1" class="on">병원소식</a></li>
+                <li><a href="speech.html#page1" class="on">치료연계안내</a></li>
+            </ul>
+        </nav>
+        <label for="ck" class="lstBtn">
+            <span class="item1 on"></span>
+            <span class="item2 on"></span>
+            <span class="item3 on"></span>
+            <span class="item4 on"></span>
+        </label>
+    </div>
+</header>    
+<main id="content">
+    <div class="blank"></div>
+    <div class="page" id="page1">
+        <a href="#page1" class="btn1 item1">SRC언어심리상담센터</a>
+        <div class="con">
+            <h1 class="pageTitle">SRC언어·심리상담센터</h1>
+            <p class="pageCom">종합적 치료서비스를 제공하는 상호협조적 팀 시스템 기관</p>
+            <section class="sec1">
+                <div class="subBox">
+                    <figure class="vsBox" id="vs1">
+                        <div class="vsWrap">
+                            <div class="vsSet">
+                                <ul class="vsLst">
+                                    <li class="col6">
+                                        <p class="vsItem">
+                                            <span class="vsNum">1</span>
+                                            발달재활치료 바우처 제공기관
+                                        </p>
+                                    </li>
+                                    <li class="col6">
+                                        <p class="vsItem">
+                                            <span class="vsNum">2</span>
+                                            특수교육지원대상자 제공
+                                        </p>
+                                    </li>
+                                    <li class="col6">
+                                        <p class="vsItem">
+                                            <span class="vsNum">3</span>
+                                            언어발달지원 바우처 제공기관
+                                        </p>
+                                    </li>
+                                    <li class="col6">
+                                        <p class="vsItem">
+                                            <span class="vsNum">4</span>
+                                            발당장애인 부모심리상담서비스 제공기관
+                                        </p>
+                                    </li>
+                                </ul>
+                                <ul class="vsLst">
+                                    <li class="col4">
+                                      <div class="circle">
+                                        <span class="thumItem item1"></span>
+                                        <span class="txtItem">전문가</span>
+                                      </div>
+                                    </li>
+                                    <li class="col4">
+                                      <div class="circle">
+                                        <span class="thumItem item2"></span>
+                                        <span class="txtItem">심층적 분석</span>
+                                      </div>
+                                    </li>
+                                    <li class="col4">
+                                      <div class="circle">
+                                        <span class="thumItem item3"></span>
+                                        <span class="txtItem">사후평가</span>
+                                      </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </figure>
+					<p class="pageCom2">SRC언어·심리상담센터는 발달지연 및 정서적으로 어려움을 겪는 사회적응에 취약한 아동, 청소년, 부모를 돕기 위해 전문적·종합적 치료서비스를 제공하는 Multi Channel Support 기관으로서 소아재활 낮병동과 연계치료가 가능합니다.</p>
+                    <ul class="programLst">
+                        <li class="item1 col6">
+                           <div class="programBox">
+                            <h3 class="programTit">개별치료 프로그램</h3>
+                            <ul class="lstTxt">
+                                <li><span class="programTxt">언어치료</span></li>
+                                <li><span class="programTxt">아동심리치료</span></li>
+                                <li><span class="programTxt">발달놀이치료</span></li>
+                                <li><span class="programTxt">인지치료</span></li>
+                                <li><span class="programTxt">음악치료</span></li>
+                                <li><span class="programTxt">심리운동치료</span></li>
+                                <li><span class="programTxt">미술치료</span></li>
+                                <li><span class="programTxt">부모교육 및 상담</span></li>
+                                <li><span class="programTxt">심리 평가</span></li>
+                                <li><span class="programTxt">심리상담</span></li>
+                            </ul>
+                          </div>    
+                        </li>
+                        <li class="item2 col6">
+                           <div class="programBox">
+                            <h3 class="programTit">개별치료 프로그램</h3>
+                            <ul class="lstTxt">
+                                <li><span class="programTxt">언어ㆍ사회성 그룹치료</span></li>
+                                <li><span class="programTxt">자존감 향상 프로그램</span></li>
+                                <li><span class="programTxt">사회성 증진 프로그램</span></li>
+                                <li><span class="programTxt">주의집중력 강화 프로그램</span></li>
+                                <li><span class="programTxt">자기조절 학습</span></li>
+                                <li><span class="programTxt">학교준비반 프로그램</span></li>
+                            </ul>
+                          </div>    
+                        </li>
+                    </ul>
+                    <figure class="vsBox" id="vs2">
+                        <h1 class="banTit">
+                            SRC병원 부설의원만의 <br>
+                            <span class="rtxt">ALL-IN-ONE SERVICE</span>
+                        </h1>    
+                        <p class="banCom">건물 내 언어심리상담센터 및 스포츠센터가 위치하여 치료가 용이합니다.</p>
+						<div class="vsBg"></div>	
+                        <div class="vsWrap">
+                            <div class="vsSet">
+                                <ul class="vsLst">
+                                    <li class="col6 left">
+                                        <h2 class="vsTit">SRC 언어·심리상담센터</h2>
+                                        <p class="vsCom">건물 내 SRC언어·심리상담센터와 연계되어 <br>
+                                        놀이, 인지, 미술, 심리 외 기타 치료가 가능합니다</p>
+                                        <a href="" class="detail">
+                                            사이트 바로가기
+                                        </a>
+                                    </li>
+                                    <li class="col6 right">
+                                        <h2 class="vsTit">SRC 스포츠센터</h2>
+                                        <p class="vsCom">건물 내 SRC스포츠센터(수영장)와 연계되어 <br>
+                                        각종 체육활동 및 재활체육 치료가 가능합니다</p>
+                                        <a href="" class="detail">
+                                            사이트 바로가기
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="page" id="page2">
+        <a href="#page2" class="btn1 item2">SRC 스포츠 센터</a>
+        <div class="con">
+            <h1 class="pageTitle">SRC 스포츠 센터</h1>
+            <p class="pageCom">스포츠 관련 서비스 전문기관</p>
+            <section class="sec1">
+                <div class="subBox">
+                    <figure class="vsBox" id="vs3">
+                        <p class="vsCom2">SRC스포츠센터는 차별화된 재활프로그램을 연구·개발하는 스포츠 관련 서비스 전문기관으로서 <br>
+신체발달균형을 위한 엄마와 아이가 함께하는 수중운동 프로그램 및 각 영역별 장애에 맞는 맞춤형 프로그램 등 재활치료에 연계하여 운영하고 있습니다.</p>    
+                        <ul class="vsLst">
+                            <li class="col6">
+                               <div class="circle">
+                                    <span class="thumItem item4"></span>
+                                    <span class="txtItem">수영 프로그램</span>
+                               </div>    
+                            </li>
+                            <li class="col6">
+                               <div class="circle">
+                                <span class="thumItem item5"></span>
+                                <span class="txtItem">수중운동 프로그램</span>
+                               </div>
+                            </li>
+                            <li class="col6">
+                                <ul class="lstSymbol">
+                                    <li>직장인, 주부, 어린이, 노인 건강 수영교실 별도 운영</li>
+                                    <li>초등학교 및 방학 특강 수영 교실</li>
+                                    <li>장애 영역별 맞춤형 수영 프로그램</li>
+                                </ul>
+                            </li>
+                            <li class="col6">
+                                <ul class="lstSymbol">
+                                    <li>어르신과 몸이 불편한 분을 위한 수중 운동 프로그램</li>
+                                    <li>신체발달 균형을 위한 엄마 아이가 함께하는 수중 운동</li>
+                                    <li>아쿠아로빅 프로그램</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </figure>
+                    <figure class="vsBox" id="vs4">
+                        <h1 class="banTit">
+                            SRC병원 부설의원만의 <br>
+                            <span class="rtxt">ALL-IN-ONE SERVICE</span>
+                        </h1>    
+                        <p class="banCom">건물 내 언어심리상담센터 및 스포츠센터가 위치하여 치료가 용이합니다.</p>
+						<div class="vsBg"></div>	
+                        <div class="vsWrap">
+                            <div class="vsSet">
+                                <ul class="vsLst">
+                                    <li class="col6 left">
+                                        <h2 class="vsTit">SRC 언어·심리상담센터</h2>
+                                        <p class="vsCom">건물 내 SRC언어·심리상담센터와 연계되어 <br>
+                                        놀이, 인지, 미술, 심리 외 기타 치료가 가능합니다</p>
+                                        <a href="" class="detail">
+                                            사이트 바로가기
+                                        </a>
+                                    </li>
+                                    <li class="col6 right">
+                                        <h2 class="vsTit">SRC 스포츠센터</h2>
+                                        <p class="vsCom">건물 내 SRC스포츠센터(수영장)와 연계되어 <br>
+                                        각종 체육활동 및 재활체육 치료가 가능합니다</p>
+                                        <a href="" class="detail">
+                                            사이트 바로가기
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="page" id="lastPage">
+        <div class="wrap">
+            <ul>
+                <li class="col4 item1 first">
+                    <h2 class="itemTitle">SRC병원</h2>
+                    <h1 class="telTxt">02-871-3636</h1>
+                    <p class="itemData">
+                        서울특별시 관악구 보라매로 44(봉천동722-19) <br> SRC병원 부설의원 1~3층
+                    </p>
+                    <p class="itemData" style="padding-bottom:40px;">
+                        팩스번호 02-876-3202 대표자 이영상 <br>
+                        고유번호증 129-82-11729
+                    </p>
+                </li>
+                <li class="col4 item2">
+                    <h2 class="itemTitle">진료시간</h2>
+                    <p class="itemData">
+                        평일 진료AM 09:00 ~ PM 06:00 <br>
+                        토요일 진료AM 09:00 ~ PM 01:00 <br>
+                        점심시간PM 12:00 ~ PM 01:00 <br>
+                    </p>
+                    <p class="itemData">※ 일요일 및 공휴일은 휴진입니다</p>                    
+                </li>
+                <li class="col4 item3">
+                    <h2 class="itemTitle">찾아오시는 길</h2>
+                    <div id="mapFrame">
+                        <div class="maps" id="fmaps" style="min-height: 147px; position: relative; overflow: hidden; background: url(&quot;http://static.naver.net/maps/mantle/1x/pattern_1.png&quot;) 0px 0px repeat transparent; width: 370px; height: 147px;">
+                        
+                    <div style="position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; overflow: visible; width: 100%; height: 100%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); z-index: 0; cursor: url(&quot;http://static.naver.net/maps/mantle/1x/openhand.cur&quot;), default;"><div style="position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; overflow: visible; width: 100%; height: 100%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); z-index: 0;"><div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 13px; left: -4px; z-index: 1;"><div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: none; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 0; user-select: none;"></div><div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 1; user-select: none;"><div style="position: absolute; top: 0px; left: 0px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; display: block; width: 0px; height: 0px; overflow: visible; box-sizing: content-box !important;"><div draggable="false" unselectable="on" style="position: absolute; top: -5px; left: 55px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"><img draggable="false" unselectable="on" alt="" width="256" height="256" src="http://onetile2.map.naver.net/get/197/0/0/12/3356/2933/bl_vc_bg/ol_vc_an" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;"></div><div draggable="false" unselectable="on" style="position: absolute; top: 251px; left: 55px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"><img draggable="false" unselectable="on" alt="" width="256" height="256" src="http://onetile1.map.naver.net/get/197/0/0/12/3356/2932/bl_vc_bg/ol_vc_an" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;"></div><div draggable="false" unselectable="on" style="position: absolute; top: -261px; left: 55px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"><img draggable="false" unselectable="on" alt="" width="256" height="256" src="http://onetile3.map.naver.net/get/197/0/0/12/3356/2934/bl_vc_bg/ol_vc_an" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;"></div><div draggable="false" unselectable="on" style="position: absolute; top: -261px; left: 311px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"><img draggable="false" unselectable="on" alt="" width="256" height="256" src="http://onetile4.map.naver.net/get/197/0/0/12/3357/2934/bl_vc_bg/ol_vc_an" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;"></div><div draggable="false" unselectable="on" style="position: absolute; top: 251px; left: -201px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"><img draggable="false" unselectable="on" alt="" width="256" height="256" src="http://onetile4.map.naver.net/get/197/0/0/12/3355/2932/bl_vc_bg/ol_vc_an" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;"></div><div draggable="false" unselectable="on" style="position: absolute; top: -5px; left: 311px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"><img draggable="false" unselectable="on" alt="" width="256" height="256" src="http://onetile3.map.naver.net/get/197/0/0/12/3357/2933/bl_vc_bg/ol_vc_an" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;"></div><div draggable="false" unselectable="on" style="position: absolute; top: -5px; left: -201px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"><img draggable="false" unselectable="on" alt="" width="256" height="256" src="http://onetile1.map.naver.net/get/197/0/0/12/3355/2933/bl_vc_bg/ol_vc_an" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;"></div><div draggable="false" unselectable="on" style="position: absolute; top: 251px; left: 311px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"><img draggable="false" unselectable="on" alt="" width="256" height="256" src="http://onetile2.map.naver.net/get/197/0/0/12/3357/2932/bl_vc_bg/ol_vc_an" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;"></div><div draggable="false" unselectable="on" style="position: absolute; top: -261px; left: -201px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"><img draggable="false" unselectable="on" alt="" width="256" height="256" src="http://onetile2.map.naver.net/get/197/0/0/12/3355/2934/bl_vc_bg/ol_vc_an" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;"></div></div></div><div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 100;"><div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 101;"></div><div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 103;"><div title="" style="position: absolute; overflow: hidden; box-sizing: content-box !important; cursor: inherit; left: 174px; top: 39px; width: 22px; height: 35px;"><img draggable="false" unselectable="on" src="https://navermaps.github.io/maps.js/docs/img/example/pin_default.png" alt="" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; position: absolute; cursor: pointer; width: 22px; height: 35px; left: 0px; top: 0px;"></div></div><div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 106;"></div></div></div><div style="position: absolute; display: none; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; overflow: visible; width: 100%; height: 100%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); background-color: rgb(255, 255, 255); z-index: 10000; opacity: 0.5;"></div></div></div><div style="position: absolute; z-index: 100; margin: 0px; padding: 0px; pointer-events: none; bottom: 0px; right: 0px;"><div style="border: 0px none; margin: 0px; padding: 0px; pointer-events: none; float: right; height: 22px;"><a href="https://ssl.pstatic.net/static/maps/mantle/notice/legal.html" target="_blank" style="display: block; width: 48px; height: 17px; overflow: hidden; margin: 0px 5px 5px 12px; pointer-events: auto;"><img src="http://static.naver.net/maps/mantle/1x/naver-normal-new.png" width="48" height="17" alt="NAVER" style="display:block;width:48px;height:17px;overflow:hidden;border:0 none;margin:0;padding:0;max-width:none !important;max-height:none !important;min-width:0 !important;min-height:0 !important;"></a></div></div></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=b_mLerQcOU2S8p4Sze6v"></script>
+    </div>
+</main>
+<footer id="ft">
+    <div class="wrap">
+        <p class="copyright">ⓒ 2018 SRC병원. ALL RIGHT RESERVED. SITE BY MOVEMENT K GROUP.</p>
+        <div class="ftLogo"></div>
+    </div>
+</footer>
+<input type="checkbox" id="ck">
+<div id="popFrm">
+    <label for="ck" class="closeBtn">닫기</label>
+    <div class="popBox">
+        <ul class="item1">
+            <li>
+                <h2>
+                    <a href="intro.html#page1">병원안내</a>
+                </h2>
+            </li>
+            <li>
+                <a href="intro.html#page1">병원소개</a>
+            </li>
+            <li>
+                <a href="intro.html#page2">시설안내</a>
+            </li>
+            <li>
+                <a href="intro.html#page3">부서별 연락처</a>
+            </li>
+            <li>
+                <a href="intro.html#page4">오시는길</a>
+            </li>
+            <li>
+                <a href="intro.html#page5">비급여 안내</a>
+            </li>
+            <li>
+                <a href="intro.html#page6">협력기관</a>
+            </li>
+        </ul>
+        <ul class="item2">
+            <li>
+                <h2>
+                    <a href="physical.html#page1">재활치료</a>
+                </h2>
+            </li>
+            <li>
+                <a href="physical.html#page1">소아</a>
+            </li>
+            <li>
+                <a href="physical.html#page2">청소년</a>
+            </li>
+            <li>
+                <a href="physical.html#page3">성인</a>
+            </li>
+        </ul>
+        <ul class="item3">
+            <li>
+                <h2>
+                    <a href="ward.html#page1">병동안내</a>
+                </h2>
+            </li>
+            <li>
+                <a href="ward.html#page1">낮병동소개</a>
+            </li>
+            <li>
+                <a href="ward.html#page2">입원안내</a>
+            </li>
+            <li>
+                <a href="ward.html#page3">치료항목</a>
+            </li>
+            <li>
+                <a href="ward.html#page4">자주하시는질문</a>
+            </li>
+        </ul>
+        <ul class="item4">
+            <li>
+                <h2>
+                    <a href="news.html#page1">병원소식</a>
+                </h2>
+            </li>
+            <li>
+                <a href="news.html#page1">공지사항</a>
+            </li>
+            <li>
+                <a href="news.html#page2">SRC뉴스레터</a>
+            </li>
+            <li>
+                <a href="news.html#page3">사회공헌사업</a>
+            </li>
+            <li>
+                <a href="news.html#page4">재활/건강정보</a>
+            </li>
+        </ul>
+        <ul class="item5">
+            <li>
+                <h2>
+                    <a href="speech.html#page1">치료연계센터</a>
+                </h2>
+            </li>
+            <li>
+                <a href="speech.html#page1">SRC심리상담센터</a>
+            </li>
+            <li>
+                <a href="speech.html#page2">SRC스포츠센터</a>
+            </li>
+        </ul>
+    </div>
+</div>        
+<aside id="quick">
+    <div class="qWrap">
+        <ul class="top">
+            <li>
+                <a href="index.html" class="qlogo"></a>
+            </li>
+<?php 
+        if($_SESSION['userid']=="admin") {         
+?>           
+            <li>
+                <a href="#" class="hv">관리자페이지로</a>
+            </li>
+            <li>   
+                <a href="logout.php" class="hv">로그아웃</a>
+            </li>
+<?php
+         } else if(isset($_SESSION['userid'])) {
+?>                                 
+            <li>
+                <a href="logout.php" class="hv">로그아웃</a>
+            </li>
+            <li>   
+                <a href="#" class="hv">정보수정</a>
+            </li>
+<?php
+        } else {
+?>                       
+            <li>
+                <a href="joinForm.html" class="hv">회원가입</a>
+            </li>
+            <li>   
+                <a href="loginForm.html" class="hv">로그인</a>
+            </li>
+<?php
+        }
+?> 
+            <li>       
+                <a href="intro.html#page5" class="hv">비급여안내</a>
+            </li>
+            <li>       
+                <a href="intro.html#page4" class="hv">오시는길</a>
+            </li>
+        </ul>
+        <ul class="bottom">
+            <li>
+                <a href="speech.html#page1" class="yellow">심리상담센터</a>
+            </li>
+            <li>
+                <a href="speech.html#page2" class="cyan">스포츠센터</a>
+            </li>
+            <li><a href="#page1" class="toTop">위로</a></li>
+        </ul>
+    </div>
+</aside>
+</body>
+</html>

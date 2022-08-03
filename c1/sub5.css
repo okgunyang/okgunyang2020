@@ -1,0 +1,70 @@
+/* sub3.css - ward.html을 위한 스타일 */
+@charset "utf-8";
+#content { background: #f1f1f1;}
+.page { background:#f1f1f1; padding-top: 142px; margin-top: -142px; }
+.btn1 { width: 598px; }
+.btn1.item2 { left:calc(calc(100% - 1200px) / 2 + 600px);}
+
+/* #page1 */
+.pageCom { text-align: center; color:#666; }
+.sec1 { width: 100%; clear: both; min-height:500px; padding:40px 0px; }
+.subBox { width:100%; margin:0 auto; color:#666; padding-bottom:50px; height:auto;  }
+
+.vsBox { width:100%; min-height:600px; clear:both; }
+.vsBox .vsWrap { width:100%; min-height:500px; background-repeat:no-repeat; background-position:left bottom, right bottom;  background-size:50% auto; }
+#vs1 { min-height:420px; position:relative; background:#28b690}
+#vs1 .vsWrap { background-image:url("./img/center_left.png"), url("./img/center_right.png"); min-height:600px; position:absolute; left: 0; bottom: 0; }
+#vs3 { background-image:url("./img/center_content_vs.jpg"); background-size:100%; background-position:center center; min-height:500px; padding-top: 100px; }
+
+#vs2, #vs4 { position:relative; clear:both; }
+.vsBg { height:200px;   
+background-image:url("./img/ybg.png"), url("./img/bgb.png"); 
+background-repeat:repeat-y; background-size:50% 200px; background-position:left bottom, right bottom; 
+width: 100%; clear:both; margin-top:150px; }
+#vs2 .vsWrap, #vs4 .vsWrap { background-image:url("./img/center_left1.png"), url("./img/center_right1.png"); 
+height:300px; position:absolute; left: 0; bottom: 0; }
+
+.vsSet { clear:both; padding-top:200px; min-height:200px; position:relative;  }
+.vsLst { clear:both; margin:0 auto; margin-top: 40px; width:820px; }
+.vsItem { color:#fff; padding:5px 40px 5px 60px; line-height:40px; }
+.vsNum { display:inline-block; width: 24px; height: 24px; border-radius:13px; line-height: 24px; text-align: center; background:#fff; color:#28b690; }
+.circle { border-radius:100px; width: 180px; height: 180px; overflow:hidden; background:#fff; margin:0 auto; }
+.thumItem { clear:both; display:block; width: 120px; height: 120px; margin:0 auto; background-position:center center; background-repeat: no-repeat; }
+.thumItem.item1 { background-image:url("./img/center_icon_01.gif"); }
+.thumItem.item2 { background-image:url("./img/center_icon_02.gif"); }
+.thumItem.item3 { background-image:url("./img/center_icon_03.gif"); }
+.thumItem.item4 { background-image:url("./img/center_icon_04.png"); }
+.thumItem.item5 { background-image:url("./img/center_icon_05.png"); }
+.txtItem { display:block; line-height:30px; text-align:center; color:#333; }
+.pageCom2 { width: 1200px; margin:0 auto; line-height: 1.8; padding:60px 0px; }
+.programLst { width:1200px; margin:0 auto; padding-top:30px;}
+.programLst .col6 { float:left; box-sizing: border-box; }
+.programBox { width:550px; margin:0 auto;  height:280px; }
+.item1 .programBox { border:2px solid #28b690; }
+.item2 .programBox { border:2px solid #444; }
+.programTit { color:#fff; text-align:center; font-size:16px; line-height: 42px; font-weight:500; margin: 0; padding: 0; width:100%; clear: both; }
+.item1 .programTit { background:#28b690; }
+.item2 .programTit { background:#444; }
+.lstTxt li { float:left; line-height:3; }
+.item1 .lstTxt li { width:33.33333% }
+.item2 .lstTxt li { width:50%; }
+.lstTxt .programTxt { display:block; }
+.lstTxt .programTxt:before { content:"·"; display:inline-block; padding-left:20px; font-size:16px; color:#28b690; font-weight:900; }
+.banTit { text-align:center; color:#333; padding-top: 100px; font-size:32px; }
+.rtxt { color:#e92a96; font-size:38px; }
+.banCom { text-align: center; line-height: 3; }
+
+.vsLst .left * { float:right; padding-right:35px; color:#fff; }
+.vsLst .right * { float:left; padding-left:35px; color:#fff; }
+.vsLst .vsTit { padding-top:60px; line-height: 3; text-shadow:2px 2px 5px #666; }
+.vsLst .left .vsTit, .vsLst .left .vsCom { text-align:right; }
+.vsLst .vsCom { font-size:14px; text-shadow:1px 1px 3px #666; }
+.vsLst .detail { display:inline-block; width: 160px; text-align:center; margin-top: 15px; line-height:36px; color:#fff; border-radius:20px; border:1px solid #fff; font-size:14px; }
+.vsLst .left .detail, .vsLst .right .detail { padding:0; margin-top:20px; }
+.vsLst .left .detail { margin-right: 35px; }
+.vsLst .right .detail { margin-left: 35px; }
+
+.vsCom2 { width:960px; text-align: center; margin:0 auto; color:#fff; }
+.lstSymbol li { padding-left: 28px; line-height:2; padding-top: 15px; font-size:14px; color:#fff; }
+.lstSymbol li:before { content:"·"; display:inline-block; padding-left:20px; font-size:16px; color:#e92a96; font-weight:900; margin-left: -5px; }
+#lastPage { margin-top:40px; }

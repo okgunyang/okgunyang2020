@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/* slick 수정 */
+.slick-prev, .slick-next { top:auto; bottom:-42px; width: 86px; z-index:60;
+height: 86px; text-indent:-9999px; background-color:rgba(0,0,0,0.2); }
+.slick-prev:hover, .slick-next:hover { background-color:rgba(0,0,0,0.4); }
+.slick-prev { right:auto; left: 0; }	
+.slick-next { right:0px; left:auto; }
+.slick-prev:after, .slick-next:after { content:""; display:block;
+width: 13px; height: 36px; background-image: url("./img/main_sp.png"); 
+background-repeat: no-repeat; margin:0px auto; margin-top: -10px; }
+.slick-next:after { background-position:-109px -408px; }
+.slick-prev:after { background-position:-21px -408px; }
+#play_btn { top:auto; bottom:0px; width: 86px; z-index:90; right:86px; left:auto;
+height: 86px; text-indent:-9999px; background-color:rgba(0,0,0,0.2); 
+position:absolute; cursor:pointer; }
+#play_btn:after { content:""; display:block;
+width: 15px; height: 26px; background-image: url("./img/main_sp.png"); 
+background-repeat: no-repeat; margin:0px auto; margin-top: -10px; 
+background-position:-64px -408px; }
+#play_btn.on:after { background-position:-152px -408px; }
+
+#page3 .slick-prev,#page3 .slick-next { display:block; float:left; margin-right: 6px;
+    width: 50px; height: 50px; border-radius: 50%; border:1px solid #ddd; 
+    text-indent:-9999px; position:relative; }
+#page3 .slick-next { float:right; bottom:auto; top:50px; position:absolute; right:-70px; }
+#page3 .slick-prev:after ,#page3 .slick-next:after { content:"";
+display:block; width: 10px; height: 20px; position:absolute; top: 50%; 
+left: 50%; margin: -10px 0 0 -5px; background: url("./img/main_sp.png") no-repeat; }
+#page3 .slick-prev:after { background-position:-556px -318px; }
+#page3 .slick-next:after { background-position: -616px -318px; }
+#page3 .slick-prev:hover, #page3 .slick-next:hover { background-color:rgba(0,0,0,0.15); }
+
+#page4 .slick-prev,#page4 .slick-next { display:block; float:left; margin-right: 6px;
+    width: 50px; height: 50px; border-radius: 50%; border:1px solid #ddd; 
+    text-indent:-9999px; position:relative; }
+#page4 .slick-next { float:right; bottom:auto; top:50px; position:absolute; right:-70px; }
+#page4 .slick-prev:after ,#page4 .slick-next:after { content:"";
+display:block; width: 10px; height: 20px; position:absolute; top: 50%; 
+left: 50%; margin: -10px 0 0 -5px; background: url("./img/main_sp.png") no-repeat; }
+#page4 .slick-prev:after { background-position:-556px -318px; }
+#page4 .slick-next:after { background-position: -616px -318px; }
+#page4 .slick-prev:hover, #page4 .slick-next:hover { background-color:rgba(0,0,0,0.15); }

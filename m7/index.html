@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!-- 반응형, 모바일, 태블릿 사이트 일 경우 뷰포트 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog World(개판)</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./src/favicon16.ico">
+    <!-- 신형 브라우저와 안드로이드 폰 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./src/favicon32.png">
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="57x57" href="./src/favicon57.png">
+    <!-- 아이패드 -->
+    <link rel="apple-touch-icon" size="72x72" href="./src/favicon72.png">
+    <!-- 아이폰4 이상 -->
+    <link rel="apple-touch-icon" size="114x114" href="./src/favicon114.png">
+    <!-- IE10 이상 -->
+    <meta name="msapplication-TileColor" content="#FFFFFF"> 
+    <meta name="msapplication-TileImage" content="./src/favicon-144.png">
+    <!-- 앱(웹 사이트)의 이름 -->
+    <meta name="application-name" content="Nobble Coffee Brand Site">
+    <!-- 웹 사이트 저작자의 이름 -->
+    <meta name="author" content="kitae Kim">
+    <!-- 현재 문서의 설명 -->
+    <meta name="description" content="Nobble Coffee Brand OnePage"> 
+    <!-- 현재 문서의 저작도구 -->
+    <meta name="generator" content="kim Editor">
+    <!-- 검색엔진에서 검색되게할 키워드 -->
+    <meta name="keywords" content="강아지, 애완견, 사냥견, dog">
+    
+    <link rel="stylesheet" href="jquery.mobile-1.3.2.min.css" />
+    <script src="jquery.js"></script>
+    <script src="jquery.mobile-1.3.2.min.js"></script>
+    <style>
+    #main { background-image:url("./img/dog1.jpg"); background-size:cover; background-color:transparent; width:100%; height:calc(100% - 120px); 
+        overflow:hidden; background-position:center center; } 
+    .hd, .ft { height:60px; } 
+    .ft { height:50px; } 
+    .logo, .logoBox { margin:0; padding:0; }    
+    .logo img { height:50px; width:auto; }    
+    .title { text-align: center; line-height:4; } 
+    #homemenu { background:transparent; border:0; }
+    #homemenu li { background:transparent; border:0;   }    
+    .ui-listview .ui-li>.ui-btn-text { border-radius:15px; } 
+    .thumbLst img { width:72px; height:auto; } 
+    .fTit { text-align: center; } 
+    .content { height:auto; }    
+    .content img { display:block; width:80%; margin:10px auto; 
+        height:auto; }    
+    </style>
+    <script>
+    $(document).ready(function(){
+        /* 여기는 jQuery 이벤트 */
+    });    
+    </script>
+</head>
+<body>
+<main id="main" data-role="page" title="개판">
+    <header class="hd" data-role="header" data-position="fixed">
+        <h2 class="logoBox">
+            <a href="" class="logo">
+                <img src="./img/logo.png" alt="logo">
+            </a>
+        </h2>
+    </header>
+    <section class="con" data-role="content">
+      <h3 data-role="title" class="title">개판에 오신 것을 환영합니다. <br>하고 싶은 작업을 선택해주세요</h3>
+      <ul class="ui-grid-b" data-role="listview" id="homemenu" data-theme="c">
+        <li class="ui-block-a"> 
+          <a href="#search" data-role="button" data-inline="true" data-icon="search" data-transition="flow">검색</a>
+        </li>   
+        <li class="ui-block-b"> 
+          <a href="#list" data-role="button" data-inline="true" data-icon="grid" data-transition="flow">목록</a>
+        </li>   
+        <li class="ui-block-c"> 
+          <a href="tel:042-476-2111" data-role="button" data-inline="true" data-icon="star" data-transition="flow">전화</a>
+        </li>   
+        <li class="ui-block-a"> 
+          <a href="sms:010-2476-2111" data-role="button" data-inline="true" data-icon="alert" data-transition="flow">문자</a>
+        </li>   
+        <li class="ui-block-b"> 
+          <a href="#post" data-role="button" data-inline="true" data-icon="info" data-transition="flow">글</a>
+        </li>   
+        <li class="ui-block-c"> 
+          <a href="#mail" data-role="button" data-inline="true" data-icon="refresh" data-transition="flow">메일</a>
+        </li> 
+      </ul>
+    </section>
+    <footer class="ft" data-role="footer" data-position="fixed">
+        <h3>All Copyright by kim @2018</h3>
+    </footer>
+</main>
+<main id="search" data-role="page">
+    <header class="subHd" data-role="header" data-position="fixed">
+        <a href="#main" data-icon="home" class="ui-btn-left" data-transition="slide">HOME</a>
+        <h3 data-role="title" class="subTitle">검색 페이지</h3>
+        <a href="#list" data-icon="grid" class="ui-btn-right" data-transition="slide">LIST</a>
+        <nav data-role="navbar">
+            <ul>
+               <li><a href="#list" data-icon="grid">목록</a></li>
+               <li><a href="tel:042-476-2111" data-icon="grid">전화</a></li>
+               <li><a href="sms:010-2476-2111" data-icon="alert">문자</a></li>
+               <li><a href="#post" data-icon="info">글</a></li>
+               <li><a href="#mail" data-icon="refresh">메일</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="content" data-role="content">
+        <ul data-role="listview" data-inset="true" data-filter="true">
+            <li data-role="list-divider">군견/경찰견/번견</li>
+            <li><a class="ui-btn-active" href="#page1" data-transition="turn">마스티프</a></li>
+            <li><a>보르도 마스티프</a></li>
+            <li><a>로트바일러</a></li>
+            <li><a>복서</a></li>
+            <li><a>자이언트 슈나우저</a></li>
+            <li><a>스탠더드 슈나우저</a></li>
+            <li><a>도베르만 핀셔</a></li>
+            <li><a>그레이트 데인</a></li>
+            <li><a>불마스티프</a></li>
+            <li data-role="list-divider">목양견</li>
+            <li><a>쿠바츠</a></li>
+            <li><a>저먼 셰퍼드</a></li>
+            <li><a>풀리</a></li>
+            <li><a>코몬도르</a></li>
+            <li><a>그레이트 피레니즈</a></li>
+            <li><a>콜리</a></li>
+            <li><a>캉갈</a></li>
+            <li><a>올드 잉글리시 시프도그</a></li>
+            <li><a>벨지안 타뷰렌</a></li>
+            <li><a>셰틀랜드 시프도그</a></li>
+            <li><a>비어디드 콜리</a></li>
+            <li><a>브리마르</a></li>
+            <li><a>웰시 코기</a></li>
+            <li><a>오스트레일리안 케르피</a></li>
+            <li><a>벨지안 시프도그</a></li>
+            <li><a>피레니안 마스티프</a></li>
+            <li><a>보스롱</a></li>
+            <li><a>티베탄 마스티프</a></li>
+            <li data-role="list-divider">썰매개</li>            
+            <li><a>사모예드</a></li>
+            <li><a>시베리안 허스키</a></li>
+            <li><a>알래스칸 맬러뮤트</a></li>
+            <li><a>그린란드견</a></li>
+            <li><a>아메리칸 에스키모 도그</a></li>
+            <li><a>캐나디안 에스키모 도그</a></li>
+            <li><a>치누크</a></li>
+            <li><a>에우로하운드</a></li>
+            <li><a>래브라도 허스키</a></li>
+            <li><a>맥켄지 강 허스키</a></li>
+            <li><a>노던 이누이트 도그</a></li>
+            <li><a>사할린 허스키</a></li>
+            <li><a>세팔라 시베리안</a></li>
+            <li><a>타마스칸</a></li>
+            <li data-role="list-divider">수렵견</li>                
+            <li><a class="ui-btn-active" href="#page2" data-transition="turn">아프간 하운드</a></li>
+            <li><a>그레이하운드</a></li>
+            <li><a>스코티시 디어하운드</a></li>
+            <li><a>아이리시 울프하운드</a></li>
+            <li><a>휘핏</a></li>
+            <li><a>보르조이</a></li>
+            <li><a>살루키</a></li>
+            <li><a>아자와크</a></li> 
+            <li><a>닥스훈트</a></li>
+            <li><a>블러드하운드</a></li>
+            <li><a>플로트 하운드</a></li>
+            <li><a>미니어처 닥스훈트</a></li>
+            <li><a>쿤하운드</a></li>
+            <li><a>오터하운드</a></li>
+            <li><a>노르위전 엘크하운드</a></li>
+            <li><a>잉글리시 폭스하운드</a></li>
+            <li><a>바셋하운드</a></li>
+            <li><a>해리어</a></li>
+            <li><a>아메리칸 폭스하운드</a></li>
+            <li><a>비글</a></li>
+            <li><a>던커</a></li>
+            <li><a>타마스칸</a></li>	
+            <li><a>드리버</a></li>
+            <li><a>바이에른 마운틴 하운드</a></li>
+            <li><a>비글해리어</a></li>
+            <li><a>슈바이처 라우프훈트</a></li>
+            <li><a>스위스하운드</a></li>
+            <li><a>아르투아 하운드</a></li>
+            <li><a>치누크</a></li>
+            <li><a>에우로하운드</a></li>
+            <li><a>오가르 폴스키</a></li>
+            <li><a>크레타하운드</a></li>
+            <li><a>포르살렌 </a></li>
+            <li data-role="list-divider">조렵견</li>   
+            <li><a>저먼 와이어 헤어드 포인터</a></li>
+            <li><a>바이마라너</a></li>
+            <li><a class="ui-btn-active" href="#page3" data-transition="turn">비즐라</a></li>
+            <li><a>저먼 쇼트 헤어드 포인터</a></li>
+            <li><a>잉글리시 포인터</a></li>
+            <li><a>골든 리트리버</a></li>
+            <li><a>래브라도 리트리버</a></li>
+            <li><a>체서피크 베이 리트리버</a></li>
+            <li><a>컬리 코티드 리트리버</a></li>
+            <li data-role="list-divider">테리어견</li>
+            <li><a class="ui-btn-active" href="#page4" data-transition="turn">폭스 테리어</a></li>
+            <li><a>케리 블루 테리어</a></li>
+            <li><a>맨체스터 테리어</a></li>
+            <li><a>베들링턴 테리어</a></li>
+            <li><a>스카이 테리어</a></li>
+            <li><a>실리햄 테리어</a></li>
+            <li><a>케언 테리어</a></li>
+            <li><a>불 테리어</a></li>
+            <li><a>웰시 테리어</a></li>
+            <li><a>아이리시 테리어</a></li>
+            <li><a>웨스트 하일랜드 화이트 테리어</a></li>
+            <li><a>스태퍼드셔 불 테리어</a></li>
+            <li><a>소프트 코티드 휘튼 테리어</a></li>
+            <li><a>댄디 딘몬트 테리어</a></li>
+            <li><a>미니어처 슈나우저</a></li>
+            <li><a>스카치 테리어</a></li>
+            <li><a>오스트레일리안 테리어</a></li>
+            <li><a>노리치 테리어</a></li>
+            <li><a>에어데일 테리어</a></li>
+            <li><a>잭 러셀 테리어</a></li>
+            <li><a>핏불 테리어</a></li>
+            <li data-role="list-divider">실용견</li>
+            <li><a>차이니즈 샤페이</a></li>
+            <li><a>티베탄 테리어</a></li>
+            <li><a>티베탄 스패니얼</a></li>
+            <li><a class="ui-btn-active" href="#page5" data-transition="turn">라사 압소</a></li>
+            <li><a>프렌치 불도그</a></li>
+            <li><a>보스턴 테리어</a></li>
+            <li><a>스키퍼키</a></li>
+            <li><a>키스혼드</a></li>
+            <li><a>불도그</a></li>
+            <li><a>비숑 프리제</a></li>
+            <li><a>일본 스피츠</a></li>
+            <li><a>차우차우</a></li>
+            <li><a>달마티안</a></li>
+            <li><a>스탠더드 푸들</a></li>
+            <li><a>미니어처 푸들</a></li>
+            <li><a>도사견</a></li>
+            <li><a>시바견</a></li>
+            <li><a>아키타견</a></li>
+            <li><a>동경이</a></li>
+            <li><a>불개</a></li>
+            <li><a>삽살개</a></li>
+            <li><a>제주개</a></li>
+            <li><a>진돗개</a></li>
+            <li><a>통일개</a></li>
+            <li><a>풍산개</a></li>
+            <li data-role="list-divider">애완견</li>
+            <li><a>친</a></li>
+            <li><a class="ui-btn-active" href="#page6" data-transition="turn">말티즈</a></li>
+            <li><a>일본 테리어</a></li>
+            <li><a>잉글리시 토이 스패니얼</a></li>
+            <li><a>파피용</a></li>
+            <li><a>차이니스 크레스티드</a></li>
+            <li><a>토이 맨체스터 테리어</a></li>
+            <li><a>이탈리안 그레이하운드</a></li>
+            <li><a>퍼그</a></li>
+            <li><a>미니어처 핀셔</a></li>
+            <li><a>페키니즈</a></li>
+            <li><a>포메라니안</a></li>
+            <li><a>아펜핀셔</a></li>
+            <li><a>토이 푸들</a></li>
+            <li><a>시추</a></li>
+            <li><a>치와와</a></li>
+            <li><a>요크셔 테리어</a></li>
+            <li><a>실키 테리어</a></li>
+            <li><a>브뤼셀 그리폰</a></li>
+            <li><a>독일 스피츠</a></li>
+            <li><a>미니어처 핀셔</a></li>
+            <li><a>카발리에 킹 찰스 스패니얼</a></li>
+            <li><a>킹 찰스 스패니얼</a></li>
+        </ul>
+    </section>
+    <footer class="subFt" data-role="footer" data-position="fixed">
+        <h3>All Copyright by kim @2018</h3>
+    </footer>
+</main>
+<main id="list" data-role="page">
+    <header class="subHd" data-role="header" data-position="fixed">
+        <a href="#main" data-icon="home" class="ui-btn-left" data-transition="slide">HOME</a>
+        <h3 data-role="title" class="subTitle">목록 페이지</h3>
+        <a href="#search" data-icon="search" class="ui-btn-right" data-transition="slide">SEARCH</a>
+        <nav data-role="navbar">
+            <ul>
+               <li><a href="#search" data-icon="serch">검색</a></li>
+               <li><a href="tel:042-476-2111" data-icon="grid">전화</a></li>
+               <li><a href="sms:010-2476-2111" data-icon="alert">문자</a></li>
+               <li><a href="#post" data-icon="info">글</a></li>
+               <li><a href="#mail" data-icon="refresh">메일</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="content" data-role="content">
+        <ul data-role="listview" class="thumbLst">
+            <li>
+                <a href="">
+                   <img src="./img/thum1.jpg" alt="군용견"/>
+                   <h3>군견/경찰견/번견</h3>
+                   <p>군용/경찰용으로 훈련 시킨 개</p>
+                </a>
+                <ul>
+                    <li><a class="ui-btn-active" href="#page1" data-transition="flip">마스티프</a></li>
+                    <li><a>보르도 마스티프</a></li>
+                    <li><a>로트바일러</a></li>
+                    <li><a>복서</a></li>
+                    <li><a>자이언트 슈나우저</a></li>
+                    <li><a>스탠더드 슈나우저</a></li>
+                    <li><a>도베르만 핀셔</a></li>
+                    <li><a>그레이트 데인</a></li>
+                    <li><a>불마스티프</a></li>
+                    <li><a href="#list" data-role="button" data-theme="b">1차 메뉴로 이동</a></li>
+                </ul>
+            </li>
+            <li>
+               <a href="">
+                   <img src="./img/thum7.jpg" alt="목양견">
+                   <h3>목양견</h3>
+                   <p>목장에서 방목을 목적으로 길러 낸 개</p>
+               </a>
+                <ul>
+                    <li><a>쿠바츠</a></li>
+                    <li><a class="ui-btn-active" href="#page7" data-transition="flip">저먼 셰퍼드</a></li>
+                    <li><a>풀리</a></li>
+                    <li><a>코몬도르</a></li>
+                    <li><a>그레이트 피레니즈</a></li>
+                    <li><a>콜리</a></li>
+                    <li><a>캉갈</a></li>
+                    <li><a>올드 잉글리시 시프도그</a></li>
+                    <li><a>벨지안 타뷰렌</a></li>
+                    <li><a>셰틀랜드 시프도그</a></li>
+                    <li><a>비어디드 콜리</a></li>
+                    <li><a>브리마르</a></li>
+                    <li><a>웰시 코기</a></li>
+                    <li><a>오스트레일리안 케르피</a></li>
+                    <li><a>벨지안 시프도그</a></li>
+                    <li><a>피레니안 마스티프</a></li>
+                    <li><a>보스롱</a></li>
+                    <li><a>티베탄 마스티프</a></li>
+                    <li><a href="#list" data-role="button" data-theme="b">1차 메뉴로 이동</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">
+                   <img src="./img/thum8.jpg" alt="썰매개">
+                   <h3>썰매개</h3>
+                   <p>극 지방이나 눈이 많은 지역에서 썰매를 끄는 개</p>
+                </a>
+                <ul>
+                    <li><a>사모예드</a></li>
+                    <li><a class="ui-btn-active" href="#page8" data-transition="flip">시베리안 허스키</a></li>
+                    <li><a>알래스칸 맬러뮤트</a></li>
+                    <li><a>그린란드견</a></li>
+                    <li><a>아메리칸 에스키모 도그</a></li>
+                    <li><a>캐나디안 에스키모 도그</a></li>
+                    <li><a>치누크</a></li>
+                    <li><a>에우로하운드</a></li>
+                    <li><a>래브라도 허스키</a></li>
+                    <li><a>맥켄지 강 허스키</a></li>
+                    <li><a>노던 이누이트 도그</a></li>
+                    <li><a>사할린 허스키</a></li>
+                    <li><a>세팔라 시베리안</a></li>
+                    <li><a>타마스칸</a></li>
+                    <li><a href="#list" data-role="button" data-theme="b">1차 메뉴로 이동</a></li>
+                </ul>
+            </li>                            
+            <li>
+                <a href="">
+                   <img src="./img/thum2.jpg" alt="수렵견">
+                   <h3>수렵견</h3>
+                   <p>사냥을 할 때 사냥을 주도하는 개</p>
+                </a>
+                <ul>
+                    <li><a class="ui-btn-active" href="#page2" data-transition="flip">아프간 하운드</a></li>
+                    <li><a>그레이하운드</a></li>
+                    <li><a>스코티시 디어하운드</a></li>
+                    <li><a>아이리시 울프하운드</a></li>
+                    <li><a>휘핏</a></li>
+                    <li><a>보르조이</a></li>
+                    <li><a>살루키</a></li>
+                    <li><a>아자와크</a></li> 
+                    <li><a>닥스훈트</a></li>
+                    <li><a>블러드하운드</a></li>
+                    <li><a>플로트 하운드</a></li>
+                    <li><a>미니어처 닥스훈트</a></li>
+                    <li><a>쿤하운드</a></li>
+                    <li><a>오터하운드</a></li>
+                    <li><a>노르위전 엘크하운드</a></li>
+                    <li><a>잉글리시 폭스하운드</a></li>
+                    <li><a>바셋하운드</a></li>
+                    <li><a>해리어</a></li>
+                    <li><a>아메리칸 폭스하운드</a></li>
+                    <li><a>비글</a></li>
+                    <li><a>던커</a></li>
+                    <li><a>타마스칸</a></li>	
+                    <li><a>드리버</a></li>
+                    <li><a>바이에른 마운틴 하운드</a></li>
+                    <li><a>비글해리어</a></li>
+                    <li><a>슈바이처 라우프훈트</a></li>
+                    <li><a>스위스하운드</a></li>
+                    <li><a>아르투아 하운드</a></li>
+                    <li><a>치누크</a></li>
+                    <li><a>에우로하운드</a></li>
+                    <li><a>오가르 폴스키</a></li>
+                    <li><a>크레타하운드</a></li>
+                    <li><a>포르살렌 </a></li>
+                    <li><a href="#list" data-role="button" data-theme="b">1차 메뉴로 이동</a></li>
+                </ul>                  
+            </li>     
+            <li>
+               <a href="">
+                   <img src="./img/thum3.jpg" alt="조렵견">
+                   <h3>조렵견</h3>
+                   <p>사냥을 주도하는 개를 도와주는 개</p>
+                </a>
+                <ul>
+                    <li><a>저먼 와이어 헤어드 포인터</a></li>
+                    <li><a>바이마라너</a></li>
+                    <li><a class="ui-btn-active" href="#page3" data-transition="flip">비즐라</a></li>
+                    <li><a>저먼 쇼트 헤어드 포인터</a></li>
+                    <li><a>잉글리시 포인터</a></li>
+                    <li><a>골든 리트리버</a></li>
+                    <li><a>래브라도 리트리버</a></li>
+                    <li><a>체서피크 베이 리트리버</a></li>
+                    <li><a>컬리 코티드 리트리버</a></li>
+                    <li><a href="#list" data-role="button" data-theme="b">1차 메뉴로 이동</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">
+                   <img src="./img/thum4.jpg" alt="테리어견">
+                   <h3>테리어견</h3>
+                   <p>짐승을 사냥하기 위해 들짐승과 혼합된 품종</p>
+                </a>
+               <ul>
+                    <li><a class="ui-btn-active" href="#page4" data-transition="flip">폭스 테리어</a></li>
+                    <li><a>케리 블루 테리어</a></li>
+                    <li><a>맨체스터 테리어</a></li>
+                    <li><a>베들링턴 테리어</a></li>
+                    <li><a>스카이 테리어</a></li>
+                    <li><a>실리햄 테리어</a></li>
+                    <li><a>케언 테리어</a></li>
+                    <li><a>불 테리어</a></li>
+                    <li><a>웰시 테리어</a></li>
+                    <li><a>아이리시 테리어</a></li>
+                    <li><a>웨스트 하일랜드 화이트 테리어</a></li>
+                    <li><a>스태퍼드셔 불 테리어</a></li>
+                    <li><a>소프트 코티드 휘튼 테리어</a></li>
+                    <li><a>댄디 딘몬트 테리어</a></li>
+                    <li><a>미니어처 슈나우저</a></li>
+                    <li><a>스카치 테리어</a></li>
+                    <li><a>오스트레일리안 테리어</a></li>
+                    <li><a>노리치 테리어</a></li>
+                    <li><a>에어데일 테리어</a></li>
+                    <li><a>잭 러셀 테리어</a></li>
+                    <li><a>핏불 테리어</a></li>
+                    <li><a href="#list" data-role="button" data-theme="b">1차 메뉴로 이동</a></li>
+                </ul>
+            </li>      
+            <li>
+                <a href="">
+                   <img src="./img/thum5.jpg" alt="실용견">
+                   <h3>실용견</h3>
+                   <p>집을 지킬 목적으로 길러진 품종</p>
+                </a>
+                <ul>
+                    <li><a>차이니즈 샤페이</a></li>
+                    <li><a>티베탄 테리어</a></li>
+                    <li><a>티베탄 스패니얼</a></li>
+                    <li><a class="ui-btn-active" href="#page5" data-transition="flip">라사 압소</a></li>
+                    <li><a>프렌치 불도그</a></li>
+                    <li><a>보스턴 테리어</a></li>
+                    <li><a>스키퍼키</a></li>
+                    <li><a>키스혼드</a></li>
+                    <li><a>불도그</a></li>
+                    <li><a>비숑 프리제</a></li>
+                    <li><a>일본 스피츠</a></li>
+                    <li><a>차우차우</a></li>
+                    <li><a>달마티안</a></li>
+                    <li><a>스탠더드 푸들</a></li>
+                    <li><a>미니어처 푸들</a></li>
+                    <li><a>도사견</a></li>
+                    <li><a>시바견</a></li>
+                    <li><a>아키타견</a></li>
+                    <li><a>동경이</a></li>
+                    <li><a>불개</a></li>
+                    <li><a>삽살개</a></li>
+                    <li><a>제주개</a></li>
+                    <li><a>진돗개</a></li>
+                    <li><a>통일개</a></li>
+                    <li><a>풍산개</a></li>
+                    <li><a href="#list" data-role="button" data-theme="b">1차 메뉴로 이동</a></li>
+                </ul>    
+            </li>
+            <li>
+                <a href="">
+                   <img src="./img/thum6.jpg" alt="애완견">
+                   <h3>애완견</h3>
+                   <p>가정이나 실내에서 키울 목적으로 길러진 품종</p>
+                </a>
+               <ul>
+                    <li><a>친</a></li>
+                    <li><a class="ui-btn-active" href="#page6" data-transition="flip">말티즈</a></li>
+                    <li><a>일본 테리어</a></li>
+                    <li><a>잉글리시 토이 스패니얼</a></li>
+                    <li><a>파피용</a></li>
+                    <li><a>차이니스 크레스티드</a></li>
+                    <li><a>토이 맨체스터 테리어</a></li>
+                    <li><a>이탈리안 그레이하운드</a></li>
+                    <li><a>퍼그</a></li>
+                    <li><a>미니어처 핀셔</a></li>
+                    <li><a>페키니즈</a></li>
+                    <li><a>포메라니안</a></li>
+                    <li><a>아펜핀셔</a></li>
+                    <li><a>토이 푸들</a></li>
+                    <li><a>시추</a></li>
+                    <li><a>치와와</a></li>
+                    <li><a>요크셔 테리어</a></li>
+                    <li><a>실키 테리어</a></li>
+                    <li><a>브뤼셀 그리폰</a></li>
+                    <li><a>독일 스피츠</a></li>
+                    <li><a>미니어처 핀셔</a></li>
+                    <li><a>카발리에 킹 찰스 스패니얼</a></li>
+                    <li><a>킹 찰스 스패니얼</a></li>
+                    <li><a href="#list" data-role="button" data-theme="b">1차 메뉴로 이동</a></li>
+                </ul>
+            </li>    
+        </ul>
+    </section>
+    <footer class="subFt" data-role="footer" data-position="fixed">
+        <h3>All Copyright by kim @2018</h3>
+    </footer>
+</main>
+<main id="post" data-role="page">
+    <header class="subHd" data-role="header" data-position="fixed">
+        <a href="#join" data-icon="home" class="ui-btn-left" data-transition="slide">JOIN</a>
+        <h3 data-role="title" class="subTitle">글 쓰기</h3>
+        <a href="#login" data-icon="search" class="ui-btn-right" data-transition="slide">LOGIN</a>
+        <nav data-role="navbar">
+            <ul>
+               <li><a href="#search" data-icon="serch">검색</a></li>
+               <li><a href="#list" data-icon="info">목록</a></li>
+               <li><a href="tel:042-476-2111" data-icon="grid">전화</a></li>
+               <li><a href="sms:010-2476-2111" data-icon="alert">문자</a></li>
+               <li><a href="#mail" data-icon="refresh">메일</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="content" data-role="content">
+          <form id="frm1" name="frm1" action="">
+           <!-- 글 제목, 작성자, 글 내용, 글 저장 버튼, 취소 버튼  -->
+            <article data-role="fieldcontain">
+                <input type="text" name="m_title" id="m_title" placeholder="글제목을 입력해주세요"/>
+            </article>
+            <article data-role="fieldcontain">
+                <input type="text" name="m_name" id="m_name" placeholder="작성자를 입력해주세요"/>
+            </article>
+            <article data-role="fieldcontain">
+                <textarea name="m_memo" id="m_memo" placeholder="하고 싶은 말을 남겨주세요" rows="10"></textarea>
+            </article>
+            <article data-role="fieldcontain">
+                <ul class="ui-grid-a" data-role="listview">
+                   <li class="ui-block-a">
+                    <input type="submit" value="글쓰기"/>
+                   </li>
+                   <li class="ui-block-b">
+                    <input type="reset" value="취소"/>
+                   </li>
+        		</ul>
+        	</article>
+           </form>
+    </section>
+    <footer class="subFt" data-role="footer" data-position="fixed">
+        <h3>All Copyright by kim @2018</h3>
+    </footer>
+</main>
+<main id="mail" data-role="page">
+    <header class="subHd" data-role="header" data-position="fixed">
+        <a href="#join" data-icon="home" class="ui-btn-left" data-transition="slide">JOIN</a>
+        <h3 data-role="title" class="subTitle">메일 쓰기</h3>
+        <a href="#login" data-icon="search" class="ui-btn-right" data-transition="slide">LOGIN</a>
+        <nav data-role="navbar">
+            <ul>
+               <li><a href="#search" data-icon="serch">검색</a></li>
+               <li><a href="#list" data-icon="info">목록</a></li>
+               <li><a href="tel:042-476-2111" data-icon="grid">전화</a></li>
+               <li><a href="sms:010-2476-2111" data-icon="alert">문자</a></li>
+               <li><a href="#post" data-icon="refresh">글쓰기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="content" data-role="content">
+          <form id="frm2" name="frm2" action="">
+           <!-- 메일 제목, 받는 사람 이메일 주소, 메일 보내기 버튼
+				취소 버튼  -->
+            <article data-role="fieldcontain">
+                <input type="text" name="mail_title" id="mail_title" placeholder="메일제목을 입력해주세요"/>
+            </article>
+            <article data-role="fieldcontain">
+                <input type="email" name="mail_addr" id="mail_addr" placeholder="받는 사람의 메일주소를 입력해주세요"/>
+            </article>
+            <article data-role="fieldcontain">
+                <input type="text" name="mail_name" id="mail_name" placeholder="받는 사람의 이름을 입력해주세요"/>
+            </article>
+            <article data-role="fieldcontain">
+                <textarea name="mail_memo" id="mail_memo" placeholder="메일 내용을 입력 해주세요" rows="10"></textarea>
+            </article>
+            <article data-role="fieldcontain">
+                <ul class="ui-grid-a" data-role="listview">
+                   <li class="ui-block-a">
+                    <input type="submit" value="보내기"/>
+                   </li>
+                   <li class="ui-block-b">
+                    <input type="reset" value="취소"/>
+                   </li>
+        		</ul>
+        	</article>
+           </form>
+    </section>
+    <footer class="subFt" data-role="footer" data-position="fixed">
+        <h3>All Copyright by kim @2018</h3>
+    </footer>
+</main>
+<main id="join" data-role="page">
+    <header class="subHd" data-role="header" data-position="fixed">
+        <a href="#main" data-icon="home" class="ui-btn-left" data-transition="slide">HOME</a>
+        <h3 data-role="title" class="subTitle">회원가입</h3>
+        <a href="#search" data-icon="search" class="ui-btn-right" data-transition="slide">SEARCH</a>
+        <nav data-role="navbar">
+            <ul>
+               <li><a href="#list" data-icon="grid">목록</a></li>
+               <li><a href="tel:042-476-2111" data-icon="grid">전화</a></li>
+               <li><a href="sms:010-2476-2111" data-icon="alert">문자</a></li>
+               <li><a href="#post" data-icon="info">글</a></li>
+               <li><a href="#mail" data-icon="refresh">메일</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="content" data-role="content">
+         <h4 class="fTit">회원 가입 페이지</h4>
+          <form id="frm3" name="frm3" action="">
+           <!-- 회원명, 회원 아이디, 회원 비밀번호, 회원 이메일 주소, 전화번호, 가입 버튼, 취소 버튼  -->
+            <article data-role="fieldcontain">
+                <input type="text" name="mem_name" id="mem_name" placeholder="가입자의 이름을 입력해주세요"/>
+            </article>
+            <article data-role="fieldcontain">
+                <input type="text" name="mem_id" id="mem_id" placeholder="가입자 아이디을 입력해주세요" data-inline="true"/>
+                <button data-inline="true">중복확인</button>
+            </article>
+            <article data-role="fieldcontain">
+                <input type="password" name="mem_pw" id="mem_pw" placeholder="비밀번호를 입력해주세요"/>
+            </article>
+            <article data-role="fieldcontain">
+                <input type="email" name="mem_addr" id="mail_addr" placeholder="가입자의 메일주소를 입력해주세요"/>
+            </article>
+            <article data-role="fieldcontain">
+                <input type="tel" name="mem_tel" id="mem_tel" placeholder="가입자의 전화번호를 입력해주세요"/>
+            </article>
+            <article data-role="fieldcontain">
+                <input type="date" name="mem_date" id="mem_date" placeholder="가입자의 생년월일을 입력해주세요"/>
+            </article>
+            <article data-role="fieldcontain">
+                <ul class="ui-grid-a" data-role="listview">
+                   <li class="ui-block-a">
+                    <input type="submit" value="가입하기"/>
+                   </li>
+                   <li class="ui-block-b">
+                    <input type="reset" value="취소"/>
+                   </li>
+        		</ul>
+        	</article>
+           </form>
+    </section>
+    <footer class="subFt" data-role="footer" data-position="fixed">
+        <h3>All Copyright by kim @2018</h3>
+    </footer>
+</main>
+<main id="login" data-role="page">
+    <header class="subHd" data-role="header" data-position="fixed">
+        <a href="#main" data-icon="home" class="ui-btn-left" data-transition="slide">HOME</a>
+        <h3 data-role="title" class="subTitle">로그인</h3>
+        <a href="#search" data-icon="search" class="ui-btn-right" data-transition="slide">SEARCH</a>
+        <nav data-role="navbar">
+            <ul>
+               <li><a href="#list" data-icon="grid">목록</a></li>
+               <li><a href="tel:042-476-2111" data-icon="grid">전화</a></li>
+               <li><a href="sms:010-2476-2111" data-icon="alert">문자</a></li>
+               <li><a href="#post" data-icon="info">글</a></li>
+               <li><a href="#mail" data-icon="refresh">메일</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="content" data-role="content">
+         <h4 class="fTit">로그인 페이지</h4>
+           <form id="frm4" name="frm4" action="">
+            <article data-role="fieldcontain">
+                <input type="text" name="l_id" id="l_id" placeholder="ID입력"/>
+            </article>
+            <article data-role="fieldcontain">
+	           <!-- <label for="m_id">PW</label>  -->
+                <input type="password" name="l_pw" id="l_pw" placeholder="PW입력"/>
+            </article>
+            <article data-role="fieldcontain">
+                <input type="submit" value="로그인" data-inline="true"/>
+                <span style="display:inline-block; width:15px; height:15px"></span>
+                <input type="reset" value="취소" data-inline="true"/>
+                <span style="display:inline-block; width:10px; height:15px"></span>
+                <button onclick="location.href='#join'" data-inline="true">회원가입</button>
+        	</article>
+           </form>
+    </section>
+    <footer class="subFt" data-role="footer" data-position="fixed">
+        <h3>All Copyright by kim @2018</h3>
+    </footer>
+</main>
+<main id="menu1" data-role="page">
+    <!-- 임시 메뉴 빈 공간 -->
+</main>
+<main id="page1" data-role="page">
+    <header class="subHd" data-role="header" data-position="fixed">
+        <a href="#main" data-icon="home" class="ui-btn-left" data-transition="slide">HOME</a>
+        <h3 data-role="title" class="subTitle">마스티프</h3>
+        <a href="#search" data-icon="search" class="ui-btn-right" data-transition="slide">SEARCH</a>
+        <nav data-role="navbar">
+            <ul>
+               <li><a href="#list" data-icon="grid">목록</a></li>
+               <li><a href="tel:042-476-2111" data-icon="grid">전화</a></li>
+               <li><a href="sms:010-2476-2111" data-icon="alert">문자</a></li>
+               <li><a href="#post" data-icon="info">글</a></li>
+               <li><a href="#mail" data-icon="refresh">메일</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="content" data-role="content">
+         <h3 class="fTit">마스티프</h3>
+         <img src="./img/d1.jpg" alt="마스티프">
+         <p>
+            사역견의 한 종류로 사역견(使役犬, working dog)은 애완용이 아닌, 여타의 목적에 사용하기 위한(즉 사역동물)인 개다. 목양견, 경찰견, 군견, 썰매개, 맹인안내견 등 다양하며 작업견이라고도 불린다.
+         </p>
+         <div data-role="collapsible">
+             <h4>더보기</h4>
+             <p>잉글리시 마스티프(English Mastiff)는 현존하는 개의 가장 오래된 품종 중 하나로 털이 짧고 몸이 크며 튼튼한 것이 
+
+            특징이다. 전체적인 외관은 무거운 뼈와 아래로 늘어진 귀, 비교적 짧고 근육이 잘 발달한 목, 짧은 주둥이를 하고 있
+
+            으며, 용맹스럽고 순종적인 성격을 갖고 있어 보통 투견 내지는 경비견으로 사육된다.
+
+            이 개를 단순히 마스티프라고 부르기도 한다. 본래 영국에서 마스티프라고 함은 이 견종만을 칭했으나, 견종을 체계
+
+            적으로 정리하는 과정에서 마스티프라는 용어의 의미가 확장되었다고 볼 수 있다.</p>
+         </div> 
+    </section>
+    <footer class="subFt" data-role="footer" data-position="fixed">
+        <h3>All Copyright by kim @2018</h3>
+    </footer>
+</main>
+<main id="page2" data-role="page">
+    <header class="subHd" data-role="header" data-position="fixed">
+        <a href="#main" data-icon="home" class="ui-btn-left" data-transition="slide">HOME</a>
+        <h3 data-role="title" class="subTitle">아프간 하운드</h3>
+        <a href="#search" data-icon="search" class="ui-btn-right" data-transition="slide">SEARCH</a>
+        <nav data-role="navbar">
+            <ul>
+               <li><a href="#list" data-icon="grid">목록</a></li>
+               <li><a href="tel:042-476-2111" data-icon="grid">전화</a></li>
+               <li><a href="sms:010-2476-2111" data-icon="alert">문자</a></li>
+               <li><a href="#post" data-icon="info">글</a></li>
+               <li><a href="#mail" data-icon="refresh">메일</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="content" data-role="content">
+         <h3 class="fTit">아프간 하운드</h3>
+         <img src="./img/d2.jpg" alt="마스티프">
+         <p>
+            수렵견(獸獵犬, hound 하운드[*])는 사냥개의 일종이다. 뛰어난 시각과 후각을 바탕으로 들짐승을 직접 쫓거나 사냥감을 회수한다. 수렵견은 크게 시각 하운드와 후각 하운드로 나뉜다.
+         </p>
+         <div data-role="collapsible">
+             <h4>더보기</h4>
+             <p>아프간 하운드(Afghan Hound)는 예전에 아프가니스탄에서 수렵용으로 길러지다가 19세기 후반 영국에 전해졌다.</p>
+             <p>비단결 같은 탐스러운 털을 지니고 있으며 험한 지역에서도 빠르게 달릴 수 있다. 달리다가 방향전환을 잘 하며 달리는 힘이 있다. 어깨높이 64~69cm, 몸무게 23~27kg이다. 대한민국에서 스너피라는 복제견을 만들기도 했다.</p>
+         </div> 
+    </section>
+    <footer class="subFt" data-role="footer" data-position="fixed">
+        <h3>All Copyright by kim @2018</h3>
+    </footer>
+</main>
+<main id="page3" data-role="page">
+    <header class="subHd" data-role="header" data-position="fixed">
+        <a href="#main" data-icon="home" class="ui-btn-left" data-transition="slide">HOME</a>
+        <h3 data-role="title" class="subTitle">비즐라</h3>
+        <a href="#search" data-icon="search" class="ui-btn-right" data-transition="slide">SEARCH</a>
+        <nav data-role="navbar">
+            <ul>
+               <li><a href="#list" data-icon="grid">목록</a></li>
+               <li><a href="tel:042-476-2111" data-icon="grid">전화</a></li>
+               <li><a href="sms:010-2476-2111" data-icon="alert">문자</a></li>
+               <li><a href="#post" data-icon="info">글</a></li>
+               <li><a href="#mail" data-icon="refresh">메일</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="content" data-role="content">
+         <h3 class="fTit">비즐라</h3>
+         <img src="./img/d3.jpg" alt="비즐라">
+         <p>
+            조렵견(鳥獵犬, gun dog)은 사냥꾼을 돕는 사냥개로, 주로 새를 총으로 사냥하는 것을 돕는다. 역할에 따라 크게 세 가지로 나뉘는데, 사냥감을 찾는 포인팅 도그, 숨어있는 새를 하늘로 날려보내는 플러싱 도그, 총에 맞은 사냥감을 가져오는 리트리버가 그것이다.</p>
+
+        <p>
+            포인팅 도그는 냄새로 사냥감을 찾다가 사냥감을 발견하면 그 방향을 가리키거나 자세를 낮추는 행동으로 사냥꾼에게 사냥감이 있음을 알리는데, 지시가 있을 때까지 움직이지 않도록 훈련받는다. 낮은 자세를 취하는 종류를 세터라고 부른다.
+        </p>
+
+        <p>
+            플러싱 도그는 풀숲 등에 뛰어들어가 숨어있는 새를 총에 맞기 좋도록 날려보내는 역할로, 스패니얼이 여기에 속한다.
+        </p>
+
+        <p>
+            리트리버는 총에 맞은 사냥감을 입으로 물어 가져온다. 리트리버는 총에 맞은 새가 어디에 떨어졌는지, 몇 마리나 있는지를 기억할 수 있다.
+         </p>
+         <div data-role="collapsible">
+             <h4>더보기</h4>
+             <p>비즐라(Vizsla)는 헝가리 원산으로 헝가리안 포인터(Hungarian Pointer)라고도 한다. 약 1,000년 전 마자르족이 지금의 헝가리에 살고 있을 때 기르던 개로 19세기 이후 영국과 독일의 포인터와 교배하여 우수한 사냥개가 되었다. '비즐라'라는 어원은 아직 밝혀져 있지 않다. 어깨높이 56-61cm, 몸무게 22-30kg이다. 사냥감을 쫓아 헝가리 평원을 달리던 비즐라는 다리 힘과 체력의 뛰어남은 물론 몸을 숨길 곳이 없는 평원에서 사냥감에 접근하는 능력을 지니고 있었다. 귀족적인 외모에 동작이 우아하며 온몸이 황갈색 털로 덮여 있다. 정이 많은 성격으로 집에서 길러도 괜찮다.</p>
+         </div> 
+    </section>
+    <footer class="subFt" data-role="footer" data-position="fixed">
+        <h3>All Copyright by kim @2018</h3>
+    </footer>
+</main>
+<main id="page4" data-role="page">
+    <header class="subHd" data-role="header" data-position="fixed">
+        <a href="#main" data-icon="home" class="ui-btn-left" data-transition="slide">HOME</a>
+        <h3 data-role="title" class="subTitle">폭스 테리어</h3>
+        <a href="#search" data-icon="search" class="ui-btn-right" data-transition="slide">SEARCH</a>
+        <nav data-role="navbar">
+            <ul>
+               <li><a href="#list" data-icon="grid">목록</a></li>
+               <li><a href="tel:042-476-2111" data-icon="grid">전화</a></li>
+               <li><a href="sms:010-2476-2111" data-icon="alert">문자</a></li>
+               <li><a href="#post" data-icon="info">글</a></li>
+               <li><a href="#mail" data-icon="refresh">메일</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="content" data-role="content">
+         <h3 class="fTit">폭스 테리어</h3>
+         <img src="./img/d4.jpg" alt="폭스 테리어">
+         <p>
+            테리어견(Terrier)은 개의 종류이다. 오소리, 족제비 등 땅속에 사는 짐승을 사냥하기 위해 개량된 품종들이다. 길짐승 사냥개인 수렵견, 날짐승 사냥개인 조렵견과 함께 사냥개의 큰 세 갈래를 이룬다. 체격은 작지만 용감하고 체력이 우수하며, 매우 활발한 성격이다. 대부분의 품종이 영국에서 개발되어 여우, 쥐, 오소리, 수달 등을 사냥했다.</p>
+         <div data-role="collapsible">
+             <h4>더보기</h4>
+             <p>폭스 테리어(Fox Terrier)는 어깨높이 약 40cm의 작은 개인데 본래는 사냥개로서 특히 여우사냥에 많이 쓰였으므로 이 이름이 붙여졌다. 영국 원산의 애완견으로 예민한 감각과 민첩한 행동, 총명한 두뇌를 겸비하고 있다. 애완용이 된 것은 19세기 말 경이다. 색깔은 흰 바탕에 검은색과 황갈색의 얼룩점이 있다. 입 끝이 길게 나오고 몸통이 짧은 것이 우수하다.</p>
+         </div> 
+    </section>
+    <footer class="subFt" data-role="footer" data-position="fixed">
+        <h3>All Copyright by kim @2018</h3>
+    </footer>
+</main>
+<main id="page5" data-role="page">
+    <header class="subHd" data-role="header" data-position="fixed">
+        <a href="#main" data-icon="home" class="ui-btn-left" data-transition="slide">HOME</a>
+        <h3 data-role="title" class="subTitle">라사 압소</h3>
+        <a href="#search" data-icon="search" class="ui-btn-right" data-transition="slide">SEARCH</a>
+        <nav data-role="navbar">
+            <ul>
+               <li><a href="#list" data-icon="grid">목록</a></li>
+               <li><a href="tel:042-476-2111" data-icon="grid">전화</a></li>
+               <li><a href="sms:010-2476-2111" data-icon="alert">문자</a></li>
+               <li><a href="#post" data-icon="info">글</a></li>
+               <li><a href="#mail" data-icon="refresh">메일</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="content" data-role="content">
+         <h3 class="fTit">라사 압소</h3>
+         <img src="./img/d5.jpg" alt="라사 압소">
+         <p>
+            실용견(實用犬, utility dog), 또는 비렵견(非獵犬, nonsporting dog)은 개의 품종 분류의 하나이다. 이 분류는 애견단체에 따라 사용하는 곳도 있고 하지 않는 곳도 있다. 보통 집을 지키는 목적으로 많이 사용되기도 한다.
+         </p>
+         <div data-role="collapsible">
+             <h4>더보기</h4>
+             <p>라사압소(Lhasa Apso)는 역사가 2,000년이나 된 개로 원산지는 티베트이다. 라사압소는 “라싸의 산양”이라는 뜻이며, 1920년 유럽에 소개되었다.</p>
+             <p>긴 털이 온몸을 덮고 있으며 털 색깔은 다양하다. 낯선 사람을 잘 가려내며 경계심이 강하고 주인에게 순종적이어서 집 지키는 개로서 적당하다.</p>
+             <p>라사압소는 라싸의 궁궐에서 기르던 개로서, 궁궐 밖에 내보내는 일이 거의 없었으나, 청나라가 붕괴되는 혼란기에 유럽에 알려졌다. 라사압소의 혈통을 지닌 시츄나 페키니즈는 청나라 황궁인 자금성 안에서 키우던 개의 후손인데, 원래는 중국 황실에서 티베트에 요청하여 데려간 개가 아편전쟁과 청나라 붕괴의 혼란기에 유럽에 알려지게 된 경우로 여겨진다.</p>
+         </div> 
+    </section>
+    <footer class="subFt" data-role="footer" data-position="fixed">
+        <h3>All Copyright by kim @2018</h3>
+    </footer>
+</main>
+<main id="page6" data-role="page">
+    <header class="subHd" data-role="header" data-position="fixed">
+        <a href="#main" data-icon="home" class="ui-btn-left" data-transition="slide">HOME</a>
+        <h3 data-role="title" class="subTitle">말티즈</h3>
+        <a href="#search" data-icon="search" class="ui-btn-right" data-transition="slide">SEARCH</a>
+        <nav data-role="navbar">
+            <ul>
+               <li><a href="#list" data-icon="grid">목록</a></li>
+               <li><a href="tel:042-476-2111" data-icon="grid">전화</a></li>
+               <li><a href="sms:010-2476-2111" data-icon="alert">문자</a></li>
+               <li><a href="#post" data-icon="info">글</a></li>
+               <li><a href="#mail" data-icon="refresh">메일</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="content" data-role="content">
+         <h3 class="fTit">말티즈</h3>
+         <img src="./img/d6.jpg" alt="말티즈">
+         <p>
+            애완견(愛玩犬)은 가정에서 기르는 개의 총칭이다. 흔히 반려견이라고도 부른다. <br>
+            인기가 좋아서 국내에서 가장많는 애완견이다.
+         </p>
+         <div data-role="collapsible">
+             <h4>더보기</h4>
+             <p>말티즈(Maltese) 혹은 몰티즈는 개 품종의 하나이다. '몰티즈'란 이름은 이 개가 지중해의 몰타(Malta) 섬이 원산지여서 붙여졌다는게 정설이지만 지중해의 멜리타 지역에서 유래되었다고 주장하는 학자들도 있다. 몸무게는 2~3kg이 평균이지만 큰 종의 경우 5kg까지 된다. 온몸이 순백색의 길고 부드러운 명주실 같은 털로 덮인 매우 아름다운 개로, 새까만 코끝과 어두운 색의 눈이 순백색의 털을 더욱 돋보이게 하고 있다. 지중해의 몰타 섬이 원산이라고 하여 이 이름이 붙여졌으나, 사실의 기록이나 전승은 전혀 없고 기원도 뚜렷하지 않다. 그러나 1800년 무렵 유럽·미국에 널리 알려졌으며 아름다운 모습과 온화하고 높은 지능을 지녀 애완용으로 널리 사육되었다. 그러나 몰티즈의 원산지는 이탈리아(이탈리아)로 되어 있다. 평균 수명이 15년 정도로 알려져 있다.</p>
+         </div> 
+    </section>
+    <footer class="subFt" data-role="footer" data-position="fixed">
+        <h3>All Copyright by kim @2018</h3>
+    </footer> 
+</main>
+<main id="page7" data-role="page">
+    <header class="subHd" data-role="header" data-position="fixed">
+        <a href="#main" data-icon="home" class="ui-btn-left" data-transition="slide">HOME</a>
+        <h3 data-role="title" class="subTitle">저먼 셰퍼드</h3>
+        <a href="#search" data-icon="search" class="ui-btn-right" data-transition="slide">SEARCH</a>
+        <nav data-role="navbar">
+            <ul>
+               <li><a href="#list" data-icon="grid">목록</a></li>
+               <li><a href="tel:042-476-2111" data-icon="grid">전화</a></li>
+               <li><a href="sms:010-2476-2111" data-icon="alert">문자</a></li>
+               <li><a href="#post" data-icon="info">글</a></li>
+               <li><a href="#mail" data-icon="refresh">메일</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="content" data-role="content">
+         <h3 class="fTit">저먼 셰퍼드</h3>
+         <img src="./img/d7.jpg" alt="저먼 셰퍼드">
+         <p>
+            목양견(牧羊犬)은 목장에서 방목하는 가축 (주로 양)의 무리의 유도 및 감시, 인간에 의한 도난이나 늑대 등의 약탈자로 부터 보호하도록 훈련된 작업견이다.
+         </p>
+         <div data-role="collapsible">
+             <h4>더보기</h4>
+             <p>저먼 셰퍼드(독일어: Deutscher Schäferhund 도이체 셰퍼훈트[*])는 원산지가 독일로, 어깨 높이가 65cm, 몸무게가 35kg이다.</p>
+             <p>몸은 빈틈이 없는 근육질이고 꼬리는 늘어졌다. 앞뒷다리는 비교적 짧지만 튼튼하고 실팍하다. 주둥이는 뾰족하고 눈은 크고 귀는 짧으며 똑바로 선다. 털은 짧지만 목과 가슴둘레의 털은 다소 길고 빽빽하다.</p>
+             <p>털 빛깔은 갈색·회흑색·담황갈색 또는 검은색과 갈색의 혼모 등이 있다. 후각·청각이 예민하고 동작이 민첩하여 군용견·반려견등으로 많이 사육되고 있다. 제1차세계대전 일어날 때부터 이미 독일 전역에서 인기가 높았다. 당시 군용견으로 훈련을 받아 크게 활약했었다. 영리하고 붙임성이 있으며 책임감이 강하다. 대처상황에 용감하고 경계심이 강하다.</p>
+         </div> 
+    </section>
+    <footer class="subFt" data-role="footer" data-position="fixed">
+        <h3>All Copyright by kim @2018</h3>
+    </footer> 
+</main>
+<main id="page8" data-role="page">
+    <header class="subHd" data-role="header" data-position="fixed">
+        <a href="#main" data-icon="home" class="ui-btn-left" data-transition="slide">HOME</a>
+        <h3 data-role="title" class="subTitle">시베리안 허스키</h3>
+        <a href="#search" data-icon="search" class="ui-btn-right" data-transition="slide">SEARCH</a>
+        <nav data-role="navbar">
+            <ul>
+               <li><a href="#list" data-icon="grid">목록</a></li>
+               <li><a href="tel:042-476-2111" data-icon="grid">전화</a></li>
+               <li><a href="sms:010-2476-2111" data-icon="alert">문자</a></li>
+               <li><a href="#post" data-icon="info">글</a></li>
+               <li><a href="#mail" data-icon="refresh">메일</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="content" data-role="content">
+         <h3 class="fTit">시베리안 허스키</h3>
+         <img src="./img/d8.jpg" alt="시베리안 허스키">
+         <p>
+             썰매개는 썰매를 끄는 개를 말한다. 시베리아와 북아메리카에서 운송 수단으로 썼었으나, 오늘날에는 여흥으로 쓰인다.</p>
+         <p>
+            몸무게는 27-48kg이고 힘이 세어 썰매를 잘 끈다. 꼬리에 눈이 얼어 붙어 굳지 않도록 꼬리를 말아 등 위에 올려 놓고 다닌다. 겉에는 거친 털이 있고 그 안쪽에 고운 털이 있어 추운 날씨에 눈구덩이 속에서 자더라도 피부가 젖지 않는다. 귀는 뾰족하고 꼿꼿하며, 얼굴은 달걀 모양이고, 주둥이와 코 언저리는 묵직해 보인다. 다리는 튼튼하며, 발은 크고 털이 많아서 눈 속에 빠지지 않는다. 대부분 멍멍 짖지 않고, 머리를 들고 소리를 길게 뽑으며 짖는다. 썰매에는 보통 3-8마리를 매는데, 한 줄로 길게 매거나, 둘이나 그 이상을 나란히 매거나, 부채꼴 대열로 한 마리씩 따로 매거나 한다. 썰매에서 가장 앞에 있는 개가 리더로서 주인의 명령을 받아 나머지 개를 출발시키거나 정지시킨다. 리더는 다른 개들의 우두머리로, 영리하고 속도와 인내심 있는 개를 리더로 뽑아 훈련시킨다. 하루에 보통 30-65km를 달리며, 5마리 한 조가 113kg쯤 되는 짐을 운반할 수 있다. 때로는 개들의 등에 짐을 지워 나르기도 한다. 에스키모개는 또한 물범, 곰, 사향소를 사냥할 때 이용된다.
+        </p>
+        <p>
+            에스키모개의 종류에는 시베리안 허스키, 알래스칸 맬러뮤트, 사모예드 등이 있다.
+         </p>
+         <div data-role="collapsible">
+             <h4>더보기</h4>
+             <p>시베리안 허스키 (러시아어: Сибирский хаски)는 동시베리아에서 유래된 중형견으로 촘촘하게 덮인 모피를 지닌 썰매견이다. 이 종은 유전적으로 스피츠 과에 속한다. 시베리안 허스키는 두 겹의 두터운 털과 낫 모양의 꼬리, 쫑긋하게 똑바로 선 삼각형 모양의 귀, 적당한 근육, 뚜렷한 무늬로 구별된다.</p>
+             <p>시베리안 허스키는 활동적이며, 힘이 넘치며, 쾌활한 종으로, 선조는 시베리아 북극지방의 극심한 추위와 혹독한 환경에서 건너와서, 북동 아시아의 축치인에 의해 교배되었다. 이 견종은 놈 지역의 골드 러시 기간 동안 알래스카로 수입되었으며, 그곳에서 미국과 캐나다에 처음에는 썰매개로 들어와 퍼졌다. 곧 시베리안 허스키는 애완용 동물과 도그쇼를 위한 개로 곧 인식되었다. 이 종은 고기와 개사료를 먹는다.</p>
+             <p>시베리안 허스키는 알래스칸 맬러뮤트와 사모예드처럼 허스키와 비교할 만한 역사를 지닌 다수의 스피츠 종과 외관상 많은 유사점을 지닌다. 시베리안 허스키는 대다수의 개에 비해 더 촘촘한 모피를 지닌다. 다양한 색상과 문양이 있으며, 흔히 하얀색 발과 다리와, 얼굴의 무늬, 뾰족한 꼬리를 지닌다. 다수의 허스키가 황금빛이나 잡색의 얼룩을 띠기도 하지만, 가장 흔한 색상으로는 검은색과 흰색, 회색과 흰색, 구리빛 붉은색과 흰색, 전체 흰색이 있다. 또렷한 무늬와, 다른 얼굴의 문양은 다양하게 나타난다. 시베리안 허스키는 늑대와 비슷한 모습을 지닌다. 이 견종은 다른 개들만큼 이상의 늑대와 밀접한 관련이 없지만, 시베리안의 고립된 견종을 통해 이러한 외양을 유지한 것으로 여겨진다.</p>
+         </div> 
+    </section>
+    <footer class="subFt" data-role="footer" data-position="fixed">
+        <h3>All Copyright by kim @2018</h3>
+    </footer> 
+</main>
+</body>
+</html>

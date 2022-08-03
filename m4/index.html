@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="./src/favicon16.png">
+    <!-- 신형 브라우저와 안드로이드 폰 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./src/favicon32.png">
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="48x48" href="./src/favicon48.png">
+    <link rel="apple-touch-icon" size="57x57" href="./src/favicon57.png">
+    <link rel="apple-touch-icon" size="64x64" href="./src/favicon64.png">
+
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <script src="./bootstrap/js/jquery.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <script>
+    </script>
+    <style>
+    * { margin: 0; padding: 0; }    
+    body, html { width: 100%; height: 100%; font-family: 'Noto Sans KR', sans-serif; font-weight:400; } 
+    ul { list-style: none;}    
+    a { text-decoration:none; color:#333; }    
+    .header, .footer { width: 100%; height:80px; position:relative;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#017ab9+1,014582+100 */
+background: #017ab9; /* Old browsers */
+background: -moz-linear-gradient(top, #017ab9 1%, #014582 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #017ab9 1%,#014582 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #017ab9 1%,#014582 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#017ab9', endColorstr='#014582',GradientType=0 ); /* IE6-9 */ } 
+    .btn.btn-lg { border-radius:30px; border-top:1px solid #0f4764; border-bottom:1px solid #081d27;  background:#094868; color:#fff; box-shadow:3px 3px 10px #333; display:block; line-height:32px; }   .logoType { position:absolute; top: 0; left: 0; width: 100%; 
+        height: 80px; z-index:0; color:#fff; text-align: center; } 
+    .home { display:block; padding:2px 12px; width:40px; margin-top:20px;
+        text-align:left; font-size:14px; float:left; } 
+    .listBtn { padding:2px 12px; width:40px; margin-top:20px;    text-align:left; font-size:14px; float:right; }
+    
+    .mainCate { padding: 0; margin: 0; }  
+    #gnb { display:none; }    
+    #gnb li { line-height:3; background:#309dd5; 
+        border-top:1px solid #4a9cc7; border-bottom:1px solid #287299; }
+    #gnb li a { display:block; line-height:2.8; color:#fff; font-size:16px; text-indent:1em; } 
+        
+    .vsImg { clear:both; width: 100%; height:auto; position:relative;
+        margin: 0; padding: 0; }    
+    .vsImg img { display:block; width: 100%; height: auto; margin: 0; padding: 0; }    
+    
+    .pageTit { line-height:2.8; padding-top:2em; text-align:center; color:#333; }
+    .pageLst { width:320px; margin:10px auto; }
+    .pageLst li { width:160px; height:auto; float:left; box-sizing:border-box; max-height:220px; overflow:hidden; text-align:center; margin-top:15px; margin-bottom:15px; padding-top:20px; }
+    .pageLst li:nth-child(2n+1) { background:#ececec; }
+    .pageLst li:nth-child(2n) { background:#dce9ef; }    
+    
+    .footer { clear:both; color:#fff; line-height:2; font-size:16px; 
+        text-align:center;  }
+    #footerlink { width:160px; margin:0 auto; }    
+    #footerlink li { width:25%; float:left; }
+    #footerlink li a { color:#fff; font-size:18px; }    
+        
+    #upBtn { position:fixed; z-index:999; right:30px; bottom:25%; }    
+    </style>
+    <script>
+    $(document).ready(function(){
+        var btnSw=true;
+        $("#lstBtn").click(function(){
+            $("#gnb").slideToggle(600);
+        });     
+    });
+    </script>
+</head>
+<body>
+<div id="mob">
+    <header class="header">
+        <div class="container">   
+            <a href="index.html" class="btn btn-lg home">
+                <span class="glyphicon glyphicon-home"></span>
+            </a>
+            <h2 class="logoType">glyph icon</h2>
+            <button for="" class="btn btn-lg listBtn" id="lstBtn">
+                <span class="glyphicon glyphicon-align-justify"></span>
+            </button>
+        </div>
+    </header>
+    <nav id="gnb">
+        <ul class="mainCate">
+            <li>
+               <a href="">
+                    <span class="glyphicon glyphicon-education"></span>
+                    <span>Intro</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                    <span>Product</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                    <span>Service</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="glyphicon glyphicon-headphones"></span>
+                    <span>Community</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <figure class="vsImg">
+        <img src="./src/trend1.png" alt="트렌드">
+    </figure>
+    <section class="sec">
+        <h3 class="pageTit">
+            <span class="glyphicon glyphicon-leaf"></span>
+            상품 리스트
+        </h3>
+        <ul class="pageLst">
+            <li><a href="">
+                    <img src="http://placehold.it/130x130/333" alt="">
+                    <h4 class="proTit">상품 제목</h4>
+                    <p class="proCom">상품 설명</p>
+                </a></li>
+            <li><a href="">
+                    <img src="http://placehold.it/130x130/333" alt="">
+                    <h4 class="proTit">상품 제목</h4>
+                    <p class="proCom">상품 설명</p>
+                </a></li>
+            <li><a href="">
+                    <img src="http://placehold.it/130x130/333" alt="">
+                    <h4 class="proTit">상품 제목</h4>
+                    <p class="proCom">상품 설명</p>
+                </a></li>
+            <li><a href="">
+                    <img src="http://placehold.it/130x130/333" alt="">
+                    <h4 class="proTit">상품 제목</h4>
+                    <p class="proCom">상품 설명</p>
+                </a></li>
+            <li><a href="">
+                    <img src="http://placehold.it/130x130" alt="">
+                    <h4 class="proTit">상품 제목</h4>
+                    <p class="proCom">상품 설명</p>
+                </a></li>
+            <li><a href="">
+                    <img src="http://placehold.it/130x130" alt="">
+                    <h4 class="proTit">상품 제목</h4>
+                    <p class="proCom">상품 설명</p>
+                </a></li>
+        </ul>
+    </section>
+    <footer class="footer">
+        <nav id="footerlink" class="container">
+            <ul>
+                <li><a href=""><span class="glyphicon glyphicon-cog"></span></a></li>
+                <li><a href=""><span class="glyphicon glyphicon-heart"></span></a></li>
+                <li><a href=""><span class="glyphicon glyphicon-pencil"></span></a></li>
+                <li><a href=""><span class="glyphicon glyphicon-facetime-video"></span></a></li>
+            </ul>
+        </nav>
+        <p class="copyright">©kim's All Rights Reserved</p>
+    </footer>
+</div>
+<a href="#" class="btn btn-lg listBtn" id="upBtn">
+    <span class="glyphicon glyphicon-arrow-up"></span>
+</a>
+</body>
+</html>

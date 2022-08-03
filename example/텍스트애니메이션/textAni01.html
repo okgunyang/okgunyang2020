@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>텍스트 애니메이션1</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(to bottom right, #ff813d, #ff1500);
+  text-rendering: optimizeLegibility; /* 크롬의 한글 텍스트 출력시 오류 복구 */
+  overflow: hidden;
+}
+#text {
+  animation: layerize cubic-bezier(0.4, 0, 0.2, 1) 1200ms 200ms infinite alternate;
+  opacity: 0;
+  width: 100%;
+  color: #fff;
+  font: italic 500 10rem "Roboto", sans-serif;
+  cursor: default;
+  user-select: none;
+  text-align: center;
+}
+@keyframes layerize {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+    text-shadow: 0 0 transparent, 0em 0em rgba(255, 255, 255, 0.4), 0em 0em rgba(255, 255, 255, 0.3), 0em 0em rgba(255, 255, 255, 0.2), 0em 0em rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-0.066666em, -0.066666em);
+    text-shadow: 0 0 transparent, 0.033333em 0.033333em rgba(255, 255, 255, 0.4), 0.066666em 0.066666em rgba(255, 255, 255, 0.3), 0.099999em 0.099999em rgba(255, 255, 255, 0.2), 0.133332em 0.133332em rgba(255, 255, 255, 0.1);
+  }
+}
+    </style>
+</head>
+<body>
+    <div id="text">KIM KI TAE</div>
+</body>
+</html>

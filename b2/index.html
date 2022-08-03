@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>한강몽땅 여름축제 2019</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta name="keywords" content="한강여름축제 Hangang Summer Festival 2019 한강몽땅">
+	<meta name="description" content="한강 몽땅의 80여 개 프로그램은 시민들이 쉽게 선택할 수 있도록 ‘시원 한강’, ‘감동 한강’, ‘함께한강’의 세 가지 큰 테마로 묶여졌다.">
+	<meta property="og:title" content="2019년 한강몽땅 여름축제" />
+	<meta property="og:image" content="./img/fb-pic-2019.jpg" />
+	<meta property="og:description" content="한강여름축제 Hangang Summer Festival 2019 한강몽땅" />
+	<link rel="stylesheet" href="font.css">
+	<style>
+    * { margin: 0; padding: 0; }
+    body, html { font-family:"nsm", sans-serif; -ms-overflow-style:none; } 
+    ::-webkit-scrollbar { display:none; }    
+    ul { list-style: none; }
+    a { text-decoration: none; } 
+    .hd { width: 100%; height: 120px; background-image:url("./img/hd_bg.jpg");
+        border-bottom:3px solid #333; }    
+    .hd_wrap { clear:both; width: 1000px; margin:0 auto; }
+    .slogo { display:block; background-image:url("./img/ico-sprite-common-gnb.png"); background-position:0px -20px;  margin-top: 13px;
+        width:85px; height:24px; float:left; }  
+    .info_box { font-size:14px; line-height: 50px; padding-left:25px; 
+        background-image:url("./img/spk1.png"); color:#fff;
+        background-repeat:no-repeat; background-position:0px center; 
+         float:left; margin-left: 100px; cursor:pointer; }  
+    .top { float:right; }
+    .top li { float:left; }
+    .top li a { display:block; line-height:50px; padding:0px 20px;  color:#fff; 
+        font-size:14px; } 
+    .top li a:hover { color:gold; }    
+    .logo { display:block; width:134px; height:45px; background-image:url("./img/img-header-logo.png"); margin-top:10px; float:left; }
+    #mainmenu { float:left; margin-left:35px; margin-top:10px; }    
+    #mainmenu li { float:left; width:130px; position:relative; }
+    #mainmenu li .sub li { clear:both; text-indent:20px; }
+    .sub { overflow:hidden; width:240px; height:0px; position:absolute; left: 0; top:50px; transition:0.5s; z-index:15; }    
+    #mainmenu li.last .sub li { text-indent:35px; }    
+    #mainmenu li a { display:block; color:#444; line-height:40px; font-size:14px;  }
+    #mainmenu li a.dp1 { font-size:16px; }
+    #mainmenu li a.dp1 { font-size:16px; text-align:center; }
+    #mainmenu li:hover a.dp1 { color:#0c82e9; }    
+    #mainmenu:hover .sub { height:240px;  }    
+    #mainmenu:before { content:""; display:block; width:100vw; height:0px; 
+        overflow:hidden; position:absolute; top:110px; left:0; z-index:15; background:#fff; border-bottom:3px solid transparent; transition:0.5s; }   
+    #mainmenu:hover::before { height: 240px; border-bottom:3px solid #333;} 
+    #mainmenu .sub a:hover { color:#000; } 
+    #mainmenu li.me:after { content:""; display:block; width:130px; height: 3px; background:transparent; margin-left:-200px; transition:0.5s; position:absolute; z-index:35; top:40px; left:0; }   
+    #mainmenu li.me:hover::after { background:#0c82e9; margin-left:0; } 
+    #frm1 { float:left; padding-top:14px;  }
+    .search { display:block; float:left; width: 40px; height: 40px; 
+        border-radius:21px; overflow:hidden; text-indent:-9999px; 
+        background-color:#1cf; background-image:url("./img/ico-zoom.png"); 
+        background-repeat:no-repeat; background-position:center center; 
+        cursor:pointer; }
+    #sel1 { display:block; float:left; width:140px; margin-left:15px; margin-top: 6px; line-height: 32px; height: 32px; border-radius:5px 0px 0px 5px; }  
+    #go_btn { display:block; float:left; width: 32px; height:32px; line-height:32px;
+        text-align:center; margin-top: 6px; border-left:0px; outline:0; background:#eee; border-radius:0px 5px 5px 0px; cursor:pointer; }    
+    #search_form { position:absolute; left:0; top:114px; width:100vw; height:0px; 
+        background:#fff; transition:0.5s; overflow:hidden; border-bottom:3px solid transparent;  }
+    #ck1:checked + #search_form { height: 200px; border-bottom:3px solid #333; 
+        border-top:3px solid #eee;  } 
+    .close_btn { display:block; width: 50px; height: 50px;  cursor:pointer;
+        background-image:url("./img/btn_close1.png"); 
+        background-position:center center; 
+        background-repeat: no-repeat; text-indent:-9999px; 
+        position:absolute; right:20%; top:0px; }
+    #keyword { display:block; width:600px; height:80px; outline:0; border:0; 
+        background:rgba(0,0,0,0.5); margin-top: 50px; margin-left:250px; float:left; }
+    .search_btn { display:block; width: 80px; height: 80px; float:left; margin-top: 50px; margin-left: 10px; }    
+    #ck1 { display:none; }    
+        
+    #content { clear:both; } 
+    #vs { width:100vw; height:650px; overflow:hidden; position:relative; }
+    .img_box { width:100%; }    
+    .img_box li { clear:both; width:100%; height:650px; 
+        background-position:center center; background-size:cover; 
+        background-repeat: no-repeat; }    
+    .img_box li.item1 { background-image:url("./img/img-main-visual1.jpg"); }
+    .img_box li.item2 { background-image:url("./img/img-main-visual2.jpg"); }
+    .img_box li.item3 { background-image:url("./img/img-main-visual3.jpg"); }
+    .img_box li.item4 { background-image:url("./img/img-main-visual4.jpg"); }
+    .img_box li.item5 { background-image:url("./img/img-main-visual5.jpg"); }
+    .img_box li.item6 { background-image:url("./img/img-main-visual6.jpg"); }
+        
+    .vs_box { position:absolute; top: 0; left: 0; color:#fff; z-index:10;
+        width: 100vw; } 
+    .vs_box a { color:#fff;   } 
+    .tit_box { width:1000px; margin:0 auto; padding-top:90px; position:relative; }    
+    .wave_ani { width: 100px; height: 55px; position:relative; }  
+    .wave_drop { z-index: 12;  position: absolute;
+    top: 0;    left: 50%;    width: 37px;
+    height: 32px;    margin: 0 0 0 -15px;
+    background: url("./img/img_water_drop.png") no-repeat center 0;
+        animation: vibrate-1 0.3s linear 3s infinite both;}    
+    .wave_loop { position: absolute;    left: 0;
+    bottom: 5px;    width: 98px;    height: 20px;
+    background-repeat: no-repeat;    background-position: 0 bottom;
+    transform-origin: left bottom;    background-image: url("./img/img_wave2.png"); animation: vibrate-1 0.6s linear 3s infinite both; }    
+    @keyframes vibrate-1 {
+          0% {                transform: translate(0);          }
+          20% {                transform: translate(-2px, 2px);          }
+          40% {                transform: translate(-2px, -2px);          }
+          60% {                transform: translate(2px, 2px);          }
+          80% {                transform: translate(2px, -2px);          }
+          100% {                transform: translate(0);          }
+    }    
+    .vs_tit { font-size:80px; line-height: 1.2; }
+    .vs_com { font-size:24px; padding-top: 24px; }    
+    .visual_over { position: absolute;    left: 0;
+    bottom: 0;    z-index: 16;    width: 100%;
+    height: 42px;    background: url("./img/bg-main-visual.png") repeat-x center 100%;}    
+    .icon_box { position:absolute;  right:20%; top:100px; z-index:10; }
+    .icon_box li { clear:both; width: 100px; height: 120px; margin-top:10px; 
+        text-align:center;  margin-bottom: 10px; overflow:hidden; } 
+    .icon_box li a { width: 100px; height: 100px; display:block; color:#3d65b0; 
+        background-color:rgba(255,255,255,0.8); border-radius:54px; padding-top: 3px; box-sizing:border-box; transition:0.4s; }    
+    .icon_box li a:hover { background-color:#3d65b0; color:#fff; }        
+    .icon_box li span { display:block; text-align:center; clear:both; }
+    .icon_box li .thumb { background-repeat: no-repeat; background-image:url("./img/ico_main.png"); width: 50px; height:36px; margin:10px auto; 
+        }    
+    .icon_box li.item1 .thumb { background-position:0px 0px; }    
+    .icon_box li.item2 .thumb { background-position:-50px 0px; }    
+    .icon_box li.item3 .thumb { background-position:-100px 0px; }    
+    .icon_box li.item4 .thumb { background-position:-150px 0px; } 
+    .icon_box li .tmb_txt { line-height: 1.2; font-size:13px;  }  
+        
+    .col_all { clear:both; position:relative; min-height:400px;}    
+    .col_box { width:1000px; margin:0 auto; clear:both; left: 50%; 
+        margin-left: -500px; position:absolute; z-index:17; top:-96px; }      
+    .col_box .col { width: 320px; height: 400px; float:left; margin-right: 20px;
+        border-radius:0px 0px 20px 20px; overflow:hidden; }    
+    .col_box .col.item3 { margin-right: 0; }    
+    .col_box .col_fr { color:#fff; text-align:center; height: 100px;
+        border-radius:20px 20px 0px 0px; } 
+    .col_box .item1 .col_fr { background: #26c0e4; }
+    .col_box .item2 .col_fr { background: #0d84ea;}    
+    .col_box .item3 .col_fr { background-color:#26c0e4;
+        background-image:url("./img/bg-main-notice-wave.png"); 
+            background-repeat:no-repeat;        background-position:0 100%; }   
+    .col_tit { padding-top:12px;    font-weight: bold;    font-size: 24px;
+    letter-spacing: -0.09em;}  
+    .col_com { font-size:16px; }    
+    .col_box .lst li { height:98px; position:relative; 
+        border-bottom:2px solid #fff; }
+    .col_box .item1 .lst li { background:#edf3f9; } 
+    .col_box .item1 .lst li:hover { background:#d5f5ff; }
+    .col_box .item2 { background:#edf3f9; border-radius:20px; overflow:hidden; }
+    .col_box .lst li a { color:#333;  }    
+    .col_box .lst li a:before { content:""; display:block; width: 70px; height: 70px; position:absolute; left:20px; top: 15px; background-color:transparent; 
+        border-radius:40px; background-image:url("./img/ico_main.png"); } 
+    .col_box .lst li a.lst_ico1:before { background-position:0px -40px; } 
+    .col_box .lst li a.lst_ico2:before { background-position:-70px -40px; }
+    .col_box .lst li a.lst_ico3:before { background-position:-140px -40px; }    
+    .col_box .lst li a:hover::before { background-color:#fff; }   
+    .cate_tit { font-size: 20px;    font-weight: bold; padding-left:118px; padding-top:18px; }
+    .cate_com { padding-left:118px; }  
+    .nt { min-height: 90px;    padding: 10px 20px 10px;    background: #d5f5ff;
+    border-bottom: 4px solid #26c0e4; } 
+    .nt li { clear:both; position:relative; }
+    .nt li a { display:block;  color:#333; font-size:14px; font-weight:400; 
+        line-height: 20px; padding-top: 8px;  }    
+    .nt li a span.nt_tit { display:block;    overflow: hidden; float:left;
+    width: 70%;    white-space: nowrap;    padding-left: 0;
+    text-overflow: ellipsis;    word-wrap: normal;  padding-left:10px; }    
+    .nt li a:before { content:"."; display:block; width: 12px; position:absolute; left:0px; top:7px; height:12px; line-height: 12px;
+        font-size:20px; color:#0d84ea; }    
+    .nt li a span.nt_date { display:inline-block;  margin-top: -5px; }   
+    .sns_thumb { display: block;    min-height: 190px;
+    padding-top:0px;    background: url("./img/bg_place.jpg") no-repeat 0 0;
+    color: #333;    font-size: 16px;    font-weight: bold;    text-align: center; margin-top: 10px; }  
+    .sns_thumb li { clear:both; float:right; width: 128px; height:57px; border-left:1px solid #ccc; border-top:1px solid #ccc; border-right:1px solid #ccc; }
+    .sns_thumb li:last-child { border-bottom:1px solid #ccc; border-radius:0px 0px 20px 0px; }
+    .col_box .sns_thumb li a { color:#333; font-size:14px; display:block; 
+        line-height:57px; height:57px; background-position:7px center; 
+        background-repeat: no-repeat; }
+    .col_box .sns_thumb li a .cate_tit { font-size:14px; padding-left:0; padding-top: 0; padding-bottom: 0; text-align:left; text-indent:50px; } 
+    .col_box .sns_thumb li a.sns1 { background-image:url("./img/ico_instagram.png"); }
+    .col_box .sns_thumb li a.sns2 { background-image:url("./img/ico_kakaoplus.png"); }
+    .col_box .sns_thumb li a.sns3 { background-image:url("./img/ico_facebook.png"); }
+        
+    #ft { background: #4c4c4c;    font-size: 0.857em;    line-height: 1.667;
+    color: #ccc; padding-top: 30px; padding-bottom: 30px; min-height:120px; } 
+    .ft_wrap { width: 1280px; margin: 0 auto; position:relative; }
+    .ft_con { float:left; }  
+    .ft_mid { float:left; padding-left: 50px; }
+    #fnb { height: 28px; clear:both; }    
+    #fnb li { float:left; margin-right:20px; border-right:1px dotted #bbb; padding-right: 20px; height:15px; line-height: 15px; }
+    #fnb li:last-child { border:0; }
+    #fnb li a { color:#ccc; }    
+    .copyright { clear:both; }   
+    .ft_logo { float:right; width: 121px; height: 32px; 
+        background-image:url("./img/img-seoul.png"); }    
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+        var intv = setInterval(function(){ nextAni(); }, 2900);
+        function nextAni() {
+            $(".img_box").not(":animated").animate({"margin-top":"-650px"}, 900, function(){
+                $(".img_box li").eq(0).appendTo($(".img_box"));
+                $(".img_box").css("margin-top","0px");
+            });
+        }
+    });    
+    </script>
+</head>
+<body>
+<header class="hd">
+    <div class="hd_wrap">
+        <a href="http://www.seoul.go.kr" class="slogo"><!-- 지자체 로고 배경이미지로 설정 --></a>
+        <div class="info_box">CES2020 서울관 참여기업 모집</div>
+        <ul class="top">
+            <li><a href="https://www.seoul.go.kr/realmnews/in/list.do">서울소식</a></li>
+            <li><a href="http://eungdapso.seoul.go.kr">응답소</a></li>
+            <li><a href="http://opengov.seoul.go.kr">정보공개</a></li>
+        </ul>
+    </div>
+    <div class="hd_wrap">
+        <a href="index.html" class="logo"><!-- 행사용 로고 배경이미지 적용 --></a>
+        <nav id="mainmenu">
+            <ul>
+                <li class="me">
+                    <a href="sub1.html" class="dp1">한강몽땅 소개</a>
+                    <ul class="sub">
+                        <li><a href="sub11.html">한강몽땅이란?</a></li>
+                        <li><a href="sub12.html">한강 발자취</a></li>
+                        <li><a href="sub13.html">한강가는 길</a></li>
+                    </ul>
+                </li>
+                <li class="me">
+                    <a href="sub2.html" class="dp1">프로그램 안내</a>
+                    <ul class="sub">
+                        <li><a href="sub21.html">테마별 프로그램</a></li>
+                        <li><a href="sub22.html">일자별 프로그램</a></li>
+                        <li><a href="sub23.html">공원별 프로그램</a></li>
+                    </ul>
+                </li>
+                <li class="me">
+                    <a href="sub3.html" class="dp1">예약하기</a>
+                    <ul class="sub">
+                        <li><a href="sub3.html">프로그램 예약</a></li>
+                    </ul>
+                </li>
+                <li class="me last">
+                    <a href="sub4.html" class="dp1">커뮤니티</a>
+                    <ul class="sub">
+                        <li><a href="sub41.html">공지사항</a></li>
+                        <li><a href="sub42.html">현장사진</a></li>
+                        <li><a href="sub43.html">생생영상</a></li>
+                        <li><a href="sub44.html">몽땅자료</a></li>
+                        <li><a href="sub45.html">FAQ</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <form action="" id="frm1">
+            <label class="search" for="ck1">검색</label>
+            <select name="" id="sel1">
+                <option value="">English</option>
+                <option value="">中文</option>
+                <option value="">にほんご</option>
+                <option value="">한국어</option>
+            </select>
+            <button id="go_btn">GO</button>
+            <input type="checkbox" id="ck1">
+            <div id="search_form">
+                <label for="ck1" class="close_btn">닫기</label>
+                <input type="text" id="keyword" class="search_txt">
+                <input type="submit" class="search_btn" value="GO">
+            </div>
+        </form>
+    </div>
+</header>
+<main id="content">
+    <figure id="vs">
+        <ul class="img_box">
+            <li class="item1"></li>
+            <li class="item2"></li>
+            <li class="item3"></li>
+            <li class="item4"></li>
+            <li class="item5"></li>
+            <li class="item6"></li>
+        </ul>
+        <ul class="btn_box">
+            <li class="btn"><button></button></li>
+            <li class="btn"><button></button></li>
+            <li class="btn"><button></button></li>
+            <li class="btn"><button></button></li>
+            <li class="btn"><button></button></li>
+            <li class="btn"><button></button></li>
+        </ul>
+        <div class="vs_box">
+            <div class="tit_box">
+                <div class="wave_ani">
+                    <div class="wave_drop"></div>
+                    <div class="wave_loop"></div>
+                </div>
+                <h2 class="vs_tit">2019한강몽땅<br>여름축제</h2>
+                <p class="vs_com" title="7.19(금)부터 8.18(일)까지 ‘한강공원’ 일대에서 즐겨요!">
+                    7.19(금)부터 8.18(일)까지 ‘한강공원’ 일대에서 즐겨요! 
+                </p>
+            </div>
+            <ul class="icon_box">
+                <li class="ico_fr item1"><a href="">
+                <span class="thumb"></span><span class="tmb_txt">프로그램<br>다운로드</span></a></li>
+                <li class="ico_fr item2"><a href=""><span class="thumb"></span><span class="tmb_txt">프로그램<br>찾기</span></a></li>
+                <li class="ico_fr item3"><a href=""><span class="thumb"></span><span class="tmb_txt">프로그램<br>예약</span></a></li>
+            </ul>
+        </div>    
+    </figure>
+    <div class="visual_over"></div>
+    <div class="col_all">
+        <ul class="col_box">
+            <li class="col item1">
+                <div class="col_fr">
+                    <h3 class="col_tit">프로그램 소개</h3>
+                    <p class="col_com">한강몽땅의 테마별 프로그램</p>
+                </div>
+                <ul class="lst"><!-- 아이콘 리스트 -->
+                    <li>
+                        <a href="" class="lst_ico1">
+                            <h4 class="cate_tit">시원한강</h4>
+                            <p class="cate_com">수상·물놀이·도전</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="lst_ico2">
+                            <h4 class="cate_tit">감동한강</h4>
+                            <p class="cate_com">공연·예술·열정</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="lst_ico3">
+                            <h4 class="cate_tit">함께한강</h4>
+                            <p class="cate_com">가족·휴식·환경</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="col item2">
+                <div class="col_fr">
+                    <h3 class="col_tit">오늘의 행사</h3>
+                    <p class="col_com">한강에서 펼쳐지는 신나는 여름</p>
+                </div>
+                <ul class="lst"><!-- 빈 리스트 -->
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </li>
+            <li class="col item3">
+                <div class="col_fr">
+                    <h3 class="col_tit">공지사항</h3>
+                    <p class="col_com">한강행사에 대해 알리는 말씀</p>
+                </div>
+                <ul class="nt">
+                    <li>
+                        <a href="">
+                            <span class="nt_tit">한 달간의 한강 소풍을 끝내며 마무리 인사</span>                   
+                            <span class="nt_date">2019.08.22</span>         
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="nt_tit"> 8.15(목) 우천으로 인한 행사 취소 공지 사항</span>                   
+                            <span class="nt_date">2019.08.15</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="sns_thumb">
+                <!-- <img src="./img/bg_place.jpg" alt="왼쪽 배경이미지로">-->
+                    <li>
+                        <a href="" class="sns1">
+                            <h4 class="cate_tit">인스타그램</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="sns2">
+                            <h4 class="cate_tit">카카오친구</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="sns3">
+                            <h4 class="cate_tit">페이스북</h4>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</main>
+<footer id="ft">
+    <div class="ft_wrap">
+        <div class="ft_con">
+            <img src="./img/img-footer-120.png" alt="문의전화">
+        </div>
+        <div class="ft_mid">
+            <nav id="fnb">
+                <ul>
+                    <li><a href="">개인정보처리방침</a></li>
+                    <li><a href="">영상정보처리기기 운영 관리방침</a></li>
+                    <li><a href="">사이트맵</a></li>
+                </ul>
+            </nav>
+            <p class="copyright">
+            한강사업본부 : 고유번호 106-83-00693 (우)133-100 서울시 성동구 강변북로 257 (성수동1가 642-25)<br>    
+            전화번호 : 주)02-120 야)3780-0597~8 <br>
+            © Seoul Metropolitan Government All Rights Reserved.</p>
+        </div>
+        <div class="ft_logo"><!-- 푸터로고 배경이미지 적용 --></div>
+    </div>
+</footer>
+</body>
+</html>

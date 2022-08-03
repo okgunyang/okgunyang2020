@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>텍스트 애니메이션 17</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+  font-size: 4vw;
+  transform-style: preserve-3d;
+  animation: three-dimensions-circle 30s linear infinite;
+}
+
+li {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+li:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(0deg) translateY(-260px) rotateX(90deg);
+}
+
+li:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(30deg) translateY(-260px) rotateX(90deg);
+}
+
+li:nth-child(3) {
+  transform: translate(-50%, -50%) rotate(60deg) translateY(-260px) rotateX(90deg);
+}
+
+li:nth-child(4) {
+  transform: translate(-50%, -50%) rotate(90deg) translateY(-260px) rotateX(90deg);
+}
+
+li:nth-child(5) {
+  transform: translate(-50%, -50%) rotate(120deg) translateY(-260px) rotateX(90deg);
+}
+
+li:nth-child(6) {
+  transform: translate(-50%, -50%) rotate(150deg) translateY(-260px) rotateX(90deg);
+}
+
+li:nth-child(7) {
+  transform: translate(-50%, -50%) rotate(180deg) translateY(-260px) rotateX(90deg);
+}
+
+li:nth-child(8) {
+  transform: translate(-50%, -50%) rotate(210deg) translateY(-260px) rotateX(90deg);
+}
+
+li:nth-child(9) {
+  transform: translate(-50%, -50%) rotate(240deg) translateY(-260px) rotateX(90deg);
+}
+
+li:nth-child(10) {
+  transform: translate(-50%, -50%) rotate(270deg) translateY(-260px) rotateX(90deg);
+}
+
+li:nth-child(11) {
+  transform: translate(-50%, -50%) rotate(300deg) translateY(-260px) rotateX(90deg);
+}
+
+li:nth-child(12) {
+  transform: translate(-50%, -50%) rotate(330deg) translateY(-260px) rotateX(90deg);
+}
+
+@keyframes three-dimensions-circle {
+  0% {
+    transform: rotateX(-100deg) rotate(0);
+  }
+  100% {
+    transform: rotateX(-100deg) rotate(-360deg);
+  }
+}
+    </style>
+</head>
+<body>
+<ul class="groups">
+  <li>子</li>
+  <li>丑</li>
+  <li>寅</li>
+  <li>卯</li>
+  <li>辰</li>
+  <li>巳</li>
+  <li>午</li>
+  <li>未</li>
+  <li>申</li>
+  <li>酉</li>
+  <li>戌</li>
+  <li>亥</li>
+</ul>
+</body>
+</html>

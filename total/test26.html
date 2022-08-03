@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>웹문서26</title>
+    <script src="prefixfree.min.js"></script> 
+    <style>
+    ul { list-style:none; }    
+    .canvas { clear:both; width:200px; margin:200px auto; }    
+    .cube { width: 200px; height: 200px; position:relative;
+            transform-style: preserve-3d; 
+            backface-visibility:visible;
+            animation-name:cube;    animation-duration:2s;
+            animation-iteration-count: infinite; 
+     }
+    .cube li { width: 200px; height: 200px; position:absolute; left: 0; top: 0; 
+        opacity:0.6; color:#000; font-size:40px; text-align:center;
+        line-height:200px; }    
+    .cube .side1 {  transform:rotateY(0deg)  translate3d(0px,0px,100px);
+    background:red;  /* 정면  */ } 
+    .cube .side2 {  transform:rotateY(90deg)  translate3d(0px,0px,100px);
+    background: green;  /* 우측면  */ }    
+    .cube .side3 {  transform:rotateY(180deg)  translate3d(0px,0px,100px);
+    background: blue;   /* 뒷면  */ }    
+    .cube .side4 { transform:rotateY(270deg)  translate3d(0px,0px,100px);
+    background: yellow; /* 좌측면  */ }    
+    .cube .side5 { transform: rotateX(90deg)  translate3d(0px,0px,100px);
+    background: brown;  /* 위면  */ } 
+    .cube .side6 { transform: rotateX(270deg)  translate3d(0px,0px,100px);
+    background: pink; /* 아래면  */ }  
+    @keyframes cube {
+        0% { transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+        100% { transform:rotateX(360deg) rotateY(360deg) rotateZ(-360deg); }
+    }  
+     
+    .milkpack { clear:both; width:400px; position:relative;  margin:100px auto;
+            transform-style: preserve-3d; 
+            backface-visibility:visible;
+            animation-name:milkpack;    animation-duration:3s;
+            animation-iteration-count: infinite; 
+    }    
+    .milkpack li { position:relative;             
+            transform-style: preserve-3d; 
+            backface-visibility:visible;
+    }   
+    .milkpack li div { position:absolute; top:0; left:0; }    
+    .milkpack .row1 { height:70px; width:400px; }        
+    .milkpack .row1 div { height:70px; width:400px; }     
+    .milkpack .row1 .col1 { background:rgba(255,0,0,0.7); transform:rotateY(0deg); }    
+    .milkpack .row1 .col2 { background:rgba(0,0,255,0.7); transform:rotateY(180deg); }    
+    .milkpack .row2 { width:400px; height:140px;  } 
+    .milkpack .row2 div {  width: 400px; transform-origin:center bottom; z-index:2;} 
+    .milkpack .row2 .col1 { background:url(milkpack_tri.png);  height:198px;
+        transform:rotateZ(-45deg) rotateY(90deg) translate3d(0,0,280px); top:140px;
+        transform-origin:center bottom; }    
+    .milkpack .row2 .col2 { background:url(milkpack_tri.png); height:198px; top:140px;
+        transform:rotateZ(45deg) rotateY(270deg) translate3d(0,0,280px); 
+        transform-origin:center bottom; }
+    .milkpack .row2 .col3 { background:rgba(255,0,0,1);  height:244px;  top:182px;
+        transform:rotateY(0deg) rotateX(55deg) translate3d(0,0,349px); 
+    }    
+    .milkpack .row2 .col4 { background:rgba(0,0,255,0.7);   height:244px; top:182px;
+        transform:rotateY(180deg) rotateX(55deg) translate3d(0,0,349px); }        
+    .milkpack .row3 { height: 400px; width:400px; }    
+    .milkpack .row3 div { height: 400px; width:400px; }
+    .milkpack .row3 .col1 { background:rgba(255,0,0,0.7); transform:rotateY(0deg) translate3d(0,0,200px); }    
+    .milkpack .row3 .col2 { background:rgba(0,0,255,0.7); transform:rotateY(180deg) translate3d(0,0,200px); }    
+    .milkpack .row3 .col3 { background:rgba(0,255,0,0.7); transform:rotateY(90deg) translate3d(0,0,200px); }    
+    .milkpack .row3 .col4 { background:rgba(255,0,255,0.7); transform:rotateY(270deg) translate3d(0,0,200px); }       
+    .milkpack .row3 .col5 { background:rgba(255,255,0,0.7); transform:rotateX(270deg) translate3d(0,0,200px); } 
+        
+    @keyframes milkpack {
+        0% { transform:perspective(800px) rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+        100% { transform:perspective(800px) rotateX(0deg) rotateY(360deg) rotateZ(0deg); }
+    }      
+        
+    .vr_box { width:600px; height:600px; margin:50px auto; }
+    .vr_box img { width:100%; height:auto; }    
+    .vr_img { display:none; }
+    .vr_img.on { display:block; } 
+    
+    .btn_box { clear: both;  width: 230px; margin:10px auto; }
+    .btn_box button { display:block; width: 100px; height: 40px; 
+        line-height: 40px; text-align:center; background:#222; color:#fff;
+        border:0; outline:0; float:left; cursor:pointer; }    
+    .spicy { margin-right: 30px; }  
+    .btn_box button.on { background:navy; }   
+        
+    #rotate { width: 600px; height:800px; margin:50px auto; overflow:hidden;  }   
+    .item_box { width:100%; height:100%; position:relative; transform-style: preserve-3d; animation-name:nuddle; animation-duration:5s; animation-iteration-count: infinite;   } 
+    .item_box li { width:100%; height:100%; position:absolute; top:0; left:0; 
+        background-size:100% 100%; background-repeat:no-repeat; background-position:center center; } 
+        
+    .item_box li .row1, .item_box li .row7 { height:90px; overflow-y:hidden; }  
+    .item_box li .row2, .item_box li .row6 { height:28px; overflow-y:hidden; }
+    .item_box li .row3, .item_box li .row5 { height:28px; overflow-y:hidden; }
+    .item_box li .row1 { background-position:center 0px; transform:translateZ(-40px);
+         }     
+    .item_box li .row2 { background-position:center -90px; transform:translateZ(-40px) rotateX(45deg); transform-origin:50% top; }         
+    .item_box li .row3 { background-position:center -118px; transform:translateZ(-18px) rotateX(36deg); transform-origin:50% top; margin-top:-8px; }         
+    .item_box li .row4 { background-position:center -150px;  margin-top:-5px;  height:320px;}         
+    .item_box li .row5 { background-position:center -469px; transform:translateZ(0px) rotateX(-36deg); transform-origin:50% top; margin-top:-1px; overflow-y:hidden; } 
+        
+    .item_box li .row6 { background-position:center -496px;  transform:translateZ(-16px) rotateX(-48deg);   transform-origin:50% top; margin-top:-6px; height:30px;
+         }         
+    .item_box li .row7 { background-position:center -522px; 
+        transform:translateZ(-40px); margin-top: -10px;  }    
+    .item_box li .row4 { height:320px; }    
+
+    .item_box .item1 { transform:rotateY(0deg) translateZ(41px); 
+        transform-style: preserve-3d;  }
+    .item_box .item2 { transform:rotateY(90deg) translateZ(171px); 
+        transform-style: preserve-3d; }      
+    .item_box .item3 { transform:rotateY(180deg) translateZ(41px); 
+        transform-style: preserve-3d; }    
+    .item_box .item4 { transform:rotateY(270deg) translateZ(171px); 
+        transform-style: preserve-3d;  } 
+        
+    .item_box li div { background-size:600px 600px; background-repeat:no-repeat;  overflow:hidden; position:relative;  clear:both; }    
+    .item_box li.item1 div { background-image:url("./rotate1/H.0000.png"); }      
+    .item_box li.item2 div { background-image:url("./rotate1/H.0010.png"); }    
+    .item_box li.item3 div { background-image:url("./rotate1/H.0020.png"); }
+    .item_box li.item4 div { background-image:url("./rotate1/H.0030.png"); }
+    @keyframes nuddle {
+        from { transform: rotateY(0deg); }
+        to { transform: rotateY(360deg); }
+    }        
+        
+    .cocacola { width:200px; height:333px; position:relative;
+        transform-style: preserve-3d; 
+            backface-visibility:visible;
+            animation-name:cocacola;    animation-duration:3s;
+            animation-iteration-count: infinite; }
+    .cocacola li { width:31.4px; height:333px; background-image:url(cocacola.png); 
+        background-repeat:no-repeat; position:absolute; left:0; top:0; }
+    .cocacola li.coca1 { background-position:0px center; 
+        transform:rotateY(9deg) translate3d(0,0,100px); }    
+    .cocacola li.coca2 { background-position:-15.7px center; 
+        transform:rotateY(18deg) translate3d(0,0,100px); }    
+    .cocacola li.coca3 { background-position:-31.4px center; 
+        transform:rotateY(27deg) translate3d(0,0,100px); }        
+    .cocacola li.coca4 { background-position:-47.1px center; 
+        transform:rotateY(36deg) translate3d(0,0,100px); } 
+    .cocacola li.coca5 { background-position:-62.8px center; 
+        transform:rotateY(45deg) translate3d(0,0,100px); }     
+    .cocacola li.coca6 { background-position:-78.5px center; 
+        transform:rotateY(54deg) translate3d(0,0,100px); } 
+    .cocacola li.coca7 { background-position:-94.2px center; 
+        transform:rotateY(63deg) translate3d(0,0,100px); } 
+    .cocacola li.coca8 { background-position:-109.9px center; 
+        transform:rotateY(72deg) translate3d(0,0,100px); } 
+    .cocacola li.coca9 { background-position:-125.6px center; 
+        transform:rotateY(81deg) translate3d(0,0,100px); }        
+    .cocacola li.coca10 { background-position:-141.3px center;
+        transform:rotateY(90deg) translate3d(0,0,100px); } 
+    .cocacola li.coca11 { background-position:-157px center; 
+        transform:rotateY(99deg) translate3d(0,0,100px); }     
+    .cocacola li.coca12 { background-position:-172.7px center; 
+        transform:rotateY(108deg) translate3d(0,0,100px); } 
+    .cocacola li.coca13 { background-position:-188.4px center; 
+        transform:rotateY(117deg) translate3d(0,0,100px); } 
+    .cocacola li.coca14 { background-position:-204.1px center;
+        transform:rotateY(126deg) translate3d(0,0,100px); } 
+    .cocacola li.coca15 { background-position:-219.8px center;
+        transform:rotateY(135deg) translate3d(0,0,100px); }        
+    .cocacola li.coca16 { background-position:-235.5px center; 
+        transform:rotateY(144deg) translate3d(0,0,100px); } 
+    .cocacola li.coca17 { background-position:-251.2px center; 
+        transform:rotateY(153deg) translate3d(0,0,100px); }     
+    .cocacola li.coca18 { background-position:-266.9px center; 
+        transform:rotateY(162deg) translate3d(0,0,100px); } 
+    .cocacola li.coca19 { background-position:-282.6px center; 
+        transform:rotateY(171deg) translate3d(0,0,100px); } 
+    .cocacola li.coca20 { background-position:-298.3px center; 
+        transform:rotateY(180deg) translate3d(0,0,100px); } 
+    .cocacola li.coca21 { background-position:-314px center; 
+        transform:rotateY(189deg) translate3d(0,0,100px); }    
+    .cocacola li.coca22 { background-position:-329.7px center; 
+        transform:rotateY(198deg) translate3d(0,0,100px); }    
+    .cocacola li.coca23 { background-position:-345.4px center; 
+        transform:rotateY(207deg) translate3d(0,0,100px); }        
+    .cocacola li.coca24 { background-position:-361.1px center; 
+        transform:rotateY(216deg) translate3d(0,0,100px); } 
+    .cocacola li.coca25 { background-position:-376.8px center;
+        transform:rotateY(225deg) translate3d(0,0,100px); }     
+    .cocacola li.coca26 { background-position:-392.5px center; 
+        transform:rotateY(234deg) translate3d(0,0,100px); } 
+    .cocacola li.coca27 { background-position:-408.2px center; 
+        transform:rotateY(243deg) translate3d(0,0,100px); } 
+    .cocacola li.coca28 { background-position:-423.9px center; 
+        transform:rotateY(252deg) translate3d(0,0,100px); } 
+    .cocacola li.coca29 { background-position:-439.6px center; 
+        transform:rotateY(261deg) translate3d(0,0,100px); }        
+    .cocacola li.coca30 { background-position:-455.3px center; 
+        transform:rotateY(270deg) translate3d(0,0,100px); } 
+    .cocacola li.coca31 { background-position:-471px center; 
+        transform:rotateY(279deg) translate3d(0,0,100px); }     
+    .cocacola li.coca32 { background-position:-486.7px center; 
+        transform:rotateY(288deg) translate3d(0,0,100px); } 
+    .cocacola li.coca33 { background-position:-502.4px center; 
+        transform:rotateY(297deg) translate3d(0,0,100px); } 
+    .cocacola li.coca34 { background-position:-518.1px center; 
+        transform:rotateY(306deg) translate3d(0,0,100px); } 
+    .cocacola li.coca35 { background-position:-533.8px center; 
+        transform:rotateY(315deg) translate3d(0,0,100px); }        
+    .cocacola li.coca36 { background-position:-549.5px center; 
+        transform:rotateY(324deg) translate3d(0,0,100px); } 
+    .cocacola li.coca37 { background-position:-565.2px center; 
+        transform:rotateY(333deg) translate3d(0,0,100px); }     
+    .cocacola li.coca38 { background-position:-580.9px center; 
+        transform:rotateY(342deg) translate3d(0,0,100px); } 
+    .cocacola li.coca39 { background-position:-596.6px center; 
+        transform:rotateY(351deg) translate3d(0,0,100px); } 
+    .cocacola li.coca40 { background-position:-612.3px center; 
+        transform:rotateY(9deg) translate3d(0,0,100px); } 
+    .cocacola li.cocaup { background-image:url("cocacolaup.png"); 
+        width:200px; height:200px; transform:rotateX(90deg);  top:-100px; left: -89px; 
+        border-radius:200px; }
+    .cocacola li.cocadown { background-image:none;  top:auto;
+        background-color:silver;
+        width:200px; height:200px; transform:rotateX(90deg);  bottom:-100px; left: -89px; 
+        border-radius:200px; }    
+    @keyframes cocacola {
+        0% { transform:rotateY(0deg) rotateX(-15deg) rotate(0deg); }
+        100% { transform:rotateY(360deg) rotateX(-15deg) rotate(0deg); }
+    }    
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+        var vr_cnt=0;
+        var vr_src;
+        var sw=true;
+        var vrIntv = setInterval(function(){ 
+            vr_cnt++;
+            if(vr_cnt>39){
+                vr_cnt=0;
+            }
+            vrAni(vr_cnt);
+        }, 40);
+        function vrAni(vrNum){
+            if(vrNum>=10){
+                $("#vr_con1").attr("src", "./rotate/H.00"+vrNum+".png");
+                $("#vr_con2").attr("src", "./rotate/L.00"+vrNum+".png");
+            } else {
+                $("#vr_con1").attr("src", "./rotate/H.000"+vrNum+".png");
+                $("#vr_con2").attr("src", "./rotate/L.000"+vrNum+".png");
+            }
+        }
+        $(".btn_box button").click(function(){
+            $(".btn_box button").removeClass("on");
+            $(this).addClass("on");
+            $(".vr_img").removeClass("on");
+            $("#vr_con1").toggleClass("on");
+        });
+        $(".btn_box .mild").click(function(){
+            $(".btn_box button").removeClass("on");
+            $(this).addClass("on");
+            $(".vr_img").removeClass("on");
+            $("#vr_con2").addClass("on");
+        });
+    });    
+    </script>    
+    <style>
+    #vs1 { width:1000px; height:500px; position:relative; margin:100px auto; }
+    #vs1 .img_box { width:700px; height:420px; position:relative; margin:100px auto; 
+          transform-style: preserve-3d;  
+            transition:2s;
+            backface-visibility:visible; }
+    #vs1 .img_box:before, .img_box:after { content:""; display:block; width:700px; height:420px; position:absolute; top:0; left:0; background:rgba(0,0,0,0.8); } 
+    #vs1 .img_box:before { transform:rotateX(90deg) translate3d(0,0,210px); }    
+    #vs1 .img_box:after {  transform:rotateX(270deg) translate3d(0,0,210px); }    
+    #vs1 .img_box li { position:absolute; top:0; left:0; width:700px; height:420px; }  
+    #vs1 .img_box li.item1 { transform:rotateY(0deg) translate3d(0,0,350px); }    
+    #vs1 .img_box li.item2 { transform:rotateY(90deg) translate3d(0,0,350px); } 
+    #vs1 .img_box li.item3 { transform:rotateY(180deg) translate3d(0,0,350px); } 
+    #vs1 .img_box li.item4 { transform:rotateY(270deg) translate3d(0,0,350px); } 
+    #vs1 .img_box li a { display:block; width:700px; height:420px; background-repeat:no-repeat; background-position:center center; background-size:cover;  transform-style: preserve-3d;  transform:perspective(1400px); }
+    #vs1 .img_box li.item1 a { background-image:url("1.jpg"); }
+    #vs1 .img_box li.item2 a { background-image:url("2.jpg"); }    
+    #vs1 .img_box li.item3 a { background-image:url("3.jpg"); }        
+    #vs1 .img_box li.item4 a { background-image:url("4.jpg"); }   
+    #rdo1:checked ~ .img_box { transform:perspective(2100px) rotateY(0deg); }    
+    #rdo2:checked ~ .img_box { transform:perspective(2100px) rotateY(90deg); }  
+    #rdo3:checked ~ .img_box { transform:perspective(2100px) rotateY(180deg); }        
+    #rdo4:checked ~ .img_box { transform:perspective(2100px) rotateY(270deg); }  
+        
+    .btn_box { width:1000px; }    
+    .btn_box label { display:block; width:42px; height:42px; position:absolute; 
+        cursor:pointer; 
+        top:calc(calc(500px - 42px) / 2); background-repeat:no-repeat; 
+        background-size:cover; border-radius:22px; background-color:rgba(0,0,0,0.6); }   
+    .btn_box .left_btn { left:-100px; background-image:url("left_btn.png"); }
+    .btn_box .right_btn { right:-100px; background-image:url("right_btn.png"); } 
+    .btn_box li { display:none; } 
+    #rdo1:checked ~ .btn_box li.item1 { display:block; }    
+    #rdo2:checked ~ .btn_box li.item2 { display:block; }  
+    #rdo3:checked ~ .btn_box li.item3 { display:block; }  
+    #rdo4:checked ~ .btn_box li.item4 { display:block; }  
+    .rdo { display:none; }    
+    
+    .btn_box2 { clear:both; width:160px; margin:20px auto; }    
+    .btn_box2 li { width:40px; float: left; }
+    .btn_box2 li label { display:block; width:16px; height:16px; 
+        background-color:#333; border-radius:10px; cursor:pointer;}
+    #rdo1:checked ~ .btn_box2 li.item1 label { background-color:hotpink; }    
+    #rdo2:checked ~ .btn_box2 li.item2 label { background-color:hotpink; }
+    #rdo3:checked ~ .btn_box2 li.item3 label { background-color:hotpink; }  
+    #rdo4:checked ~ .btn_box2 li.item4 label { background-color:hotpink; }
+        
+    #vs2 { width:1200px; height:700px; position:relative; margin:100px auto; 
+         }
+    #vs2 .img_box { width:700px; height:420px; position:relative; margin:100px auto; 
+          transform-style: preserve-3d; perspective: 2100px;
+            transition:2s;
+            backface-visibility:visible; }
+/*    #vs2 .img_box:before, #vs2 .img_box:after { content:""; display:block; width:420px; height:420px; position:absolute; top:auto; left:0; background:rgba(0,0,0,0.8); } */
+/*
+    #vs2 .img_box:before { transform:rotateY(90deg) translate3d(0,0,350px); left:140px; } 
+    #vs2 .img_box:after {  transform:rotateY(270deg) translate3d(0,0,350px); left:140px;} 
+*/
+    #vs2 .img_box li {  width:700px; height:420px; }  
+    #vs2 .img_box li a { display:block; width:700px; height:420px; overflow:hidden;
+        margin: 0; padding: 0;}
+    #vs2 .img_box li a span { display:block; width:140px; height:420px; background-repeat:no-repeat; background-size:cover; position:absolute;  top:0;
+        transform:rotateX(90deg) translate3d(0,0,200px); transform-origin:50% 50%; }
+    #vs2 .img_box li.item1 a span { background-image:url("1.jpg"); }
+    #vs2 .img_box li.item2 a span { background-image:url("2.jpg"); }    
+    #vs2 .img_box li.item3 a span { background-image:url("3.jpg"); }        
+    #vs2 .img_box li.item4 a span { background-image:url("4.jpg"); } 
+    #vs2 .img_box li a span.imc1 { background-position:0% top; transition:1s; 
+        transition-delay:0s;  left: 0; }    
+    #vs2 .img_box li a span.imc2 { background-position:-140px top; 
+        transition:1s;     transition-delay:0.2s;     left: 20%; }        
+    #vs2 .img_box li a span.imc3 { background-position:-280px top; 
+         transition:1s;     transition-delay:0.4s;  left: 40%; }        
+    #vs2 .img_box li a span.imc4 { background-position:-420px top; 
+         transition:1s;     transition-delay:0.6s; left: 60%; 
+    }        
+    #vs2 .img_box li a span.imc5 { background-position:-560px top; 
+         transition:1s;     transition-delay:0.8s;  left: 80%;
+    } 
+    
+    #rd1:checked ~ .img_box li.item1 span { transform:rotateX(0deg) translate3d(0px,0px,200px); }    
+    #rd2:checked ~ .img_box li.item2 span { transform:rotateX(0deg) translate3d(0px,0px,200px); }  
+    #rd3:checked ~ .img_box li.item3 span { transform:rotateX(0deg) translate3d(0px,0px,200px); }        
+    #rd4:checked ~ .img_box li.item4 span { transform:rotateX(0deg) translate3d(0px,0px,200px); }  
+        
+    #rd1:checked ~ .btn_box li.item1 { display:block; }    
+    #rd2:checked ~ .btn_box li.item2 { display:block; }  
+    #rd3:checked ~ .btn_box li.item3 { display:block; }  
+    #rd4:checked ~ .btn_box li.item4 { display:block; }  
+
+    </style>
+</head>
+<body>
+    <div class="canvas">
+        <ul class="cube">
+            <li class="side1"><span>A</span></li>
+            <li class="side2"><span>B</span></li>
+            <li class="side3"><span>C</span></li>
+            <li class="side4"><span>D</span></li>
+            <li class="side5"><span>E</span></li>
+            <li class="side6"><span>F</span></li>
+        </ul>
+    </div>
+    <div class="canvas">
+        <ul class="milkpack">
+            <li class="row1">
+                <div class="col1"></div>
+                <div class="col2"></div>
+            </li>
+            <li class="row2">
+                <div class="col1">
+                </div>
+                <div class="col2">
+                </div>
+                <div class="col3"></div>
+                <div class="col4"></div>
+            </li>
+            <li class="row3">
+                <div class="col1"></div>
+                <div class="col2"></div>
+                <div class="col3"></div>
+                <div class="col4"></div>
+                <div class="col5"></div>
+            </li>
+        </ul>
+    </div>
+    <div class="canvas">
+            <div id="rotate">
+                <ul class="item_box">
+                    <li class="item1">
+                        <div class="row1"><span></span></div>
+                        <div class="row2"><span></span></div>
+                        <div class="row3"><span></span></div>
+                        <div class="row4"><span></span></div>
+                        <div class="row5"><span></span></div>
+                        <div class="row6"><span></span></div>
+                        <div class="row7"><span></span></div>
+                    </li>
+                    <li class="item2">
+                        <div class="row1"><span></span></div>
+                        <div class="row2"><span></span></div>
+                        <div class="row3"><span></span></div>
+                        <div class="row4"><span></span></div>
+                        <div class="row5"><span></span></div>
+                        <div class="row6"><span></span></div>
+                        <div class="row7"><span></span></div>
+                    </li>
+                    <li class="item3">
+                        <div class="row1"><span></span></div>
+                        <div class="row2"><span></span></div>
+                        <div class="row3"><span></span></div>
+                        <div class="row4"><span></span></div>
+                        <div class="row5"><span></span></div>
+                        <div class="row6"><span></span></div>
+                        <div class="row7"><span></span></div>
+                    </li>
+                    <li class="item4">
+                        <div class="row1"><span></span></div>
+                        <div class="row2"><span></span></div>
+                        <div class="row3"><span></span></div>
+                        <div class="row4"><span></span></div>
+                        <div class="row5"><span></span></div>
+                        <div class="row6"><span></span></div>
+                        <div class="row7"><span></span></div>
+                    </li>
+                </ul>
+            </div>
+    </div>
+    <div class="canvas">
+        <div class="vr_box">
+            <img src="./rotate/H.0000.png" alt="VR 스파이시" class="vr_img on" id="vr_con1">
+            <img src="./rotate/L.0000.png" alt="VR 마일드" class="vr_img" id="vr_con2">
+        </div>
+        <div class="btn_box">
+            <button class="spicy on">스파이시</button>
+            <button class="mild">마일드</button>
+        </div>
+    </div>
+    <div class="canvas">
+        <ul class="cocacola">
+            <li class="coca1"></li>
+            <li class="coca2"></li>
+            <li class="coca3"></li>
+            <li class="coca4"></li>
+            <li class="coca5"></li>
+            <li class="coca6"></li>
+            <li class="coca7"></li>
+            <li class="coca8"></li>
+            <li class="coca9"></li>
+            <li class="coca10"></li>
+            <li class="coca11"></li>
+            <li class="coca12"></li>
+            <li class="coca13"></li>
+            <li class="coca14"></li>
+            <li class="coca15"></li>
+            <li class="coca16"></li>
+            <li class="coca17"></li>
+            <li class="coca18"></li>
+            <li class="coca19"></li>
+            <li class="coca20"></li>
+            <li class="coca21"></li>
+            <li class="coca22"></li>
+            <li class="coca23"></li>
+            <li class="coca24"></li>
+            <li class="coca25"></li>
+            <li class="coca26"></li>
+            <li class="coca27"></li>
+            <li class="coca28"></li>
+            <li class="coca29"></li>
+            <li class="coca30"></li>
+            <li class="coca31"></li>
+            <li class="coca32"></li>
+            <li class="coca33"></li>
+            <li class="coca34"></li>
+            <li class="coca35"></li>
+            <li class="coca36"></li>
+            <li class="coca37"></li>
+            <li class="coca38"></li>
+            <li class="coca39"></li>
+            <li class="coca40"></li>
+            <li class="cocaup"></li>
+            <li class="cocadown"></li>
+        </ul>
+    </div>
+    <div class="slider">
+        <figure id="vs1">
+            <input type="radio" name="rad" class="rdo" id="rdo1" checked>
+            <input type="radio" name="rad" class="rdo" id="rdo2">
+            <input type="radio" name="rad" class="rdo" id="rdo3">
+            <input type="radio" name="rad" class="rdo" id="rdo4">
+            <ul class="img_box">
+                <li class="item1">
+                    <a href="">
+                        <span class="imc1"></span>
+                        <span class="imc2"></span>
+                        <span class="imc3"></span>
+                        <span class="imc4"></span>
+                        <span class="imc5"></span>
+                    </a>
+                </li>
+                <li class="item2">
+                    <a href="">                        
+                        <span class="imc1"></span>
+                        <span class="imc2"></span>
+                        <span class="imc3"></span>
+                        <span class="imc4"></span>
+                        <span class="imc5"></span>
+                    </a>
+                </li>
+                <li class="item3">
+                    <a href="">
+                        <span class="imc1"></span>
+                        <span class="imc2"></span>
+                        <span class="imc3"></span>
+                        <span class="imc4"></span>
+                        <span class="imc5"></span>
+                    </a>
+                </li>
+                <li class="item4">
+                    <a href="">                        
+                        <span class="imc1"></span>
+                        <span class="imc2"></span>
+                        <span class="imc3"></span>
+                        <span class="imc4"></span>
+                        <span class="imc5"></span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="btn_box">
+                <li class="item1">
+                    <label for="rdo4" class="left_btn"></label>
+                    <label for="rdo2" class="right_btn"></label>
+                </li>
+                <li class="item2">
+                    <label for="rdo1" class="left_btn"></label>
+                    <label for="rdo3" class="right_btn"></label>
+                </li>
+                <li class="item3">
+                    <label for="rdo2" class="left_btn"></label>
+                    <label for="rdo4" class="right_btn"></label>
+                </li>
+                <li class="item4">
+                    <label for="rdo3" class="left_btn"></label>
+                    <label for="rdo1" class="right_btn"></label>
+                </li>
+            </ul>
+        </figure>
+    </div>
+    <hr>
+    <div class="slider">
+        <figure id="vs2">
+            <input type="radio" name="rad2" class="rdo" id="rd1" checked>
+            <input type="radio" name="rad2" class="rdo" id="rd2">
+            <input type="radio" name="rad2" class="rdo" id="rd3">
+            <input type="radio" name="rad2" class="rdo" id="rd4">
+            <ul class="img_box">
+                <li class="item1">
+                    <a href="">
+                        <span class="imc1"></span>
+                        <span class="imc2"></span>
+                        <span class="imc3"></span>
+                        <span class="imc4"></span>
+                        <span class="imc5"></span>
+                    </a>
+                </li>
+                <li class="item2">
+                    <a href="">                        
+                        <span class="imc1"></span>
+                        <span class="imc2"></span>
+                        <span class="imc3"></span>
+                        <span class="imc4"></span>
+                        <span class="imc5"></span>
+                    </a>
+                </li>
+                <li class="item3">
+                    <a href="">
+                        <span class="imc1"></span>
+                        <span class="imc2"></span>
+                        <span class="imc3"></span>
+                        <span class="imc4"></span>
+                        <span class="imc5"></span>
+                    </a>
+                </li>
+                <li class="item4">
+                    <a href="">                        
+                        <span class="imc1"></span>
+                        <span class="imc2"></span>
+                        <span class="imc3"></span>
+                        <span class="imc4"></span>
+                        <span class="imc5"></span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="btn_box">
+                <li class="item1">
+                    <label for="rd4" class="left_btn"></label>
+                    <label for="rd2" class="right_btn"></label>
+                </li>
+                <li class="item2">
+                    <label for="rd1" class="left_btn"></label>
+                    <label for="rd3" class="right_btn"></label>
+                </li>
+                <li class="item3">
+                    <label for="rd2" class="left_btn"></label>
+                    <label for="rd4" class="right_btn"></label>
+                </li>
+                <li class="item4">
+                    <label for="rd3" class="left_btn"></label>
+                    <label for="rd1" class="right_btn"></label>
+                </li>
+            </ul>
+            <ul class="btn_box2">
+                <li class="item1"><label for="rd1"></label></li>
+                <li class="item2"><label for="rd2"></label></li>
+                <li class="item3"><label for="rd3"></label></li>
+                <li class="item4"><label for="rd4"></label></li>
+            </ul>
+        </figure>
+    </div>
+</body>
+</html>

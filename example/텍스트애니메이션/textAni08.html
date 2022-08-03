@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>텍스트 애니메이션8</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+html, body {
+  height: 100%;
+  background-color: #00adff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  position: relative;
+}
+
+.txt1 { font-size:46px; text-align:center; color:#fff; 
+        position:absolute; top:15px; width:800px; margin: 0; padding: 0; 
+        left:-257px; font-weight:900; letter-spacing:0.1em; }
+.loader-wrapper {  position: absolute;  left: 212px;
+  height: 36px;  width: 13px;  top:30px;  background-color: #00adff; }
+.loader { position: relative;  display: block;  height: 33px;
+  width: 10px;  border: 1px solid #fff;  overflow: hidden;
+  transform-origin: center center;  backface-visibility: hidden;
+  animation: rotate 1.75s ease-in-out infinite; }
+.loader:before { content: "";  display: block;  position: absolute;
+  top: 0;  left: 0;  width: 100%;  height: 100%;
+  background-color: #fff;  backface-visibility: hidden;
+  animation: fill 1.75s ease-in-out infinite; 
+}
+@keyframes rotate {
+  0% {  transform: rotate(-360deg);  }
+  50% {  transform: rotate(-360deg);  }
+  54% {  transform: rotate(-370deg);  }
+  80% {  transform: rotate(10deg); }
+  88% {  transform: rotate(-2deg); }
+  90% {  transform: rotate(2deg);  }
+  95% {  transform: rotate(0deg);  }
+}
+@keyframes fill {
+  0% { transform: translate3d(0, 100%, 0);  }
+  30% { transform: translate3d(0, 10%, 0);  }
+  40% { transform: translate3d(0, 5%, 0);  }
+  45% { transform: translate3d(0, 0, 0);  }
+  55% { transform: translate3d(0, 0, 0);  }
+  70% { transform: translate3d(0, 100%, 0); }
+  100% { transform: translate3d(0, 100%, 0); }
+}
+    </style>
+    
+</head>
+<body>
+<div class="container">
+	<div class="loader-wrapper">
+		<div class="loader"></div>
+	</div>
+	<h1 class="txt1">WONDER NO</h1>
+</div>
+
+</body>
+</html>

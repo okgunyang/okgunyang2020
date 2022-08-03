@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>텍스트 애니메이션10</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+html {
+  background: #1d1f20;
+  margin: 0 4rem;
+}
+.header {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 6rem;
+  font-weight: 100;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #f35626;
+  padding:150px;
+  background-image: linear-gradient(135deg, #f35626, #ffab3a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: hue 10s infinite linear;
+}
+
+@keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(360deg);
+  }
+}
+    </style>
+</head>
+<body>
+    <h1 class="header">Website CSS Gradient Text Animation Effect</h1>
+</body>
+</html>

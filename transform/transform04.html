@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform 03 - 2D Transform Rotation example</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; min-height: 100%; }
+    ul { list-style: none; }
+    a { text-decoration: none; }
+    button, input { outline:0; border:0; background: none; }
+    .wrap { clear:both; width: 100%; min-height: 100vh; }
+    .tit { text-align: center; line-height: 1.6; padding-top: 1em; padding-bottom: 1em; }
+    .wrap:after, .box:after { content:""; display:block; clear: both ;}
+    .box { width: 200px; height: 200px; position:relative; margin: 400px auto;
+/*
+     1) 3차원 transform
+        이동 : translate3d(px단위, px단위, px단위), translateZ(px단위)
+        확대/축소 : scaleZ(배수)
+        기울이기 : skewZ(deg단위)
+        회전 : rotateX(deg단위), rotateY(deg단위), rotateZ(deg단위)  
+
+        2) 3차원 형태 유지 속성
+        transform-style:flat | preserve-3d
+            flat : 2차원 형태인 면으로 애니메이션시 구성요소가 각자 면별로 적용
+            preserve-3d : 3차원 형태인 도형으로 애니메이션시 구성요소가 3차원 형태를 유지하며 적용
+        
+        3) 원근감 적용
+        perspective:px단위숫자;  
+*/
+     transform-style:preserve-3d; animation:ani1 2s ease-in 0s infinite; 
+     perspective:400px; }
+    .box li { width: 200px; height: 200px; position:absolute; top: 0; left: 0; 
+    outline:1px solid #fff; background-color: #fff; opacity:0.6; }
+    .box li a { display: block; width: 200px; height: 200px; overflow:hidden; }
+    .box li a img { display:block; width: 200px; height:auto; }
+    .box li.item1 { transform:rotateY(0deg) translateZ(100px); }
+    .box li.item2 { transform:rotateY(90deg) translateZ(100px); }
+    .box li.item3 { transform:rotateY(180deg) translateZ(100px); }
+    .box li.item4 { transform:rotateY(270deg) translateZ(100px); }
+    .box li.item5 { transform:rotateX(90deg) translateZ(100px); }
+    .box li.item6 { transform:rotateX(270deg) translateZ(100px); }
+    @keyframes ani1 {
+        0% { transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+        100% { transform:rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+    }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul class="box">
+            <li class="item1"><a href=""><img src="./image/ive/anyujin.jpg" alt="유진"></a></li>
+            <li class="item2"><a href=""><img src="./image/ive/gaeul.jpg" alt="가을"></a></li>
+            <li class="item3"><a href=""><img src="./image/ive/jangwonyoung.jpg" alt="원영"></a></li>
+            <li class="item4"><a href=""><img src="./image/ive/leeseo.jpg" alt="이서"></a></li>
+            <li class="item5"><a href=""><img src="./image/ive/liz.jpg" alt="리즈"></a></li>
+            <li class="item6"><a href=""><img src="./image/ive/rei.jpg" alt="레이"></a></li>
+        </ul>
+    </div>
+</body>
+</html>

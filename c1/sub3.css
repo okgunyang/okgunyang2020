@@ -1,0 +1,84 @@
+/* sub3.css - ward.html을 위한 스타일 */
+@charset "utf-8";
+#content { background: #f1f1f1;}
+.page { background:#f1f1f1; padding-top: 142px; margin-top: -142px; }
+.btn1 { width: 298px; }
+.btn1.item2 { left:calc(calc(100% - 1200px) / 2 + 300px);}
+.btn1.item3 { left:calc(calc(100% - 1200px) / 2 + 600px);}
+.btn1.item4 { left:calc(calc(100% - 1200px) / 2 + 900px);}
+
+/* #page1 */
+.vsBox { width:100%; min-height:690px; background-image:url("./img/ward_info_bg1.jpg"); background-repeat: no-repeat; background-position: center center; background-size:auto 100%; }
+.row { clear: both; width: 1200px; margin: 0 auto; }
+.vsImg { box-sizing:border-box; text-align:left; }
+.vsImg img { display:block; width:80%; padding-top: 80px; }
+.vsTitBox { padding:50px; box-sizing: border-box; 
+text-align:left; padding-left: 0; }
+.vsTitle { padding-top:70px; line-height:2.4; 
+background-image:url("./img/ward_logo.png"); background-repeat: no-repeat; background-position:left 50px;
+font-size:48px; font-weight:400; }
+.gtxt { color:#28b690; }
+.vsComent { padding-top: 28px; color:#444; }
+.sec1, .sec2 { width: 100%; clear: both; min-height:500px; padding:40px 0px; }
+.subBox { width: 1200px; margin:0 auto; color:#666; padding-bottom:50px; height:auto;  }
+.picLst { clear:both; }
+.picLst li { min-height:420px; }
+.picLst img { display:block; width: 90%;  height:auto; }
+.subTit { line-height:2; padding-top: 50px; padding-left:15px;  font-weight: 400; padding-bottom: 30px;  }
+.subTit:before { content:""; display:block; width: 3px; height: 30px; background:#28b690; float:left; margin-left:-15px;
+margin-top: 10px; clear:both; }
+.picTit { clear:both; line-height: 2; padding-left:30px;position:relative; margin-top: 25px; }
+.picNum { background-color:#28b690; color:#fff;  border-radius:13px; display:inline-block; width: 24px; height: 24px; text-align: center; line-height: 24px; font-size:12px; position:absolute; top:6px; left: 0; }
+.subCom { line-height:1.6; font-size:14px; padding-right:40px; padding-top: 25px; }
+
+/* #page2 */
+#page2 .subBox { border-top:2px solid #999; }
+.subTable3 { width:1200px; display:table; }
+.subTable3 th, .subTable3 td { display:table-cell; } 
+.subTable3 tr { display:table-row; }
+.subTable3 th { background:#28b690; color:#fff; line-height: 4; font-size:14px; font-weight:500; }
+.subTable3 tbody tr:nth-child(2n) { background:#fff; }
+.subTable3 tbody tr:nth-child(2n+1) { background:#f1f1f1; }
+.subTable3 tbody tr td { font-size:14px;  padding:15px 0px;   }
+.subTable3 tbody tr td:first-child { text-align:center; line-height: 3; }
+.subTable3 tbody tr td:last-child, .subTable3 thead tr th:last-child {  background-image:url("./img/tbborder.png");
+background-position:left; background-repeat: repeat-y; }
+.tbCon { line-height: 2.4; margin-left: 60px; position:relative; padding-left: 32px;   }
+.tbNum { display:block; width: 24px; height: 24px; border-radius:14px; background:#999; line-height: 24px; text-align: center; color:#fff; position:absolute; top:6px; left:0px;  }
+.subTable3 tbody tr:last-child td:last-child { padding-bottom:70px; }
+
+/* #page3 */
+#page3 .subBox { border-top:2px solid #999; }
+#page3 .subTable3 { border:1px solid #ddd; }
+#page3 .subTable3 tr { border-bottom:1px solid #ccc; }
+.subTable3 tbody tr.bg2 { background:#fff;  }
+.subTable3 tbody tr.bg1 { background:#f1f1f1; }
+#page3 .subTable3 tbody tr td { height:29px; }
+#page3 .subTable3 tbody tr td:last-child, #page3 .subTable3 thead tr th:last-child {  background-image:url("./img/tbborder4.png");
+background-position:left; background-repeat: repeat-y; }
+#page3 .subTable3 tbody tr td:nth-child(2), #page3 .subTable3 thead tr th:nth-child(2) {  background-image:url("./img/tbborder4.png");
+background-position:left; background-repeat: repeat-y; }
+#page3 .subTable3 tbody tr td p {  
+padding-left: 60px; }
+#page3 .subTable3.item2 { border:0px;  }
+#page3 .subTable3.item2 tr { border:0px; }
+#page3 .subTable3.item2 tr td { border:0; }
+#page3 .subTable3.item2 tbody tr td:nth-child(2) { text-align: center; }
+#page3 .subTable3.item2 tbody tr td:nth-child(2), #page3 .subTable3.item2 tbody tr td:nth-child(3) { border-bottom:1px solid #ccc; }
+
+
+/* #page4 */
+.qnaBox { border-top:2px solid #666; min-height:600px;
+overflow-y:visible; }
+.qnaBtn { display:block; padding-left:100px; color:#333; line-height: 70px; font-size:16px; border-bottom:2px solid #ccc; cursor:pointer; background-color:#eee; background-image:url("./img/qna1.png"); background-repeat: no-repeat; 
+background-position:30px center; }
+.qnaBtn:after { content:"∨"; display:block; float:right; padding-right: 10px; }
+.qnaTxt { height:0px; background:#fff; overflow-y:hidden; transition:0.4s; padding-left: 100px;
+padding-bottom:0px; }
+.qnaBox input[type=radio] { display:none; }
+.qnaBox input[type=radio]:checked ~ .qnaBtn { border-bottom:2px dotted #ccc; background-color:#fff; color:#28b690; }
+.qnaBox input[type=radio]:checked ~ .qnaBtn:after { content:"∧"; }
+.qnaBox input[type=radio]:checked ~ .qnaTxt { height:auto; min-height:60px; padding-bottom:30px; padding-top: 20px; }
+
+#lastPage { margin-top:40px; }
+

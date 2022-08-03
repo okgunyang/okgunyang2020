@@ -1,0 +1,11 @@
+@charset "utf-8";
+*, *:before, *:after { font-family: 'Roboto','Noto Sans KR','Malgun Gothic','AppleSDGothicNeo',sans-serif; margin: 0; padding: 0; }
+body, html { width: 100%; -ms-scroll-style:none; }
+::-webkit-scrollbar { display:none; }
+ul { list-style: none; }
+a { text-decoration: none; }
+label, input, button { outline:0; border:0; background-color:transparent; }
+table { display:table; }
+thead { display:table-header-group; }
+tr { display:table-row; }
+td, th { display:table-cell; }

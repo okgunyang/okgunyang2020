@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>배너01</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
+        html {
+            width: 100%;
+            font-family: 'Noto Sans KR', sans-serif;
+            overflow-x: hidden;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        button,
+        input {
+            border: 0;
+            outline: 0;
+            background: none;
+        }
+
+        h2,
+        h3,
+        p {
+            line-height: 1.6;
+        }
+
+        .wrap {
+            clear: both;
+            width: 100%;
+            position: relative;
+            margin-top: 100px;
+            overflow: hidden;
+        }
+
+        .tit {
+            line-height: 3;
+            text-align: center;
+            text-transform: capitalize;
+        }
+
+        .tit_url {
+            line-height: 1.6;
+            padding-bottom: 30px;
+            text-align: center;
+        }
+
+        .vs {
+            clear: both;
+        }
+
+        .more {
+            display: inline-block;
+            font-size: 20px;
+            padding: 12px 16px;
+            border-radius: 40px;
+            border: 3px solid #fff;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            right: 80px;
+            bottom: 80px;
+        }
+
+        .tit_box {
+            position: absolute;
+            color: #fff;
+            text-shadow: 1px 1px 2px #333;
+            padding-left: 80px;
+            padding-top: 40px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js" class="script_bxslider1"></script>
+
+
+    <link rel="stylesheet" href="./bx/jquery.bxslider.css" class="style_bxslider1">
+    <style class="style_bxslider2">
+        #vs1 {
+            width: 1280px;
+            height: 480px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        #vs1 .bxslider {
+            position: relative;
+        }
+
+        .bx-wrapper .bx-controls-direction a.bx-prev {
+            position: absolute;
+            left: 40px;
+            bottom: 45%;
+            top: auto;
+            right: auto;
+        }
+
+        .bx-wrapper .bx-controls-direction a.bx-next {
+            position: absolute;
+            right: 40px;
+            bottom: 45%;
+            top: auto;
+            left: auto;
+        }
+
+        .bx-wrapper .bx-controls-auto a.bx-start {
+            position: absolute;
+            bottom: 120px;
+            left: auto;
+            top: auto;
+            right: 570px;
+            display: none;
+        }
+
+        .bx-wrapper .bx-controls-auto a.bx-stop {
+            position: absolute;
+            bottom: 120px;
+            left: auto;
+            top: auto;
+            right: 570px;
+            display: none;
+        }
+
+        .bx-wrapper .bx-controls-auto a.bx-start.active,
+        .bx-wrapper .bx-controls-auto a.bx-stop.active {
+            display: block;
+        }
+
+        .bx-wrapper .bx-pager.bx-default-pager .bx-pager-item a.bx-pager-link {
+            position: absolute;
+            bottom: 120px;
+            left: auto;
+            top: auto;
+            right: 400px;
+        }
+
+        .bx-wrapper .bx-pager.bx-default-pager .bx-pager-item:nth-child(2) a.bx-pager-link {
+            right: 380px;
+        }
+
+        .bx-wrapper .bx-pager.bx-default-pager .bx-pager-item:nth-child(3) a.bx-pager-link {
+            right: 360px;
+        }
+
+        .bx-wrapper .bx-pager.bx-default-pager .bx-pager-item:nth-child(4) a.bx-pager-link {
+            right: 340px;
+        }
+    </style>
+
+
+    <link rel="stylesheet" href="./owl/owl.carousel.css">
+    <style>
+        .owl-prev,
+        .owl-next {
+            position: absolute;
+            bottom: 50%;
+            text-indent: -9999px;
+        }
+
+        .owl-prev {
+            left: 40px;
+        }
+
+        .owl-next {
+            right: 40px;
+        }
+
+        .owl-prev:before,
+        .owl-prev:after,
+        .owl-next:before,
+        .owl-next:after {
+            content: "";
+            display: block;
+            width: 4px;
+            height: 24px;
+            background: #fff;
+            position: absolute;
+        }
+
+        .owl-prev:before {
+            transform: rotate(45deg);
+        }
+
+        .owl-prev:after {
+            transform: rotate(135deg);
+            margin-top: -10px;
+        }
+
+        .owl-next:before {
+            transform: rotate(135deg);
+        }
+
+        .owl-next:after {
+            transform: rotate(45deg);
+            margin-top: -10px;
+        }
+
+        .owl-dots {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            margin-left: -48px;
+        }
+
+        .owl-dots .owl-dot {
+            float: left;
+        }
+
+        .owl-dots .owl-dot span {
+            width: 10px;
+            height: 10px;
+            margin: 5px 7px;
+            background: #D6D6D6;
+            display: block;
+            -webkit-backface-visibility: visible;
+            transition: opacity .2s ease;
+            border-radius: 30px;
+        }
+
+        .owl-dots .owl-dot.active span,
+        .owl-dots .owl-dot:hover span {
+            background: #869791;
+        }
+    </style>
+
+    <link rel="stylesheet" href="./slick/slick.css">
+    <style>
+        #vs3 {
+            width: 1280px;
+            height: 480px;
+            overflow: hidden;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #vs3 li {
+            position: relative;
+        }
+
+        .slick-prev,
+        .slick-next {
+            position: absolute;
+            bottom: 60%;
+            text-indent: -9999px;
+            left: auto;
+            right: auto;
+            z-index: 80;
+        }
+
+        .slick-prev {
+            left: 40px;
+        }
+
+        .slick-next {
+            right: 40px;
+        }
+
+        .slick-prev:before,
+        .slick-prev:after,
+        .slick-next:before,
+        .slick-next:after {
+            content: "";
+            display: block;
+            width: 4px;
+            height: 24px;
+            background: #fff;
+            position: absolute;
+        }
+
+        .slick-prev:before {
+            transform: rotate(45deg);
+        }
+
+        .slick-prev:after {
+            transform: rotate(135deg);
+            margin-top: 0px;
+        }
+
+        .slick-next:before {
+            transform: rotate(135deg);
+        }
+
+        .slick-next:after {
+            transform: rotate(45deg);
+            margin-top: 0px;
+        }
+
+        .slick-dots {
+            position: absolute;
+            z-index: 90;
+            left: 50%;
+            bottom: 80px;
+            width: 80px;
+            margin-left: -40px;
+        }
+
+        .slick-dots li {
+            float: left;
+            width: 20px;
+        }
+
+        .slick-dots li button {
+            display: block;
+            text-indent: -9999px;
+            width: 12px;
+            height: 12px;
+            border: 3px solid transparent;
+            border-radius: 16px;
+            background: #fff;
+        }
+
+        .slick-dots li.slick-active button {
+            background-color: deeppink;
+        }
+    </style>
+
+
+    <link rel="stylesheet" href="./swiper/swiper-bundle.min.css">
+    <style>
+        #vs4 img {
+            display: block;
+            width: 100vw;
+            height: auto;
+        }
+    </style>
+
+    <link rel="stylesheet" href="./wow/styler.css">
+    <style>
+        body,
+        html {
+            overflow: auto;
+            overflow-x: hidden;
+        }
+
+        .ws_images li img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap bx-wrapper">
+        <h2 class="tit">bx slider</h2>
+        <h3 class="tit_url">https://bxslider.com/</h3>
+        <figure class="bx-viewport visual1" id="vs1">
+            <ul class="bxslider">
+                <li class="item">
+                    <div class="tit_box">
+                        <h2>첫 번째 이미지</h2>
+                    </div>
+                    <img src="slider01.jpg" title="이미지1" alt="이미지1">
+                    <a href="" class="more">MORE</a>
+                </li>
+                <li class="item">
+                    <div class="tit_box">
+                        <h2>두 번째 이미지</h2>
+                    </div>
+                    <img src="slider02.jpg" title="이미지2" alt="이미지1">
+                    <a href="" class="more">MORE</a>
+                </li>
+                <li class="item">
+                    <div class="tit_box">
+                        <h2>세 번째 이미지</h2>
+                    </div>
+                    <img src="slider03.jpg" title="이미지3" alt="이미지1">
+                    <a href="" class="more">MORE</a>
+                </li>
+                <li class="item">
+                    <div class="tit_box">
+                        <h2>네 번째 이미지</h2>
+                    </div>
+                    <img src="slider04.jpg" title="이미지4" alt="이미지1">
+                    <a href="" class="more">MORE</a>
+                </li>
+            </ul>
+        </figure>
+        <script src="./bx/jquery.bxslider.js"></script>
+        <script class="script_bxslider">
+            $(document).ready(function() {
+                $('.bxslider').bxSlider({
+                    auto: true, //자동 슬라이딩
+                    speed: 500, //슬라이딩 시간
+                    pause: 4000, //슬라이딩 주기
+                    mode: 'horizontal', //슬라이딩 효과(fade, horizontal, vertical)
+                    autoControls: true, //시작/중지 버튼 활성화/비활성화
+                    pager: true, //페이지 바로가기 버튼
+                    captions: true, //이미지의 캡션 보이기(img 요소에 title 속성이 있어야 함)
+                });
+            });
+        </script>
+<!--
+        <span class="style_box" style="display:block; margin:50px auto; width:80%;">
+            <pre class="code_data1" style="border:1px solid #333;  padding:14px ">
+                <code style="white-space:pre-wrap;">
+
+                </code>
+            </pre>
+        </span>
+-->
+    </div>
+
+
+    <div class="wrap owl">
+        <h2 class="tit">owl carousel slider</h2>
+        <h3 class="tit_url">https://owlcarousel2.github.io/OwlCarousel2/</h3>
+        <div class="visual2" id="vs2">
+            <ul class="owl-carousel">
+                <li class="item">
+                    <div class="tit_box">
+                        <h2>첫 번째 이미지</h2>
+                    </div>
+                    <img src="slider01.jpg" title="이미지1" alt="이미지1">
+                    <a href="" class="more">MORE</a>
+                </li>
+                <li class="item">
+                    <div class="tit_box">
+                        <h2>두 번째 이미지</h2>
+                    </div>
+                    <img src="slider02.jpg" title="이미지2" alt="이미지1">
+                    <a href="" class="more">MORE</a>
+                </li>
+                <li class="item">
+                    <div class="tit_box">
+                        <h2>세 번째 이미지</h2>
+                    </div>
+                    <img src="slider03.jpg" title="이미지3" alt="이미지1">
+                    <a href="" class="more">MORE</a>
+                </li>
+                <li class="item">
+                    <div class="tit_box">
+                        <h2>네 번째 이미지</h2>
+                    </div>
+                    <img src="slider02.jpg" title="이미지4" alt="이미지1">
+                    <a href="" class="more">MORE</a>
+                </li>
+            </ul>
+        </div>
+        <script src="./owl/owl.carousel.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('.owl-carousel').owlCarousel({
+                    autoplay: true, //자동 실행
+                    loop: true, //순환 구조
+                    margin: 0, //아이템간 여백
+                    nav: true, //제어바 추가
+                    mouseDrag: true, //마우스 드래그 허용
+                    dots: true, //번호별 버튼 추가
+                });
+            });
+        </script>
+    </div>
+
+
+    <div class="wrap slick">
+        <h2 class="tit">slick slider</h2>
+        <h3 class="tit_url">https://kenwheeler.github.io/slick/</h3>
+        <div class="visual3" id="vs3">
+            <div class="slider single-item">
+                <div class="item">
+                    <div class="tit_box">
+                        <h2>첫 번째 이미지</h2>
+                    </div>
+                    <img src="slider01.jpg" title="이미지1" alt="이미지1">
+                    <a href="" class="more">MORE</a>
+                </div>
+                <div class="item">
+                    <div class="tit_box">
+                        <h2>두 번째 이미지</h2>
+                    </div>
+                    <img src="slider02.jpg" title="이미지2" alt="이미지1">
+                    <a href="" class="more">MORE</a>
+                </div>
+                <div class="item">
+                    <div class="tit_box">
+                        <h2>세 번째 이미지</h2>
+                    </div>
+                    <img src="slider03.jpg" title="이미지3" alt="이미지1">
+                    <a href="" class="more">MORE</a>
+                </div>
+                <div class="item">
+                    <div class="tit_box">
+                        <h2>네 번째 이미지</h2>
+                    </div>
+                    <img src="slider04.jpg" title="이미지4" alt="이미지1">
+                    <a href="" class="more">MORE</a>
+                </div>
+            </div>
+        </div>
+        <script src="./slick/slick.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('.single-item').slick({
+                    dots: true,
+                    arrows: true,
+                    infinite: true,
+                    speed: 300,
+                    autoplay: true,
+                    autoplaySpeed: 3500,
+                });
+            });
+        </script>
+    </div>
+
+
+    <div class="wrap swiper">
+        <h2 class="tit">swiper slider</h2>
+        <h3 class="tit_url">https://swiperjs.com/</h3>
+        <figure class="swiper-container" id="vs4">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" data-swiper-autoplay="4000">
+                    <div class="tit_box">
+                        <h2>첫 번째 이미지</h2>
+                    </div>
+                    <img src="slider01.jpg" title="이미지1" alt="이미지1">
+                    <a href="" class="more">MORE</a>
+                </div>
+                <div class="swiper-slide" data-swiper-autoplay="4000">
+                    <div class="tit_box">
+                        <h2>두 번째 이미지</h2>
+                    </div>
+                    <img src="slider02.jpg" title="이미지2" alt="이미지1">
+                    <a href="" class="more">MORE</a>
+                </div>
+                <div class="swiper-slide" data-swiper-autoplay="4000">
+                    <div class="tit_box">
+                        <h2>세 번째 이미지</h2>
+                    </div>
+                    <img src="slider03.jpg" title="이미지3" alt="이미지1">
+                    <a href="" class="more">MORE</a>
+                </div>
+                <div class="swiper-slide" data-swiper-autoplay="4000">
+                    <div class="tit_box">
+                        <h2>네 번째 이미지</h2>
+                    </div>
+                    <img src="slider04.jpg" title="이미지4" alt="이미지1">
+                    <a href="" class="more">MORE</a>
+                </div>
+            </div>
+            <div class="swiper-pagination">
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </figure>
+        <script src="./swiper/swiper-bundle.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                var mySwiper = new Swiper('.swiper-container', {
+                    speed: 800,
+                    autoplay: {
+                        delay: 4000,
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        type: 'bullets',
+                    },
+                    controller: {
+                        inverse: true,
+                    },
+                });
+            });
+        </script>
+    </div>
+
+
+    <div class="wrap wow">
+        <h2 class="tit">wow slider</h2>
+        <h3 class="tit_url">https://wowslider.com/</h3>
+        <figure class="visual5" id="wowslider-container">
+            <div class="ws_images">
+                <ul>
+                    <li class="item">
+                        <img src="slider01.jpg" title="이미지1" alt="이미지1">
+                    </li>
+                    <li class="item">
+                        <img src="slider02.jpg" title="이미지2" alt="이미지1">
+                    </li>
+                    <li class="item">
+                        <img src="slider03.jpg" title="이미지3" alt="이미지1">
+                    </li>
+                    <li class="item">
+                        <img src="slider04.jpg" title="이미지4" alt="이미지1">
+                    </li>
+                </ul>
+            </div>
+            <div class="ws_bullets">
+                <div>
+                    <a href="javascript:;" title="River"><span><img src="https://placehold.it/150x90/333/fff" alt="River">content slider jquery</span></a>
+                    <a href="javascript:;" title="Forest"><span><img src="https://placehold.it/150x90/05a4a6/fff" alt="Forest">jquery responsive content slider </span></a>
+                    <a href="javascript:;" title="Wild"><span><img src="https://placehold.it/150x90/174697/fff" alt="Wild">jquery slider with content </span></a>
+                    <a href="javascript:;" title="Wild"><span><img src="https://placehold.it/150x90/05a4a6/fff" alt="Wild">jquery slider with content </span></a>
+                </div>
+            </div>
+            <button class="ws_prev"></button>
+            <button class="ws_next"></button>
+            <a href="#" class="ws_frame"></a>
+            <div class="ws_shadow"></div>
+        </figure>
+        <script src="./wow/wowslider2.js"></script>
+        <script>
+            $(document).ready(function() {
+                jQuery("#wowslider-container").wowSlider({
+                    effect: "rotate",
+                    prev: "",
+                    next: "",
+                    duration: 20 * 100,
+                    delay: 20 * 100,
+                    width: 533,
+                    height: 360,
+                    autoPlay: true,
+                    autoPlayVideo: false,
+                    playPause: true,
+                    stopOnHover: false,
+                    loop: true,
+                    bullets: 1,
+                    caption: true,
+                    captionEffect: "parallax",
+                    controls: true,
+                    controlsThumb: false,
+                    responsive: 1,
+                    fullScreen: false,
+                    gestures: 2,
+                    onBeforeStep: 0,
+                    images: 0
+                });
+            });
+        </script>
+    </div>
+    <div class="wrap"></div>
+</body></html>

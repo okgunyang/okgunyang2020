@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>텍스트 애니메이션11-25</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.stripe {
+  color: #ccc;
+  line-height: 1;
+  position: relative;
+  display: block;
+  white-space: nowrap;
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 48px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.stripe:after {
+  content: 'This is some link';
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: 1;
+  display: block;
+  color: #4badd8;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: 1s ease-out width;
+}
+.stripe:hover:after {
+  width: 100%;
+}
+    </style>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+
+</script>
+</head>
+<body>
+<span class="stripe">
+This is some link
+</span>
+</body>
+</html>

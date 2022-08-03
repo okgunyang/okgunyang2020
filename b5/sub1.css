@@ -1,0 +1,6 @@
+@charset "utf-8";
+.page { width: 100vw; min-height:100vh; clear:both; position:relative; background-repeat: no-repeat; background-size:cover; 
+background-position:center center; }
+.page:after { content:""; display:table; clear:both; }
+.page_wrap { margin-top:100px;  height:calc(100vh - 100px); }
+.page_inner {  width: 1200px; margin:0 auto; text-align:center; }

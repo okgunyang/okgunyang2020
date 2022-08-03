@@ -1,0 +1,1009 @@
+/*------------------------------------------------------------------------------
+Содержание:
+- Общие элементы
+- Хедер
+- Главная страница
+- Поиск гостиницы
+- Футер
+------------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------------------
+Макет   :   Sedona
+Верстка :   Вакуленко Антон
+Email   :   vakulenko.anton@gmail.com
+Дата    :   2014-10-05
+------------------------------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------------------------------
+                               Общие элементы
+------------------------------------------------------------------------------*/
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 14px;
+  font-family: "PT Sans", sans-serif;
+  background: #f2f2f2;
+}
+.layout-center-wrapper {
+  margin: 0 auto;
+  min-width: 768px;
+  max-width: 1200px;
+  background: white;
+  box-shadow: 0 0 20px -5px #000101;
+}
+.section-title {
+  margin: 0;
+  margin-top: 17px;
+  font-size: 21px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 26px;
+}
+.reason-number {
+  margin-top: 11px;
+}
+.section-text {
+  margin-top: 23px;
+  padding: 0 46px;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 21px;
+}
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------
+                               Хедер
+------------------------------------------------------------------------------*/
+.header {
+  height: 56px;
+  margin: 0 auto;
+}
+
+/* Меню */
+.top-menu {
+  padding: 0;
+  margin: 0;
+}
+.top-menu:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.top-menu li {
+  margin: 0;
+  padding: 0;
+  width: 20%;
+  min-width: 100px;
+  float: left;
+  list-style: none;
+  text-align: center;
+}
+.top-menu a {
+  display: block;
+  padding: 18px 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000;
+}
+.top-menu .top-menu-logo a {
+  padding: 0;
+}
+.top-menu a:hover {
+  color: #81b3d2;
+}
+.top-menu a:active {
+  color: #cacaca;
+}
+.top-menu a.current {
+  color: #766357;
+}
+.top-menu a.current:hover {
+  color: #604e43;
+}
+.top-menu a.current:active {
+  color: #dbd8d5;
+}
+
+
+
+
+
+/*------------------------------------------------------------------------------
+                            Главная страница
+------------------------------------------------------------------------------*/
+/* Крупное фото и надписи */
+.welcome {
+  height: 433px; /*393*/
+  text-align: center;
+  padding-top: 75px;
+  /*padding-bottom: 40px;*/
+
+  /* Не могу придумать, как сделать ширину фона резиновой*/
+  background: url('../img/bg-mountains.jpg') no-repeat 50% 30%;
+  background-size: 110% auto;
+}
+.welcome-triangles {
+  height: 433px;
+  background:
+    url('../img/triangle-left.png') no-repeat -1% 100%,
+    url('../img/triangle-left-mid.png') no-repeat 29% 100%,
+    url('../img/triangle-right-mid.png') no-repeat 71% 100%,
+    url('../img/triangle-right.png') no-repeat 101% 100%;
+}
+/* Скрываем текст, оставляем картинки */
+.welcome p,
+.welcome h1 {
+  text-indent: -5000px;
+}
+.welcome-text {
+  height: 45px;
+  margin: 0 auto;
+  background: url('../img/text-welcome.png') no-repeat 50% 0;
+}
+.welcome-gorgeous {
+  height: 30px;
+  margin: 0 auto;
+  margin-top: 11px;
+  background: url('../img/text-gorgeous.png') no-repeat 50% 0;
+}
+.welcome-sedona {
+  height: 78px;
+  margin: 0 auto;
+  margin-top: 53px;
+  background: url('../img/text-sedona.png') no-repeat 50% 0;
+}
+.welcome-canyon {
+  height: 80px;
+  margin: 0 auto;
+  margin-top: 56px;
+  background: url('../img/text-canyon.png') no-repeat 50% 0;
+}
+
+
+
+
+/* Вступление */
+.intro {
+  width: 592px;
+  height: 115px;
+  margin: 0 auto;
+  margin-top: 60px;
+  margin-bottom: 41px;
+  text-align: center;
+}
+.intro-title {
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+
+
+
+/* Причина 1 */
+.index-section-dual-1 .index-col-left {
+  float: left;
+  width: 34%;
+  min-height: 221px;
+  text-align: center;
+  padding-top: 35px;
+  background: #81b3d2;
+  color: white;
+}
+.index-section-dual-1 .index-col-right {
+  float: right;
+  width: 66%;
+  min-height: 256px;
+  /* Тоже не знаю пока как масштабировать фон */
+  /* При увеличении ширины она должна обрезаться сверху и снизу */
+  /* Ширина остается одинаковой */
+  background: url("../img/cafe.jpg") no-repeat 50% 50%;
+  background-size: 100% auto;
+}
+/* Нужна ли здесь распорка? */
+.index-section-dual-1:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+
+
+
+
+/* Рекомендации */
+.index-section-triple-1 {
+  width: 100%;
+  /* Высота секции 330=210+60+60 */
+  height: 210px;
+  padding: 60px 0;
+  text-align: center;
+}
+.index-section-triple-1 .index-left-col {
+  padding-top: 80px;
+  width: 33.3334%;
+  float: left;
+  background: url('../img/icon-house.png') no-repeat 50% 0;
+}
+.index-section-triple-1 .index-mid-col {
+  padding-top: 80px;
+  width: 33.3334%;
+  float: left;
+  background: url('../img/icon-burger.png') no-repeat 50% 0;
+}
+.index-section-triple-1 .index-right-col {
+  padding-top: 80px;
+  width: 33.3334%;
+  float: right;
+  background: url('../img/icon-gift.png') no-repeat 50% 0;
+}
+.index-section-triple-1:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+/* Сделаем абзац уже */
+.index-section-triple-1 p {
+  padding: 0 60px;
+}
+
+
+
+
+/* Причина 2 */
+.index-section-dual-2 .index-col-left {
+  float: left;
+  width: 66%;
+  min-height: 256px;
+  background: url("../img/bridge.jpg") no-repeat 50% 50%;
+  background-size: 100% auto;
+}
+.index-section-dual-2 .index-col-right{
+  float: right;
+  width: 34%;
+  height: 221px;
+  text-align: center;
+  padding-top: 35px;
+  background: #81b3d2;
+  color: white;
+}
+/* Нужна ли здесь распорка? */
+.index-section-dual-2:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.index-section-dual-2 .section-text {
+  /*padding: 0 90px;*/
+  padding: 0 18%;
+  /* Надо будет везде сделать паддинги в процентах */
+}
+
+
+
+
+/* Причины 3-5 */
+.index-section-triple-2 {
+  width: 100%;
+  /* Высота секции 330=210+60+60 */
+  height: 200px;
+  padding: 28px 0;
+  text-align: center;
+  background: #eee;
+}
+.index-section-triple-2 .index-left-col {
+  width: 33.3334%;
+  float: left;
+}
+.index-section-triple-2 .index-mid-col {
+  width: 33.3334%;
+  float: left;
+}
+.index-section-triple-2 .index-right-col {
+  width: 33.3334%;
+  float: right;
+}
+.index-section-triple-2:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.index-section-triple-2 p {
+  padding: 0 60px;
+}
+
+
+
+
+
+
+
+/* Заинтересовались? */
+.outro {
+  text-align: center;
+  margin-top: 55px;
+  padding-bottom: 100px;
+}
+.outro .section-title {
+  font-size: 30px;
+  font-weight: bold;
+}
+.outro .section-text {
+  margin-top: 31px;
+  line-height: 24px;
+}
+
+
+
+/* Поиск отеля на фоне карты */
+.map {
+  width: 100%;
+  height: 593px;
+  background: url("../img/bg-map.jpg") no-repeat 50% 0;
+}
+.map .hotel {
+  position: relative;
+  bottom: 86px;
+  width: 568px;
+  height: 481px;
+  margin: 0 auto;
+  background: white;
+}
+.map .section-title {
+  height: 86px;
+  background: #766357;
+  line-height: 86px;
+  color: white;
+  text-align: center;
+}
+.find-hotel {
+  padding: 53px 55px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 5px 20px -5px #000101;
+}
+.find-hotel input[type="text"],
+.find-hotel input[type="submit"] {
+  border: none;
+  background-color: #f2f2f2;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'PT Sans', sans-serif;
+}
+.find-hotel input[type="text"]:hover {
+  background-color: #ebebeb;
+}
+.find-hotel input[type="text"]:focus {
+  background-color: white;
+  outline-color: #e5e5e5;
+}
+
+.find-hotel .check-in-field {
+  padding: 10px 12px;
+  padding-right: 40px;
+  width: 293px;
+  margin-left: 18px;
+}
+.find-hotel .check-out-field {
+  padding: 10px 12px;
+  width: 321px;
+  margin-left: 15px;
+  margin-top: 27px;
+}
+
+/* Иконка календаря */
+.find-hotel label {
+  position: relative;
+}
+.find-hotel .calendar {
+  display: block;
+  position: absolute;
+  top: -10px;
+  right: -2px;
+  width: 38px;
+  height: 38px;
+  background: url('../img/sprite-calendar.png') no-repeat 0 1px;
+}
+.find-hotel .calendar:hover {
+  background-position: 0 -38px;
+}
+.find-hotel .calendar:active {
+  background-position: 0 -76px;
+}
+
+.find-hotel .adults-field {
+  padding: 10px 38px;
+  padding-left: 53px;
+  margin-left: 37px;
+  margin-top: 28px;
+  margin-right: 50px;
+  width: 23px;
+}
+.find-hotel .children-field {
+  padding: 10px 38px;
+  padding-left: 53px;
+  margin-left: 22px;
+  margin-top: 28px;
+  width: 23px;
+}
+
+/* Плюс и минус */
+.find-hotel .plus,
+.find-hotel .minus {
+  display: block;
+  position: absolute;
+  width: 38px;
+  height: 38px;
+}
+.find-hotel .minus-ad {
+  top: -9px;
+  right: 129px;
+  background: url('../img/sprite-plus-minus.png') no-repeat 0 0;
+}
+.find-hotel .minus-ad:hover {
+  background-position: 0 -39px;
+}
+.find-hotel .minus-ad:active {
+  background-position: 0 -77px;
+}
+.find-hotel .plus-ad {
+  top: -9px;
+  right: 53px;
+  background: url('../img/sprite-plus-minus.png') no-repeat -38px 1px;
+}
+.find-hotel .plus-ad:hover {
+  background-position: -38px -38px;
+}
+.find-hotel .plus-ad:active {
+  background-position: -38px -76px;
+}
+.find-hotel .minus-ch {
+  top: -9px;
+  right: 75px;
+  background: url('../img/sprite-plus-minus.png') no-repeat 0 0;
+}
+.find-hotel .minus-ch:hover {
+  background-position: 0 -39px;
+}
+.find-hotel .minus-ch:active {
+  background-position: 0 -77px;
+}
+.find-hotel .plus-ch {
+  top: -9px;
+  right: -1px;
+  background: url('../img/sprite-plus-minus.png') no-repeat -38px 1px;
+}
+.find-hotel .plus-ch:hover {
+  background-position: -38px -38px;
+}
+.find-hotel .plus-ch:active {
+  background-position: -38px -76px;
+}
+
+.find-hotel input[type="submit"] {
+  width: 458px;
+  margin-top: 53px;
+  padding-top: 15px;
+  padding-bottom: 16px;
+  background-color: #81b3d2;
+  font-size: 21px;
+  color: white;
+}
+.find-hotel input[type="submit"]:hover {
+  background-color: #669ec0;
+}
+.find-hotel input[type="submit"]:active {
+  background-color: #5496bd;
+  color: rgba(255,255,255,.3);
+}
+.find-hotel input[type="submit"]:focus {
+  outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------
+                               Поиск гостиницы
+------------------------------------------------------------------------------*/
+.hotels-filters {
+  width: 100%;
+  min-height: 190px;
+  padding-top: 27px;
+  background: url('../img/bg-hotels-filters.jpg') no-repeat 50% 30%;
+  background-size: 100% auto;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: white;
+}
+.hotels-filters:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* Чекбоксы */
+.hotels-filters a {
+  display: block;
+  margin-top: 25px;
+  padding-left: 38px;
+  line-height: 21px;
+  text-decoration: none;
+  color: white;
+  background: url('../img/icon-checkbox-unchecked.png') no-repeat 0 0;
+}
+.hotels-filters a:hover {
+  background: url('../img/icon-checkbox-unchecked-hvr.png') no-repeat 0 0;
+}
+.hotels-filters a:active {
+  background: url('../img/icon-checkbox-unchecked-act.png') no-repeat 0 0;
+}
+.hotels-filters a.checked {
+  background: url('../img/icon-checkbox-checked.png') no-repeat 0 0;
+}
+.hotels-filters a.checked:hover {
+  background: url('../img/icon-checkbox-checked-hvr.png') no-repeat 0 0;
+}
+.hotels-filters a.checked:active {
+  background: url('../img/icon-checkbox-checked-act.png') no-repeat 0 0;
+}
+
+/* Заголовки фильтров */
+.hotels-filters p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.1429em; /* 16px */
+}
+
+.hotels-filters .container-center-1 {
+  float: left;
+  width: 20%;
+  margin-left: 23px;
+  text-align: center;
+  /*outline: 1px dashed #ccc;*/
+}
+.hotels-filters .infra {
+  display: inline-block;
+  text-align: left;
+}
+
+.hotels-filters .container-center-2 {
+  float: left;
+  width: 19%;
+  text-align: center;
+  /*outline: 1px dashed #ccc;*/
+}
+.hotels-filters .type{
+  display: inline-block;
+  text-align: left;
+}
+
+.hotels-filters .container-center-3 {
+  float: right;
+  width: 50%;
+  margin-right: 5%;
+  text-align: right;
+  /*outline: 1px dashed #ccc;*/
+}
+
+.hotels-filters .price{
+  display: inline-block;
+  width: 60%;
+  /*min-width: 236px;*/
+  text-align: left;
+}
+.hotels-filters .price-controls {
+  margin-top: 11px;
+  border: 2px solid white;
+  line-height: 46px;
+  text-align: right;
+  border-radius: 2px;
+}
+.hotels-filters .min-price-wrapper,
+.hotels-filters .max-price-wrapper {
+  display: inline-block;
+  width: 48%;
+  text-align: center;
+  line-height: 26px;
+  /*outline: 1px dashed #ccc;*/
+}
+.hotels-filters .min-price-wrapper {
+  width: 49%;
+  border-right: 2px solid white;
+}
+.price-controls input[type=text] {
+  border: none;
+  width: 40px;
+  background: transparent;
+  color: white;
+  font-size: 14px;
+  /*border-right: 2px solid white;*/
+}
+
+/* Слайдер */
+.hotels-filters .range-controls {
+  position: relative;
+}
+.range-controls .scale {
+  height: 2px;
+  margin-top: 44px;
+  background: rgb(255,255,255);
+  background: rgba(255,255,255,.3);
+}
+.range-controls .bar {
+  height: 2px;
+  background: white;
+}
+.range-controls .toggle {
+  position: absolute;
+  top: -9px;
+  width: 4px;
+  height: 4px;
+  border: 8px solid white;
+  background: #ababab;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 1px 1px 0 #7e7e7e;
+}
+.range-controls .toggle:hover {
+  background: #1c4f80;
+}
+.range-controls .max-toggle {
+  left: 80%;
+}
+
+
+
+
+/* Блок результатов поиска */
+.hotels-results {
+  padding-bottom: 120px;
+  text-transform: uppercase;
+}
+.container-center-main {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 30px;
+}
+.hotels-results .sort {
+  margin: 0 auto;
+  max-width: 1055px;
+  font-size: 12px;
+}
+.hotels-results .sort:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* Меню сортировки */
+.sort .found-title {
+  float: left;
+  margin-top: 29px;
+  margin-bottom: 30px;
+  font-size: 21px;
+  font-weight: bold;
+}
+.sort .sort-modes {
+  float: left;
+  margin-top: 37px;
+  margin-left: 48px;
+  margin-bottom: 30px;
+}
+.sort-modes ul {
+  margin: 0;
+  margin-left: 37px;
+  padding: 0;
+  list-style: none;
+  display: inline;
+}
+.sort-modes li {
+  display: inline;
+  margin-right: 28px;
+}
+.sort-modes li a {
+  color: #b2b2b2;
+  text-decoration: none;
+  border-bottom: 1px dotted #81b3d2;
+}
+.sort-modes li a:hover {
+  color: #81b3d2;
+}
+.sort-modes li a:active {
+  color: black;
+  border: none;
+}
+.sort-modes li.current a {
+  color: #81b3d2;
+  border: none;
+}
+.sort .asc-desc {
+  float: right;
+  width: 41px;
+  margin-top: 35px;
+  margin-right: 4px;
+}
+.asc-desc .asc {
+  float: left;
+  display: block;
+  width: 12px;
+  height: 12px;
+  padding: 3px;
+  background: url('../img/icon-sort-asc.png') no-repeat 50% 50%;
+}
+.asc-desc .desc {
+  float: right;
+  display: block;
+  width: 12px;
+  height: 12px;
+  padding: 3px;
+  background: url('../img/icon-sort-desc.png') no-repeat 50% 50%;
+}
+.asc-desc .asc:hover {
+  background: url('../img/icon-sort-asc-hvr.png') no-repeat 50% 50%;
+}
+.asc-desc .desc:hover {
+  background: url('../img/icon-sort-desc-hvr.png') no-repeat 50% 50%;
+}
+.asc-desc .asc:active,
+.asc-desc .asc.current {
+  background: url('../img/icon-sort-asc-act.png') no-repeat 50% 50%;
+}
+.asc-desc .desc:active,
+.asc-desc .desc.current {
+  background: url('../img/icon-sort-desc-act.png') no-repeat 50% 50%;
+}
+
+
+/* Собственно результаты поиска */
+.found-result {
+  margin: 0 auto;
+  margin-top: 24px;
+  margin-bottom: 30px;
+  max-width: 1055px;
+  font-size: 14px;
+}
+.found-result:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.found-result img {
+  float: left;
+  margin-top: 6px;
+  margin-right: 30px;
+}
+.found-result .hotel-info-left {
+  float: left;
+  width: 260px;
+}
+.found-result .hotel-title {
+  margin: 0;
+}
+.found-result .hotel-title a {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+.found-result .hotel-title a:visited {
+  color: black;
+} 
+.found-result .hotel-title a:hover {
+  color: #669ec0;
+}
+.found-result .hotel-title a:active {
+  color: #d8e4ed;
+}
+.found-result .hotel-type {
+  display: inline-block;
+  width: 110px;
+  margin: 0;
+  margin-top: 8px;
+  margin-right: 2px;
+}
+.found-result .hotel-price {
+  display: inline-block;
+  margin: 0;
+  margin-top: 8px;
+  /*width: 142px;*/
+}
+.found-result .btn-hotel {
+  display: inline-block;
+  height: 27px;
+  margin-top: 16px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  line-height: 27px;
+}
+.found-result .btn-more {
+  display: inline-block;
+  width: 110px;
+  height: 27px;
+  margin-right: 2px;
+  background: #81b3d2;
+}
+.found-result .btn-more:hover {
+  background: #669ec0;
+}
+.found-result .btn-more:active {
+  background: #5496bd;
+  color: rgba(255,255,255,.3);
+}
+.found-result .btn-book {
+  display: inline-block;
+  width: 142px;
+  height: 27px;
+  background: #766357;
+}
+.found-result .btn-book:hover {
+  background: #604e43;
+}
+.found-result .btn-book:active {
+  background: #503e33;
+  color: rgba(255,255,255,.3);
+}
+
+
+
+.found-result .hotel-info-right {
+  float: right;
+  width: 117px;
+  text-align: right;
+}
+.found-result .stars {
+  font-size: 22px;
+  letter-spacing: .27em;
+  color: #81b3d2;
+}
+.found-result .rating {
+  margin-top: 41px;
+/*  padding-right: 5px;*/
+  width: 110px;
+  height: 27px;
+  text-align: center;
+  background: #f2f2f2;
+  line-height: 27px;
+}
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------
+                            Футер
+------------------------------------------------------------------------------*/
+.footer {
+  position: relative;
+}
+.footer .index-section-triple {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 120px;
+  /*padding-top: 10px;*/
+  text-align: center;
+  line-height: 120px;
+  background: rgb(254, 254 , 254);
+  background: rgba(254, 254 , 254, .9);
+}
+.footer .index-left-col {
+  width: 33.3334%;
+  float: left;
+  font-size: 21px;
+  font-weight: bold;
+  text-transform: uppercase;
+  opacity: 1.0;
+}
+.footer .index-mid-col {
+  width: 33.3333%;
+  float: left;
+}
+.btn-social {
+  display: inline-block;
+  width: 46px;
+  height: 48px;
+  margin-right: 2px;
+  vertical-align: middle;
+  background-color: #81b3d2;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+.btn-social-tw {
+  background-image: url('../img/btn-tw.png');
+}
+.btn-social-tw:hover {
+  background-color: #669ec0;
+}
+.btn-social-tw:active {
+  background-color: #5496bd;
+  background-image: url('../img/btn-tw-act.png');
+}
+.btn-social-fb {
+  width: 47px;
+  background-image: url('../img/btn-fb.png');
+}
+.btn-social-fb:hover {
+  background-color: #669ec0;
+}
+.btn-social-fb:active {
+  background-color: #5496bd;
+  background-image: url('../img/btn-fb-act.png');
+}
+.btn-social-yt {
+  background-image: url('../img/btn-yt.png');
+}
+.btn-social-yt:hover {
+  background-color: #669ec0;
+}
+.btn-social-yt:active {
+  background-color: #5496bd;
+  background-image: url('../img/btn-yt-act.png');
+}
+.footer .index-right-col {
+  width: 33.3333%;
+  float: left;
+  text-transform: uppercase;
+}
+.btn-creators {
+  display: inline-block;
+  position: relative;
+  top: 6px;
+  width: 45px;
+  height: 43px;
+  background: black;
+  vertical-align: middle;
+}
+.btn-designer {
+  background: url('../img/btn-designer.png') no-repeat 50% 0;
+}
+.btn-designer:hover {
+  background-image: url('../img/btn-designer-hvr.png');
+}
+.btn-designer:active {
+  background-image: url('../img/btn-designer-act.png');
+}
+.btn-ha {
+  background: url('../img/btn-ha.png') no-repeat 50% 0;
+}
+.btn-ha:hover {
+  background-image: url('../img/btn-ha-hvr.png');
+}
+.btn-ha:active {
+  background-image: url('../img/btn-ha-act.png');
+}
+.footer .index-section-triple:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+
+
+
+

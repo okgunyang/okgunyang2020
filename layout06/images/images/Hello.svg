@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1024px" height="768px" viewBox="0 0 1024 768" enable-background="new 0 0 1024 768" xml:space="preserve">
+<g id="L2">
+	<rect x="607.334" y="199.91" fill="none" width="180.556" height="256.18"/>
+	<text transform="matrix(1 0 0 1 607.334 437.8008)" fill="#FFFFFF" font-family="'LaoMN'" font-size="300">L</text>
+	
+		<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="4" stroke-miterlimit="10" x1="1106.364" y1="-31.201" x2="308.319" y2="744.399"/>
+	<line fill="none" stroke="#FFFFFF" stroke-width="4" stroke-miterlimit="10" x1="633" y1="440" x2="1023" y2="440"/>
+</g>
+<g id="O">
+	
+		<rect x="755.893" y="199.265" transform="matrix(1 -0.005 0.005 1 -1.7142 4.4685)" fill="none" width="267.382" height="289.093"/>
+	<text transform="matrix(1 0 0 1 756.3574 436.4863)" fill="#FFFFFF" font-family="'LaoMN'" font-size="300">O</text>
+	<rect x="777.333" y="200.91" fill="none" width="239.785" height="266.667"/>
+</g>
+<g id="L1">
+	<rect x="439.699" y="200.91" fill="none" width="180.556" height="256.18"/>
+	<text transform="matrix(1 0 0 1 439.6992 438.8008)" fill="#FFFFFF" font-family="'LaoMN'" font-size="300">L</text>
+	<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="4" stroke-miterlimit="10" x1="465" y1="27" x2="465" y2="631"/>
+</g>
+<g id="H_1_">
+	<rect x="37.595" y="198.595" fill="none" width="245.115" height="256.18"/>
+	<text transform="matrix(1 0 0 1 37.5947 436.4863)" fill="#FFFFFF" font-family="'LaoMN'" font-size="300">H</text>
+	<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="4" stroke-miterlimit="10" x1="65" y1="-5" x2="65" y2="641"/>
+	<line fill="none" stroke="#FFFFFF" stroke-width="4" stroke-miterlimit="10" x1="1023" y1="328" x2="-12" y2="328"/>
+</g>
+<g id="E">
+	<rect x="259.144" y="198.91" fill="none" width="180.556" height="256.181"/>
+	<text transform="matrix(1 0 0 1 259.1436 436.8008)" fill="#FFFFFF" font-family="'LaoMN'" font-size="300">E</text>
+	<line fill="none" stroke="#FFFFFF" stroke-width="4" stroke-miterlimit="10" x1="286" y1="240" x2="633" y2="240"/>
+	<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="4" stroke-miterlimit="10" x1="285" y1="27" x2="285" y2="695"/>
+</g>
+</svg>

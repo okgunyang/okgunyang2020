@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>회원가입 폼</title>
+	<link rel="stylesheet" href="form.css">
+	<script>
+	function idCheck(){
+		var form = document.joinForm;
+		var id="";
+		if(!form.userid){
+			alert("아이디를 입력하지 않으셨습니다.");
+			form.userid.focus();
+			return false;
+		} else {
+			id = form.userid.value;
+			ifrm1.location.href = "idcheck.php?id="+id;
+		}
+	}
+	</script>
+</head>
+<body>
+<div class="frmBox">
+    <h1 class="frmTitle">회원가입</h1>
+    <form method="post" action="member_ok.php" class="frm" name="joinForm">
+        <ul class="frmFrame joinFrm">
+            <li>
+                <div class="frmW30 frmBg1">
+                    <label for="memId" class="inLabel">아이디</label>
+                </div>
+                <div class="frmW70 frmBg2">
+                    <input type="text" size="35" name="userid" placeholder="아이디" class="inData3" id="memId" required>
+					<input type="button" value="중복확인" id="idCheckBtn" class="inData2 btn2" onclick="idCheck()" />
+					<input type="hidden" id="chk_id1" name="chk_id1" value="0" style="display:none" />
+                </div>
+            </li>
+            <li>
+                <div class="frmW30 frmBg1">
+                    <label for="memPw" class="inLabel">비밀번호</label>
+                </div>
+                <div class="frmW70 frmBg2">
+                    <input type="password" size="35" name="userpw" placeholder="비밀번호 입력" class="inData" id="memPw" required>
+                </div>
+            </li>
+            <li>
+                <div class="frmW30 frmBg1">
+                    <label for="memPw2" class="inLabel">비밀번호 확인</label>
+                </div>
+                <div class="frmW70 frmBg2">
+                    <input type="password" size="35" name="userpw2" placeholder="비밀번호 재입력" class="inData" id="memPw2" required>
+                </div>
+            </li>
+            <li>
+                <div class="frmW30 frmBg1">
+                    <label for="memName" class="inLabel">이름</label>
+                </div>
+                <div class="frmW70 frmBg2">
+                    <input type="text" size="35" name="name" placeholder="이름 입력" class="inData" id="memName" required>
+                </div>
+            </li>
+            <li>
+                <div class="frmW30 frmBg1">
+                    <label for="memAddress" class="inLabel">주소</label>
+                </div>
+                <div class="frmW70 frmBg2">
+                    <input type="text" size="35" name="adress" placeholder="주소 입력" class="inData" id="memAddress" required>
+                </div>
+            </li>
+            <li>
+                <div class="frmW30 frmBg1">
+                    <lable for="inRa1" class="inLabel">성별</lable>
+                </div>
+                <div class="frmW70 frmBg3 pd55">
+                    <input type="radio" name="sex" value="남" class="inRa" id="inRa1" checked> 
+                    <label for="inRa1" class="inRaLabel">남</label>
+                    <input type="radio" name="sex" value="여" class="inRa" id="inRa2">
+                    <label for="inRa2" class="inRaLabel">여</label>
+                </div>
+            </li>
+            <li>
+                <div class="frmW30 frmBg1">
+                    <label for="memEmail" class="inLabel">이메일</label>
+                </div>
+                <div class="frmW70 frmBg2">
+                    <input type="text" name="email" id="memEmail1" class="inData2" required>
+                    <span class="frmSep">@</span>
+                    <select name="emadress" id="memEmail2" class="selData">
+                        <option value="naver.com">naver.com</option><option value="nate.com">nate.com</option>
+                        <option value="hanmail.com">hanmail.com</option>
+                    </select>
+                </div>
+            </li>
+            <li style="padding-top:60px;">
+                <div class="frmHalf">
+                    <input type="submit" value="가입하기" class="inData btn2"/>   
+                </div>
+                <div class="frmHalf">
+                    <input type="reset" value="다시쓰기" class="inData btn2"/>    
+                </div>    
+            </li>
+        </ul>
+    </form>
+	<iframe src="" id="ifrm1" scrolling="no" frameborder="no" width="0" height="0" name="ifrm1"></iframe>
+</div>
+</body>
+</html>

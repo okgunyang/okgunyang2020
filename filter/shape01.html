@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css를 활용하여 여러 가지 도형 그리기</title>
+    <style>
+    * { margin:0; padding:0; }    
+    body, html { width: 100%; height: 100%; }
+    .wrap { clear:both; padding-top:30px; padding-bottom:30px; 
+        padding-left:100px; }    
+    .item_title { color:#333; line-height:3; }  
+    #square { width: 100px; height: 100px; background:hotpink; }  
+    #rectangle { width: 200px; height: 100px; background:skyblue; }  
+    #circle { width: 100px; height: 100px; background:purple;
+        border-radius:50%; }
+    #ellipsis { width:200px; height:100px; background:navy; 
+        border-radius:100px / 50px; } 
+    #triangle_up { width:0; height:0; border-left:50px solid transparent;
+        border-right:50px solid transparent; border-bottom:100px solid hotpink; }  
+    #triangle_down { width:0; height:0; border-left:50px solid transparent;
+        border-right:50px solid transparent; border-top:100px solid skyblue;}
+    #triangle_left { width:0; height:0; border-top:50px solid transparent;
+        border-bottom:50px solid transparent; border-right:100px solid purple; }
+    #triangle_right { width:0; height:0; border-top:50px solid transparent;
+        border-bottom:50px solid transparent; border-left:100px solid navy; }
+    #triangle_topleft { width:0; height:0; border-top:100px solid #ffd400;
+        border-right:100px solid transparent; }    
+    #triangle_topright { width:0; height:0; border-top:100px solid violet;
+        border-left:100px solid transparent; } 
+    #triangle_bottomleft { width:0; height:0; 
+        border-bottom:100px solid orange; 
+        border-right:100px solid transparent; }    
+    #triangle_bottomright { width:0; height:0; 
+        border-bottom:100px solid lime;        
+        border-left:100px solid transparent; } 
+        
+    #skyblueo_arrow { position:relative; width:0; height:0; 
+        border-right:9px solid hotpink;
+        border-top:9px solid transparent; 
+        transform:rotate(10deg); } 
+    #skyblueo_arrow:after { content:""; position:absolute; 
+        border:0px solid transparent; border-top:3px solid hotpink;
+        border-radius:20px 0 0 0;  top:-12px;  left:-9px; 
+        transform:rotate(45deg);    width: 12px; height: 12px; 
+    }    
+    #undo_arrow { position:relative; width:0; height:0; 
+        border-left:9px solid navy;
+        border-top:9px solid transparent; 
+        transform:rotate(10deg); } 
+    #undo_arrow:after { content:""; position:absolute; 
+        border:0px solid transparent; border-top:3px solid navy;
+        border-radius:0 20px 0 0;  top:-12px;  left:-3px; 
+        transform:rotate(-45deg);    width: 12px; height: 12px; 
+    } 
+    #trapezoid {  border-bottom:100px solid chocolate;
+        border-left:25px solid transparent;
+        border-right:25px solid transparent;
+        height:0;  width:100px; }    
+    #parallelogram { width:150px; height:100px; transform:skewX(-20deg);
+      background-color:crimson; }
+    #star_six { width:0; height:0; border-left:50px solid transparent;
+        border-right:50px solid transparent;
+        border-bottom:100px solid darkslateblue; position: relative; }
+    #star_six:after { width:0; height:0;
+        border-left:50px solid transparent; 
+        border-right:50px solid transparent;
+        border-top:100px solid darkslateblue;
+        position:absolute; content:""; top:30px;   left:-50px;
+    }
+    #star_five { margin:50px 0; position:relative;
+      display:block; color:#333; width:0px;  height:0px;
+      border-right:100px solid transparent;
+      border-bottom:70px solid #333;
+      border-left:100px solid transparent;
+      transform:rotate(35deg);
+    }
+    #star_five:before { border-bottom:80px solid yellow;
+      display:block; content:'';  border-left:30px solid transparent;
+      border-right:30px solid transparent;
+      position:absolute; height:0; width:0; top:-45px; left:-65px; 
+      transform:rotate(-35deg);    
+    }
+    #star_five:after { position:absolute; display:block; content: '';
+      color:skyblue; top:6px; left:-109px; width:0px; height:0px;
+      border-right:100px solid transparent;
+      border-bottom:70px solid skyblue;
+      border-left:100px solid transparent;        
+      transform:rotate(-70deg);
+    } 
+    #pentagon { position:relative; width:54px;  box-sizing:content-box;
+      border-width:50px 18px 0; border-style:solid;
+      border-color:violet transparent;
+    }
+    #pentagon:before { content:""; position:absolute; height:0;
+      width:0; top:-85px; left:-18px; border-width:0 45px 35px;
+      border-style:solid; border-color:transparent transparent skyblue;
+    }  
+    #hexagon { width:100px; height:55px; background:#333; position:relative;}
+    #hexagon:before { content:""; position:absolute; top:-25px;
+      left:0; width:0; height:0; border-left:50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 25px solid purple;
+    }
+    #hexagon:after { content:""; position:absolute; bottom:-25px;
+      left:0; width:0; height:0; border-left:50px solid transparent;
+      border-right:50px solid transparent;
+      border-top:25px solid skyblue;
+    }    
+    </style>
+    <style>
+    #octagon {
+      width: 158px;
+      height: 100px;
+      background: skyblue;
+      position: relative;
+    }
+    #octagon:before {
+      content: "";
+      width: 100px;
+      height: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-bottom: 29px solid skyblue;
+      border-left: 29px solid #eee;
+      border-right: 29px solid #eee;
+    }
+    #octagon:after {
+      content: "";
+      width: 100px;
+      height: 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-top: 29px solid skyblue;
+      border-left: 29px solid #eee;
+      border-right: 29px solid #eee;
+    }
+    #heart { 
+      position: relative;
+      width: 100px;
+      height: 90px;
+    }
+    #heart:before,
+    #heart:after {
+      position: absolute;
+      content: "";
+      left: 50px;
+      top: 0;
+      width: 50px;
+      height: 80px;
+      background: skyblue;
+      border-radius: 50px 50px 0 0;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+    }
+    #heart:after {
+      left: 0;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    }
+        
+    #infinity {
+      position: relative;
+      width: 212px;
+      height: 100px;
+      box-sizing: content-box;
+    }
+    #infinity:before,
+    #infinity:after {
+      content: "";
+      box-sizing: content-box;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60px;
+      height: 60px;
+      border: 20px solid skyblue;
+      border-radius: 50px 50px 0 50px;
+      transform: rotate(-45deg);
+    }
+    #infinity:after {
+      left: auto;
+      right: 0;
+      border-radius: 50px 50px 50px 0;
+      transform: rotate(45deg);
+    }
+
+    #diamond {
+      width: 0;
+      height: 0;
+      border: 50px solid transparent;
+      border-bottom-color: skyblue;
+      position: relative;
+      top: -50px;
+    }
+    #diamond:after {
+      content: '';
+      position: absolute;
+      left: -50px;
+      top: 50px;
+      width: 0;
+      height: 0;
+      border: 50px solid transparent;
+      border-top-color: skyblue;
+    }  
+
+    #diamond_shield {
+      width: 0;
+      height: 0;
+      border: 50px solid transparent;
+      border-bottom: 20px solid skyblue;
+      position: relative;
+      top: -50px;
+    }
+    #diamond_shield:after {
+      content: '';
+      position: absolute;
+      left: -50px;
+      top: 20px;
+      width: 0;
+      height: 0;
+      border: 50px solid transparent;
+      border-top: 70px solid skyblue;
+    }
+    
+    #diamond_narrow {
+      width: 0;
+      height: 0;
+      border: 50px solid transparent;
+      border-bottom: 70px solid skyblue;
+      position: relative;
+      top: -50px;
+    }
+    #diamond_narrow:after {
+      content: '';
+      position: absolute;
+      left: -50px;
+      top: 70px;
+      width: 0;
+      height: 0;
+      border: 50px solid transparent;
+      border-top: 70px solid skyblue;
+    }
+    
+    #cut_diamond {
+      border-style: solid;
+      border-color: transparent transparent skyblue transparent;
+      border-width: 0 25px 25px 25px;
+      height: 0;
+      width: 50px;
+      box-sizing: content-box;
+      position: relative;
+      margin: 20px 0 50px 0;
+    }
+    #cut_diamond:after {
+      content: "";
+      position: absolute;
+      top: 25px;
+      left: -25px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-color: skyblue transparent transparent transparent;
+      border-width: 70px 50px 0 50px;
+    }    
+    
+    #egg {
+      display: block;
+      width: 126px;
+      height: 180px;
+      background-color: red;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    }   
+        
+    #pacman {
+      width: 0px;
+      height: 0px;
+      border-right: 60px solid transparent;
+      border-top: 60px solid red;
+      border-left: 60px solid red;
+      border-bottom: 60px solid red;
+      border-top-left-radius: 60px;
+      border-top-right-radius: 60px;
+      border-bottom-left-radius: 60px;
+      border-bottom-right-radius: 60px;
+    }
+    
+    #talkbubble {
+      width: 120px;
+      height: 80px;
+      background: red;
+      position: relative;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+    }
+    #talkbubble:before {
+      content: "";
+      position: absolute;
+      right: 100%;
+      top: 26px;
+      width: 0;
+      height: 0;
+      border-top: 13px solid transparent;
+      border-right: 26px solid red;
+      border-bottom: 13px solid transparent;
+    }
+        
+    #burst_12 {
+      background: red;
+      width: 80px;
+      height: 80px;
+      position: relative;
+      text-align: center;
+    }
+    #burst_12:before,
+    #burst_12:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 80px;
+      width: 80px;
+      background: red;
+    }
+    #burst_12:before {
+      transform: rotate(30deg);
+    }
+    #burst_12:after {
+      transform: rotate(60deg);
+    }
+     
+    #burst_8 {
+      background: red;
+      width: 80px;
+      height: 80px;
+      position: relative;
+      text-align: center;
+      transform: rotate(20deg);
+    }
+    #burst_8:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 80px;
+      width: 80px;
+      background: red;
+      transform: rotate(135deg);
+    }
+     
+     #taijiquan {
+      width: 96px;
+      box-sizing: content-box;
+      height: 48px;
+      background: #eee;
+      border-color: red;
+      border-style: solid;
+      border-width: 2px 2px 50px 2px;
+      border-radius: 100%;
+      position: relative;
+    }
+    #taijiquan:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      background: #eee;
+      border: 18px solid red;
+      border-radius: 100%;
+      width: 12px;
+      height: 12px;
+      box-sizing: content-box;
+    }
+    #taijiquan:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background: red;
+      border: 18px solid #eee;
+      border-radius: 100%;
+      width: 12px;
+      height: 12px;
+      box-sizing: content-box;
+    }
+    
+    #badge_ribbon {
+      position: relative;
+      background: red;
+      height: 100px;
+      width: 100px;
+      border-radius: 50px;
+    }
+    #badge_ribbon:before,
+    #badge_ribbon:after {
+      content: '';
+      position: absolute;
+      border-bottom: 70px solid red;
+      border-left: 40px solid transparent;
+      border-right: 40px solid transparent;
+      top: 70px;
+      left: -10px;
+      transform: rotate(-140deg);
+    }
+    #badge_ribbon:after {
+      left: auto;
+      right: -10px;
+      transform: rotate(140deg);
+    }
+        
+    #space_invader {
+      box-shadow: 0 0 0 1em red,
+      0 1em 0 1em red,
+      -2.5em 1.5em 0 .5em red,
+      2.5em 1.5em 0 .5em red,
+      -3em -3em 0 0 red,
+      3em -3em 0 0 red,
+      -2em -2em 0 0 red,
+      2em -2em 0 0 red,
+      -3em -1em 0 0 red,
+      -2em -1em 0 0 red,
+      2em -1em 0 0 red,
+      3em -1em 0 0 red,
+      -4em 0 0 0 red,
+      -3em 0 0 0 red,
+      3em 0 0 0 red,
+      4em 0 0 0 red,
+      -5em 1em 0 0 red,
+      -4em 1em 0 0 red,
+      4em 1em 0 0 red,
+      5em 1em 0 0 red,
+      -5em 2em 0 0 red,
+      5em 2em 0 0 red,
+      -5em 3em 0 0 red,
+      -3em 3em 0 0 red,
+      3em 3em 0 0 red,
+      5em 3em 0 0 red,
+      -2em 4em 0 0 red,
+      -1em 4em 0 0 red,
+      1em 4em 0 0 red,
+      2em 4em 0 0 red;
+      background: red;
+      width: 1em;
+      height: 1em;
+      overflow: hidden;
+      margin: 50px 0 70px 65px;
+    }    
+    
+     #tv {
+      position: relative;
+      width: 200px;
+      height: 150px;
+      margin: 20px 0;
+      background: red;
+      border-radius: 50% / 10%;
+      color: white;
+      text-align: center;
+      text-indent: .1em;
+    }
+    #tv:before {
+      content: '';
+      position: absolute;
+      top: 10%;
+      bottom: 10%;
+      right: -5%;
+      left: -5%;
+      background: inherit;
+      border-radius: 5% / 50%;
+    } 
+        
+     #chevron {
+      position: relative;
+      text-align: center;
+      padding: 12px;
+      margin-bottom: 6px;
+      height: 60px;
+      width: 200px;
+    }
+    #chevron:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 51%;
+      background: red;
+      transform: skew(0deg, 6deg);
+    }
+    #chevron:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 50%;
+      background: red;
+      transform: skew(0deg, -6deg);
+    } 
+        
+    #magnifying_glass {
+      font-size: 10em;
+      display: inline-block;
+      width: 0.4em;
+      box-sizing: content-box;
+      height: 0.4em;
+      border: 0.1em solid red;
+      position: relative;
+      border-radius: 0.35em;
+    }
+    #magnifying_glass:before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      right: -0.25em;
+      bottom: -0.1em;
+      border-width: 0;
+      background: red;
+      width: 0.35em;
+      height: 0.08em;
+      transform: rotate(45deg);
+    } 
+        
+    #facebook_icon {
+      background: red;
+      text-indent: -999em;
+      width: 100px;
+      height: 110px;
+      box-sizing: content-box;
+      border-radius: 5px;
+      position: relative;
+      overflow: hidden;
+      border: 15px solid red;
+      border-bottom: 0;
+    }
+    #facebook_icon:before {
+      content: "/20";
+      position: absolute;
+      background: red;
+      width: 40px;
+      height: 90px;
+      bottom: -30px;
+      right: -37px;
+      border: 20px solid #eee;
+      border-radius: 25px;
+      box-sizing: content-box;
+    }
+    #facebook_icon:after {
+      content: "/20";
+      position: absolute;
+      width: 55px;
+      top: 50px;
+      height: 20px;
+      background: #eee;
+      right: 5px;
+      box-sizing: content-box;
+    }
+      
+    #moon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      box-shadow: 15px 15px 0 0 red;
+    }
+        
+    #flag {
+      width: 110px;
+      height: 56px;
+      box-sizing: content-box;
+      padding-top: 15px;
+      position: relative;
+      background: red;
+      color: white;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    #flag:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-bottom: 13px solid #eee;
+      border-left: 55px solid transparent;
+      border-right: 55px solid transparent;
+    }
+    
+    #cone {
+      width: 0;
+      height: 0;
+      border-left: 70px solid transparent;
+      border-right: 70px solid transparent;
+      border-top: 100px solid red;
+      border-radius: 50%;
+    }  
+        
+    #cross {
+      background: red;
+      height: 100px;
+      position: relative;
+      width: 20px;
+    }
+    #cross:after {
+      background: red;
+      content: "";
+      height: 20px;
+      left: -40px;
+      position: absolute;
+      top: 40px;
+      width: 100px;
+    } 
+        
+    #base {
+      background: red;
+      display: inline-block;
+      height: 55px;
+      margin-left: 20px;
+      margin-top: 55px;
+      position: relative;
+      width: 100px;
+    }
+    #base:before {
+      border-bottom: 35px solid red;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      content: "";
+      height: 0;
+      left: 0;
+      position: absolute;
+      top: -35px;
+      width: 0;
+    } 
+        
+    #pointer {
+      width: 200px;
+      height: 40px;
+      position: relative;
+      background: red;
+    }
+    #pointer:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-left: 20px solid white;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+    }
+    #pointer:before {
+      content: "";
+      position: absolute;
+      right: -20px;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-left: 20px solid red;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+    } 
+        
+    #lock {
+      font-size: 8px;
+      position: relative;
+      width: 18em;
+      height: 13em;
+      border-radius: 2em;
+      top: 10em;
+      box-sizing: border-box;
+      border: 3.5em solid red;
+      border-right-width: 7.5em;
+      border-left-width: 7.5em;
+      margin: 0 0 6rem 0;
+    }
+    #lock:before {
+      content: "";
+      box-sizing: border-box;
+      position: absolute;
+      border: 2.5em solid red;
+      width: 14em;
+      height: 12em;
+      left: 50%;
+      margin-left: -7em;
+      top: -12em;
+      border-top-left-radius: 7em;
+      border-top-right-radius: 7em;
+    }
+    #lock:after {
+      content: "";
+      box-sizing: border-box;
+      position: absolute;
+      border: 1em solid red;
+      width: 5em;
+      height: 8em;
+      border-radius: 2.5em;
+      left: 50%;
+      top: -1em;
+      margin-left: -2.5em;
+    }   
+        
+    #radius_rectangle {
+      width: 200px;
+      height: 100px;
+      border-radius: 10px; 
+      background: red;    
+    }    
+    
+    #inner_radius_rectangle {
+      width: 200px;
+      height: 100px;
+	  background: #c00; 
+	  background:
+		linear-gradient(135deg, transparent 10px, #c00 0) top left,
+		linear-gradient(225deg, transparent 10px, #c00 0) top right,
+		linear-gradient(315deg, transparent 10px, #c00 0) bottom right,
+		linear-gradient(45deg,  transparent 10px, #c00 0) bottom left;
+      background-image:
+		radial-gradient(circle at 0 0, rgba(204,0,0,0) 14px, #c00 15px),
+		radial-gradient(circle at 100% 0, rgba(204,0,0,0) 14px, #c00 15px),
+		radial-gradient(circle at 100% 100%, rgba(204,0,0,0) 14px, #c00 15px),
+		radial-gradient(circle at 0 100%, rgba(204,0,0,0) 14px, #c00 15px);  
+	  background-size: 50% 50%;
+	  background-repeat: no-repeat;
+    }   
+        
+    #bevel_rectangle {
+      width: 200px;
+      height: 100px; 
+	  background:
+		linear-gradient(135deg, transparent 10px, #c00 0) top left,
+		linear-gradient(225deg, transparent 10px, #c00 0) top right,
+		linear-gradient(315deg, transparent 10px, #c00 0) bottom right,
+		linear-gradient(45deg,  transparent 10px, #c00 0) bottom left;
+	  background-size: 50% 50%;
+	  background-repeat: no-repeat;           
+    }   
+        
+    #rounded_rectangle {
+      width: 200px;
+      height: 100px;
+      background: red;
+      border-radius:10px 50px 10px 50px;    
+    }   
+    </style>
+</head>
+<body>
+    <section class="wrap">
+        <h3 class="item_title">Square : 정사각형</h3>
+        <div class="item1" id="square"></div>
+    </section>
+    <section class="wrap">
+        <h3 class="item_title">Rectangle : 직사각형</h3>
+        <div class="item2" id="rectangle"></div>
+    </section>
+    <section class="wrap">
+        <h3 class="item_title">Circle : 정원</h3>
+        <div class="item3" id="circle"></div>
+    </section>
+    <section class="wrap">
+        <h3 class="item_title">Ellipsis : 타원</h3>
+        <div class="item4" id="ellipsis"></div>
+    </section>
+    <section class="wrap">
+        <h3 class="item_title">Triangle Up : 위가 뾰족한 삼각형</h3>
+        <div class="item5" id="triangle_up"></div>
+    </section>
+    <section class="wrap">
+        <h3 class="item_title">Triangle Down : 아래가 뾰족한 삼각형</h3>
+        <div class="item6" id="triangle_down"></div>
+    </section>
+    <section class="wrap">
+        <h3 class="item_title">Triangle Left : 왼쪽이 뾰족한 삼각형</h3>
+        <div class="item7" id="triangle_left"></div>
+    </section>
+    <section class="wrap">
+        <h3 class="item_title">Triangle Right : 오른쪽이 뾰족한 삼각형</h3>
+        <div class="item8" id="triangle_right"></div>
+    </section>
+    <section class="wrap">
+        <h3 class="item_title">Triangle Top Left : 왼쪽 상단 모서리만 남아 있는 삼각형</h3>
+        <div class="item9" id="triangle_topleft"></div>
+    </section>
+    <section class="wrap">
+        <h3 class="item_title">Triangle Top right : 오른쪽 상단 모서리만 남아 있는 삼각형</h3>
+        <div class="item10" id="triangle_topright"></div>
+    </section>
+    <section class="wrap">
+        <h3 class="item_title">Triangle Bottom Left : 왼쪽 하단 모서리만 남아 있는 삼각형</h3>
+        <div class="item11" id="triangle_bottomleft"></div>
+    </section>
+    <section class="wrap">
+        <h3 class="item_title">Triangle Bottom right : 오른쪽 하단 모서리만 남아 있는 삼각형</h3>
+        <div class="item12" id="triangle_bottomright"></div>
+    </section>
+    <section class="wrap">
+        <h3 class="item_title">skyblueo Arrow : 재실행 화살표</h3>
+        <div class="item13" id="skyblueo_arrow"></div>
+    </section>
+    <section class="wrap">
+        <h3 class="item_title">Undo Arrow : 실행취소 화살표</h3>
+        <div class="item14" id="undo_arrow"></div>
+    </section>
+    <section class="wrap">
+        <h3 class="item_title">Trapezoid : 사다리꼴</h3>
+        <div class="item15" id="trapezoid"></div>
+    </section>
+    <section class="wrap">
+        <h3 class="item_title">Parallelogram : 평행사변형</h3>
+        <div class="item16" id="parallelogram"></div>
+    </section>
+    <section class="wrap">
+        <h3 class="item_title">6-points Star: 꼭지가 여섯 개인 별</h3>
+        <div class="item17" id="star_six"></div>
+    </section>
+    <section class="wrap">
+        <h3 class="item_title">5-points Star: 꼭지가 다섯 개인 별</h3>
+        <div class="item18" id="star_five"></div>
+    </section>
+    <br><br>
+    <section class="wrap">
+        <div class="item19" id="pentagon"></div>
+        <h3 class="item_title">Pentagon : 오각형</h3>
+    </section>
+    <section class="wrap">
+        <div class="item20" id="hexagon"></div>
+        <h3 class="item_title">Hexagon : 육각형</h3>
+    </section>
+    <section class="wrap">
+        <div class="item21" id="octagon"></div>
+        <h3 class="item_title">Octagon : 팔각형</h3>
+    </section>
+    <section class="wrap">
+        <div class="item22" id="heart"></div>
+        <h3 class="item_title">Heart : 하트</h3>
+    </section>
+    <section class="wrap">
+        <div class="item23" id="infinity"></div>
+        <h3 class="item_title">Infinity Symbol : 무한대 기호</h3>
+    </section>
+    <section class="wrap">
+        <div class="item24" id="diamond"></div>
+        <h3 class="item_title">Diamond Square : 넓은 마름모</h3>
+    </section>
+    <section class="wrap">
+        <div class="item25" id="diamond_shield"></div>
+        <h3 class="item_title">Diamond Shield : 다이아몬드</h3>
+    </section>
+    <section class="wrap">
+        <div class="item26" id="diamond_narrow"></div>
+        <h3 class="item_title">Diamond Narrow : 길쭉한 다이아몬드</h3>
+    </section>
+    <section class="wrap">
+        <div class="item27" id="cut_diamond"></div>
+        <h3 class="item_title">Cut Diamond : 커팅 다이아몬드</h3>
+    </section>
+    <section class="wrap">
+        <div class="item28" id="egg"></div>
+        <h3 class="item_title">Egg : 달걀</h3>
+    </section>
+    <section class="wrap">
+        <div class="item29" id="pacman"></div>
+        <h3 class="item_title">Pac-Man : 입 벌리는 모양의 동그라미</h3>
+    </section>
+    <section class="wrap">
+        <div class="item30" id="talkbubble"></div>
+        <h3 class="item_title">Talk Bubble : 말 풍선</h3>
+    </section>
+    <section class="wrap">
+        <div class="item31" id="burst_12"></div>
+        <h3 class="item_title">12 Point Burst : 12점의 별</h3>
+    </section>
+    <section class="wrap">
+        <div class="item32" id="burst_12"></div>
+        <h3 class="item_title">8 Point Burst : 8점의 별</h3>
+    </section>
+    <section class="wrap">
+        <div class="item33" id="taijiquan"></div>
+        <h3 class="item_title">Taijiquan : 태극</h3>
+    </section>
+    <section class="wrap">
+        <div class="item34" id="badge_ribbon"></div>
+        <h3 class="item_title">Badge Ribbon : 배지 리본</h3>
+    </section>
+    <section class="wrap">
+        <div class="item35" id="space_invader"></div>
+        <h3 class="item_title">Space Invader : 우주 괴물</h3>
+    </section>
+    <section class="wrap">
+        <div class="item36" id="tv"></div>
+        <h3 class="item_title">TV Screen : TV화면</h3>
+    </section>
+    <section class="wrap">
+        <div class="item37" id="chevron"></div>
+        <h3 class="item_title">Chevron : 갈메기 수장</h3>
+    </section>
+    <section class="wrap">
+        <div class="item38" id="magnifying_glass"></div>
+        <h3 class="item_title">Magnifying Glass : 돋보기</h3>
+    </section>
+    <section class="wrap">
+        <div class="item39" id="facebook_icon"></div>
+        <h3 class="item_title">Facebook Icon : 페이스북 아이콘</h3>
+    </section>
+    <section class="wrap">
+        <div class="item40" id="moon"></div>
+        <h3 class="item_title">moon : 초승달</h3>
+    </section>
+    <section class="wrap">
+        <div class="item41" id="flag"></div>
+        <h3 class="item_title">Flag : 깃발</h3>
+    </section>
+    <section class="wrap">
+        <div class="item42" id="cone"></div>
+        <h3 class="item_title">Cone : 부채꼴</h3>
+    </section>
+    <section class="wrap">
+        <div class="item43" id="cross"></div>
+        <h3 class="item_title">Cross : 십자가</h3>
+    </section>
+    <section class="wrap">
+        <div class="item44" id="base"></div>
+        <h3 class="item_title">Bass : 베이스 오각형</h3>
+    </section>
+    <section class="wrap">
+        <div class="item45" id="pointer"></div>
+        <h3 class="item_title">Pointer : 방향지시</h3>
+    </section>
+    <section class="wrap">
+        <div class="item46" id="lock"></div>
+        <h3 class="item_title">Lock : 자물쇠</h3>
+    </section>
+    <section class="wrap">
+        <div class="item47" id="radius_rectangle"></div>
+        <h3 class="item_title">Corner Radius Rectangle : 모서리가 둥근 사각형</h3>
+    </section>
+    <section class="wrap">
+        <div class="item48" id="inner_radius_rectangle"></div>
+        <h3 class="item_title">Inner Radius Rectangle : 모서리가 안으로 깎인 사각형</h3>
+    </section>
+    <section class="wrap">
+        <div class="item49" id="bevel_rectangle"></div>
+        <h3 class="item_title">Bevel Radius Rectangle : 모서리가 45도로 깎인 사각형</h3>
+    </section>
+    <section class="wrap">
+        <div class="item50" id="rounded_rectangle"></div>
+        <h3 class="item_title">Rounded Rectangle : 비대칭 형태 둥근 모서리 사각형</h3>
+    </section> 
+</body>
+</html>

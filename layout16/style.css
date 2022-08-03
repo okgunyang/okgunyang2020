@@ -1,0 +1,682 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700);
+@import url(https://fonts.googleapis.com/css?family=Chewy);
+
+
+/* ========================= Basics style for body ==================== */
+body {
+	margin: 0px;
+	padding: 0px;
+    position: absolute;
+	font-family: 'Open Sans', sans-serif;
+	line-height: 1.5em;
+	width: 100%;
+	height: auto;
+  border-top: 4px solid #e56038;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	 font-family: 'Ubuntu', sans-serif;
+}
+
+h1 {  
+	 font-size: 2.68em;
+	 font-weight: 700;
+	 margin: 0.67em 0;
+	 text-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+ p {
+  font-family: 'Open Sans', sans-serif;
+  color: rgba(0,0,0,0.9);
+  font-size: 1.2em;
+  line-height: 25px;
+ }
+
+
+/* ============================== for Nav ====================== */
+
+.go-up img {
+  color: red;
+  font-size: 65px;
+  text-align: center;
+  -webkit-transition: -webkit-transform .4s ease-in-out;
+  transition: transform .4s ease-in-out;
+}
+#up {
+  position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    margin: 0px 12px 12px 0px;
+}
+#up .go-up img:hover {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.main {
+	margin: 0 0 20px o;
+	padding: 0;
+	max-width: 1297px;
+	width: 100%;
+ 
+}
+.nav {
+   display: block;
+   padding: 0px 30% 0px 30%;
+   margin-bottom: 0px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+ul {
+	  display: inline-block;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0px 0px 0px 15px;
+    overflow: hidden;  
+}
+li {
+    float: left;
+}
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 12px 16px;
+    margin: 10px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+li a:hover {
+	 color: white;
+	 text-decoration: none;
+    background-color: #555;
+    padding: 12px 16px;
+    margin: 10px 10px;
+     border-radius: 4px;
+
+}
+ul > li > #active {
+   display: block;
+  color: white;
+  text-decoration: none;
+  background-color: #555;
+}
+
+
+/* ======================== for hello ================================== */
+.hello {
+	 font-size: 1em;
+	 text-align: center;
+    background: transparent url('header-bg.jpg') repeat top left;
+     background-size:cover;
+  background-attachment:fixed;
+    height: auto;
+    overflow: hidden;
+    padding: 20px 0 80px;
+    margin-top: 0;
+   margin-bottom: 0px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.hello h1 {
+  color: #fff;
+  font-size: 3.2em;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  padding-top: 80px; 
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+.hello p {
+	font-size: 1.6em;
+  line-height: 1.3em;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+.hello .btn {
+	padding: 5px 15px;
+	color: #fff;
+     text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+     border: 2px solid #fff ;
+     border-radius: 4px;
+     -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.hello .btn:hover {
+	 color: #df5757;
+	 background-color: #FFFFFF;
+
+}
+
+/* ============================== portfolio-intro ================== */
+.portfolio-intro {
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.portfolio-intro img {
+  max-width: 100%;
+  width: 150px;
+  height: 150px;
+  margin: 80px;
+
+}
+.my-image img {
+  -webkit-transition: all 2s ease;
+   -moz-transition: all 2s ease; -ms-transition: all 2s ease; 
+   transition: all 2s ease; 
+}
+.my-image img:hover {
+   width: 180px;
+  height: 180px;
+}
+
+.portfolio-intro .round {
+  border: 3px solid white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  margin-bottom: 40px;
+  border-radius: 50%;
+  webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.portfolio-intro .round:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.intro-text {
+  display: inline-block;
+  padding: 0px 20%;
+
+}
+.intro-text p{
+  line-height: 26px;
+}
+
+/* ======================== body social ======================== */
+.body-social {
+  margin-top: 20px;
+  margin-bottom: 40px; 
+  padding-right: 75px;
+}
+ div .social {
+  display: inline-block;
+   margin-bottom: 55px; 
+   padding: 0px 0px;
+   width: 120px;
+   height: 120px;
+}
+
+.social img:hover {
+   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+/* ========================== for do ======================== */
+.do {
+  max-width: 100%;
+  text-align: center;
+  height: 450px;
+  background-color: #19242a;
+  padding-top: 80px;
+}
+
+.do h1 , h2 , .do p {
+  color: white;
+}
+.do h1 {
+  color: #fff;
+  font-size: 3.2em;
+}
+.do p {
+  font-size: 1.4em;
+  line-height: 1.3em;
+  color: #fff;
+}
+.full-content {
+  margin-top: 25px;
+}
+#center {
+  text-align: center;
+}
+.row-part {
+  margin-top: 30px;
+  display: block;
+  max-width: 100%;
+  width: 22.0%;
+  float: left;
+  margin-right: 5.5%;
+  margin-left: 5.5%;
+  padding: 12px 0px;
+   -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+}
+.fa-television , .fa-code , .fa-book {
+  color: white;
+  font-size: 45px;
+  background-color: #23323a;
+  padding: 15px;
+  border-radius: 50%;
+   -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+}
+br {
+  line-height: 10px;
+}
+#part1:hover , #part2:hover , #part3:hover  {
+  background-color: #23323a;
+}
+ #part1:hover > .fa-television {
+  background-color: white;
+  color: #df5757;
+ }
+ #part2:hover > .fa-code {
+  background-color: white;
+  color: #df5757;
+ }
+ #part3:hover > .fa-book {
+  background-color: white;
+  color: #df5757;
+ }
+@media screen and (max-width: 666px) {
+   .row-part {
+     float: none;
+    }
+    .do {
+      height: 825px;
+    }
+    .row-part {
+      max-width: 100%;
+      width: 90%;
+      padding: 15px 0px;
+      position-left: 50%;
+    }
+
+}
+
+/* ============================== skills ============================= */
+.skils {
+  margin: 80px 0px;
+  width: 100%;
+}
+.skils h1 {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.skils h2 {
+  text-indent: 20%;
+  color: #555;
+}
+
+.progressbar1 {
+  background-color: black;
+  border-radius: 13px; 
+  padding: 3px;
+  width: 60%;
+  position: relative;
+  left: 20%;
+}
+
+.progressbar1 > div {
+   background-color: orange;
+   width: 85%; 
+   height: 20px;
+   border-radius: 10px;
+}
+.progressbar2 {
+  background-color: black;
+  border-radius: 13px; 
+  padding: 3px;
+  width: 60%;
+  position: relative;
+  left: 20%;
+}
+
+.progressbar2 > div {
+   background-color: #77e509;
+   width: 35%; 
+   height: 20px;
+   border-radius: 10px;
+}
+.progressbar3 {
+  background-color: black;
+  border-radius: 13px; 
+  padding: 3px;
+  width: 60%;
+  position: relative;
+  left: 20%;
+}
+
+.progressbar3 > div {
+   background-color: #00d8ff;
+   width: 60%; 
+   height: 20px;
+   border-radius: 10px;
+}
+.progressbar4 {
+  background-color: black;
+  border-radius: 13px; 
+  padding: 3px;
+  width: 60%;
+  position: relative;
+  left: 20%;
+}
+
+.progressbar4 > div {
+   background-color: #ff5400;
+   width: 55%; 
+   height: 20px;
+   border-radius: 10px;
+}
+
+/* =============================== media query ( skills ) ================================ */
+
+
+@media screen and (max-width: 768px) {
+
+.progressbar1 , .progressbar2 , .progressbar3 , .progressbar4 {
+    left: 0%;
+    width: 99%;
+}
+
+}
+
+/* =============================== my work ================================ */
+
+
+.ps-work {
+  margin-bottom: 50px;
+  width: 100%;
+  padding: 00px 0px 00px 0px;
+  height: 430px;
+   overflow: hidden;
+   border-top: 5px solid #555;
+    border-bottom: 5px solid #555;
+}
+
+#left-sec {
+  float: left;
+}
+.left-img {
+  max-width: 33%;
+  width: 100%;
+  overflow: hidden;
+}
+#left-img1 {
+  max-height: 222.92px;
+}
+#left-img2 {
+  max-height: 222.92px;
+}
+#left-img1 img {
+  width: 100%;
+  height: 221.76px;
+  -webkit-transition: all 2s ease; 
+  -moz-transition: all 2s ease; -ms-transition: 
+  all 2s ease; transition: all 2s ease; 
+}
+#left-img1 img:hover {
+  width: 110%;
+  height: 235.76px;
+}
+
+#left-img2 img {
+  width: 100%;
+  -webkit-transition: all 2s ease; 
+  -moz-transition: all 2s ease; -ms-transition: 
+  all 2s ease; transition: all 2s ease; 
+  height: 222.92px;
+}
+#left-img2 img:hover {
+  width: 110%;
+  height: 235.76px;
+}
+
+.right-img {
+  max-width: 66.9%;
+  width: 100%;
+  overflow: hidden;
+}
+.right-list1 {
+   overflow: hidden;
+}
+
+#right-img1 img {
+  width: 100%;
+  height:444.68px;
+  -webkit-transition: all 2s ease; 
+  -moz-transition: all 2s ease; -ms-transition: 
+  all 2s ease; transition: all 2s ease; 
+}
+#right-img1 img:hover {
+  width: 110%;
+  height: 470.76px;
+}
+#right-img2 img {
+  width: 100%;
+  bottom-border: 5px solid #555;
+
+}
+
+/* ========================= media query ( my work ) ========================= */
+
+@media screen and (max-width: 768px) {
+     
+  .ps-work {
+    overflow: hidden;
+ height: 800px;
+  }
+    #left-sec {
+       overflow: hidden;
+      float: none;
+     }
+     .left-img {
+       overflow: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+    #left-img1 img {
+       overflow: hidden;
+       width: 100%;
+      height: auto;
+}
+#left-img2 img {
+   overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+.right-img {
+   overflow: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+.right-img1 {
+   overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+
+
+}
+
+
+
+/* ========================= contact form =================== */
+
+.contact {
+  max-width:100%;
+  height: 500px;
+  padding: 0% 0;
+  background: url(foot.jpg);
+   position: relative;
+  background-size:cover;
+  background-attachment:fixed;
+  text-align: center;
+ }
+ .contact h2 {
+  color: white;
+  font-size: 3.2em;
+ }
+ #meet-me {
+  display: inline-block;
+  margin: 50px 0%;
+ 
+ }
+input[type=text], input[type=email] {
+    max-width: 100%;
+    width: 50%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    margin: 15px 0;
+}
+
+input[type=text]:focus {
+    background-color: #555;
+    color: white;
+     border: 3px solid #555;
+}
+input[type=email]:focus {
+     background-color: #555;
+    color: white;
+     border: 3px solid #555;
+}
+textarea:focus {
+     background-color: #555;
+    color: white;
+     border: 3px solid #555;
+}
+
+textarea {
+    max-width: 100%;
+    width: 50%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+
+/* ========================= media query ( Contact) ========================= */
+
+@media screen and (max-width: 768px) {
+     
+input[type=text], input[type=email] {
+    max-width: 100%;
+    width: 100%;
+}
+
+textarea {
+    max-width: 100%;
+    width: 100%;
+}
+
+}
+
+/* ========================== footer ========================= */
+.footer {
+  max-width: 100%;
+  width: 100%;
+  height: 50px;
+  background-color: black;
+
+}
+
+
+/* ================================ form ======================== */
+

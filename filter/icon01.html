@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css만 활용하여 여러 아이콘 도형과 애니메이션 만들기</title>
+    <script src="prefixfree.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <style>
+    html, body{ width:100%; height:100%; margin:0; padding:0;
+      font-family:'Open Sans', sans-serif;  }
+    a { text-decoration: none; }
+    p, li, a { font-size: 14px;  }
+
+    /* 그리드 - 현재 엘리먼트에는 .three 적용 */
+    .twelve { width: 100%; }
+    .eleven { width: 91.53%; }
+    .ten { width: 83.06%; }
+    .nine { width: 74.6%; }
+    .eight { width: 66.13%; }
+    .seven { width: 57.66%; }
+    .six { width: 49.2%; }
+    .five { width: 40.73%; }
+    .four { width: 32.26%; }
+    .three { width: 23.8%; }
+    .two { width: 15.33%; }
+    .one { width: 6.866%; }
+
+    /* 컬럼의 내부의 속성 */
+    .col { display:block; float:left; margin:1% 0 1% 1.6%;  }
+    .col:first-of-type { margin-left:0; }
+        
+    /* 전체 박스의 fluid 설정 */    
+    .container { width:100%; max-width:940px; margin:0 auto;
+      position:relative; text-align: center;  }
+
+    /* 각 줄(.cf)에 무조건 줄바꿈 */
+    .cf:before, .cf:after { content:" ";  display:table; }
+    .cf:after { clear: both; }
+    .cf { *zoom: 1; }
+
+    /* 각 박스에 패딩을 주어 내부 요소(.line)를 가운데로 정렬  */
+    .row .three { padding:80px 30px;  -webkit-box-sizing:border-box;
+      -moz-box-sizing:border-box;    box-sizing: border-box;
+      background-color:#2c3e50; color:#ecf0f1; text-align:center; }
+        
+    /* 각 박스의 내부요소(.line)를 설정 */
+    .ham .line { width:50px;   height:5px; background-color:#ecf0f1;
+      display:block; margin:8px auto;
+      transition: all 0.3s ease-in-out; }
+    .ham:hover {  cursor: pointer; }
+
+    /* 첫 번째 박스의 애니메이션 */
+    #ham-1.activate .line:nth-child(2){ opacity:0; } /* 2라인 : 없어짐 */
+    #ham-1.activate .line:nth-child(1){ /* 1라인 : 45도 회전 */
+      transform: translateY(13px) rotate(45deg);
+    }
+    #ham-1.activate .line:nth-child(3){ /* 3라인 : -45도 회전 */
+      transform: translateY(-13px) rotate(-45deg);
+    }
+
+    /* 두 번째 박스의 애니메이션 */
+    #ham-2.activate .line:nth-child(1){ /* 1라인 : 2라인의 위치로 이동 */
+      transform: translateY(13px);
+    }
+    #ham-2.activate .line:nth-child(3){ /* 3라인 : 2라인의 위치로 이동 */
+      transform: translateY(-13px);
+    }
+
+    /* 세 번째 박스의 애니메이션 */
+    #ham-3.activate .line:nth-child(1), /* 1라인, 3라인 : 폭 조절 */
+    #ham-3.activate .line:nth-child(3){ width: 40px; }
+    #ham-3.activate .line:nth-child(1){ /* 1라인 : -45도 회전 */
+      transform: translateX(-10px) rotate(-45deg);
+    }
+    #ham-3.activate .line:nth-child(3){ /* 3라인 : -45도 회전 */
+      transform: translateX(-10px) rotate(45deg);
+    }
+
+    /* 네 번째 박스의 애니메이션 */
+    #ham-4.activate .line:nth-child(1), /* 1라인, 3라인 : 폭 조절 */
+    #ham-4.activate .line:nth-child(3){ width: 40px; }
+    #ham-4.activate .line:nth-child(1){ /* 1라인 : 45도 회전 */
+      transform: translateX(10px) rotate(45deg);
+    }
+    #ham-4.activate .line:nth-child(3){ /* 3라인 : -45도 회전 */
+      transform: translateX(10px) rotate(-45deg);
+    }
+
+    /* 다섯번째 박스의 애니메이션 */
+    #ham-5.activate { transform: rotate(90deg); } /* 다섯번째 박스 90도 회전 */
+    #ham-5.activate .line:nth-child(2){ transition: none; }
+    #ham-5 .line:nth-child(2){ transition-delay:0.3s; }
+    #ham-5.activate .line:nth-child(2){ opacity:0;  } /* 2라인 : 없어짐 */
+    #ham-5.activate .line:nth-child(1), /* 1라인, 3라인 : 회전중심 이동 */
+    #ham-5.activate .line:nth-child(3){ width:35px; transform-origin:right; }
+    #ham-5.activate .line:nth-child(1){ /* 1라인 : 45도 회전 */
+      transform: translateY(15px) rotate(45deg);
+    }
+    #ham-5.activate .line:nth-child(3){ /* 3라인 : -45도 회전 */
+      transform: translateY(-15px) rotate(-45deg);
+    }
+
+    /* 여섯번째 박스의 애니메이션 */
+    #ham-6.activate{ transform: rotate(45deg);  } /* 여섯번째 박스 45도 회전 */
+    #ham-6.activate .line:nth-child(2){ width:0px; } /* 2라인 : 짧아져 없어짐 */
+    #ham-6.activate .line:nth-child(1), /* 1라인, 3라인 : 지연시간 추가 */
+    #ham-6.activate .line:nth-child(3){ transition-delay: 0.3s; }
+    /* 1라인 : 아래로 이동 */    
+    #ham-6.activate .line:nth-child(1){ transform: translateY(13px); }
+    #ham-6.activate .line:nth-child(3){ /* 3라인 : 위로 이동하며, 90도 회전 */
+      transform: translateY(-13px) rotate(90deg);
+    }
+
+    /* 일곱전째 박스의 애니메이션 */
+    #ham-7.activate .line:nth-child(1){ width: 30px; } /* 1라인 : 길이축소 */
+    #ham-7.activate .line:nth-child(2){ width: 40px; } /* 2라인 : 길이축소 */
+    #ham-7.activate .line { transform: rotate(30deg); } /* 모든 라인 : 30도 회전 */
+
+    /* 여덟번째 박스의 애니메이션 */
+    #ham-8.activate .line:nth-child(2){ opacity: 0; } /* 2라인 : 없어짐 */
+    /* 1라인 : 아래로 이동 */   
+    #ham-8.activate .line:nth-child(1){ transform: translateY(13px); }
+    #ham-8.activate .line:nth-child(3){ /* 3라인 : 위로 이동하며 90도 회전 */
+      transform: translateY(-13px) rotate(90deg);
+    }
+
+    /* 아홉번째 박스의 애니메이션 */
+    #ham-9 { position: relative; transition: all 0.3s ease-in-out; }
+    #ham-9.activate{ transform: rotate(45deg);  }
+    #ham-9:before{ content: "";  position: absolute; box-sizing: border-box;
+      width: 70px; height: 70px; border: 5px solid transparent;
+      top: calc(50% - 35px);  left: calc(50% - 35px);
+      border-radius: 100%; transition: all 0.3s ease-in-out;
+    }
+    #ham-9.activate:before{  border: 5px solid #ecf0f1; }
+    #ham-9.activate .line{ width: 35px; }
+    #ham-9.activate .line:nth-child(2){ opacity: 0;  }
+    #ham-9.activate .line:nth-child(1){ transform: translateY(13px);  }
+    #ham-9.activate .line:nth-child(3){
+      transform: translateY(-13px) rotate(90deg);
+    }
+
+    /* 열번째 박스의 애니메이션 */
+    #ham-10 { transition: all 0.3s ease-in-out;  }
+    #ham-10.activate{ transform: rotate(90deg); }
+    #ham-10.activate .line:nth-child(1){ width:30px }
+    #ham-10.activate .line:nth-child(2){ width:40px }
+
+    /* 열 한번째 박스의 애니메이션 */
+    #ham-11 { transition: all 0.3s ease-in-out; }
+    #ham-11.activate{ animation: smallbig 0.6s forwards; }
+    @keyframes smallbig{
+      0%, 100%{ transform: scale(1); }
+      50%{ transform: scale(0); }
+    }
+    #ham-11.activate .line:nth-child(1),
+    #ham-11.activate .line:nth-child(2),
+    #ham-11.activate .line:nth-child(3){ transition-delay: 0.2s; }
+    #ham-11.activate .line:nth-child(2){ opacity: 0; }
+    #ham-11.activate .line:nth-child(1){
+      transform: translateY(13px) rotate(45deg);
+    }
+    #ham-11.activate .line:nth-child(3){
+      transform: translateY(-13px) rotate(-45deg);
+    }
+
+    /* 열 두번째 박스의 애니메이션 */
+    #ham-12.activate .line:nth-child(1){
+      opacity: 0;   transform: translateX(-100%);
+    }
+    #ham-12.activate .line:nth-child(3){
+      opacity: 0;
+      transform: translateX(100%);
+    }   
+    </style>
+    <script>
+    $(document).ready(function(){
+        $(".ham").click(function(){
+            $(this).toggleClass("activate");
+        });
+    });    
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>ham Icon Animations</h1>
+        <div class="row cf">
+          <div class="three col">
+            <div class="ham" id="ham-1">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="three col">
+            <div class="ham" id="ham-2">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="three col">
+            <div class="ham" id="ham-3">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="three col">
+            <div class="ham" id="ham-4">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row cf">
+          <div class="three col">
+            <div class="ham" id="ham-5">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="three col">
+            <div class="ham" id="ham-6">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="three col">
+            <div class="ham" id="ham-7">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="three col">
+            <div class="ham" id="ham-8">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row cf">
+          <div class="three col">
+            <div class="ham" id="ham-9">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="three col">
+            <div class="ham" id="ham-10">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="three col">
+            <div class="ham" id="ham-11">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="three col">
+            <div class="ham" id="ham-12">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

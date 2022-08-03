@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>버튼 만들기</title>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; }
+    ul { list-style: none; }
+    a { text-decoration: none; }
+    button, input { outline:0; border:0; background:none; }
+    .btn_fr { clear: both; width:98%; min-height:200px; padding-bottom: 30px; border-top:3px solid #333;  margin: 0 auto; background-color:#afbfd4; overflow-x:hidden; }    
+    .btn_tit { font-size:32px; text-align:center; border-bottom:1px dotted #333; text-transform:capitalize; padding-top: 60px; }
+    .btn_box { width: 1280px; margin:10px auto; } 
+    .btn_box li { float:left; width: 20%; position:relative; }
+        
+    #btn1 li a, #btn1 li input, #btn1 li button, #btn1 li div, #btn1 li label {  /* 기본형 */
+        display:block; width:200px; height: 48px; 
+        line-height: 48px;  text-align: center;  margin: 0 auto; 
+        background-color:#333; color:#fff;   
+        cursor:pointer;    }  
+        
+    #btn2 li a, #btn2 li input, #btn2 li button, #btn2 li div, #btn2 li label { /* 모서리가 둥근 버튼 */
+        display:block; width:200px; height: 48px; 
+        line-height: 48px;  text-align: center;  margin: 0 auto; 
+        background-color:#333; color:#fff;   border-radius:5px;
+        cursor:pointer;    } 
+        
+    #btn3 li a, #btn3 li input, #btn3 li button, #btn3 li div, #btn3 li label {  /* 반원 모서리 버튼 */
+        display:block; width:200px; height: 48px; 
+        line-height: 48px;  text-align: center;  margin: 0 auto; 
+        background-color:#333; color:#fff;   border-radius:24px;
+        cursor:pointer;    } 
+        
+    #btn4 li a, #btn4 li input, #btn4 li button, #btn4 li div, #btn4 li label {    /* 원형 버튼 */
+        display:block; width:200px; height:200px; 
+        line-height:200px;  text-align: center;  margin: 0 auto; 
+        background-color:#333; color:#fff;   border-radius:102px;
+        cursor:pointer;    } 
+        
+    #btn5 li a, #btn5 li input, #btn5 li button, #btn5 li div, #btn5 li label {    /* 배지형 버튼 */
+        display:block; width:200px; height:48px; 
+        line-height:48px;  text-align: center;  margin: 0 auto; 
+        background-color:#333; color:#fff;   border-radius:0px 24px 0px 24px;
+        cursor:pointer;    } 
+ 
+    #btn6 { background-image: url(r1.jpg); background-repeat: no-repeat;
+        background-position:center center; background-size:cover; 
+        height: 600px; }    
+    #btn6 li a, #btn6 li input, #btn6 li button, #btn6 li div, #btn6 li label {    /* 고스트 버튼 */
+        display:block; width:200px; height:48px; 
+        line-height:48px;  text-align: center;  margin: 0 auto; 
+        background:rgba(0,0,0,0.2); color:#fff;   border-radius:28px;
+        cursor:pointer;   border:2px solid #fff; } 
+    #btn7 li a, #btn7 li input, #btn7 li button, #btn7 li div, #btn7 li label { display:block; width:200px; height:48px; 
+        line-height:48px;  text-align: center;  margin: 0 auto; 
+        border-radius: 28px;    cursor:pointer;
+        color: #d9eef7;
+        box-shadow:2px 2px 5px #999; 
+        text-shadow:-1px -1px 0px #999;
+        border: solid 1px #0076a3;
+        /* 배경 그라디언트는 컬러 질라 사이트에서 가져오기  */
+        background: #0095cd;
+        background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+        background: -moz-linear-gradient(top, #00adee, #0078a5);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5');    }
+    
+        
+    #btn8 li { overflow:hidden; height: 52px; }    
+    #btn8 li a {  display:block; width: 200px; color:#333; cursor:pointer;    font-size:16px; font-weight:bold; 
+        line-height: 48px; text-align:center;
+        margin:2px 28px;    background-color:deepskyblue;
+        transition:0.5s; border-radius:26px; }
+    #btn8 li:first-child a { margin-left: -500px; }    
+    #btn8 li:nth-child(2) a { margin-left: 500px; }        
+    #btn8 li:nth-child(3) a { margin-top: -500px; }
+    #btn8 li:nth-child(4) a { margin-top: 500px; }
+    #btn8 li:nth-child(5) a { font-size:1px; }
+    #btn8 li:hover a { margin: 2px 28px; font-size:22px; }   
+    #btn8 li:before { content:""; width: 200px; height: 48px; 
+        position:absolute; border:2px solid #333; top:0; left: 26px; 
+        border-radius:26px; cursor:pointer; }    
+    </style>
+</head>
+<body>
+    <div class="btn_fr" id="btn1">
+        <h2 class="btn_tit">기본 버튼 만들기</h2>
+        <ul class="btn_box">
+            <li class="a_el"><a href="">a요소</a></li>
+            <li class="input_el"><input type="button" value="type=button"></li>
+            <li class="button_el"><button>button 요소</button></li>
+            <li class="div_el"><div>div 요소</div></li>
+            <li class="label_el"><label for="">label 요소</label></li>
+        </ul>
+    </div>
+    <div class="btn_fr" id="btn2">
+        <h2 class="btn_tit">모서리가 둥근 버튼 만들기</h2>
+        <ul class="btn_box">
+            <li class="a_el"><a href="">a요소</a></li>
+            <li class="input_el"><input type="button" value="type=button"></li>
+            <li class="button_el"><button>button 요소</button></li>
+            <li class="div_el"><div>div 요소</div></li>
+            <li class="label_el"><label for="">label 요소</label></li>
+        </ul>
+    </div>
+    <div class="btn_fr" id="btn3">
+        <h2 class="btn_tit">양쪽 반원 버튼 만들기</h2>
+        <ul class="btn_box">
+            <li class="a_el"><a href="">a요소</a></li>
+            <li class="input_el"><input type="button" value="type=button"></li>
+            <li class="button_el"><button>button 요소</button></li>
+            <li class="div_el"><div>div 요소</div></li>
+            <li class="label_el"><label for="">label 요소</label></li>
+        </ul>
+    </div>
+    <div class="btn_fr" id="btn4">
+        <h2 class="btn_tit">원형 버튼 만들기</h2>
+        <ul class="btn_box">
+            <li class="a_el"><a href="">a요소</a></li>
+            <li class="input_el"><input type="button" value="type=button"></li>
+            <li class="button_el"><button>button 요소</button></li>
+            <li class="div_el"><div>div 요소</div></li>
+            <li class="label_el"><label for="">label 요소</label></li>
+        </ul>
+    </div>
+    <div class="btn_fr" id="btn5">
+        <h2 class="btn_tit">배지형 버튼 만들기</h2>
+        <ul class="btn_box">
+            <li class="a_el"><a href="">a요소</a></li>
+            <li class="input_el"><input type="button" value="type=button"></li>
+            <li class="button_el"><button>button 요소</button></li>
+            <li class="div_el"><div>div 요소</div></li>
+            <li class="label_el"><label for="">label 요소</label></li>
+        </ul>
+    </div>
+    <div class="btn_fr" id="btn6">
+        <h2 class="btn_tit">고스트 버튼 만들기</h2>
+        <ul class="btn_box">
+            <li class="a_el"><a href="">a요소</a></li>
+            <li class="input_el"><input type="button" value="type=button"></li>
+            <li class="button_el"><button>button 요소</button></li>
+            <li class="div_el"><div>div 요소</div></li>
+            <li class="label_el"><label for="">label 요소</label></li>
+        </ul>
+    </div>
+    <div class="btn_fr" id="btn7">
+        <h2 class="btn_tit">입체형 버튼 만들기</h2>
+        <ul class="btn_box">
+            <li class="a_el"><a href="">a요소</a></li>
+            <li class="input_el"><input type="button" value="type=button"></li>
+            <li class="button_el"><button>button 요소</button></li>
+            <li class="div_el"><div>div 요소</div></li>
+            <li class="label_el"><label for="">label 요소</label></li>
+        </ul>
+    </div>
+    <div class="btn_fr" id="btn8">
+        <h2 class="btn_tit">인터랙션 버튼1 만들기</h2>
+        <ul class="btn_box">
+            <li class="a_el"><a href="">왼쪽에서</a></li>
+            <li class="a_el"><a href="">오른쪽에서</a></li>
+            <li class="a_el"><a href="">위에서</a></li>
+            <li class="a_el"><a href="">아래에서</a></li>
+            <li class="a_el"><a href="">크게</a></li>
+        </ul>
+    </div>
+</body>
+</html>

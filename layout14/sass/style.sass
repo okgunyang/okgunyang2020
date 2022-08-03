@@ -1,0 +1,594 @@
+@import "libs"
+@import "fonts"
+@import "vars"
+
+
+// Heading
+h1,h2,h3,h4,h5,h6,
+.h1,.h2,.h3,.h4,.h5,.h6
+  text-transform: uppercase
+
+//List
+ul, li
+  list-style: none
+  margin: 0
+  padding: 0
+
+// Link
+a,a:hover, a:focus, a:active,
+button, button:focus, button:active
+  outline: none !important
+a
+  &:hover
+    text-decoration: none
+
+//Button
+.button
+  text-transform: uppercase
+  border: none
+  cursor: pointer
+  opacity: 1
+  transition: all .25s ease
+  padding: 12px 25px
+  &-transparent
+    background-color: transparent
+    border: 1px solid #616161
+    color: #616161
+    font-size: 12px
+    border-radius: 2px
+    font-weight: 800
+    .fa
+      margin-right: 8px
+    &:hover
+      opacity: .7
+    &:active
+      opacity: 1
+      color: #555
+
+  &.btn-color
+    background-color: $theme-color
+    color: #fff
+    font-weight: bold
+    font-size: 16px
+    padding: 8px 62px
+    &:hover
+      background-color: lighten($theme-color, 5%)
+    &:active
+      background-color: lighten($theme-color, 10%)
+
+// Btn-to-Down
+.to-down-btn
+  display: inline-block
+  position: absolute
+  left: -25px
+  margin: 0 50%
+  bottom: -80px
+  border: 2px solid #fff
+  border-radius: 10em
+  width: 50px
+  height: 50px
+  max-width: 100%
+  line-height: 46px
+  text-align: center
+  vertical-align: middle
+  cursor: pointer
+  transition: opacity .5s ease, color .2s ease
+  animation: pulse 2s linear infinite alternate-reverse
+  .fa
+    font-size: 14px
+  &:hover
+    opacity: 1
+    animation: paused
+  &:active
+    border-color: $theme-color
+    color: $theme-color
+
+@keyframes pulse
+  0%
+    opacity: .1
+  50%
+    opacity: .6
+  100%
+    opacity: 1
+
+input, select, textarea
+  display: inline-block
+  width: 100%
+  background-color: #fff
+  color: #222
+  border: 1px solid #999
+  padding: 8px 15px
+  opacity: 1
+  outline: none !important
+  transition: all .3s ease
+  &:hover
+    opacity: .6
+  &:focus
+    border-color: $theme-color
+  &[required]
+
+label
+  color: #999
+  span.input-required
+    position: relative
+    &::before
+      content: '*'
+      color: red
+      position: absolute
+      top: 0
+      right: -12px
+
+.callback
+  label
+    display: inline-block
+    width: 47.55%
+    &:first-child
+      margin-right: 30px
+  label.max-width
+    width: 100%
+
+.flex-wrapper
+  display: flex
+  height: 100%
+  .align-container
+    margin: auto
+body
+  position: relative
+  margin: 0
+  padding: 0
+  min-width: 320px
+  font-family: $default-font
+  line-height: 1.5
+  font-size: 16px
+  overflow-x: hidden
+
+.is-home
+  .main-header
+    position: relative
+    width: 100%
+    height: 100vh
+    min-height: 700px
+    background-color: $bg-color
+    background-size: cover
+    background-position: center
+    color: #fff
+.top-line
+  padding: 50px 0 0
+  font-family: "Lato", sans-serif
+  font-weight: bold
+  position: absolute
+  width: 100%
+  top: 0
+  left: 0
+  z-index: 2
+
+
+.is-page
+  .main-header
+    position: relative
+    width: 100%
+    height: auto
+    background-color: $bg-color
+    background-size: cover
+    background-position: center
+    color: #fff
+    .top-line
+      position: relative
+      padding: 20px 0 25px
+
+.overlay
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  width: 100%
+  height: 100%
+  background-color: #000
+  opacity: .7
+.logo
+  img
+    max-width: 100%
+    width: auto
+    height: auto
+  span
+    text-transform: uppercase
+    font-size: 24px
+    line-height: 1.2
+.top-menu
+  ul
+    li
+      display: inline-block
+      position: relative
+      &.active
+        a
+          color: $theme-color
+      &:hover
+        a
+          color: $theme-color
+      a
+        color: #fff
+        text-transform: uppercase
+        font-size: 14px
+        transition: color .3s ease
+    li:first-child
+      margin-left: 20px
+    li:not(:last-child)
+      margin-right: 18px
+
+  ul li.active
+    border-left: none
+    border-right: none
+    border-top: none
+    border-bottom: 3px solid
+    padding: 0 8px 15px
+    margin-right: 14px
+    border-image: linear-gradient(to right, $text-color 50%, $theme-color 50%) 50% 0%
+
+
+
+.header-content
+  position: relative
+  .container
+    text-align: center
+    margin: auto
+  .h2
+    font-size: 44px
+    font-weight: 300
+    color: #999
+    strong
+      color: $theme-color
+  .h3
+    font-size: 20px
+    font-weight: normal
+    text-transform: none
+
+// Sections
+section
+  &.s-default
+    padding: 70px 0
+    .s-header
+      text-align: center
+      .h3
+        font-size: 44px
+        font-weight: 300
+        position: relative
+        b
+          font-weight: normal
+        &:before
+          content: ''
+          background-color: $theme-color
+          width: 100px
+          height: 3px
+          position: absolute
+          bottom: -20px
+          left: 50%
+          margin-left: -50px
+        &:after
+          content: ''
+          background-color: rgba($theme-color, .7)
+          width: 66px
+          height: 3px
+          position: absolute
+          bottom: -32px
+          left: 50%
+          margin-left: -33px
+    .s-content
+      margin-top: 120px
+      .text
+        text-align: center
+        color: #6c6c6c
+        margin-bottom: 80px
+        font-style: italic
+  &.s-dark
+    background-color: #070707
+    color: #fff
+
+  // Sect ABOUT US
+  &.s-about
+    padding: 100px 0
+    img
+      max-width: 100%
+    .s-header
+      span
+        text-transform: uppercase
+        font-size: 18px
+        color: #636363
+      .h3
+        font-size: 34px
+        font-weight: normal
+        position: relative
+        padding-bottom: 13px
+        &::before
+          content: ''
+          width: 98px
+          height: 4px
+          background-color: $theme-color
+          position: absolute
+          bottom: 0
+          left: 0
+        b
+          font-weight: bold
+    .s-content
+      p
+        padding: 20px 0
+        color: #6c6c6c
+        font-size: 18px
+      ul
+        margin-bottom: 40px
+        li
+          color: #6c6c6c
+          font-style: italic
+          margin-bottom: 10px
+          padding-left: 22px
+          position: relative
+          b
+            font-style: normal
+            font-size: 18px
+            color: #5a5a5a
+          &::before
+            content: '\f192'
+            font-family: fontawesome
+            font-style: normal
+            position: absolute
+            left: 0
+            top: 2px
+
+// Carousel
+.s-carousel.s-default
+  padding-bottom: 150px
+
+.carousel-deafult
+  .carousel-item
+    text-align: center
+.owl-carousel
+  position: relative
+  .owl-dots
+    position: absolute
+    color: #fff
+    bottom: -70px
+    left: 0
+    height: 10px
+    text-align: center
+    width: 100%
+    .owl-dot
+      width: 8px
+      height: 8px
+      background-color: #fff
+      margin-right: 15px
+      &:last-child
+        margin-right: 0
+      &.active
+        background-color: $theme-color
+
+// Section TEAM
+
+.s-team
+  .carousel-team
+    .carousel-item
+      text-align: center
+      .img-wrap
+        border-radius: 10em
+        background-color: rgba(#fff, .8)
+        display: inline-block
+        width: 130px
+        height: 130px
+        img
+          width: 100%
+          height: 100%
+          object-fit: cover
+          border-radius: 10em
+      span
+        display: block
+        &.name
+          font-size: 20px
+          font-weight: bold
+          margin-top: 15px
+        &.descr
+          font-size: 16px
+      p
+        margin-top: 25px
+        font-size: 14px
+        padding: 0 10px
+
+
+.s-services.s-default
+  .s-content
+    margin-top: 70px
+.s-services
+  .service-wrap
+    text-align: center
+    .service
+      margin-bottom: 60px
+      .img-wrap
+        display: inline-block
+        width: 130px
+        height: 130px
+        border: 4px solid $theme-color
+        border-radius: 10em
+        line-height: 155px
+        text-align: center
+        margin-bottom: 10px
+        .fa
+          font-size: 60px
+          &.fa-mobile
+            font-size: 80px
+            line-height: 120px
+          &.fa-desktop
+            line-height: 130px
+          &.fa-bullhorn
+            transform: rotate(-15deg)
+      .h4
+        font-size: 25px
+        margin: 10px 0
+        color: #222
+      .service-descr
+        font-size: 14px
+        color: #222
+
+.s-clients
+  .carousel-item
+    .img-wrap
+      height: 100%
+      text-align: center
+      img
+        display: inline-block
+        max-width: 100%
+        width: auto
+        height: 100%
+
+.s-testimonials
+  .carousel-item
+    text-align: center
+    p
+      font-size: 18px
+      text-transform: uppercase
+      line-height: 1.4
+    span
+      font-size: 18px
+      font-weight: 300
+      color: #b2b2b2
+      b
+
+.s-callback
+  .s-content
+    .text
+      padding: 0
+  .button-wrap
+    margin: 15px 0
+    width: 100%
+    text-align: right
+.s-callback.s-default
+  .s-content
+    margin-top: 70px
+
+
+.s-portfolio.s-default
+  .s-content
+    margin-top: 70px
+.s-portfolio
+  .filter-title
+    text-transform: uppercase
+    font-size: 18px
+    font-weight: bold
+    color: #222
+  .controls
+    text-align: right
+    li
+      display: inline-block
+      font-size: 18px
+      color: #6c6c6c
+      position: relative
+      cursor: pointer
+      &:hover
+        color: lighten(#6c6c6c, 20%)
+      &.mixitup-control-active
+        color: #222
+      &:not(:last-child)
+        padding: 0 10px 0 5px
+        &::before
+          content: ''
+          position: absolute
+          width: 1px
+          height: 18px
+          bottom: 3px
+          right: 0
+          background-color: #6c6c6c
+
+  .portfolio-grid
+    text-align: center
+    padding: 30px 0 0
+  .portfolio-item
+    max-width: 263px
+    height: 236px
+    margin-bottom: 30px
+    background-color: #222
+    position: relative
+    cursor: pointer
+    display: inline-block
+    &:hover
+      .description
+        opacity: 1
+    img
+      object-fit: cover
+      max-width: 100%
+      width: auto
+      height: 100%
+    .description
+      display: flex
+      flex-direction: column
+      position: absolute
+      width: 100%
+      height: 100%
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      button: 0
+      background-color: #222
+      color: #fff
+      opacity: 0
+      transition: all .5s ease
+      .wrap-desr
+        margin: auto
+        position: relative
+      span
+        display: block
+        &.h4
+          font-size: 20px
+        &.type
+          fz14
+          color: #b2b2b2
+      .link
+        margin-top: 30px
+        display: inline-block
+        width: 50px
+        height: 50px
+        color: $theme-color
+        font-size: 60px
+        font-weight: 300
+        line-height: 43px
+        border: 2px solid $theme-color
+        border-radius: 10em
+        &:hover
+          border-color: lighten($theme-color, 10%)
+          color: lighten($theme-color, 20%)
+
+
+
+
+
+.main-footer
+  background-color: #222
+  color: #b2b2b2
+  padding: 30px 0
+  .copyright
+    text-transform: uppercase
+    font-size: 12px
+    line-height: 30px
+  .social
+    text-align: right
+    color: #b2b2b2
+    .soc-item
+      display: inline-block
+      width: 30px
+      height: 30px
+      line-height: 25px
+      text-align: center
+      border-radius: 10em
+      border: 3px solid #b2b2b2
+      cursor: pointer
+      &:not(:last-child)
+        margin-right: 8px
+      &:hover
+        opacity: .8
+      a
+        color: #b2b2b2
+
+    .fa
+      font-size: 16px
+      font-weight: bold
+
+
+
+@import "media" // Staying at the end

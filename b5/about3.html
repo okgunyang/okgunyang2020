@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 메타포 설정 -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>ROUND A'ROUND</title>
+
+    <!-- 파비콘 설정 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+
+    <!-- 오픈그래프 설정 -->
+    <meta property="og:url" content="http://" />
+    <meta property="og:title" content="ROUND A'ROUND" />
+    <meta property="og:description" content="The Life Cosmetic 시간과 공간, 감성을 채우는 라이프 코스메틱" />
+    <meta property="og:site_name" content="ROUND A'ROUND" />
+    <meta property="og:type" content="website" />
+
+    <!-- 폰트 연결 -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+    <!-- 기본 스크립트 리소스 연결 -->
+    <script src="html5shiv.js"></script>
+    <script src="https://raw.github.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"></script>
+    <script src="jquery-3.4.1.js"></script>
+
+    <!-- 스타일 연결 -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="sub1.css">
+    <style>
+    hr { clear:both; }
+    .page { min-height:60vh; clear:both; margin-top:50px; padding-top:50px; position:relative; }  
+    .page:after { content:""; clear:both; display:table; }
+    .page_wrap { width: 1140px;  margin:50px auto; position:relative; clear:both; } 
+    .none_item { display:none; }
+    .page_tit { clear:both; font-weight: 300;    line-height: 1.6;    text-align: center;   font-size:40px; padding-top: 1.5rem;  }
+    .page_com { clear:both; font-weight:300; line-height: 1.3; text-align:center; font-size:16px; padding-top: 0.8rem; }
+
+    .bread { clear:both; float:right; padding-top:20px;  font-size:16px; }
+    .bread a, .bread span { display:block; line-height:2; padding: 1.5rem 1rem; float:left; color:#333; }
+    .bread a:after { content:">"; padding-left: 1rem; } 
+
+    .box_inner { position:relative;  width:1040px; min-height:500px; clear:both; margin:50px auto; }
+    .tit_box { width: 500px; height: 500px; border:1px solid #999; position:absolute; top: 100px; box-sizing:border-box; padding:3rem; padding-top:5rem; padding-left: 5rem; }
+    .pic_box { width: 100%; min-height:600px; background-repeat:no-repeat; background-size:auto; position:absolute; top: 0; }
+    .cate_tit { padding-top:3rem; margin-top: 20px;    font-size: 28px;    font-weight: 300; }
+    .cate_com { padding-top:3rem;  font-family: 'Roboto','Noto Sans KR','Malgun Gothic','AppleSDGothicNeo',sans-serif;
+    font-weight: 400;    line-height: 1.38; font-size:16px; }
+    .cate_tit2 {  margin: 80px 0;    padding: 80px 0;    text-align: center;
+    background-color: #f9f9f9;    font-size: 28px;    font-weight: 300;    color: #555;     }
+    .pic_box.left { background-position:left top; }
+    .pic_box.right { background-position:right top; }
+    .tit_box.left { left: 0; }
+    .tit_box.right { right: 0;  }
+    #page1 .pic_box { background-image:url("./sub/styler01.jpg"); }
+    #page2 .pic_box { background-image:url("./sub/styler02.jpg"); }
+    #page3 .pic_box { background-image:url("./sub/styler03.jpg"); }
+    #page1 { min-height:100vh; }
+    #page3 { min-height:30vh; }
+    #page3 .page_wrap { margin: 10px auto; }
+    #page1:after { content:""; display:block; clear:both; height:200px; position:relative; }
+    #page3 .tit_box { padding-top: 2.5rem;  }
+    .tit_box.center { margin: 0 auto;    width: 672px;    padding: 40px;    background: rgba(255,255,255,0.8); position:relative; border:0; height:230px; margin-top: -100px; padding-top:0; box-sizing:border-box; box-shadow:0px 0px 20px #ccc; }
+    #page5 .box_inner { height: 440px;    margin: 80px 0 0;    padding-top: 280px;
+    background: url("./sub/styler04.jpg") no-repeat center top;    color: #555; }
+    </style>
+</head>
+<body>
+<input type="checkbox" class="ck_item" id="menu_ck">
+<input type="checkbox" class="ck_item" id="search_ck">    
+<div id="wrap">
+    <header class="hd">
+        <label for="menu_ck" class="lst_call">
+            <span class="line1"></span>
+            <span class="line2"></span>
+            <span class="line3"></span>
+        </label>
+        <label for="search_ck" class="search_call"></label>
+        <div class="main_logo"><a href="index.html"></a></div>
+    </header>
+    <main class="page" id="page1">
+        <div class="page_wrap">
+            <div class="page_inner">
+                <p class="bread"><a href="index.html">Home</a><a href="about1.html">About</a><span>RARA StyleR</span></p> 
+                <hr>
+                <h2 class="page_tit">RARA StyleR</h2>
+                <p class="page_com">라라스타일러</p>
+                <div class="box_inner">
+                    <div class="tit_box right">
+                        <p class="cate_com">라이프 코스메틱 라운드어라운드와 함께<br>시간과 공간, 감성을 채우는</p>
+                        <h3 class="cate_tit">'라이프 크리에이터'</h3>
+                    </div>
+                    <div class="pic_box left"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <main class="page" id="page2">
+        <div class="page_wrap">
+            <div class="box_inner">
+                <div class="tit_box left">
+                    <p class="cate_com">라라스타일러 1기는 20명의<br>모두 다른 너와 내가 모여</p>
+                    <p class="cate_com">6개월 동안 일상 속 특별함을 만들어냈던<br>소중한 기억입니다.</p>
+                    <p class="cate_com">"바쁜 도시 생활 속에서도<br>잠시나마 나를 미소 짓게 하는<br>기분 좋은 순간들이 가득했어요"</p>
+                </div>
+                <div class="pic_box right"></div>
+            </div>
+        </div>
+    </main>
+    <main class="page" id="page3">
+        <div class="page_wrap">
+            <div class="box_inner">
+                <div class="tit_box right">
+                    <p class="cate_com">"작은 창문 사이로 햇빛이<br>살짝 비추는 시간을 상상해보세요.<br>그 시간을 만들어줘요. 꼭 함께하세요"</p>
+                    <p class="cate_com">1기는 매월 한 번씩 모여서<br>라라의 제품과 함께 다양한 활동을<br>진행했습니다.</p>
+                    <p class="cate_com">마크라메 클래스부터<br>선물포장, 캔들 클래스 까지.<br>특히 하루를 온전히 라라와 보냈던<br>감성캠핑은 우리들만의 시간 입니다.</p>
+                </div>
+                <div class="pic_box left"></div>
+            </div>
+        </div>
+    </main>
+    <main class="page" id="page4">
+        <h3 class="cate_tit2">나와 나를 둘러싼 일상 속 모든 순간을<br>
+        기분 좋은 감성으로 채울 수 있었죠<br><br>
+        라라를 사랑하는 모든 분들, <br>
+        그리고 나를 가장 소중하게 생각하는 <br>
+        우리 모두가 ‘라라 스타일러’ 입니다.</h3>
+    </main>
+    <main class="page" id="page5">
+        <div class="page_wrap">
+            <div class="box_inner">
+                <div class="tit_box center">
+                    <h3 class="cate_tit">THE LIFE COSMETIC ROUND A’ROUND</h3>
+                    <p class="cate_com">앞으로도 계속될 라이프크리에이터 <br>
+                    라라스타일러의 활동을 주목해주세요!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="ft">
+        <div class="ft_wrap">
+            <div class="ft_logo">
+                <img src="./img/logo_s.png" alt="하단로고">
+            </div>
+            <nav id="fnb">
+                <ul>
+                    <li><a href="privacy.html"><strong>개인정보처리방침</strong></a></li>
+                    <li><a href="terms.html">이용약관</a></li>
+                    <li><a href="regal.html">법적고지</a></li>
+                </ul>
+            </nav>
+            <div class="addr">
+                <span><strong>씨제이올리브영 주식회사</strong></span> 
+                <span>대표이사 : 구창근</span> 
+                <span>사업자등록번호 : 809-81-01574</span> <br>
+                <span>고객센터 : 1522-0882</span>
+                <span>주소 : (04323) 서울특별시 용산구 한강대로 366 (동자동) 6층</span>
+            </div>
+            <p class="copyright">Copyright ©2019 CJ OliveYoung. All rights reserved.</p>
+        </div>    
+    </footer>
+</div>
+<nav id="menu">
+    <ul class="menu_1st">
+        <li class="sub_has">
+            <a href="about1.html" class="dp1">About</a>
+            <ul class="sub">
+                <li><a href="about1.html" class="dp2">Brand Story</a></li>
+                <li><a href="about2.html" class="dp2">Awards</a></li>
+                <li><a href="about3.html" class="dp2">RARA StyleR</a></li>
+            </ul>
+        </li>
+        <li class="sub_has">
+            <a href="product1_all.html" class="dp1">Products</a>
+            <ul class="sub">
+                <li class="detail_has">
+                    <a href="product1_all.html" class="dp2">Greentea Skin Care</a>
+                    <ul class="detail">
+                        <li>
+                            <a href="product1.html#page1" class="dp3">
+                                <img src="./img/back/greentea01.png" alt="그린티 미스트 토너">
+                                <span class="dp3_txt">그린티 미스트 토너</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product1.html#page2" class="dp3">
+                                <img src="./img/back/greentea02.png" alt="그린티 스킨 세럼">
+                                <span class="dp3_txt">그린티 스킨 세럼</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product1.html#page3" class="dp3">
+                                <img src="./img/back/greentea03.png" alt="그린티 릴리프 크림">
+                                <span class="dp3_txt">그린티 릴리프 크림</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product1.html#page4" class="dp3">
+                                <img src="./img/back/greentea04.png" alt="그린티 수퍼 써드 오일">
+                                <span class="dp3_txt">그린티 수퍼 써드 오일</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product1.html#page5" class="dp3">
+                                <img src="./img/back/greentea05.png" alt="그린티 악산성 클렌징폼">
+                                <span class="dp3_txt">그린티 악산성 클렌징폼</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product1.html#page6" class="dp3">
+                                <img src="./img/back/greentea06.png" alt="그린티 트러블 버블폼">
+                                <span class="dp3_txt">그린티 트러블 버블폼</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product1.html#page7" class="dp3">
+                                <img src="./img/back/greentea07.png" alt="그린티 퓨어 클렌징 오일">
+                                <span class="dp3_txt">그린티 퓨어 클렌징 오일</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product1.html#page8" class="dp3">
+                                <img src="./img/back/greentea08.png" alt="그린티 약산성 립앤아이 리무버">
+                                <span class="dp3_txt">그린티 약산성 립앤아이 리무버</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="detail_has">
+                    <a href="product2_all.html" class="dp2">Basic Skin Care</a>
+                    <ul class="detail">
+                        <li>
+                            <a href="product2.html#page1" class="dp3">
+                                <img src="./img/back/basicskincare01.png" alt="컴포트 하이드레이팅 워터">
+                                <span class="dp3_txt">컴포트 하이드레이팅 워터</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product2.html#page2" class="dp3">
+                                <img src="./img/back/basicskincare02.png" alt="에센셜 부스팅 하이드레이터">
+                                <span class="dp3_txt">에센셜 부스팅 하이드레이터</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product2.html#page3" class="dp3">
+                                <img src="./img/back/basicskincare03.png" alt="리페어링 액티브 세럼">
+                                <span class="dp3_txt">리페어링 액티브 세럼</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product2.html#page4" class="dp3">
+                                <img src="./img/back/basicskincare04.png" alt="인텐스 배리어 크림">
+                                <span class="dp3_txt">인텐스 배리어 크림</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="detail_has">
+                    <a href="product3_all.html" class="dp2">Sun Care</a>
+                    <ul class="detail">
+                        <li>
+                            <a href="product3.html#page1" class="dp3">
+                                <img src="./img/back/suncare01.png" alt="그린티 시카 선로션">
+                                <span class="dp3_txt">그린티 시카 선로션</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product3.html#page2" class="dp3">
+                                <img src="./img/back/suncare02.png" alt="그린티 시카 선스틱">
+                                <span class="dp3_txt">그린티 시카 선스틱</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="detail_has">
+                    <a href="product4_all.html" class="dp2">Home Fragrance</a>
+                    <ul class="detail">
+                        <li>
+                            <a href="product4.html#page1" class="dp3">
+                                <img src="./img/back/homefragrance01.png" alt="센티드 디퓨저">
+                                <span class="dp3_txt">센티드 디퓨저</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product4.html#page2" class="dp3">
+                                <img src="./img/back/homefragrance02.png" alt="센티드 캔들">
+                                <span class="dp3_txt">센티드 캔들</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product4.html#page3" class="dp3">
+                                <img src="./img/back/homefragrance03.png" alt="드라이플라워 디퓨저">
+                                <span class="dp3_txt">드라이플라워 디퓨저</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product4.html#page4" class="dp3">
+                                <img src="./img/back/homefragrance04.png" alt="선인장 디퓨저">
+                                <span class="dp3_txt">선인장 디퓨저</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product4.html#page5" class="dp3">
+                                <img src="./img/back/homefragrance05.png" alt="마이 러블리 펫 디퓨저">
+                                <span class="dp3_txt">마이 러블리 펫 디퓨저</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product4.html#page6" class="dp3">
+                                <img src="./img/back/homefragrance06.png" alt="드라이플라워 센티드 카드">
+                                <span class="dp3_txt">드라이플라워 센티드 카드</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="detail_has">
+                    <a href="product5_all.html" class="dp2">Life Fragrance</a>
+                    <ul class="detail">
+                        <li>
+                            <a href="product5.html#page1" class="dp3">
+                                <img src="./img/back/lifefragrance01.png" alt="볼륨 에디션">
+                                <span class="dp3_txt">볼륨 에디션</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product5.html#page2" class="dp3">
+                                <img src="./img/back/lifefragrance02.png" alt="라이프 프래그런스">
+                                <span class="dp3_txt">라이프 프래그런스</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="detail_has">
+                    <a href="product6_all.html" class="dp2">Body Care</a>
+                    <ul class="detail">
+                        <li>
+                            <a href="product6.html#page1" class="dp3">
+                                <img src="./img/back/bodycare01.png" alt="버블 바쓰">
+                                <span class="dp3_txt">버블 바쓰</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product6.html#page2" class="dp3">
+                                <img src="./img/back/bodycare02.png" alt="바쓰 솔트">
+                                <span class="dp3_txt">바쓰 솔트</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product6.html#page3" class="dp3">
+                                <img src="./img/back/bodycare03.png" alt="드라이플라워 콜온&핸드크림">
+                                <span class="dp3_txt">드라이플라워 콜온&핸드크림</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product6.html#page4" class="dp3">
+                                <img src="./img/back/bodycare04.png" alt="드라이플라워 바디&헤어 미스트">
+                                <span class="dp3_txt">드라이플라워 바디&헤어 미스트</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="moment.html" class="dp1">RARA Moments</a>
+        </li>
+        <li>
+            <a href="store.html" class="dp1">Stores</a>
+        </li>
+    </ul>
+</nav>
+<nav id="search">
+    <div id="search_form">
+        <ul class="fieldset">
+            <li class="item_form">
+                <div class="search_con">
+                    <input type="text" id="keyword" placeholder="상품명을 입력해주세요">
+                    <input type="submit" id="search_submit" class="search_btn">
+                </div>
+            </li>
+            <li class="item_div">인기 검색어</li>
+            <li class="item"><a href="">1. 그린티 시카 선로션</a></li>
+            <li class="item"><a href="">2. 그린티 약산성 클렌징폼</a></li>
+            <li class="item"><a href="">3. 센티드 디퓨저</a></li>
+            <li class="item"><a href="">4. 라이프 프래그런스</a></li>
+            <li class="item"><a href="">5. 버블 바쓰</a></li>
+            <li class="item_btn">
+                <label for="search_ck" class="search_close">닫기</label>
+            </li>
+        </ul>
+        <script>
+        $("#search_submit").click(function(){
+            var data = $("#keyword").val();
+            if(data=="") { alert("검색어를 입력해주세요"); } else { data.submit(); location.href = "search_result.html"; }
+        });    
+        </script>
+    </div>
+</nav>
+<!-- <script src="main.js"></script> -->
+</body>
+</html>

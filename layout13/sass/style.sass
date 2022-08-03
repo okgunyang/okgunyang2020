@@ -1,0 +1,531 @@
+@import "libs"
+@import "fonts"
+@import "vars"
+
+*
+  box-sizing: border-box
+  &:before, &:after
+    box-sizing: border-box
+
+a,a:hover, a:focus, a:active, button, button:focus, button:active
+  outline: none !important
+
+body
+  position: relative
+  margin: 0 auto
+  padding: 0
+  max-width: 1600px
+  min-height: 480px
+  font-family: $default-font
+  line-height: 1.5
+  font-size: 16px
+  background-color: #fbfcf5
+  overflow-x: hidden
+
+.container
+  max-width: $container
+  height: auto
+  margin: 0 auto
+
+.align-center
+  text-align: center
+.shadow
+  box-shadow: 10px 10px 0 0 $theme-color
+// Heading
+h1,h2,h3,h4,h5,h6,
+.h1,.h2,.h3,.h4,.h5,.h6
+  text-transform: capitalize
+  font-family: 'Butler', sans-serif
+  font-weight: 500
+  b
+    color: $theme-color
+// Link
+a
+  color: #fff
+  text-decoration: none
+  &:hover
+    text-decoration: none
+  &.link-to-page
+    color: $theme-color
+    font-family: 'Lato', sans-serif
+    font-size: 18px
+    text-transform: uppercase
+    position: relative
+    padding-right: 35px
+    &::before
+      content: "\f178"
+      font-family: fontawesome
+      font-weight: 200
+      position: absolute
+      top: 3px
+      right: -15px
+      line-height: 18px
+    &:hover
+      color: lighten($theme-color, 8%)
+    &:active
+      color: lighten($theme-color, 10%)
+// Button
+.button
+  display: inline-block
+  min-width: 180px
+  min-height: 48px
+  padding: 13px 30px
+  text-transform: uppercase
+  color: #fff
+  border: none
+  background-color: $theme-color
+  text-align: center
+  font-size: 14px
+  font-family: 'Lato', sans-serif
+  cursor: pointer
+  transition: all .5s ease
+  &:hover
+   background-color: lighten($theme-color, 8%)
+  &:active
+    background-color: lighten($theme-color, 15%)
+
+  &-transparent, &-transparent-dark
+    background-color: transparent
+    &:hover
+      background-color: transparent
+      border-color: lighten($theme-color, 8%)
+      color: lighten($theme-color, 8%)
+    &:active
+      background-color: transparent
+      border-color: lighten($theme-color, 15%)
+      color: lighten($theme-color, 15%)
+  &-transparent
+    border: 1px solid #fff
+  &-transparent-dark
+    border: 1px solid #2a2a2a
+    color: #2a2a2a
+
+.hamburger
+  display: none
+  position: absolute
+  right: 0
+  top: 28px
+
+  .hamburger-box
+    width: 40px
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after
+  border-radius: 1
+  background-color: #fff
+  width: 40px
+  height: 4px
+
+
+//List
+ul, li
+  margin: 0
+  padding: 0
+  list-style: none
+// Form
+
+
+// Header
+.main-header
+  position: relative
+  width: 100%
+  height: 100vh
+  min-height: 480px
+  min-height: 846px
+  background-position: 0 0
+  background-size: cover
+
+#my-menu
+  z-index: 4
+
+.top-line
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    width: 100%
+    height: 1px
+    background-color: rgba(#fff, .3)
+    bottom: 0
+    left: 0
+  .container
+    display: flex
+    justify-content: space-between
+    margin: 0 auto
+    padding: 20px 0
+    min-height: 60px
+    color: #fff
+    opacity: .8
+    font-size: 14px
+    z-index: 2
+  .contacts
+    span
+      display: inline-block
+      position: relative
+      margin-right: 25px
+      padding-left: 19px
+      .fa
+        position: absolute
+        top: 3px
+        left: 0
+  .social
+    a
+      color: #fff
+      transition: all .25s ease
+      &:not(:last-child)
+        margin-right: 24px
+      &:hover
+         opacity: .7
+.navbar-wrap
+  position: relative
+.navbar
+  display: flex
+  justify-content: space-between
+  height: auto
+  padding: $gutter 0 0
+  z-index: 1
+.logo
+  img
+    max-width: 100%
+    height: 48px
+.menu
+  padding: 10px 0
+  ul
+    li
+      display: inline-block
+      position: relative
+      transition: all .5s ease
+      &:not(:last-child)
+        margin-right: 27px
+.navbar .menu li
+  &::before
+    content: ''
+    position: absolute
+    width: 100%
+    height: 1px
+    background-color: $theme-color
+    top: -40px
+    left: 0
+    transition: all .5s ease
+    opacity: 0
+  &:hover, &.active
+    a
+      color: $theme-color
+    &::before
+      opacity: 1
+  a
+    text-transform: uppercase
+    font-family: 'Lato', sans-serif
+    font-size: 14px
+    transition: all .5s ease
+
+.header-content
+  display: flex
+  text-align: center
+  align-items: center
+  width: 100%
+  height: auto
+  margin-top: 230px
+  .content
+    margin: 0 auto
+  .h1
+    color: #fff
+    font-size: 64px
+    margin: 0
+  p
+    color: #fff
+    margin: 0
+    font-family: 'Lato', sans-serif
+
+.header-buttons
+  margin-top: 45px
+  .button
+    .fa
+      margin-right: 10px
+  .button:not(:last-child)
+    margin-right: $gutter
+
+// Section
+
+.s-default
+  padding: 100px 0 120px
+  line-height: 1.6
+  .s-header
+    text-align: center
+    color: #3a3a3a
+    .h2
+      font-size: 48px
+      margin: 0
+    .s-description
+      font-family: 'Lato', sans-serif
+  .s-content
+    margin-top: 74px
+
+.s-services
+  .teasers-wrap
+    display: flex
+    justify-content: space-around
+    text-align: center
+    .teaser
+      display: flex
+      flex-direction: column
+      justify-content: center
+      color: #6f6f6f
+      width: 180px
+      height: 172px
+      padding: 20px
+      cursor: pointer
+      transition: all .5s ease
+      .fa
+        font-size: 48px
+        margin: $gutter
+      span
+        text-transform: uppercase
+        font-size: 18px
+        font-family: 'Butler', sans-serif
+        font-weight: 500
+      &.active, &:hover
+        background-color: #fff
+        box-shadow: 3px 3px 16px rgba(#202020, .1)
+  .info-block
+    display: flex
+    margin-top: 60px
+    align-items: center
+    .img-wrap
+      flex-basis: 632px
+      background-position: center
+      background-size: cover
+      width: 100%
+      min-height: 380px
+
+    .text-block
+      flex-basis: 38%
+      margin-left: 70px
+      line-height: 2
+      .h3
+        font-size: 24px
+        line-height: 36px
+        margin: 0
+      p
+        line-height: 25.96px
+        font-family: 'Lato', sans-serif
+        margin-bottom: 22px
+
+.s-slider
+  .slider-wrap
+    position: relative
+  .owl-nav
+    position: absolute
+    width: 100%
+    bottom: 140px
+    left: 0
+    .owl-next,.owl-prev
+      position: absolute
+      transition: all .5s ease
+      &:hover
+        opacity: .7
+    .owl-next
+      right: 30px
+    .owl-prev
+      left: 30px
+    .fa
+      color: #fff
+      font-size: 28px
+
+  .slide
+    display: flex
+    align-items: flex-end
+    background-position: center 0
+    background-size: cover
+    height: 800px
+    text-align: center
+    padding: $gutter*2
+  .slide-text
+    display: flex
+    text-align: left
+    max-width: 970px
+    min-height: 140px
+    margin: 0 auto
+    padding: 30px 60px
+    background-color: #fff
+    color: $text-color
+    .date
+      display: inline-block
+      font-family: 'Butler', sans-serif
+      font-weight: 500
+      font-size: 32px
+      padding: 0 28px
+      white-space: nowrap
+      border-right: 1px solid $text-color
+      position: relative
+      line-height: 1
+      &::before
+        content: "\f004"
+        font-family: fontawesome
+        font-size: 22px
+        position: absolute
+        bottom: 6px
+        left: 50%
+        margin-left: -11px
+        color: $theme-color
+    .text
+      display: inline-block
+      font-family: 'Lato', sans-serif
+      font-size: 16px
+      padding: 0 $gutter
+      p
+        margin: 0
+
+
+
+.s-channel
+  .s-content
+    margin-top: 60px
+  .video-wrap
+    display: flex
+    flex-direction: column
+    align-items: center
+    text-align: center
+    height:
+    video
+      object-fit: cover
+      margin-bottom: 40px
+      max-width: 100%;
+      height: auto;
+
+.s-blog
+  .s-content
+    margin-top: 0
+  .button
+    margin-top: 60px
+  .controls
+    text-align: center
+    li
+      display: inline-block
+      font-family: 'Lato', sans-serif
+      transition: all .25s ease
+      cursor: pointer
+      &:not(:last-child)
+        margin-right: 40px
+      &:hover, &.mixitup-control-active, &.active
+        color: $theme-color
+  .tag
+    display: block
+    position: absolute
+    top: 90px
+    left: -87px
+    transform: rotate(-90deg)
+    color: #525252
+    font-size: 14px
+    text-transform: uppercase
+    letter-spacing: 1.3px
+    &::before
+      content: ''
+      width: 50px
+      height: 1px
+      position: absolute
+      top: 50%
+      left: -65px
+      line-height: 1
+      background-color: #525252
+  .blog-grid
+    position: relative
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-template-rows: repeat(2, 1fr)
+    grid-gap: 20px $gutter
+    margin-top: 66px
+    .blog-item:nth-of-type(1)
+      grid-column: 1 / 3
+    .blog-item
+      img
+        object-fit: cover
+        width: 100%
+        max-height: 300px
+      .blog-text
+        .h4
+          margin: 18px 0 10px
+          font-size: 18px
+          font-family: 'Lato', sans-serif
+          color: #525252
+        .blog-date
+          color: #757575
+          font-family: 'Butler', sans-serif
+          font-weight: 300
+
+.s-contacts
+  .s-content
+    margin-top: 66px
+  .contacts-wrap
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    .contact
+      padding-left: 90px
+      position: relative
+      .contact-value
+          white-space: nowrap
+      &::before
+        content: ''
+        width: 60px
+        height: 60px
+        background-image: url(../img/icons.png)
+        background-position: 0 0
+        background-size: cover
+        position: absolute
+        top: 0
+        left: 0
+        // border: 1px solid black
+      &.addr
+        &::before
+          background-position: 67px 0
+      &.phone
+        &::before
+          background-position: -70px 0
+      &.email
+        &::before
+          background-position: -9px 0
+      span:first-child
+        text-transform: uppercase
+        font-size: 14px
+        font-family: 'Lato', sans-serif
+      .contact-value
+        font-size: 24px
+        font-family: 'Butler', sans-serif
+        font-weight: 300
+
+.main-footer
+  padding: 50px
+  background-color: #3a3a3a
+  .footer-content
+    text-align: center
+    nav
+      margin-bottom: 60px
+      li
+        margin-right: 26px
+      a
+        text-transform: uppercase
+        font-size: 15px
+        &:hover
+          color: $theme-color
+    .logo
+      img
+        height: 64px
+    .soc-links
+      text-align: center
+      margin-top: 10px
+      a
+        color: #fff
+        &:hover
+          text-decoration: underline
+        &:not(:last-child)
+          &::after
+            content: ' /'
+            color: #fff
+            text-decoration: none
+
+
+
+
+@import "media" // Staying at the end

@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>모바일 레이아웃</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="./images/favicon16.png">
+    <!-- 신형 브라우저와 안드로이드 폰 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./images/favicon32.png">
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="48x48" href="./images/favicon-1x.png">
+    <link rel="apple-touch-icon" size="57x57" href="./images/favicon57.png">
+    <link rel="apple-touch-icon" size="64x64" href="./images/favicon64.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="font.css">
+    <link href="https://fonts.googleapis.com/css?family=Srisakdi:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat+Brush|Nanum+Brush+Script" rel="stylesheet">
+    <link rel="stylesheet" href="mobileReset.css">
+    <link rel="stylesheet" href="styleguide.css">
+    <style>
+    .mobile { width: 100%; height: 100%; position:relative; 
+        overflow:hidden; }    
+    .page { position:fixed; top:0; right:-100%; width: 100%; height: 100%; transition:0.7s; z-index:15; }
+    .page:target { right:0; z-index:20; }
+    .page:not(:target) { right:-100%; z-index:15; }    
+        
+    #home { z-index:10; right:0; background-image:url("./images/mobileBg1.png"), url("./images/mainBg1.png"); background-size:320px auto, cover; background-position:center -220px, center center; background-repeat:no-repeat; }
+    #home h2 { text-align: center; line-height: 4; padding-top:1em; }    
+    .dynamicGridLayout { clear:both; width:270px;  
+        min-height:240px; margin-top:70%; } 
+    .dynamicGridLayout li { float:left; padding:0; height:auto; margin-bottom:10px; border-radius:10px; overflow:hidden; box-shadow:1px 1px 10px #333; } 
+    .dynamicGridLayout li a { display:block; width:60px; height:70px; 
+        margin:10px auto; padding-bottom:6px; text-align:center; line-height:1; }
+    .dynamicGridLayout li a .icoTxt { display:block; color:#fff; font-size:14px;  }    
+    .grd-4.last { margin-right: 0; } 
+    .copyright { font-size:14px; text-align:center; line-height:3; 
+        position:absolute; bottom:0; left: 0; width: 100%; text-shadow:1px 1px 1px #999; }    
+    
+    .ckData { display:none; }    
+    #main, #sub1, #sub2, #sub3, #list, #search, #login, #join, #post { background:#f1f1f3; overflow-x:hidden; overflow-y:auto; }    
+    .hd { width:100%; height:60px; border-top:1px solid #666; border-bottom:1px solid #111; position:relative; }
+    .hdBtn { position:absolute; top:0; z-index:25; }    
+    .homeBtn { left:0; }    
+    .menuBtn { right:0; }    
+    .location { line-height: 60px; color:#fff; text-align:center; font-size:24px; }    
+        
+    #ckin:checked ~ #gnb { left:0; } 
+    #gnb { width:100%; position:fixed; top:61px; left:-100%; z-index:50; transition:0.7s; }
+    #gnb li { display:block; float:left; width:25%; 
+        background: linear-gradient(45deg, #dd5932, #e66a2d); 
+        border-bottom:1px solid #df662a; }
+    #gnb li a { display:block; width:60px; height:60px; 
+        margin:0 auto; line-height:60px; color:#fff; 
+        font-size:12px; font-weight:500;
+        letter-spacing:-1px; text-align:center; }   
+    #gnb li a.txtFrame { width:100%; } 
+        
+    .vs { width: 100%; height: auto; }
+    .vs img { width: 100%; height: auto; }    
+    
+    .pgTit { line-height: 3; padding-top:2em; padding-left:1em; color:#333; }    
+    .pgCom { padding:1em; color:#333; }    
+    .thumbBox { clear:both; }
+    .thumbBox li { padding:10px; }    
+    .thumbBox li a { display:block; border:1px solid #e0e0e0; }
+    .proTit { padding:14px; line-height:2.4; overflow:hidden; text-overflow: ellipsis; white-space:nowrap; }   
+    .proCom { padding:14px; line-height:1.6; overflow:hidden; text-overflow: ellipsis; white-space:nowrap; font-size:14px; } 
+        
+    .ft { width:100%; height:60px; border-top:1px solid #666; border-bottom:1px solid #111; position:relative; text-align:center;
+        background:#333; }    
+    .lstBox { width:100%; height:auto; }    
+    .lstBox li { background-color:#dd5932; border-bottom:1px solid #b45526; border-top:1px solid #ed8f61; padding:10px; }    
+    .lstBox li a { display:block; position:relative; }
+    .thumbTit { position:absolute; top:5px; line-height:2; right:10px; 
+        width:180px; text-overflow:ellipsis; overflow:hidden; white-space: nowrap; }
+    .thumbCom { position:absolute; top:45px; right:10px; 
+        width:180px; text-overflow:ellipsis; overflow:hidden; white-space: nowrap; }
+    .formFrame fieldset { display:block; border:0; padding:10px; }    
+    .frmInput { display:block; width:200px; height:60px; float:left; border:1px solid #333; color:#333; margin-left:50px; 
+        border-radius:32px; margin-top:15px; font-size:14px; text-indent:1em; }
+    .frmInput2 { display:block; width:250px; height:40px;  border:1px solid #333; color:#333; margin:15px auto;
+        border-radius:32px; font-size:14px; text-indent:1em; }
+    .frmBtn { text-indent:-9999px; float:left; border-radius:32px; 
+        background-color:#333; border:1px solid #333; margin-top: 15px; margin-left: 15px; }
+    .frmMemo { display:block; width:220px;  border:1px solid #333; color:#333;  margin:15px auto; 
+        border-radius:32px;  font-size:14px; padding:1em; }    
+    .blankBox { min-height:400px; }    
+    </style>
+</head>
+<body>
+<input type="checkbox" id="ckin" class="ckData">
+<div class="mobile">
+    <main class="page" id="home">
+        <nav class="homemenu">
+            <ul class="dynamicGridLayout">
+                <li class="grd-4 first redBg">
+                    <a href="tel:010-3024-4029">
+                        <span class="ico-phone"></span>
+                        <span class="icoTxt">전화</span>
+                    </a>
+                </li>
+                <li class="grd-4 redBg">
+                    <a href="sms:010-3024-4029">
+                        <span class="ico-talk"></span>
+                        <span class="icoTxt">문자</span>
+                    </a>
+                </li>
+                <li class="grd-4 last redBg">
+                    <a href="mailto:ksb450424@naver.com">
+                        <span class="ico-mail"></span>
+                        <span class="icoTxt">메일</span>
+                    </a>
+                </li>
+                <li class="grd-4 first redBg">
+                    <a href="#main">
+                        <span class="ico-home"></span>
+                        <span class="icoTxt">메인</span>
+                    </a>
+                </li>
+                <li class="grd-4 redBg">
+                    <a href="#search">
+                        <span class="ico-search"></span>
+                        <span class="icoTxt">검색</span>
+                    </a>
+                </li>
+                <li class="grd-4 last redBg">
+                    <a href="#list">
+                        <span class="ico-doc-print"></span>
+                        <span class="icoTxt">목록</span>
+                    </a>
+                </li>
+                <li class="grd-4 first redBg">
+                    <a href="#login">
+                        <span class="ico-key"></span>
+                        <span class="icoTxt">로그인</span>
+                    </a>
+                </li>
+                <li class="grd-4 redBg">
+                    <a href="#join">
+                        <span class="ico-member"></span>
+                        <span class="icoTxt">가입</span>
+                    </a>
+                </li>
+                <li class="grd-4 last redBg">
+                    <a href="#post">
+                        <span class="ico-edit"></span>
+                        <span class="icoTxt">글쓰기</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="copyright subTxt">
+            All copyrights by KIM.
+        </div>
+    </main>
+    <main class="page" id="main">
+        <div class="container">
+            <header class="hd baseBg">
+                <a href="#home" class="hdBtn homeBtn">
+                    <span class="ico-home"></span>
+                </a>
+                <h1 class="location">메인</h1>
+                <label for="ckin" class="hdBtn menuBtn">
+                    <span class="ico-list"></span>
+                </label>
+            </header>
+            <section class="con">
+                <figure class="vs">
+                    <img src="./images/tmoninside.png" alt="메인비주얼이미지">
+                </figure>
+                <div class="art">
+                    <h2 class="pgTit">메인 제목</h2>
+                    <p class="pgCom">메인 설명</p>
+                </div>
+                <ul class="thumbBox">
+                    <li><a href="">
+                            <img src="http://placehold.it/300x240/333" alt="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/300x240/333" alt="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/300x240/333" alt="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/300x240/333" alt="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/300x240/333" alt="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/300x240/333" alt="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                </ul>
+            </section>
+            <footer class="ft">
+                <p class="copyright subTxt">All copyrights by KIM.</p>
+            </footer>
+        </div>
+    </main>
+    <main class="page" id="sub1">
+        <div class="container">
+            <header class="hd baseBg">
+                <a href="#home" class="hdBtn homeBtn">
+                    <span class="ico-home"></span>
+                </a>
+                <h1 class="location">Intro</h1>
+                <label for="ckin" class="hdBtn menuBtn">
+                    <span class="ico-list"></span>
+                </label>
+            </header>
+            <section class="con">
+                <figure class="vs">
+                    <img src="./images/introvs.jpg" alt="인트로비주얼이미지">
+                </figure>
+                <div class="art">
+                    <h2 class="pgTit">소개 제목</h2>
+                    <p class="pgCom">소개 설명</p>
+                </div>
+                <ul class="thumbBox">
+                    <li><a href="">
+                            <img src="http://placehold.it/300x240/333" alt="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/300x240/333" alt="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/300x240/333" alt="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/300x240/333" alt="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/300x240/333" alt="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/300x240/333" alt="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                </ul>
+            </section>
+            <footer class="ft">
+                <p class="copyright subTxt">All copyrights by KIM.</p>
+            </footer>
+        </div>
+    </main>
+    <main class="page" id="sub2">
+        <div class="container">
+            <header class="hd baseBg">
+                <a href="#home" class="hdBtn homeBtn">
+                    <span class="ico-home"></span>
+                </a>
+                <h1 class="location">Service</h1>
+                <label for="ckin" class="hdBtn menuBtn">
+                    <span class="ico-list"></span>
+                </label>
+            </header>
+            <section class="con">
+                <figure class="vs">
+                    <img src="./images/tmonservice.png" alt="서비스비주얼이미지">
+                </figure>
+                <div class="art">
+                    <h2 class="pgTit">서비스 제목</h2>
+                    <p class="pgCom">서비스 설명</p>
+                </div>
+                <ul class="thumbBox">
+                    <li><a href="">
+                            <img src="http://placehold.it/300x240/333" alt="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/300x240/333" alt="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/300x240/333" alt="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/300x240/333" alt="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/300x240/333" alt="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/300x240/333" alt="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                </ul>
+            </section>
+            <footer class="ft">
+                <p class="copyright subTxt">All copyrights by KIM.</p>
+            </footer>
+        </div>
+    </main>
+    <main class="page" id="sub3">
+        <div class="container">
+            <header class="hd baseBg">
+                <a href="#home" class="hdBtn homeBtn">
+                    <span class="ico-home"></span>
+                </a>
+                <h1 class="location">Community</h1>
+                <label for="ckin" class="hdBtn menuBtn">
+                    <span class="ico-list"></span>
+                </label>
+            </header>
+            <section class="con">
+                <figure class="vs">
+                    <img src="./images/tmcommunity1.jpg" alt="커뮤니티비주얼이미지">
+                </figure>
+                <div class="art">
+                    <h2 class="pgTit">고객센터 제목</h2>
+                    <p class="pgCom">고객센터 설명</p>
+                </div>
+                <ul class="thumbBox">
+                    <li><a href="">
+                            <img src="http://placehold.it/300x240/333" alt="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/300x240/333" alt="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/300x240/333" alt="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/300x240/333" alt="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/300x240/333" alt="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/300x240/333" alt="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                </ul>
+            </section>
+            <footer class="ft">
+                <p class="copyright subTxt">All copyrights by KIM.</p>
+            </footer>
+        </div>
+    </main>
+    <main class="page" id="list">
+        <div class="container">
+            <header class="hd baseBg">
+                <a href="#home" class="hdBtn homeBtn">
+                    <span class="ico-home"></span>
+                </a>
+                <h1 class="location">목록보기</h1>
+                <label for="ckin" class="hdBtn menuBtn">
+                    <span class="ico-list"></span>
+                </label>
+            </header>
+            <section class="con">
+                <ul class="lstBox">
+                    <li><a href="">
+                            <img src="http://placehold.it/96x96/666" alt="썸네일이미지" class="thumb">
+                            <h3 class="thumbTit">썸네일제목</h3>
+                            <p class="thumbCom">썸네일설명</p>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/96x96/666" alt="썸네일이미지" class="thumb">
+                            <h3 class="thumbTit">썸네일제목</h3>
+                            <p class="thumbCom">썸네일설명</p>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/96x96/666" alt="썸네일이미지" class="thumb">
+                            <h3 class="thumbTit">썸네일제목</h3>
+                            <p class="thumbCom">썸네일설명</p>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/96x96/666" alt="썸네일이미지" class="thumb">
+                            <h3 class="thumbTit">썸네일제목</h3>
+                            <p class="thumbCom">썸네일설명</p>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/96x96/666" alt="썸네일이미지" class="thumb">
+                            <h3 class="thumbTit">썸네일제목</h3>
+                            <p class="thumbCom">썸네일설명</p>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/96x96/666" alt="썸네일이미지" class="thumb">
+                            <h3 class="thumbTit">썸네일제목</h3>
+                            <p class="thumbCom">썸네일설명</p>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/96x96/666" alt="썸네일이미지" class="thumb">
+                            <h3 class="thumbTit">썸네일제목</h3>
+                            <p class="thumbCom">썸네일설명</p>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/96x96/666" alt="썸네일이미지" class="thumb">
+                            <h3 class="thumbTit">썸네일제목</h3>
+                            <p class="thumbCom">썸네일설명</p>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/96x96/666" alt="썸네일이미지" class="thumb">
+                            <h3 class="thumbTit">썸네일제목</h3>
+                            <p class="thumbCom">썸네일설명</p>
+                        </a></li>
+                    <li><a href="">
+                            <img src="http://placehold.it/96x96/666" alt="썸네일이미지" class="thumb">
+                            <h3 class="thumbTit">썸네일제목</h3>
+                            <p class="thumbCom">썸네일설명</p>
+                        </a></li>
+                </ul>
+            </section>
+            <footer class="ft">
+                <p class="copyright subTxt">All copyrights by KIM.</p>
+            </footer>
+        </div>
+    </main>
+    <main class="page" id="search">
+        <div class="container">
+            <header class="hd baseBg">
+                <a href="#home" class="hdBtn homeBtn">
+                    <span class="ico-home"></span>
+                </a>
+                <h1 class="location">Search</h1>
+                <label for="ckin" class="hdBtn menuBtn">
+                    <span class="ico-list"></span>
+                </label>
+            </header>
+            <section class="con">
+                <form action="" id="searchForm">
+                    <input type="text" class="frmInput" id="keyword"  placeholder="검색어를 입력해주세요">
+                    <input type="submit" class="ico-search frmBtn">
+                </form>
+                <ul class="thumbBox">
+                    <li><a href="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                    <li><a href="">
+                            <h3 class="proTit">항목제목</h3>
+                            <h3 class="proCom">항목설명</h3>
+                        </a></li>
+                </ul>
+            </section>
+            <footer class="ft">
+                <p class="copyright subTxt">All copyrights by KIM.</p>
+            </footer>
+        </div>
+    </main>
+    <main class="page" id="login">
+        <div class="container">
+            <header class="hd baseBg">
+                <a href="#home" class="hdBtn homeBtn">
+                    <span class="ico-home"></span>
+                </a>
+                <h1 class="location">Log In</h1>
+                <label for="ckin" class="hdBtn menuBtn">
+                    <span class="ico-list"></span>
+                </label>
+            </header>
+            <section class="con">
+                <form action="" id="loginForm" class="formFrame">
+                    <fieldset>
+                        <input type="text" class="frmInput2" id="login_id" placeholder="아이디를 입력해주세요">
+                    </fieldset> 
+                    <fieldset>
+                        <input type="password" class="frmInput2" id="login_pw" placeholder="암호를 입력해주세요">
+                    </fieldset>
+                    <fieldset>
+                        <input type="submit" class="ico-key frmBtn">
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        <input type="submit" class="ico-repair frmBtn">
+                    </fieldset>       
+                </form>
+            </section>
+            <div class="blankBox"></div>
+            <footer class="ft">
+                <p class="copyright subTxt">All copyrights by KIM.</p>
+            </footer>
+        </div>
+    </main>
+    <main class="page" id="join">
+        <div class="container">
+            <header class="hd baseBg">
+                <a href="#home" class="hdBtn homeBtn">
+                    <span class="ico-home"></span>
+                </a>
+                <h1 class="location">Join Form</h1>
+                <label for="ckin" class="hdBtn menuBtn">
+                    <span class="ico-list"></span>
+                </label>
+            </header>
+            <section class="con">
+                <form action="" id="joinForm" class="formFrame">
+                    <fieldset>
+                        <input type="text" class="frmInput2" id="join_id" placeholder="아이디를 입력해주세요">
+                    </fieldset> 
+                    <fieldset>
+                        <input type="password" class="frmInput2" id="join_pw" placeholder="암호를 입력해주세요">
+                    </fieldset>
+                    <fieldset>
+                        <input type="tel" class="frmInput2" id="join_tel" placeholder="전화번호를 입력해주세요">
+                    </fieldset>
+                    <fieldset>
+                        <input type="email" class="frmInput2" id="join_email" placeholder="이메일주소를 입력해주세요">
+                    </fieldset>
+                    <fieldset>
+                        <input type="date" class="frmInput2" id="join_birth" placeholder="생년월일을 입력해주세요">
+                    </fieldset>
+                    <fieldset>
+                        <input type="submit" class="ico-check frmBtn">
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        <input type="submit" class="ico-repair frmBtn">
+                    </fieldset>       
+                </form>
+            </section>
+            <div class="blankBox"></div>
+            <footer class="ft">
+                <p class="copyright subTxt">All copyrights by KIM.</p>
+            </footer>
+        </div>
+    </main>
+    <main class="page" id="post">
+        <div class="container">
+            <header class="hd baseBg">
+                <a href="#home" class="hdBtn homeBtn">
+                    <span class="ico-home"></span>
+                </a>
+                <h1 class="location">글쓰기</h1>
+                <label for="ckin" class="hdBtn menuBtn">
+                    <span class="ico-list"></span>
+                </label>
+            </header>
+            <section class="con">   
+                <form action="" id="postForm" class="formFrame">
+                    <fieldset>
+                        <input type="text" class="frmInput2" id="post_title" placeholder="제목을 입력해주세요">
+                    </fieldset> 
+                    <fieldset>
+                        <input type="password" class="frmInput2" id="post_pw" placeholder="암호를 입력해주세요">
+                    </fieldset>
+                    <fieldset>
+                        <input type="email" class="frmInput2" id="post_email" placeholder="이메일주소를 입력해주세요">
+                    </fieldset>
+                    <fieldset>
+                        <textarea name="memo" id="post_memo" cols="30" rows="10" class="frmMemo"></textarea>
+                    </fieldset>
+                    <fieldset>
+                        <input type="submit" class="ico-check frmBtn">
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        <input type="submit" class="ico-repair frmBtn">
+                    </fieldset>       
+                </form>
+            </section>
+            <div class="blankBox"></div>
+            <footer class="ft">
+                <p class="copyright subTxt">All copyrights by KIM.</p>
+            </footer>
+        </div>
+    </main>
+</div>
+<nav id="gnb">
+    <ul>
+        <li>
+            <a href="#main" class="txtFrame">
+                <span class="gnbTxt">MAIN</span>
+            </a>
+        </li>
+        <li>
+            <a href="#sub1" class="txtFrame">
+                <span class="gnbTxt">Intro</span>
+            </a>
+        </li>
+        <li>
+            <a href="#sub2" class="txtFrame">
+                <span class="gnbTxt">Service</span>
+            </a>
+        </li>
+        <li>
+            <a href="#sub3" class="txtFrame">
+                <span class="gnbTxt">Community</span>
+            </a>
+        </li>
+        <li>
+            <a href="#search">
+                <span class="ico-search"></span>
+            </a>
+        </li>
+        <li>
+            <a href="#list">
+                <span class="ico-doc-print"></span>
+            </a>
+        </li>
+        <li>
+            <a href="#post">
+                <span class="ico-edit"></span>
+            </a>
+        </li>
+        <li>
+            <a href="#login">
+                <span class="ico-key"></span>
+            </a>
+        </li>
+    </ul>
+</nav>
+</body>
+</html>

@@ -1,0 +1,152 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300);
+body {
+	font-family: 'Lato', sans-serif;
+	line-height: normal;
+	margin: 0;
+	padding: 0;
+}
+html {
+	font-family: sans-serif;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-o-text-size-adjust: 100%;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+.wrapper section {
+	padding: 7em 5em;
+	text-align: center;
+}
+section {
+	background: #bdc3c7;
+}
+.set1 {
+	background: #eef1f2;
+}
+.set2 {
+	background: #2ecc71;
+}
+.set3 {
+	background: #3498db;
+}
+.set4 {
+	background: #9b59b6;
+}
+.set5 {
+	background: #34495e;
+}
+.set6 {
+	background: #e74c3c;
+}
+.set7 {
+	background: #5256f6;
+}
+.set8 {
+	background: #45b2b9;
+}
+.set9 {
+	background: #f39c12;
+}
+.set10 {
+	background: #76a314;
+}
+.all {
+	background: #a1b157;
+}
+.wrapper header, .wrapper footer {
+	text-align: center;
+}
+.wrapper header a {
+	background: #31a1db;
+	padding: 5px 15px;
+	display: inline-block;
+	color: #ffffff;
+	text-decoration: none;
+	margin-top: 3px;
+	font-size: 14px;
+}
+.wrapper header a:hover {
+	opacity: 0.8;
+}
+.wrapper header h1 {
+	font-size: 2.8em;
+	font-weight: 600;
+	line-height: 2;
+	margin: 0;
+}
+.wrapper section ul {
+	list-style: none;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+.wrapper section ul li {
+	display: inline-block;
+	padding: 1em 3em;
+}
+i {
+	color: #FFF;
+}
+i:hover {
+	cursor:pointer;
+}
+.wrapper section h3 {
+	font-size: 2.4em;
+	font-weight: 300;
+	color: #FFF;
+}
+.wrapper section.set1 h3{
+	color:#000000;
+}
+.wrapper header h2 {
+	font-size: 2.625em;
+	font-weight: 300;
+	line-height: 1.3;
+	margin: 0;
+}
+.wrapper header h2 span {
+	display: block;
+	font-size: 60%;
+	opacity: 0.5;
+	padding: 0 0 1em 0;
+}
+@media screen and (max-width:1024px) {
+.wrapper header a {
+	font-size: 12px;
+	padding: 5px;
+}
+.wrapper section ul li {
+	padding: 1em 2em;
+}
+}
+@media screen and (max-width:599px) {
+.wrapper header h2 {
+	font-size: 1.625em;
+	line-height: 1.5;
+}
+.wrapper header a {
+	font-size: 12px;
+	padding: 5px;
+}
+.wrapper section {
+	padding: 4em 0;
+	text-align: center;
+}
+}
+@media screen and (max-width:479px) {
+.wrapper section h3 {
+	font-size: 1.5em;
+}
+.wrapper section ul li {
+	padding: 0.5em 1em;
+}
+.fa-3x {
+	font-size: 2em;
+}
+}
+#footer a{
+	color:#2ecc71;
+}
+a{ text-decoration:none; }

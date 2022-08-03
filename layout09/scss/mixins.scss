@@ -1,0 +1,15 @@
+@mixin text($size, $weight, $color) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
+
+@mixin shadow($args...) {
+    box-shadow: $args;
+}
+
+@mixin button($background, $color, $padding) {
+    background-color: $background;
+    color: $color;
+    padding: $padding;
+}

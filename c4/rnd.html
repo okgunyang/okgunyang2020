@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>양유 - 푸드로 세상을 즐겁게 :: Yangyoo - Happy Food Happy World</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="양유 홈페이지">
+    <meta name="subject" content=" ">
+    <meta name="keywords" content="yangyoo, 양유, 대표홈페이지, 청년떡집, 우주인피자, 만두몬스터, 에브리밀, 달빛야식, 영양찜닭, 맘앤대디, 그래서, 바삭">
+    <meta name="author" content=" ">
+    <meta name="description" content="푸드로 세상을 즐겁게 happy food happy world">
+    <meta name="robots" content="index,follow">
+    <meta name="naver-site-verification" content="95b5a3b2fb50fa8bd0996f2284217fc394afbbe8">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="양유 홈페이지">
+    <meta property="og:description" content="푸드로 세상을 즐겁게 happy food happy world">
+    <meta property="og:image" content="./images/img.jpg">
+    <meta property="og:url" content="">
+
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="font.css">
+    <link rel="stylesheet" href="icon.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+    .vs { position:relative; width:100%; height:80vh; overflow:hidden;  }    
+    .vs .ban_box { width:400%; }    
+    .vs li.item { width:100vw; float:left; position:absolute; left:0; top: 0;
+        z-index:20; min-height:80vh; } 
+    .vs .abs { position:absolute; top:0px; left:0; z-index:30; width: 100vw; min-height:80vh; }
+/*    .vs li.item.on { left:0; z-index:22; }    */
+    .vs_tit { padding-top:14%; text-align:center; color:#fff; text-shadow:1px 1px 12px #333; font-size:70px; } 
+    .vs_img { display:block; width: 100%; }
+    .arrow { position:absolute; bottom:-70px; left:50%; width:30px; height:120px; 
+        z-index:60; margin-left:-15px; background-image:url("./images/arrow.svg"); background-size:30px auto; background-repeat: no-repeat; }    
+        
+    .breadcrumb { position:absolute; left: 0; bottom:20px; z-index:80; 
+        background-color:rgba(255,255,255,0.5); width:100%; height:80px; }
+    .home { display:block; width:32px; height:32px; float:left; margin-left: 15%; margin-top: 16px; background-image:url("./images/home.png");
+        background-size:32px 32px; background-repeat:no-repeat; text-indent:-99999px; }    
+    .breadcrumb span { display:block; height:32px; margin-top:10px; font-size:30px; float:left; padding-left:20px; padding-right:15px; line-height: 42px;  } 
+        
+    .con { width:100%; clear:both; padding-top: 80px; min-height:480px; padding-bottom: 50px; }    
+    .page_tit { float:left; width:30%; padding-top: 80px; padding-bottom: 80px; }    
+    .page_txt { color: #4b4b4b;    font-size:18px; display:block; 
+     line-height: 2;    letter-spacing: -1px; }    
+    .page_com { float:right; width:69%; }
+    .page_com p { padding:28px;   }    
+    .tit_img { height: auto; }
+    .more { color:#999; position:absolute; top:85%; right:0px; font-size:16px; color:#333; font-weight:bold;  text-decoration:underline;  }
+    #page1 { background-color:#f1f1f1; padding-bottom:80px; }    
+    .tit_txt { display:block; color: #212121;    font-size: 34px;
+    line-height: 1.5;    letter-spacing: -1px; }    
+    #page1 .tit_img { width:300px; }
+    .page_com { margin: 40px 0;    color: #4b4b4b;    font-size: 21px;
+    line-height: 2;    letter-spacing: -1px; } 
+    .page_com .tit_txt { padding-left: 28px; }
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+
+    });    
+    </script>
+    <script>
+    $(document).ready(function(){
+        var ht = parseInt($(window).height());
+        $(".to_top").css("display", "none");
+        $(window).scroll(function(){
+            var sc = parseInt($(window).scrollTop()); 
+            if(sc>=200){
+                $(".hd").slideDown(200, function(){
+                    $(".hd").addClass("on");
+                    $(".hd").slideDown(700);
+                });
+            } else {
+                $(".hd").slideDown(200, function(){
+                    $(".hd").removeClass("on");
+                    $(".hd").slideDown(700);
+                });
+            }
+            if(sc>=380){
+                $(".arrow").fadeOut();
+            } else {
+                $(".arrow").fadeIn();
+            }
+            if(sc>=ht){
+                $(".to_top").fadeIn();
+            } else {
+                $(".to_top").fadeOut();
+            }
+        });
+        $(".to_top").click(function(){
+            $("body, html").animate({scrollTop:"0px"}, 500); 
+        });
+    });    
+    </script>
+    <script>
+    $(document).ready(function(){
+        arrMov();
+        var intv_arr = setInterval(function(){ arrMov(); }, 1600);
+        function arrMov(){
+           $(".arrow").animate({"bottom":"-40px"}, 800, function(){
+               $(".arrow").animate({"bottom":"-80px"}, 800);
+           }); 
+        }
+    });    
+    </script>
+</head>
+<body>
+    <header class="hd">
+        <div class="wrap">
+            <a href="index.html" class="logo"><img src="./images/logo.svg" alt="logo"></a>
+            <nav id="gnb">
+                <ul class="navi">
+                    <li>
+                        <a href="about.html" class="st">ABOUT</a>
+                    </li>
+                    <li>
+                        <a href="brand.html" class="st">BRAND</a>
+                        <ul class="dep2_menu">
+                            <li><a href="brand1.html">청년떡집</a></li>
+                            <li><a href="brand2.html">우주인피자</a></li>
+                            <li><a href="brand3.html">만두몬스터</a></li>
+                            <li><a href="brand4.html">에브리밀</a></li>
+                            <li><a href="brand5.html">달빛야식</a></li>
+                            <li><a href="brand6.html">그래서, 바삭</a></li>
+                            <li><a href="brand7.html">맘앤대디</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="rnd.html" class="st">R&amp;D</a>
+                    </li>
+                    <li class="lang">
+                        <a href="index.html" class="ko on">ko</a>
+                        <a href="index_en.html" class="en">en</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <figure class="vs">
+        <ul class="ban_box">
+            <li class="item">
+                <img src="./images/visual-rnd.jpg" alt="연구개발비주얼이미지" class="vs_img">
+            </li>
+        </ul>
+        <button class="left_btn"></button>
+        <button class="right_btn"></button>
+        <div class="abs">
+            <h2 class="vs_tit"><img src="./images/visual-rnd-logo.png" alt="연구개발 로고"></h2>
+        </div>
+        <div class="breadcrumb">
+            <a href="index.html" class="home">HOME</a>
+            <span class="split">&gt;</span>
+            <span class="cur">R&amp;D</span>
+        </div>
+    </figure>
+    <div class="arrow"></div>
+    <section class="con" id="page1">
+        <div class="wrap">
+            <h2 class="page_tit">
+                <img src="./images/heading-rnd.svg" alt="연구개발" class="tit_img">
+                <span class="tit_txt">클라우드키친</span>
+                <span class="page_txt">R&amp;D</span>
+            </h2>
+            <div class="page_com">
+                <span class="tit_txt">셰프의 기준으로 만들면,  고객의 만족이 된다.</span>
+                <p>양유는 레스토랑 경력의 전문 셰프 그룹인 클라우드 키친에서 제품 개발을 주도합니다.   셰프의 안목에서 시작하다 보니,  그 기준이 시중의 제품이 아닌 최고의 레스토랑 수준의 최고의 맛을 구현합니다.</p>
+
+                <p>더 좋은 식재료를 고르고,  수고가 들더라도 조금 더 정성스럽게,  때론 과감하고 차별성 있는 조리법으로 최고의 맛을 만들어냅니다.   또한,  제품의 비주얼에도 공을 들여서 완성도를 높이고 있습니다.</p>
+            </div>
+        </div>
+    </section>
+    <footer class="ft">
+        <div class="wrap">
+           <ul class="info">
+               <li><strong>(주)양유</strong></li>
+               <li>대표 : 서동희</li>
+               <li>서울시 서초구 방배천로 12-4 천일빌딩 2-5층</li>
+               <li class="-break">사업자등록번호 : 108-81-29256</li>
+               <li>브랜드문의 : <a href="mailto:aka.odi@yangyoo.com">aka.odi@yangyoo.com</a></li>
+               <li class="-break">T. 02-523-5780</li>
+               <li>F. 02-523-5781</li>
+           </ul>
+
+           <p class="copyright">Copyright© YANGYOO. All rights reserved.</p>
+        </div>
+    </footer>
+    <button class="to_top"></button>
+</body>
+</html>

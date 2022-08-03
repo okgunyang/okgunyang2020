@@ -1,0 +1,12 @@
+@mixin font-face($f-family, $f-src, $f-weight: normal, $f-style: normal, $asset-pipeline: false )
+  @font-face
+    font-family: $f-family
+    font-weight: $f-weight
+    font-style: $f-style
+
+    @if $asset-pipeline == true
+      src: font-url('#{$f-src}.eot')
+      src: font-url('#{$f-src}.eot?#iefix') format('embedded-opentype'), font-url('#{$f-src}.woff') format('woff'), font-url('#{$f-src}.ttf') format('truetype')
+    @else
+      src: url('#{$f-src}.eot')
+      src: url('#{$f-src}.eot?#iefix') format('embedded-opentype'), url('#{$f-src}.woff') format('woff'), url('#{$f-src}.ttf') format('truetype')

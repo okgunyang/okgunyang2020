@@ -1,0 +1,974 @@
+<?php
+    @session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SRC 병원 - 병원안내</title>
+    <!-- 구형 브라우저 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <!-- 신형 브라우저와 안드로이드 폰 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.png">
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="57x57" href="./ico/favicon57.png">
+    <!-- 아이패드 -->
+    <link rel="apple-touch-icon" size="72x72" href="./ico/favicon72.png">
+    <!-- 아이폰4 이상 -->
+    <link rel="apple-touch-icon" size="114x114" href="./ico/favicon114.png">
+    <!-- IE10 이상 -->
+    <meta name="msapplication-TileColor" content="#FFFFFF"> 
+    <meta name="msapplication-TileImage" content="./ico/favicon-144.png">
+
+    <!-- 메타데이터 개발 공통 사항 -->
+    <!-- 데스크탑에서 IE로 웹 문서를 열 때 가장 최신 버전으로 실행 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    
+    <!-- 앱(웹 사이트)의 이름 -->
+    <meta name="application-name" content="SRC hospital Site">
+    <!-- 웹 사이트 저작자의 이름 -->
+    <meta name="author" content="kitae Kim">
+    <!-- 현재 문서의 설명 -->
+    <meta name="description" content="SRC hospital Site Mainpage"> 
+    <!-- 현재 문서의 저작도구 -->
+    <meta name="generator" content="Brackts">
+    <!-- 검색엔진에서 검색되게할 키워드 -->
+    <meta name="keywords" content="SRC 병원, 건강관리, 휴양">
+    
+    <!-- 반응형, 모바일, 태블릿 사이트 일 경우 뷰포트 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Noto+Serif+KR" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Jua|Noto+Sans+KR|Noto+Serif+KR" rel="stylesheet">
+    <link rel="stylesheet" href="com.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="sub.css">
+    <link rel="stylesheet" href="sub1.css">
+    <style>
+    body, html { -ms-overflow-style:none; }
+    ::-webkit-scrollbar { display:none; }    
+    ::-o-scrollbar { display:none; } 
+    ::-moz-scrollbar { display:none; }     
+    </style>
+<!--    <script src="https://code.jquery.com/jquery-latest.js"></script>-->
+    <script src="./js/jquery-1.11.1.js"></script>
+    
+    <script>
+    /* 여기가 스크립트 처리 구간 */    
+    $(function(){
+        var intv = setInterval(function(){ lAni(); }, 3000);
+        function lAni(){
+            $(".imgBox").not(":animated").animate({"margin-left":"-510px"}, 800, function(){
+                $(".imgBox li").eq(0).appendTo($(".imgBox"));
+                $(".imgBox").css("margin-left", "0px");
+            });
+            
+        }
+    });    
+    </script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcG6XLlvSL0DQtg1G38wiT_r8BYN3RbWQ&callback=initMap"></script> -->
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpo7PlmFhN57HAxDlD8MTLI4DT1bL9VFY&callback=initMap"></script>-->
+<!--
+1) 구글 지도 api key 발급 사이트로 이동하여 지도 API 서비스 신청
+2) https://console.cloud.google.com/getting-started?pli=1
+3) [API 및 서비스] -> [사용자 인증 정보] -> 인증 키 발급
+-->
+<script> 
+//좌표 값을 바꿔서 입력 36.3491563,127.3776857
+function initialize() {
+  var myLatlng = new google.maps.LatLng(37.4931346, 126.92737779999993);
+  var mapOptions = {
+    zoom: 17,
+    center: myLatlng
+  }
+
+  var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'SRC병원'	  //레이블을 바꿔서 입력
+  });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+ </script>
+<script>
+$(function(){
+//   setTimeout(function(){
+//       $("#map_canvas > div:last-child").css("display", "none", "z-index", "-1");
+//   }, 1000); 
+});    
+</script>
+</head>
+<body onload="initialize()">
+<div class="hdFrame on"></div>
+<header id="hd">
+    <div class="wrap">
+        <a href="index.html" class="logo">
+            <img src="./img/img_logo.png" alt="앰블럼">
+        </a>
+        <nav id="gnb">
+            <ul>
+                <li><a href="intro.html#page1" class="on">병원안내</a></li>
+                <li><a href="physical.html#page1" class="on">재활치료</a></li>
+                <li><a href="ward.html#page1" class="on">병동안내</a></li>
+                <li><a href="news.html#page1" class="on">병원소식</a></li>
+                <li><a href="speech.html#page1" class="on">치료연계안내</a></li>
+            </ul>
+        </nav>
+        <label for="ck" class="lstBtn">
+            <span class="item1 on"></span>
+            <span class="item2 on"></span>
+            <span class="item3 on"></span>
+            <span class="item4 on"></span>
+        </label>
+    </div>
+</header>    
+<main id="content">
+    <div class="blank"></div>
+    <div class="page" id="page1">
+        <a href="#page1" class="btn1 item1">병원소개</a>
+        <div class="con">
+            <h1 class="pageTitle">병원소개</h1>
+            <section class="sec11 wtxt">
+                <h2 class="secTitle">SRC병원 부설의원(서울)</h2>
+                <p class="secCom">서울 보라매에 위치한 또 하나의 <span class="rtxt">SRC</span>, SRC병원 부설의원</p>
+                <p class="secCom2">SRC만의 전문재활의료에서 핵심적인 재활치료를 특화시켜 환자와 보호자에게 이용은 쉽고 편하게, 효과는 높고 빠르도록 <br>
+                의료서비스를 제공하고 있습니다. <br>
+                특히 소아재활의 효과적인 치료를 도모하기 위한 지역내 유일의 소아 낮병동을 운영하고 있으며, 아동에게 최적화된 <br>
+                치료환경과 체계적인 평가를 갖춘 독립적인 치료병동을 갖추고 있습니다. <br>
+                특히 성인과 소아 치료 공간을 분리하여 보다 전문적이고 집중된 재활치료를 실시하고 있습니다. <br>
+                뿐만 아니라 다양한 프로그램(언어심리상담센터, 스포츠센터, 특수학교)을 함께 운영하여 SRC의 특화된 <br> 
+                통합재활서비스를 제공합니다.</p>
+            </section>
+            <section class="sec12 wtxt">
+                <ul class="secFrm">
+                    <li>
+                        <div class="left imgFrame">
+                            <img src="./img/img_intro01_1.png" alt="광주병원 썸네일">
+                        </div>
+                        <div class="right txtFrame">
+                            <h2 class="secTitle">SRC병원(광주)</h2>
+                            <p class="secCom"><span class="rtxt">SRC병원</span>은 재활에 대한 진심에서 출발했습니다.</p>
+                            <h3 class="itemTitle">1. SRC가 운영하는 병원</h3>
+                            <p class="itemComent">사회복지법인SRC는 1952년 한국전쟁으로 생긴 전쟁고아 및 장애아동을 보호 <br>
+                            하기 위한 ‘삼육원’으로 처음 개원하게 됩니다. 재활의학의 아버지라 불리는 ‘러스크 박사’는 <br>
+                            국내 최대 장애아동시설 인 ‘삼육원’에 수 차례 방문하여 포괄적 재활 시스템을 전수 <br>
+                            하였습니다. 특히 러스크 박사는 60년대에 민영재 초대 이사장을 미국에 직접 초청하여 <br>
+                            선진 재활치료와 재활서비스를 보여주었습니다.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left txtFrame">
+                            <h3 class="itemTitle">2. 대한민국 최초의 아동 재활병원</h3>
+                            <p class="itemComent">1961년 삼육원 내의 물리치료소 준공을 시작으로, 1966년 대한민국 최초의 <br>
+                            아동재활병원인 ‘삼육아동재활병원;’을 설립하였습니다. 이후에도 포괄적 재활을 위해 특수학교 설립, <br>
+                            대한민국 최초의 보호작업자 ‘수산장(現 SRC직업재활센터) 등 재활을 위한 12개의 서로 <br>
+                            기관들을 설립, 운영하여 재활을 위해 지난 65년간 한 길만을 걸어 왔습니다.</p>
+                        </div>
+                        <div class="right imgFrame">
+                            <img src="./img/img_intro01_2.png" alt="재활병원 썸네일">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left imgFrame">
+                            <img src="./img/img_intro01_3.png" alt="생활속의 재활 썸네일">
+                        </div>
+                        <div class="right txtFrame">
+                            <h3 class="itemTitle">3. 생활 속의 재활</h3>
+                            <p class="itemComent">경기도 광주에 위치한 SRC병원은 날씨와 관계없이 눈이 오나 비가 오나 이동에 <br>
+                            불편함 없이 치료를 받을 수 있도록 모든 건물과 기관들이 연결하여 설계되었습니다. <br>
+                            실제로 대한민국의 재활병원들 중 가장 넓은 통로를 소유하고 있으며, <br>
+                            전 층 전 기관이 램프길로 연결되어 있어 생활 속 재활이 가능한 환경입니다</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <div class="page" id="page2">
+        <a href="#page2" class="btn1 item2">시설안내</a>
+        <div class="con">
+            <h1 class="pageTitle">시설안내</h1>
+            <section class="sec21">
+                <input type="radio" name="ra20" id="ra21" class="raItem" checked>
+                <input type="radio" name="ra20" id="ra22" class="raItem">
+                <input type="radio" name="ra20" id="ra23" class="raItem">
+                <ul class="btnFrame">
+                    <li><label for="ra21" class="raBtn item1">SRC 부설의원</label></li>
+                    <li><label for="ra22" class="raBtn item2">SRC 심리상담센터</label></li>
+                    <li><label for="ra23" class="raBtn item3">SRC 스포츠센터</label></li>
+                </ul>
+                <ul class="conFrame">
+                    <li class="itemFrame item1">
+                        <input type="radio" class="raItem conRa1" id="ra201" name="conRaOne" checked>
+                        <input type="radio" class="raItem conRa2" id="ra202" name="conRaOne">
+                        <input type="radio" class="raItem conRa3" id="ra203" name="conRaOne">
+                        <input type="radio" class="raItem conRa4" id="ra204" name="conRaOne">
+                        <input type="radio" class="raItem conRa5" id="ra205" name="conRaOne">
+                        <input type="radio" class="raItem conRa6" id="ra206" name="conRaOne">
+                        <input type="radio" class="raItem conRa7" id="ra207" name="conRaOne">
+                        <input type="radio" class="raItem conRa8" id="ra208" name="conRaOne">
+                        <input type="radio" class="raItem conRa9" id="ra209" name="conRaOne">
+                        <input type="radio" class="raItem conRa10" id="ra210" name="conRaOne">
+                        <input type="radio" class="raItem conRa11" id="ra211" name="conRaOne">
+                        <ul class="tbImgFrm">
+                            <li class="raCon1">
+                                <img src="./img/into03_1.jpg" alt="배너이미지1" class="imgItem">
+                            </li>
+                            <li class="raCon2">
+                                <img src="./img/into03_2.jpg" alt="배너이미지2" class="imgItem">
+                            </li>
+                            <li class="raCon3">
+                                <img src="./img/into03_3.jpg" alt="배너이미지3" class="imgItem">
+                            </li>
+                            <li class="raCon4">
+                                <img src="./img/into03_4.jpg" alt="배너이미지4" class="imgItem">
+                            </li>
+                            <li class="raCon5">
+                                <img src="./img/into03_5.jpg" alt="배너이미지5" class="imgItem">
+                            </li>
+                            <li class="raCon6">
+                                <img src="./img/into03_6.jpg" alt="배너이미지6" class="imgItem">
+                            </li>
+                            <li class="raCon7">
+                                <img src="./img/into03_7.jpg" alt="배너이미지7" class="imgItem">
+                            </li>
+                            <li class="raCon8">
+                                <img src="./img/into03_8.jpg" alt="배너이미지8" class="imgItem">
+                            </li>
+                            <li class="raCon9">
+                                <img src="./img/into03_9.jpg" alt="배너이미지9" class="imgItem">
+                            </li>
+                            <li class="raCon10">
+                                <img src="./img/into03_10.jpg" alt="배너이미지10" class="imgItem">
+                            </li>
+                            <li class="raCon11">
+                                <img src="./img/into03_11.jpg" alt="배너이미지11" class="imgItem">
+                            </li>
+                        </ul>
+                        <div class="titBox">
+                            <h3 class="tbTitle">SRC 부설의원</h3>
+                            <p class="tbComent">발달지연 및 정서적으로 어려움을 겪는 사회적응에 취약한 아동, 청소년, 부모를 돕기 위해 전문적·종합적 치료서비스를 제공</p>
+                        </div>
+                        <ul class="thumBox">
+                            <li class="thumBtn1">
+                                <label for="ra201">
+                                    <img src="./img/thum03_01.jpg" alt="썸네일버튼1">
+                                </label>
+                            </li>
+                            <li class="thumBtn2">
+                                <label for="ra202">
+                                    <img src="./img/thum03_02.jpg" alt="썸네일버튼2">
+                                </label>
+                            </li>
+                            <li class="thumBtn3">
+                                <label for="ra203">
+                                    <img src="./img/thum03_03.jpg" alt="썸네일버튼3">
+                                </label>
+                            </li>
+                            <li class="thumBtn4">
+                                <label for="ra204">
+                                    <img src="./img/thum03_04.jpg" alt="썸네일버튼4">
+                                </label>
+                            </li>
+                            <li class="thumBtn5">
+                                <label for="ra205">
+                                    <img src="./img/thum03_05.jpg" alt="썸네일버튼5">
+                                </label>
+                            </li>
+                            <li class="thumBtn6">
+                                <label for="ra206">
+                                    <img src="./img/thum03_06.jpg" alt="썸네일버튼6">
+                                </label>
+                            </li>
+                            <li class="thumBtn7">
+                                <label for="ra207">
+                                    <img src="./img/thum03_07.jpg" alt="썸네일버튼7">
+                                </label>
+                            </li>
+                            <li class="thumBtn8">
+                                <label for="ra208">
+                                    <img src="./img/thum03_08.jpg" alt="썸네일버튼8">
+                                </label>
+                            </li>
+                            <li class="thumBtn9">
+                                <label for="ra209">
+                                    <img src="./img/thum03_09.jpg" alt="썸네일버튼1">
+                                </label>
+                            </li>
+                            <li class="thumBtn10">
+                                <label for="ra210">
+                                    <img src="./img/thum03_10.jpg" alt="썸네일버튼1">
+                                </label>
+                            </li>
+                            <li class="thumBtn11">
+                                <label for="ra211">
+                                    <img src="./img/thum03_11.jpg" alt="썸네일버튼11">
+                                </label>
+                            </li>
+                        </ul>       
+                    </li>
+                    <li class="itemFrame item2">
+                        <input type="radio" class="raItem conRa1" id="ra221" name="conRaTwo" checked>
+                        <input type="radio" class="raItem conRa2" id="ra222" name="conRaTwo">
+                        <input type="radio" class="raItem conRa3" id="ra223" name="conRaTwo">
+                        <input type="radio" class="raItem conRa4" id="ra224" name="conRaTwo">
+                        <input type="radio" class="raItem conRa5" id="ra225" name="conRaTwo">
+                        <input type="radio" class="raItem conRa6" id="ra226" name="conRaTwo">
+                        <ul class="tbImgFrm">
+                            <li class="raCon1">
+                                <img src="./img/into03_12.jpg" alt="배너이미지1" class="imgItem">
+                            </li>
+                            <li class="raCon2">
+                                <img src="./img/into03_13.jpg" alt="배너이미지2" class="imgItem">
+                            </li>
+                            <li class="raCon3">
+                                <img src="./img/into03_14.jpg" alt="배너이미지3" class="imgItem">
+                            </li>
+                            <li class="raCon4">
+                                <img src="./img/into03_15.jpg" alt="배너이미지4" class="imgItem">
+                            </li>
+                            <li class="raCon5">
+                                <img src="./img/into03_16.jpg" alt="배너이미지5" class="imgItem">
+                            </li>
+                            <li class="raCon6">
+                                <img src="./img/into03_17.jpg" alt="배너이미지6" class="imgItem">
+                            </li>
+                        </ul>
+                        <div class="titBox">
+                            <h3 class="tbTitle">SRC 심리상담센터</h3>
+                            <p class="tbComent">발달지연 및 정서적으로 어려움을 겪는 사회적응에 취약한 아동, 청소년, 부모를 돕기 위해 전문적·종합적 치료서비스를 제공</p>
+                        </div>
+                        <ul class="thumBox">
+                            <li class="thumBtn1">
+                                <label for="ra221">
+                                    <img src="./img/thum03_12.jpg" alt="썸네일버튼1">
+                                </label>
+                            </li>
+                            <li class="thumBtn2">
+                                <label for="ra222">
+                                    <img src="./img/thum03_13.jpg" alt="썸네일버튼2">
+                                </label>
+                            </li>
+                            <li class="thumBtn3">
+                                <label for="ra223">
+                                    <img src="./img/thum03_14.jpg" alt="썸네일버튼3">
+                                </label>
+                            </li>
+                            <li class="thumBtn4">
+                                <label for="ra224">
+                                    <img src="./img/thum03_15.jpg" alt="썸네일버튼4">
+                                </label>
+                            </li>
+                            <li class="thumBtn5">
+                                <label for="ra225">
+                                    <img src="./img/thum03_16.jpg" alt="썸네일버튼5">
+                                </label>
+                            </li>
+                            <li class="thumBtn6">
+                                <label for="ra226">
+                                    <img src="./img/thum03_17.jpg" alt="썸네일버튼6">
+                                </label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="itemFrame item3">
+                        <input type="radio" class="raItem conRa1" id="ra241" name="conRaThree" checked>
+                        <input type="radio" class="raItem conRa2" id="ra242" name="conRaThree">
+                        <input type="radio" class="raItem conRa3" id="ra243" name="conRaThree">
+                        <ul class="tbImgFrm">
+                            <li class="raCon1">
+                                <img src="./img/into03_18.jpg" alt="배너이미지1" class="imgItem">
+                            </li>
+                            <li class="raCon2">
+                                <img src="./img/into03_19.jpg" alt="배너이미지2" class="imgItem">
+                            </li>
+                            <li class="raCon3">
+                                <img src="./img/into03_20.jpg" alt="배너이미지3" class="imgItem">
+                            </li>
+                        </ul>                        
+                        <div class="titBox">
+                            <h3 class="tbTitle">SRC 스포츠센터</h3>
+                            <p class="tbComent">차별화된 재활프로그램을 연구·개발하는 스포츠 관련 서비스 전문기관</p>
+                        </div>
+                        <ul class="thumBox">
+                            <li class="thumBtn1">
+                                <label for="ra241">
+                                    <img src="./img/thum03_18.jpg" alt="썸네일버튼1">
+                                </label>
+                            </li>
+                            <li class="thumBtn2">
+                                <label for="ra242">
+                                    <img src="./img/thum03_19.jpg" alt="썸네일버튼2">
+                                </label>
+                            </li>
+                            <li class="thumBtn3">
+                                <label for="ra243">
+                                    <img src="./img/thum03_20.jpg" alt="썸네일버튼3">
+                                </label>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <div class="page" id="page3">
+        <a href="#page3" class="btn1 item3">부서별 연락처</a>
+        <div class="con">
+            <h1 class="pageTitle">부서별 연락처</h1>
+            <div class="subBox">
+                <h2 class="subTit">SRC병원 부설의원 전화번호 안내입니다.</h2>
+                <p class="subCom">SRC 부설의원에 대한 문의사항이 있으시면 아래번호로 연락을 주시기 바랍니다.</p>
+                <ul class="subLst">
+                    <li class="col6">
+                        <h3 class="subConTit">재활 클리닉</h3>
+                        <dl>
+                            <dt>전화번호</dt>
+                            <dd>
+                                02-871-3651
+                                <span class="rtxt">(직통)</span>
+                            </dd>
+                            <dt>FAX</dt>
+                            <dd>02-876-8234</dd>
+                        </dl>
+                    </li>
+                    <li class="col6">
+                        <h3 class="subConTit">통증 클리닉</h3>
+                        <dl>
+                            <dt>전화번호</dt>
+                            <dd>
+                                02-871-3652
+                                <span class="rtxt">(직통)</span>
+                            </dd>
+                            <dt>FAX</dt>
+                            <dd>02-876-8235</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+            <div class="subBox" style="height:540px;">
+                <h2 class="subTit">SRC서울센터 전화번호 안내입니다.</h2>
+                <p class="subCom">SRC서울센터에 대한 문의사항이 있으시면 아래번호로 연락을 주시기 바랍니다.</p>
+                <ul class="subLst">
+                    <li class="col6">
+                        <h3 class="subConTit">SRC서울센터</h3>
+                        <dl>
+                            <dt>전화번호</dt>
+                            <dd>
+                                02-871-3651
+                                <span class="rtxt">(직통)</span>
+                            </dd>
+                            <dt>FAX</dt>
+                            <dd>02-876-8234</dd>
+                        </dl>
+                    </li>
+                    <li class="col6">
+                        <h3 class="subConTit">SRC언어심리상담센터</h3>
+                        <dl>
+                            <dt>전화번호</dt>
+                            <dd>
+                                02-871-3652
+                                <span class="rtxt">(직통)</span>
+                            </dd>
+                            <dt>FAX</dt>
+                            <dd>02-876-8235</dd>
+                        </dl>
+                    </li>
+                    <li class="col6">
+                        <h3 class="subConTit">SRC스포츠센터</h3>
+                        <dl>
+                            <dt>전화번호</dt>
+                            <dd>
+                                02-871-3651
+                                <span class="rtxt">(직통)</span>
+                            </dd>
+                            <dt>FAX</dt>
+                            <dd>02-876-8234</dd>
+                        </dl>
+                    </li>
+                    <li class="col6">
+                        <h3 class="subConTit">SRC서울새롬학교</h3>
+                        <dl>
+                            <dt>전화번호</dt>
+                            <dd>
+                                02-871-3652
+                                <span class="rtxt">(직통)</span>
+                            </dd>
+                            <dt>FAX</dt>
+                            <dd>02-876-8235</dd>
+                        </dl>
+                    </li>
+                </ul>
+                <p class="subLastCom">
+                전화번호는 통화량이 많거나 부재중일시 연결이 어려울 수 있으니, 언제든 02-871-3636으로 전화하시면 친절하고 빠르게 상담받으실 수 있습니다.
+                <br>
+                (SRC병원 부설의원 대표전화는 <span class="rtxt">02-871-3636</span> 입니다)
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="page" id="page4">
+        <a href="#page4" class="btn1 item4">오시는길</a>
+        <div class="con">
+            <h1 class="pageTitle">오시는길</h1>
+            <ul class="btnFrame">
+                <li class="col6"><a href="intro.html#page4" class="raBtn on">오시는 길</a></li>
+                <li class="col6"><a href="https://map.naver.com/?searchCoord=650a0eeddda9946e625e70ed4b81ab2c8c96be43c52cd7e31dcfa36e130f5ae9&query=c3Jj7J6s7Zmc67OR7JuQ&menu=location&tab=1&lng=af21e2326a1901b6a8d34fc5bbd8b0bf&mapMode=0&mpx=3cc9e983bd6bbb47fefa95e84ba0e6c9c9f8fb80b80ec00784977e48f31a9687b332262e3105a015faae2022e7ceb6c3fe76b5a265540553cd96e2fb1466ec84&lat=a2d9dba19d4ab24e7ac7dc8c2b9a3cda&dlevel=12&enc=b64" class="raBtn" target="_blank">빠른 길 찾기</a></li>
+            </ul>
+            <div class="subBox" style="height:auto">
+                <h2 class="subTit">SRC병원 부설의원</h2>
+                <table class="subTable1">
+                    <tr>
+                        <th class="col2">주소안내</th>
+                        <td class="col10">서울특별시 관악구 보라매로 44 SRC서울센터 (08709)</td>
+                    </tr>
+                    <tr>
+                        <th class="col2">전화번호</th>
+                        <td class="col10">02-871-3636</td>
+                    </tr>
+                    <tr>
+                        <th class="col2">FAX</th>
+                        <td class="col10">02-876-3202</td>
+                    </tr>
+                </table>
+                <div class="blank2"></div>
+                <div class="imgFrame" style="height:450px;">
+                    <img src="./img/map2.png" alt="지도">
+                </div>
+            </div>
+            <div class="subBox" style="height:auto">
+                <h2 class="subTit">상세 교통편 안내</h2>
+                <p class="subCom">
+                패션 문화의 거리로 직진하셔서 당곡사거리 방향으로 오시면 보라매 공원이 보이며 맞은편 건물입니다. <br>
+                신림역이나 신림사거리 정류장 하차 신림역 7번 출구 방면으로 300m 이동후 지선버스, 혹은 간선버스 이용후 1정거장 지나서 하차. <br>
+                롯데관악점을 경우하는 지선버스는 2정거장 지나서 하차.</p>
+                <table class="subTable1">
+                    <tr>
+                        <th class="col2">
+                            <p>지하철</p>
+                            <p>&nbsp;</p>
+                        </th>
+                        <td class="col10">
+                            <p><span class="tdItem data1">7호선</span>7호선 신대방삼거리역 2번출구</p>
+                            <p><span class="tdItem data2">2호선</span>2호선 신림역 7번 출구</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="col2">
+                            <p>버스</p>
+                            <p>&nbsp;</p>
+                        </th>
+                        <td class="col10">
+                            <p><span class="tdItem data3">지선버스</span>5516. 5518, 5525, 5529, 5614,5711, 6513, 6514</p>
+                            <p><span class="tdItem data4">간선버스</span>152, 500, 504, 461</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>            
+        </div>
+    </div>
+    <div class="page" id="page5">
+        <a href="#page5" class="btn1 item5">비급여 안내</a>
+        <div class="con">
+            <h1 class="pageTitle">비급여 안내</h1>
+            <div class="subBox" style="height: auto; border-top:1px solid #666;">
+                <h2 class="subTit" style="padding-bottom:20px;">기본항목</h2>
+                <table class="subTable2">
+                    <thead>
+                        <tr>
+                            <th class="col2">구분</th>
+                            <th class="col7">기본항목</th>
+                            <th class="col3">가격 (단위 : 원)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col2">검사</td>
+                            <td class="col7">초음파 검사 - 1 부위</td>
+                            <td class="col3">80,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">검사</td>
+                            <td class="col7">초음파 검사 - 2 부위</td>
+                            <td class="col3">120,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">검사</td>
+                            <td class="col7">초음파 검사 - 3 부위 이상</td>
+                            <td class="col3">160,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">통증치료</td>
+                            <td class="col7">도수치료 - 10분</td>
+                            <td class="col3">30,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">통증치료</td>
+                            <td class="col7">도수치료 - 40분</td>
+                            <td class="col3">80,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">통증치료</td>
+                            <td class="col7">도수치료 - 80분</td>
+                            <td class="col3">160,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">통증치료</td>
+                            <td class="col7">체외충격파 치료 - 1부위</td>
+                            <td class="col3">80,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">통증치료</td>
+                            <td class="col7">체외충격파 치료 - 2부위</td>
+                            <td class="col3">120,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">통증치료</td>
+                            <td class="col7">체외충격파 치료 - 3부위 이상</td>
+                            <td class="col3">160,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">통증치료</td>
+                            <td class="col7">플라센텍스주</td>
+                            <td class="col3">100,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">통증치료</td>
+                            <td class="col7">증식치료 (prolotherapy) - 사지관절부위</td>
+                            <td class="col3">50,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">통증치료</td>
+                            <td class="col7">증식치료 (prolotherapy) - 척추관절부위</td>
+                            <td class="col3">100,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">통증치료</td>
+                            <td class="col7">이온토포레시스</td>
+                            <td class="col3">15,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">통증치료</td>
+                            <td class="col7">Hylase 150u</td>
+                            <td class="col3">27,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">통증치료</td>
+                            <td class="col7">Hylase 1500u</td>
+                            <td class="col3">88,000</td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>
+            <div class="subBox" style="height: auto;">
+                <h2 class="subTit" style="padding-bottom:20px;">제증명료</h2>
+                <table class="subTable2">
+                    <thead>
+                        <tr>
+                            <th class="col2">구분</th>
+                            <th class="col7">기본항목</th>
+                            <th class="col3">가격 (단위 : 원)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col2">제증명료</td>
+                            <td class="col7">일반진단서 - 원본</td>
+                            <td class="col3">20,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">제증명료</td>
+                            <td class="col7">의사 소견서</td>
+                            <td class="col3">10,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">제증명료</td>
+                            <td class="col7">소견서 (영문)</td>
+                            <td class="col3">20,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">제증명료</td>
+                            <td class="col7">진단서 (영문)</td>
+                            <td class="col3">40,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">제증명료</td>
+                            <td class="col7">의무기록사본복사 (기본 5장까지)</td>
+                            <td class="col3">2,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">제증명료</td>
+                            <td class="col7">의무기록사본복사 (6매부터 추가 1장당)</td>
+                            <td class="col3">200</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">제증명료</td>
+                            <td class="col7">CD 복사</td>
+                            <td class="col3">10,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">제증명료</td>
+                            <td class="col7">입, 퇴원 확인서</td>
+                            <td class="col3">3,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">제증명료</td>
+                            <td class="col7">진단확인서</td>
+                            <td class="col3">20,000</td>
+                        </tr>
+                    </tbody>
+                </table>    
+            </div>
+                     
+                       
+        </div>
+    </div>
+    <div class="page" id="page6">
+        <a href="#page6" class="btn1 item6">협력기관</a>
+        <div class="con">
+            <h1 class="pageTitle">협력기관</h1>
+            <div class="subBox" style="height:auto; ">
+                <ul class="linkLst">
+                    <li class="col3">
+                        <a href="https://www.brmh.org/home.do" target="_blank">
+                            <img src="./img/intro07_1.jpg" alt="이미지아이콘">
+                            <span class="linkTit">보라매병원</span>
+                        </a>
+                    </li>
+                    <li class="col3">
+                        <a href="http://ch.cauhs.or.kr/" target="_blank">
+                            <img src="./img/intro07_2.jpg" alt="이미지아이콘">
+                            <span class="linkTit">중앙대학교병원</span>
+                        </a>
+                    </li>
+                    <li class="col3">
+                        <a href="https://m.cmcseoul.or.kr/" target="_blank">
+                            <img src="./img/intro07_3.jpg" alt="이미지아이콘">
+                            <span class="linkTit">서울성모병원</span>
+                        </a>
+                    </li>
+                    <li class="col3">
+                        <a href="https://www.snubh.org/" target="_blank">
+                            <img src="./img/intro07_4.jpg" alt="이미지아이콘">
+                            <span class="linkTit">세브란스병원</span>
+                        </a>
+                    </li>
+                    <li class="col3">
+                        <a href="https://www.snubh.org/" target="_blank">
+                            <img src="./img/intro07_5.jpg" alt="이미지아이콘">
+                            <span class="linkTit">분당 서울대학교병원</span>
+                        </a>
+                    </li>
+                    <li class="col3">
+                        <a href="http://www.snuh.org/" target="_blank">
+                            <img src="./img/intro07_6.jpg" alt="이미지아이콘">
+                            <span class="linkTit">서울대학교병원</span>
+                        </a>
+                    </li>
+                    <li class="col3">
+                        <a href="http://bundang.chamc.co.kr/" target="_blank">
+                            <img src="./img/intro07_7.jpg" alt="이미지아이콘">
+                            <span class="linkTit">분당 차병원</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="page" id="lastPage">
+        <div class="wrap">
+            <ul>
+                <li class="col4 item1 first">
+                    <h2 class="itemTitle">SRC병원</h2>
+                    <h1 class="telTxt">02-871-3636</h1>
+                    <p class="itemData">
+                        서울특별시 관악구 보라매로 44(봉천동722-19) <br> SRC병원 부설의원 1~3층
+                    </p>
+                    <p class="itemData" style="padding-bottom:40px;">
+                        팩스번호 02-876-3202 대표자 이영상 <br>
+                        고유번호증 129-82-11729
+                    </p>
+                </li>
+                <li class="col4 item2">
+                    <h2 class="itemTitle">진료시간</h2>
+                    <p class="itemData">
+                        평일 진료AM 09:00 ~ PM 06:00 <br>
+                        토요일 진료AM 09:00 ~ PM 01:00 <br>
+                        점심시간PM 12:00 ~ PM 01:00 <br>
+                    </p>
+                    <p class="itemData">※ 일요일 및 공휴일은 휴진입니다</p>                    
+                </li>
+                <li class="col4 item3">
+                    <h2 class="itemTitle">찾아오시는 길</h2>
+                    <div id="mapFrame">
+                        <div id="map_canvas" style="width:360px; height:180px"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>
+<footer id="ft">
+    <div class="wrap">
+        <p class="copyright">ⓒ 2018 SRC병원. ALL RIGHT RESERVED. SITE BY MOVEMENT K GROUP.</p>
+        <div class="ftLogo"></div>
+    </div>
+</footer>
+<input type="checkbox" id="ck">
+<div id="popFrm">
+    <label for="ck" class="closeBtn">닫기</label>
+    <div class="popBox">
+        <ul class="item1">
+            <li>
+                <h2>
+                    <a href="intro.html#page1">병원안내</a>
+                </h2>
+            </li>
+            <li>
+                <a href="intro.html#page1">병원소개</a>
+            </li>
+            <li>
+                <a href="intro.html#page2">시설안내</a>
+            </li>
+            <li>
+                <a href="intro.html#page3">부서별 연락처</a>
+            </li>
+            <li>
+                <a href="intro.html#page4">오시는길</a>
+            </li>
+            <li>
+                <a href="intro.html#page5">비급여 안내</a>
+            </li>
+            <li>
+                <a href="intro.html#page6">협력기관</a>
+            </li>
+        </ul>
+        <ul class="item2">
+            <li>
+                <h2>
+                    <a href="physical.html#page1">재활치료</a>
+                </h2>
+            </li>
+            <li>
+                <a href="physical.html#page1">소아</a>
+            </li>
+            <li>
+                <a href="physical.html#page2">청소년</a>
+            </li>
+            <li>
+                <a href="physical.html#page3">성인</a>
+            </li>
+        </ul>
+        <ul class="item3">
+            <li>
+                <h2>
+                    <a href="ward.html#page1">병동안내</a>
+                </h2>
+            </li>
+            <li>
+                <a href="ward.html#page1">낮병동소개</a>
+            </li>
+            <li>
+                <a href="ward.html#page2">입원안내</a>
+            </li>
+            <li>
+                <a href="ward.html#page3">치료항목</a>
+            </li>
+            <li>
+                <a href="ward.html#page4">자주하시는질문</a>
+            </li>
+        </ul>
+        <ul class="item4">
+            <li>
+                <h2>
+                    <a href="news.html#page1">병원소식</a>
+                </h2>
+            </li>
+            <li>
+                <a href="news.html#page1">공지사항</a>
+            </li>
+            <li>
+                <a href="news.html#page2">SRC뉴스레터</a>
+            </li>
+            <li>
+                <a href="news.html#page3">사회공헌사업</a>
+            </li>
+            <li>
+                <a href="news.html#page4">재활/건강정보</a>
+            </li>
+        </ul>
+        <ul class="item5">
+            <li>
+                <h2>
+                    <a href="speech.html#page1">치료연계센터</a>
+                </h2>
+            </li>
+            <li>
+                <a href="speech.html#page1">SRC심리상담센터</a>
+            </li>
+            <li>
+                <a href="speech.html#page2">SRC스포츠센터</a>
+            </li>
+        </ul>
+    </div>
+</div>        
+<aside id="quick">
+    <div class="qWrap">
+        <ul class="top">
+            <li>
+                <a href="index.html" class="qlogo"></a>
+            </li>
+<?php 
+        if($_SESSION['userid']=="admin") {         
+?>           
+            <li>
+                <a href="#" class="hv">관리자페이지로</a>
+            </li>
+            <li>   
+                <a href="logout.php" class="hv">로그아웃</a>
+            </li>
+<?php
+         } else if(isset($_SESSION['userid'])) {
+?>                                 
+            <li>
+                <a href="logout.php" class="hv">로그아웃</a>
+            </li>
+            <li>   
+                <a href="#" class="hv">정보수정</a>
+            </li>
+<?php
+        } else {
+?>                       
+            <li>
+                <a href="joinForm.html" class="hv">회원가입</a>
+            </li>
+            <li>   
+                <a href="loginForm.html" class="hv">로그인</a>
+            </li>
+<?php
+        }
+?> 
+            <li>       
+                <a href="intro.html#page5" class="hv">비급여안내</a>
+            </li>
+            <li>       
+                <a href="intro.html#page4" class="hv">오시는길</a>
+            </li>
+        </ul>
+        <ul class="bottom">
+            <li>
+                <a href="speech.html#page1" class="yellow">심리상담센터</a>
+            </li>
+            <li>
+                <a href="speech.html#page2" class="cyan">스포츠센터</a>
+            </li>
+            <li><a href="#page1" class="toTop">위로</a></li>
+        </ul>
+    </div>
+</aside>
+</body>
+</html>

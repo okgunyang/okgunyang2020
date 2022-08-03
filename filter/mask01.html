@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter 02 - mask-image</title>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width:100%; }
+    .wrap { clear:both; width: 100%; }
+    .vs { width:700px; margin:30px auto; }
+    .vs img { display:block; width: 100%; transition-duration:0.4s; }
+    .tit { text-align: center; line-height: 3.6; }
+
+    .item2 img { mask-image:url('Melon_logo.png'); -webkit-mask-image:url('Melon_logo.png');
+        mask-size:100px;   -webkit-mask-size:100px; }
+
+    .item3 img { mask-size:50px;   -webkit-mask-size:50px; 
+    mask-image:linear-gradient(90deg, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.5) 50% ); 
+    -webkit-mask-image:linear-gradient(90deg, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.5) 50% );
+     }    
+
+    .item4 img { mask-size:100px;   -webkit-mask-size:100px; 
+    mask-image:linear-gradient(0deg, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.7) 50% ); 
+    -webkit-mask-image:linear-gradient(0deg, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.7) 50% ); }
+
+    .item5 img { mask-size:10px 10px; -webkit-mask-size:10px 10px; 
+        mask-image: linear-gradient(45deg, #000000 25%, rgba(0, 0, 0, 0.2) 25%), linear-gradient(-45deg, #000000 25%, rgba(0, 0, 0, 0.2) 25%), linear-gradient(45deg, rgba(0, 0, 0, 0.2) 75%, #000000 75%),
+    linear-gradient(-45deg, rgba(0, 0, 0, 0.2) 75%, #000000 75%);
+  -webkit-mask-image: linear-gradient(45deg, #000000 25%, rgba(0, 0, 0, 0.2) 25%), linear-gradient(-45deg, #000000 25%, rgba(0, 0, 0, 0.2) 25%), linear-gradient(45deg, rgba(0, 0, 0, 0.2) 75%, #000000 75%),
+    linear-gradient(-45deg, rgba(0, 0, 0, 0.2) 75%, #000000 75%);    }
+
+    .item6 img { mask-size:40px; -webkit-mask-size:40px;
+        mask-image:url(blob.svg#visual); -webkit-mask-image:url(blob.svg); 
+    mask-position:0px 350px; -webkit-mask-position:0px 350px; transition-duration:05s; }
+    .item6:hover img { mask-size:700px; -webkit-mask-size:700px;
+        mask-position:500px 350px;  -webkit-mask-position:500px 350px; }
+
+    .item7 img { mask-size:700px; -webkit-mask-size:700px;
+        mask-image:url(blob.svg#visual); -webkit-mask-image:url(blob.svg); 
+        mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat;
+    mask-position:-350px; -webkit-mask-position:-350px; transition-duration:05s; }
+    .item7:hover img { mask-position:700px;  -webkit-mask-position:700px; }
+
+    .item8 img { mask-size:40px; -webkit-mask-size:40px;
+        mask-image:url(blob.svg#visual); -webkit-mask-image:url(blob.svg); 
+        mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat;
+        mask-position:center center; -webkit-mask-position:center center; transition-duration:05s; }
+    .item8:hover img { mask-size:1400px; -webkit-mask-size:1400px; }
+
+    /*
+    https://app.haikei.app/ 활용하여 svg를 쉽게 만들 수 있음
+    mask-image:url("png또는 svg 이미지경로및파일명") 
+        svg 파일 안에 여러 도형이 있는 경우 해당 도형의 아이디를 기재해야함 -> ex) mask-image:url(star.svg#star1)
+    mask-image:그라디언트 지정도 가능
+    mask-size:px|%|em단위 크기, cover, contain
+    mask-repeat:마스크 이미지의 반복 속성 - repeat-x | repeat-y | repeat | space | round | no-repeat
+    mask-position:마스크의 위치 지정 - left|center|right top|center|bottom
+        또는 %|px|em 단위로 지정하며, 앞은 가로위치 뒤는 세로위치를 나타냄
+    mask-mode:여러 마스크 혼합모드 - alpha | luminance | match-source | revert | revert-layer | unset
+    mask-clip:마스크가 어디까지 적용 범위지정 content-box | padding-box | border-box | margin-box | fill-box | stroke-box | view-box | no-clip
+    mask-origin:마스크의 시작위치 기준 content-box | padding-box | border-box | margin-box | fill-box | stroke-box | view-box | no-clip
+    mask-composite:마스크의 연산 방법 add | subtract | intersect | exclude | revert | revert-layer | unset    
+    */
+    .item9 div { width: 350px; height:300px; 
+        background-image: url("ive.jpg"); background-size:100% auto;
+        background-repeat: no-repeat;
+         transition-duration:0.6s;
+        float:left; }
+    .item9 .cate1 { clip-path:circle(35px at 160px 160px); }
+    .item9 .cate1:hover { clip-path:circle(350px at 160px 160px); }
+    .item9 .cate2 { clip-path:ellipse(50px 30px at 160px 160px); }
+    .item9 .cate2:hover { clip-path:ellipse(500px 300px at 160px 160px); }
+    .item9 .cate3 { clip-path:polygon(5% 5%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%); }
+    .item9 .cate4 { clip-path:inset(50px 90px); }
+    .item9:hover .cate4 { clip-path:inset(50px 20px); }
+    .item9 .cate5 { clip-path:path('M 0 200 L 0,75 A 5,5 0,0,1 150,75 L 200 200 z'); }
+    .item9 .cate6 { clip-path:url(blob.svg); /* svg 파일이 검은색과 흰색으로만 되어 있어야 제대로 적용됨 */ }
+    /*
+    clip-path:마스크와 같은 효과를 적용할 수 있음
+    none | url()
+    margin-box | border-box | padding-box | content-box | fill-box | stroke-box | view-box
+    inset() | circle() | ellipse() | polygon() | path()
+
+    ex) clip-path:padding-box circle(50px at 0 100px) -> 패딩까지 원형 클리핑 마스크를 적용
+    */
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <figure class="vs item1">
+            <h2 class="tit">원래 이미지</h2>
+            <img src="iu.png" alt="원래 이미지" class="vs_img">
+        </figure>
+    </div>
+    <div class="wrap">
+        <figure class="vs item2">
+            <h2 class="tit">png 마스크</h2>
+            <img src="iu.png" alt="" class="vs_img">
+        </figure>
+    </div>
+    <div class="wrap">
+        <figure class="vs item3">
+            <h2 class="tit">선형 그라디언트 마스크</h2>
+            <img src="ive.jpg" alt="" class="vs_img">
+        </figure>
+    </div>
+    <div class="wrap">
+        <figure class="vs item4">
+            <h2 class="tit">선형 그라이디언트 마스크2</h2>
+            <img src="ive.jpg" alt="" class="vs_img">
+        </figure>
+    </div>
+    <div class="wrap">
+        <figure class="vs item5">
+            <h2 class="tit">그라디언트 도형 마스크</h2>
+            <img src="iu.png" alt="마스크" class="vs_img">
+        </figure>
+    </div>
+    <div class="wrap">
+        <figure class="vs item6">
+            <h2 class="tit">SVG 도형 마스크</h2>
+            <img src="iu.png" alt="SVG 마스크" class="vs_img">
+        </figure>
+    </div>
+    <div class="wrap">
+        <figure class="vs item7">
+            <h2 class="tit">SVG 도형 마스크 이동 애니메이션</h2>
+            <img src="iu.png" alt="SVG 마스크" class="vs_img">
+        </figure>
+    </div>
+    <div class="wrap">
+        <figure class="vs item8">
+            <h2 class="tit">SVG 도형 마스크 확대 애니메이션</h2>
+            <img src="iu.png" alt="SVG 마스크" class="vs_img">
+        </figure>
+    </div>
+    <div class="wrap">
+        <figure class="vs item9">
+            <h2 class="tit">clipping 마스크 확대 애니메이션</h2>
+            <div class="cate1"></div>
+            <div class="cate2"></div>
+            <div class="cate3"></div>
+            <div class="cate4"></div> 
+            <div class="cate5"></div>
+            <div class="cate6"></div>
+        </figure>
+    </div>
+    <div class="wrap">
+        <div class="blank" style="width:100%; min-height:100px"></div>
+    </div>
+</body>
+</html>

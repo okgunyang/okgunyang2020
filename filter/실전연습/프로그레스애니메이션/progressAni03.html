@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>프로그레스바 애니메이션3</title>
+    <script src="prefixfree.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <style>
+    .tooltip{ 
+      position:relative;
+      float:right;
+    }
+    .tooltip > .tooltip-inner {background-color: #eebf3f; padding:5px 15px; color:rgb(23,44,66); font-weight:bold; font-size:13px;}
+    .popOver + .tooltip > .tooltip-arrow {	border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid #eebf3f;}
+
+    section{
+      margin:100px auto; 
+      height:1000px;
+    }
+    .progress{
+      border-radius:0;
+      overflow:visible;
+    }
+    .progress-bar{
+       background:rgb(23,44,60); 
+      -webkit-transition: width 1.5s ease-in-out;
+      transition: width 1.5s ease-in-out;
+    }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(function () { 
+      $('[data-toggle="tooltip"]').tooltip({trigger: 'manual'}).tooltip('show');
+    });  
+    $(document).ready(function(){
+      $(".progress-bar").each(function(){
+        each_bar_width = $(this).attr('aria-valuenow');
+        $(this).width(each_bar_width + '%');
+      }); 
+    });    
+
+    // $( window ).scroll(function() {   
+     // if($( window ).scrollTop() > 10){  // scroll down abit and get the action   
+//      $(".progress-bar").each(function(){
+//        each_bar_width = $(this).attr('aria-valuenow');
+//        $(this).width(each_bar_width + '%');
+//      });
+
+     //  }  
+    // });
+
+    </script>    
+</head>
+<body>
+<section>
+  <!--<h2 class="text-center">Scroll down the page a bit</h2><br><br> -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 col-lg-2"></div>
+     <div class="col-md-8 col-lg-8">
+       
+<div class="barWrapper">
+ <span class="progressText"><B>HTML5</B></span>
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" >   
+        <span  class="popOver" data-toggle="tooltip" data-placement="top" title="85%"> </span>     
+</div>
+</div>
+
+<div class="barWrapper">
+ <span class="progressText"><B>CSS3</B></span>
+<div class="progress ">
+  <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="10" aria-valuemax="100" style="">
+     <span  class="popOver" data-toggle="tooltip" data-placement="top" title="75%"> </span>  
+  </div>
+  
+</div>
+</div>
+
+<div class="barWrapper">
+ <span class="progressText"><B>BOOTSTRAP</B></span>
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+     <span  class="popOver" data-toggle="tooltip" data-placement="top" title="65%"> </span>  
+  </div>
+</div>
+</div>
+<div class="barWrapper">
+ <span class="progressText"><B>JQUERY</B></span>
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+         <span  class="popOver" data-toggle="tooltip" data-placement="top" title="55%"> </span>  
+  </div>
+</div>
+</div>
+<div class="barWrapper">
+ <span class="progressText"><B>MYSQL</B></span>
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+      <span  class="popOver" data-toggle="tooltip" data-placement="top" title="70%"> </span>  
+  </div>
+</div>
+</div>
+  <div class="barWrapper">
+ <span class="progressText"><B>PHP</B></span>
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+      <span  class="popOver" data-toggle="tooltip" data-placement="top" title="75%"> </span> 
+  </div>
+</div>
+</div>
+
+</div>
+     <div class="col-md-2 col-lg-2"></div>
+    </div>
+</div>
+  </div>
+    </section>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+</html>

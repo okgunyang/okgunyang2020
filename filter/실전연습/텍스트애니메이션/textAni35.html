@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>텍스트 애니메이션11-26</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+h1 {
+  color: transparent;
+  font: 700 280px 'Comfortaa', cursive;
+  text-align: center;
+  text-shadow: 24px 20px 8px rgba(255, 255, 255, 0.25), 18px 10px 6px rgba(2, 99, 116, 0.39), 8px 6px 6px rgba(0, 0, 0, 0.57), 4px 4px 6px #fff, 0 0 6px #055f73;
+  margin: 0.125em 0;
+  position: relative;
+}
+h1::before, h1::after {
+  content: '';
+  font: inherit;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+h1::before {
+  background: repeating-linear-gradient(-45deg, #d5013f, #d5013f 20px, #fff 20px, #fff 40px);
+  mix-blend-mode: overlay;
+}
+h1::after {
+  background: white;
+  content: 'candy';
+  color: black;
+  text-shadow: none;
+  mix-blend-mode: lighten;
+  bottom: -20px;
+}
+
+/* Yup, text selection looks bad */
+::-moz-selection {
+  background: #000;
+}
+::selection {
+  background: #000;
+}
+
+::-moz-selection {
+  background: #000;
+}
+    </style>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+
+</script>
+</head>
+<body>
+<h1>candy</h1>
+</body>
+</html>

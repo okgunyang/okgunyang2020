@@ -1,0 +1,12 @@
+@charset "UTF-8";
+* { margin: 0; padding: 0; }
+body, html { width: 100%; }
+ul { list-style: none; }
+a { text-decoration: none; }
+img { border: 0; }
+button, input[type="submmit"], input[type="reset"], input[type="button"] { display:inline-block
+    border: 0; outline:0;  }
+
+/* 스크롤바 보이지 않게 하기 */
+body, html { -ms-overflow-style:none; scrollbar-width:none; }
+body::-webkit-scrollbar { display:none; } 

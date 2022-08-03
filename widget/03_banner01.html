@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>배너01</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR" rel="stylesheet">
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; font-family: 'Noto Sans KR', sans-serif; overflow-x:hidden; }
+    ul { list-style: none; }
+    a { color:#fff; text-decoration:none; }
+    h2, h3, p { line-height: 1.6; }   
+    .wrap { clear:both; width: 100%; } 
+    .tit { line-height: 3; text-align:center; }    
+    .vs { clear:both; } 
+    .vs_tit, .vs_com { text-shadow:1px 1px 1px #333; }  
+    .ban_box { position:relative; }    
+    #vs1 .ban_box { width: 100%; height:25.132vw;  background-image: url("ban02.jpg"); background-position:center center; 
+        background-size:100% 100%; 
+        background-repeat: no-repeat; overflow-x:hidden; }
+    #vs1 .tit_box { color:#fff; }    
+    #vs1 .vs_tit { padding-left: 100px; padding-top:80px; }
+    #vs1 .vs_com { padding-left: 100px; padding-top: 30px;} 
+    #vs2 .ban_box { width: 100%; height:auto; position:relative; }
+    #vs2 .pic { display:block; width: 100%; height:auto; }    
+    #vs2 .tit_box { position:absolute; top: 0; left: 0; color:#fff; } 
+    #vs2 .vs_tit { padding-left: 100px; padding-top:80px; }
+    #vs2 .vs_com { padding-left: 100px; padding-top: 30px; }
+        
+    #vs3 .ban_box { width: 100%; height:auto; }
+    #vs3 .pic { display:block; width: 100%; height:auto; } 
+        
+    .more { display:block; width: 120px; height: 40px; 
+        border-radius:25px; border:3px solid #fff; 
+        text-align:center; line-height: 40px; font-size:20px; 
+        color:#fff; text-shadow:-1px -1px 1px #333; 
+        position:absolute; bottom: 10%; right:10%;
+        background:rgba(0,0,0,0.5); }    
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h2 class="tit">고정 배너(배경이미지)</h2>
+        <figure class="vs" id="vs1">
+            <div class="ban_box">
+                <div class="tit_box">
+                    <h3 class="vs_tit">집안 공기를 통째로 바꾸다<br>나비엔 청정환기 시스템</h3>
+                    <p class="vs_com">콘덴싱으로 지구를 지켜온 나비엔이 이제 우리집 공기까지 지켜줍니다.</p>
+                </div>
+                <a href="" class="more">MORE</a>
+            </div>
+        </figure>
+        <br>
+    </div>
+    <div class="wrap">
+        <h2 class="tit">고정 배너(이미지요소)</h2>
+        <figure class="vs" id="vs2">
+            <div class="ban_box">
+                <img src="ban02.jpg" alt="배너" class="pic">
+                <div class="tit_box">
+                    <h3 class="vs_tit">집안 공기를 통째로 바꾸다<br>나비엔 청정환기 시스템</h3>
+                    <p class="vs_com">콘덴싱으로 지구를 지켜온 나비엔이 이제 우리집 공기까지 지켜줍니다.</p>
+                </div>
+                <a href="" class="more">MORE</a>
+            </div>
+        </figure>
+        <br>
+    </div>
+    <div class="wrap">
+        <h2 class="tit">고정 배너(이미지요소-글자까지)</h2>
+        <figure class="vs" id="vs3">
+            <div class="ban_box">
+                <img src="ban01.jpg" alt="배너" class="pic">
+                <a href="" class="more">MORE</a>
+            </div>
+        </figure>
+        <br>
+    </div>
+</body>
+</html>

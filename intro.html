@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 문서 정보 등록 -->
+    <meta name="application-name" content="kmgt Portfolio">
+    <meta name="title" content="KMGT's 포트폴리오">
+    <meta name="description" content="KMGT's의 자바웹개발자 포트폴리오, 인트로, 보유기술, 갤러리, 컨택트, intro, technic, ability, skill, project, gallery, contact">
+    <meta name="keywords" content="웹 프로젝트, web project, 자바, java, jsp, 서블릿, servlet, MVC, MVC2, java framework, spring legacy, spring boot, spring cloud, sts, IntelliJ, html, haml, Markdown, Jade, Slim, css, scss/sass, less, Stylus, 웹표준, SVG, Web Animation, 웹 애니메이션, javascript, typescript, jQuery, Ajax, 자바스크립트, 마크다운, Node, angular, Vue, React, RDBMS, 관계형 데이터베이스, oracle, mysql, mariadb, H2, Postgree, MongoDB, SQLite, SQL Workbench, SQL Developer, mybatis, JSON, 오라클, 마리아DB, Business Logic, 비즈니스로직, Controller, Servicem, DAO, DTO, VO, Mapper, IoC, AOP, JPA, CRUD, Monolothic, DevOps, Cloud Native, AWS, Kubernetes, Azure, Agile, Docker, Jenkins, Git, Github, GitLab, bitbucket, App Deploy, Build, Maven, Gradle, JAR, WAR, EAR, jUnit, PMD, Sparrow, CodeMind, Heuristic, Selenium IDE, Trello, Jira, protoNow, Ovenapp, balsamiq, UML, USECASE, Class Diagram, Sequence Diagram, Amateras, ObjectAid, Task Flow, MindMap, User Scenarios, Comstomer Journey Map">
+    <!-- 파비콘 등록 -->
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <!-- 오픈 그래프 등록 -->
+    <meta property="og:title" content="kmgt Portfolio">
+    <meta property="og:url" content="https://okgunyang.github.io">
+    <meta property="og:description" content="KMGT's의 자바웹개발자 포트폴리오, 인트로, 보유기술, 갤러리, 컨택트, intro, technic, ability, skill, project, gallery, contact">
+    <meta property="og:image" content="portfolio_home.png">
+    <meta name="twitter:card" content="portfolio_card.mp4" /> 
+    <meta name="twitter:title" content="kmgt Portfolio" /> 
+    <meta name="twitter:description" content="KMGT's의 자바웹개발자 포트폴리오, 인트로, 보유기술, 갤러리, 컨택트, intro, technic, ability, skill, project, gallery, contact" /> 
+    <meta name="twitter:image" content="portfolio_home.png" /> 
+    <!-- 모바일 앱 연결시 오픈 그래프 -->
+    <!--iOS-->
+    <meta property="al:ios:url" content=" ios 앱 URL" />
+    <meta property="al:ios:app_store_id" content="ios 앱스토어 ID" /> 
+    <meta property="al:ios:app_name" content="ios 앱 이름" /> 
+    <!--Android-->
+    <meta property="al:android:url" content="안드로이드 앱 URL" />
+    <meta property="al:android:app_name" content="안드로이드 앱 이름" />
+    <meta property="al:android:package" content="안드로이드 패키지 이름" /> 
+    <meta property="al:web:url" content="안드로이드 앱 URL" />
+
+    <!-- 필요 폰트 가져오기 -->
+    <link rel="stylesheet" href="fonts.css">
+    <title>KMGT's 포트폴리오</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+    .sec_tit { text-align: center; }
+    #home { position:fixed; right:50px; top:10px; z-index:999; line-height:60px; 
+    width:180px; height: 60px; text-align: center; font-size:24px; background-color:rgba(255,255,255,0.8); }
+    #home a { display:block; color:#333; font-family: 'CookieRun-Regular', cursive; }
+    .page_tit { text-align: center; padding-top: 3em; line-height: 2.4; font-size:36px; }   
+    #page1 .sec_wrap { clear:both; width: 100%; }
+    </style>
+    <style>
+    #quick { width:50px; height: 300px; position:fixed; z-index:999;
+    right:20px; top:100px; }
+    #quick li { clear:both; width: 50px; height: 50px; margin:12px auto; border:3px solid #333; border-radius:28px; position:relative; }
+    #quick li div { width: 45px; height: 45px; box-sizing: border-box;
+    overflow:hidden; margin:2px auto;  
+border-radius:25px; cursor:pointer;  }
+    #quick li:after { content:"data"; width:120px; height:50px; line-height: 50px; position:absolute; top:0;    right:55px; opacity:0; transition-duration:0.4s; 
+    font-size:20px; text-align:right; padding-right:8px; }
+    #quick li:hover::after { opacity:1; }
+    #quick li.item1 div { background-color: deeppink; }
+    #quick li.item2 div { background-color: deepskyblue; }
+    #quick li.item3 div { background-color:gold; }
+    #quick li.item1:after { content:"Past"; color:deeppink; }
+    #quick li.item2:after { content:"Current"; color:deepskyblue; }
+    #quick li.item3:after { content:"Future"; color:gold; }
+    #quick li div img { display:block; width: 30px; height: 30px; }
+    #arrow_top { width:50px; height:50px; position:fixed; z-index:999;
+    right:20px; bottom:100px; border-radius:30px; border:3px solid #eee; 
+    line-height: 50px; text-align: center; font-size:32px; font-weight: bold;
+    cursor:pointer; display:none; }
+    #arrow_top.on { display:block; }
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+        var tot = parseInt($(".wrap").height());
+        var wd = parseInt($(window).width());
+        var ht = parseInt($(window).height());
+        var hx = (parseInt($(window).width()) - 1280) / 2;
+        var ratio = wd / tot;
+        $(window).scroll(function(){
+            var sc = parseInt($(window).scrollTop());
+            console.log(sc);
+            $("#gage .gagebar").width(hx+(wd*sc/tot));
+            var cat = parseInt($("#page1").height())+parseInt($("#page2").height()) - 100; 
+            if(sc>=cat) {
+                $("#page3").addClass("on");
+            }
+            if(sc>=300){
+                $("#arrow_top").addClass("on");
+            } else {
+                $("#arrow_top").removeClass("on");
+            }
+        });
+        $(".page").each(function(index){
+            var cat = parseInt($(this).offset().top);
+            $("#quick li").eq(index).attr("data-scroll", cat);
+        });
+        $("#quick li").click(function(){
+            var sc_dep = parseInt($(this).attr("data-scroll"));
+            $("body, html").not(":animated").animate({"scrollTop":sc_dep+"px"});
+        });
+        $("#arrow_top").click(function(){
+            $("body, html").not(":animated").animate({"scrollTop":"0px"}, 1500);
+        });
+    });    
+    </script>
+    <script>
+    window.onload = function () {
+//            var elm = ".page";
+        $(".page").each(function (index) {
+            // 개별적으로 Wheel 이벤트 적용
+            var cat = $(this).attr("id");
+            $(this).on("mousewheel DOMMouseScroll", function (e) {
+                //$("#gnb li").removeClass("on");
+                //$("#gnb li").eq(index).addClass("on");
+                e.preventDefault();
+                var delta = 0;
+                if (!event) event = window.event;
+                if (event.wheelDelta) {
+                    delta = event.wheelDelta / 120;
+                    if (window.opera) delta = -delta;
+                } 
+                else if (event.detail)
+                    delta = -event.detail / 3;
+                var moveTop = $(window).scrollTop();
+                var elmSelecter = $(".page").eq(index);
+                // 마우스휠을 위에서 아래로
+                if (delta < 0) {
+                    if ($(elmSelecter).next() != undefined) {
+                        try{
+                            moveTop = $(elmSelecter).next().offset().top;
+                        }catch(e){}
+                    }
+                // 마우스휠을 아래에서 위로
+                } else {
+                    if ($(elmSelecter).prev() != undefined) {
+                        try{
+                            moveTop = $(elmSelecter).prev().offset().top;
+                        }catch(e){}
+                    }
+                }
+                    
+                // 화면 이동 0.8초(800)
+                $("html,body").stop().animate({
+                    scrollTop: moveTop + 'px'
+                }, {
+                    duration: 800, complete: function () {
+                    }
+                });
+            });
+        });
+    }
+    </script>
+    <style>
+    .past_lst { clear:both; width:1680px; margin: 0 auto; position:relative; height: 750px; }
+    .past_lst:before { content:""; display:block; width: 1000px; height: 40px; position:absolute; top: 100px;  left: -1000px; background-color: rgb(58, 206, 247); }
+    .past_lst:after { content:""; display:block; width: 1000px; height: 40px; position:absolute; bottom:130px;  right:-500px; background-color: rgb(58, 206, 247); }
+    .past_lst li {float:left; width:280px; height:240px; 
+    position:relative;  background-color:transparent; }   
+    .past_lst li.item7, .past_lst li.item8, .past_lst li.item9, .past_lst li.item10, .past_lst li.item11, .past_lst li.item12 { float:right; }
+    .past_lst li:before { content:""; display:block; height: 40px; background-color: rgb(58, 206, 247); position:absolute; top:100px; left:0px; width: 280px; }
+    .past_lst li div { position:absolute; width: 280px; box-sizing: border-box;
+        height: 320px; overflow:hidden; z-index:9; }
+    .past_lst .item_year { display:block; text-align:center;
+    font-size:24px; margin: 10px auto; }
+    .past_lst .item_tit { display:block; width:120px; height:120px; border:5px solid deeppink; border-radius:66px; text-align: center; line-height: 120px; font-size:18px; transition-duration:0.5s; letter-spacing:-2px;
+    margin:0 auto; background-color: #fff; cursor:pointer; font-stretch: semi-condensed; }
+    .past_lst .item_tit.adm { border:5px solid #2317C9; }
+    .past_lst .item_tit.degree { border:5px solid #2317C9; }
+    .past_lst .item_tit.work { border:5px solid gold; }
+    .past_lst .item_txt { display:block; width:120px; word-wrap: break-word; text-align: center; margin:10px auto; line-height: 1.1; font-size:11px; }
+    .past_lst li:hover .item_tit { background-color:orange;  }
+    .past_lst li.item5:before { width:400px; }
+    .past_lst li.item6:before, .past_lst li.item12:before { left:115px; width:50px; height:300px; }
+    .past_lst li.item7:before { width: 100px; }
+    .past_lst li.item11:before { width:400px; left: -120px; }
+    .past_lst li.item13:before { width:200px; left:90px; }
+    </style>
+    <style>
+    .current_lst { clear:both; width: 1600px; margin:10px auto; margin-top:40px; }
+    .current_lst li { width: 25%; float:left; min-height:400px; position:relative; transform-style: preserve-3d; }    
+    .current_lst li .item_data { width:280px; height:360px; border:3px solid #ece1e1; margin:0 auto; padding: 14px; overflow: hidden; position:relative; 
+    cursor:pointer; transition-duration:0.4s; transform:rotateY(0deg); }
+    .current_lst li:hover .item_data { transform:rotateY(180deg);  }
+    .current_lst li .item_data div { width: 280px; height: 360px; background-color: #ece1e1; position:absolute; top:14px; left:14px; }
+    .current_lst li .item_data .front { transform:rotateY(0deg); z-index:8; }
+    .current_lst li .item_data .back { transform:rotateY(180deg); 
+    background-color:#333; color:#fff; z-index:7; }
+    .current_lst li:hover .item_data .front { z-index:7; }
+    .current_lst li:hover .item_data .back { z-index:8; }
+    .current_lst li .item_data span { display:block; padding-left:28px; }
+    .current_lst li .item_hd { font-size:28px; padding-top:45px; }
+    .current_lst li .item_con { font-size:20px; line-height: 2.8; padding-top: 24px; }
+    .current_lst li .item_place { font-size:20px; line-height: 3; }
+    .current_lst li .item_position { font-size:20px; line-height: 3; }
+    .intro2, .item_icon_wrap { clear:both; width: 1600px; margin:10px auto; margin-top: 20px; position:relative; }
+    .intro2 .txt_fr { width: 25%; float:left; height: 42px; margin-top: 40px; overflow:hidden;  box-sizing: border-box; position:relative; }
+    .intro_txt_sl { width: 280px; line-height: 42px; margin: 0 auto; 
+    position:relative; }
+    .intro_txt_sl li { clear: both; line-height: 42px; font-size:16px; }
+    .intro_txt_sl li span { display:block; font-size:18px; font-weight: bold; }
+    .intro2 .txt_fr:before { content:""; display:block; width: 310px; height:36px; position:absolute; top:0px; left:40px; border:3px solid #dcd1d1; }
+    .item_icon_lst { clear: both; }
+    .item_icon_lst li { float:left; width: 25%; margin-top: 40px; }
+    .item_icon_lst li div { width: 310px; height: 310px; margin: 0 auto; overflow:hidden; }
+    .item_icon_lst li div img { display:block; width:200px; height:auto; margin: 0 auto; }
+    .item_icon_lst li:nth-child(3) img { width: 260px; margin-top: -25px; }
+    </style>
+    <script>
+    $(document).ready(function(){
+        function txtAni(data, ms){
+            setInterval(function() {
+                $(data).find(".intro_txt_sl").not(":animated").animate({"margin-top":"-42px"}, 500, function(){
+                    $(data).find(".intro_txt_sl li").eq(0).appendTo($(data).find(".intro_txt_sl"));
+                    $(data).find(".intro_txt_sl").css("margin-top","0px");
+                });
+            }, ms);
+        }
+        txtAni("#car1", 4200);
+        txtAni("#car2", 3800);
+        txtAni("#car3", 4800);
+        txtAni("#car4", 3600);
+    });    
+    </script>
+    <style>
+    .future_lst { clear:both; width: 1600px; margin:40px auto; border-top:3px solid #eceff1; } 
+    .future_lst li { width: 25%; float:left; margin-top:50px; }
+    .future_lst li .item_box { width: 350px; height: 350px; margin: 0 auto; }       
+    .future_lst li .item_box img { display:block; width: 310px; height:auto; 
+    margin: 0 auto; }
+    .box_tit { display:block; line-height: 48px; text-align: center; font-size:24px; 
+    padding-bottom:60px; font-weight:bold; }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <header id="hd">
+        <nav id="gnb">
+            <ul>
+                <li><a href="intro.html" style="background:gold">인트로</a></li>
+                <li><a href="portfolio.html">포트폴리오</a></li>
+                <li><a href="ability.html">어빌리티</a></li>
+                <li><a href="contact.html">컨택트</a></li>
+            </ul>
+        </nav>
+        <nav id="home"><a href="index.html">메인으로</a></nav>
+    </header>
+    <main id="content">
+        <section class="page" id="page1">
+            <div class="page_wrap">
+                <h2 class="page_tit">Past</h2>
+                <h2 class="sec_tit">Loadmap</h2>
+                <div class="sec_wrap">
+                    <ul class="past_lst">
+                        <li class="item1">
+                            <div class="item_box">
+                                <span class="item_year">1979</span>
+                                <span class="item_tit">Birth</span>
+                                <span class="item_txt">Born in SejongCity</span>
+                            </div>
+                        </li>
+                        <li class="item2">
+                            <div class="item_box">
+                                <span class="item_year">1985</span>
+                                <span class="item_tit adm">Admission</span>
+                                <span class="item_txt">Daepyeong Elementary School</span>
+                            </div>
+                        </li>
+                        <li class="item3">
+                            <div class="item_box">
+                                <span class="item_year">1991</span>
+                                <span class="item_tit adm">Admission</span>
+                                <span class="item_txt">Keumo Middle School</span>
+                            </div>
+                        </li>
+                        <li class="item4">
+                            <div class="item_box">
+                                <span class="item_year">1994</span>
+                                <span class="item_tit adm">Admission</span>
+                                <span class="item_txt">Daeseong High School</span>
+                            </div>
+                        </li>
+                        <li class="item5">
+                            <div class="item_box">
+                                <span class="item_year">1997</span>
+                                <span class="item_tit adm">Admission</span>
+                                <span class="item_txt">Hanbat Univercity<br>Control Instrum Department</span>
+                            </div>
+                        </li>
+                        <li class="item6">
+                            <div class="item_box">
+                                <span class="item_year">1998</span>
+                                <span class="item_tit work">Start Work</span>
+                                <span class="item_txt">weapon development<br>Engine Design</span>
+                            </div>
+                        </li>
+                        <li class="item7">
+                            <div class="item_box">
+                                <span class="item_year">1999</span>
+                                <span class="item_tit work">Start Lector</span>
+                                <span class="item_txt">Machinical Design/Programming</span>
+                            </div>
+                        </li>
+                        <li class="item8">
+                            <div class="item_box">
+                                <span class="item_year">2000</span>
+                                <span class="item_tit work">Start Soldier</span>
+                                <span class="item_txt">Defense Science Laboratory</span>
+                            </div>
+                        </li>
+                        <li class="item9">
+                            <div class="item_box">
+                                <span class="item_year">2001</span>
+                                <span class="item_tit work">Start Work</span>
+                                <span class="item_txt">Daewoo Telecom<br>Repairs computers</span>
+                            </div>    
+                        </li>
+                        <li class="item10">
+                            <div class="item_box">
+                                <span class="item_year">2007</span>
+                                <span class="item_tit work">Master Degree</span>
+                                <span class="item_txt">Computer Science</span>
+                            </div>
+                        </li>
+                        <li class="item11">
+                            <div class="item_box">
+                                <span class="item_year">2009</span>
+                                <span class="item_tit degree">Bachelor's degree</span>
+                                <span class="item_txt">Design Part</span>
+                            </div>
+                        </li>
+                        <li class="item12">
+                            <div class="item_box">
+                                <span class="item_year">2010</span>
+                                <span class="item_tit degree">Doctoral degree</span>
+                                <span class="item_txt">Computer Part</span>
+                            </div>
+                        </li>
+                        <li class="item13">
+                            <div class="item_box">
+                                <span class="item_year">2011</span>
+                                <span class="item_tit work">Web Lector</span>
+                                <span class="item_txt">Web Design/Web Programming</span>
+                            </div>
+                        </li>
+                        <li class="item14">
+                            <div class="item_box">
+                                <span class="item_year">2013</span>
+                                <span class="item_tit work">Media Lector</span>
+                                <span class="item_txt">Video Production/Editing</span>
+                            </div>
+                        </li>
+                        <li class="item15">
+                            <div class="item_box">
+                                <span class="item_year">2016</span>
+                                <span class="item_tit work">Architecture Lector</span>
+                                <span class="item_txt">BIM/CAD/SketchUP</span>
+                            </div>
+                        </li>
+                        <li class="item16">
+                            <div class="item_box">
+                                <span class="item_year">2018</span>
+                                <span class="item_tit work">Machine Lector</span>
+                                <span class="item_txt">CATIA/SOLIDWORKS/Pro-e/CAD/kinetics/mechanics/statics</span>
+                            </div>
+                        </li>
+                        <li class="item17">
+                            <div class="item_box">
+                                <span class="item_year">2019</span>
+                                <span class="item_tit work">Web Lector</span>
+                                <span class="item_txt">Web Programming/Publishing</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <p class="intro1"></p>    
+                </div>
+            </div>
+        </section>
+        <section class="page" id="page2">
+            <div class="page_wrap">
+                <h2 class="page_tit">Current</h2>
+                <ul class="current_lst">
+                    <li class="item1">
+                        <div class="item_data">
+                            <div class="front">
+                                <span class="item_hd">Lector</span>
+                                <span class="item_con">Web Programming</span>
+                                <span class="item_place">The Joeun</span>
+                                <span class="item_position">Head of Department</span>
+                            </div>
+                            <div class="back">
+                                <span class="item_hd">강사</span>
+                                <span class="item_con">웹 프로그래밍</span>
+                                <span class="item_place">더조은아카데미</span>
+                                <span class="item_position">학과장</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item2">
+                        <div class="item_data">
+                            <div class="front">
+                                <span class="item_hd">Working</span>
+                                <span class="item_con">Web Develper</span>
+                                <span class="item_place">HanaOne Tech</span>
+                                <span class="item_position">FullStack/Freelancer</span>
+                            </div>
+                            <div class="back">
+                                <span class="item_hd">근무지</span>
+                                <span class="item_con">웹 개발자</span>
+                                <span class="item_place">하나원정보기술</span>
+                                <span class="item_position">풀스택/프리랜서</span>
+                            </div>    
+                        </div>
+                    </li>
+                    <li class="item3">
+                        <div class="item_data">
+                            <div class="front">
+                                <span class="item_hd">Advice</span>
+                                <span class="item_con">Vocational Education</span>
+                                <span class="item_place">Metropolitan Area</span>
+                                <span class="item_position">Vocational Training Teachers Association</span>
+                            </div>
+                            <div class="back">
+                                <span class="item_hd">자문</span>
+                                <span class="item_con">직업교육</span>
+                                <span class="item_place">수도권지역</span>
+                                <span class="item_position">직업훈련교사협의회 부회장</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item4">
+                        <div class="item_data">
+                            <div class="front">
+                                <span class="item_hd">Teaching</span>
+                                <span class="item_con">Web/Mechatronic/Design</span>
+                                <span class="item_place">WOOSUNG IT Edu</span>
+                                <span class="item_position">Executive Director</span>
+                            </div>
+                            <div class="back">
+                                <span class="item_hd">교사</span>
+                                <span class="item_con">웹/기계공학/디자인</span>
+                                <span class="item_place">(주)우성IT교육</span>
+                                <span class="item_position">상무이사</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="intro2">
+                    <div class="txt_fr" id="car1">
+                        <ul class="intro_txt_sl item1">
+                            <li><span class="intro2_txt">JAVA/JSP/SPRING</span></li>
+                            <li><span class="intro2_txt">PHP/Lalavel Framework</span></li>
+                            <li><span class="intro2_txt">ASP/C#/.net Framework</span></li>
+                            <li><span class="intro2_txt">SPRING Boot&Cloud</span></li>
+                            <li><span class="intro2_txt">DevOps</span></li>
+                            <li><span class="intro2_txt">Python/Dango</span></li>
+                            <li><span class="intro2_txt">Bigdata MachineLearning</span></li>
+                            <li><span class="intro2_txt">Bigdata DeepLearning</span></li>
+                        </ul>
+                    </div>
+                    <div class="txt_fr" id="car2">
+                        <ul class="intro_txt_sl item2">
+                            <li><span class="intro2_txt">프로젝트 관리(PM)</span></li>
+                            <li><span class="intro2_txt">프로젝트 개발(DEV)</span></li>
+                            <li><span class="intro2_txt">기술 자문(Advice)</span></li>
+                            <li><span class="intro2_txt">테스트(Test)</span></li>
+                            <li><span class="intro2_txt">기술 운영(DevOps)</span></li>
+                            <li><span class="intro2_txt">인력 양성(Job Pull)</span></li>
+                            <li><span class="intro2_txt">개인 교습(Tutoring&Coaching)</span></li>
+                        </ul>
+                    </div>
+                    <div class="txt_fr" id="car3">
+                        <ul class="intro_txt_sl item3">
+                            <li><span class="intro2_txt">교육계획안 작성</span></li>
+                            <li><span class="intro2_txt">교수법 지도</span></li>
+                            <li><span class="intro2_txt">교수계획서 작성</span></li>
+                            <li><span class="intro2_txt">교육과정 운영</span></li>
+                            <li><span class="intro2_txt">교수평가 진행</span></li>
+                            <li><span class="intro2_txt">자격과정 컨설팅</span></li>
+                            <li><span class="intro2_txt">신기술 보급</span></li>
+                        </ul>
+                    </div>
+                    <div class="txt_fr" id="car4">
+                        <ul class="intro_txt_sl item4">
+                            <li><span class="intro2_txt">자바 웹 프로그래밍 강의</span></li>
+                            <li><span class="intro2_txt">기계설계 강의</span></li>
+                            <li><span class="intro2_txt">건축설계 강의</span></li>
+                            <li><span class="intro2_txt">웹디자인 강의</span></li>
+                            <li><span class="intro2_txt">제품디자인 강의</span></li>
+                            <li><span class="intro2_txt">전자출판 강의</span></li>
+                            <li><span class="intro2_txt">영상디자인 강의</span></li>
+                            <li><span class="intro2_txt">사무/회계 강의</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item_icon_wrap">
+                    <ul class="item_icon_lst">
+                        <li class="item1">
+                            <div class="item_box"><img src="lector1.png" alt="강사"></div>
+                        </li>
+                        <li class="item2">
+                            <div class="item_box"><img src="develop1.png" alt="개발"></div>
+                        </li>
+                        <li class="item3">
+                            <div class="item_box"><img src="consult1.png" alt="자문"></div>
+                        </li>
+                        <li class="item4">
+                            <div class="item_box"><img src="teach1.png" alt="훈련교사"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="page" id="page3">
+            <div class="page_wrap">
+                <h2 class="page_tit">Future</h2>
+                <ul class="future_lst">
+                    <li class="item1">
+                        <div class="item_box">
+                            <span class="box_tit">IT Schools</span>
+                            <img src="lector3.jpg" alt="강의">
+                        </div>
+                    </li>
+                    <li class="item2">
+                        <div class="item_box">
+                            <span class="box_tit">JOB Manager</span>
+                            <img src="teach3.png" alt="잡매니저">
+                        </div>
+                    </li>
+                    <li class="item3">
+                        <div class="item_box">
+                            <span class="box_tit">Programmer</span>
+                            <img src="develop3.png" alt="개발자">
+                        </div>
+                    </li>
+                    <li class="item4">
+                        <div class="item_box">
+                            <span class="box_tit">Operater</span>
+                            <img src="consult3.png" alt="운영자">
+                        </div>
+                    </li>
+                </ul>
+                <p class="intro3"></p>
+            </div>
+        </section>
+    </main>
+    <footer id="ft">
+        <div class="ft_wrap">Copyright 2022. Kmgt inc. All rights reserved.</div>
+    </footer>
+</div>
+<div id="quick" class="quick">
+    <ul>
+        <li class="item1">
+            <div></div>
+        </li>
+        <li class="item2">
+            <div></div>
+        </li>
+        <li class="item3">
+            <div></div>
+        </li>
+    </ul>
+</div>
+<div id="arrow_top">↑</div>
+</body>
+</html>

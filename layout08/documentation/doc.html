@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Magic Layout</title>
+<meta charset="utf-8" />
+<meta name="author" content="Stas Melnikov" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" type="text/css" href="http://stas-melnikov.ru/themes/responsive_ux_template/css/style.css" />
+<link rel="stylesheet" href="http://stas-melnikov.ru/code_theme.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="../core/animate.css" type="text/css" media="screen"/>
+<style>
+
+.button{
+	margin: 0 auto 70px;
+}
+
+
+.project {
+    height: 250px;
+    margin: 0 5px 20px;
+    position: relative;
+    background-color: #40c95d;
+    color: #fff;
+    transition-duration: 0.3s;
+    transition-property: box-shadow, width;
+    transition-timing-function: ease-in;
+}
+
+
+.project_item {
+    color: #fff;
+    font-size: 18px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateZ(0px) translate(-50%, -50%);
+}
+</style>
+</head>
+<body>
+	<section id="settings"  class="main_container">
+		<h1 class="title">Magic Layout</h1>
+		<p class="paragraph">By: Stas Melnikov</p>
+		<p class="paragraph">Email: <a href="mailto:melnik909@ya.ru" class="link">melnik909@ya.ru</a></p>
+
+		<pre class="code language-html">
+			&lt;!-- include animate.css  and animationLayout.js--&gt;
+			&lt;link rel="stylesheet" type="text/css" href="../core/animate.css" /&gt;
+			&lt;script src="../core/animationLayout.js"&gt;&lt;/script&gt;
+
+		</pre>
+		<pre class="code language-html">	
+&lt;!-- Add  .layer, data-show-delay data-show-effect, data-time(not necessarily) to element. Example:--&gt;
+&lt;!-- 
+	data-show-effect - animation show effect
+	 data-show-dela - delay animation (ms)
+	  data-time - time animation (ms)
+
+--&gt;
+&lt;div id="english_portfolio" class="main_container columns3 projects"&gt;	
+	&lt;a href="#" target="blank" class="main_container_item project layer" data-show-effect="zoomIn" data-show-delay="400"&gt;
+		&lt;h3 class="project_item"&gt;Responsive modal window&lt;/h3&gt;
+		&lt;span class="hashtag"&gt;JQuery&lt;/span&gt;
+	&lt;/a&gt;
+	&lt;a href="#" target="blank" class="main_container_item project layer" data-show-effect="zoomIn" data-show-delay="600"&gt;
+		&lt;h3 class="project_item"&gt;Responsive modal window&lt;/h3&gt;
+		&lt;span class="hashtag"&gt;JQuery&lt;/span&gt;
+	&lt;/a&gt;
+	&lt;a href="#" target="blank" class="main_container_item project layer" data-show-effect="zoomIn" data-show-delay="800"&gt;
+		&lt;h3 class="project_item"&gt;Responsive modal window&lt;/h3&gt;
+		&lt;span class="hashtag"&gt;JQuery&lt;/span&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+		</pre>
+		<button class="button">Show</button>
+		<div id="english_portfolio" class="main_container columns3 projects">	
+			<a href="#" target="blank" class="main_container_item project layer" data-show-effect="zoomIn" data-show-delay="400">
+				<h3 class="project_item">Responsive modal window</h3>
+			</a>
+			<a href="#" target="blank" class="main_container_item project layer" data-show-effect="zoomIn" data-show-delay="600">
+				<h3 class="project_item">Responsive modal window</h3>
+			</a>
+			<a href="#" target="blank" class="main_container_item project layer" data-show-effect="zoomIn" data-show-delay="800">
+				<h3 class="project_item">Responsive modal window</h3>
+			</a>
+		</div>
+	</section>
+	<footer class="footer">
+		<p class="author"><a href="https://www.linkedin.com/in/melnik909" class="link" target="blank">Developed by Stas Melnikov</a></p>
+
+		<div class="social" style="float: right;">
+			<div class="yashare-auto-init" data-yashareL10n="en" data-yashareType="small" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir,gplus" data-yashareTheme="counter"></div>
+		</div>
+	</footer>
+	
+<script src="../js/jquery.js"></script>
+<script src="../core/animationLayout.js"></script>
+<script>
+	(function($){
+		$('.button').on('click',function(){
+				$(this).animationLayout({
+						container: $('#english_portfolio')
+				});
+		});
+	})(jQuery);
+</script>
+</body>
+</html>

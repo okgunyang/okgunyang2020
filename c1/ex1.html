@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SRC 병원에 오신 것을 환영합니다.</title>
+    <!-- 구형 브라우저 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <!-- 신형 브라우저와 안드로이드 폰 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.png">
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="57x57" href="./ico/favicon57.png">
+    <!-- 아이패드 -->
+    <link rel="apple-touch-icon" size="72x72" href="./ico/favicon72.png">
+    <!-- 아이폰4 이상 -->
+    <link rel="apple-touch-icon" size="114x114" href="./ico/favicon114.png">
+    <!-- IE10 이상 -->
+    <meta name="msapplication-TileColor" content="#FFFFFF"> 
+    <meta name="msapplication-TileImage" content="./ico/favicon-144.png">
+
+    <!-- 메타데이터 개발 공통 사항 -->
+    <!-- 기본 실행할 스타일 시트 지정 -->
+<!--
+    <meta http-equiv="default-style" content="phone">
+    <link rel="stylesheet" href="phone.css" title="phone">    
+    <link rel="stylesheet" href="desktop.css" title="desktop">
+-->
+    <!-- 자동 새로고침 초단위 설정 -->
+    <meta http-equiv="refresh" content="180">
+    <!-- 데스크탑에서 IE로 웹 문서를 열 때 가장 최신 버전으로 실행 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    
+    <!-- 앱(웹 사이트)의 이름 -->
+    <meta name="application-name" content="SRC hospital Site">
+    <!-- 웹 사이트 저작자의 이름 -->
+    <meta name="author" content="kitae Kim">
+    <!-- 현재 문서의 설명 -->
+    <meta name="description" content="SRC hospital Site Mainpage"> 
+    <!-- 현재 문서의 저작도구 -->
+    <meta name="generator" content="Brackts">
+    <!-- 검색엔진에서 검색되게할 키워드 -->
+    <meta name="keywords" content="SRC 병원, 건강관리, 휴양">
+    
+    <!-- 반응형, 모바일, 태블릿 사이트 일 경우 뷰포트 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    
+    <!-- 모바일 : 767px 이하 -->
+    <link rel="stylesheet" href="mobile.css" media="screen and (max-width:767px)">
+    <!-- 태블릿 : 768px 이상 ~ 959px 이하 -->
+    <link rel="stylesheet" href="tablet.css" media="screen and (min-width:768px) and (max-width:959px)">
+    <!-- 데스크탑 : 960px 이상 -->
+    <link rel="stylesheet" href="desktop.css" media="screen and (min-width:960px)">
+    <!-- 프린터 : 960px 이상 -->
+    <link rel="stylesheet" href="print.css" media="print">
+    <!-- 모든 기기 -->
+    <link rel="stylesheet" href="all.css" media="all">
+    
+    <style>
+    /* 모바일 */
+    @import url("mobile.css") screen and (max-width:767px);
+    /* 태블릿 */
+    @import url("tablet.css") screen and (min-width:768px) and (max-width:959px);
+    /* 데스크탑 */
+    @import url("desktop.css") screen and (min-width:960px);
+    /* 프린터 */
+    @import url("print.css") print;
+    /* 모든 기기 */
+    @import url("all.css") all;
+        
+        
+    h1 { background:#333; color:#fff; }
+    /* 모바일 */    
+    @media screen and (max-width:767px) {
+        h1 { font-size:20px; }
+    }   
+    /* 태블릿 */    
+    @media screen and (min-width:768px) and (max-width:959px) {
+        h1 { font-size:40px; }
+    }
+    /* 데스크탑 */    
+    @media screen and (min-width:960px) {
+        h1 { font-size:60px; }
+    } 
+    /* 프린터 */    
+    @media print {
+        h1 { font-size:60px;  background:#fff; color:#333; }
+    } 
+    /* 모든 기기 */    
+    @media all {
+        h1 { cursor:pointer; }
+    }   
+    </style>
+</head>
+<body>
+    <h1>우리 나라 대한 민국</h1>
+</body>
+</html>

@@ -1,0 +1,13 @@
+@charset "utf-8";
+@font-face {
+    font-family:"fa-brands-400";
+    src:url("./font/fa-brands-400.eot?iefix") format("embedded-opentype"), url("./font/fa-brands-400.ttf") format("truetype"), url("./font/fa-brands-400.woff2") format("woff2"), url("./font/fa-brands-400.woff") format("woff"), url("./font/fa-brands-400.svg") format("svg");
+}
+@font-face {
+    font-family:"fa-regular-400";
+    src:url("./font/fa-regular-400.eot?iefix") format("embedded-opentype"), url("./font/fa-regular-400.ttf") format("truetype"), url("./font/fa-regular-400.woff2") format("woff2"), url("./font/fa-regular-400.woff") format("woff"), url("./font/fa-regular-400.svg") format("svg");
+}
+@font-face {
+    font-family:"fa-solid-900";
+    src:url("./font/fa-solid-900.eot?iefix") format("embedded-opentype"), url("./font/fa-solid-900.ttf") format("truetype"), url("./font/fa-solid-900.woff2") format("woff2"), url("./font/fa-solid-900.woff") format("woff"), url("./font/fa-solid-900.svg") format("svg");
+}

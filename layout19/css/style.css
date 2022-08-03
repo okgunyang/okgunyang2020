@@ -1,0 +1,1044 @@
+/*------------------------------------------------------------------------------
+Содержание:
+- Общие элементы
+- Хедер
+- Главная страница
+- Главная страница - контент
+- Прайс-лист
+- Прайс-лист - контент
+- Магазин
+- Магазин - контент
+- Товар
+- Товар - контент
+- Футер
+------------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------------------
+Макет   :   Barbershop
+Верстка :   Вакуленко Антон
+Email   :   vakulenko.anton@gmail.com
+Дата    :   2014-10-05
+------------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------------------
+                               Общие элементы
+------------------------------------------------------------------------------*/
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 16px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    background: black url('../img/body-bg.jpg') no-repeat 50% 0
+}
+.layout-center-wrapper {
+    width: 940px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+.layout-center-wrapper:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/* Хлебные крошки */
+.breadcrumbs {
+    margin: 0;
+    margin-top: 18px;
+    padding: 0;
+    list-style :none;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.breadcrumbs li {
+    display: inline-block;
+    position: relative;
+    padding-left: 37px;
+    background: url('../img/icon-diamond-small.png') no-repeat 11px 50%;
+}
+.breadcrumbs li:first-child {
+    background-image: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+.breadcrumbs a {
+    text-decoration: none;
+    color: black;
+}
+
+.btn {
+    display: block;
+    float: left;
+    min-width: 140px;
+    padding-top: 12px;
+    padding-bottom: 13px;
+    /*padding: 13px 0;*/
+    margin-top: 6px;
+
+    color: white;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+
+    background: black;
+    border: none;
+	cursor: pointer;
+}
+.btn:hover {
+    background-color: #663d15;
+}
+.btn:focus {
+    outline: none;
+}
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------
+                            Хедер
+------------------------------------------------------------------------------*/
+.header {
+    color: white;
+    background: black;
+}
+.header a:link,
+.header a:visited,
+.header a:hover,
+.header a:active {
+    color:white;
+}
+
+
+/* Верхнее меню */
+
+/* Полного совпадения текста пока не смог добиться */
+.top-menu {
+    float: left;
+    width: 780px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.top-menu li {
+    display: inline-block;
+}
+.top-menu a {
+    display: block;
+    padding-top: 26px;
+    padding-bottom: 21px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.top-menu a:hover {
+    background: #242424;
+    margin: 0;
+    padding: 26px 20px;
+}
+.top-menu a.active {
+    border-bottom: 5px solid white;
+}
+/* Пришлось помучиться с дурацкой полоской! :) */
+.top-menu a.active:hover {
+    background: black;
+    padding-top: 26px;
+    padding-bottom: 21px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+/* Меню аккаунта */
+.account-menu {
+    float: right;
+    max-width: 140px;
+    position: relative;
+    background: url('../img/icon-enter.png') no-repeat 17px 50%;
+}
+.account-menu a {
+    display: block;
+    padding: 26px 0;
+    padding-left: 50px;
+    padding-right: 27px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.account-menu a:hover {
+    background: #242424;
+    background-image: url('../img/icon-enter-hvr.png');
+    background-repeat: no-repeat;
+    background-position: 17px 50%;
+}
+.account-menu a.active {
+    border-bottom: 5px solid white;
+}
+/* Пришлось помучиться с дурацкой полоской! :) */
+.account-menu a.active:hover {
+    background: black;
+    padding-top: 26px;
+    padding-bottom: 21px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------
+                            Главная страница
+------------------------------------------------------------------------------*/
+/* Лого */
+.logo {
+    display: block;
+    width: 368px;
+    height: 152px;
+    margin: 0 auto;
+    margin-top: 58px;
+
+    /* Как лучше всего скрыть текст ссылки? */
+    font-size: 0;
+    /*outline: 1px dotted white;*/
+}
+
+
+/* Преимущества */
+.features {
+    /*margin: 73px 0;*/
+    margin-top: 73px;
+    margin-bottom: 79px;
+    padding: 0;
+    list-style: none;
+    color: white;
+    /*outline: 1px dotted white;*/
+}
+.features:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.features li {
+    float: left;
+    width: 290px;
+    margin-right: 30px;
+    text-align: center;
+}
+.features li:last-child {
+    margin-right: 0;
+    /*padding-right: 5px;*/
+    width: 292px;
+}
+.feature-title {
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 71px;
+    position: relative;
+    /*outline: 1px dotted white;*/
+}
+/* Декоративный ромб */
+.feature-title:after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 29px;
+    background: url('../img/icon-diamond.png') no-repeat 0 0;
+    left: 50%;
+    bottom: -44px;
+    margin-left: -14px;
+}
+.features p {
+    margin: 0 5px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 24px;
+}
+
+
+/* Окно логина */
+.login-popup {
+    width: 300px;
+    height: 317px;
+    background: white;
+    padding: 0 80px;
+    padding-top: 50px;
+    padding-bottom: 63px;
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    margin-left: -232px;
+    display: none;
+}
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------
+                            Главная страница - контент
+------------------------------------------------------------------------------*/
+/* Колонки */
+.index-section {
+    width: 940px;
+    background: white url('../img/pattern-content.png') repeat 0 0;
+    margin-top: 34px;
+    margin-left: -5px;
+    padding-top: 46px;
+    padding-bottom: 52px;
+    min-height: 200px;
+}
+
+
+
+.index-left-column {
+    float: left;
+    width: 328px;
+    margin-right: 60px;
+    margin-left: 80px;
+}
+.index-right-column {
+    float: right;
+    width: 298px;
+    margin-right: 80px;
+    padding-left: 80px;
+}
+.separator {
+    background: url('../img/columns-separator.png') no-repeat 0 25px;
+    padding-left: 94px;
+}
+.index-section:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.index-section-title {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+/* Новости */
+.index-news {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.index-news a {
+    display: block;
+    margin-top: 26px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 24px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+}
+.index-news .date {
+    display: block;
+    margin-top: 4px;
+    margin-bottom: 28px;
+    font-family: "Georgia", sans-serif;
+    font-style: italic;
+    font-size: 14px;
+}
+
+
+/* Галерея */
+.gallery-items {
+    margin-top: 33px;
+    margin-left: -2px;
+}
+.gallery-item {
+    display: none;
+    width: 286px;
+    height: 164px;
+    border: 7px solid white;
+}
+.gallery-item:first-child {
+    display: block;
+}
+.gallery-controls {
+    margin-top: 31px;
+}
+.gallery-controls:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.btn-prev {
+    float: left;
+    margin-left: -2px;
+}
+.btn-next {
+    float: right;
+    margin-right: 0;
+}
+
+
+/* Контакты */
+.contacts-address {
+    margin-top: 26px;
+
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 24px;
+}
+.contacts-work-time {
+    margin-top: 24px;
+
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 24px;
+}
+.btn-get-to {
+    margin-top: 32px;
+    margin-right: 20px;
+
+    /* Нижний марджин добавил, чтобы отодвинуть нижнюю границу index-section,
+    т. к. их у нас 2 и они разной высоты. Как лучше это сделать? */
+    margin-bottom: 10px;
+}
+.btn-feedback {
+    margin-top: 32px;
+
+}
+
+
+/* Форма записи */
+.form-description {
+    margin-top: 26px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 24px;
+}
+.book-form {
+    margin-top: 25px;
+    margin-left: -2px;
+}
+.book-form input[type="text"],
+.book-form input[type="submit"] {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'PT Sans Narrow', sans-serif;
+    background-color: #f9f6f3;
+}
+.book-form input[type="text"] {
+    width: 106px;
+    padding: 10px 15px;
+    padding-bottom: 11px;
+    border: 2px solid black;
+}
+.book-form input[type="text"]:focus {
+    border-color: #663d15;
+    outline: none;
+}
+.book-form .date-field {
+    margin-right: 16px;
+    margin-bottom: 17px;
+}
+.book-form .name-field {
+    margin-right: 16px;
+}
+.book-form input[type="submit"] {
+    width: 300px;
+    margin: 0;
+    margin-top: 32px;
+    padding-top: 12px;
+    padding-bottom: 13px;
+    color: white;    
+    background: black;
+    border: none;
+    cursor: pointer;
+}
+.book-form input[type="submit"]:hover {
+    background-color: #663d15;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------
+                            Прайс-лист
+------------------------------------------------------------------------------*/
+
+.price-list {
+    /* Скрываем кусок фона перед футером */
+    margin-bottom: -65px;
+    padding-bottom: 64px;
+    width: 100%;
+    background: white url('../img/pattern-content.png') repeat 0 0;
+}
+.price-list .page-title {
+    margin: 0;
+    margin-left: -2px;
+    padding-top: 51px;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.price-list .big-title {
+    margin-top: 43px;
+    margin-bottom: 55px;
+    text-align: center;
+}
+.price-list .big-title h1 {
+    position: relative;
+    display: inline;
+    padding: 0 25px;
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 2;
+    background: white url('../img/pattern-content.png') repeat 0 0;
+}
+.price-list .big-title:after {
+    position: relative;
+    top: -30px;
+    content: '';
+    display: block;
+    border-bottom: 2px solid black;
+    z-index: 1;
+}
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------
+                            Прайс-лист - контент
+------------------------------------------------------------------------------*/
+.price-list .index-section {
+    margin: 0;
+    padding: 0;
+}
+.price-list .index-section-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.price-list .index-left-column {
+    margin: 0;
+    width: 400px;
+}
+.price-list .index-right-column {
+    margin: 0;
+    width: 460px;
+}
+.cosmetics {
+    margin-top: 28px;
+    padding: 0;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    list-style: none;
+}
+.cosmetics li {
+    /*padding: 0;*/
+    padding-left: 20px;
+    margin: 0;
+    margin-bottom: 20px;
+    background: url('../img/icon-diamond-small.png') no-repeat 0 50%;
+}
+
+/* Таблица цен */
+.prices {
+    margin-top: 32px;
+    width: 100%;
+    border: 2px solid black;
+    border-collapse: collapse;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.prices td {
+    padding: 10px 20px;
+    border: 2px solid black;
+    width: 50%;
+}
+.prices .col2 {
+    text-align: center;
+}
+
+
+/* О нас */
+.about .index-left-column {
+    margin-top: 37px;
+}
+.about .index-right-column {
+    margin-top: 68px;
+    margin-right: 80px;
+    width: 380px;
+}
+.about p {
+    margin-top: 28px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 24px;
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+/*------------------------------------------------------------------------------
+                               Магазин
+------------------------------------------------------------------------------*/
+.shop {
+    /* Скрываем кусок фона перед футером */
+    margin-bottom: -65px;
+    padding-bottom: 64px;
+    width: 100%;
+    background: white url('../img/pattern-content.png') repeat 0 0;
+}
+
+.shop .page-title {
+    margin: 0;
+    margin-left: -2px;
+    padding-top: 51px;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+
+
+
+/*------------------------------------------------------------------------------
+                               Магазин - контент
+------------------------------------------------------------------------------*/
+.shop .index-section {
+    margin-top: 52px;
+    padding: 0;
+}
+.shop .index-section-title {
+    font-size: 24px;
+}
+
+/* Левая колонка */
+.shop .index-left-column {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 220px;
+}
+.producers ul {
+    margin-top: 28px;
+    padding-left: 0;
+    list-style: none;
+}
+.producers li {
+    margin-bottom: 17px;
+}
+.producers a {
+    display: block;
+    padding-left: 45px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    background: url('../img/icon-checkbox-unchecked.png') no-repeat 1px 0;
+}
+.producers a:hover {
+    color: #663d15;
+}
+.producers .checked a {
+    background: url('../img/icon-checkbox-checked.png') no-repeat 1px 0;
+}
+.goods-groups {
+    margin-top: 48px;
+}
+.goods-groups ul {
+    margin-top: 28px;
+    padding: 0;
+    list-style: none;
+}
+.goods-groups li {
+    margin-bottom: 16px;
+}
+.goods-groups a {
+    display: block;
+    padding-left: 45px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    background: url('../img/icon-radio-unchecked.png') no-repeat 1px 0;
+}
+.goods-groups a:hover {
+    color: #663d15;
+}
+.goods-groups .checked a {
+    background: url('../img/icon-radio-checked.png') no-repeat 1px 0;
+}
+
+
+/* Правая колонка */
+.shop .index-right-column {
+    float: right;
+    margin: 0;
+    padding: 0;
+    width: 720px;
+}
+
+/* Товары */
+.goods {
+    margin: 0;
+    margin-top: 8px;
+    padding: 0;
+    list-style: none;
+    /*font-size: 0;*/
+    font-size: 0;
+}
+.goods li {
+    display: inline-block;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width: 220px;
+    min-height: 287px;
+    background: white;
+    font-size: 14px;
+    box-shadow: 0 0 15px 0 #bbb;
+}
+.goods a {
+    text-decoration: none;
+    color: black;
+}
+.goods p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+.goods .goods-title {
+    margin-top: 9px;
+    margin-left: 17px;
+    /*margin-right: 17px;*/
+    text-transform: uppercase;
+}
+.goods .goods-desc {
+    margin-left: 17px;
+}
+.goods .goods-price,
+.goods .goods-btn {
+    display: inline-block;
+    height: 43px;
+    margin-top: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 43px;
+}
+.goods .goods-btn:hover {
+    background-color: #663d15;
+}
+.goods .goods-price {
+    width: 109px;
+    margin-left: 17px;
+    background: #e5e5e5;
+}
+.goods .goods-btn {
+    width: 78px;
+    margin-left: -.2em;
+    color: white;
+    background: black;
+}
+
+/* Пагинатор */
+.paginator {
+    padding: 0;
+    margin-left: 21px;
+    margin-right: 21px;
+    margin-top: 22px;
+    margin-bottom: -16px;
+    list-style: none;
+    color: white;
+}
+.paginator a {
+    display: block;
+    color: inherit;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.paginator a:hover {
+    background-color: #663d15;
+}
+.paginator li {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    margin-right: 4px;
+    /*float: left;*/
+    line-height: 43px;
+    text-align: center;
+    background: black;
+}
+.paginator .active-page {
+    background: white;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+
+
+
+/*------------------------------------------------------------------------------
+                               Товар
+------------------------------------------------------------------------------*/
+.shop-item {
+    padding-top: 40px;
+    margin-bottom: -64px;
+    padding-bottom: 78px;
+    width: 100%;
+    background: white url('../img/pattern-content.png') repeat 0 0;
+}
+.shop-item .index-section {
+    margin: 0;
+    padding: 0;
+    padding-top: 35px;
+}
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------
+                               Товар - контент
+------------------------------------------------------------------------------*/
+.shop-item .index-left-column {
+    float: left;
+    width: 460px;
+    padding: 0;
+    margin: 0;
+    /*text-align: center;*/
+}
+.shop-item .small-images a {
+    display: inline-block;
+    margin-right: 16px;
+    margin-top: 20px;
+}
+.shop-item .small-images a:last-child {
+    margin-right: 0;
+}
+.shop-item .main-image,
+.shop-item .small-images a {
+    box-shadow: 0 0 20px -5px #000101;
+}
+
+.shop-item .index-right-column {
+    float: right;
+    width: 395px;
+    padding: 0;
+    margin: 0;
+}
+.shop-item .page-title {
+    margin: 0;
+    margin-top: -10px;
+    padding: 0;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.shop-item .index-section-title {
+    margin-top: 15px;
+    font-size: 24px;
+}
+.shop-item .index-section-title a {
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+.shop-item .goods-price,
+.shop-item .btn-goods-buy {
+    margin: 0;
+    padding: 0;
+    margin-top: 34px;
+    display: inline-block;
+    height: 43px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 43px;
+    vertical-align: top;
+}
+.shop-item .btn-goods-buy:hover {
+    background-color: #663d15;
+}
+.shop-item .goods-price {
+    width: 109px;
+    background: #e5e5e5;
+}
+.shop-item .btn-goods-buy {
+    min-width: 78px;
+    margin-left: -.2em;
+    color: white;
+    background: black;
+    float: none;
+}
+.shop-item .goods-info {
+    position: relative;
+    margin-top: 33px;
+    margin-bottom: 55px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.shop-item .goods-article {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    color: #aeaeae;
+}
+.shop-item .goods-about {
+    margin-top: 27px;
+    line-height: 24px;
+}
+.shop-item .packaging {
+    margin-top: 30px;
+    padding: 0;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    list-style: none;
+}
+.shop-item .packaging li {
+    /*padding: 0;*/
+    padding-left: 20px;
+    margin: 0;
+    margin-bottom: 6px;
+    background: url('../img/icon-diamond-small.png') no-repeat 0 50%;
+}
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------
+                            Футер
+------------------------------------------------------------------------------*/
+.footer {
+    margin-top: 64px;
+    margin-left: -7px;
+    padding-top: 56px;
+    padding-bottom: 30px;
+    background: black url('../img/pattern-footer.png') repeat 0 0;
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.footer .contacts-address {
+    margin: 0;
+    float: left;
+    width: 300px;
+}
+.footer .contacts-address p {
+    margin: 0;
+}
+.social-buttons {
+    float: left;
+    width: 340px;
+    text-align:center;
+}
+.social-buttons p {
+    margin-top: 4px;
+    margin-bottom: 0;
+}
+.btn-social {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    margin-top: 5px;
+    margin-right: 3px;
+}
+.btn-social-vk {
+    background: black url('../img/btn-social-vk.png') no-repeat 0 0;
+    margin-left: 1px;
+}
+.btn-social-vk:hover {
+    background-image: url('../img/btn-social-vk-hvr.png')
+}
+.btn-social-fb {
+    background: black url('../img/btn-social-fb.png') no-repeat 0 0;
+}
+.btn-social-fb:hover {
+    background-image: url('../img/btn-social-fb-hvr.png')
+}
+.btn-social-inst {
+    background: black url('../img/btn-social-inst.png') no-repeat 0 0;
+}
+.btn-social-inst:hover {
+    background-image: url('../img/btn-social-inst-hvr.png')
+}
+.copyright {
+    float: right;
+    margin-top: 4px;
+    width: 140px;
+    text-align: center;
+}
+.copyright .btn:hover {
+    background-color: white;
+    color: black;
+}
+

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>필터(filter)</title>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width:100%; }
+    .wrap { clear:both; width: 100%; }
+    .vs { width:720px; margin:30px auto; }
+    .vs img { display:block; width: 100%; transition-duration:0.4s; }
+    .tit { text-align: center; line-height: 3.6; }
+    .item1 img { filter:none; }
+    .item2:hover img { filter:blur(3px); /* px단위 숫자 */ }
+    .item3:hover img { filter:brightness(0.5); /* 0~1 숫자 */ }
+    .item4:hover img { filter:contrast(200%);  /* %단위 숫자 */ }
+    .item5:hover img { filter:drop-shadow(16px 16px 20px blue); 
+        /* drop-shadow(px단위x량 px단위y량 px단위블러량 색) */}
+    .item6:hover img { filter:grayscale(80%); /* %단위 숫자 */ }
+    .item7:hover img { filter:hue-rotate(90deg); /* 0deg~360deg */ }
+    .item8:hover img { filter:invert(100%); /* % 단위 숫자 */ }
+    .item9:hover img { filter:opacity(50%);  /* 0%~100% 숫자 */ }
+    .item10:hover img { filter:saturate(50%); /* %단위 숫자 */ }
+    .item11:hover img { filter:sepia(50%); /* %단위 숫자 */ }
+    .item12:hover img { filter:contrast(175%) brightness(50%); }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <figure class="vs item1">
+            <h2 class="tit">원래 이미지</h2>
+            <img src="ive.jpg" alt="원래 이미지" class="vs_img">
+        </figure>
+    </div>
+    <div class="wrap">
+        <figure class="vs item2">
+            <h2 class="tit">블러 효과</h2>
+            <img src="ive.jpg" alt="블러 효과 적용" class="vs_img">
+        </figure>
+    </div>
+    <div class="wrap">
+        <figure class="vs item3">
+            <h2 class="tit">밝기 효과</h2>
+            <img src="ive.jpg" alt="밝기 효과 적용" class="vs_img">
+        </figure>
+    </div>
+    <div class="wrap">
+        <figure class="vs item4">
+            <h2 class="tit">대비 효과</h2>
+            <img src="ive.jpg" alt="대비 효과 적용" class="vs_img">
+        </figure>
+    </div>
+    <div class="wrap">
+        <figure class="vs item5">
+            <h2 class="tit">그림자 효과</h2>
+            <img src="ive.jpg" alt="그림자 효과 적용" class="vs_img">
+        </figure>
+    </div>
+    <div class="wrap">
+        <figure class="vs item6">
+            <h2 class="tit">그레이스케일 효과</h2>
+            <img src="ive.jpg" alt="그레이스케일 효과 적용" class="vs_img">
+        </figure>
+    </div>
+    <div class="wrap">
+        <figure class="vs item7">
+            <h2 class="tit">색상 교체</h2>
+            <img src="ive.jpg" alt="색상 교체 효과" class="vs_img">
+        </figure>
+    </div>
+    <div class="wrap">
+        <figure class="vs item8">
+            <h2 class="tit">색상 반전 효과</h2>
+            <img src="ive.jpg" alt="색상 반전 효과 적용" class="vs_img">
+        </figure>
+    </div>
+    <div class="wrap">
+        <figure class="vs item9">
+            <h2 class="tit">불투명도 효과</h2>
+            <img src="ive.jpg" alt="불투명도 효과 적용" class="vs_img">
+        </figure>
+    </div>
+    <div class="wrap">
+        <figure class="vs item10">
+            <h2 class="tit">채도 효과</h2>
+            <img src="ive.jpg" alt="채도 효과 적용" class="vs_img">
+        </figure>
+    </div>
+    <div class="wrap">
+        <figure class="vs item11">
+            <h2 class="tit">세피아톤 효과</h2>
+            <img src="ive.jpg" alt="세피아톤 효과 적용" class="vs_img">
+        </figure>
+    </div>
+    <div class="wrap">
+        <figure class="vs item12">
+            <h2 class="tit">여러 필터 적용</h2>
+            <img src="ive.jpg" alt="" class="vs_img">
+        </figure>
+    </div>
+</body>
+</html>

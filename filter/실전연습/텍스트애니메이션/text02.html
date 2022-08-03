@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>텍스트 애니메이션 2</title>
+    <style>
+    @import url("https://fonts.googleapis.com/css?family=Muli");
+    *, *:before, *:after { box-sizing:border-box; margin:0;  padding:0; }
+    html, body {  background-color:#00091B;
+      font-family:'Muli', Helvetica, sans-serif; }
+    .container { width: 320px; margin:100px auto; padding-top:40px; 
+        position:relative; clear:both; }    
+    .text { color:#fff; font-size:60px; position:absolute; top:0px;  
+        animation:text 2.5s ease-in infinite alternate; }  
+    .text-w { left: 0; animation-delay:0s; }    
+    .text-a { left: 60px; animation-delay:0.2s; }  
+    .text-v { left: 110px; animation-delay:0.4s;}   
+    .text-e { left: 160px; animation-delay:0.6s; } 
+        
+    .coast { position:absolute;  left:-10px;  top:66px;  border-radius:12px;
+  width:20px;  height:20px;  display:inline-block; background:hotpink;
+  animation:coast 2.5s linear infinite; transform: translateZ(0); }
+
+        
+    @keyframes text { 
+        0% { transform:translate3d(0px, -300px, 0px); }
+        30% { transform:translate3d(0px, 0px, 0px); }
+        45% { transform:translate3d(0px, 0px, 0px); }
+        100% { transform:translate3d(0px, 0px, 0px); }
+    }
+    @keyframes coast {
+      0% {  transform: translate3d(0, 0, 0);  }
+      23% { transform: translate3d(0, 0, 0);  }
+      50% { transform: translate3d(180px, 0, 0);  }
+      100% { transform: translate3d(180px, 0, 0);  }
+    }
+    </style>
+</head>
+<body>
+<div class="container">
+  <div class="coast">
+    <div class="wave-rel-wrap">
+      <div class="wave"></div>
+    </div>
+  </div>
+  <div class="coast delay">
+    <div class="wave-rel-wrap">
+      <div class="wave delay"></div>
+    </div>
+  </div>
+  <div class="text text-w">w</div>
+  <div class="text text-a">a</div>
+  <div class="text text-v">v</div>
+  <div class="text text-e">e</div>
+</div>
+</body>
+</html>

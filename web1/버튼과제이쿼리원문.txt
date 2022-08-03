@@ -1,0 +1,70 @@
+<head>
+.....
+<style>
+/* 비주얼슬라이더 */
+    #vs { width:100%; overflow:hidden;  } 
+    .img_box { width: 400%; }
+    .img_box li { float:left; width: 25%; position:relative; }
+    .img_box li a { display:block; }
+    .img_box li a img { display:block; width: 100%; height:auto; }
+    .img_box .tit_box { position:absolute; top:50px; left:50px; color:#fff; 
+    text-shadow:1px 1px 1px #333; padding-left: 40px; z-index:30; }
+    .vs_tit { font-size:42px; line-height:1.6; }
+    .vs_com { font-size:16px; padding-top: 40px; }
+    .btn_group { position:absolute; bottom:0px; left:90px; z-index:40; }
+    .btn_group button { display:block; width: 80px; height: 80px; float:left; 
+    background-color:rgba(0,0,0,0.6); border:none; outline: none; color:#fff; }
+    .btn_group button i[class*='xi'] { color: #fff; }
+    .btn_group button:hover i[class*='xi'] { cursor:pointer; color:gold; }
+</style>
+<style>
+/* 푸터 */
+    #ft { clear:both; width: 100%; padding-top: 20px; }
+    .ft_wrap { clear:both; width: 1280px; margin: 0 auto; }
+    .fnb { float:left; }
+    .fnb a { display:block; float:left; margin:14px; 
+        margin-left: 0; margin-right: 28px; font-size:12px; }
+    .fnb a:after { content:"|"; padding-left: 28px; }
+    .fnb a:last-child::after { content:""; }
+    .snb { float:right; }
+    .snb ul li { float:left; margin-left: 28px; }
+    .copyright { clear:both; padding-bottom: 28px; font-size:12px; }
+</style>
+</head>
+<body>
+.......
+
+                <div class="btn_group">
+                    <button class="prev_btn"><i class="xi-arrow-left"></i></button>
+                    <button class="next_btn"><i class="xi-arrow-right"></i></button>
+                </div>
+                <script>
+                $(document).ready(function(){
+                    wd = $(window).width();
+                    var intv = setInterval(function(){
+                        ani1();
+                    }, 3000);
+                    function ani1(){
+                        $(".img_box").not(":animated").animate({"margin-left":-wd+"px"}, 600, function(){
+                            $(".img_box li").eq(0).appendTo($(".img_box"));
+                            $(".img_box").css("margin-left","0px");
+                        });
+                    }
+                    function ani2(){
+                        $(".img_box").css("margin-left",-wd+"px");
+                        $(".img_box li:last-child").prependTo($(".img_box"));
+                        $(".img_box").not(":animated").animate({"margin-left":"0px"}, 600);
+                    }
+                    $(".btn_group .next_btn").click(function(){
+                        clearInterval(intv);
+                        ani1();
+                        intv = setInterval(function(){ ani1(); }, 3000);
+                    });
+                    $(".btn_group .prev_btn").click(function(){
+                        clearInterval(intv);
+                        ani2();
+                        intv = setInterval(function(){ ani1(); }, 3000);
+                    });
+                });    
+                </script>
+.....

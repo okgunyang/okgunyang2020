@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>스킬 페이지</title>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; height: 100%; }
+    ul { list-style: none; }
+    a { text-decoration:none; }
+    .skillframe { width:1000px;  
+        background-repeat:repeat-x; margin:0 auto; 
+        margin-top: 100px; height: 100px; background-size:100px 100px; }   
+    #skill_par1 { background-image:url("./strawberry2.png"); }
+    #skill_par2 { background-image:url("./star2.png"); }
+    #skill_par3 { background-image:url("./flower2.png"); }    
+        
+    .skill { width: 0; height: 100px;         
+        background-repeat:repeat-x; transition:2s; background-size:100px 100px;}
+    #skill_data1 { background-image:url("./strawberry1.png"); }        
+    #skill_data2 { background-image:url("./star1.png"); }        
+    #skill_data3 { background-image:url("./flower1.png"); }        
+    
+    #skill_data1.on { width:800px; }
+    #skill_data2.on { width:700px; }    
+    #skill_data3.on { width:600px; } 
+        
+    .skill_wrap { width: 1000px; height: 100px; border:1px solid #000; 
+        margin:0 auto; margin-top:100px; position:relative; }   
+    .ch1 { width: 0; height: 100px; background:#691; transition:3s; }    
+    .ch1.on { width:650px; }    
+    .ch2 { position:absolute; top:-25px; left:-75px;  z-index:10;
+        width:150px; height:150px; background-image:url("star1.png"); 
+        background-size:150px 150px; transition:3s;  }    
+    .ch2.on { left:575px; }    
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+       $(".skill").addClass("on"); 
+       $(".ch1, .ch2").addClass("on");    
+    });    
+    </script>
+</head>
+<body>
+<div id="skill_par1" class="skillframe">
+    <div id="skill_data1" class="skill"></div>
+</div>
+<div id="skill_par2" class="skillframe">
+    <div id="skill_data2" class="skill"></div>
+</div>
+<div id="skill_par3" class="skillframe">
+    <div id="skill_data3" class="skill"></div>
+</div>
+<div class="skill_wrap">
+    <div class="ch1"></div>
+    <div class="ch2"></div>
+</div>
+</body>
+</html>

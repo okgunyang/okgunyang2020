@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>TVING TV</title>
+	<meta name="Author" content="CJ ENM" />
+	<meta name="description" content="tvN, JTBC 등 300여개 무료채널, 최신방송 다시보기, 광고없는 키즈콘텐츠, TV속 아이템 쇼핑까지 한번에 즐기세요." />
+	<meta name="naver-site-verification" content="812a99b3ebc03f59de55c39007c877263955564c"/>
+	<!-- facebook -->
+	<meta property="fb:app_id" content="167597706623778" />
+	<!-- opengraph -->
+	<meta property="og:site_name" content="tving">
+	<meta property="og:title" content="TVING｜오늘의 노는 법" />
+	<meta property="og:description" content="tvN, JTBC 등 300여개 무료채널, 최신방송 다시보기, 광고없는 키즈콘텐츠, TV속 아이템 쇼핑까지 한번에 즐기세요." />
+	<meta property="og:url" content="" />
+	<meta property="og:image" content="./inc/tving_log.jpg" />
+
+	<meta property="og:type" content="video.other" />
+	<meta property="og:video:type" content="application/x-shockwave-flash">
+	<meta property="og:video:url" content="/">
+	<meta property="og:video:width" content="1280">
+	<meta property="og:video:height" content="720">
+
+	<!-- twitter -->
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="TVING｜오늘의 노는 법" />
+	<meta name="twitter:description" content="tvN, JTBC 등 300여개 무료채널, 최신방송 다시보기, 광고없는 키즈콘텐츠, TV속 아이템 쇼핑까지 한번에 즐기세요." />
+	<meta name="twitter:image" content="./inc/tving_log.jpg" />
+
+	<!-- favicon -->
+	<link rel="shortcut icon" href="./inc/favicon.ico" type="image/x-icon">
+
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="./inc/html5shiv.js"></script>
+	<script type="text/javascript" src="./inc/selectivizr.js"></script>
+	<![endif]-->
+	<link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Noto+Sans+KR|Sunflower:300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="common.css">
+	<link rel="stylesheet" href="main.css">
+	<style>
+
+    
+        
+	</style>
+	<script src="https://code.jquery.com/jquery-latest.js"></script>
+	<script>
+	$(document).ready(function(){
+		$(".search_btn").click(function(){
+			$("#keyword").fadeToggle(500);
+		});
+		var len = $(".img_box li").length;
+		$(".left_btn").click(function(){
+			clearInterval(intv);
+			prevAni();
+		});
+		$(".right_btn").click(function(){
+			clearInterval(intv);
+			nextAni();
+		});
+		var intv;
+		var sw=true;
+		var num=0;
+		$(".play_btn").click(function(){ 
+			if(sw){
+				nextAni();
+				intv = setInterval(function(){ nextAni(); }, 4200);
+				$(this).addClass("stop");
+			} else {
+				clearInterval(intv);
+				$(this).removeClass("stop");
+			}			
+		});
+		function nextAni() {
+			$(".img_box").not(":animated").animate({"margin-left":"-1280px"}, 500, function(){
+				$(".img_box li").eq(0).appendTo($(".img_box"));
+				$(".img_box").css("margin-left", "0px");
+				num = $(".img_box li").eq(0).attr("data-index");
+				$(".num_box li").removeClass("on");
+				$(".num_box li").eq(num-1).addClass("on");
+			});
+		}
+		function prevAni() {
+			$(".img_box li").eq(len-1).prependTo($(".img_box"));
+			num = $(".img_box li").eq(0).attr("data-index");
+			$(".num_box li").removeClass("on");
+			$(".num_box li").eq(num-1).addClass("on");
+			$(".img_box").css("margin-left", "-1280px");
+			$(".img_box").not(":animated").animate({"margin-left":"0px"}, 500);
+		}
+	});	
+	</script>
+	<script>
+	$(document).ready(function(){
+		$(window).scroll(function(){
+			var sc = parseInt($(window).scrollTop());
+			if(sc>=200){
+				$(".hd").height(100).css("z-index", "1000");
+				$(".hd .bottom").height(62);
+			} else {
+				$(".hd").height(230).css("z-index", "auto");
+				$(".hd .bottom").height(192);
+			}
+		});
+	});	
+	</script>
+	<script>
+	$(document).ready(function(){
+		$(".page_btn_fr button").click(function(){
+			$(".page_btn_fr button").removeClass("on");
+			$(this).addClass("on");
+			var tar = $(this).index();
+			if(tar==0){
+				$(this).parents(".page_wrap").find(".lst").animate({"margin-left":"0px"}, 600);
+			} else {
+				$(this).parents(".page_wrap").find(".lst").animate({"margin-left":"-1050px"}, 600);
+			}
+		});
+        var rating = $("#page5 .film_rating");
+        rating.each(function(index,value){
+           if(parseInt($(this).text())==12){
+               $(this).css("background-color","#22a2dc");
+           } else if(parseInt($(this).text())==15) {
+               $(this).css("background-color","#e79d28");
+           } else if(parseInt($(this).text())==18) {
+               $(this).css("background-color","deeppink");
+           }
+        });
+	});	
+	</script>
+</head>
+<body>
+	<header class="hd">
+		<div class="top">
+			<div class="hd_wrap">
+				<nav id="tnb">
+					<ul>
+						<li><a href="">로그인</a></li>
+						<li><a href="">이용원</a></li>
+						<li><a href="">편성표</a></li>
+						<li><a href="">이벤트</a></li>
+						<li><a href="">다운로드</a></li>
+						<li><a href="">티빙키즈</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="hd_wrap">
+				<a href="" class="logo"><img src="./inc/logo.svg" alt="logo"></a>
+				<nav id="gnb">
+					<ul>
+						<li><a href="">LIVE</a></li>
+						<li><a href="">VOD</a></li>
+						<li><a href="">MOVIE</a></li>
+						<li><a href="">CLIP</a></li>
+						<li><a href="">MALL</a></li>
+					</ul>
+				</nav>
+				<div class="search_form">
+					<input type="text" id="keyword">
+					<button class="search_btn"></button>
+				</div>
+			</div>
+		</div>	
+	</header>
+	<div class="page">
+		<figure class="vs">
+			<ul class="img_box">
+				<li class="item1" data-index="1"><a href=""></a></li>
+				<li class="item2" data-index="2"><a href=""></a></li>
+				<li class="item3" data-index="3"><a href=""></a></li>
+				<li class="item4" data-index="4"><a href=""></a></li>
+				<li class="item5" data-index="5"><a href=""></a></li>
+			</ul>
+			<ul class="btn_box">
+				<li class="btn_fr"><button class="left_btn"></button></li>
+				<li class="btn_fr"><button class="right_btn"></button></li>
+			</ul>
+			<div class="control_box">
+				<ul class="num_box">
+					<li data-index="1" class="on"><button></button></li>
+					<li data-index="2"><button></button></li>
+					<li data-index="3"><button></button></li>
+					<li data-index="4"><button></button></li>
+					<li data-index="5"><button></button></li>
+				</ul>
+				<button class="play_btn"></button>
+			</div>
+		</figure>
+	</div>
+	<div class="page" id="page2">
+		<section class="page_wrap">
+			<div class="tit_box">
+				<h2 class="tit1">LIVE</h2>
+				<h3 class="tit2">실시간 인기 채널</h3>
+				<p class="page_btn_fr">
+					<button class="on" id="real">실시간TV</button>
+					<button class="" id="tving">TVING TV</button>
+				</p>
+			</div>		
+			<div class="lst_box">
+				<div class="lst">
+					<ul class="lst_data">
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/item01_640x360.jpg" alt="" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<div class="ico_fr cfc0000">
+										<span class="bar"></span>
+										<span class="ico_cover"><img src="./inc/C00551.png" alt="TVN" class="ico"></span></div>
+									<p class="pic"><span class="pic_tit">신서유기7 3화</span><span class="pic_com">17.6%</span></p>
+									<div class="pic_num">1</div>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/item02_640x360.jpg" alt="" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<div class="ico_fr cfcb61f">
+										<span class="bar"></span>
+										<span class="ico_cover"><img src="./inc/C01143.png" alt="otvn" class="ico"></span></div>
+									<p class="pic"><span class="pic_tit">유령을 잡아라</span><span class="pic_com">13.5%</span></p>
+									<div class="pic_num">2</div>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/item03_640x360.jpg" alt="" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<div class="ico_fr c2c50a2">
+										<span class="bar"></span>
+										<span class="ico_cover"><img src="./inc/C01141.png" alt="xtvn" class="ico"></span></div>
+									<p class="pic"><span class="pic_tit">스트리트 푸드 파이터 8화</span><span class="pic_com">13.2%</span></p>
+									<div class="pic_num">3</div>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/item04_640x360.jpg" alt="" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<div class="ico_fr cff8c00">
+										<span class="bar"></span>
+										<span class="ico_cover"><img src="./inc/C15741.png" alt="jtbc2" class="ico"></span>
+										</div>
+									<p class="pic"><span class="pic_tit">아는 평님 204화</span><span class="pic_com">9.5%</span></p>
+									<div class="pic_num">4</div>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/item05_640x360.jpg" alt="" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<div class="ico_fr ce00e78">
+										<span class="bar"></span>
+										<span class="ico_cover"><img src="./inc/C00579.png" alt="mnet" class="ico"></span></div>
+									<p class="pic"><span class="pic_tit">GOT 7의 하드캐리 2.5의 비밀</span><span class="pic_com">8.5%</span></p>
+									<div class="pic_num">5</div>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/item06_640x360.jpg" alt="" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<div class="ico_fr logo_bg_jtbc">
+										<span class="bar"></span>
+										<span class="ico_cover"><img src="./inc/C01582.png" alt="jtbc" class="ico"></span></div>
+									<p class="pic"><span class="pic_tit">멜로디책방 6화</span><span class="pic_com">6.4%</span></p>
+									<div class="pic_num">6</div>
+								</div>
+							</a></li>
+					</ul>		
+					<ul class="lst_data">
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/item07_640x360.jpg" alt="뉴스 TOP10" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<div class="ico_fr c1c98d5">
+										<span class="bar"></span>
+										<span class="ico_cover"><img src="./inc/C01583.png" alt="채널 A" class="ico"></span></div>
+									<p class="pic"><span class="pic_tit">뉴스 TOP10</span><span class="pic_com">5.4%</span></p>
+									<div class="pic_num">7</div>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/item08_640x360.jpg" alt="뉴스와이드" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<div class="ico_fr fcb316">
+										<span class="bar"></span>
+										<span class="ico_cover"><img src="./inc/C00708.png" alt="MBN" class="ico"></span></div>
+									<p class="pic"><span class="pic_tit">뉴스 와이드</span><span class="pic_com">4.8%</span></p>
+									<div class="pic_num">8</div>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/item09_640x360.jpg" alt="유퀴즈" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<div class="ico_fr cd80a00">
+										<span class="bar"></span>
+										<span class="ico_cover"><img src="./inc/C01142.png" alt="ONSTYLE" class="ico"></span></div>
+									<p class="pic"><span class="pic_tit">유 퀴즈 온더 블럭 29화</span><span class="pic_com">4.5%</span></p>
+									<div class="pic_num">9</div>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/item10_640x360.jpg" alt="YTN 24" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<div class="ico_fr c1c9ce8">
+										<span class="bar"></span>
+										<span class="ico_cover"><img src="./inc/C00593.png" alt="YTN" class="ico"></span></div>
+									<p class="pic"><span class="pic_tit">YTN 24</span><span class="pic_com">2.7%</span></p>
+									<div class="pic_num">10</div>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/item11_640x360.jpg" alt="아이언맨" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<div class="ico_fr cfcb316">
+										<span class="bar"></span>
+										<span class="ico_cover"><img src="./inc/C07381.png" alt="OCN" class="ico"></span></div>
+									<p class="pic"><span class="pic_tit">아이언맨 2</span><span class="pic_com">2.5%</span></p>
+									<div class="pic_num">11</div>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/item12_640x360.jpg" alt="삼시세끼" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<div class="ico_fr cff3700">
+										<span class="bar"></span>
+										<span class="ico_cover"><img src="./inc/C00575.png" alt="olive" class="ico"></span></div>
+									<p class="pic"><span class="pic_tit">삼시세끼 어촌편 5화</span><span class="pic_com">2.3%</span></p>
+									<div class="pic_num">12</div>
+								</div>
+							</a></li>
+					</ul>	
+				</div>
+			</div>
+		</section>
+	</div>
+	<div class="page" id="page3">
+		<section class="page_wrap">
+			<div class="tit_box">
+				<h2 class="tit1">VOD</h2>
+				<h3 class="tit2">프로그램 다시보기</h3>
+				<p class="page_btn_fr">
+					<button class="on" id="hot">인기</button>
+					<button class="" id="new">최신</button>
+				</p>
+			</div>		
+			<div class="lst_box">
+				<div class="lst">
+					<ul class="lst_data">
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/vod01.jpg" alt="" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">신서유기7 , 3화</span><span class="pic_com">tvN 2019.11.08 금</span></p>
+									<div class="pic_num">1</div>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/vod02.jpg" alt="" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">유령을 잡아라</span><span class="pic_com">tvN 2019.11.12 화</span></p>
+									<div class="pic_num">2</div>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/vod03.jpg" alt="" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">유 퀴즈 온 더 블럭 , 43화</span><span class="pic_com">tvN 2019.11.12 화</span></p>
+									<div class="pic_num">3</div>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/vod04.jpg" alt="" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">보좌관 2 , 2화</span><span class="pic_com">JTBC 2019.11.12 화</span></p>
+									<div class="pic_num">4</div>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/vod05.jpg" alt="" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">더 짠내투어 , 100화</span><span class="pic_com">tvN 2019.11.11 월</span></p>
+									<div class="pic_num">5</div>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/vod06.jpg" alt="" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">아는 형님 , 204화</span><span class="pic_com">JTBC 2019.11.09 토</span></p>
+									<div class="pic_num">6</div>
+								</div>
+							</a></li>
+					</ul>		
+					<ul class="lst_data">
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/vod07.jpg" alt="뉴스 TOP10" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">플레이어 , 17화</span><span class="pic_com">XtvN 2019.11.10 일</span></p>
+									<div class="pic_num">1</div>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/vod08.jpg" alt="뉴스와이드" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">쌉니다 천리마마트 , 8화</span><span class="pic_com">tvN 2019.11.08 금</span></p>
+									<div class="pic_num">2</div>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/vod09.jpg" alt="유퀴즈" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">요즘 책방: 책 읽어드립니다 , 8화</span><span class="pic_com">tvN 2019.11.12 화</span></p>
+									<div class="pic_num">3</div>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/vod10.jpg" alt="YTN 24" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">뭉쳐야 찬다 , 21화</span><span class="pic_com">JTBC 2019.11.10 일</span></p>
+									<div class="pic_num">4</div>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/vod11.jpg" alt="아이언맨" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">스트리트 푸드 파이터 2 , 8화</span><span class="pic_com">tvN 2019.11.10 일</span></p>
+									<div class="pic_num">5</div>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/vod12.jpg" alt="삼시세끼" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">날 녹여주오 , 14화</span><span class="pic_com">tvN 2019.11.10 일</span></p>
+									<div class="pic_num">6</div>
+								</div>
+							</a></li>
+					</ul>	
+				</div>
+			</div>
+		</section>
+	</div>
+	<div class="page" id="page4">
+		<section class="page_wrap">
+			<div class="tit_box">
+				<h2 class="tit1">CLIP</h2>
+				<h3 class="tit2">실시간 인기 클립</h3>
+				<p class="page_btn_fr">
+					<button class="on" id="cate1">1페이지</button>
+					<button class="" id="cate2">2페이지</button>
+				</p>
+			</div>		
+			<div class="lst_box">
+				<div class="lst">
+					<ul class="lst_data">
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/clip01.jpg" alt="티빙 1화" class="thumb_pic"></div>
+								<div class="pic_num">1</div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">[티빙CF 15s] ITZY(있지) 뭐해? ITZY는 티빙으로 논다!</span><span class="pic_com">티빙 1화</span></p>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/clip02.jpg" alt="" class="thumb_pic"></div>
+								<div class="pic_num">2</div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">윤봉길 의사, 어린시절 싸움꾼? 윤봉길 의사의 후손, 배우 윤주빈에게 듣는 생</span><span class="pic_com">요즘 책방: 책 읽어드립니다 8화</span></p>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/clip03.jpg" alt="유 퀴즈 온 더 블럭 43화" class="thumb_pic"></div>
+								<div class="pic_num">3</div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">이 동네 FLEX 풍년이네! 가을이 아름다운 부암동으로☆</span><span class="pic_com">유 퀴즈 온 더 블럭 43화</span></p>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/clip04.jpg" alt="유령을 잡아라 9화" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">[9화 예고]'광수대 가고 싶습니다' 단호박 문근영에 김선호 울컥!</span><span class="pic_com">유령을 잡아라 9화</span></p>
+									<div class="pic_num">4</div>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/clip05.jpg" alt="싸이코패스 다이어리" class="thumb_pic"></div>
+								<div class="pic_num">5</div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">[티저] 다이어리 잃어버린 박성훈의 섬뜩한(!) 눈빛!</span><span class="pic_com">싸이코패스 다이어리</span></p>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/clip06.jpg" alt="코미디빅리그 335화" class="thumb_pic"></div>
+								<div class="pic_num">6</div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">[선공개] 보는 순간, 웃고 싶지 않아도 웃게 됩니다</span><span class="pic_com">코미디빅리그 335화</span></p>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/clip07.jpg" alt="겟잇뷰티2019 35화" class="thumb_pic"></div>
+								<div class="pic_num">7</div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">[예고]톱스타 신상패치!한지민이 입은 그재킷?</span><span class="pic_com">겟잇뷰티2019 35화</span></p>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/clip08.jpg" alt="치킨로드 5화" class="thumb_pic"></div>
+								<div class="pic_num">8</div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">트러플을 직접 채취하는 프랑스 농장!! (너무 신기해..!!)</span><span class="pic_com">치킨로드 5화</span></p>
+								</div>
+							</a></li>
+					</ul>		
+					<ul class="lst_data">
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/clip09.jpg" alt="꿀픽(Cool Pick) 694화" class="thumb_pic"></div>
+								<div class="pic_num">9</div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">차태현, 결혼으로 인생역전.ssul</span><span class="pic_com">꿀픽(Cool Pick) 694화</span></p>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/clip10.jpg" alt="요즘 책방: 책 읽어드립니다 8화" class="thumb_pic"></div>
+								<div class="pic_num">10</div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">김구의 어머니, 생일 선물을 총으로 바꿔 주며 ＂왜놈을 한 명이라도 더 죽여</span><span class="pic_com">요즘 책방: 책 읽어드립니다 8화</span></p>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/clip11.jpg" alt="치킨로드 5화" class="thumb_pic"></div>
+								<div class="pic_num">11</div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">김풍&김재우, 인도네시아 내 한국st 치킨집 사장님 가게 방문하다!!</span><span class="pic_com">치킨로드 5화</span></p>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/clip12.jpg" alt="2019 MAMA 23화" class="thumb_pic"></div>
+								<div class="pic_num">12</div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">[2019 MAMA] Star Countdown D-22 by #TOMORROW_X_TOGETHER</span><span class="pic_com">2019 MAMA 23화</span></p>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/clip13.jpg" alt="꿀픽" class="thumb_pic"></div>
+								<div class="pic_num">13</div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">(김건모♥장지연 한가족) 배우 장희웅의 연기력</span><span class="pic_com">꿀픽(Cool Pick) 692화</span></p>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/clip14.jpg" alt="신서유기" class="thumb_pic"></div>
+								<div class="pic_num">14</div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">＜한양, 서울, 세종＞ 세 단어의 공통점은?</span><span class="pic_com">신서유기7 3화</span></p>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/clip15.jpg" alt="요즘 책방" class="thumb_pic"></div>
+								<div class="pic_num">15</div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">충격! 분노! 일본인들, 윤봉길 의사의 유해를 쓰레기장에 묻었다니!!!</span><span class="pic_com">요즘 책방: 책 읽어드립니다 8화</span></p>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/clip16.jpg" alt="치킨로드" class="thumb_pic"></div>
+								<div class="pic_num">16</div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">(예고) 새로운 도시로!! 새롭게 시작하는 치킨로드!!</span><span class="pic_com">치킨로드 5화</span></p>
+								</div>
+							</a></li>
+					</ul>	
+				</div>
+			</div>
+		</section>
+	</div>
+	<div class="page" id="page5">
+		<section class="page_wrap">
+			<div class="tit_box">
+				<h2 class="tit1">Moving</h2>
+				<h3 class="tit2">박스오피스</h3>
+				<h4 class="tit3">2019.11.19 13:08 기준</h4>
+				<p class="page_btn_fr">
+					<button class="on" id="cate3">1페이지</button>
+					<button class="" id="cate4">2페이지</button>
+				</p>
+			</div>		
+			<div class="lst_box">
+				<div class="lst">
+					<ul class="lst_data">
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/movie01.jpg" alt="블랙머니" class="thumb_pic"></div>
+								<div class="pic_num">1</div>
+								<div class="film_rating">12</div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">블랙머니</span><span class="pic_com">관람객 1,168,697 명</span></p>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/movie02.jpg" alt="82년생 김지영" class="thumb_pic"></div>
+								<div class="pic_num">2</div>
+                                <div class="film_rating">12</div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">82년생 김지영</span><span class="pic_com">관람객 3,514,328 명</span></p>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/movie03.jpg" alt="신의 한 수-귀수편" class="thumb_pic"></div>
+								<div class="pic_num">3</div>
+                                <div class="film_rating">15</div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">신의 한 수- 귀수편</span><span class="pic_com">관람객 1,887,055 명</span></p>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/movie04.jpg" alt="터미네이터- 다크 페이트" class="thumb_pic"></div>
+								<div class="pic_num">4</div>
+                                <div class="film_rating">15</div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">터미네이터- 다크 페이트</span><span class="pic_com">관람객 2,325,887 명</span></p>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/movie05.jpg" alt="날씨의 아이" class="thumb_pic"></div>
+								<div class="pic_num">5</div>
+                                <div class="film_rating">15</div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">날씨의 아이</span><span class="pic_com">관람객 618,723 명</span></p>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/movie06.jpg" alt="윤희에게" class="thumb_pic"></div>
+								<div class="pic_num">6</div>
+                                <div class="film_rating">12</div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">윤희에게</span><span class="pic_com">관람객 39,209 명</span></p>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/movie07.jpg" alt="좀비랜드- 더블 탭" class="thumb_pic"></div>
+								<div class="pic_num">7</div>
+                                <div class="film_rating">15</div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">좀비랜드- 더블 탭</span><span class="pic_com">관람객 113,001 명</span></p>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/movie08.jpg" alt="엔젤 해즈 폴른" class="thumb_pic"></div>
+								<div class="pic_num">8</div>
+                                <div class="film_rating">15</div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">엔젤 해즈 폴른</span><span class="pic_com">관람객 139,477 명</span></p>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/movie09.jpg" alt="대통령의 7시간" class="thumb_pic"></div>
+								<div class="pic_num">9</div>
+                                <div class="film_rating">12</div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">대통령의 7시간</span><span class="pic_com">관람객 15,529 명</span></p>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/movie10.jpg" alt="너의 이름은." class="thumb_pic"></div>
+								<div class="pic_num">10</div>
+                                <div class="film_rating">12</div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">너의 이름은.</span><span class="pic_com">관람객 3,713,746 명</span></p>
+								</div>
+							</a></li>
+					</ul>	
+				</div>
+			</div>
+		</section>
+	</div>
+	<div class="page" id="page6">
+		<section class="page_wrap">
+			<div class="tit_box">
+				<h2 class="tit1">EVENT</h2>
+				<p class="page_btn_fr">
+					<button class="on" id="cate5">이벤트1</button>
+					<button class="" id="cate6">이벤트2</button>
+				</p>
+			</div>		
+			<div class="lst_box">
+				<div class="lst">
+					<ul class="lst_data">
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/event01.jpg" alt="겨울왕국2 개봉기념 이벤트" class="thumb_pic"></div>
+				                <div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">&lt;겨울왕국2 개봉기념&gt; 디즈니 애니메이션 할인전</span><span class="pic_com">2019-11-14 ~ 2019-11-27</span></p>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/event02.jpg" alt="결혼의 로망과 현실" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">결혼의 로망과 현실, 50% 할인중 (~11/21)</span><span class="pic_com">2019-11-08 ~ 2019-11-21</span></p>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/event03.jpg" alt="오늘의 노는 법" class="thumb_pic"></div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">&lt;오늘의 노는 법&gt; 2탄- 퀴즈풀고 선물득템!</span><span class="pic_com">2019-11-01 ~ 2019-11-30</span></p>
+								</div>
+							</a></li>
+						<li><a href="">
+								<div class="pic_box"><img src="./inc/event04.jpg" alt="터미네이터- 다크 페이트" class="thumb_pic"></div>
+								<div class="pic_num">4</div>
+                                <div class="film_rating">15</div>
+								<div class="pic_tit_box">
+									<p class="pic"><span class="pic_tit">CJ ONE 통합 회원가입 이벤트</span><span class="pic_com">2017-11-01 ~ 2019-12-31</span></p>
+								</div>
+							</a></li>
+					</ul>	
+				</div>
+			</div>
+		</section>
+	</div>
+<footer id="footer">
+  <section class="footer-top">
+    <div class="inner-wrap">
+      <dl class="footer-notice">
+        <dt><a href="#">공지사항</a></dt>
+        <dd><a href="#" id="top-notice" title="[안내] 새로워진 ALL New TVING을 소개합니다.">[안내] 새로워진 ALL New TVING을 소개합니다.</a>
+        </dd>
+      </dl>
+      <div class="footer-select-box">
+        <a href="#" target="_blank" class="ico-sns">페이스북</a>
+        <div class="footer-select">
+          <dl>
+            <dt><a href="javascript:;" class="lnk-family">브랜드 바로가기</a></dt>
+            <dd id="brandSite" class="footer-hide" style="display:none;">
+            	<div class="scrollbar-inner">
+              		<ul>
+                		<li><a href="#" target="_blank">tvN</a></li>
+                		<li><a href="#" target="_blank">OtvN</a></li>
+                		<li><a href="#" target="_blank">MNET</a></li>
+                		<li><a href="#" target="_blank">ONSTYLE</a></li>
+                		<li><a href="#" target="_blank">OLIVE</a></li>
+                		<li><a href="#" target="_blank">XtvN</a></li>
+                		<li><a href="#" target="_blank">OCN</a></li>
+               		 	<li><a href="#" target="_blank">chCGV</a></li>
+               		 	<li><a href="#" target="_blank">SUPER ACTION</a></li>
+                		<li><a href="#" target="_blank">TOONIVERSE</a></li>
+                		<li><a href="#" target="_blank">중화TV</a></li>
+                		<li><a href="#" target="_blank">OGN</a></li>
+                		<li><a href="#" target="_blank">CATCH ON</a></li>
+                		<li><a href="#" target="_blank">DIA TV</a></li>
+                		<li><a href="#" target="_blank">UXN</a></li>
+                		<li><a href="#" target="_blank">enews24</a></li>
+              		</ul>
+              	</div>
+            </dd>
+          </dl>
+        </div>
+        <div class="footer-select">
+          <dl>
+            <dt><a href="javascript:;" class="lnk-family">계열사 바로가기</a></dt>
+            <dd id="familySite" class="footer-hide" style="display:none;">
+            	<div class="scrollbar-inner">
+              		<strong>CJ그룹</strong>
+              		<ul>
+                		<li><a href="#" target="_blank">CJ주식회사</a></li>
+              		</ul>
+              		<strong>엔터테인먼트 &amp; 미디어</strong>
+              		<ul>
+                		<li><a href="#" target="_blank">CJ ENM(E&amp;M)</a></li>
+                		<li><a href="#" target="_blank">CJ CGV</a></li>
+                		<li><a href="#" target="_blank">CJ Hello</a></li>
+                		<li><a href="#" target="_blank">CJ파워캐스트</a></li>
+              		</ul>
+              		<strong>식품 &amp; 식품서비스</strong>
+              		<ul>
+                		<li><a href="#" target="_blank">CJ제일제당(식품)</a></li>
+                		<li><a href="#" target="_blank">CJ프레시웨이</a></li>
+                		<li><a href="#" target="_blank">CJ푸드빌</a></li>
+                		<li><a href="#" target="_blank">CJ엠디원</a></li>
+              		</ul>
+              		<strong>생명공학</strong>
+              		<ul>
+                		<li><a href="#" target="_blank">CJ제일제당(바이오)</a></li>
+              		</ul>
+              		<strong>신유통</strong>
+              		<ul>
+                		<li><a href="#" target="_blank">CJ ENM(오쇼핑)</a></li>
+                		<li><a href="#" target="_blank">CJ대한통운</a></li>
+                		<li><a href="#" target="_blank">CJ텔레닉스</a></li>
+                		<li><a href="#" target="_blank">CJ올리브네트웍스(올리브영)</a></li>
+              		</ul>
+              		<strong>인프라</strong>
+              		<ul>
+                		<li><a href="#" target="_blank">CJ대한통운(건설)</a></li>
+                		<li><a href="#" target="_blank">CJ올리브네트웍스(IT사업)</a></li>
+              		</ul>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+      $(".lnk-family").click(function(){
+        $(this).parents("dt").siblings(".footer-hide").slideToggle();
+      });    
+</script>
+  <section class="footer-contents">
+    <div class="inner-wrap">
+      <nav class="footer-util">
+        <a href="#">고객센터</a>
+        <a href="#">사이트맵</a>
+        <a href="#">이용약관</a>
+        <a href="#"><strong>개인정보 처리 방침</strong></a>
+        <a href="#">청소년 보호정책</a>
+        <a href="#">법적고지</a>
+        <a href="#">이벤트</a>
+        <a href="#"><strong>다운로드</strong></a>
+        <a href="#" target="_blank">티빙몰 바로가기</a>
+      </nav>
+      <div class="copyright-box">
+        <p>
+          <span>
+           	 대표이사 : 허민회, 허민호
+            <a href="javascript:popupServiceProvider();" style="text-decoration:underline">사업자정보확인</a>
+          </span>
+          <span>개인정보관리책임자 : 고창남</span>
+          <span>사업자등록번호 : 106-81-51510</span>
+          <span>통신판매신고번호 : 서초 제 000015호</span>
+        </p>
+        <p>
+          <span>본점 : 서울특별시 서초구 과천대로 870-13 (방배동)</span>
+          <span>사업장 : 서울특별시 마포구 상암산로 66 (상암동)</span>          
+          <span>호스팅사업자 : 씨제이올리브네트웍스(주)</span>          
+        </p>
+        <p>
+          <span>고객센터 : 1670-1525(평일 09시~18시)</span>
+          <span>ENM 시청자 상담실 (편성 문의 및 시청자 의견) : 080-080-0780</span>
+          <span>Mnet 고객센터(방송편성문의) : 1855-1631</span>
+          <span>대표메일 : tving@cj.net</span>
+          <span>티빙몰 문의 : tving.mall@cj.net</span>
+        </p>
+        <p class="copyright">Copyright (C) CJ ENM All right reserved.</p>
+      </div>
+      <p class="logo"><img src="./inc/footer_logo.png" alt="logo"></p>
+    </div>
+  </section>
+</footer>
+<a href="javascript:void(0);" onclick="$(document).scrollTop(0);return;" class="page-top-box">위로</a>
+</body>
+</html>	

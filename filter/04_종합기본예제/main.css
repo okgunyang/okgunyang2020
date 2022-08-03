@@ -1,0 +1,153 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,900);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,100,200,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Exo:400,400italic,500,600,700,800,900,300,200,100);
+	
+/*
+	font-family: 'PT Sans', sans-serif;
+	font-family: 'Lato', sans-serif;
+	font-family: 'Raleway', sans-serif;
+	font-family: 'Exo', sans-serif;
+	
+*/
+body {
+	font-family: 'Raleway', sans-serif;
+	line-height:normal;
+	margin:0;
+	padding:0;
+}
+
+html {
+font-family:sans-serif;
+-ms-text-size-adjust:100%;
+-webkit-text-size-adjust:100%;
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary {
+display:block;
+}
+a:focus {
+outline:thin dotted;
+}
+
+a:active,a:hover {
+outline:0;
+}
+img {
+border:0;
+}
+
+
+section {
+	background:#fff;
+	margin: 0 auto;
+	padding: 5em 2em;
+	text-align: center;
+}
+section:nth-child(even) {
+    background: #fafafa;
+}
+section  h2 {
+    margin: 0;
+    padding: 0 0 2em;
+}
+footer {
+	background: #fafafa;
+	margin: 0 auto;
+	padding: 5em 2em;
+	text-align: center;
+}
+
+
+
+.container{
+	margin:0 auto;	
+}
+
+#header {
+	background:#a89ef1;
+	font-family: 'Raleway', sans-serif;
+	padding: 5em 0;
+	text-align: center;
+}
+#header i.fa {
+	color:#6559bc;
+	font-size:35px;
+}
+
+#header h1 {
+    color: #6559bc;
+    font-size: 2.5em;
+    font-weight: 300;
+    margin: 0;
+    padding: 0.3em 0;
+}
+#header h3 small {
+	color:#6559bc;
+	font-weight:normal;
+    background: #fff none repeat scroll 0 0;
+    font-size: 13px;
+    padding: 0 12px;
+}
+#header h3 {
+    border-bottom: 1px solid #6559bc;
+    color: #fff;
+    margin: 0 auto 12px;
+    padding: 0 0 5px;
+    width: 35%;
+}
+
+#header p {
+    color: #fff;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+.rtnav{
+	background:#6559bc;
+	width: 100%;
+	
+	border-bottom: 1px solid #e1e1e1;
+	/* animation magic */
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	z-index: 9999;
+	top: 0;
+	position: fixed;
+}
+.shrink {
+  padding: 20px 0;
+}
+.rtnav ul{
+	text-align:center;
+	margin:0;
+	padding:0;	
+}
+.rtnav ul li{
+	list-style:none;	
+	display:inline-block;
+}
+
+.rtnav a {
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    padding:20px 10px;
+    outline: medium none;
+    position: relative;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.rtnav a:hover,
+.rtnav a:focus {
+	outline: none;
+}
+

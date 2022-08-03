@@ -1,0 +1,480 @@
+<?php
+    @session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SRC 병원에 오신 것을 환영합니다.</title>
+    <!-- 구형 브라우저 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <!-- 신형 브라우저와 안드로이드 폰 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.png">
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="57x57" href="./ico/favicon57.png">
+    <!-- 아이패드 -->
+    <link rel="apple-touch-icon" size="72x72" href="./ico/favicon72.png">
+    <!-- 아이폰4 이상 -->
+    <link rel="apple-touch-icon" size="114x114" href="./ico/favicon114.png">
+    <!-- IE10 이상 -->
+    <meta name="msapplication-TileColor" content="#FFFFFF"> 
+    <meta name="msapplication-TileImage" content="./ico/favicon-144.png">
+
+    <!-- 메타데이터 개발 공통 사항 -->
+    <!-- 데스크탑에서 IE로 웹 문서를 열 때 가장 최신 버전으로 실행 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    
+    <!-- 앱(웹 사이트)의 이름 -->
+    <meta name="application-name" content="SRC hospital Site">
+    <!-- 웹 사이트 저작자의 이름 -->
+    <meta name="author" content="kitae Kim">
+    <!-- 현재 문서의 설명 -->
+    <meta name="description" content="SRC hospital Site Mainpage"> 
+    <!-- 현재 문서의 저작도구 -->
+    <meta name="generator" content="Brackts">
+    <!-- 검색엔진에서 검색되게할 키워드 -->
+    <meta name="keywords" content="SRC 병원, 건강관리, 휴양">
+    
+    <!-- 반응형, 모바일, 태블릿 사이트 일 경우 뷰포트 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Noto+Serif+KR" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Jua|Noto+Sans+KR|Noto+Serif+KR" rel="stylesheet">
+    <link rel="stylesheet" href="com.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="main.css">
+    <style>
+    body, html { -ms-overflow-style:none; }
+    ::-webkit-scrollbar { display:none; }    
+    ::-o-scrollbar { display:none; } 
+    ::-moz-scrollbar { display:none; }     
+    </style>
+<!--    <script src="https://code.jquery.com/jquery-latest.js"></script>-->
+    <script src="./js/jquery-1.11.1.js"></script>
+    
+    <script>
+    /* 여기가 스크립트 처리 구간 */    
+    $(function(){
+        var intv = setInterval(function(){ lAni(); }, 3000);
+        function lAni(){
+            $(".imgBox").not(":animated").animate({"margin-left":"-510px"}, 800, function(){
+                $(".imgBox li").eq(0).appendTo($(".imgBox"));
+                $(".imgBox").css("margin-left", "0px");
+            });
+            
+        }
+        $(window).scroll(function(){
+            var scTop = $("body, html").scrollTop();
+            if(scTop>=100){
+                $(".hdFrame, #gnb a, .lstBtn span").addClass("on");
+            } else {
+                $(".hdFrame, #gnb a, .lstBtn span").removeClass("on");
+            }
+        });
+    });    
+    </script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcG6XLlvSL0DQtg1G38wiT_r8BYN3RbWQ&callback=initMap"></script> -->
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpo7PlmFhN57HAxDlD8MTLI4DT1bL9VFY&callback=initMap"></script>-->
+<!--
+1) 구글 지도 api key 발급 사이트로 이동하여 지도 API 서비스 신청
+2) https://console.cloud.google.com/getting-started?pli=1
+3) [API 및 서비스] -> [사용자 인증 정보] -> 인증 키 발급
+-->
+<script> 
+//좌표 값을 바꿔서 입력 36.3491563,127.3776857
+function initialize() {
+  var myLatlng = new google.maps.LatLng(37.4931346, 126.92737779999993);
+  var mapOptions = {
+    zoom: 17,
+    center: myLatlng
+  }
+
+  var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'SRC병원'	  //레이블을 바꿔서 입력
+  });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+ </script>
+<script>
+$(function(){
+//   setTimeout(function(){
+//       $("#map_canvas > div:last-child").css("display", "none", "z-index", "-1");
+//   }, 1000); 
+});    
+</script>
+</head>
+<body onload="initialize()">
+<div class="hdFrame"></div>
+<header id="hd">
+    <div class="wrap">
+        <a href="index.html" class="logo">
+            <img src="./img/img_logo.png" alt="앰블럼">
+        </a>
+        <nav id="gnb">
+            <ul>
+                <li><a href="intro.html#page1">병원안내</a></li>
+                <li><a href="physical.html#page1">재활치료</a></li>
+                <li><a href="ward.html#page1">병동안내</a></li>
+                <li><a href="news.html#page1">병원소식</a></li>
+                <li><a href="speech.html#page1">치료연계안내</a></li>
+            </ul>
+        </nav>
+        <label for="ck" class="lstBtn">
+            <span class="item1"></span>
+            <span class="item2"></span>
+            <span class="item3"></span>
+            <span class="item4"></span>
+        </label>
+    </div>
+</header>    
+<main id="content">
+    <figure id="vs">
+        <input type="radio" name="raItem" id="ra1" checked>
+        <input type="radio" name="raItem" id="ra2">
+        <ul class="banBox">
+            <li>
+                <a href="ward.html#page1">
+                    <img src="./img/visual1.jpg" alt="병동안내 비주얼">
+                </a>
+            </li>
+            <li>
+                <a href="physical.html#page1">
+                    <img src="./img/visual2.jpg" alt="도수치료 비주얼">
+                </a>
+            </li>
+        </ul>
+        <ul class="btnBox">
+            <li>
+                <label for="ra1" class="vsbtn active"></label>
+            </li>
+            <li>
+                <label for="ra2" class="vsbtn"></label>
+            </li>
+        </ul>
+    </figure>
+    <div class="page" id="page1">
+        <aside class="page1_side">
+            <h1 class="pageTitle">SRC</h1>
+            <p class="pageComent">관악구 내 유일한 SRC병원 부설의원 
+소아 낮병동만의 장점을 소개합니다.</p>
+            <a href="ward.html#page1" class="detail">
+                <span class="hvTxt"></span>
+                <span>소아 낮병동 바로가기</span>
+            </a>
+        </aside>
+        <div class="banBox2">
+            <ul class="imgBox">
+                <li class="item1">
+                    <h1 class="num">01</h1>
+                    <h2 class="banTitle">소아 중심 독립적 치료실</h2>
+                    <img src="./img/img_benefit01.jpg" alt="소아병동 썸네일">
+                </li>
+                <li class="item2">
+                    <h1 class="num">02</h1>
+                    <h2 class="banTitle">소아 전담 치료진</h2>
+                    <img src="./img/img_benefit02.jpg" alt="소아 전담 썸네일">
+                </li>
+                <li class="item3">
+                    <h1 class="num">03</h1>
+                    <h2 class="banTitle">쾌적하고 위생적인 입원환경</h2>
+                    <img src="./img/img_benefit03.jpg" alt="입원환경 썸네일">
+                </li>
+                <li class="item4">
+                    <h1 class="num">04</h1>
+                    <h2 class="banTitle">ALL IN ONE SERVIES</h2>
+                    <img src="./img/img_benefit04.jpg" alt="원서비스 썸네일">
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="page" id="page2">
+        <div class="wrap">
+            <h1 class="pageTitle">
+                <span class="txt1">재활</span> 프로그램
+            </h1>
+            <p class="pageComent">SRC병원의 65년 재활전문의료 노하우로 최선을 다하겠습니다.</p>
+            <ul class="lst">
+                <li>
+                    <a href="physical.html#page1">
+                        <img src="./img/img_remedial01.png" alt="소아재활 썸네일">
+                    </a>
+                    <span class="itemTitle">소아재활</span>
+                </li>
+                <li>
+                    <a href="physical.html#page2">
+                        <img src="./img/img_remedial02.png" alt="청소년재활 썸네일">
+                    </a>
+                    <span class="itemTitle">청소년재활</span>
+                </li>
+                <li>
+                    <a href="physical.html#page3">
+                        <img src="./img/img_remedial03.png" alt="성인재활 썸네일">
+                    </a>
+                    <span class="itemTitle">성인재활</span>
+                </li>
+                <li>
+                    <a href="physical.html#page4">
+                        <img src="./img/img_remedial04.png" alt="감각치료 썸네일">
+                    </a>
+                    <span class="itemTitle">감각치료</span>
+                </li>
+                <li>
+                    <a href="physical.html#page5">
+                        <img src="./img/img_remedial05.png" alt="언어치료 썸네일">
+                    </a>
+                    <span class="itemTitle">언어치료</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="page" id="page3">
+        <div class="wrap">
+            <ul>
+                <li class="col12 first item1">
+                    <a href="news.html#page1" class="box">   
+                        <h3 class="nTitle">NOTICE</h3>
+                        <h2 class="pTitle">[서울/SRC병원 부설의원] SRC병원 부설의원 리뉴얼 오픈</h2>
+                        <p class="pContent">새로운 공간에서 수준 높은 재활의학을 선보입니다. 1. 독일에서 도수치료를 수료한 이영상 '과장' 2. 소아 낮병동 운영 3. 성인/소아 재활외래 4. 서울센터내의 언어심리상담센터/스포츠센터 연계 </p>
+                        <p class="nDate">2018-11-27</p>
+                    </a> 
+                    <a href="news.html#page1" class="box abs" style="padding:0px">
+                        <img src="./img/thumb_mg1_635x390.jpg" class="thumnail" alt="SRC병원 부설의원 리뉴얼 오픈 썸네일">
+                    </a>   
+                </li>
+                <li class="col6 first item2">
+                    <a href="news.html#page2" class="box">
+                        <h3 class="nTitle">NEWLETTER</h3>
+                        <h2 class="pTitle">SRC News Letter.21호(2018년 12월 발행)</h2>
+                        <p class="nDate">2018-12-30</p>
+                    </a>       
+                </li>
+                <li class="col6 item3">
+                    <a href="news.html#page3" class="box">
+                        <h3 class="nTitle">INFORMATION</h3>
+                        <h2 class="pTitle">[광주/SRC병원] 팟캐스트 '명수다'에 최정화 진료과장님 출연</h2>
+                        <p class="nDate">2018-12-04</p>
+                    </a>       
+                </li>
+            </ul>
+        </div>
+    </div>   
+    <div class="page" id="page4">
+        <div class="wrap">
+            <ul>
+                <li class="col4 first">
+                    <a href="https://blog.naver.com/srcdream" class="item1">
+                        <p class="com">SRC병원 <br>네이버블로그 바로가기</p>
+                    </a>
+                </li>
+                <li class="col4">
+                    <a href="https://www.facebook.com/srcgivedreams/" class="item2">
+                        <p class="com">SRC병원 <br> 페이스북 바로가기</p>
+                    </a>
+                </li>
+                <li class="col4">
+                    <a href="https://www.youtube.com/channel/UCNj73RbM-is0pqoqvHc-ysA" class="item3">
+                        <p class="com">SRC병원 <br> 유튜브 바로가기</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="page" id="lastPage">
+        <div class="wrap">
+            <ul>
+                <li class="col4 item1 first">
+                    <h2 class="itemTitle">SRC병원</h2>
+                    <h1 class="telTxt">02-871-3636</h1>
+                    <p class="itemData">
+                        서울특별시 관악구 보라매로 44(봉천동722-19) <br> SRC병원 부설의원 1~3층
+                    </p>
+                    <p class="itemData" style="padding-bottom:40px;">
+                        팩스번호 02-876-3202 대표자 이영상 <br>
+                        고유번호증 129-82-11729
+                    </p>
+                </li>
+                <li class="col4 item2">
+                    <h2 class="itemTitle">진료시간</h2>
+                    <p class="itemData">
+                        평일 진료AM 09:00 ~ PM 06:00 <br>
+                        토요일 진료AM 09:00 ~ PM 01:00 <br>
+                        점심시간PM 12:00 ~ PM 01:00 <br>
+                    </p>
+                    <p class="itemData">※ 일요일 및 공휴일은 휴진입니다</p>                    
+                </li>
+                <li class="col4 item3">
+                    <h2 class="itemTitle">찾아오시는 길</h2>
+                    <div id="mapFrame">
+                        <div id="map_canvas" style="width:360px; height:180px"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>
+<footer id="ft">
+    <div class="wrap">
+        <p class="copyright">ⓒ 2018 SRC병원. ALL RIGHT RESERVED. SITE BY MOVEMENT K GROUP.</p>
+        <div class="ftLogo"></div>
+    </div>
+</footer>
+<input type="checkbox" id="ck">
+<div id="popFrm">
+    <label for="ck" class="closeBtn">닫기</label>
+    <div class="popBox">
+        <ul class="item1">
+            <li>
+                <h2>
+                    <a href="intro.html#page1">병원안내</a>
+                </h2>
+            </li>
+            <li>
+                <a href="intro.html#page1">병원소개</a>
+            </li>
+            <li>
+                <a href="intro.html#page2">시설안내</a>
+            </li>
+            <li>
+                <a href="intro.html#page3">부서별 연락처</a>
+            </li>
+            <li>
+                <a href="intro.html#page4">오시는길</a>
+            </li>
+            <li>
+                <a href="intro.html#page5">비급여 안내</a>
+            </li>
+            <li>
+                <a href="intro.html#page6">협력기관</a>
+            </li>
+        </ul>
+        <ul class="item2">
+            <li>
+                <h2>
+                    <a href="physical.html#page1">재활치료</a>
+                </h2>
+            </li>
+            <li>
+                <a href="physical.html#page1">소아</a>
+            </li>
+            <li>
+                <a href="physical.html#page2">청소년</a>
+            </li>
+            <li>
+                <a href="physical.html#page3">성인</a>
+            </li>
+        </ul>
+        <ul class="item3">
+            <li>
+                <h2>
+                    <a href="ward.html#page1">병동안내</a>
+                </h2>
+            </li>
+            <li>
+                <a href="ward.html#page1">낮병동소개</a>
+            </li>
+            <li>
+                <a href="ward.html#page2">입원안내</a>
+            </li>
+            <li>
+                <a href="ward.html#page3">치료항목</a>
+            </li>
+            <li>
+                <a href="ward.html#page4">자주하시는질문</a>
+            </li>
+        </ul>
+        <ul class="item4">
+            <li>
+                <h2>
+                    <a href="news.html#page1">병원소식</a>
+                </h2>
+            </li>
+            <li>
+                <a href="news.html#page1">공지사항</a>
+            </li>
+            <li>
+                <a href="news.html#page2">SRC뉴스레터</a>
+            </li>
+            <li>
+                <a href="news.html#page3">사회공헌사업</a>
+            </li>
+            <li>
+                <a href="news.html#page4">재활/건강정보</a>
+            </li>
+        </ul>
+        <ul class="item5">
+            <li>
+                <h2>
+                    <a href="speech.html#page1">치료연계센터</a>
+                </h2>
+            </li>
+            <li>
+                <a href="speech.html#page1">SRC심리상담센터</a>
+            </li>
+            <li>
+                <a href="speech.html#page2">SRC스포츠센터</a>
+            </li>
+        </ul>
+    </div>
+</div>        
+<aside id="quick">
+    <div class="qWrap">
+        <ul class="top">
+            <li>
+                <a href="index.html" class="qlogo"></a>
+            </li>
+<?php 
+        if($_SESSION['userid']=="admin") {         
+?>           
+            <li>
+                <a href="#" class="hv">관리자페이지로</a>
+            </li>
+            <li>   
+                <a href="logout.php" class="hv">로그아웃</a>
+            </li>
+<?php
+         } else if(isset($_SESSION['userid'])) {
+?>                                 
+            <li>
+                <a href="logout.php" class="hv">로그아웃</a>
+            </li>
+            <li>   
+                <a href="#" class="hv">정보수정</a>
+            </li>
+<?php
+        } else {
+?>                       
+            <li>
+                <a href="joinForm.html" class="hv">회원가입</a>
+            </li>
+            <li>   
+                <a href="loginForm.html" class="hv">로그인</a>
+            </li>
+<?php
+        }
+?> 
+            <li>       
+                <a href="intro.html#page5" class="hv">비급여안내</a>
+            </li>
+            <li>       
+                <a href="intro.html#page4" class="hv">오시는길</a>
+            </li>
+        </ul>
+        <ul class="bottom">
+            <li>
+                <a href="speech.html#page1" class="yellow">심리상담센터</a>
+            </li>
+            <li>
+                <a href="speech.html#page2" class="cyan">스포츠센터</a>
+            </li>
+            <li><a href="#" class="toTop">위로</a></li>
+        </ul>
+    </div>
+</aside>
+</body>
+</html>

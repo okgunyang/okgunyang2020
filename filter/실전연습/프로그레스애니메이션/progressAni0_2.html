@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>원형 프로그레스바 만들기</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+body {
+  background: #f7f7f7;
+}
+
+.wrapper {
+  width: 200px;
+  height: 200px;
+  margin: 125px auto;
+  position: relative;
+}
+
+.left {
+  width: 100px;
+  height: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #FDA660;
+  border-radius: 100px 0 0 100px;
+  z-index: 1;
+  opacity: 0;
+  animation: fill 2s steps(1, end) 1;
+  animation-fill-mode: forwards;
+}
+
+.right {
+  width: 100px;
+  height: 200px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #FDA660;
+  border-radius: 0 100px 100px 0;
+  z-index: 1;
+  opacity: 1;
+  animation: mask 2s steps(1, end) 1;
+  animation-fill-mode: forwards;
+}
+
+.mask {
+  width: 101px;
+  height: 202px;
+  position: absolute; 
+  top: -1px;
+  right: -1px;
+  background: #f7f7f7;
+  z-index: 10;
+  transform-origin: 0 50%;
+  animation: rotate 2s linear 1;
+  animation-fill-mode: forwards;
+}
+
+.wrapper:after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  top: 9.75px;
+  right: 9.75px;
+  background: #f7f7f7;
+  z-index: 30;
+}
+
+@keyframes rotate {
+  0%  {transform: rotate(0deg);}
+  100%  {transform: rotate(360deg);}
+}
+
+@keyframes fill {
+  0%  {opacity: 0;}
+  50%, 100%  {opacity: 1;}
+}
+
+@keyframes mask {
+  0%  {z-index: 10;}
+  50%, 100%  {z-index: 30;}
+}
+
+.wrapper:hover .left,
+.wrapper:hover .right,
+.wrapper:hover .mask {
+  animation-play-state: paused;
+}
+
+#credit {
+  position: absolute;
+  font-family: sans-serif;
+  font-size: 12px;
+  color: #9a9a9a;
+  left: 20px;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: #FDA660;
+}
+
+a:focus,
+a:hover {
+  color: #F37107;
+}    
+    </style>
+</head>
+<body>
+ <div class="wrapper">
+   <div class="left"></div>
+   <div class="right"></div>
+   <div class="mask"></div>
+ </div>
+
+<div id="credit">
+    Circular CSS Progress Bar
+</div>
+</body>
+</html>

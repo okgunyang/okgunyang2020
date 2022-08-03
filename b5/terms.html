@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 메타포 설정 -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>ROUND A'ROUND</title>
+
+    <!-- 파비콘 설정 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+
+    <!-- 오픈그래프 설정 -->
+    <meta property="og:url" content="http://" />
+    <meta property="og:title" content="ROUND A'ROUND" />
+    <meta property="og:description" content="The Life Cosmetic 시간과 공간, 감성을 채우는 라이프 코스메틱" />
+    <meta property="og:site_name" content="ROUND A'ROUND" />
+    <meta property="og:type" content="website" />
+
+    <!-- 폰트 연결 -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+    <!-- 기본 스크립트 리소스 연결 -->
+    <script src="html5shiv.js"></script>
+    <script src="https://raw.github.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"></script>
+    <script src="jquery-3.4.1.js"></script>
+
+    <!-- 스타일 연결 -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="sub1.css">
+    <style>
+    .ft { margin-top: 15px; clear:both;  }    
+    .blank { display:block; width: 100%; height: 10px;  clear: both; }
+    .page {  padding-bottom:60px; height: auto; min-height:auto; }    
+    .page_wrap { height: auto; }
+    .none_item { display:none; }
+    .page_tit { clear:both; font-weight: 300;    line-height: 1.6;    text-align: center;   font-size:40px; border-top:2px solid #333; width: 1020px; margin:40px auto; padding-top:25px;  }
+    .page_com { clear:both; font-weight:300; line-height: 1.3; text-align:center; font-size:16px; padding-top: 0.8rem; }
+
+    .bread { clear:both; float:right; padding-top: 40px;  font-size:16px; padding-bottom: 50px; }
+    .bread a, .bread span { display:block; line-height:2; padding: 1.5rem 1rem; float:left; color:#333; }
+    .bread a:after { content:">"; padding-left: 1rem; } 
+
+    .terms-order {        overflow: hidden;        width: 1020px;        margin: 40px auto 0;
+        padding: 15px 10px 27px 50px;        border-radius: 5px;        border: 1px solid #e4e4e4;        border: 1px solid #e4e4e4;
+        background: #fafafa;
+    }
+    .terms-order li {    float: left; text-align:left; }
+    .terms-order li:nth-child(1) {    width: 34%; }
+    .terms-order li:nth-child(2) {    width: 36%; }
+    .terms-order li:nth-child(3) {    width: 30%; }
+    .terms-order li span {        display: block;        padding: 10px 0 0;        font-size: 13px;        line-height: 18px;
+        vertical-align: middle;    }
+    .terms-order li span em {        display: inline-block;        font-style: normal;        vertical-align: top;
+        color: #222;        letter-spacing: 2px;    }
+    .terms-order li span a {        display: inline-block;        margin: 0 0 0 15px;        vertical-align: top;        color: #222;    }
+    .terms-order li:nth-child(1) em {        width: 47px;    }
+    .terms-order li:nth-child(2) em {    width: 56px; }
+
+    .con_lst { clear:both; width: 1020px; margin:40px auto; border-top:2px solid #333; padding-top: 40px; }
+    .con_lst p { font-size:14px; font-weight:200; line-height: 1.3; text-align:left; padding:0.25rem; text-align:left; }
+    .cont_tit { padding: 41px 0 0;    color: #222;    font-size: 20px;    line-height: 26px; text-align:left; }
+    </style>
+</head>
+<body>
+<input type="checkbox" class="ck_item" id="menu_ck">
+<input type="checkbox" class="ck_item" id="search_ck">    
+<div id="wrap">
+    <header class="hd">
+        <label for="menu_ck" class="lst_call">
+            <span class="line1"></span>
+            <span class="line2"></span>
+            <span class="line3"></span>
+        </label>
+        <label for="search_ck" class="search_call"></label>
+        <div class="main_logo"><a href="index.html"></a></div>
+    </header>
+    <main class="page" id="page1">
+        <div class="page_wrap">
+            <div class="page_inner">
+                <p class="bread"><a href="index.html">Home</a><span>Terms</span></p> 
+                <hr>
+                <h2 class="page_tit">이용약관</h2>
+                <p class="page_com">서비스 이용조건과 절차사항, 기타 필요한 사항을 규정합니다.</p>
+                <ul class="terms-order">
+                    <li>
+                        <span><em>제1조</em><a href="#TermsOrder1">목적</a></span>
+                        <span><em>제2조</em><a href="#TermsOrder2">용어의 정의</a></span>
+                        <span><em>제3조</em><a href="#TermsOrder3">약관의 명시와 개정</a></span>
+                        <span><em>제4조</em><a href="#TermsOrder4">서비스의 종류</a></span>
+                        <span><em>제5조</em><a href="#TermsOrder5">서비스의 제공 및 중단</a></span>
+                        <span><em>제6조</em><a href="#TermsOrder6">이용 계약의 성립</a></span>
+                        <span><em>제7조</em><a href="#TermsOrder7">회원의 의무</a></span>
+                        <span><em>제8조</em><a href="#TermsOrder8">회원 탈퇴 및 자격 상실 등</a></span>
+                        <span><em>제9조</em><a href="#TermsOrder9">회사의 의무</a></span>
+                    </li>
+                    <li>
+                        <span><em>제10조</em><a href="#TermsOrder10">통지</a></span>
+                        <span><em>제11조</em><a href="#TermsOrder11">개인정보보호</a></span>
+                        <span><em>제12조</em><a href="#TermsOrder12">정보의 제공</a></span>
+                        <span><em>제13조</em><a href="#TermsOrder13">게시물 삭제</a></span>
+                        <span><em>제14조</em><a href="#TermsOrder14">계약사항의 변경</a></span>
+                        <span><em>제15조</em><a href="#TermsOrder15">지적재산권</a></span>
+                        <span><em>제16조</em><a href="#TermsOrder16">구매계약의 성립</a></span>
+                        <span><em>제17조</em><a href="#TermsOrder17">지급방법</a></span>
+                        <span><em>제18조</em><a href="#TermsOrder18">수신확인통지•구매신청 변경 및 취소</a></span>
+                    </li>
+                    <li>
+                        <span><em>제19조</em><a href="#TermsOrder19">재화 등의 공급</a></span>
+                        <span><em>제20조</em><a href="#TermsOrder20">환급</a></span>
+                        <span><em>제21조</em><a href="#TermsOrder21">청약철회 등</a></span>
+                        <span><em>제22조</em><a href="#TermsOrder22">청약철회 등의 효과</a></span>
+                        <span><em>제23조</em><a href="#TermsOrder23">스마트 영수증 서비스</a></span>
+                        <span><em>제24조</em><a href="#TermsOrder24">“연결몰”과 “피연결몰” 간의 관계</a></span>
+                        <span><em>제25조</em><a href="#TermsOrder25">손해배상</a></span>
+                        <span><em>제26조</em><a href="#TermsOrder26">책임의 면제</a></span>
+                        <span><em>제27조</em><a href="#TermsOrder27">분쟁 시 준거법과 관할법원</a></span>
+                        <span><a href="#TermsOrder27">부칙</a></span>
+                    </li>
+                </ul>
+                <div class="con_lst">
+                    <section class="con_box" id="TermsOrder1">
+                        <h3 class="cont_tit">제1조 (목적)</h3>
+                        <p class="con_com">본 약관은 CJ올리브영 주식회사(이하 ‘회사’)가 운영하는 인터넷 웹사이트 "www.oliveyoung.co.kr"(이하 '올리브영 사이트')를 가입하고, 이용하며, 스마트 영수증 서비스를 이용함에 있어 회사와 회원과의 권리, 의무 및 책임사항, 서비스 이용조건과 절차사항, 기타 필요한 사항을 규정함에 목적이 있습니다.</p>
+                    </section>
+                    <section class="con_box" id="TermsOrder2">
+                        <h3 class="cont_tit">제2조 (용어의 정의)</h3>
+                        <p class="con_com">본 약관에서 사용하는 용어의 정의는 다음과 같습니다. 이 약관에서 사용하는 용어의 정의는 제1항에서 정한 것을 제외하고는 거래 관행 및 관계 법령을 따릅니다.</p>
+                        <br>
+                        <p class="con_com">① ‘서비스’라 함은 회사가 운영하는 본 올리브영 사이트 등에서 제공하는 인터넷상의 모든 서비스, 스마트 영수증 서비스 기타 회사가 제공하는 각종 서비스를 말합니다.</p>
+                        <p class="con_com">② '이용자'라 함은 본 약관에 따라 회사에서 제공하는 서비스를 이용하는 자를 말합니다.</p>
+                        <p class="con_com">③ '회원'이라 함은 본 올리브영 사이트에서 제공하는 서비스를 제공받기 위해 본 약관에 동의하고 CJ ONE 서비스에 가입한 자를 말합니다.</p>
+                        <p class="con_com">④ '아이디(ID)'라 함은 이용자가 서비스를 이용하고, 회사가 회원을 구분, 식별할 수 있도록, 이용자가 선정하고 회사가 부여하는 문자와 숫자의 조합을 말합니다.</p>
+                        <p class="con_com">⑤ '비밀번호'라 함은 이용자가 부여 받은 아이디(ID)와 동일한 회원임을 확인하고 권익을 보호받기 위하여, 이용자가 선정한 문자와 숫자의 조합을 말합니다.</p>
+                        <p class="con_com">⑥ “쇼핑몰”이란 회사가 재화 또는 용역(이하 “재화 등”이라 함)을 이용자에게 제공하기 위하여 컴퓨터 등 정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 영업장을 말하며, 아울러 사이버몰을 운영하는 사업자의 의미로도 사용합니다.</p>
+                        <p class="con_com">⑦ “스마트 영수증”이란 회사가 운영하는 올리브영 매장(직영/가맹)에서 물품•재화 및 서비스 등을 구입한 이후 제공받는 지류 영수증, 쿠폰 등을 회사가 관리하는 어플리케이션(APP) 을 통해 제공하는 서비스 또는 그 모바일 영수증, 쿠폰 등 자체를 말합니다.</p>
+                        <p class="con_com">⑧ "어플리케이션(APP)”이란 회원이 회사의 쇼핑몰을 통해 물품 등을 구매하고 스마트영수증 서비스를 이용할 수 있도록 회사가 제공•관리하는 프로그램들을 말합니다.</p>
+                    </section>
+                    <section class="con_box" id="TermsOrder3">
+                        <h3 class="cont_tit">제3조 (약관의 명시와 개정)</h3>
+                        <p class="con_com">① 회사는 이 약관의 내용과 상호, 소재지, 대표자의 성명, 사업자등록번호, 연락처(전화, 전자우편 주소 등)를 이용자가 알 수 있도록 올리브영 사이트 초기서비스 화면에 게시합니다.</p>
+                        <p class="con_com">② 이용자는 기 정해진 회원가입절차를 거쳐 회원등록을 완료하면 본 약관에 동의한 것으로 간주하여 약관의 효력이 발생합니다.</p>
+                        <p class="con_com">③ 회사는 "약관의 규제에 관한 법률", "전자거래기본법", "전자서명법", "정보통신망 이용촉진 및 정보보호 등에 관한 법률(이하 '정보통신망법')", "방문판매 등에 관한 법률", "소비자기본법" 등 관련법을 위배하지 않는 범위에서 이 약관을 개정할 수 있습니다.</p>
+                        <p class="con_com">④ 회사가 약관을 개정할 경우에는 적용 일자 및 개정 사유를 명시하여 현행 약관과 함께 본 올리브영 사이트의 초기화면에 그 적용일자 7일 이전부터 적용일자 전일까지 공지하고, 회원이 등록한 전자우편(e-mail) 등을 이용하여 통지합니다. 다만, 회원에게 불리하게 약관내용을 변경하는 경우에는 최소한 30일 이상의 사전 유예기간을 두고 공지 또는 통지합니다. 이 경우 회사는 개정 내용을 회원이 알기 쉽도록 표시합니다.</p>
+                        <p class="con_com">⑤ 회사가 개정약관을 공지 또는 통지하면서 회원에게 전 항의 기간 내에 의사표시를 하지 않으면 의사표시가 표명된 것으로 본다는 뜻을 명확하게 공지 및 통지하였음에도 “이용자”가 명시적으로 거부의 의사표시를 하지 아니한 경우 회원이 개정약관에 동의한 것으로 봅니다.</p>
+                        <p class="con_com">⑥ 회사가 회원이 등록한 전자우편(e-mail) 등으로 본 약관이 개정된 사실 및 개정된 내용을 통지 또는 고지한 경우에는 적법한 통보를 완료한 것으로 봅니다.</p>
+                        <p class="con_com">⑦ 회원은 개정된 약관에 동의하지 않을 경우 회원 탈퇴를 요청할 수 있습니다.</p>
+                    </section>
+                    <section class="con_box" id="TermsOrder4">
+                        <h3 class="cont_tit">제4조 (서비스의 종류)</h3>
+                        <p class="con_com">① 회사는 다음의 서비스를 제공합니다.</p>
+                        <p class="con_com">1. 재화 또는 용역에 대한 정보 제공, 구매계약의 체결 및 이행</p>
+                        <p class="con_com">2. 스마트 영수증 서비스</p>
+                        <p class="con_com">3. 신상품평가단 참여 및 활동 기회 제공</p>
+                        <p class="con_com">4. 각종 이벤트 참여 기회 부여</p>
+                        <p class="con_com">5. 신상품 안내 및 회사소식 e-mail 제공</p>
+                        <p class="con_com">6. 기타 회사가 정하는 서비스</p>
+                        <br>
+                        <p class="con_com">② 회사가 경영상, 기술상 또는 운영상 필요하다고 판단될 경우 서비스의 내용을 변경할 수 있습니다.</p>
+                        <p class="con_com">③ 회사가 제공하는 서비스 외 CJ ONE 회원은 통합된 하나의 아이디와 비밀번호를 통해 CJ ONE 회원 약관에서 명기한 사이트를 이용할 수 있으며, 구체적인 내용은 CJ ONE 홈페이지 상의 “CJ ONE 이용 약관”에 따릅니다.</p>
+                    <h3 class="cont_tit">제4조의2 (올리브영 멤버십 서비스)</h3>
+                        <p class="con_com">① 회사는 CJ ONE서비스 외에 회사만의 독자적인 멤버십 서비스인 올리브영 멤버십 서비스를 회원에 제공할 수 있습니다. 관련하여 구체적인 내용은 올리브영 멤버십 서비스 운영정책에 의합니다.</p>
+                        <p class="con_com">② 올리브영 멤버십 운영정책(멤버십 혜택 포함)은 올리브영사이트 멤버십 메뉴를 통해 별도 고지하며, 회사의 사정에 따라 변경될 수 있습니다.</p>
+                    </section>
+                    <section class="con_box" id="TermsOrder5">
+                        <h3 class="cont_tit">제5조 (서비스의 제공 및 중단)</h3>
+                        <p class="con_com">① 회사는 업무상 또는 기술상 문제가 없는 한 365일 무휴 1일 24시간 서비스를 제공합니다.</p>
+                        <p class="con_com">② 회사는 특정 회원이나 일부 서비스에 대해 이용가능 시간을 별도로 지정할 수 있습니다. 이 경우, 사전에 게시하여 공지합니다.</p>
+                        <p class="con_com">③ 회사는 컴퓨터 등 정보통신 설비의 보수점검이나 교체 및 고장, 통신의 두절, 천재지변 등의 불가항력적인 사유가 발생한 경우에는 서비스 제공을 일시 중단할 수 있습니다.</p>
+                        <p class="con_com">④ 천재지변, 국가비상사태 등의 불가항력적인 경우를 제외하고는 사전에 이를 게시하거나 공지하고, 천재지변, 국가비상사태 등의 불가항력적인 사유로 서비스의 제공을 중지한 경우에는, 당해 사유가 해소되는 즉시 이를 게시하거나 회원에게 통지합니다.</p>
+                        <p class="con_com">⑤ 회사는 쇼핑몰 서비스가 국가비상사태 등의 불가항력적인 경우를 제외하고 일시적으로 중단됨으로 인하여 회원 또는 제3자가 입은 손해에 대해서 배상합니다. 다만 회사의 고의 또는 과실이 없음을 입증하는 경우에는 그러하지 않습니다.</p>
+                        <p class="con_com">⑥ 회사가 사업종목의 전환, 사업의 포기, 업체 간의 통합 등의 이유로 서비스를 제공할 수 없게 되는 경우에는 이용자에게 통지하고, 당초 제시한 조건에 따라 회원 기타 소비자에게 보상합니다. 다만, 회사가 보상기준 등을 고지하지 아니한 경우에는 포인트 또는 예치금 등을 쇼핑몰에서 통용되는 통화가치에 상응하는 현물 또는 현금으로 이용자에게 지급합니다.</p>
+                    </section>
+                    <section class="con_box" id="TermsOrder6">
+                        <h3 class="cont_tit">제6조 (이용 계약의 성립)</h3>
+                        <p class="con_com">① 이용자는 본 약관에 동의한 후 회사가 정한 양식에 따라 회원정보를 기입함으로써 회원가입을 신청합니다. 단, CJ ONE 회원인 경우는 별도 회원정보 기입 없이 개인정보보호 사항에 관하여 동의하고 올리브영 사이트에 가입함에 “동의함” 버튼을 신청함으로써 가입을 신청합니다.</p>
+                        <p class="con_com">② 이용자가 본 올리브영 사이트가 정한 소정 양식에 따라 회원가입을 신청할 때 본 약관을 읽고 "동의함" 버튼을 클릭하면 본 약관에 동의하는 것으로 간주합니다.</p>
+                        <p class="con_com">③ 회사는 제1항 및 제2항과 같이 회원으로 가입할 것을 신청한 이용자 중 다음 각 호에 해당하는 이용자에 대하여는 서비스의 제공을 거부하거나 제한할 수 있습니다.</p>
+                        <p class="con_com">1. 이용신청서에 기입한 이름이 본인의 실명이 아닐 경우</p>
+                        <p class="con_com">2. 이용신청서의 내용을 허위로 작성하였거나 기재를 누락하거나 오기가 있는 경우</p>
+                        <p class="con_com">3. 사회적 통념상 공공의 질서 및 사회 미풍양속을 해할 목적으로 신청한 경우</p>
+                        <p class="con_com">4. 회사의 정당한 업무 수행에 지장을 주는 경우</p>
+                        <p class="con_com">5. 회원이 자발적으로 회원탈퇴를 한 후 30일이 지나지 않은 경우</p>
+                        <p class="con_com">6. 만 14세 미만자인 경우</p>
+                        <p class="con_com">7. 기타 회원으로 등록하는 것이 회사의 기술상 현저히 지장이 있다고 판단되거나 이용신청자의 귀책사유로 이용승낙이 곤란한 경우</p>
+                        <br>
+                        <p class="con_com">④ 회원가입계약의 성립 시기는 회사의 승낙이 회원에게 도달한 시점으로 합니다.</p>
+                        <p class="con_com">⑤ 회원은 등록사항에 변경이 있는 경우, 즉시 전자우편 기타 방법으로 회사에 그 변경사항을 알려야 합니다.</p>
+                        <p class="con_com">⑥ 올리브영 사이트 신규회원으로 가입하기 위해서는 CJ ONE에도 가입하여야 하며, CJ ONE 가입 이후 올리브영 사이트의 회원가입은 본 약관에 정해진 절차에 따릅니다. CJ ONE 가입에 대한 자세한 사항은 “CJ ONE 이용 약관”에 상술된 바와 같습니다.</p>
+                    </section>
+                    <section class="con_box" id="TermsOrder7">
+                        <h3 class="cont_tit">제7조 (회원의 의무)</h3>
+                        <p class="con_com">① 회원은 공공의 질서 및 미풍양속을 저해하는 다음의 각 호에 관련되는 통신활동을 하여서는 안 됩니다.</p>
+                        <p class="con_com">1. 타 회원의 아이디(ID) 및 비밀번호를 사용하는 행위</p>
+                        <p class="con_com">2. 회사가 제공하는 서비스를 통하여 얻은 정보를 회사의 사전 승낙 없이 허가용도 이외의 목적으로 사용하거나 복제, 유통, 상업적으로 이용하려는 행위</p>
+                        <p class="con_com">3. 타 회원이나 제3자의 지적재산권 및 기타 권리를 침해하는 행위</p>
+                        <p class="con_com">4. 타 회원의 명예를 손상시키거나 고의적으로 불이익을 주는 행위</p>
+                        <p class="con_com">5. 범죄행위를 목적으로 하거나 범죄행위를 교사하는 내용 및 저질, 음란성 내용을 유포하는 행위 (기타 사회질서에 위배되는 행위)</p>
+                        <p class="con_com">6. 회사의 동의를 받지 아니하고 서비스의 내용과 관련 없는 내용 및 광고 등을 권유하거나, 게시 등 기타 다른 방법으로 전달하는 행위</p>
+                        <p class="con_com">7. 정보 서비스를 위해 하거나 혼란을 일으키는 해킹을 하거나 컴퓨터 바이러스 전염, 유포하는 행위</p>
+                        <p class="con_com">8. 기타 관계되는 법령에 위배되는 행위</p>
+                        <br>
+                        <p class="con_com">② 아이디(ID)와 비밀번호의 관리 책임은 회원 본인에게 있으며 관리소홀로 인해 발생되는 모든 결과의 책임은 회원 본인에게 있습니다.</p>
+                        <p class="con_com">③ 본 서비스에 있어 회원의 아이디(ID)는 동시에 중복 사용할 수 없도록 되어 있으므로 타인에게 노출된 경우 즉시 비밀번호를 바꾸고 회사에 이를 통보해야 합니다.</p>
+                        <p class="con_com">④ 회원은 본 약관에서 규정하는 사항 및 주의사항을 준수하여야 합니다.</p>
+                    </section>
+                    <section class="con_box" id="TermsOrder8">
+                        <h3 class="cont_tit">제8조 (회원 탈퇴 및 자격 상실 등)</h3>
+                        <p class="con_com">① 회원은 회사에 대하여 직접 서비스를 통하거나 서면 또는 전화, 전자 우편 등의 방법으로 탈퇴를 요청할 수 있으며, 회사는 탈퇴 요청이 접수되는 경우 그 즉시 당해 회원에 대하여 다음과 같이 처리합니다.</p>
+                        <p class="con_com">1. 올리브영 사이트 이용 중단 신청 시에는 CJ ONE 회원은 유지되나, 올리브영 사이트만 이용 제한됩니다.</p>
+                        <p class="con_com">2. CJ ONE 통합회원 탈퇴 요청시에는 올리브영 사이트 회원도 탈퇴 처리합니다.</p>
+                        <p class="con_com">② 회사는 회원이 다음 각 호에 해당하는 행위를 하였을 경우에는 사전 통지 없이 회원 자격을 제한하거나 정지시킬 수 있습니다.</p>
+                        <p class="con_com">1. 타인의 이용자번호(ID) 및 비밀번호를 도용한 경우</p>
+                        <p class="con_com">2. 이용 가입 시 이용계약에 위반되는 허위사실을 기입하였을 경우</p>
+                        <p class="con_com">3. 컴퓨터 바이러스를 고의로 유포시켰을 경우</p>
+                        <p class="con_com">4. 다른 이용자가 올리브영 사이트를 이용하는 것을 방해하거나 그 정보를 도용하는 등 전자거래질서를 위협하는 경우</p>
+                        <p class="con_com">5. 올리브영 사이트를 이용하여 기타 관련 법률과 이 약관이 금지하는 행위를 하거나 미풍양속에 반하는 행위를 하는 경우</p>
+                        <p class="con_com">6. 진위가 불분명한 사실 또는 허위의 사실을 적시하거나 유포하여 올리브영 사이트의 명예와 신용을 훼손하거나 업무를 방해하는 경우</p>
+                        <p class="con_com">7. 올리브영 사이트를 통해 구매한 재화 등을 정당한 이유 없이 상습적으로 취소 또는 반품하는 등의 방법으로 업무를 방해하는 경우</p>
+                        <p class="con_com">8. 직원에 대한 모욕, 협박 또는 음란한 언행 등으로 올리브영 사이트의 운영을 방해하는 경우</p>
+                        <p class="con_com">9. 재판매 목적으로 재화 등을 대량으로 중복 구매하여 “몰”의 거래질서를 방해하는 경우</p>
+                        <p class="con_com">10. 기타 본 약관 및 회사가 정한 이용신청요건이 미비 되었을 때</p>
+                        <br>
+                        <p class="con_com">③ 회사는 다음 각 호에 해당하는 회원가입신청에 대하여는 승낙을 유보할 수 있습니다.</p>
+                        <p class="con_com">1. 설비에 여유가 없는 경우</p>
+                        <p class="con_com">2. 기술상의 지장이 있는 경우</p>
+                        <p class="con_com">3. 기타 회원가입신청을 유보하지 않을 수 없는 불가피한 사유가 있는 경우</p>
+                        <p class="con_com">4. 기타 본 약관의 규정을 위반하는 경우</p>
+                        <br>
+                        <p class="con_com">④ 회사가 회원 자격을 제한, 정지 시킨 후, 동일한 행위가 2회 이상 반복되거나 30일 이내에 그 사유가 시정되지 아니하는 경우 회사는 회원 자격을 상실시킬 수 있습니다.</p>
+                        <p class="con_com">⑤ 회사가 회원자격을 상실시키는 경우에는 회원등록을 말소하며, 이 경우 회원에게 이를 통지하고, 회원등록 말소 전에 소명할 기회를 부여합니다.</p>
+                        <p class="con_com">⑥ 제3항의 경우, 회사는 회원에게 손해배상을 청구할 수 있습니다.</p>
+                    </section>
+                    <section class="con_box" id="TermsOrder9">
+                        <h3 class="cont_tit">제9조 (회사의 의무)</h3>
+                        <p class="con_com">① 회사는 관계법령 및 이 약관에서 금지하는 행위를 하지 않는다.</p>
+                        <p class="con_com">② 회사는 지속적이고 안정적인 서비스를 제공하기 위해 노력합니다.</p>
+                        <p class="con_com">③ 회사는 서비스를 이용하는 회원이 제기하는 의견이나 불만사항이 정당하다고 인정되면 즉시 처리합니다. 다만, 즉시 처리가 불가능한 경우에는 회원에게 그 사유와 처리되는 일정을 통지하여야 합니다.</p>
+                    </section>
+                    <section class="con_box" id="TermsOrder10">
+                        <h3 class="cont_tit">제10조 (통지)
+                        <p class="con_com">회사가 회원에 대한 통지를 하는경우, 회원정보를 기준으로 하여 회원이 지정한 SMS 수신번호 또는 전자우편 주소 등으로 할 수 있습니다.</p>
+                    </section>
+                    <section class="con_box" id="TermsOrder11">
+                        <h3 class="cont_tit">제11조 (개인정보보호)</h3>
+                        <p class="con_com">① 회사는 적법하고 공정한 수단에 의하여 서비스 이용계약의 성립 및 이행에 필요한 최소한의 개인정보를 수집합니다. 회사는 회원이 탈퇴하거나 제16조에 따라 동의를 철회하는 경우, 지체 없이 수집된 회원정보를 파기하는 등 필요한 조치를 취합니다. 단, 회사는 관계 법령 규정된 경우 및/또는 회원의 별도 동의를 득한 경우는 회사는 회원정보의 일부 또는 전부를 보유할 수 있습니다.</p>
+                        <p class="con_com">② 회사는 회원에게 보다 나은 서비스를 제공하기 위해 관심 분야 및 구매한 상품에 관한 추가정보를 수집할 수 있고, 이 경우 회원의 동의를 얻어야 합니다.</p>
+                        <p class="con_com">③ 회사의 자세한 개인정보보호 정책에 대해서는 ‘개인정보 처리방침’을 참조하여 주시기 바랍니다.</p>
+                    </section>
+                    <section class="con_box" id="TermsOrder12">
+                        <h3 class="cont_tit">제12조 (정보의 제공)</h3>
+                        <p class="con_com">회사는 회원의 동의 하에 회원이 서비스를 이용하는 데 필요하다고 인정되는 다양한 정보를 전자우편이나 기타의 방법 등으로 회원에게 제공할 수 있으나, 회원은 언제든지 회사에 대하여 전자 우편으로 수신을 거부하는 의사를 표시할 수 있습니다.</p>
+                    </section>
+                    <section class="con_box" id="TermsOrder13">
+                        <h3 class="cont_tit">제13조 (게시물 삭제)</h3>
+                        <p class="con_com">회사는 회원이 게시하거나 제공하는 서비스 내용이 다음 각 호에 해당한다고 판단될 경우 사전 통지 없이 삭제할 수 있습니다.</p>
+                        <p class="con_com">① 다른 회원 또는 제3자를 비방하거나 명예를 손상시키는 내용인 경우</p>
+                        <p class="con_com">② 다량의 정보를 전송하여 서비스의 안정적 운영을 방해하는 경우</p>
+                        <p class="con_com">③ 허위 사실 유포 및 수신자의 의사에 반하는 광고성 정보를 전송하는 경우</p>
+                        <p class="con_com">④ 공공질서 및 미풍양속에 위반되는 내용인 경우</p>
+                        <p class="con_com">⑤ 제3자의 지적재산권을 침해하는 내용인 경우</p>
+                        <p class="con_com">⑥ 기타 이 약관이나 법령에 위반된다고 판단되는 경우</p>
+                        <br>
+                    </section>
+                    <section class="con_box" id="TermsOrder14">
+                        <h3 class="cont_tit">제14조 (계약사항의 변경)</h3>
+                        <p class="con_com">회원이 서비스이용계약의 내용을 변경하고자 하는 경우에는 회사와 별도의 합의를 하여야 합니다.</p>
+                    </section>
+                    <section class="con_box" id="TermsOrder15">
+                        <h3 class="cont_tit">제15조 (지적재산권)</h3>
+                        <p class="con_com">① 서비스와 관련된 저작권 등 일체의 지적재산권은 회사에 귀속합니다.</p>
+                        <p class="con_com">② 이용자는 서비스를 이용함으로써 얻은 정보를 회사의 사전 승낙 없이 복제, 송신, 출판, 배포, 방송 기타 방법에 의하여 영리목적으로 이용하거나 제3자에게 이용하게 하여서는 아니 됩니다.</p>
+                        <p class="con_com">③ 올리브영 사이트에 회원이 게재한자료와 게시물에 대한 권리와 책임은 게시 당사자에게 있습니다. 단, 회사는 서비스 운영 및 상품의 판촉, 홍보 등 마케팅을 위하여 이용자가 작성한 리뷰, Q&A등 각종 자료와 게시물을 이용하거나 회사가 제휴한 채널에 복제, 배포, 전송, 전시할 수 있으며, 본질적인 내용에 변경을 가하지 않는 범위 내에서 이를 수정, 편집하여 활용할 수 있습니다.</p>
+                        <p class="con_com">④ 회사는 개별 서비스별로 자료 및 게시물과 관련된 세부이용지침을 정하여 시행할 수 있습니다.</p>
+                    </section>
+                    <section class="con_box" id="TermsOrder16">
+                        <h3 class="cont_tit">제16조 (구매계약의 성립)</h3>
+                        <p class="con_com">① 올리브영 사이트에서 물품 등을 구매하려는 회원은 다음 또는 이와 유사한 방법에 의하여 구매를 신청하며, 회사는 이용자가 구매신청을 함에 있어서 다음의 각 내용을 알기 쉽게 제공하여야 합니다.</p>
+                        <p class="con_com">1. 재화 등의 검색 및 선택
+                        <p class="con_com">2. 받는 사람의 성명, 주소, 전화번호, 전자우편주소(또는 이동전화번호) 등의 입력</p>
+                        <p class="con_com">3. 약관내용, 청약철회권이 제한되는 서비스, 배송료․설치비 등의 비용부담과 관련한 내용에 대한 확인</p>
+                        <p class="con_com">4. 이 약관에 동의하고 전 호의 사항을 확인하거나 거부하는 표시 (예, 마우스 클릭)</p>
+                        <p class="con_com">5. 재화 등의 구매신청 및 이에 관한 확인 또는 “몰”의 확인에 대한 동의</p>
+                        <p class="con_com">6. 결제방법의 선택</p>
+                        <p class="con_com">7. 기타 회사가 별도로 정하는 절차</p>
+                        <br>
+                        <p class="con_com">② 회사가 제3자에게 회원의 개인정보를 제공∙위탁할 필요가 있는 경우 실제 구매신청 시 회원의 동의를 받아야 하며, 회원가입 시 미리 포괄적으로 동의를 받지 않습니다.</p>
+                        <p class="con_com">③ 회사는 구매신청에 대하여 다음 각 호에 해당하면 승낙하지 않을 수 있습니다. 다만, 미성년자와 계약을 체결하는 경우에는 법정대리인의 동의를 얻지 못하면 미성년자 본인 또는 법정대리인이 계약을 취소할 수 있다는 내용을 고지합니다.</p>
+                        <p class="con_com">1. 신청 내용에 허위, 기재누락, 오기가 있는 경우</p>
+                        <p class="con_com">2. 미성년자가 담배, 주류 등 청소년보호법에서 금지하는 재화 및 용역을 구매하는 경우</p>
+                        <p class="con_com">3. 기타 구매신청에 승낙하는 것이 “몰” 기술상 현저히 지장이 있다고 판단하는 경우</p>
+                        <br>
+                        <p class="con_com">④ 회사의 승낙이 수신확인통지형태로 회원에게 도달한 시점에 계약이 성립한 것으로 봅니다. 이 때 회사의 승낙의 의사표시에는 이용자의 구매 신청에 대한 확인 및 판매가능 여부, 구매신청의 정정 취소 등에 관한 정보 등을 포함합니다.</p>
+                    </section>
+                    <section class="con_box" id="TermsOrder17">
+                        <h3 class="cont_tit">제17조 (지급방법)</h3>
+                        <p class="con_com">회원은 올리브영 사이트에서 구매한 재화 또는 용역에 대하여 다음 각 호의 방법 중 하나로 대금을 지급 할 수 있습니다. 단, 회사는 이용자의 지급방법에 대하여 재화 등의 대금에 어떠한 명목의 수수료도 추가하여 징수할 수 없습니다.
+                        <p class="con_com">1. 폰뱅킹, 인터넷뱅킹, 메일 뱅킹 등의 각종 계좌이체</p>
+                        <p class="con_com">2. 선불카드, 직불카드, 신용카드 등의 각종 카드 결제</p>
+                        <p class="con_com">3. 온라인무통장입금</p>
+                        <p class="con_com">4. 전자화폐에 의한 결제</p>
+                        <p class="con_com">5. CJ ONE 포인트 등 포인트에 의한 결제</p>
+                        <p class="con_com">6. 회사와 계약을 맺었거나 회사가 인정한 상품권에 의한 결제</p>
+                        <p class="con_com">7. 기타 전자적 지급 방법에 의한 대금 지급 등</p>
+                        <br>
+                    </section>
+                    <section class="con_box" id="TermsOrder18">
+                        <h3 class="cont_tit">제18조 (수신확인통지•구매신청 변경 및 취소)</h3>
+                        <p class="con_com">① 회사는 회원의 구매신청이 있는 경우 회원에게 수신확인통지를 합니다.</p>
+                        <p class="con_com">② 수신확인통지를 받은 회원은 의사표시의 불일치 등이 있는 경우에는 수신확인통지를 받은 후 즉시 구매신청 변경 및 취소를 요청할 수 있고, 회사는 배송 전에 회원 요청이 있는 경우에는 지체 없이 그 요청에 따라 처리하여야 합니다. 다만 이미 대금을 지불한 경우에는 청약철회 등에 관한 규정에 따릅니다.</p>
+                    </section>
+                    <section class="con_box" id="TermsOrder19">
+                        <h3 class="cont_tit">제19조 (재화 등의 공급)</h3>
+                        <p class="con_com">① 회사는 회원과 재화 등의 공급시기에 관하여 별도의 약정이 없는 이상, 회원이 청약을 한 날부터 7일 이내에 재화 등을 배송할 수 있도록 주문제작, 포장 등 기타의 필요한 조치를 취합니다. 다만, 회사는 이미 재화 등의 대금의 전부 또는 일부를 받은 경우에는 대금의 전부 또는 일부를 받은 날부터 3영업일 이내에 조치를 취합니다. 다만, 회원과 회사간 재화 등의 공급 시기에 관하여 별도의 약정이 있는 경우에는 그러하지 아니합니다. 이때 회사는 회원이 재화 등의 공급 절차 및 진행 사항을 확인할 수 있도록 적절한 조치를 합니다.</p>
+                        <p class="con_com">② 회사는 회원이 구매한 재화에 대해 배송수단, 수단별 배송비용 부담자, 수단별 배송기간 등을 명시합니다. 만약 회사가 약정 배송기간을 초과한 경우에는 그로 인한 손해를 배상하여야 합니다. 다만 회사가 고의•과실이 없음을 입증한 경우에는 그러하지 아니합니다.</p>
+                    </section>
+                    <section class="con_box" id="TermsOrder20">
+                        <h3 class="cont_tit">제20조 (환급)</h3>
+                        <p class="con_com">회사는 회원이 구매 신청한 재화 등이 품절 등의 사유로 인도 또는 제공을 할 수 없을 때에는 지체 없이 그 사유를 이용자에게 통지하고 사전에 재화 등의 대금을 받은 경우에는 대금을 받은 날부터 3영업일 이내에 환급하거나 환급에 필요한 조치를 취합니다.</p>
+                    </section>
+                    <section class="con_box" id="TermsOrder21">
+                        <h3 class="cont_tit">제21조 (청약철회 등)</h3>
+                        <p class="con_com">① 회사와 재화 등의 구매에 관한 계약을 체결한 회원은 「전자상거래 등에서의 소비자보호에 관한 법률」 제13조 제2항에 따른 계약내용에 관한 서면을 받은 날(그 서면을 받은 때보다 재화 등의 공급이 늦게 이루어진 경우에는 재화 등을 공급받거나 재화 등의 공급이 시작된 날을 말합니다)부터 15일 이내에는 청약의 철회를 할 수 있습니다. 다만, 청약철회에 관하여 「전자상거래 등에서의 소비자보호에 관한 법률」에 달리 정함이 있는 경우에는 동 법 규정에 따르고, 회사가 청약철회의 기간을 달리 정하여 미리 이용자에게 고지한 경우에는 그 기간 내에 한하여 청약을 철회할 수 있습니다.</p>
+                        <p class="con_com">② 회원은 재화 등을 배송 받은 경우 다음 각 호의 1에 해당하는 경우에는 반품 및 교환을 할 수 없습니다.</p>
+                        <br>
+                        <p class="con_com">1. 회원에게 책임 있는 사유로 재화 등이 멸실 또는 훼손된 경우(다만, 재화 등의 내용을 확인하기 위하여 포장 등을 훼손한 경우에는 청약철회를 할 수 있습니다)</p>
+                        <p class="con_com">2. 회원의 사용 또는 일부 소비에 의하여 재화 등의 가치가 현저히 감소한 경우</p>
+                        <p class="con_com">3. 시간의 경과에 의하여 재판매가 곤란할 정도로 재화 등의 가치가 현저히 감소한 경우</p>
+                        <p class="con_com">4. 같은 성능을 지닌 재화 등으로 복제가 가능한 경우 그 원본인 재화 등의 포장을 훼손한 경우</p>
+                        <p class="con_com">5. 용역 또는 「문화산업진흥 기본법」 제2조제5호의 디지털콘텐츠의 제공이 개시된 경우(다만, 가분적 용역 또는 가분적 디지털콘텐츠로 구성된 계약의 경우에는 제공이 개시되지 아니한 부분에 대하여는 그러하지 아니합니다)</p>
+                        <p class="con_com">6. 회사가 특정 재화 등에 대하여 청약철회 시 회복할 수 없는 중대한 피해가 예상되어 사전에 청약철회 제한에 관하여 고지하고, 동의가 이루어진 경우</p>
+                        <br>
+                        <p class="con_com">③ 전항 제2호 내지 제4호의 경우에 회사가 사전에 청약철회 등이 제한되는 사실을 쉽게 알 수 있는 곳에 명기하거나 시용상품을 제공하는 등의 조치를 하지 않았다면 청약철회 등이 제한되지 않습니다.</p>
+                        <p class="con_com">④ 제1항 및 제2항의 규정에도 불구하고 재화 등의 내용이 표시•광고 내용과 다르거나 계약내용과 다르게 이행된 때에는 당해 재화 등을 공급받은 날부터 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날부터 30일 이내에 청약철회 등을 할 수 있습니다.</p>
+                    </section>
+                    <section class="con_box" id="TermsOrder22">
+                        <h3 class="cont_tit">제22조 (청약철회 등의 효과)</h3>
+                        <p class="con_com">① 회사는 회원으로부터 재화 등을 반환 받은 경우 3영업일 이내에 이미 지급받은 재화 등의 대금을 환급하거나 환급에 필요한 조치를 취합니다. 이 경우 회사가 회원에게 재화 등의 환급을 지연한 때에는 그 지연기간에 대하여 「전자상거래 등에서의 소비자보호에 관한 법률 시행령」 제21조의2에서 정하는 지연이자율을 곱하여 산정한 지연이자를 지급합니다.</p>
+                        <p class="con_com">② 회사는 위 대금을 환급함에 있어서 회원이 신용카드 또는 법령에서 정한 결제 수단으로 재화 등의 대금을 지급한 때에는 지체 없이 당해 결제수단을 제공한 사업자로 하여금 재화 등의 대금의 청구를 정지 또는 취소하도록 요청합니다.</p>
+                        <p class="con_com">③ 청약철회 등의 경우 공급받은 재화 등의 반환에 필요한 비용은 회원이 부담합니다. 회사는 회원에게 청약철회 등을 이유로 위약금 또는 손해배상을 청구하지 않습니다. 다만 재화 등의 내용이 표시•광고 내용과 다르거나 계약내용과 다르게 이행되어 청약철회 등을 하는 경우 재화 등의 반환에 필요한 비용은 회사가 부담합니다.</p>
+                        <p class="con_com">④ 이미 재화 등이 일부 사용 또는 일부 소비된 경우에 회사는 그 재화 등의 사용 또는 일부 소비에 의하여 회원이 얻은 이익 또는 그 재화 등의 공급에 소요된 비용에 상당하는 금액으로서 법령에서 정하는 범위의 금액의 지급을 이용자에게 청구할 수 있습니다.</p>
+                        <p class="con_com">⑤ 상품을 구매하여 CJONE포인트를 지급 받은 경우 해당 상품의 취소시 지급 받은 CJ ONE 포인트를 환급해야 취소가 가능합니다.</p>
+                        <p class="con_com">⑥ 이용자가 재화 등을 제공받을 때 발송비를 부담한 경우에 “몰”은 청약철회 시 그 비용을 누가 부담하는지를 이용자가 알기 쉽도록 명확하게 표시합니다.</p>
+                    </section>
+                    <section class="con_box" id="TermsOrder23">
+                        <h3 class="cont_tit">제23조 (스마트 영수증 서비스)</h3>
+                        <p class="con_com">① 회원은 본 약관에 동의함으로서 스마트 영수증 서비스를 이용 할 수 있습니다.</p>
+                        <p class="con_com">② 회사는 다음 각 호에 해당하는 경우 올리브영 스마트 영수증 서비스의 전부 또는 일부를 제한하거나 중지할 수 있습니다.</p>
+                        <p class="con_com">1. 컴퓨터 등 정보통신설비의 보수점검/교체 및 고장, 통신의 두절 등의 사유가 발생한 경우
+                        <p class="con_com">2. 서비스를 위한 설비의 보수 등 공사로 인해 부득이한 경우
+                        <p class="con_com">3. 정전, 제반 설비의 장애 또는 이용량의 폭주 등으로 정상적인 서비스 이용에 지장이 있는 경우
+                        <p class="con_com">4. 스마트 영수증 회원이 회사의 영업활동을 방해하는 경우
+                        <p class="con_com">5. 스마트 영수증 서비스의 제공업자와의 계약종료 등 회사의 제반 사정으로 올리브영 스마트 영수증 서비스를 유지할 수 없는 경우</p>
+                        <p class="con_com">6. 스마트 영수증 회원이 신용불량자에 해당하는 등의 이유로 가맹점 내지 결제기관의 요구에 따라 승인 거절되는 경우</p>
+                        <p class="con_com">7. 기타 천재지변, 국가비상사태 등 불가항력적 사유가 있는 경우</p>
+                        <br>
+
+                        <p class="con_com">③ 회사는 24개월 이전 사용내역에 대해서만 스마트 영수증을 제공하므로, 그 기간 이후에도 영수증을 보관하고자 하는 경우에는 별도로 저장하거나 출력하여야 합니다.</p>
+                        <p class="con_com">④ 회원은 언제라도 올리브영 스마트 영수증 서비스의 해지를 요구할 수 있으며, 회사는 지체 없이 필요한 조치를 취합니다.</p>
+                    </section>
+                    <section class="con_box" id="TermsOrder24">
+                        <h3 class="cont_tit">제24조 (“연결몰”과 “피연결몰” 간의 관계)</h3>
+                        <p class="con_com">① 상위 “몰”과 하위 “몰”이 하이퍼링크(예: 하이퍼링크의 대상에는 문자, 그림 및 동화상 등이 포함됨)방식 등으로 연결된 경우, 전자를 “연결몰”(웹 사이트)이라고 하고 후자를 “피연결몰”(웹사이트)이라고 합니다.</p>
+                        <p class="con_com">② “연결몰”은 “피연결몰”이 독자적으로 제공하는 재화 등에 의하여 이용자와 행하는 거래에 대해서 보증 책임을 지지 않는다는 뜻을 “연결몰”의 초기화면 또는 연결되는 시점의 팝업화면으로 명시한 경우에는 그 거래에 대한 보증 책임을 지지 않습니다.</p>
+                    </section>
+                    <section class="con_box" id="TermsOrder25">
+                        <h3 class="cont_tit">제25조 (손해배상)</h3>
+                        <p class="con_com">양 당사자가 고의 또는 과실로 관련 법령 및 본 약관 등을 위반하여 상대방에게 손해가 발생하는 경우 귀책 당사자는 해당 손해를 배상해야 합니다.</p>
+                    </section>  
+                    <section class="con_box" id="TermsOrder26">
+                        <h3 class="cont_tit">제26조 (책임의 면제)</h3>
+                        <p class="con_com">① 회사는 회원의 귀책사유로 인해서 발생된 손해에 대해서 책임을 지지 않습니다.</p>
+                        <p class="con_com">② 회사는 회원 또는 제3자가 게재한 정보, 자료, 사실과 관련하여, 동 정보 등의 허위성 및 위법성을 객관적으로 인지•확인한 경우를 제외하고, 거래 의사의 존부 및 진정성, 정보나 자료 등의 완전성, 안정성, 적법성 및 타인의 권리에 대한 비침해성 등을 보증하지 않으며 이에 대해서는 책임을 지지 않습니다</p>
+                        <p class="con_com">③ 회사는 천재지변 등의 불가항력으로 인해 서비스를 제공할 수 없게 되어 발생한 손해에 대하여는 책임을 지지 않습니다</p>
+                        <p class="con_com">④ 회사가 제휴 사이트와의 계약에 의해 서비스를 제공하는 경우, 제휴 사이트가 제공하는 서비스로 인하여 발생하는 어떠한 손해에 대하여도 책임을 지지 않습니다.</p>
+                    </section>
+                    <section class="con_box" id="TermsOrder27">
+                        <h3 class="cont_tit">제27조 (분쟁 시 준거법과 관할법원)</h3>
+                        <p class="con_com">① 회사와 회원은 서비스와 관련하여 발생한 분쟁을 원만하게 해결하기 위하여 필요한 모든 노력을 하여야 합니다.</p>
+                        <p class="con_com">② 전항의 경우에도 불구하고 분쟁으로 인한 소송이 제기될 경우 동 소송은 제소 당시의 이용자의 주소에 의하고, 주소가 없는 경우에는 거소를 관할하는 지방법원의 전속관할로 합니다. 다만, 제소 당시 이용자의 주소 또는 거소가 분명하지 않거나 외국 거주자의 경우에는 민사소송법상의 관할법원에 제기하는 것으로 합니다.</p>
+                        <p class="con_com">③ 회사와 이용자간에 발생하는 분쟁에 관하여는 대한민국법을 적용합니다.</p>
+                    </section>
+                    <section class="con_box">
+                        <h3 class="cont_tit">부칙</h3>
+                        <h3 class="cont_tit">제1조 (약관의 효력)</h3>
+                        <br>
+                        <p class="con_com">1. 이 약관은 2019년 12월 1일부터 시행됩니다.</p>
+                        <p class="con_com">2. 본 약관 시행 전에 이미 가입된 회원은 변경 전의 약관이 적용됨을 원칙으로 합니다. 다만 공지된 바에 따라 변경된 약관의 시행일 이후에도 본 약관에 따른 서비스를 계속 이용하는 경우에는 변경 후의 약관에 대해 동의한 것으로 봅니다.</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="blank"></div>
+    </main>
+    <footer class="ft">
+        <div class="ft_wrap">
+            <div class="ft_logo">
+                <img src="./img/logo_s.png" alt="하단로고">
+            </div>
+            <nav id="fnb">
+                <ul>
+                    <li><a href="privacy.html"><strong>개인정보처리방침</strong></a></li>
+                    <li><a href="terms.html">이용약관</a></li>
+                    <li><a href="regal.html">법적고지</a></li>
+                </ul>
+            </nav>
+            <div class="addr">
+                <span><strong>씨제이올리브영 주식회사</strong></span> 
+                <span>대표이사 : 구창근</span> 
+                <span>사업자등록번호 : 809-81-01574</span> <br>
+                <span>고객센터 : 1522-0882</span>
+                <span>주소 : (04323) 서울특별시 용산구 한강대로 366 (동자동) 6층</span>
+            </div>
+            <p class="copyright">Copyright ©2019 CJ OliveYoung. All rights reserved.</p>
+        </div>    
+    </footer>
+</div>
+<nav id="menu">
+    <ul class="menu_1st">
+        <li class="sub_has">
+            <a href="about1.html" class="dp1">About</a>
+            <ul class="sub">
+                <li><a href="about1.html" class="dp2">Brand Story</a></li>
+                <li><a href="about2.html" class="dp2">Awards</a></li>
+                <li><a href="about3.html" class="dp2">RARA StyleR</a></li>
+            </ul>
+        </li>
+        <li class="sub_has">
+            <a href="product1_all.html" class="dp1">Products</a>
+            <ul class="sub">
+                <li class="detail_has">
+                    <a href="product1_all.html" class="dp2">Greentea Skin Care</a>
+                    <ul class="detail">
+                        <li>
+                            <a href="product1.html#page1" class="dp3">
+                                <img src="./img/back/greentea01.png" alt="그린티 미스트 토너">
+                                <span class="dp3_txt">그린티 미스트 토너</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product1.html#page2" class="dp3">
+                                <img src="./img/back/greentea02.png" alt="그린티 스킨 세럼">
+                                <span class="dp3_txt">그린티 스킨 세럼</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product1.html#page3" class="dp3">
+                                <img src="./img/back/greentea03.png" alt="그린티 릴리프 크림">
+                                <span class="dp3_txt">그린티 릴리프 크림</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product1.html#page4" class="dp3">
+                                <img src="./img/back/greentea04.png" alt="그린티 수퍼 써드 오일">
+                                <span class="dp3_txt">그린티 수퍼 써드 오일</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product1.html#page5" class="dp3">
+                                <img src="./img/back/greentea05.png" alt="그린티 악산성 클렌징폼">
+                                <span class="dp3_txt">그린티 악산성 클렌징폼</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product1.html#page6" class="dp3">
+                                <img src="./img/back/greentea06.png" alt="그린티 트러블 버블폼">
+                                <span class="dp3_txt">그린티 트러블 버블폼</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product1.html#page7" class="dp3">
+                                <img src="./img/back/greentea07.png" alt="그린티 퓨어 클렌징 오일">
+                                <span class="dp3_txt">그린티 퓨어 클렌징 오일</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product1.html#page8" class="dp3">
+                                <img src="./img/back/greentea08.png" alt="그린티 약산성 립앤아이 리무버">
+                                <span class="dp3_txt">그린티 약산성 립앤아이 리무버</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="detail_has">
+                    <a href="product2_all.html" class="dp2">Basic Skin Care</a>
+                    <ul class="detail">
+                        <li>
+                            <a href="product2.html#page1" class="dp3">
+                                <img src="./img/back/basicskincare01.png" alt="컴포트 하이드레이팅 워터">
+                                <span class="dp3_txt">컴포트 하이드레이팅 워터</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product2.html#page2" class="dp3">
+                                <img src="./img/back/basicskincare02.png" alt="에센셜 부스팅 하이드레이터">
+                                <span class="dp3_txt">에센셜 부스팅 하이드레이터</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product2.html#page3" class="dp3">
+                                <img src="./img/back/basicskincare03.png" alt="리페어링 액티브 세럼">
+                                <span class="dp3_txt">리페어링 액티브 세럼</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product2.html#page4" class="dp3">
+                                <img src="./img/back/basicskincare04.png" alt="인텐스 배리어 크림">
+                                <span class="dp3_txt">인텐스 배리어 크림</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="detail_has">
+                    <a href="product3_all.html" class="dp2">Sun Care</a>
+                    <ul class="detail">
+                        <li>
+                            <a href="product3.html#page1" class="dp3">
+                                <img src="./img/back/suncare01.png" alt="그린티 시카 선로션">
+                                <span class="dp3_txt">그린티 시카 선로션</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product3.html#page2" class="dp3">
+                                <img src="./img/back/suncare02.png" alt="그린티 시카 선스틱">
+                                <span class="dp3_txt">그린티 시카 선스틱</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="detail_has">
+                    <a href="product4_all.html" class="dp2">Home Fragrance</a>
+                    <ul class="detail">
+                        <li>
+                            <a href="product4.html#page1" class="dp3">
+                                <img src="./img/back/homefragrance01.png" alt="센티드 디퓨저">
+                                <span class="dp3_txt">센티드 디퓨저</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product4.html#page2" class="dp3">
+                                <img src="./img/back/homefragrance02.png" alt="센티드 캔들">
+                                <span class="dp3_txt">센티드 캔들</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product4.html#page3" class="dp3">
+                                <img src="./img/back/homefragrance03.png" alt="드라이플라워 디퓨저">
+                                <span class="dp3_txt">드라이플라워 디퓨저</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product4.html#page4" class="dp3">
+                                <img src="./img/back/homefragrance04.png" alt="선인장 디퓨저">
+                                <span class="dp3_txt">선인장 디퓨저</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product4.html#page5" class="dp3">
+                                <img src="./img/back/homefragrance05.png" alt="마이 러블리 펫 디퓨저">
+                                <span class="dp3_txt">마이 러블리 펫 디퓨저</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product4.html#page6" class="dp3">
+                                <img src="./img/back/homefragrance06.png" alt="드라이플라워 센티드 카드">
+                                <span class="dp3_txt">드라이플라워 센티드 카드</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="detail_has">
+                    <a href="product5_all.html" class="dp2">Life Fragrance</a>
+                    <ul class="detail">
+                        <li>
+                            <a href="product5.html#page1" class="dp3">
+                                <img src="./img/back/lifefragrance01.png" alt="볼륨 에디션">
+                                <span class="dp3_txt">볼륨 에디션</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product5.html#page2" class="dp3">
+                                <img src="./img/back/lifefragrance02.png" alt="라이프 프래그런스">
+                                <span class="dp3_txt">라이프 프래그런스</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="detail_has">
+                    <a href="product6_all.html" class="dp2">Body Care</a>
+                    <ul class="detail">
+                        <li>
+                            <a href="product6.html#page1" class="dp3">
+                                <img src="./img/back/bodycare01.png" alt="버블 바쓰">
+                                <span class="dp3_txt">버블 바쓰</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product6.html#page2" class="dp3">
+                                <img src="./img/back/bodycare02.png" alt="바쓰 솔트">
+                                <span class="dp3_txt">바쓰 솔트</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product6.html#page3" class="dp3">
+                                <img src="./img/back/bodycare03.png" alt="드라이플라워 콜온&핸드크림">
+                                <span class="dp3_txt">드라이플라워 콜온&핸드크림</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product6.html#page4" class="dp3">
+                                <img src="./img/back/bodycare04.png" alt="드라이플라워 바디&헤어 미스트">
+                                <span class="dp3_txt">드라이플라워 바디&헤어 미스트</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="moment.html" class="dp1">RARA Moments</a>
+        </li>
+        <li>
+            <a href="store.html" class="dp1">Stores</a>
+        </li>
+    </ul>
+</nav>
+<nav id="search">
+    <div id="search_form">
+        <ul class="fieldset">
+            <li class="item_form">
+                <div class="search_con">
+                    <input type="text" id="keyword" placeholder="상품명을 입력해주세요">
+                    <input type="submit" id="search_submit" class="search_btn">
+                </div>
+            </li>
+            <li class="item_div">인기 검색어</li>
+            <li class="item"><a href="">1. 그린티 시카 선로션</a></li>
+            <li class="item"><a href="">2. 그린티 약산성 클렌징폼</a></li>
+            <li class="item"><a href="">3. 센티드 디퓨저</a></li>
+            <li class="item"><a href="">4. 라이프 프래그런스</a></li>
+            <li class="item"><a href="">5. 버블 바쓰</a></li>
+            <li class="item_btn">
+                <label for="search_ck" class="search_close">닫기</label>
+            </li>
+        </ul>
+        <script>
+        $("#search_submit").click(function(){
+            var data = $("#keyword").val();
+            if(data=="") { alert("검색어를 입력해주세요"); } else { data.submit(); location.href = "search_result.html"; }
+        });    
+        </script>
+    </div>
+</nav>
+<!-- <script src="main.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Collapsible&amp;Accordion</title>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; }
+    ul { list-style: none; }
+    a { text-decoration:none; }
+    
+    .wrap { clear:both; padding: 2em; }
+    .tit { font-size:2em; padding-top: 2em; padding-bottom: 1em; text-align: center; }
+        
+    .collap { width: 900px; margin: 1em auto; }
+    .collap li { clear:both; position:relative; width: 140px; }
+    .collap li label { display:block; width: 140px; line-height: 40px; border:1px solid #333; padding:0.2em; padding-left: 1em; font-size:1.4em;    color:deeppink; 
+        box-sizing:border-box; cursor:pointer; } 
+    .collap li .sub li a { display:block; text-indent:1.5em; color:deepskyblue; }
+    #collap1 .sub { display:none; } 
+    .ck { display:none; }    
+    #ck1:checked ~ #collap1 .item1 .sub { display:block; }  
+    #ck2:checked ~ #collap1 .item2 .sub { display:block; }
+    #ck3:checked ~ #collap1 .item3 .sub { display:block; }
+    #ck4:checked ~ #collap1 .item4 .sub { display:block; }
+        
+    .collap li.item1:after, .collap li.item2:after, .collap li.item3:after, .collap li.item4:after { content:"↓"; position:absolute; right:10px; top:10px; }
+        
+    #ck1:checked ~ #collap1 li.item1:after { content:"↑"; }    
+    #ck2:checked ~ #collap1 li.item2:after { content:"↑"; }
+    #ck3:checked ~ #collap1 li.item3:after { content:"↑"; }
+    #ck4:checked ~ #collap1 li.item4:after { content:"↑"; } 
+    </style>    
+    <style>
+    .accordion1 { width: 900px; margin: 1em auto; }
+    .accordion1 li { clear:both; position:relative; width: 140px;
+         transition:0.5s; overflow:hidden; }
+    .accordion1 li label { display:block; width: 140px; line-height: 40px; border:1px solid #333;  padding-left: 1em; font-size:1.4em;    color:deeppink; position:relative;
+        box-sizing:border-box; cursor:pointer; }     
+    .accordion1 li .sub li a { display:block; text-indent:1.5em; color:#fff; background-color:#333; height: 40px; line-height: 40px; }
+    .accordion1 li .sub { width:200px; display:none; } 
+    .ra { display:none; }    
+    .ra:checked ~ .sub { display:block; }
+    .ra ~ label:after { content:"↓"; position:absolute; right:10px; top:0px; }       
+    .ra:checked ~ label:after { content:"↑"; }   
+    </style>    
+        
+    <style>    
+    .accordion2 { width: 900px; margin: 1em auto; }
+    .accordion2 li { clear:both; position:relative; width: 140px;
+         transition:0.5s; height: 41px; overflow:hidden; }
+    .accordion2 li label { display:block; width: 140px; line-height: 40px; border:1px solid #333;  padding-left: 1em; font-size:1.4em;    color:deeppink; 
+        box-sizing:border-box; cursor:pointer; }     
+    .accordion2 li .sub li a { display:block; text-indent:1.5em; color:#fff; background-color:#333; height: 40px; line-height: 40px; }
+    .accordion2 li .sub { width:200px; position:absolute; top:41px; left:10px; } 
+    .ra { display:none; }    
+    #ra5:checked ~ #accor2 .item1 { height: 240px; }  
+    #ra6:checked ~ #accor2 .item2 { height: 240px; }
+    #ra7:checked ~ #accor2 .item3 { height: 240px; }
+    #ra8:checked ~ #accor2 .item4 { height: 240px; }
+    .accordion2 li.item1:after, .accordion2 li.item2:after, .accordion2 li.item3:after, .accordion2 li.item4:after { content:"↓"; position:absolute; right:10px; top:10px; }       
+    #ra5:checked ~ #accor2 li.item1:after { content:"↑"; }    
+    #ra6:checked ~ #accor2 li.item2:after { content:"↑"; }
+    #ra7:checked ~ #accor2 li.item3:after { content:"↑"; }
+    #ra8:checked ~ #accor2 li.item4:after { content:"↑"; }
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h2 class="tit">Collapsible(컬랩시블) - checkbox</h2>
+        <input type="checkbox" class="ck" id="ck1">
+        <input type="checkbox" class="ck" id="ck2">
+        <input type="checkbox" class="ck" id="ck3">
+        <input type="checkbox" class="ck" id="ck4">
+        <ul class="collap" id="collap1">
+            <li class="item1">
+                <label for="ck1">메인1</label>
+                <ul class="sub">
+                    <li><a href="">서브11</a></li>
+                    <li><a href="">서브12</a></li>
+                    <li><a href="">서브13</a></li>
+                    <li><a href="">서브14</a></li>
+                    <li><a href="">서브15</a></li>
+                </ul>
+            </li>
+            <li class="item2">
+                <label for="ck2">메인2</label>
+                <ul class="sub">
+                    <li><a href="">서브21</a></li>
+                    <li><a href="">서브22</a></li>
+                    <li><a href="">서브23</a></li>
+                </ul>
+            </li>
+            <li class="item3">
+                <label for="ck3">메인3</label>
+                <ul class="sub">
+                    <li><a href="">서브31</a></li>
+                    <li><a href="">서브32</a></li>
+                    <li><a href="">서브33</a></li>
+                    <li><a href="">서브34</a></li>
+                </ul>
+            </li>
+            <li class="item4">
+                <label for="ck4">메인4</label>
+                <ul class="sub">
+                    <li><a href="">서브41</a></li>
+                    <li><a href="">서브42</a></li>
+                    <li><a href="">서브43</a></li>
+                    <li><a href="">서브44</a></li>
+                    <li><a href="">서브45</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="wrap">
+        <h2 class="tit">Accordion(아코디언) - radio1</h2>
+        <ul class="accordion1" id="accor1">
+            <li class="item1">
+                <input type="radio" name="ra1" class="ra" id="ra1">
+                <label for="ra1">메인1</label>
+                <ul class="sub">
+                    <li><a href="">서브11</a></li>
+                    <li><a href="">서브12</a></li>
+                    <li><a href="">서브13</a></li>
+                    <li><a href="">서브14</a></li>
+                    <li><a href="">서브15</a></li>
+                </ul>
+            </li>
+            <li class="item2">
+                <input type="radio" name="ra1" class="ra" id="ra2">
+                <label for="ra2">메인2</label>
+                <ul class="sub">
+                    <li><a href="">서브21</a></li>
+                    <li><a href="">서브22</a></li>
+                    <li><a href="">서브23</a></li>
+                    <li><a href="">서브24</a></li>
+                    <li><a href="">서브25</a></li>
+                </ul>
+            </li>
+            <li class="item3">
+                <input type="radio" name="ra1" class="ra" id="ra3">
+                <label for="ra3">메인3</label>
+                <ul class="sub">
+                    <li><a href="">서브31</a></li>
+                    <li><a href="">서브32</a></li>
+                    <li><a href="">서브33</a></li>
+                    <li><a href="">서브34</a></li>
+                    <li><a href="">서브35</a></li>
+                </ul>
+            </li>
+            <li class="item4">
+                <input type="radio" name="ra1" class="ra" id="ra4">
+                <label for="ra4">메인4</label>
+                <ul class="sub">
+                    <li><a href="">서브41</a></li>
+                    <li><a href="">서브42</a></li>
+                    <li><a href="">서브43</a></li>
+                    <li><a href="">서브44</a></li>
+                    <li><a href="">서브45</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="wrap">
+        <h2 class="tit">Accordion(아코디언) - radio2</h2>
+        <input type="radio" name="ra2" class="ra" id="ra5">
+        <input type="radio" name="ra2" class="ra" id="ra6">
+        <input type="radio" name="ra2" class="ra" id="ra7">
+        <input type="radio" name="ra2" class="ra" id="ra8">
+        <ul class="accordion2" id="accor2">
+            <li class="item1">
+                <label for="ra5">메인1</label>
+                <ul class="sub">
+                    <li><a href="">서브11</a></li>
+                    <li><a href="">서브12</a></li>
+                    <li><a href="">서브13</a></li>
+                    <li><a href="">서브14</a></li>
+                    <li><a href="">서브15</a></li>
+                </ul>
+            </li>
+            <li class="item2">
+                <label for="ra6">메인2</label>
+                <ul class="sub">
+                    <li><a href="">서브21</a></li>
+                    <li><a href="">서브22</a></li>
+                    <li><a href="">서브23</a></li>
+                    <li><a href="">서브24</a></li>
+                    <li><a href="">서브25</a></li>
+                </ul>
+            </li>
+            <li class="item3">
+                <label for="ra7">메인3</label>
+                <ul class="sub">
+                    <li><a href="">서브31</a></li>
+                    <li><a href="">서브32</a></li>
+                    <li><a href="">서브33</a></li>
+                    <li><a href="">서브34</a></li>
+                    <li><a href="">서브35</a></li>
+                </ul>
+            </li>
+            <li class="item4">
+                <label for="ra8">메인4</label>
+                <ul class="sub">
+                    <li><a href="">서브41</a></li>
+                    <li><a href="">서브42</a></li>
+                    <li><a href="">서브43</a></li>
+                    <li><a href="">서브44</a></li>
+                    <li><a href="">서브45</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

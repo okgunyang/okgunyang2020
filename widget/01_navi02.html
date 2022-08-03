@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>내비게이션02 - 2단 메뉴</title>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; }
+    ul { list-style: none; }
+    a { text-decoration: none; }
+    .navi_fr { clear: both; width:98%; min-height:600px; padding-bottom: 100px; border-top:3px solid #333;  margin: 0 auto; background-color:#afbfd4; overflow-x:hidden; }    
+    .navi_tit { font-size:32px; text-align:center; border-bottom:1px dotted #333; text-transform:capitalize; }
+    .menu { width: 1280px; margin:10px auto; }  
+        
+    .navi1 { width: 1000px; position:relative; }
+    .navi1:after { content:""; display:block; width: 100%; 
+        height: 3px; background-color:#333; position:absolute; left: 0; 
+        top: 45px;  }    
+    .navi1 li { float:left; width: 200px; position:relative; } 
+    .navi1 li a { display:block; color:#333; font-weight:bold; 
+        text-align:center; }
+    .navi1 li a.dp1 { font-size:24px; line-height: 48px; 
+        box-sizing: border-box; }
+    .navi1 li:hover a.dp1 { color:deeppink; border:1px solid #333; }    
+    .navi1 li .sub { width:200px; height: 286px; display:none;
+        position:absolute; top:45px; left: 0; z-index:30; 
+        border:1px solid #333; box-sizing:border-box; }   
+    .navi1 li .sub li { clear:both;  } 
+    .navi1 li .sub li a { font-size:18px; line-height: 40px; }
+    .navi1 li .sub li a:hover { background-color:deepskyblue; }    
+    .navi1 li:hover .sub { display:block; }
+    
+        
+    .navi2 { width: 1002px; position:relative; }
+    .navi2 > ul {  border-left:1px solid #333; 
+        border-right:1px solid #333; width: 1002px; height: 45px; 
+        box-sizing:border-box; }    
+    .navi2:after { content:""; display:block; width: 100%; 
+        height: 3px; background-color:#333; position:absolute; left: 0; 
+        top: 90px;  }    
+    .navi2 li { float:left; width: 200px; position:relative; } 
+    .navi2 li a { display:block; color:#333; font-weight:bold; 
+        text-align:center; }
+    .navi2 li a.dp1 { font-size:24px; line-height: 48px; 
+        box-sizing: border-box; }
+    .navi2 li:hover a.dp1 { color:deeppink; border:1px solid #333; }    
+    .navi2 li .sub { width:200px; height: 281px; display:none;
+        position:absolute; top:45px; left: 0; z-index:30; box-sizing:border-box; border-bottom:1px solid #333; border-left:1px solid #333; background-color:#fff; }     
+    .navi2 > ul > li:last-child .sub { border-right:1px solid #333; }     
+    .navi2 li .sub li { clear:both;  } 
+    .navi2 li .sub li a { font-size:18px; line-height: 40px; }
+    .navi2 li .sub li a:hover { background-color:deepskyblue; }    
+    .navi2:hover li .sub { display:block; } 
+        
+    .navi3 { width: 1002px; position:relative; height: 48px; }
+    .navi3 > ul {  border-left:1px solid #333; 
+        border-right:1px solid #333; width: 1002px; height: 45px; 
+        box-sizing:border-box; }    
+    .navi3:after { content:""; display:block; width: 100%; 
+        height: 3px; background-color:#333; position:absolute; left: 0; 
+        top: 87px;  }    
+    .navi3 li { float:left; width: 200px; position:relative; } 
+    .navi3 li a { display:block; color:#333; font-weight:bold; 
+        text-align:center; }
+    .navi3 li a.dp1 { font-size:24px; line-height: 48px; 
+        box-sizing: border-box; }
+    .navi3 li:hover a.dp1 { color:deeppink; border:1px solid #333; }    
+    .navi3 li .sub { width:200px; height: 281px; display:none;
+        position:absolute; top:45px; left: 0; z-index:30; box-sizing:border-box; border-bottom:1px solid #333; border-left:1px solid #333; background-color:#fff; }     
+    .navi3 > ul > li:last-child .sub { border-right:1px solid #333; }     
+    .navi3 li .sub li { clear:both;  } 
+    .navi3 li .sub li a { font-size:18px; line-height: 40px; }
+    .navi3 li .sub li a:hover { background-color:deepskyblue; }    
+    .navi3:hover li .sub { display:block; } 
+    .navi3 li.item1:before, .navi3 li.item5:after { content:""; display:block; width:1000px; height:281px; background-color:#fff; position:absolute; top:45px; z-index:29; display:none;  }
+    .navi3 li.item1:before { right:0px; } 
+    .navi3 li.item5:after { left:0px; }   
+    .navi3:hover li.item1:before, .navi3:hover li.item5:after { display:block; }   
+    
+    .navi4 { width: 1000px; position: relative; height: auto; }
+    .navi4:after { content:""; display:block; width: 100%; 
+        height: 3px; background-color:#333; position:absolute; left: 0;         top:85px;  }  
+    .navi4 ul { position: relative; width: 1000px; height: 48px; } 
+    .navi4 li { float:left; width: 200px;  }
+    .navi4 li a { display:block; height: 40px; line-height: 40px; 
+        color:#333; text-align: center; font-size:16px; font-weight:bold; }
+    .navi4 li a.dp1 { font-size:20px; }   
+    .navi4 li:hover a.dp1 { color:deeppink; }    
+    .navi4 li .sub { width:1000px; height: 325px; position:absolute;  top:41px; left:0; display:none; z-index:30; background-color: #fff; padding-top:15px;  border-top:5px solid transparent; }    
+    .navi4 li .sub li { clear:both;  } 
+    .navi4 li:hover .sub { display:block; }    
+    .navi4 li .sub_grp { width: 200px; float:left; }   
+    .navi4 li.main:before, .navi4 li.main:after { content:""; display:block; width:1000px; height:330px; background-color:#fff; padding-top:15px; position:absolute; top:41px; z-index:29; display:none; }
+    .navi4 li.main:before { right:1000px; }
+    .navi4 li.main:after { left: 1000px; }    
+    .navi4 li.main:hover::before { display:block; }   
+    .navi4 li.main:hover::after { display:block; }    
+    .navi4 .grp_tit { text-align:center; line-height: 48px;
+        font-size:18px; font-weight: bold; }    
+    .navi4 li .sub li a:hover { color:deepskyblue; }    
+        
+    .navi5 { width: 1000px; position:relative; }
+    .navi5 li { float:left; position:relative;  transition:0.5s; 
+        cursor:pointer; } 
+    .navi5 li a { display:block; color:#333; text-align:center; }    
+    .navi5 li a.dp1 { line-height: 44px; height: 44px; 
+        text-align:center; width: 200px; } 
+    .navi5 li.main:before { content:"▲"; color:#2f3d4e; 
+        position:absolute; top:16px; left: 80px; font-size:28px; 
+        display:none; }
+    .navi5 li.main:hover::before { display:block; }    
+    .navi5 li .sub { width: 200px; height:320px; display:none;   
+        position:absolute; top:40px; left:0; transition:0.5s; 
+        background-color: #2f3d4e; color:#fff; }
+    .navi5 li:hover .sub { height: 320px; display:block; }   
+    .navi5 li .sub li { clear:both; }
+    .navi5 li .sub li .grp_tit { display:block; text-align:center; 
+        line-height: 40px; height: 40px; width: 200px; color:#fff;} 
+    .navi5 li .sub li .grp_tit:hover { color:#e4d44c; }    
+    .navi5 li .sub li .grp_tit:after { content:"◀"; display:none;
+        position:absolute; right:120px; top:0px; color:#ccc;
+         transition:0.5s; } 
+    .navi5 li .sub li:hover .grp_tit:after { display:block; right:37px; } 
+        
+    .navi5 li .sub li .sub_grp { width: 200px; height:320px;  position:absolute; left:0px; opacity:0; background-color: #ccc; top:0px; transition:0.5s; transition-timing-function: ease-in; overflow-y:hidden;  }    
+    .navi5 li .sub li:hover .sub_grp { left:160px; opacity:1; height: 320px; }   
+    .navi5 li .sub li .sub_grp li a { display:block; text-align:center; line-height: 40px; height: 40px; width: 200px; } 
+    .navi5 li:hover .sub { display:block; }
+    .navi5 li .sub li .sub_grp li a:hover { color:#000; }    
+    .navi5 li .sub li:hover .sub_grp { display:block; }  
+        
+    .navi6 { width: 1000px; position:relative; margin:10px auto; }
+    .navi6 li { float: left; }
+    .navi6 li a { display:block; width: 200px; color:#333;
+        font-size:20px; font-weight:bold; text-align:center;
+        height: 40px; line-height: 40px; position:relative; }  
+    .navi6 li a:before { content:"";  border-radius:40px;
+        display:block; background:#e4e29e; position:absolute;
+        width:0px; height:0px; left: 50%; margin-left:0px; top: 20px;        opacity:1;        transition:0.5s;  }
+    .navi6 li:hover a:before { width:80px; height:80px; left: 50%; margin-left:-40px; top:-20px;  opacity: 0.3; } 
+    .navi6 .txt { display:block; width: 200px; 
+        height: 40px; line-height: 40px; 
+        text-align: center; position:absolute; left: 0; top: 0; }    
+    </style>
+</head>
+<body>
+    <!--    div.navi_fr*5>nav.menu.navi$>ul>li*5>a.dp1{메뉴$}>ul.sub>li*6>a.dp2{서브메뉴$$} -->
+    <div class="navi_fr">
+        <h2 class="navi_tit">2단 메뉴 - basic</h2>
+        <nav class="menu navi1">
+            <ul>
+                <li><a href="" class="dp1">메뉴1</a>
+                    <ul class="sub">
+                        <li><a href="" class="dp2">서브메뉴11</a></li>
+                        <li><a href="" class="dp2">서브메뉴12</a></li>
+                        <li><a href="" class="dp2">서브메뉴13</a></li>
+                    </ul>
+                </li>
+                <li><a href="" class="dp1">메뉴2</a>
+                    <ul class="sub">
+                        <li><a href="" class="dp2">서브메뉴21</a></li>
+                        <li><a href="" class="dp2">서브메뉴22</a></li>
+                        <li><a href="" class="dp2">서브메뉴23</a></li>
+                        <li><a href="" class="dp2">서브메뉴24</a></li>
+                        <li><a href="" class="dp2">서브메뉴25</a></li>
+                        <li><a href="" class="dp2">서브메뉴26</a></li>
+                        <li><a href="" class="dp2">서브메뉴27</a></li>
+                    </ul>
+                </li>
+                <li><a href="" class="dp1">메뉴3</a>
+                    <ul class="sub">
+                        <li><a href="" class="dp2">서브메뉴31</a></li>
+                        <li><a href="" class="dp2">서브메뉴32</a></li>
+                        <li><a href="" class="dp2">서브메뉴33</a></li>
+                        <li><a href="" class="dp2">서브메뉴34</a></li>
+                    </ul>
+                </li>
+                <li><a href="" class="dp1">메뉴4</a>
+                    <ul class="sub">
+                        <li><a href="" class="dp2">서브메뉴41</a></li>
+                        <li><a href="" class="dp2">서브메뉴42</a></li>
+                        <li><a href="" class="dp2">서브메뉴43</a></li>
+                        <li><a href="" class="dp2">서브메뉴44</a></li>
+                        <li><a href="" class="dp2">서브메뉴45</a></li>
+                        <li><a href="" class="dp2">서브메뉴46</a></li>
+                    </ul>
+                </li>
+                <li><a href="" class="dp1">메뉴5</a>
+                    <ul class="sub">
+                        <li><a href="" class="dp2">서브메뉴51</a></li>
+                        <li><a href="" class="dp2">서브메뉴52</a></li>
+                        <li><a href="" class="dp2">서브메뉴53</a></li>
+                        <li><a href="" class="dp2">서브메뉴54</a></li>
+                        <li><a href="" class="dp2">서브메뉴55</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="navi_fr">
+        <nav class="menu navi2">
+            <h2 class="navi_tit">2단 메뉴 - once &amp; same time</h2>
+            <ul>
+                <li><a href="" class="dp1">메뉴1</a>
+                    <ul class="sub">
+                        <li><a href="" class="dp2">서브메뉴11</a></li>
+                        <li><a href="" class="dp2">서브메뉴12</a></li>
+                        <li><a href="" class="dp2">서브메뉴13</a></li>
+                    </ul>
+                </li>
+                <li><a href="" class="dp1">메뉴2</a>
+                    <ul class="sub">
+                        <li><a href="" class="dp2">서브메뉴21</a></li>
+                        <li><a href="" class="dp2">서브메뉴22</a></li>
+                        <li><a href="" class="dp2">서브메뉴23</a></li>
+                        <li><a href="" class="dp2">서브메뉴24</a></li>
+                        <li><a href="" class="dp2">서브메뉴25</a></li>
+                        <li><a href="" class="dp2">서브메뉴26</a></li>
+                        <li><a href="" class="dp2">서브메뉴27</a></li>
+                    </ul>
+                </li>
+                <li><a href="" class="dp1">메뉴3</a>
+                    <ul class="sub">
+                        <li><a href="" class="dp2">서브메뉴31</a></li>
+                        <li><a href="" class="dp2">서브메뉴32</a></li>
+                        <li><a href="" class="dp2">서브메뉴33</a></li>
+                        <li><a href="" class="dp2">서브메뉴34</a></li>
+                    </ul>
+                </li>
+                <li><a href="" class="dp1">메뉴4</a>
+                    <ul class="sub">
+                        <li><a href="" class="dp2">서브메뉴41</a></li>
+                        <li><a href="" class="dp2">서브메뉴42</a></li>
+                        <li><a href="" class="dp2">서브메뉴43</a></li>
+                        <li><a href="" class="dp2">서브메뉴44</a></li>
+                        <li><a href="" class="dp2">서브메뉴45</a></li>
+                        <li><a href="" class="dp2">서브메뉴46</a></li>
+                    </ul>
+                </li>
+                <li><a href="" class="dp1">메뉴5</a>
+                    <ul class="sub">
+                        <li><a href="" class="dp2">서브메뉴51</a></li>
+                        <li><a href="" class="dp2">서브메뉴52</a></li>
+                        <li><a href="" class="dp2">서브메뉴53</a></li>
+                        <li><a href="" class="dp2">서브메뉴54</a></li>
+                        <li><a href="" class="dp2">서브메뉴55</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="navi_fr">
+        <nav class="menu navi3">
+            <h2 class="navi_tit">2단 메뉴 - Double wings &amp; once</h2>
+            <ul>
+                <li class="item1"><a href="" class="dp1">메뉴1</a>
+                    <ul class="sub">
+                        <li><a href="" class="dp2">서브메뉴11</a></li>
+                        <li><a href="" class="dp2">서브메뉴12</a></li>
+                        <li><a href="" class="dp2">서브메뉴13</a></li>
+                    </ul>
+                </li>
+                <li class="item2"><a href="" class="dp1">메뉴2</a>
+                    <ul class="sub">
+                        <li><a href="" class="dp2">서브메뉴21</a></li>
+                        <li><a href="" class="dp2">서브메뉴22</a></li>
+                        <li><a href="" class="dp2">서브메뉴23</a></li>
+                        <li><a href="" class="dp2">서브메뉴24</a></li>
+                        <li><a href="" class="dp2">서브메뉴25</a></li>
+                        <li><a href="" class="dp2">서브메뉴26</a></li>
+                        <li><a href="" class="dp2">서브메뉴27</a></li>
+                    </ul>
+                </li>
+                <li class="item3"><a href="" class="dp1">메뉴3</a>
+                    <ul class="sub">
+                        <li><a href="" class="dp2">서브메뉴31</a></li>
+                        <li><a href="" class="dp2">서브메뉴32</a></li>
+                        <li><a href="" class="dp2">서브메뉴33</a></li>
+                        <li><a href="" class="dp2">서브메뉴34</a></li>
+                    </ul>
+                </li>
+                <li class="item4"><a href="" class="dp1">메뉴4</a>
+                    <ul class="sub">
+                        <li><a href="" class="dp2">서브메뉴41</a></li>
+                        <li><a href="" class="dp2">서브메뉴42</a></li>
+                        <li><a href="" class="dp2">서브메뉴43</a></li>
+                        <li><a href="" class="dp2">서브메뉴44</a></li>
+                        <li><a href="" class="dp2">서브메뉴45</a></li>
+                        <li><a href="" class="dp2">서브메뉴46</a></li>
+                    </ul>
+                </li>
+                <li class="item5"><a href="" class="dp1">메뉴5</a>
+                    <ul class="sub">
+                        <li><a href="" class="dp2">서브메뉴51</a></li>
+                        <li><a href="" class="dp2">서브메뉴52</a></li>
+                        <li><a href="" class="dp2">서브메뉴53</a></li>
+                        <li><a href="" class="dp2">서브메뉴54</a></li>
+                        <li><a href="" class="dp2">서브메뉴55</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="navi_fr">
+        <nav class="menu navi4">
+            <h2 class="navi_tit">2단 메뉴 - each &amp; grouping</h2>
+            <ul>
+                <li class="main"><a href="" class="dp1">메뉴1</a>
+                   <div class="sub">
+                        <ul class="sub_grp">
+                            <li class="grp_tit">그룹명11</li>
+                            <li><a href="" class="dp2">그룹메뉴11</a></li>
+                            <li><a href="" class="dp2">그룹메뉴12</a></li>
+                            <li><a href="" class="dp2">그룹메뉴13</a></li>
+                        </ul>
+                        <ul class="sub_grp">
+                            <li class="grp_tit">그룹명12</li>
+                            <li><a href="" class="dp2">그룹메뉴21</a></li>
+                            <li><a href="" class="dp2">그룹메뉴22</a></li>
+                            <li><a href="" class="dp2">그룹메뉴23</a></li>
+                            <li><a href="" class="dp2">그룹메뉴24</a></li>
+                            <li><a href="" class="dp2">그룹메뉴25</a></li>
+                        </ul>
+                        <ul class="sub_grp">
+                            <li class="grp_tit">그룹명13</li>
+                            <li><a href="" class="dp2">그룹메뉴31</a></li>
+                            <li><a href="" class="dp2">그룹메뉴32</a></li>
+                            <li><a href="" class="dp2">그룹메뉴33</a></li>
+                            <li><a href="" class="dp2">그룹메뉴34</a></li>
+                            <li><a href="" class="dp2">그룹메뉴35</a></li>
+                            <li><a href="" class="dp2">그룹메뉴36</a></li>
+                            <li><a href="" class="dp2">그룹메뉴37</a></li>
+                        </ul>
+                        <ul class="sub_grp">
+                            <li class="grp_tit">그룹명14</li>
+                            <li><a href="" class="dp2">그룹메뉴41</a></li>
+                            <li><a href="" class="dp2">그룹메뉴42</a></li>
+                            <li><a href="" class="dp2">그룹메뉴43</a></li>
+                            <li><a href="" class="dp2">그룹메뉴44</a></li>
+                        </ul>
+                        <ul class="sub_grp">
+                            <li class="grp_tit">그룹명15</li>
+                            <li><a href="" class="dp2">그룹메뉴51</a></li>
+                            <li><a href="" class="dp2">그룹메뉴52</a></li>
+                            <li><a href="" class="dp2">그룹메뉴53</a></li>
+                            <li><a href="" class="dp2">그룹메뉴54</a></li>
+                            <li><a href="" class="dp2">그룹메뉴55</a></li>
+                            <li><a href="" class="dp2">그룹메뉴56</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="main"><a href="" class="dp1">메뉴2</a>
+                   <div class="sub">
+                        <ul class="sub_grp">
+                            <li class="grp_tit">그룹명21</li>
+                            <li><a href="" class="dp2">그룹메뉴11</a></li>
+                            <li><a href="" class="dp2">그룹메뉴12</a></li>
+                            <li><a href="" class="dp2">그룹메뉴13</a></li>
+                            <li><a href="" class="dp2">그룹메뉴14</a></li>
+                        </ul>
+                        <ul class="sub_grp">
+                            <li class="grp_tit">그룹명22</li>
+                            <li><a href="" class="dp2">그룹메뉴21</a></li>
+                            <li><a href="" class="dp2">그룹메뉴22</a></li>
+                            <li><a href="" class="dp2">그룹메뉴23</a></li>
+                        </ul>
+                        <ul class="sub_grp">
+                            <li class="grp_tit">그룹명23</li>
+                            <li><a href="" class="dp2">그룹메뉴31</a></li>
+                            <li><a href="" class="dp2">그룹메뉴32</a></li>
+                            <li><a href="" class="dp2">그룹메뉴33</a></li>
+                            <li><a href="" class="dp2">그룹메뉴34</a></li>
+                            <li><a href="" class="dp2">그룹메뉴35</a></li>
+                        </ul>
+                        <ul class="sub_grp">
+                            <li class="grp_tit">그룹명24</li>
+                            <li><a href="" class="dp2">그룹메뉴41</a></li>
+                            <li><a href="" class="dp2">그룹메뉴42</a></li>
+                            <li><a href="" class="dp2">그룹메뉴43</a></li>
+                            <li><a href="" class="dp2">그룹메뉴44</a></li>
+                            <li><a href="" class="dp2">그룹메뉴45</a></li>
+                            <li><a href="" class="dp2">그룹메뉴46</a></li>
+                        </ul>
+                        <ul class="sub_grp">
+                            <li class="grp_tit">그룹명25</li>
+                            <li><a href="" class="dp2">그룹메뉴51</a></li>
+                            <li><a href="" class="dp2">그룹메뉴52</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="main"><a href="" class="dp1">메뉴3</a>
+                   <div class="sub">
+                        <ul class="sub_grp">
+                            <li class="grp_tit">그룹명31</li>
+                            <li><a href="" class="dp2">그룹메뉴11</a></li>
+                            <li><a href="" class="dp2">그룹메뉴12</a></li>
+                            <li><a href="" class="dp2">그룹메뉴13</a></li>
+                            <li><a href="" class="dp2">그룹메뉴14</a></li>
+                            <li><a href="" class="dp2">그룹메뉴15</a></li>
+                        </ul>
+                        <ul class="sub_grp">
+                            <li class="grp_tit">그룹명32</li>
+                            <li><a href="" class="dp2">그룹메뉴21</a></li>
+                            <li><a href="" class="dp2">그룹메뉴22</a></li>
+                        </ul>
+                        <ul class="sub_grp">
+                            <li class="grp_tit">그룹명33</li>
+                            <li><a href="" class="dp2">그룹메뉴31</a></li>
+                            <li><a href="" class="dp2">그룹메뉴32</a></li>
+                            <li><a href="" class="dp2">그룹메뉴33</a></li>
+                            <li><a href="" class="dp2">그룹메뉴34</a></li>
+                            <li><a href="" class="dp2">그룹메뉴35</a></li>
+                            <li><a href="" class="dp2">그룹메뉴36</a></li>
+                        </ul>
+                        <ul class="sub_grp">
+                            <li class="grp_tit">그룹명34</li>
+                            <li><a href="" class="dp2">그룹메뉴41</a></li>
+                            <li><a href="" class="dp2">그룹메뉴42</a></li>
+                            <li><a href="" class="dp2">그룹메뉴43</a></li>
+                            <li><a href="" class="dp2">그룹메뉴44</a></li>
+                            <li><a href="" class="dp2">그룹메뉴45</a></li>
+                            <li><a href="" class="dp2">그룹메뉴46</a></li>
+                        </ul>
+                        <ul class="sub_grp">
+                            <li class="grp_tit"></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="main"><a href="" class="dp1">메뉴4</a>
+                   <div class="sub">
+                        <ul class="sub_grp">
+                            <li class="grp_tit">그룹명41</li>
+                            <li><a href="" class="dp2">그룹메뉴11</a></li>
+                            <li><a href="" class="dp2">그룹메뉴12</a></li>
+                            <li><a href="" class="dp2">그룹메뉴13</a></li>
+                            <li><a href="" class="dp2">그룹메뉴14</a></li>
+                            <li><a href="" class="dp2">그룹메뉴15</a></li>
+                        </ul>
+                        <ul class="sub_grp">
+                            <li class="grp_tit">그룹명42</li>
+                            <li><a href="" class="dp2">그룹메뉴21</a></li>
+                            <li><a href="" class="dp2">그룹메뉴22</a></li>
+                            <li><a href="" class="dp2">그룹메뉴23</a></li>
+                            <li><a href="" class="dp2">그룹메뉴24</a></li>
+                        </ul>
+                        <ul class="sub_grp">
+                            <li class="grp_tit">그룹명43</li>
+                            <li><a href="" class="dp2">그룹메뉴31</a></li>
+                            <li><a href="" class="dp2">그룹메뉴32</a></li>
+                            <li><a href="" class="dp2">그룹메뉴33</a></li>
+                            <li><a href="" class="dp2">그룹메뉴34</a></li>
+                            <li><a href="" class="dp2">그룹메뉴35</a></li>
+                            <li><a href="" class="dp2">그룹메뉴36</a></li>
+                        </ul>
+                        <ul class="sub_grp">
+                            <li class="grp_tit">그룹명44</li>
+                            <li><a href="" class="dp2">그룹메뉴41</a></li>
+                            <li><a href="" class="dp2">그룹메뉴42</a></li>
+                            <li><a href="" class="dp2">그룹메뉴43</a></li>
+                            <li><a href="" class="dp2">그룹메뉴44</a></li>
+                            <li><a href="" class="dp2">그룹메뉴45</a></li>
+                        </ul>
+                        <ul class="sub_grp">
+                            <li class="grp_tit">그룹명45</li>
+                            <li><a href="" class="dp2">그룹메뉴51</a></li>
+                            <li><a href="" class="dp2">그룹메뉴52</a></li>
+                            <li><a href="" class="dp2">그룹메뉴53</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="main"><a href="" class="dp1">메뉴5</a>
+                   <div class="sub">
+                        <ul class="sub_grp">
+                            <li class="grp_tit">그룹명51</li>
+                            <li><a href="" class="dp2">그룹메뉴11</a></li>
+                            <li><a href="" class="dp2">그룹메뉴12</a></li>
+                            <li><a href="" class="dp2">그룹메뉴13</a></li>
+                            <li><a href="" class="dp2">그룹메뉴14</a></li>
+                        </ul>
+                        <ul class="sub_grp">
+                            <li class="grp_tit">그룹명52</li>
+                            <li><a href="" class="dp2">그룹메뉴21</a></li>
+                            <li><a href="" class="dp2">그룹메뉴22</a></li>
+                            <li><a href="" class="dp2">그룹메뉴23</a></li>
+                            <li><a href="" class="dp2">그룹메뉴44</a></li>
+                            <li><a href="" class="dp2">그룹메뉴45</a></li>
+                            <li><a href="" class="dp2">그룹메뉴46</a></li>
+                        </ul>
+                        <ul class="sub_grp">
+                            <li class="grp_tit">그룹명53</li>
+                            <li><a href="" class="dp2">그룹메뉴31</a></li>
+                            <li><a href="" class="dp2">그룹메뉴32</a></li>
+                            <li><a href="" class="dp2">그룹메뉴33</a></li>
+                            <li><a href="" class="dp2">그룹메뉴34</a></li>
+                            <li><a href="" class="dp2">그룹메뉴35</a></li>
+                        </ul>
+                        <ul class="sub_grp">
+                            <li class="grp_tit">그룹명54</li>
+                            <li><a href="" class="dp2">그룹메뉴41</a></li>
+                            <li><a href="" class="dp2">그룹메뉴42</a></li>
+                            <li><a href="" class="dp2">그룹메뉴43</a></li>
+                        </ul>
+                        <ul class="sub_grp">
+                            <li class="grp_tit">그룹명55</li>
+                            <li><a href="" class="dp2">그룹메뉴51</a></li>
+                            <li><a href="" class="dp2">그룹메뉴52</a></li>
+                            <li><a href="" class="dp2">그룹메뉴53</a></li>
+                            <li><a href="" class="dp2">그룹메뉴54</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="navi_fr">
+        <nav class="menu navi5">
+            <h2 class="navi_tit">3단 메뉴</h2>
+            <ul>
+                <li class="main"><a href="" class="dp1">메뉴1</a>
+                   <ul class="sub">
+                        <li><a href="" class="grp_tit">그룹명11</a>
+                            <ul class="sub_grp">
+                                <li><a href="" class="dp2">그룹메뉴11</a></li>
+                                <li><a href="" class="dp2">그룹메뉴12</a></li>
+                                <li><a href="" class="dp2">그룹메뉴13</a></li>
+                            </ul>
+                       </li>
+                        <li>
+                           <a href="" class="grp_tit">그룹명12</a>
+                            <ul class="sub_grp">
+                                <li><a href="" class="dp2">그룹메뉴21</a></li>
+                                <li><a href="" class="dp2">그룹메뉴22</a></li>
+                                <li><a href="" class="dp2">그룹메뉴23</a></li>
+                                <li><a href="" class="dp2">그룹메뉴24</a></li>
+                                <li><a href="" class="dp2">그룹메뉴25</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="" class="grp_tit">그룹명13</a>
+                            <ul class="sub_grp">
+                                <li><a href="" class="dp2">그룹메뉴31</a></li>
+                                <li><a href="" class="dp2">그룹메뉴32</a></li>
+                                <li><a href="" class="dp2">그룹메뉴33</a></li>
+                                <li><a href="" class="dp2">그룹메뉴34</a></li>
+                                <li><a href="" class="dp2">그룹메뉴35</a></li>
+                                <li><a href="" class="dp2">그룹메뉴36</a></li>
+                                <li><a href="" class="dp2">그룹메뉴37</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="" class="grp_tit">그룹명14</a>
+                            <ul class="sub_grp">
+                                <li><a href="" class="dp2">그룹메뉴41</a></li>
+                                <li><a href="" class="dp2">그룹메뉴42</a></li>
+                                <li><a href="" class="dp2">그룹메뉴43</a></li>
+                                <li><a href="" class="dp2">그룹메뉴44</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="" class="grp_tit">그룹명15</a>
+                            <ul class="sub_grp">
+                                <li><a href="" class="dp2">그룹메뉴51</a></li>
+                                <li><a href="" class="dp2">그룹메뉴52</a></li>
+                                <li><a href="" class="dp2">그룹메뉴53</a></li>
+                                <li><a href="" class="dp2">그룹메뉴54</a></li>
+                                <li><a href="" class="dp2">그룹메뉴55</a></li>
+                                <li><a href="" class="dp2">그룹메뉴56</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="main"><a href="" class="dp1">메뉴2</a>
+                   <ul class="sub">
+                        <li><a href="" class="grp_tit">그룹명21</a>
+                            <ul class="sub_grp">
+                                <li><a href="" class="dp2">그룹메뉴11</a></li>
+                                <li><a href="" class="dp2">그룹메뉴12</a></li>
+                                <li><a href="" class="dp2">그룹메뉴13</a></li>
+                                <li><a href="" class="dp2">그룹메뉴14</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="" class="grp_tit">그룹명22</a>
+                            <ul class="sub_grp">
+                                <li><a href="" class="dp2">그룹메뉴21</a></li>
+                                <li><a href="" class="dp2">그룹메뉴22</a></li>
+                                <li><a href="" class="dp2">그룹메뉴23</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="" class="grp_tit">그룹명23</a>
+                            <ul class="sub_grp">
+                                <li><a href="" class="dp2">그룹메뉴31</a></li>
+                                <li><a href="" class="dp2">그룹메뉴32</a></li>
+                                <li><a href="" class="dp2">그룹메뉴33</a></li>
+                                <li><a href="" class="dp2">그룹메뉴34</a></li>
+                                <li><a href="" class="dp2">그룹메뉴35</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="" class="grp_tit">그룹명24</a>
+                            <ul class="sub_grp">
+                                <li><a href="" class="dp2">그룹메뉴41</a></li>
+                                <li><a href="" class="dp2">그룹메뉴42</a></li>
+                                <li><a href="" class="dp2">그룹메뉴43</a></li>
+                                <li><a href="" class="dp2">그룹메뉴44</a></li>
+                                <li><a href="" class="dp2">그룹메뉴45</a></li>
+                                <li><a href="" class="dp2">그룹메뉴46</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="" class="grp_tit">그룹명25</a> 
+                            <ul class="sub_grp">
+                                <li><a href="" class="dp2">그룹메뉴51</a></li>
+                                <li><a href="" class="dp2">그룹메뉴52</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="main"><a href="" class="dp1">메뉴3</a>
+                   <ul class="sub">
+                        <li><a href="" class="grp_tit">그룹명31</a>
+                            <ul class="sub_grp">
+                                <li><a href="" class="dp2">그룹메뉴11</a></li>
+                                <li><a href="" class="dp2">그룹메뉴12</a></li>
+                                <li><a href="" class="dp2">그룹메뉴13</a></li>
+                                <li><a href="" class="dp2">그룹메뉴14</a></li>
+                                <li><a href="" class="dp2">그룹메뉴15</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="" class="grp_tit">그룹명32</a>
+                            <ul class="sub_grp">
+                                <li><a href="" class="dp2">그룹메뉴21</a></li>
+                                <li><a href="" class="dp2">그룹메뉴22</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="" class="grp_tit">그룹명33</a>
+                            <ul class="sub_grp">
+                                <li><a href="" class="dp2">그룹메뉴31</a></li>
+                                <li><a href="" class="dp2">그룹메뉴32</a></li>
+                                <li><a href="" class="dp2">그룹메뉴33</a></li>
+                                <li><a href="" class="dp2">그룹메뉴34</a></li>
+                                <li><a href="" class="dp2">그룹메뉴35</a></li>
+                                <li><a href="" class="dp2">그룹메뉴36</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="" class="grp_tit">그룹명34</a> 
+                            <ul class="sub_grp">
+                                <li><a href="" class="dp2">그룹메뉴41</a></li>
+                                <li><a href="" class="dp2">그룹메뉴42</a></li>
+                                <li><a href="" class="dp2">그룹메뉴43</a></li>
+                                <li><a href="" class="dp2">그룹메뉴44</a></li>
+                                <li><a href="" class="dp2">그룹메뉴45</a></li>
+                                <li><a href="" class="dp2">그룹메뉴46</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="" class="grp_tit"></a>
+                            <ul class="sub_grp">
+                                <li></li>
+                            </ul>
+                       </li>
+                    </ul>
+                </li>
+                <li class="main"><a href="" class="dp1">메뉴4</a>
+                   <ul class="sub">
+                        <li><a href="" class="grp_tit">그룹명41</a>
+                            <ul class="sub_grp">
+                                <li><a href="" class="dp2">그룹메뉴11</a></li>
+                                <li><a href="" class="dp2">그룹메뉴12</a></li>
+                                <li><a href="" class="dp2">그룹메뉴13</a></li>
+                                <li><a href="" class="dp2">그룹메뉴14</a></li>
+                                <li><a href="" class="dp2">그룹메뉴15</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="" class="grp_tit">그룹명42</a>
+                            <ul class="sub_grp">
+                                <li><a href="" class="dp2">그룹메뉴21</a></li>
+                                <li><a href="" class="dp2">그룹메뉴22</a></li>
+                                <li><a href="" class="dp2">그룹메뉴23</a></li>
+                                <li><a href="" class="dp2">그룹메뉴24</a></li>
+                            </ul>
+                       </li>
+                        <li><a href="" class="grp_tit">그룹명43</a>
+                            <ul class="sub_grp">
+                                <li><a href="" class="dp2">그룹메뉴31</a></li>
+                                <li><a href="" class="dp2">그룹메뉴32</a></li>
+                                <li><a href="" class="dp2">그룹메뉴33</a></li>
+                                <li><a href="" class="dp2">그룹메뉴34</a></li>
+                                <li><a href="" class="dp2">그룹메뉴35</a></li>
+                                <li><a href="" class="dp2">그룹메뉴36</a></li>
+                            </ul>
+                       </li>
+                        <li><a href="" class="grp_tit">그룹명44</a>
+                            <ul class="sub_grp">
+                                <li><a href="" class="dp2">그룹메뉴41</a></li>
+                                <li><a href="" class="dp2">그룹메뉴42</a></li>
+                                <li><a href="" class="dp2">그룹메뉴43</a></li>
+                                <li><a href="" class="dp2">그룹메뉴44</a></li>
+                                <li><a href="" class="dp2">그룹메뉴45</a></li>
+                            </ul>
+                       </li>
+                        <li><a href="" class="grp_tit">그룹명45</a>
+                            <ul class="sub_grp">
+                                <li><a href="" class="dp2">그룹메뉴51</a></li>
+                                <li><a href="" class="dp2">그룹메뉴52</a></li>
+                                <li><a href="" class="dp2">그룹메뉴53</a></li>
+                            </ul>
+                       </li>
+                    </ul>
+                </li>
+                <li class="main"><a href="" class="dp1">메뉴5</a>
+                   <ul class="sub">
+                        <li><a href="" class="grp_tit">그룹명51</a>
+                            <ul class="sub_grp">
+                                <li><a href="" class="dp2">그룹메뉴11</a></li>
+                                <li><a href="" class="dp2">그룹메뉴12</a></li>
+                                <li><a href="" class="dp2">그룹메뉴13</a></li>
+                                <li><a href="" class="dp2">그룹메뉴14</a></li>
+                            </ul>
+                       </li>
+                        <li><a href="" class="grp_tit">그룹명52</a>
+                            <ul class="sub_grp">
+                                <li><a href="" class="dp2">그룹메뉴21</a></li>
+                                <li><a href="" class="dp2">그룹메뉴22</a></li>
+                                <li><a href="" class="dp2">그룹메뉴23</a></li>
+                                <li><a href="" class="dp2">그룹메뉴44</a></li>
+                                <li><a href="" class="dp2">그룹메뉴45</a></li>
+                                <li><a href="" class="dp2">그룹메뉴46</a></li>
+                            </ul>
+                       </li>
+                        <li><a href="" class="grp_tit">그룹명53</a>
+                            <ul class="sub_grp">
+                                <li><a href="" class="dp2">그룹메뉴31</a></li>
+                                <li><a href="" class="dp2">그룹메뉴32</a></li>
+                                <li><a href="" class="dp2">그룹메뉴33</a></li>
+                                <li><a href="" class="dp2">그룹메뉴34</a></li>
+                                <li><a href="" class="dp2">그룹메뉴35</a></li>
+                            </ul>
+                       </li>
+                        <li><a href="" class="grp_tit">그룹명54</a>
+                            <ul class="sub_grp">
+                                <li><a href="" class="dp2">그룹메뉴41</a></li>
+                                <li><a href="" class="dp2">그룹메뉴42</a></li>
+                                <li><a href="" class="dp2">그룹메뉴43</a></li>
+                            </ul>
+                       </li>
+                        <li><a href="" class="grp_tit">그룹명55</a>
+                            <ul class="sub_grp">
+                                <li><a href="" class="dp2">그룹메뉴51</a></li>
+                                <li><a href="" class="dp2">그룹메뉴52</a></li>
+                                <li><a href="" class="dp2">그룹메뉴53</a></li>
+                                <li><a href="" class="dp2">그룹메뉴54</a></li>
+                            </ul>
+                       </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <!--    div.navi_fr*5>nav.menu.navi$>(ul.main>li*5>a.dp1{메뉴$})+(div.sub>ul.sub*5>li*6>a.dp2{서브메뉴$$}) -->
+    
+    
+    <div class="navi_fr">
+        <nav class="menu navi6">
+            <ul>
+                <li><a href="" class="dp1"><span class="txt">메뉴1</span></a></li>
+                <li><a href="" class="dp1"><span class="txt">메뉴2</span></a></li>
+                <li><a href="" class="dp1"><span class="txt">메뉴3</span></a></li>
+                <li><a href="" class="dp1"><span class="txt">메뉴4</span></a></li>
+                <li><a href="" class="dp1"><span class="txt">메뉴5</span></a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>텍스트 애니메이션 21</title>
+    <script src="prefixfree.min.js"></script>
+    
+    <style>
+body { 
+  margin: 0; 
+  display: flex; 
+  align-items: center;
+  background-color: #3456DA;
+  height: 100vh;
+}
+
+.animation-title {
+  color: #fff;
+  font-size: 3.82rem;
+  font-weight: 700;
+  margin:0 0 0.5rem 0;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  font-family: -apple-system,
+               'avenir next', avenir,
+               roboto, noto,
+               'helvetica neue', helvetica,
+               ubuntu,
+               'franklin gothic medium', 'century gothic',
+               sans-serif;
+}
+
+.wave {
+  animation: moveTheWave 2400ms linear infinite;
+  stroke-dasharray: 0 16 101 16;
+}
+
+@keyframes moveTheWave {
+
+  0% {
+    stroke-dashoffset: 0;
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    stroke-dashoffset: -133;
+    transform: translate3d(-90px, 0, 0);
+  }
+
+}
+    </style>
+</head>
+<body>
+<div class="hero" style="max-height: 700px; padding: 40px; margin: 0px auto; text-align: center;" >
+  <svg width="80" height="60" viewBox="5 0 80 60">
+    <path class="wave" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" d="M 0 37.5 c 7.684299348848887 0 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15" $=1$=010.0" />
+  </svg>
+  <h4 class="animation-title">ANIMATIONS</h4>
+  <svg width="80" height="60" viewBox="5 0 80 60"><path class="wave" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" d="M 0 37.5 c 7.684299348848887 0 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15" />
+  </svg>
+</div>
+</body>
+</html>

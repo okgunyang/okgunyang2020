@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>트랜지션 03 - transition-delay </title>
+    <script src="./prefixfree.min.js"></script>
+    <style>
+    * { margin: 0; padding: 0; }
+    ul { list-style: none; }
+    #graph { clear:both; width: 900px; margin: 50px auto; cursor:pointer; }
+    #graph li { clear:both; margin-top: 20px; line-height: 40px; text-indent:10px; }
+    #graph li.bar { width: 70px; height: 40px; transition-duration:2s; }    
+    #graph li.item1 { background-color: cadetblue; transition-delay:0s; }
+    #graph li.item2 { background-color:blueviolet; transition-delay:0.5s;  }
+    #graph li.item3 { background-color:hotpink; transition-delay:1s; }
+    #graph li.item4 { background-color:chocolate; transition-delay:1.5s;}
+    #graph li.item5 { background-color:deepskyblue; transition-delay:2s;}
+    #graph:hover li.bar { width: 850px; }
+    </style>
+</head>
+<body>
+    <nav id="graph">
+        <ul>
+            <li class="bar item1">김예은</li>
+            <li class="bar item2">조수민</li>
+            <li class="bar item3">신길호</li>
+            <li class="bar item4">이규진</li>
+            <li class="bar item5">정우희</li>
+        </ul>
+    </nav>
+</body>
+</html>

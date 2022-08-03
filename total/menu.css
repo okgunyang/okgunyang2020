@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+#menu1 li a:hover { color:violet; }
+#menu1 li a:hover .top { margin-top: -2.4em; }
+
+#menu2 li a:hover .top { color:deeppink; }
+#menu2 li a .top { margin-top:-2.4em; }
+#menu2 li a:hover .top { margin-top:0; }
+
+#menu3 .lst { width: 600px; }
+#menu3 li a { position:relative; width: 150px;
+overflow-x:hidden;  }
+#menu3 li a .btm { position:absolute; top:0px; right:-250px; }
+#menu3 li a:hover .top { margin-left:-250px; }
+#menu3 li a:hover .btm { color:brown; right:25px; }
+
+#menu4 .lst { width: 600px; }
+#menu4 li a { position:relative; width: 150px;
+overflow-x:hidden;  }
+#menu4 li a .btm { position:absolute; top:0px; right:25px; }
+#menu4 li a .top { margin-left:-250px; }
+#menu4 li a:hover .top { margin-left:0px; color:brown; }
+#menu4 li a:hover .btm {  right:-250px; }
+
+#menu5 .lst { overflow-x:hidden; position:relative;}
+#menu5 li { overflow:visible; position:relative;}
+#menu5 li a:before { content:""; display:block; width:100px; height:3px; background:transparent; transition:0.5s; position:absolute; right:-110px; }
+#menu5 li a:hover .top { color:#1c87dc; }
+#menu5 li a:hover::before { right:0;background:#1c87dc;  }
+
+#menu6 .lst { overflow-x:hidden; position:relative;}
+#menu6 li { overflow:visible; position:relative;}
+#menu6 li a:before { content:""; display:block; width:100px; height:3px; background:transparent; transition:0.5s; position:absolute; left:-110px; }
+#menu6 li a:hover .top { color:#1c87dc; }
+#menu6 li a:hover::before { left:0px;background:#1c87dc;  }
+
+#menu7 .lst { overflow-x:hidden; position:relative;}
+#menu7 li { overflow:visible; position:relative;}
+#menu7 li a { position:relative; }
+#menu7 li a:before { content:""; display:block; width:100px; height:3px; background:transparent; transition:0.5s; position:absolute; top:-110px; left: 5px;}
+#menu7 li a:hover .top { color:#1c87dc; }
+#menu7 li a:hover::before { top:0; background:#1c87dc;  }
+
+#menu8 .lst { overflow-x:hidden; position:relative;}
+#menu8 li { overflow:visible; position:relative;}
+#menu8 li a { position:relative; }
+#menu8 li a:before { content:""; display:block; width:100px; height:3px; background:transparent; transition:0.5s; position:absolute; bottom:-110px; left: 5px;}
+#menu8 li a:hover .top { color:#1c87dc; }
+#menu8 li a:hover::before { bottom:0; background:#1c87dc;  }
+
+
+#menu9 .lst {  position:relative;
+width: 500px; }
+#menu9 li { overflow:visible; position:relative; 
+width: 120px; text-align:center; }
+#menu9 li a { position:relative; margin:0 auto; height: 45px; }
+#menu9 li a .top { text-align:center; width: 100px;
+box-sizing:border-box; display:block; clear:both;
+margin:0 auto;}
+#menu9 li a:before { clear:both; content:""; display:block; height:3px; background:#1c87dc; transition:0.5s; width:0; margin:0 auto; }
+
+#menu9 li a:hover .top { color:#1c87dc; }
+#menu9 li a:hover::before { background:#1c87dc; 
+width:100px; }
+#menu9 li a:after { clear:both; content:""; display:block; height:3px; background:#1c87dc; transition:0.5s; width:0; margin:0px auto;  }
+#menu9 li a:hover::after { background:#1c87dc; 
+width:100px; }

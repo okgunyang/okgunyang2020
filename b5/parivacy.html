@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 메타포 설정 -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>ROUND A'ROUND</title>
+
+    <!-- 파비콘 설정 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+
+    <!-- 오픈그래프 설정 -->
+    <meta property="og:url" content="http://" />
+    <meta property="og:title" content="ROUND A'ROUND" />
+    <meta property="og:description" content="The Life Cosmetic 시간과 공간, 감성을 채우는 라이프 코스메틱" />
+    <meta property="og:site_name" content="ROUND A'ROUND" />
+    <meta property="og:type" content="website" />
+
+    <!-- 폰트 연결 -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+    <!-- 기본 스크립트 리소스 연결 -->
+    <script src="html5shiv.js"></script>
+    <script src="https://raw.github.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"></script>
+    <script src="jquery-3.4.1.js"></script>
+
+    <!-- 스타일 연결 -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="sub1.css">
+    <style>
+    .ft { margin-top: 15px; clear:both;  }    
+    .blank { display:block; width: 100%; height: 10px;  clear: both; }
+    .page {  padding-bottom:60px; height: auto; min-height:auto; }    
+    .page_wrap { height: auto; text-align:left; }
+    .none_item { display:none; }
+    .page_inner { text-align:left; }
+    .page_tit { clear:both; font-weight: 300;    line-height: 1.6;    text-align: center;   font-size:40px; border-top:2px solid #333; width: 1020px; margin:40px auto; padding-top:25px;  }
+    .page_com { clear:both; font-weight:300; line-height: 1.3; text-align:center; font-size:16px; padding-top: 0.8rem; }
+
+    .bread { clear:both; float:right; padding-top: 40px;  font-size:16px; padding-bottom: 50px; }
+    .bread a, .bread span { display:block; line-height:2; padding: 1.5rem 1rem; float:left; color:#333; }
+    .bread a:after { content:">"; padding-left: 1rem; } 
+
+    .cont-title1 {        width: 1020px;        margin: 0 auto;
+        padding: 16px 0 13px;        border-bottom: 2px solid #666;        color: #000;
+        font-size: 30px;        line-height: 40px;    }
+    .termsOrder-area {    width: 1020px;    margin: 0 auto 0; }    
+    .termsOrder-area p {    padding: 7px 0 0;    color: #666;    font-size: 12px;    line-height: 24px; }
+    .mgT10 {    margin-top: 10px !important; }
+    a {        color: #666;        text-decoration: none;    }
+    table {    border-spacing: 0;    border: 0; border-collapse: separate; display:table; }
+    caption {    width: 0;    height: 0;    text-indent: -9999px; }
+    .termsOrder-area table {        width: 100%;        text-indent: 0;        font-size: 12px;    }
+    .terms_list_area table {    border-top: 2px solid #d6d6d6; }
+    .termsOrder-area table tbody td {    padding: 10px;    border-left: 1px solid #e6e6e6;    border-bottom: 1px solid #e6e6e6;    vertical-align: top; }
+    .termsOrder-area table tbody td:first-child {    border-left: 0; }
+    .termsOrder-area .terms-title1 {        padding: 41px 0 0;        color: #222;        font-size: 18px;        line-height: 26px;    }
+    .termsOrder-area .list {    padding: 7px 0 0; }
+    .termsOrder-area .list li {    margin: 0 0 0 12px;    text-indent: -12px;    color: #666;    font-size: 12px;    line-height: 24px; }
+    </style>
+</head>
+<body>
+<input type="checkbox" class="ck_item" id="menu_ck">
+<input type="checkbox" class="ck_item" id="search_ck">    
+<div id="wrap">
+    <header class="hd">
+        <label for="menu_ck" class="lst_call">
+            <span class="line1"></span>
+            <span class="line2"></span>
+            <span class="line3"></span>
+        </label>
+        <label for="search_ck" class="search_call"></label>
+        <div class="main_logo"><a href="index.html"></a></div>
+    </header>
+    <main class="page" id="page1">
+        <div class="page_wrap">
+            <div class="page_inner">
+                <p class="bread"><a href="index.html">Home</a><span>Privacy</span></p> 
+                <hr>
+                <h2 class="page_tit">개인정보 처리방침 </h2>
+                <p class="page_com">회원님의 개인정보 유출 및 피해방지를 위해 최선을 다하겠습니다.</p>
+                <div id="container">
+                <h1 class="cont-title1"></h1>
+                
+                <!-- 2017-02-21 수정 -->
+                <div class="termsOrder-area">
+                    <p>씨제이올리브영㈜(이하‘올리브영’이라 함)는 개인정보 보호를 위해 「개인정보 보호법」, 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 등 관련 법령과 규정을 준수하고 있습니다.<br> 올리브영은 회원님의 개인정보 유출 및 피해방지를 위해 최선을 다하겠습니다.</p>
+                    
+                    <div class="terms_list_area mgT10">
+                        <table>
+                            <caption>개인정보 처리방침 목차</caption>
+                            <colgroup>
+                                <col style="width:33%">
+                                <col style="width:34%">
+                                <col style="width:33%">             
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td><a href="#part1">제1조 (개인정보 수집 및 이용 목적)</a></td>
+                                    <td><a href="#part5">제5조 (개인정보 보유 및 이용기간, 파기방법)</a></td>
+                                    <td><a href="#part9">제9조 (개인정보 보호를 위한 대책)</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#part2">제2조 (수집하는 개인정보 항목 및 수집방법)</a></td>
+                                    <td><a href="#part6">제6조 (회원의 권리 및 행사방법)</a></td>
+                                    <td><a href="#part10">제10조 (개인정보 침해 관련 상담 및 신고)</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#part3">제3조 (개인정보 처리위탁)</a></td>
+                                    <td><a href="#part7">제7조 (개인정보 보호책임자 및 담당부서 연락처)</a></td>
+                                    <td><a href="#part11">제11조 (변경에 따른 공지의 의무)</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#part4">제4조 (개인정보 제3자 제공)</a></td>
+                                    <td><a href="#part8">제8조 (쿠키(Cookie)의 운영 및 그 거부에 관한 사항)</a></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    
+                    <h2 class="terms-title1" id="part1">제1조 (개인정보 수집 및 이용 목적)</h2>
+                    
+                    <ol class="list">
+                        <li>1. <span>&nbsp;&nbsp;</span>올리브영은 기본적인 서비스 제공을 위한 필수 정보만을 수집하고 있으며, 고객 각각의 기호와 필요에 맞는 서비스를 제공하기 위하여 정보 수집 시 별도 동의를 얻고 있습니다.<br>선택 정보는 입력하지 않아도 서비스 이용에 제한은 없습니다.</li>
+                        <li>2. 이용자의 기본적 인권을 침해 할 우려가 있는 민감한 개인정보(인종 및 민족, 사상 및 신조, 출신지 및 본적지, 정치적 성향 및 범죄기록, 건강상태 및 성생활 등)는 수집하지 않습니다.<br>그리고, 어떤 경우에라도 입력하신 정보를 이용자들에게 미리 밝힌 목적 이외의 다른 목적으로는 사용하지 않으며 외부로 유출하지 않습니다.</li>
+                    </ol>
+                    
+                    <table class="privacy_table mgT10">
+                        <caption>개인정보 수집 및 이용 목적</caption>
+                        <colgroup>
+                            <col style="width:10%">
+                            <col style="width:16%">
+                            <col style="width:74%;">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th scope="col">구분</th>
+                            <th scope="col">이용 목적</th>
+                            <th scope="col">내용</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td rowspan="2" class="tac">기본</td>
+                            <td>회원관리</td>
+                            <td>
+                                <ol class="list">
+                                    <li>- 회원제서비스를 위한 본인확인 및 가입 의 사 확인, 중복 가입방지, 만 14세 미만 여부 확인</li>
+                                    <li>- 법령상 의무 이행, 법령 및 약관위반 회원에 대한 이용제한 및 서비스부정이용 행위 제재</li>
+                                    <li>- 회원에 대한 고지 사항 전달 및 불만처리 등을 위한 원활한 의사소통의 경로 확보</li>
+                                    <li>- 가입 및 탈퇴 의사 확인, 계약의 체결/유지/이행/관리</li>
+                                    <li>- 회원 서비스 제공</li>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bl01">서비스 제공에 관한 <br>계약 이행 및 요금정산</td>
+                            <td>
+                                <ol class="list">
+                                    <li>- 주문상품, 청구서 및 경품 배송을 위한 정확한 거래 관련 정보 확보</li>
+                                    <li>- 서비스 불만처리</li>
+                                    <li>- 포인트 적립 및 사용, 정산, 고객센터 운영 등</li>
+                                    <li>- 대금 결제, 재화 혹은 용역 주문 시 결제정보 수집, 환불 업무</li>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="tac">선택</td>
+                            <td>마케팅 활용<br>및 신규 서비스 개발</td>
+                            <td>
+                                <ol class="list">
+                                    <li>- 회원에 대한 맞춤형 서비스, 각종 편의서비스 및 혜택 제공</li>
+                                    <li>- 사은/판촉 행사 등 각종 이벤트 행사 관련 정보 안내</li>
+                                    <li>- 마케팅 및 서비스 이용에 대한 분석작업(개별 및 집단 통계분석) 및 신규서비스 개발</li>
+                                    <li>- 제휴행사 및 서비스 홍보를 위한 마케팅 활용 및 제반 마케팅 활동</li>
+                                    <li>- 정기간행물의 발송</li>
+                                    <li>- 올리브영 및 관계사 제공 상품 및 서비스안내</li>
+                                    <li>- 이벤트 정보 및 참여기회 제공(SMS, 전자우편, DM, SNS 등), 앱설치 URL 전송 등</li>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bl01">개별 서비스 이용</td>
+                            <td>
+                                <ol class="list">
+                                    <li>- 이벤트 : 온라인몰 이벤트, SNS이벤트 참여</li>
+                                    <li>- 제휴 포인트 적립 : 업무 제휴사 포인트 적립 서비스 제공(OK캐쉬백)</li>
+                                    <li>- 가맹점 개설 문의 : 개설 상담 관련 회사 검토, 가맹점 관련 고지사항 전달 등 사업관련 의사소통 확보</li>
+                                    <li>- 상품입점 및 제휴문의 : 입점상담 및 거래 관련 고지사항 전달 등 사업 관련 의사소통 확보<br>입점 시 전자계약 시스템 이용을 위한 로그인 정보 연동</li>
+                                    <li>- 사이버 감사실 제보 : 사이버 감사실 제보 접수, 접수 내용 확인을 위한 연락 및 통지, 처리 결과 안내</li>
+                                    <li>- 고객 약속대장 서비스 : 상품 및 서비스에 대한 주문 및 접수 확인</li>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tac">기타</td>
+                            <td>서비스 이용 또는 사업처리<br>과정에서 생성/수집</td>
+                            <td>
+                                <ol class="list">
+                                    <li>- 마케팅 및 홍보 등을 위한 고객분석, 서비스 개발을 위한 통계분석 및 연구조사</li>
+                                    <li>- 개인정보 침해사고에 대한 대비, 분쟁 조정을 위한 기록 보존</li>
+                                    <li>- 상품 구매에 대한 결제</li>
+                                </ol>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <h2 class="terms-title1" id="part2">제2조 (수집하는 개인정보 항목 및 수집방법)</h2>
+                    <p>올리브영은 다음과 같은 개인정보를 수집합니다.</p>
+                    <table class="privacy_table mgT10">
+                        <caption>개인정보 항목 및 수집방법</caption>
+                        <colgroup>
+                            <col style="width:10%">
+                            <col style="width:16%">
+                            <col style="width:74%;">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th scope="col">구분</th>
+                            <th scope="col">수집 방법</th>
+                            <th scope="col">수집/이용 항목</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td rowspan="2" class="tac">필수</td>
+                            <td>회원가입 시<br>(CJ ONE 통합회원)</td>
+                            <td>이름, 생년월일, 성별, 회원ID, 비밀번호, 휴대전화번호, 이메일주소, CI연계값</td>
+                        </tr>
+                        <tr>
+                            <td class="bl01">온라인몰에서 상품 구매 시</td>
+                            <td>
+                                <ol class="list">
+                                    <li>- 배송지 정보 : 이름, 연락처, 주소</li>
+                                    <li>- 결제 정보<br>
+                                        <ol class="sub_list">
+                                            <li>1) 신용카드 결제 시 : 카드사명, 카드번호 등 정산을 위한 정보</li>
+                                            <li>2) 계좌이체/무통장입금/환불 시 : 계좌 정보(계좌번호, 계좌주), 입금자(이름)</li>
+                                            <li>3) 현금영수증 신청 시 : 휴대전화번호</li>
+                                            <li>4) 휴대폰결제 시 : 휴대전화번호, 통신사명</li>
+                                            <li>5) 상품권(문화/도서) 결제 시 : 컬쳐랜드/북앤라이프 아이디, 비밀번호</li>
+                                            <li>6) 간편결제서비스 이용 시 : (카카오페이)휴대전화번호, 생년월일 / (PAYCO)페이코 아이디, 비밀번호</li>
+                                        </ol>                                   
+                                    </li>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="10" class="tac">선택</td>
+                            <td>마케팅 활용 동의 시</td>
+                            <td>이름, 휴대전화번호, 주소, 이메일주소, 생년월일, 성별, 상품/서비스/채널이용 내역<br>[선택] 피부정보(피부타입, 피부톤, 피부고민), 관심분야</td>
+                        </tr>
+                        <tr>
+                            <td class="bl01">온라인몰 이벤트 참여 시</td>
+                            <td>이름, 휴대전화번호, 주소</td>
+                        </tr>
+                        <tr>
+                            <td class="bl01">SNS 댓글 이벤트 참여 시</td>
+                            <td>SNS 아이디, SNS 닉네임, SNS 프로필이미지<br>(* SNS : 인스타그램, 페이스북, 트위터, 카카오톡/카카오스토리, 구글플러스)</td>
+                        </tr>
+                        <tr>
+                            <td class="bl01">OK캐쉬백 적립 시</td>
+                            <td>OK캐쉬백 카드번호</td>
+                        </tr>
+                        <tr>
+                            <td class="bl01">가맹점 개설 문의 시</td>
+                            <td>이름, 이메일주소, 연락처</td>
+                        </tr>
+                        <tr>
+                            <td class="bl01">상품입점 및 제휴문의 시<br>(협력사회원)</td>
+                            <td>이름, 이메일주소, 전화번호, 휴대전화번호, 협력사회원 아이디, 비밀번호<br>[선택] 대표자 이메일, 담당자 부서</td>
+                        </tr>
+                        <tr>
+                            <td class="bl01">사이버 감사실 접수 시</td>
+                            <td>이름, 이메일주소, 연락처</td>
+                        </tr>
+                        <tr>
+                            <td class="bl01">고객 약속대장 서비스 이용 시</td>
+                            <td>이름, 휴대전화번호</td>
+                        </tr>
+                        <tr>
+                            <td class="bl01">앱 알림 설정 동의 시</td>
+                            <td>PUSH토큰</td>
+                        </tr>
+                        <tr>
+                            <td class="bl01">브랜드사이트 이벤트 참여 시</td>
+                            <td>이름, 휴대전화번호, 주소<br>(* 브랜드사이트 : 웨이크메이크, 보타닉힐보, 컬러그램톡, 라운드어라운드)</td>
+                        </tr>
+                        <tr>
+                            <td class="tac">기타</td>
+                            <td>서비스 이용 또는 사업처리<br>과정에서 생성/수집</td>
+                            <td>
+                                <ol class="list">
+                                    <li>- 서비스 이용기록(이용시간, 이용매장, 포인트, 상품 또는 서비스 구매내역)</li>
+                                    <li>- 결제기록, 이용정지기록, 접속기록, IP주소, 쿠키(Cookie), 이벤트 응모자 URL</li>
+                                    <li>- 단말기 정보(Type, OS버전, 모델명)   (*단말기 고유식별정보는 수집하지 않음)</li>
+                                    <li>- 스마트 영수증 정보(상품 및 결제정보, 쿠폰정보) 등</li>
+                                </ol>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <p>( * 선택 서비스의 수집 항목은 각 이벤트, 서비스, 문의 이용 시 별도 동의 수집합니다. )</p>
+                    
+                    <h2 class="terms-title1" id="part3">제3조 (개인정보 처리위탁)</h2>
+                    <p>올리브영은 개인정보의 처리와 관련하여 아래의 수탁사에 업무를 위탁하고 있으며, 관계 법령에 따라 위탁 계약 시 개인정보가 안전하게 관리될 수 있도록 필요한 사항을 규정하고 있습니다.</p>
+                    <table class="privacy_table mgT10">
+                        <caption>개인정보 처리위탁</caption>
+                        <colgroup>
+                            <col style="width:40%">
+                            <col style="width:60%">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th scope="col">업체명(수탁사)</th>
+                            <th scope="col">위탁 업무 내용</th>
+                        </tr>
+                        </thead>                            
+                        <tbody>
+                            <tr>
+                                <td class="tac">CJ대한통운㈜</td>
+                                <td>주문상품 및 이벤트 경품의 배송, 배송 정보 수집 및 배송 서비스 제공</td>
+                            </tr>
+                            <tr>
+                                <td class="tac">CJ텔레닉스㈜</td>
+                                <td>고객센터 운영 및 상담, 리서치 업무</td>
+                            </tr>
+                            <tr>
+                                <td class="tac">CJ올리브네트웍스㈜<br>(재위탁 : 디아이웨어, CSPI, 오브젠)</td>
+                                <td>IT시스템 구축 및 운영</td>
+                            </tr>
+                            <tr>
+                                <td class="tac">CJ올리브네트웍스㈜<br>(재위탁 : 디아이웨어, 임팩소프트)</td>
+                                <td>결제대행 서비스 (PG)</td>
+                            </tr>
+                            <tr>
+                                <td class="tac">CJ올리브네트웍스㈜</td>
+                                <td>이벤트 및 사은품 배송 업무</td>
+                            </tr>
+                            <tr>
+                                <td class="tac">㈜젤라블루코리아</td>
+                                <td>회원 이벤트 진행</td>
+                            </tr>
+                            <tr>
+                                <td class="tac">쿠프마케팅, 플랜에스</td>
+                                <td>이벤트 및 사은품 배송 업무</td>
+                            </tr>
+                            <tr>
+                                <td class="tac">도브투래빗</td>
+                                <td>이벤트 및 사은품 배송 업무, SNS 운영 대행</td>
+                            </tr>
+                            <tr>
+                                <td class="tac">㈜컴퍼니</td>
+                                <td>브랜드사이트(웨이크메이크, 보타닉힐보) 운영, 이벤트 운영 및 경품 배송 업무</td>
+                            </tr>
+                            <tr>
+                                <td class="tac">㈜메쉬코리아</td>
+                                <td>매장 당일 배송 업무 (오늘드림 서비스)</td>
+                            </tr>
+                            <tr>
+                                <td class="tac">위탁판매 협력사 [<span class="btn_list" data-rel="layer" data-target="PartnerList">리스트보기</span>]</td>
+                                <td>위탁판매 주문 상품의 배송 업무</td>
+                            </tr>
+                            <tr>
+                                <td class="tac">그 외 협력사 [<span class="btn_list" data-rel="etc_layer" data-target="PartnerEtcList">리스트보기</span>]</td>
+                                <td>상품 프로모션 경품의 배송, 배송정보 수집 및 배송 서비스 제공</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="layer_pop_wrap w510" id="PartnerList" style="">
+                        <div class="layer_cont">
+                            <h2 class="layer_title">협력사 리스트</h2>
+                            <div class="layer_scroll_box type2">
+                                <table class="mgT20">
+                                    <caption>협력사 목록 표</caption>
+                                    <tbody><tr><td>티엘네트웍스_위수탁(티엘)</td><td>티엘네트웍스_위수탁(이츠독)</td></tr><tr><td>(주)훼밀리인터내셔날_위수탁</td><td>(주)브랜디포</td></tr><tr><td>(주)와이즈유엑스글로벌_위수탁(샐러드)</td><td>(주)와이즈유엑스글로벌_위수탁(아임웰)</td></tr><tr><td>주식회사유한상사_위수탁</td><td>티엘네트웍스_위수탁(퍼피엔젤)</td></tr><tr><td>매일유업(분유)강남특약점(위수탁)</td><td>주식회사 루비콘컴퍼니_위수탁</td></tr><tr><td>남양분유서부지점제5전문점(위수탁)</td><td>(주)와이즈유엑스글로벌_위수탁(아임닭)</td></tr><tr><td>주식회사 올가니카(저스트주스)_위수탁</td><td>(주)아이투코포레이션_위수탁</td></tr><tr><td>에스비아이앤씨(백산수)_위수탁</td><td>웅진식품(주)_위수탁</td></tr><tr><td>씨제이제일제당(주)_위수탁</td><td>캠프에스엘 주식회사_위수탁</td></tr><tr><td>주식회사 씨제이헬로_위수탁</td><td>딩동펫</td></tr><tr><td>주식회사 굿데이</td><td>주식회사 아로펫</td></tr><tr><td>주식회사 러쉬코리아_위수탁</td><td>일동후디스(주)miBaby</td></tr><tr><td>(주)푸드나무</td><td>주식회사 리우</td></tr><tr><td>티엘네트웍스_위수탁(더키코)</td><td>티엘네트웍스_위수탁(라미나로프)</td></tr><tr><td>롯데칠성음료(주)_위수탁</td><td>(주)꽃을담다</td></tr><tr><td>(주)현대그린푸드(냉동)_위수탁</td><td>커머스파크(주)_위수탁</td></tr><tr><td>(주)현대그린푸드(상온)_위수탁</td><td>(주)지앤몰_위수탁</td></tr><tr><td>한국사료</td><td>서흥인터내셔날_온라인 위수탁</td></tr><tr><td>씨제이프레시웨이_위수탁</td><td>주식회사 앙쥬_위수탁</td></tr><tr><td>(주)태영아이엔씨</td><td>주식회사 칠미_위수탁</td></tr><tr><td>티엘네트웍스_위수탁(어반비스트)</td><td>(주) 세토리</td></tr><tr><td>(주) 페슬러</td><td>티엘네트웍스_위수탁(베럴즈)</td></tr><tr><td>KG패션(주)</td><td>(주)유로펫</td></tr><tr><td>(주)베러댄투데이</td><td>주식회사 참조은에스에프</td></tr><tr><td>주식회사 유니토아_위수탁  </td><td>(주)펫맨</td></tr><tr><td>(주)아트웍스코리아_위수탁</td><td>주식회사 바이오일레븐</td></tr><tr><td>주식회사 올가니카(스낵)_위수탁</td><td>-</td></tr></tbody>
+                                </table>
+                            </div>
+                            <button class="layer_close" name="btnCancel">창 닫기</button>
+                        </div>  
+                    </div>
+                    
+                    
+                    <div class="layer_pop_wrap w510" id="PartnerEtcList" style="">
+                        <div class="layer_cont">
+                            <h2 class="layer_title">그 외 협력사 리스트</h2>
+                            <div class="layer_scroll_box type2">
+                                <table class="mgT20">
+                                    <caption>그 외 협력사 목록 표</caption>
+                                    <tbody><tr><td>(주)그레이스인터내셔날</td><td>R1)해브앤비주식회사</td></tr><tr><td>애경청양</td><td>유한킴벌리</td></tr><tr><td>주식회사 엠앤에스컴퍼니</td><td>한국존슨앤존슨판매</td></tr></tbody>
+                                </table>
+                            </div>
+                            <button class="layer_close" name="btnCancel">창 닫기</button>
+                        </div>  
+                    </div>
+                    
+                    
+                    
+                    
+                    <h2 class="terms-title1" id="part4">제4조 (개인정보 제 3자 제공)</h2>
+                    <ol class="list">
+                        <li>1. <span>&nbsp;&nbsp;</span>올리브영은 회원의 개인정보를 ‘개인정보의 수집 및 이용목적’에서 고지한 목적 범위 내에서만 이용하며, 동 범위를 초과하여 이용하거나 타인 또는 타기업 기관에 제공하지 않습니다.</li>                     
+                        <li>
+                            2. 다만, 다음의 경우에는 개인정보를 이용 및 제공할 수 있습니다.
+                            <ol class="sub_list">
+                                <li>1) 회원의 동의가 있는 경우</li>
+                                <li>2) 서비스 제공에 따른 요금 정산을 위하여 필요한 경우</li>
+                                <li>3) 통계작성/학술연구 또는 시장조사를 위하여 필요한 경우로서 특정 개인을 알아볼 수 없는 형태로 가공하여 제공하는 경우</li>
+                                <li>4) 다른 법률에 특별한 규정이 있는 경우</li>
+                                <li>5) 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우</li>
+                            </ol>
+                        </li>
+                        <li>
+                            3. 회원의 동의에 따라 개인정보가 제3자에게 제공되는 경우는 다음과 같습니다.
+                            <table class="privacy_table mgT10">
+                                <caption>개인정보 제3자 제공</caption>
+                                <colgroup>
+                                    <col style="width:20%">
+                                    <col style="width:20%">
+                                    <col style="width:40%">
+                                    <col style="width:20%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">제공받는 자</th>
+                                        <th scope="col">이용 목적</th>
+                                        <th scope="col">제공하는 항목</th>
+                                        <th scope="col">보유 및 이용기간</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="tac">SK플래닛㈜</td>
+                                        <td class="tac">OK캐쉬백 포인트 적립</td>
+                                        <td class="tac">OK캐쉬백 카드번호, 주문정보(주문자명, 주문번호, 결제금액)</td>
+                                        <td class="tac">1년</td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+                                    <tr>
+                                        <td class="tac">CJ올리브네트웍스㈜</td>
+                                        <td class="tac">웹사이트 로그인, CJ ONE 포인트 적립 및 사용, 기타 CJ ONE 멤버십 관련한 서비스 제공</td>
+                                        <td class="tac">아이핀CI, 회원번호, 이름, 생년월일, 성별, 아이디, 비밀번호, 휴대전화번호, 이메일주소, 회원등급</td>
+                                        <td class="tac">올리브영 이용약관 철회 시 또는 CJ ONE 회원탈퇴 후 30일 까지</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                    </ol>
+                    
+                    <h2 class="terms-title1" id="part5">제5조 (개인정보 보유 및 이용기간, 파기방법)</h2>
+                    <ol class="list">
+                        <li>
+                            1. <span>&nbsp;&nbsp;</span>올리브영은 개인정보의 수집목적 또는 제공받은 목적이 달성되면 지체 없이 개인정보를 파기함을 원칙으로 합니다. <br>다만, 회원정보의 계속 보관•이용에 관한 별도 동의를 받거나 관련 법령에 따라 개인정보를 계속 보유하여야 하는 경우에는, 해당 개인정보를 해당 목적 범위 내에서 안전하게 보관•이용합니다.
+                            <ol class="sub_list">
+                                <li>
+                                    1) 법령에서 별도로 보관 및 이용 기간을 정한 경우 (아래에 한정되지 않음)
+                                    <ol class="sub_list">
+                                        <li>- 계약 또는 청약철회 등에 관한 기록 : 5년</li>
+                                        <li>- 대금결제 및 재화 등의 공급에 관한 기록 : 5년</li>
+                                        <li>- 소비자의 불만 또는 분쟁처리에 관한 기록 : 3년</li>
+                                        <li>- 신용정보의 수집, 처리 및 이용 등에 관한 기록 : 3년</li>
+                                        <li>- 웹사이트 접속기록 : 3개월   (서비스 이용 기간 확인을 위한 최종 접속기록은 제외)</li>
+                                    </ol>
+                                </li>
+                                <li>2) 무분별한 회원탈퇴와 재가입으로 인한 피해 최소화, 회원탈퇴 후 변심에 의한 복구 요청 등을 처리하기 위하여 회원탈퇴 후 30일간 회원정보 보관</li>
+                                <li>
+                                    3) 1년 동안 서비스 이용 기록이 없는 미 이용 고객의 경우 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 제29조 및 동법 시행령 제16조에 따라 회원정보 별도 분리보관
+                                    <ol class="sub_list">
+                                        <li>- 서비스 이용 기록 : CJ ONE 포인트 적립 및 사용 실적, 로그인, 매장 방문 구매</li>
+                                        <li>- 분리보관 30일 전 까지 해당 사실, 분리보관 예정일자, 분리 보관되는 개인정보 항목 등에 대하여 이메일 통한 안내</li>
+                                        <li>- 분리 보관된 고객이 추후 포인트 적립 및 사용, 홈페이지 로그인 등 올리브영 서비스 재 이용 시 분리보관 되었던 휴면 계정 복구</li>
+                                    </ol>
+                                </li>
+                                <li>4) 소멸 시효가 남은 상사채권(포인트 등)을 회원이 보유하고 있는 경우 시효 만료 시점까지 보유</li>
+                            </ol>                           
+                        </li>
+                        <li>
+                            2. 올리브영은 정보가 저장 된 유형에 따라 다음의 방법으로 파기합니다.
+                            <ol class="sub_list">
+                                <li>1) 종이에 출력된 정보 : 파쇄기로 파쇄하거나 소각</li>
+                                <li>2) 전자적 파일형태로 저장된 정보 : 데이터가 복원되지 않도록 초기화 또는 덮어쓰기 수행 등의 방법으로 파기</li>
+                            </ol>
+                        </li>
+                    </ol>
+                    
+                    <h2 class="terms-title1" id="part6">제6조 (회원의 권리 및 행사방법)</h2>                    
+                    <ol class="list">
+                        <li>
+                            1. <span>&nbsp;&nbsp;</span>회원은 언제든지 등록되어 있는 회원의 개인정보를 열람 및 정정 하거나 제공을 요구하실 수 있습니다.
+                            <ol class="sub_list">
+                                <li>
+                                    1) 개인정보의 열람, 수정, 제공 요구 방법
+                                    <table class="privacy_table mgT10">
+                                        <caption>개인정보의 열람, 수정 방법</caption>
+                                        <colgroup>
+                                            <col style="width:34%">
+                                            <col style="width:33%">
+                                            <col style="width:33%">
+                                        </colgroup>
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">처리부서 : 고객만족팀 </th>
+                                            <th scope="col" colspan="2">문의 : 고객센터</th>
+                                        </tr>
+                                        </thead>                            
+                                        <tbody>
+                                            <tr>
+                                                <td class="tac">이메일</td>
+                                                <td class="tac">온라인몰</td>
+                                                <td class="tac">매장</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tac">oliveweb@cj.net</td>
+                                                <td class="tac">1522-0882</td>
+                                                <td class="tac">1577-4887</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <ol class="sub_list">
+                                        <li>- 연락처, 이메일, 비밀번호 : 홈페이지  마이페이지 &gt; 마이정보 &gt; 회원정보 수정</li>
+                                        <li>- 배송지 : 마이페이지&gt; 마이정보 &gt; 배송지/환불계좌</li>
+                                        <li>- 고객센터 또는 처리부서로 연락</li>
+                                    </ol>
+                                </li>
+                                <li>2) 열람 및 제공 요구 가능 항목<br>- 올리브영이 보유하고 있는 개인정보<br>- 수집, 이용, 제공 등의 동의한 현황<br>- 수탁사 및 제3자에게 제공한 현황</li>
+                                <li>3) 회원이 개인정보의 오류에 대한 정정을 요청하신 경우에는 정정을 완료하기 전까지 당해 개인정보를 이용 또는 제3자에게 제공하지 않습니다.<br>또한, 잘못된 개인정보를 제3자에게 이미 제공한 경우에는 정정 처리결과를 제3자에게 지체 없이 통지하여 정정이 이루어 지도록 조치하겠습니다.</li>
+                                <li>4) 회원이 개인정보에 대한 열람 및 제공을 요구할 경우, 10일 이내에 회신하도록 하겠습니다.</li>
+                            </ol>
+                        </li>
+                        <li>
+                            2. 회원은 회원가입 시 개인정보의 수집, 이용 및 제공에 대해 동의하신 내용을 언제든지 철회 할 수 있으며, 회원탈퇴 시 올리브영은 지체 없이 회원의 개인정보를 파기하는 등 필요한 조치를 하겠습니다.
+                            <ol class="sub_list">
+                                <li>- 회원탈퇴 : 홈페이지 마이페이지 &gt; 마이정보 &gt; 회원탈퇴</li>
+                            </ol>
+                        </li>
+                        <li>
+                            3. 본조 제1항 및 제2항의 규정에도 불구하고 다음 각호의 경우 개인정보의 열람 및 정정을 제한할 수 있습니다.
+                            <ol class="sub_list">
+                                <li>1) 본인 또는 제3자의 생명, 신체, 재산 또는 권익을 현저하게 해할 우려가 있는 경우</li>
+                                <li>2) 당해 서비스제공자의 업무에 현저한 지장을 미칠 우려가 있는 경우</li>
+                                <li>3) 법령에 위반하는 경우 등</li>
+                            </ol> 
+                        </li>
+                        <li>4. 올리브영은 만 14세 미만 아동의 홈페이지를 통한 회원가입 및 서비스 이용을 제한하고 있습니다.</li>
+                    </ol>
+                    
+                    <h2 class="terms-title1" id="part7">제7조 (개인정보 보호책임자 및 담당부서 연락처)</h2>
+                    <p>회원의 개인정보를 보호하고 개인정보와 관련한 고충을 처리하기 위하여 올리브영은 개인정보 보호책임자를 두고 있습니다.<br>개인정보와 관련한 문의사항이 있으시면 언제든지 연락 주시기 바랍니다. 문의사항에 신속하고 성실하게 답변해 드리겠습니다. </p>
+                    <table class="privacy_table mgT10">
+                        <caption>개인정보의 열람, 수정 방법</caption>
+                        <colgroup>
+                            <col style="width:25%">
+                            <col style="width:25%">
+                            <col style="width:25%">
+                            <col style="width:25%">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th scope="col" colspan="2">개인정보 보호책임자</th>
+                            <th scope="col" colspan="2">담당부서 : 정보보안파트</th>
+                        </tr>
+                        </thead>                            
+                        <tbody>
+                            <tr>
+                                <td class="tac">직책</td>
+                                <td class="tac">성명</td>
+                                <td class="tac">연락처</td>
+                                <td class="tac">이메일</td>
+                            </tr>
+                            <tr>
+                                <td class="tac">전략지원담당</td>
+                                <td class="tac">배  은</td>
+                                <td class="tac">1577-4887</td>
+                                <td class="tac">oliveweb@cj.net</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h2 class="terms-title1" id="part8">제8조 (쿠키(Cookie)의 운영 및 거부에 관한 사항)</h2>
+                    <ol class="list">
+                        <li>1. <span>&nbsp;&nbsp;</span>올리브영은 맞춤형 서비스를 제공하기 위해서 ‘쿠키(cookie)’를 사용할 수 있습니다.<br>쿠키는 웹 또는 모바일 서비스 이용 시 회원의 브라우저에 보내는 소량의 정보이며 단말기(PC, 스마트폰, 태블릿 PC 등)의 하드디스크에 저장됩니다. 단말기는 식별하지만 회원을 개인적으로 식별하지는 않습니다.</li>
+                        <li>
+                            2. 쿠키를 통해 수집한 정보는 다음의 목적을 위해 사용될 수 있습니다.
+                            <ol class="sub_list">
+                                <li>1) 회원과 비회원의 접속빈도, 방문시간 등을 분석하고 취향, 관심분야를 파악하여 타겟(target) 마케팅에 활용</li>
+                                <li>2) 개인의 관심 분야에 따라 차별화된 정보를 제공 또는 관심 있게 둘러 본 품목을 추적하여 개인맞춤서비스를 제공</li>
+                                <li>3) 회원의 습관을 분석하여 서비스 개편 등의 척도로 활용</li>
+                            </ol>
+                        </li>
+                        <li>
+                            3. 회원은 쿠키 설치에 대한 선택권을 가지고 있습니다. 모든 쿠키를 허용하거나, 설치될 때마다 확인을 거치거나, 아니면 모든 쿠키를 거부할 수 있습니다. <br>단, 쿠키 설치를 거부 할 경우 서비스 이용에 불편이 있거나 서비스 제공에 어려움이 있을 수 있습니다.
+                            <ol class="sub_list">
+                                <li>
+                                    1) 쿠키 설치 허용 여부를 지정하는 방법 (Internet Explorer의 경우)
+                                    <ol class="sub_list">
+                                        <li>① [도구] 메뉴에서 [인터넷 옵션]을 선택</li>
+                                        <li>② [개인 정보] 탭을 클릭</li>
+                                        <li>③ [고급] 버튼을 클릭</li>
+                                        <li>④ 쿠키 허용 여부 선택</li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    2) 받은 쿠키를 보는 방법 (Internet Explorer의 경우)
+                                    <ol class="sub_list">
+                                        <li>① [도구] 메뉴에서 [인터넷 옵션]을 선택</li>
+                                        <li>② [일반] 탭에서 ‘검색 기록’의 [설정] 버튼을 클릭</li>
+                                        <li>③ [파일 보기]를 선택</li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>4. 쿠키는 브라우저를 종료하거나 로그아웃 시 만료됩니다.</li>
+                    </ol>
+
+                    <h2 class="terms-title1" id="part9">제9조 (개인정보 보호를 위한 대책)</h2>
+                    <p>올리브영은 개인정보를 처리함에 있어 정보의 분실, 도난, 누출, 외부로부터의 공격, 해킹 등을 방지하고 최상의 안전성을 확보하기 위하여 다음과 같은 기술적, 관리적 대책을 강구하고 있습니다.</p>
+                    <ol class="list">
+                        <li>
+                            1. <span>&nbsp;&nbsp;</span>기술적 대책
+                            <ol class="sub_list">
+                                <li>- 개인정보는 비밀번호에 의해 보호되며, 파일 및 전송 데이터를 암호화하여 중요한 데이터는 별도의 보안기능을 통해 보호</li>
+                                <li>- 컴퓨터 바이러스에 의한 피해가 발생하지 않도록 백신프로그램을 이용하고 있으며, 주기적으로 업데이트를 하여 개인정보 침해 방지</li>
+                                <li>- 암호 알고리즘을 이용하여 네트워크 상의 개인정보를 안전하게 전송할 수 있는 보안장치를 채택</li>
+                                <li>- 해킹 등에 의해 개인정보가 유출되는 것을 방지하기 위해 정기적 취약점 진단 및 침입탐지시스템을 설치하여 불법적인 침입을 감시</li>
+                            </ol>
+                        </li>
+                        <li>
+                            2. 관리적 대책
+                            <ol class="sub_list">
+                                <li>- 개인정보를 취급하는 담당인원을 최소한으로 제한하며, 관련 직원에 대해서는 보안교육 실시</li>
+                                <li>- 개인정보처리시스템 접근권한 부여 절차에 따라 권한 부여하며, 주기적 권한 검토 및 회수</li>
+                                <li>- 개인정보보호 정책에 대한 준수여부를 점검하기 위한 내부절차 마련 및 모니터링</li>
+                                <li>- 개인정보 처리 수탁사 관리 및 감독 등</li>
+                            </ol>
+                        </li>
+                    </ol>
+                    
+                    <h2 class="terms-title1" id="part10">제10조 (개인정보침해 관련 상담 및 신고)</h2>
+                    <p>개인정보침해에 대한 신고나 상담이 필요하신 경우, 다음의 관련 기관으로 문의하여 도움을 받으실 수 있습니다.</p>
+                    <table class="privacy_table mgT10">
+                        <caption>개인정보의 열람, 수정 방법</caption>
+                        <colgroup>
+                            <col style="width:25%">
+                            <col style="width:25%">
+                            <col style="width:25%">
+                            <col style="width:25%">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th scope="col">개인정보침해 신고센터</th>
+                            <th scope="col">개인정보분쟁조정위원회</th>
+                            <th scope="col">대검찰청 사이버수사과</th>
+                            <th scope="col">경찰청 사이버안전국</th>
+                        </tr>
+                        </thead>                            
+                        <tbody>
+                            <tr>
+                                <td class="tac">(국번없이) 118<br><a href="https://privacy.kisa.or.kr/" target="_blank">privacy.kisa.or.kr</a></td>
+                                <td class="tac">1833-6972<br><a href="https://www.kopico.go.kr/" target="_blank">www.kopico.go.kr</a></td>
+                                <td class="tac">(국번없이) 1301<br><a href="http://www.spo.go.kr" target="_blank">www.spo.go.kr</a></td>
+                                <td class="tac">(국번없이) 182<br><a href="http://cyberbureau.police.go.kr" target="_blank">cyberbureau.police.go.kr</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h2 class="terms-title1" id="part11">제11조 (변경에 따른 공지 의무)</h2>
+                    <p>본 개인정보 처리방침은 법령, 정책 또는 보안기술의 변경에 따라 그 내용이 변경될 수 있으며, 내용의 추가 및 삭제, 수정이 있을 시에는 올리브영 인터넷사이트를 통해 이유 및 변경내용을 공지하도록 하겠습니다.</p>
+                    <p>
+                        개인정보 처리방침 버전번호 : v9.0<br>
+                        개인정보 처리방침 시행일자 : 2019.11.01<br>
+                    </p>
+                </div>
+                <!-- 2017-02-21 수정 -->
+            </div>
+            </div>
+        </div>
+        <div class="blank"></div>
+    </main>
+    <footer class="ft">
+        <div class="ft_wrap">
+            <div class="ft_logo">
+                <img src="./img/logo_s.png" alt="하단로고">
+            </div>
+            <nav id="fnb">
+                <ul>
+                    <li><a href="privacy.html"><strong>개인정보처리방침</strong></a></li>
+                    <li><a href="terms.html">이용약관</a></li>
+                    <li><a href="regal.html">법적고지</a></li>
+                </ul>
+            </nav>
+            <div class="addr">
+                <span><strong>씨제이올리브영 주식회사</strong></span> 
+                <span>대표이사 : 구창근</span> 
+                <span>사업자등록번호 : 809-81-01574</span> <br>
+                <span>고객센터 : 1522-0882</span>
+                <span>주소 : (04323) 서울특별시 용산구 한강대로 366 (동자동) 6층</span>
+            </div>
+            <p class="copyright">Copyright ©2019 CJ OliveYoung. All rights reserved.</p>
+        </div>    
+    </footer>
+</div>
+<nav id="menu">
+    <ul class="menu_1st">
+        <li class="sub_has">
+            <a href="about1.html" class="dp1">About</a>
+            <ul class="sub">
+                <li><a href="about1.html" class="dp2">Brand Story</a></li>
+                <li><a href="about2.html" class="dp2">Awards</a></li>
+                <li><a href="about3.html" class="dp2">RARA StyleR</a></li>
+            </ul>
+        </li>
+        <li class="sub_has">
+            <a href="product1_all.html" class="dp1">Products</a>
+            <ul class="sub">
+                <li class="detail_has">
+                    <a href="product1_all.html" class="dp2">Greentea Skin Care</a>
+                    <ul class="detail">
+                        <li>
+                            <a href="product1.html#page1" class="dp3">
+                                <img src="./img/back/greentea01.png" alt="그린티 미스트 토너">
+                                <span class="dp3_txt">그린티 미스트 토너</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product1.html#page2" class="dp3">
+                                <img src="./img/back/greentea02.png" alt="그린티 스킨 세럼">
+                                <span class="dp3_txt">그린티 스킨 세럼</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product1.html#page3" class="dp3">
+                                <img src="./img/back/greentea03.png" alt="그린티 릴리프 크림">
+                                <span class="dp3_txt">그린티 릴리프 크림</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product1.html#page4" class="dp3">
+                                <img src="./img/back/greentea04.png" alt="그린티 수퍼 써드 오일">
+                                <span class="dp3_txt">그린티 수퍼 써드 오일</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product1.html#page5" class="dp3">
+                                <img src="./img/back/greentea05.png" alt="그린티 악산성 클렌징폼">
+                                <span class="dp3_txt">그린티 악산성 클렌징폼</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product1.html#page6" class="dp3">
+                                <img src="./img/back/greentea06.png" alt="그린티 트러블 버블폼">
+                                <span class="dp3_txt">그린티 트러블 버블폼</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product1.html#page7" class="dp3">
+                                <img src="./img/back/greentea07.png" alt="그린티 퓨어 클렌징 오일">
+                                <span class="dp3_txt">그린티 퓨어 클렌징 오일</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product1.html#page8" class="dp3">
+                                <img src="./img/back/greentea08.png" alt="그린티 약산성 립앤아이 리무버">
+                                <span class="dp3_txt">그린티 약산성 립앤아이 리무버</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="detail_has">
+                    <a href="product2_all.html" class="dp2">Basic Skin Care</a>
+                    <ul class="detail">
+                        <li>
+                            <a href="product2.html#page1" class="dp3">
+                                <img src="./img/back/basicskincare01.png" alt="컴포트 하이드레이팅 워터">
+                                <span class="dp3_txt">컴포트 하이드레이팅 워터</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product2.html#page2" class="dp3">
+                                <img src="./img/back/basicskincare02.png" alt="에센셜 부스팅 하이드레이터">
+                                <span class="dp3_txt">에센셜 부스팅 하이드레이터</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product2.html#page3" class="dp3">
+                                <img src="./img/back/basicskincare03.png" alt="리페어링 액티브 세럼">
+                                <span class="dp3_txt">리페어링 액티브 세럼</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product2.html#page4" class="dp3">
+                                <img src="./img/back/basicskincare04.png" alt="인텐스 배리어 크림">
+                                <span class="dp3_txt">인텐스 배리어 크림</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="detail_has">
+                    <a href="product3_all.html" class="dp2">Sun Care</a>
+                    <ul class="detail">
+                        <li>
+                            <a href="product3.html#page1" class="dp3">
+                                <img src="./img/back/suncare01.png" alt="그린티 시카 선로션">
+                                <span class="dp3_txt">그린티 시카 선로션</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product3.html#page2" class="dp3">
+                                <img src="./img/back/suncare02.png" alt="그린티 시카 선스틱">
+                                <span class="dp3_txt">그린티 시카 선스틱</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="detail_has">
+                    <a href="product4_all.html" class="dp2">Home Fragrance</a>
+                    <ul class="detail">
+                        <li>
+                            <a href="product4.html#page1" class="dp3">
+                                <img src="./img/back/homefragrance01.png" alt="센티드 디퓨저">
+                                <span class="dp3_txt">센티드 디퓨저</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product4.html#page2" class="dp3">
+                                <img src="./img/back/homefragrance02.png" alt="센티드 캔들">
+                                <span class="dp3_txt">센티드 캔들</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product4.html#page3" class="dp3">
+                                <img src="./img/back/homefragrance03.png" alt="드라이플라워 디퓨저">
+                                <span class="dp3_txt">드라이플라워 디퓨저</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product4.html#page4" class="dp3">
+                                <img src="./img/back/homefragrance04.png" alt="선인장 디퓨저">
+                                <span class="dp3_txt">선인장 디퓨저</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product4.html#page5" class="dp3">
+                                <img src="./img/back/homefragrance05.png" alt="마이 러블리 펫 디퓨저">
+                                <span class="dp3_txt">마이 러블리 펫 디퓨저</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product4.html#page6" class="dp3">
+                                <img src="./img/back/homefragrance06.png" alt="드라이플라워 센티드 카드">
+                                <span class="dp3_txt">드라이플라워 센티드 카드</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="detail_has">
+                    <a href="product5_all.html" class="dp2">Life Fragrance</a>
+                    <ul class="detail">
+                        <li>
+                            <a href="product5.html#page1" class="dp3">
+                                <img src="./img/back/lifefragrance01.png" alt="볼륨 에디션">
+                                <span class="dp3_txt">볼륨 에디션</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product5.html#page2" class="dp3">
+                                <img src="./img/back/lifefragrance02.png" alt="라이프 프래그런스">
+                                <span class="dp3_txt">라이프 프래그런스</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="detail_has">
+                    <a href="product6_all.html" class="dp2">Body Care</a>
+                    <ul class="detail">
+                        <li>
+                            <a href="product6.html#page1" class="dp3">
+                                <img src="./img/back/bodycare01.png" alt="버블 바쓰">
+                                <span class="dp3_txt">버블 바쓰</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product6.html#page2" class="dp3">
+                                <img src="./img/back/bodycare02.png" alt="바쓰 솔트">
+                                <span class="dp3_txt">바쓰 솔트</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product6.html#page3" class="dp3">
+                                <img src="./img/back/bodycare03.png" alt="드라이플라워 콜온&핸드크림">
+                                <span class="dp3_txt">드라이플라워 콜온&핸드크림</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product6.html#page4" class="dp3">
+                                <img src="./img/back/bodycare04.png" alt="드라이플라워 바디&헤어 미스트">
+                                <span class="dp3_txt">드라이플라워 바디&헤어 미스트</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="moment.html" class="dp1">RARA Moments</a>
+        </li>
+        <li>
+            <a href="store.html" class="dp1">Stores</a>
+        </li>
+    </ul>
+</nav>
+<nav id="search">
+    <div id="search_form">
+        <ul class="fieldset">
+            <li class="item_form">
+                <div class="search_con">
+                    <input type="text" id="keyword" placeholder="상품명을 입력해주세요">
+                    <input type="submit" id="search_submit" class="search_btn">
+                </div>
+            </li>
+            <li class="item_div">인기 검색어</li>
+            <li class="item"><a href="">1. 그린티 시카 선로션</a></li>
+            <li class="item"><a href="">2. 그린티 약산성 클렌징폼</a></li>
+            <li class="item"><a href="">3. 센티드 디퓨저</a></li>
+            <li class="item"><a href="">4. 라이프 프래그런스</a></li>
+            <li class="item"><a href="">5. 버블 바쓰</a></li>
+            <li class="item_btn">
+                <label for="search_ck" class="search_close">닫기</label>
+            </li>
+        </ul>
+        <script>
+        $("#search_submit").click(function(){
+            var data = $("#keyword").val();
+            if(data=="") { alert("검색어를 입력해주세요"); } else { data.submit(); location.href = "search_result.html"; }
+        });    
+        </script>
+    </div>
+</nav>
+<!-- <script src="main.js"></script> -->
+</body>
+</html>

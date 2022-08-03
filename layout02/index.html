@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<title>portpolio_layout next2018</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/grid.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js"></script>
+	<script src="js/main.js"></script>
+</head>
+<body>
+	<header id="main_header">
+		<ul id="gnb" >
+			<li class="col-2">
+				<div>
+					<h1><a href="#">Hong Gil Dong</a></h1>
+					<h2>Creative Web Designer</h2>
+				</div>
+			</li>
+			<li class="col-2">
+				<a href="#">
+					<span>About Me</span>
+					<i class="far fa-user"></i>
+				</a>
+			</li>
+			<li class="col-2">
+				<a href="#">
+					<span>Portfolio</span>
+					<i class="fas fa-desktop"></i>
+				</a>
+			</li>
+			<li class="col-2">
+				<a href="#">
+					<span>Connect me</span>
+					<i class="far fa-envelope"></i>
+				</a>
+			</li>				
+		</ul>
+	</header>
+	
+	<section id="about">
+		<div class="container">
+			<h1>About Me</h1>
+			<article>
+				<div class="col-3">
+					<img src="https://images.pexels.com/photos/1061130/pexels-photo-1061130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" width="100%">
+				</div>
+				<div class="col-3-2">
+					<p>저는 더조은 컴퓨터아트 학원에서 빅데이터시각화 프론트엔드개발자 양성 과정을 통해 웹 기반의 다양한 기술을 공부하였습니다. 아직은 실무적인 경험은 많이 부족하지만 젊음과 열정을 밑천으로 도전하는 유능한 웹 관련 종사자가 되고자 합니다. 꾸준히 발전하는 모습을 보여드리겠습니다!
+					</p>
+				</div>
+			</article>
+			<ul class="skill_graph clear">
+				<li class="col-4">
+					<div class="chart1" data-percent="85"><span></span></div>
+					<span>HTML5</span>
+				</li>
+				<li class="col-4">
+					<div class="chart2" data-percent="70"><span></span></div>
+					<span>CSS3</span>
+				</li>
+				<li class="col-4">
+					<div class="chart3" data-percent="50"><span></span></div>
+					<span>JavaScript</span>
+				</li>
+				<li class="col-4">
+					<div class="chart4" data-percent="90"><span></span></div>
+					<span>PhotoShop/Illustrator</span>
+				</li>
+			</ul>
+		</div>
+	</section>
+	
+	<section id="portfolio">
+		<div class="container">
+			<h1>My Portfolio</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius voluptatum id voluptatem, sunt impedit qui voluptates cumque porro ratione ut expedita.</p>
+			<nav class="portfolio_nav">
+				<a href="#">All</a>
+				<a href="#">Homepage</a>
+				<a href="#">Icon</a>
+				<a href="#">Banner</a>
+			</nav>
+			<ul id="list" class="clear">
+				<li class="col-3"><a href="#">
+					<img src="http://placehold.it/300x300" alt="작품">
+				</a></li>
+				<li class="col-3"><a href="#">
+					<img src="http://placehold.it/300x300" alt="작품">
+				</a></li>
+				<li class="col-3"><a href="#">
+					<img src="http://placehold.it/300x300" alt="작품">
+				</a></li>
+			</ul>
+		</div>
+	</section>
+	
+	<section id="contact" class="container">
+		<h1>connect me</h1>
+		<div class="col-2">
+			<figure>
+				<img src="http://placehold.it/120x120" alt="photo"><br>
+				<figcation>Hong Gil Dong</figcation>	
+			</figure>
+		</div>
+		<div class="col-2">
+			<ul class="address">
+				<li><a href="mailto:#">CONTACT@HELLO.ME</a></li>
+				<li><a href="tel:#">010-123-1234</a></li>
+			</ul>	
+			<ul class="sns">
+				<li><a href="#"><i class="fab fa-wordpress"></i></a></li>
+				<li><a href="#"><i class="fab fa-blogger"></i></a></li>
+				<li><a href="#"><i class="fab fa-youtube"></i></a></li>
+			</ul>
+		</div>
+	</section>
+	
+	<footer id="main_footer">
+		<div class="container">
+			<p>&copy; Copyright 2018 Hong Gil Dong.</p>
+		</div>
+	</footer>
+		
+</body>
+</html>

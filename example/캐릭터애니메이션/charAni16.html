@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>캐릭터 애니메이션 16</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+* {
+  margin: 0 auto;
+  -webkit-user-select: none;
+  font-size: 140%;
+  font-family: 'Fjalla One', sans-serif;
+}
+body {
+  background-color: #460F9C;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.face {
+  height: 270px;
+  width: 230px;
+  background: #D32996;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  border-radius: 5rem 5rem 5rem 5rem;
+  top: -0.5rem;
+  z-index: 3;
+  animation: shrug 2s infinite ease-in-out;
+}
+.hat {
+  background-color: #FB8E24;
+  height: 42px;
+  width: 78px;
+  top: 0;
+  left: 3.4rem;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  border-radius: 50px 50px 0 0;
+  position: absolute;
+  transform: scale(2.85);
+  z-index: 5;
+}
+.hat:before {
+  height: 6px;
+  width: 10px;
+  background-color: #FB8E24;
+  position: absolute;
+  content: '';
+  border-radius: 50px 50px 0 0;
+  top: -3px;
+  left: 50%;
+  margin-left: -5px;
+}
+.hat:after {
+  height: 8px;
+  width: 42px;
+  background-color: #FB8E24;
+  position: absolute;
+  content: '';
+  border-radius: 50px 0 0 50px;
+  bottom: 0;
+  left: -38px;
+}
+.hair-left {
+  background-color: #fae660;
+  position: absolute;
+  top: 46px;
+  z-index: 5;
+  top: 3.6rem;
+  left: 0.35rem;
+  width: 8px;
+  border-radius: 0 0 0 50px;
+  height: 14px;
+}
+.hair-left:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 8px;
+  width: 8px;
+  height: 8px;
+  background-color: #fae660;
+  border-radius: 0 0 50px 0;
+}
+.hair-right {
+  background-color: #fae660;
+  position: absolute;
+  top: 46px;
+  z-index: 5;
+  right: 48px;
+  width: 8px;
+  border-radius: 0 0 50px 0;
+  height: 14px;
+}
+.hair-right:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  background-color: #fae660;
+  border-radius: 0 0 0 50px ;
+}
+.hat-hair {
+  width: 24px;
+  height: 10px;
+  background-color: #fae660;
+  border-radius: 50px 50px 0 0;
+  position: absolute;
+  bottom: 10px;
+  right: 6px;
+}
+.hat-hair:before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  top: -5px;
+  right: 3px;
+  background-color: #fae660;
+  border-radius: 0 50px 0 0;
+}
+.hat-hair:after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 8px;
+  top: 2px;
+  right: -10px;
+  background-color: #fae660;
+  border-radius: 0 0 50px 0;
+}
+.hat-close {
+  position: absolute;
+  bottom: 0;
+  right: 2px;
+  width: 28px;
+  height: 10px;
+  border-radius: 0 100px 100px 0;
+  background-color: #9587d0;
+}
+.eyebrow-left {
+  height: 20px;
+  width: 60px;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: #260373;
+  border-radius: 5rem 5rem 2rem 2rem ;
+  left: -4.5rem;
+  z-index: 5;
+  top: -3.76rem;
+}
+.eyebrow-left .stitch {
+  height: 22px;
+  width: 8px;
+  background: #D32996;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  left: -1rem;
+}
+.eyebrow-right {
+  height: 20px;
+  width: 60px;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: #260373;
+  border-radius: 5rem 5rem 2rem 2rem ;
+  left: 4.5rem;
+  z-index: 5;
+  top: -3.76rem;
+  animation: eyebrowraise 2s infinite ease-in-out;
+}
+.eye-left {
+  height: 60px;
+  width: 60px;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: #fff;
+  left: -4.5rem;
+  z-index: 4;
+  border-radius: 50%;
+}
+.eyeball-left {
+  height: 40px;
+  width: 40px;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: #460F9C;
+  left: -4.5rem;
+  z-index: 4;
+  border-radius: 50%;
+}
+.innereyeball-left {
+  height: 20px;
+  width: 20px;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: #260373;
+  left: -4.5rem;
+  z-index: 4;
+  border-radius: 50%;
+}
+.eye-right {
+  height: 60px;
+  width: 60px;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: #fff;
+  left: 4.5rem;
+  z-index: 4;
+  border-radius: 50%;
+}
+.eyeball-right {
+  height: 40px;
+  width: 40px;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: #460F9C;
+  left: 4.5rem;
+  z-index: 4;
+  border-radius: 50%;
+}
+.innereyeball-right {
+  height: 20px;
+  width: 20px;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: #260373;
+  left: 4.5rem;
+  z-index: 4;
+  border-radius: 50%;
+}
+.nose {
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  font-size: 0.8em;
+  width: 3em;
+  height: 3.2em;
+  text-align: center;
+  margin: 10% auto 0;
+  overflow: hidden;
+  border-radius: 100%;
+  top: 4rem;
+  transform: scale(0.4);
+}
+.nose:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: solid 2em transparent;
+  border-bottom-color: #e069b5;
+  border-bottom-width: 3.2em;
+  border-top-width: 0;
+  margin: -0.3em -2em;
+}
+.eyelid-left {
+  position: absolute;
+  height: 22px;
+  width: 70px;
+  background: #D32996;
+  top: 4.65rem;
+  left: 1.25rem;
+  z-index: 5;
+  animation: eyelidsdown 2s infinite ease-in-out;
+}
+.eyelid-right {
+  position: absolute;
+  height: 22px;
+  width: 70px;
+  background: #D32996;
+  top: 4.65rem;
+  left: 6rem;
+  z-index: 5;
+  animation: eyelidsdown 2s infinite ease-in-out;
+}
+.mouth {
+  height: 10px;
+  width: 62px;
+  position: absolute;
+  background: white;
+  top: 10rem;
+  left: 3.8rem;
+  border-radius: 5rem;
+  animation: frown 2s infinite ease-in-out;
+}
+.ear-left {
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: #a82078;
+  height: 60px;
+  width: 30px;
+  border-bottom-left-radius: 5rem;
+  border-top-left-radius: 5rem;
+  left: -11.6rem;
+}
+.earring1 {
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: #fae660;
+  height: 5px;
+  width: 13.5px;
+  top: -1.6rem;
+  left: -11.6rem;
+  transform: rotate(50deg);
+}
+.earring2 {
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: #fae660;
+  height: 5px;
+  width: 13.5px;
+  top: -0.8rem;
+  left: -12.2rem;
+  transform: rotate(20deg);
+}
+.innerear-left {
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: #69144b;
+  height: 30px;
+  width: 15px;
+  border-bottom-left-radius: 5rem;
+  border-top-left-radius: 5rem;
+  left: -11rem;
+}
+.ear-right {
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: #a82078;
+  height: 60px;
+  width: 30px;
+  border-bottom-right-radius: 5rem;
+  border-top-right-radius: 5rem;
+  left: 10.25rem;
+}
+.innerear-right {
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: #69144b;
+  height: 30px;
+  width: 15px;
+  border-bottom-right-radius: 5rem;
+  border-top-right-radius: 5rem;
+  left: 10.25rem;
+}
+.cheek-left {
+  height: 36px;
+  width: 56px;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: #69144b;
+  top: 5rem;
+  left: -5.5rem;
+  border-radius: 50%;
+  opacity: 0.14;
+}
+.cheek-right {
+  height: 36px;
+  width: 56px;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: #69144b;
+  top: 5rem;
+  left: 5.5rem;
+  border-radius: 50%;
+  opacity: 0.14;
+}
+.neckshadow {
+  height: 50px;
+  width: 70px;
+  background: #000;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  border-radius: 0 0 1.2rem 1.2rem;
+  top: 11.2rem;
+  opacity: 0.2;
+  z-index: 2;
+}
+.chest {
+  height: 170px;
+  width: 325px;
+  background: #9359ef;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  border-radius: 5rem 5rem 0 0;
+  top: 19rem;
+  z-index: -1;
+}
+.neckline {
+  height: 100px;
+  width: 85px;
+  background: #460F9C;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  border-radius: 0 0 5rem 5rem;
+  top: -5rem;
+}
+.neck {
+  height: 100px;
+  width: 70px;
+  background: #D32996;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  border-radius: 0 0 5rem 5rem;
+  top: -5.7rem;
+  z-index: 0;
+}
+.bubble {
+  margin: auto;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  position: absolute;
+  width: 175px;
+  height: 95px;
+  padding: 4px;
+  background: #FFFFFF;
+  -webkit-border-radius: 31px;
+  -moz-border-radius: 31px;
+  border-radius: 31px;
+  left: 22rem;
+  top: 10rem;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.bubble:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 14px 22px 14px 0;
+  border-color: transparent #FFFFFF;
+  display: block;
+  width: 0;
+  z-index: 1;
+  left: -22px;
+  top: 39px;
+}
+.bubbletext {
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  text-align: center;
+  top: 0.75rem;
+}
+@keyframes shrug {
+  0% {
+    top: -0.5rem;
+  }
+  50% {
+    top: 0.5rem;
+  }
+  80% {
+    top: 0.5rem;
+  }
+  100% {
+    top: -0.5rem;
+  }
+}
+@keyframes frown {
+  0% {
+    width: 62px;
+  }
+  50% {
+    width: 42px;
+  }
+  80% {
+    width: 42px;
+  }
+  100% {
+    width: 62px;
+  }
+}
+@keyframes eyebrowraise {
+  0% {
+    top: -3.76rem;
+  }
+  50% {
+    top: -5rem;
+  }
+  80% {
+    top: -5rem;
+  }
+  100% {
+    top: -3.76rem;
+  }
+}
+@keyframes eyelidsdown {
+  0% {
+    height: 22px;
+  }
+  50% {
+    height: 34px;
+  }
+  80% {
+    height: 34px;
+  }
+  100% {
+    height: 22px;
+  }
+}
+
+    </style>
+</head>
+<body>
+<div class="face">
+  <div class="hat">
+      <div class="hat-hair"></div>
+      <div class="hat-close"></div>
+  </div>
+  <div class="ear-left"></div>
+  <div class="innerear-left"></div>
+  <div class="earring1"></div>
+  <div class="earring2"></div>
+  <div class="eyebrow-left">
+    <div class="stitch"></div>
+  </div>
+  <div class="hair-left"></div>
+  <div class="hair-right"></div>
+  <div class="eyelid-left"></div>
+  <div class="eye-left"></div>
+  <div class="eyeball-left"></div>
+  <div class="innereyeball-left"></div>
+  <div class="cheek-left"></div>
+  <div class="eyebrow-right"></div>
+  <div class="eyelid-right"></div>
+  <div class="eye-right"></div>
+  <div class="eyeball-right"></div>
+  <div class="innereyeball-right"></div>
+  <div class="cheek-right"></div>
+  <div class="ear-right"></div>
+  <div class="innerear-right"></div>
+  <div class="nose"></div>
+  <div class="mouth"></div>
+</div>
+<div class="neckshadow"></div>
+<div class="chest">
+  <div class="neckline"></div>
+  <div class="neck"></div>
+</div>
+<div class="bubble animated jackInTheBox">
+  <p class="bubbletext">Yo</p>
+</div>
+</body>
+</html>

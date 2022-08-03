@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PopupBox&amp;ModalBox&amp;DialogBox 1</title>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; }
+    ul { list-style: none; }
+    a { text-decoration: none; }
+    .wrap { clear:both; padding: 1em; margin: 1em; border-top:3px solid #333;  }    
+    .tit { text-align:center; padding-top: 2em; padding-bottom: 1em; }  
+    
+    #top_banner { width: 100vw; height:0px; overflow:hidden; text-align:center; position:relative; transition:0.5s; }
+    .close_btn { display:block; height: 40px; width:180px; 
+        line-height: 40px; text-align:center; color:#fff; background-color:deeppink; border-radius:22px; position:absolute; bottom:10px; right:50%; margin-right: -90px; }    
+    #top_banner:target { height: 500px; } 
+    #layerpop { display:none; width: 100vw; height: 100vh; 
+        position:fixed; z-index:999; top: 0; left: 0; 
+        background:rgba(0,0,0,0.75); }
+    #layerpop:target { display:block; }  
+    .layer_box { position:relative; width:600px; margin:10em auto;  text-align:center; }    
+    .layer_tit { height: 40px; background-color:#333; color:#fff; text-indent:1em; line-height: 40px; }
+    .layer_box img { display:block; width: 100%; }
+    .btn_box a { display:block; margin: 1em; float:left; padding: 1em; border:2px solid #333; color:#333;  }
+    </style>
+</head>
+<body>
+    <div id="top_banner">
+        <a href="#" class="close_btn">배너 닫기</a>
+        <img src="slider01.jpg" alt="배너">
+    </div>
+    <div class="wrap">
+        <h2 class="tit">상단 오픈과 레이어 팝업1</h2>
+        <div class="btn_box">
+            <a href="#top_banner">상단 배너 버튼</a>
+            <a href="#layerpop">레이어 팝업 버튼</a>
+        </div>
+    </div>
+    <div id="layerpop">
+        <figure class="layer_box">
+            <h3 class="layer_tit">레이어 팝업창</h3>
+            <a href="#" class="close_btn">레이어 팝업 닫기</a>
+            <img src="slider02.jpg" alt="팝업이미지">
+        </figure>
+    </div>
+</body>
+</html>

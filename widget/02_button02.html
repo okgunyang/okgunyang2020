@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>특수 버튼 만들기</title>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; }
+    ul { list-style: none; }
+    a { text-decoration: none; }
+    button, input { outline:0; border:0; background:none; }
+    .btn_fr { clear: both; width:98%; min-height:400px; padding-bottom: 30px; border-top:3px solid #333;  margin: 0 auto; background-color:#ffffff; overflow-x:hidden; }    
+    .btn_tit { font-size:32px; text-align:center; border-bottom:1px dotted #333; text-transform:capitalize; padding-top: 60px; }
+    .btn_box { width: 1280px; margin:10px auto;  } 
+    .btn_box li { float:left; width: 50%; position:relative; 
+        min-height:400px; }
+        
+    #switch1 { display:none; }    
+    .switch1 { display:block; width: 186px; height: 372px; 
+        background-image:url("electric01.png"); background-position:-368px -125px; background-repeat:no-repeat; }
+    #switch1:checked ~ .switch1 {  background-position:-71px -125px; }    
+    
+    #switch2 { display:none; }
+    .switch2 { display: block;  width: 130px; box-sizing:border-box;
+      height: 60px;   margin: 70px auto; position: relative;
+      background: #ced8da; /* Old browsers */
+      background: -moz-linear-gradient(left,  #ced8da 0%, #d8e0e3 29%, #ccd4d7 34%, #d4dcdf 62%, #fff9f4 68%, #e1e9ec 74%, #b7bfc2 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ced8da), color-stop(29%,#d8e0e3), color-stop(34%,#ccd4d7), color-stop(62%,#d4dcdf), color-stop(68%,#fff9f4), color-stop(74%,#e1e9ec), color-stop(100%,#b7bfc2)); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(left,  #ced8da 0%,#d8e0e3 29%,#ccd4d7 34%,#d4dcdf 62%,#fff9f4 68%,#e1e9ec 74%,#b7bfc2 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(left,  #ced8da 0%,#d8e0e3 29%,#ccd4d7 34%,#d4dcdf 62%,#fff9f4 68%,#e1e9ec 74%,#b7bfc2 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(left,  #ced8da 0%,#d8e0e3 29%,#ccd4d7 34%,#d4dcdf 62%,#fff9f4 68%,#e1e9ec 74%,#b7bfc2 100%); /* IE10+ */
+      background: linear-gradient(to right,  #ced8da 0%,#d8e0e3 29%,#ccd4d7 34%,#d4dcdf 62%,#fff9f4 68%,#e1e9ec 74%,#b7bfc2 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ced8da', endColorstr='#b7bfc2',GradientType=1 ); /* IE6-9 */
+      transition: all 0.2s ease-out;
+      cursor: pointer;
+      border-radius: 0.35em;
+      box-shadow: 
+        0 0 1px 2px rgba(0,0,0,0.7),
+        inset 0 2px 0 rgba(255,255,255,0.6),
+        inset 0 -1px 0 1px rgba(0,0,0,0.3),
+        0 8px 10px rgba(0,0,0,0.15);
+    }  
+    .switch2:before { display:block; position: absolute;	left: -35px; right: -35px; top: -25px; bottom: -25px; z-index: -2;
+  content: ""; border-radius: 0.4em; background: #d5dde0;
+  background: linear-gradient(#d7dfe2, #bcc7cd);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,0.6),
+    inset 0 -1px 1px 1px rgba(0,0,0,0.3),
+    0 0 8px 2px rgba(0,0,0,0.2),
+    0 2px 4px 2px rgba(0,0,0,0.1);
+  pointer-events: none;  transition: all 0.2s ease-out; 
+    box-sizing:border-box;
+    }
+    .switch2:after { content: ""; display:block; position: absolute;
+      right: -25px;  top: 50%;  width: 16px;
+      height: 16px;  border-radius: 50%;  background: #788b91;
+      margin-top: -8px;     
+        box-shadow:inset 0 -1px 8px rgba(0,0,0,0.7),
+        inset 0 -2px 2px rgba(0,0,0,0.2),
+        0 1px 0 white,
+        0 -1px 0 rgba(0,0,0,0.5),
+        -47px 32px 15px 13px rgba(0,0,0,0.25);
+        box-sizing:border-box;
+    }
+    #switch2:checked ~ .switch2 {
+      background: #b7bfc2; /* Old browsers */
+      background: -moz-linear-gradient(left, #b7bfc2 0%, #e1e9ec 26%, #fff9f4 32%, #d4dcdf 38%, #ccd4d7 66%, #d8e0e3 71%, #ced8da 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, right top, color-stop(0%,#b7bfc2), color-stop(26%,#e1e9ec), color-stop(32%,#fff9f4), color-stop(38%,#d4dcdf), color-stop(66%,#ccd4d7), color-stop(71%,#d8e0e3), color-stop(100%,#ced8da)); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(left, #b7bfc2 0%,#e1e9ec 26%,#fff9f4 32%,#d4dcdf 38%,#ccd4d7 66%,#d8e0e3 71%,#ced8da 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(left, #b7bfc2 0%,#e1e9ec 26%,#fff9f4 32%,#d4dcdf 38%,#ccd4d7 66%,#d8e0e3 71%,#ced8da 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(left, #b7bfc2 0%,#e1e9ec 26%,#fff9f4 32%,#d4dcdf 38%,#ccd4d7 66%,#d8e0e3 71%,#ced8da 100%); /* IE10+ */
+      background: linear-gradient(to right, #b7bfc2 0%,#e1e9ec 26%,#fff9f4 32%,#d4dcdf 38%,#ccd4d7 66%,#d8e0e3 71%,#ced8da 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7bfc2', endColorstr='#ced8da',GradientType=1 ); /* IE6-9 */
+    }
+    #switch2:checked ~ .switch2:after {
+        background: #f10049;
+      box-shadow: 
+        inset 0 -1px 8px rgba(0,0,0,0.7),
+        inset 0 -2px 2px rgba(0,0,0,0.2),
+        0 1px 0 white,
+        0 -1px 0 rgba(0,0,0,0.5),
+        -110px 32px 15px 13px rgba(0,0,0,0.25); 
+    }
+        
+    #switch3 { display:none; }    
+    .switch3 { display:block; width: 230px; height: 83px; 
+        background-image:url("toggle01.png"); background-position:-407px -195px; background-repeat: no-repeat; 
+    }
+    #switch3:checked ~ .switch3 { background-position:-60px -195px; }    
+        
+    #switch4 { display:none; }
+    .switch4 { display:block; width: 230px; height: 82px; 
+        position:relative; background-color:#f1f1f1; 
+        border-radius:44px; border:2px solid #ececec; 
+        box-shadow:1px 1px 5px #ccc; }
+    .switch4:before { content:"OFF"; display:block; width: 210px; 
+        height: 62px; border-radius:34px; background-color:deeppink; color:#fff; text-align:center;
+        text-indent:40px; line-height: 62px; position:absolute; 
+        top:10px; left: 10px; } 
+    .switch4:after { content:""; display:block; width: 58px; height: 58px; border-radius:30px; border:1px solid #ececec; 
+        background-color:#f1f1f1; position:absolute; top:11px; 
+        left: 11px; box-shadow:-1px -1px 2px #ccc; 
+        transition:0.7s; }    
+    #switch4:checked ~ .switch4:before { content:"ON"; background-color:darkblue; }    
+    #switch4:checked ~ .switch4:after { left:159px; }
+        
+    #switch5 { display:none; }    
+    .switch5 { display:block; width:133px; height:132px; 
+        background-image:url("toggle01.png"); background-position:-202px -27px; background-repeat: no-repeat; 
+    }
+    #switch5:checked ~ .switch5 { background-position:-32px -27px; }   
+      
+    #switch6 { display:none; }    
+    .sw_fr { width: 126px; height: 126px; position:relative; 
+        margin: 0 auto; border-radius:65px; 
+        background: #f0f0f0; /* Old browsers */
+        background: -moz-linear-gradient(-45deg, #f0f0f0 0%, #dddddd 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, #f0f0f0 0%,#dddddd 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, #f0f0f0 0%,#dddddd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f0f0', endColorstr='#dddddd',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */ 
+        border-left:2px solid #ccc; border-top:2px solid #ccc; 
+    }
+    .switch6 { display:block; width: 80px; height: 80px; 
+        margin:21px; border-radius:42px;  position:relative;
+        background: #ff5db1; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover, #ff5db1 0%, #ef017c 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover, #ff5db1 0%,#ef017c 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center, #ff5db1 0%,#ef017c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5db1', endColorstr='#ef017c',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+            border-left:2px solid #f7a5d9;
+            border-top:2px solid #f7a5d9;
+            box-shadow:1px 1px 2px #802860;
+            transition:0.5s;
+        }    
+        #switch6:checked ~ .switch6 {
+            background: #207ce5; /* Old browsers */
+            background: -moz-radial-gradient(center, ellipse cover, #207ce5 2%, #207ce5 31%, #4db0f2 100%); /* FF3.6-15 */
+            background: -webkit-radial-gradient(center, ellipse cover, #207ce5 2%,#207ce5 31%,#4db0f2 100%); /* Chrome10-25,Safari5.1-6 */
+            background: radial-gradient(ellipse at center, #207ce5 2%,#207ce5 31%,#4db0f2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#207ce5', endColorstr='#4db0f2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+            
+            border-left:2px solid #9fd5ee;
+            border-top:2px solid #9fd5ee;
+            box-shadow:1px 1px 2px #3884a7;
+        }
+        .switch6:before { content:""; display:block;
+            width: 40px;    height: 40px;
+            border-radius:28px;    border:4px solid rgba(255,255,255,0.75);
+            position:absolute; top: 16px; left: 16px; 
+        }
+        .switch6:after { content:""; display:block;
+            width: 5px; height:28px; border-radius:5px; 
+            background:rgba(255,255,255,1);
+            border:5px solid #fa42a1; position:absolute; 
+            left:40px; margin-left: -8px; top:4px;
+            border-bottom:0px;
+            transition:0.5s;
+        }
+        
+        #switch6:checked ~ .switch6:after { 
+            border:5px solid #207ce5;
+        }
+    </style>
+    <link rel="stylesheet" href="ckra.css">
+</head>
+<body>
+    <div class="btn_fr" id="btn1">
+        <h2 class="btn_tit">전기 스위치 만들기</h2>
+        <ul class="btn_box">
+            <li class="item1">
+                <input type="checkbox" id="switch1" name="switch1">
+                <label for="switch1" class="switch1"></label>
+            </li>
+            <li class="item2">  
+                <input type="checkbox" id="switch2" name="switch2">
+                <label for="switch2" class="switch2"></label>
+            </li>
+        </ul>
+    </div>
+    <div class="btn_fr" id="btn2">
+        <h2 class="btn_tit">플립 스위치 만들기</h2>
+        <ul class="btn_box">
+            <li class="item1">
+                <input type="checkbox" id="switch3" name="switch3">
+                <label for="switch3" class="switch3"></label>
+            </li>
+            <li class="item2">  
+                <input type="checkbox" id="switch4" name="switch4">
+                <label for="switch4" class="switch4"></label>
+            </li>
+        </ul>
+    </div>
+    <div class="btn_fr" id="btn3">
+        <h2 class="btn_tit">토글 스위치 만들기</h2>
+        <ul class="btn_box">
+            <li class="item1">
+                <input type="checkbox" id="switch5" name="switch5">
+                <label for="switch5" class="switch5"></label>
+            </li>
+            <li class="item2">
+                <div class="sw_fr">  
+                    <input type="checkbox" id="switch6" name="switch6">
+                    <label for="switch6" class="switch6"></label>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="btn_fr" id="btn4">
+        <h2 class="btn_tit">체크박스 버튼 만들기</h2>
+        <ul class="btn_box">
+            <li class="item1">
+                <input type="checkbox" id="check1" name="check1" class="ck">
+                <label for="check1" class="check1">체크박스1</label>
+            </li>
+            <li class="item2">
+                <input type="checkbox" id="check2" name="check2" class="ck" checked>
+                <label for="check2" class="check2">체크박스2</label>
+            </li>
+            <li class="item3">
+                <input type="checkbox" id="check3" name="check3" class="ck" disabled>
+                <label for="check3" class="check3">체크박스3</label>
+            </li>
+            <li class="item4">
+                <input type="checkbox" id="check4" name="check4" class="ck">
+                <label for="check4" class="check4">체크박스4</label>
+            </li>
+        </ul>
+    </div>
+    <div class="btn_fr" id="btn5">
+        <h2 class="btn_tit">라디오(옵션) 버튼 만들기</h2>
+        <ul class="btn_box">
+            <li class="item1">
+                <input type="radio" id="radio1" name="radio" class="ra">
+                <label for="radio1" class="radio1">라디오1</label>
+            </li>
+            <li class="item2">
+                <input type="radio" id="radio2" name="radio" class="ra" checked>
+                <label for="radio2" class="radio2">라디오2</label>
+            </li>
+            <li class="item3">
+                <input type="radio" id="radio3" name="radio" class="ra" disabled>
+                <label for="radio3" class="radio3">라디오3</label>
+            </li>
+            <li class="item4">
+                <input type="radio" id="radio4" name="radio" class="ra">
+                <label for="radio4" class="radio4">라디오4</label>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+@charset "utf-8";
+body, html { -ms-scroll-style:none; }
+::-webkit-scrollbar { display:none; }
+::-ms-scrollbar { display:none; }
+::-moz-scrollbar { display:none; }
+::-o-scrollbar { display:none; }
+
+#quick { position:fixed;	top:38%;	right:25px; 	width:160px; }
+#quick a { display:block; 	
+	 color:#fff; cursor:pointer;  width:180px; height:50px; clear:both;  
+}
+#quick a span { display:block;  }
+#quick a .qtxt { line-height:24px; margin-right:6px; float:left; text-align:right; width:145px; text-shadow:0px 0px 5px #000; display:none; }
+#quick a.on .qtxt { display:block; }
+#quick a .qbtn { width:20px;	height:20px;   border:1px solid #fff; border-radius:20px;  line-height:20px; float:right;  }
+#quick a.on .qbtn { background-color:#fff; color:#333; }
+.scrollBtn { outline:0; border:0; background:#333; text-align:center; width:48px; height: 48px; line-height: 48px; color:#fff; position:fixed; right:50px; z-index:9999; cursor:pointer; border-radius:38px; }
+#quick_up { top:10%; }
+#quick_down { bottom:10%; }

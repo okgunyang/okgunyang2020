@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>아티스트의 세계로 오세요</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./sec/favicon16.png">
+    <!-- 신형 브라우저와 안드로이드 폰 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./sec/favicon32.png">
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="57x57" href="./sec/favicon57.png">
+    <!-- 아이패드 -->
+    <link rel="apple-touch-icon" size="72x72" href="./img/favicon72.png">
+    <!-- 아이폰4 이상 -->
+    <link rel="apple-touch-icon" size="114x114" href="./img/favicon114.png">
+    <link rel="stylesheet" href="font.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    
+<!--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="./fontawesome/css/all.css">
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width:100%; height:100%; font-family: "Noto Sans KR", sans-serif; font-weight:400; }
+    ul { list-style:none; }
+    a { text-decoration:none; }    
+    button, label, input { outline:0; border:0; background:transparent; }    
+    #wrap { width: 100%; height: 100%; margin-left:0; transition:0.7s; }    
+    .big { font-size:32px; } 
+    .large { font-size:26px; }    
+    .medium { font-size:20px; }    
+    .small { font-size:16px; }    
+    .mini { font-size:12px; }  
+    .ck { display:none; }
+    .hd { position:fixed; width: 100%; height:62px; z-index:90; top: 0; left:0; background:rgba(0,0,0,0.5); }    
+    .logoType { display:block; }
+    .logoType img { display:block; width:auto; height:32px; margin-left:20px; margin-top:15px; }    
+    .menuBtn { display:block; width:62px; height:62px; position:absolute; right:0; top:0; text-indent:-9999px; }    
+    .menuLst { display:block; width:30px; height:3px; background:#fff; 
+         margin:0 auto; margin-top:5px; clear:both; }
+    .menuBtn:before { content:""; display:block; width:30px; height:3px; background:#fff; margin:0 auto; margin-top:20px; clear:both;} 
+    .menuBtn:after { content:""; display:block; width:30px; height:3px; background:#fff; margin:0 auto; margin-top:5px; clear:both; } 
+        
+    #menuCk:checked ~ #wrap .menuBtn .menuLst { display:none; }    
+    #menuCk:checked ~ #wrap .menuBtn:after { transform:rotate(45deg); margin-top:-2px; }    
+    #menuCk:checked ~ #wrap .menuBtn:before { transform:rotate(135deg); margin-top:25px; }
+    
+    
+    #content .menuBtn { right:auto; left:0px; }   
+    #content .hd { position:relative; }    
+    #menuCk:checked ~ #content .menuBtn .menuLst { display:none; }    
+    #menuCk:checked ~ #content .menuBtn:after { transform:rotate(45deg); margin-top:-2px; }    
+    #menuCk:checked ~ #content .menuBtn:before { transform:rotate(135deg); margin-top:25px; }  
+        
+    .visual { width: 100%; height: 100%; overflow:hidden;background:#333; }
+    .imgFrame { width:100%; height: 100%; background:#333; 
+        position:relative; }
+    .imgFrame li { width:100%; height: 100%; 
+        background-repeat: no-repeat; background-size:200% auto;
+        background-position:center center; opacity:0; width:0px; transition:1s; transition-property:width, opacity, background-size;
+        transition-delay:0s, 0.3s, 0.7s; margin:0 auto; }
+    .imgFrame li.on { opacity:1; background-size:cover; width:100%; }    
+    .imgFrame li.item1 { background-image:url("./sec/vs1.jpg"); }    
+    .imgFrame li.item2 { background-image:url("./sec/vs2.jpg"); }    
+    .imgFrame li.item3 { background-image:url("./sec/vs3.jpg"); }    
+    .imgFrame li.item4 { background-image:url("./sec/vs4.jpg"); }    
+    .imgFrame li.item5 { background-image:url("./sec/vs5.jpg"); } 
+    .imgFrame li.item6 { background-image:url("./sec/vs6.jpg"); } 
+    .imgFrame li.item7 { background-image:url("./sec/vs7.jpg"); } 
+    .imgFrame li.item8 { background-image:url("./sec/vs8.jpg"); } 
+    .imgFrame li.item9 { background-image:url("./sec/vs9.jpg"); } 
+    .imgFrame li.item10 { background-image:url("./sec/vs10.jpg"); } 
+    
+    .banBtnBox { position:fixed; top:25%; right:50px;
+        width:60px; height:240px; z-index:90; background:rgba(0,0,0,0.5); }
+    .banBtnBox li { width:60px; height:60px; }
+    .banBtnBox li button { display:block; text-align:center; line-height:60px; color:#fff; }   
+    .banBtnBox li button i { display:block; width:60px; line-height: 80px; }  
+    .sldswiper { position:fixed; bottom:72px; left:5%; width: 90%; height:10px; z-index:100; overflow:hidden; }
+    .swiper { display:block; width:120px; height:10px; background-image:url("./sec/lighting2.png"); background-repeat:no-repeat; 
+    background-size:450px 4px;     
+        margin-left:-120px;  }    
+
+    .ft { position:fixed; width:100%; height:62px; z-index:90; left:0; bottom:0; background:rgba(0,0,0,0.5); color:#fff; text-align:center; line-height:62px; font-size:0.9em; }
+
+    #content { width: 100%; height: 100%; background:#333; color:#fff; position:fixed; right:-100%; top: 0; z-index:900; transition:0.7s;
+         } 
+    #content .hd { background-image:url("./sec/logo.png");
+        background-position:center center; background-repeat: no-repeat; background-size:auto 32px; }   
+    #menuCk:checked ~ #wrap { margin-left:-100%; }    
+    #menuCk:checked ~ #content { right:0; } 
+    .loginBtn { display:block; color:#fff; float:right; margin-right: 20px; margin-top:7px; } 
+    #gnb { position:relative; border-top:1px solid #555; width: 100%; min-height:100%;  }    
+    #gnb li { line-height: 42px; font-size:16px; text-indent:-500px; 
+        border-top:1px solid #444;  border-bottom:1px solid #000; width:80%; margin:0 auto; transition:0.3s; transition-delay:0s; }
+    #gnb li.lastBox { width:100%; min-height:400px; background-image:url("./sec/gnb.png");
+        background-position:center bottom; background-repeat:no-repeat; }    
+    #gnb li a { display:block; line-height:40px; color:#444; transition:0.5s; transition-delay:0.5s; opacity:0; }  
+    #gnb li a i.fas { display:block; float:right; margin-right:42px; margin-top:10px; display:none;  }
+    #gnb li .sub { display:none; }    
+    #menuCk:checked ~ #content #gnb li { text-indent:2em;  }
+    #menuCk:checked ~ #content #gnb li a {  color:#ccc; opacity:1; }   
+    #menuCk:checked ~ #content #gnb li a i.fas { display:block;  }
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+        var wd = parseInt($(".visual").width());
+        var len = $(".imgFrame li").length;
+        var sw1 = true;
+        var sw2 = true;
+        function nextAni(){
+            $(".imgFrame").not(":animated").animate({"opacity":"1"}, 900, function(){
+                $(".imgFrame li").removeClass("on");
+                $(".imgFrame li").eq(0).appendTo($(".imgFrame"));
+                $(".imgFrame li").eq(0).addClass("on");
+            });
+        }
+        function prevAni(){
+            $(".imgFrame li").removeClass("on");
+            $(".imgFrame").not(":animated").animate({"opacity":"1"}, 400, function(){
+                $(".imgFrame li").eq(len-1).prependTo($(".imgFrame"));
+                $(".imgFrame li").eq(0).addClass("on");
+            });
+        }
+        var intv = setInterval(function(){
+            nextAni();
+        }, 3500); 
+        $(".nextBtn").click(function(){
+            clearInterval(intv);
+            nextAni();
+            intv = setInterval(function(){ nextAni(); }, 3500); 
+        });
+        $(".prevBtn").click(function(){
+            clearInterval(intv);
+            prevAni();
+            intv = setInterval(function(){ nextAni(); }, 3500); 
+        });
+        $(".stopBtn").click(function(){
+            if(sw1==true){
+                clearInterval(intv);
+                $(this).find("i").removeClass("fa-stop").addClass("fa-play");
+            } else {
+                intv = setInterval(function(){ nextAni(); }, 3500);
+                $(this).find("i").removeClass("fa-play").addClass("fa-stop");
+            }
+            sw1=!sw1;
+        });
+        $(".zoommer").click(function(){
+           if(sw2==true){
+               $("#wrap .hd").fadeOut();
+               $("#wrap .ft").fadeOut();
+               $(this).find("i").removeClass("fa-expand").addClass("fa-compress");
+           } else {
+               $("#wrap .hd").fadeIn();
+               $("#wrap .ft").fadeIn();
+               $(this).find("i").removeClass("fa-compress").addClass("fa-expand");
+           }
+           sw2=!sw2;
+        });
+        function swiper1(){
+            $(".swiper").animate({"margin-left":"200px"}, 2500);
+        }
+        function swiper2(){
+            $(".swiper").animate({"margin-left" : "-120px"}, 20);
+        }
+        
+        var intv2 = setInterval(function(){
+            swiper1();
+            swiper2();
+        }, 3500);
+    });    
+    </script>
+    <script>
+    $(document).ready(function(){
+       var lsw = [ true, true, true, true ];
+       console.log(lsw[0], lsw[1], lsw[2], lsw[3]);
+       var idx;    
+       $("#gnb .gnbLst1 i.fas").click(function(){
+           idx = $(this).parents("li.gnbLst1").index();
+           console.log(idx);
+           if(lsw[idx]==true){
+               $(this).removeClass("fa-plus").addClass("fa-minus");
+               $(this).parents(".gnbLst1").find(".sub").slideDown();
+           } else {
+               $(this).removeClass("fa-minus").addClass("fa-plus");
+               $(this).parents(".gnbLst1").find(".sub").slideUp();
+           }
+           lsw[idx]=!lsw[idx];
+       }); 
+    });    
+    </script>
+</head>
+<body>
+<input type="checkbox" id="menuCk" class="ck">
+<div id="wrap">
+    <header class="hd">
+        <a href="index.html" class="logoType">
+            <img src="./sec/logo.png" alt="로고">
+        </a>
+        <label for="menuCk" class="menuBtn">
+            <span class="menuLst"></span>
+        </label>
+    </header>
+    <div class="visual">
+        <ul class="imgFrame">
+            <li class="item1 on"></li>
+            <li class="item2"></li>
+            <li class="item3"></li>
+            <li class="item4"></li>
+            <li class="item5"></li>
+            <li class="item6"></li>
+            <li class="item7"></li>
+            <li class="item8"></li>
+            <li class="item9"></li>
+            <li class="item10"></li>
+        </ul>
+    </div>
+    <div class="sldswiper">
+        <span class="swiper"></span>
+    </div>
+    <footer class="ft">
+        <p class="copyright">©artistWORLD All Rights Reserved</p>
+    </footer>
+    <ul class="banBtnBox">
+        <li>
+            <button class="zoommer small">
+                <i class="fas fa-expand"></i>
+            </button>
+        </li>
+        <li>
+            <button class="prevBtn small">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+        </li>
+        <li>
+            <button class="nextBtn small">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </li>
+        <li>
+            <button class="stopBtn small">
+                <i class="fas fa-pause"></i>
+            </button>
+        </li>
+    </ul>
+</div>
+<div id="content">
+    <header class="hd">
+        <label for="menuCk" class="menuBtn">
+            <span class="menuLst"></span>
+        </label>
+        <a href="" class="loginBtn big">
+            <i class="fas fa-user-circle"></i>
+        </a>
+    </header>
+    <nav id="gnb">
+        <ul class="mainmenu">
+            <li class="gnbLst1">
+                <a class="dp1">Intro
+                    <i class="fas fa-plus"></i>
+                </a>
+                <ul class="sub">
+                    <li><a href="">소개</a></li>
+                    <li><a href="">연혁</a></li>
+                    <li><a href="">인사말</a></li>
+                    <li><a href="">조직및구성</a></li>
+                    <li><a href="">오시는길</a></li>
+                </ul>
+            </li>
+            <li class="gnbLst1">
+                <a class="dp1">Gallery
+                    <i class="fas fa-plus"></i>
+                </a>
+                <ul class="sub">
+                    <li><a href="">목록보기</a></li>
+                    <li><a href="">그리드보기</a></li>
+                    <li><a href="">팝업보기</a></li>
+                    <li><a href="">앨범</a></li>
+                    <li><a href="">웹진</a></li>
+                </ul>
+            </li>
+            <li class="gnbLst1">
+                <a class="dp1">Service
+                    <i class="fas fa-plus"></i>
+                </a>
+                <ul class="sub">
+                    <li><a href="">회원사 가입</a></li>
+                    <li><a href="">개인회원 가입</a></li>
+                    <li><a href="">배급사 가입</a></li>
+                    <li><a href="">제작자 가입</a></li>
+                    <li><a href="">개인 서비스</a></li>
+                    <li><a href="">기관 서비스</a></li>
+                </ul>
+            </li>
+            <li class="gnbLst1">
+                <a class="dp1">Community
+                    <i class="fas fa-plus"></i>
+                </a>
+                <ul class="sub">
+                    <li><a href="">공지사항</a></li>
+                    <li><a href="">자료실</a></li>
+                    <li><a href="">관람후기</a></li>
+                    <li><a href="">이용후기</a></li>
+                    <li><a href="">자랑하기</a></li>
+                </ul>
+            </li>
+            <li class="gnbLst1">
+                <a href="" class="dp1">Contact</a>
+            </li>
+            <li class="lastBox"></li>
+        </ul>
+    </nav>
+</div>   
+</body>
+</html>

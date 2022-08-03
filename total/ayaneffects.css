@@ -1,0 +1,1728 @@
+/*
+Theme Name: AYAN - Creative CSS3 Link Hover Effects
+Author: Ashfaq Ahmed @ Reverie Tech
+Blog: http://codeconvey.com/
+Version: 1.2
+*/
+
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,900);
+
+/* ******************************************************
+	Basic Styling
+*********************************************************/
+
+.ayanEffects ul{
+	margin:0;
+	padding:0;
+	text-align:center;
+}
+.ayanEffects li{
+	list-style:none;
+	display:inline-block;
+	margin: 15px 25px;
+}
+.ayanEffects li a{
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	font-size: 1.35em;
+	position: relative;
+	display: inline-block;
+	outline: none;
+	color: #000;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+.ayanEffects a:hover,
+.ayanEffects a:focus {
+	outline: none;
+}
+
+
+
+/* ******************************************************
+	Effect 1: Swipe .ayanHoverEffect_1
+*********************************************************/
+
+
+.ayanHoverEffect_1 li a {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  text-align: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.ayanHoverEffect_1 li a span {
+  display: block;
+  -webkit-transition: -webkit-transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: -webkit-transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55), -webkit-transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.ayanHoverEffect_1 li a:after {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  content: attr(data-link-alt);
+  display: inline;
+  text-align: center;
+   -webkit-transition: top 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: top 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.ayanHoverEffect_1 li a:hover {
+  color:#6559bc;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+.ayanHoverEffect_1 li a:hover span {
+	color:#6559bc;
+	-webkit-transform: translateY(-100%);
+	transform: translateY(-100%);
+}
+.ayanHoverEffect_1 li a:hover:after {
+  top: 0;
+}
+.ayanHoverEffect_1 li a:active {
+	-webkit-animation-name: rubberBand;
+    animation-name: rubberBand;
+	cursor: -webkit-grabbing;
+	cursor: grabbing;
+}
+
+
+/* ******************************************************
+	Effect 2: Changer .ayanHoverEffect_2
+*********************************************************/
+
+.ayanHoverEffect_2 li {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.ayanHoverEffect_2 li a {
+
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-transition: transform 0.5s ease;
+}
+
+.ayanHoverEffect_2 li a:before {
+  position: absolute;
+  top: 100%;
+  content: attr(data-link-alt);
+  color: #6559bc;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.ayanHoverEffect_2 li:hover a,
+.ayanHoverEffect_2 li:focus a {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+
+/* ******************************************************
+	Effect 3: Topliner .ayanHoverEffect_3
+*********************************************************/
+
+
+.ayanHoverEffect_3 a {
+	padding: 0 20px;
+	line-height: 45px;
+}
+
+.ayanHoverEffect_3 a::before {
+	position: absolute;
+	content: '';
+	width: 50px;
+	height: 3px;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+	pointer-events: none;
+}
+.ayanHoverEffect_3 a:hover{
+	color:#6559bc;	
+}
+.ayanHoverEffect_3 a:hover::before,
+.ayanHoverEffect_3 a:hover::after,
+.ayanHoverEffect_3 a:focus::before,
+.ayanHoverEffect_3 a:focus::after {
+	background: #6559bc;
+}
+
+.ayanHoverEffect_3 a:hover::before,
+.ayanHoverEffect_3 a:focus::before {
+	left: 50%;
+	-webkit-transform: rotate(0deg) translateX(-50%);
+	-moz-transform: rotate(0deg) translateX(-50%);
+	transform: rotate(0deg) translateX(-50%);
+}
+
+.ayanHoverEffect_3 a:hover::after,
+.ayanHoverEffect_3 a:focus::after {
+	right: 50%;
+	-webkit-transform: rotate(0deg) translateX(50%);
+	-moz-transform: rotate(0deg) translateX(50%);
+	transform: rotate(0deg) translateX(50%);
+}
+
+/* ******************************************************
+	Effect 3: Center Line .ayanHoverEffect_4
+*********************************************************/
+
+.ayanHoverEffect_4 a {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.ayanHoverEffect_4 li a {
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  text-decoration: none;
+  outline: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.ayanHoverEffect_4 li a:hover{
+	color:#6559bc;	
+}
+.ayanHoverEffect_4 li a:after {
+  background: #6559bc;
+  content: "";
+  height: 3px;
+  width: 0;
+  position: absolute;
+  left: 50%;
+  bottom: -15px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  
+  -webkit-transition: 0.35s all cubic-bezier(0.77, 0, 0.175, 1);
+  -moz-transition: 0.35s all cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.35s all cubic-bezier(0.77, 0, 0.175, 1);
+}
+.ayanHoverEffect_4 li a:hover:after {
+	color:#6559bc;
+    width: 100%;
+}
+
+/* ******************************************************
+	Effect 5: Roll Box .ayanHoverEffect_5
+*********************************************************/
+
+
+.ayanHoverEffect_5 a {
+  word-wrap: break-word;
+  text-decoration: none;
+}
+.ayanHoverEffect_5 a {
+  display: inline-block;
+  perspective: 600px;
+  perspective-origin: 50% 50%;
+  overflow: hidden;
+}
+
+.ayanHoverEffect_5 a span {
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	position: relative;
+	outline: none;
+	color: #000;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	
+  display: block;
+  padding: 0 10px;
+  transform-origin: 50% 0;
+  transform-style: preserve-3d;
+  transition: all 400ms ease 0s;
+}
+
+.ayanHoverEffect_5 a span:after {
+  background: none repeat scroll 0 0 #6559bc;
+  color: #fff;
+  content: attr(data-link-alt);
+  display: block;
+  padding: 0 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
+  transform-origin: 50% 0%;
+}
+
+.ayanHoverEffect_5 a:hover span {
+  background: none repeat scroll 0 0 #6559bc;
+  transform: translate3d(0px, 0px, -30px) rotateX(90deg);
+}
+
+/* ******************************************************
+	Effect 6: Starter Line .ayanHoverEffect_6
+*********************************************************/
+
+
+
+.ayanHoverEffect_6 a::after {
+  background-color: #6559bc;	
+  content: "";
+  width: 0;
+  height: 4px;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  transition: width 500ms ease;
+}
+
+.ayanHoverEffect_6 a:hover::after {
+  width: 100%;
+}
+
+/* ******************************************************
+	Effect 7: Bottom Line .ayanHoverEffect_7
+*********************************************************/
+
+.ayanHoverEffect_7 a{
+	padding:0 0 12px;	
+}
+.ayanHoverEffect_7 a::after {
+  background-color: #6559bc;
+  content: "";
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  opacity: 0;
+  transition: opacity 300ms ease, bottom 300ms ease;
+}
+.ayanHoverEffect_7 a:hover::after {
+  opacity: 1;
+  bottom: 0;
+}
+
+/* ******************************************************
+	Effect 8: Pop Box .ayanHoverEffect_8
+*********************************************************/
+
+.ayanHoverEffect_8 a:link, 
+.ayanHoverEffect_8 a:visited{
+	text-decoration:none;
+	z-index:51;
+	padding:.5em;
+	-webkit-transition:all .2s linear .1s;
+	transition:all .2s linear .1s;
+	-ms-touch-action:none;
+	touch-action:none
+}
+.ayanHoverEffect_8 a:hover, 
+.ayanHoverEffect_8 a:active, 
+.ayanHoverEffect_8 a:focus{
+	color:#fff;
+}
+.ayanHoverEffect_8 a:after{
+	background:#6559bc;
+	position:absolute;
+	bottom:0;
+	content:"";
+	display:block;
+	z-index:-1;
+}	
+.ayanHoverEffect_8 a:after {
+	left:50%;
+	left:-webkit-calc(50% - 2px);
+	left:calc(50% - 2px);
+	width:0;
+	height:1em;
+	-webkit-transition:all .3s ease;
+	transition:all .3s ease
+}
+.ayanHoverEffect_8 a:hover:after, 
+.ayanHoverEffect_8 a:active:after, 
+.ayanHoverEffect_8 a:focus:after{
+	left:0;
+	width:100%;
+	height:100%;
+	background: #6559bc
+}
+
+/* ******************************************************
+	Effect 9: Border Outer .ayanHoverEffect_9
+*********************************************************/
+
+.ayanHoverEffect_9 a:link, 
+.ayanHoverEffect_9 a:visited{
+	text-decoration:none;
+	z-index:51;
+	padding:.5em;
+	-webkit-transition:all .2s linear .1s;
+	transition:all .2s linear .1s;
+	-ms-touch-action:none;
+	touch-action:none
+}
+.ayanHoverEffect_9 a:hover, 
+.ayanHoverEffect_9 a:active, 
+.ayanHoverEffect_9 a:focus{
+	color:#6559bc;
+}
+.ayanHoverEffect_9 a:after{
+	position:absolute;
+	bottom:0;
+	content:"";
+	display:block;
+	z-index:-1;
+}	
+.ayanHoverEffect_9 a:after {
+	left:50%;
+	left:-webkit-calc(50% - 2px);
+	left:calc(50% - 2px);
+	width:0;
+	height:1em;
+	-webkit-transition:all .3s ease;
+	transition:all .3s ease
+}
+.ayanHoverEffect_9 a:hover:after, 
+.ayanHoverEffect_9 a:active:after, 
+.ayanHoverEffect_9 a:focus:after{
+	border:solid 1px #6559bc;
+	left:0;
+	width:100%;
+	height:100%;
+}
+
+/* ******************************************************
+	Effect 10: Bubbles .ayanHoverEffect_10
+*********************************************************/
+
+.ayanHoverEffect_10 a:hover {
+	color:#6559bc;
+  -ms-animation: opacity forwards 1s;
+  -moz-animation: opacity forwards 1s;
+  -webkit-animation: opacity forwards 1s;
+  animation: opacity forwards 1s;
+}
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.ayanHoverEffect_10 a:before, 
+.ayanHoverEffect_10 a:after {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  content: "◯";
+  display: block;
+  width: 100%;
+  font-size: 0px;
+  color: #6559bc;
+  text-align: center;
+  z-index: -100;
+}
+.ayanHoverEffect_10 a:hover::before {
+   animation: drop 1s;
+  -ms-animation: drop 1s;
+  -moz-animation: drop 1s;
+  -webkit-animation: drop 1s;
+}
+.ayanHoverEffect_10 a:hover::after {
+   animation: drop 1s 0.5s;	
+  -ms-animation: drop 1s 0.5s;
+  -moz-animation: drop 1s 0.5s;
+  -webkit-animation: drop 1s 0.5s;
+}
+@keyframes drop {
+  0% {
+    opacity: 1;
+    font-size: 0;
+    top: 0;
+  }
+  100% {
+    opacity: 0;
+    font-size: 80px;
+    top: -50px;
+  }
+}
+
+/* ******************************************************
+	Effect 11: Classic .ayanHoverEffect_11
+*********************************************************/
+
+.ayanHoverEffect_11 a {
+  margin:0;
+  padding: 15px 25px;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  -moz-transition: ease-out 0.3s;
+  -o-transition: ease-out 0.3s;
+  -webkit-transition: ease-out 0.3s;
+  transition: ease-out 0.3s;
+}
+.ayanHoverEffect_11 a span::before {
+  background: transparent;
+  width: 6px;
+  height: 6px;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-top: 2px solid #6559bc;
+  border-left: 2px solid #6559bc;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0;
+}
+.ayanHoverEffect_11 a span::after {
+  background: transparent;
+  width: 6px;
+  height: 6px;
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-right: 2px solid #6559bc;
+  border-bottom: 2px solid #6559bc;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0;
+}
+.ayanHoverEffect_11 a::before {
+  background: transparent;
+  width: 6px;
+  height: 6px;
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-right: 2px solid #6559bc;
+  border-top: 2px solid #6559bc;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0;
+}
+.ayanHoverEffect_11 a::after {
+  background: transparent;
+  width: 6px;
+  height: 6px;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-left: 2px solid #6559bc;
+  border-bottom: 2px solid #6559bc;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0;
+}
+.ayanHoverEffect_11 a:hover {
+  color: #6559bc;
+}
+.ayanHoverEffect_11 a:hover::before {
+  opacity: 1;
+  right: 6px;
+  top: 6px;
+}
+.ayanHoverEffect_11 a:hover::after {
+  opacity: 1;
+  left: 6px;
+  bottom: 6px;
+}
+.ayanHoverEffect_11 a:hover span::before {
+  opacity: 1;
+  left: 6px;
+  top: 6px;
+}
+.ayanHoverEffect_11 a:hover span::after {
+  opacity: 1;
+  right: 6px;
+  bottom: 6px;
+}
+
+
+/* ******************************************************
+	Effect 12: Border Style #1 .ayanHoverEffect_12
+*********************************************************/
+
+.ayanHoverEffect_12  a {
+  padding: 10px 14px;
+  position: relative;
+  -moz-transition: ease-out 0.3s 0.1s;
+  -o-transition: ease-out 0.3s 0.1s;
+  -webkit-transition: ease-out 0.3s;
+  -webkit-transition-delay: 0.1s;
+  transition: ease-out 0.3s 0.1s;
+}
+.ayanHoverEffect_12  a span::before {
+  height: 100%;
+  width: 2px;
+  background: #6559bc;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  -moz-transform: scaleY(0);
+  -ms-transform: scaleY(0);
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.ayanHoverEffect_12  a span::after {
+  height: 100%;
+  width: 2px;
+  background: #6559bc;
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  -moz-transform: scaleY(0);
+  -ms-transform: scaleY(0);
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.ayanHoverEffect_12  a::before {
+  height: 2px;
+  width: 100%;
+  background: #6559bc;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  -moz-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.ayanHoverEffect_12  a::after {
+  height: 2px;
+  width: 100%;
+  background: #6559bc;
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0;
+  -moz-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.ayanHoverEffect_12  a:hover {
+  color: #6559bc;
+}
+.ayanHoverEffect_12  a:hover::before, .ayanHoverEffect_12  a:hover::after {
+  -moz-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+.ayanHoverEffect_12  a:hover span::before, .ayanHoverEffect_12  a:hover span::after {
+  -moz-transform: scaleY(1);
+  -ms-transform: scaleY(1);
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+}
+
+
+
+/* ******************************************************
+	Effect 13: Border Style #2 .ayanHoverEffect_13
+*********************************************************/
+
+.ayanHoverEffect_13 a {
+  color: #797878;
+  margin: 0 20px;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  -moz-transition: ease-out 0.3s 0.1s;
+  -o-transition: ease-out 0.3s 0.1s;
+  -webkit-transition: ease-out 0.3s;
+  -webkit-transition-delay: 0.1s;
+  transition: ease-out 0.3s 0.1s;
+}
+.ayanHoverEffect_13 a span::before {
+  width: 100%;
+  height: 2px;
+  background: #6559bc;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+.ayanHoverEffect_13 a span::after {
+  width: 100%;
+  height: 2px;
+  background: #6559bc;
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+}
+.ayanHoverEffect_13 a::before {
+  width: 2px;
+  height: 100%;
+  background: #6559bc;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.ayanHoverEffect_13 a::after {
+  width: 2px;
+  height: 100%;
+  background: #6559bc;
+  content: "";
+  position: absolute;
+  right: 0px;
+  bottom: 0;
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.ayanHoverEffect_13 a:hover {
+  color: #6559bc;
+}
+.ayanHoverEffect_13 a:hover::before, .ayanHoverEffect_13 a:hover::after {
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+.ayanHoverEffect_13 a:hover span::before, .ayanHoverEffect_13 a:hover span::after {
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+
+/* ******************************************************
+	Effect 14: Border Style #3 .ayanHoverEffect_14
+*********************************************************/
+
+.ayanHoverEffect_14 a {
+  color: #797878;
+  margin: 0 20px;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  -moz-transition: ease-out 0.3s 0.1s;
+  -o-transition: ease-out 0.3s 0.1s;
+  -webkit-transition: ease-out 0.3s;
+  -webkit-transition-delay: 0.1s;
+  transition: ease-out 0.3s 0.1s;
+}
+.ayanHoverEffect_14 a span::before {
+  width: 100%;
+  height: 2px;
+  background: #6559bc;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  -moz-transition: 0.1s;
+  -o-transition: 0.1s;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+.ayanHoverEffect_14 a span::after {
+  width: 100%;
+  height: 2px;
+  background: #6559bc;
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  -moz-transition: 0.1s 0.2s;
+  -o-transition: 0.1s 0.2s;
+  -webkit-transition: 0.1s;
+  -webkit-transition-delay: 0.2s;
+  transition: 0.1s 0.2s;
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+}
+.ayanHoverEffect_14 a::before {
+  width: 2px;
+  height: 100%;
+  background: #6559bc;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+  -moz-transition: 0.1s 0.3s;
+  -o-transition: 0.1s 0.3s;
+  -webkit-transition: 0.1s;
+  -webkit-transition-delay: 0.3s;
+  transition: 0.1s 0.3s;
+}
+.ayanHoverEffect_14 a::after {
+  width: 2px;
+  height: 100%;
+  background: #6559bc;
+  content: "";
+  position: absolute;
+  right: 0px;
+  bottom: 0;
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  -moz-transition: 0.1s 0.1s;
+  -o-transition: 0.1s 0.1s;
+  -webkit-transition: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition: 0.1s 0.1s;
+}
+.ayanHoverEffect_14 a:hover {
+  color: #6559bc;
+}
+.ayanHoverEffect_14 a:hover::before, .ayanHoverEffect_14 a:hover::after {
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+.ayanHoverEffect_14 a:hover span::before, .ayanHoverEffect_14 a:hover span::after {
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+/* ******************************************************
+	Effect 15: Border Style #4 .ayanHoverEffect_15
+*********************************************************/
+
+.ayanHoverEffect_15 a {
+  color: #797878;
+  margin: 0 20px;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  -moz-transition: ease-out 0.3s 0.3s;
+  -o-transition: ease-out 0.3s 0.3s;
+  -webkit-transition: ease-out 0.3s;
+  -webkit-transition-delay: 0.3s;
+  transition: ease-out 0.3s 0.3s;
+}
+.ayanHoverEffect_15 a span::before {
+  width: 100%;
+  height: 2px;
+  background: #6559bc;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.ayanHoverEffect_15 a span::after {
+  width: 100%;
+  height: 2px;
+  background: #6559bc;
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.ayanHoverEffect_15 a::before {
+  width: 2px;
+  height: 100%;
+  background: #6559bc;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.ayanHoverEffect_15 a::after {
+  width: 2px;
+  height: 100%;
+  background: #6559bc;
+  content: "";
+  position: absolute;
+  right: 0px;
+  bottom: 0;
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.ayanHoverEffect_15 a:hover {
+  color: #6559bc;
+}
+.ayanHoverEffect_15 a:hover::before, .ayanHoverEffect_15 a:hover::after {
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+.ayanHoverEffect_15 a:hover span::before, .ayanHoverEffect_15 a:hover span::after {
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+
+/* ******************************************************
+	Effect 16: Flexbox .ayanHoverEffect_16
+*********************************************************/
+
+.ayanHoverEffect_16 nav ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.ayanHoverEffect_16 a {
+  color: #6559bc;
+  display: inline;
+  padding: 10px 0;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+.ayanHoverEffect_16 a:before {
+  background-color: #000;
+  content: '';
+  display: inline;
+  height: 2px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.ayanHoverEffect_16 a:after {
+  background-color: #000;
+  bottom: 0;
+  content: '';
+  display: inline;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 9999;
+}
+.ayanHoverEffect_16 a:hover {
+  border: 2px solid #6559bc;
+  padding: 10px;
+  color:#6559bc;
+}
+.ayanHoverEffect_16 a:hover:before {
+  background-color:transparent;
+  left: 0;
+  top: 50%;
+  width: 95%;
+}
+.ayanHoverEffect_16 a:hover:after {
+ background-color:transparent;
+  bottom: 50%;
+  left: 0;
+  width: 95%;
+}
+
+
+/* ******************************************************
+	Effect 17: Double Quotes .ayanHoverEffect_17
+*********************************************************/
+
+
+
+.ayanHoverEffect_17 a::before, 
+.ayanHoverEffect_17 a::after {
+  display: inline-block;
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+  transition: transform 0.3s, opacity 0.2s;
+}
+.ayanHoverEffect_17 a:hover{
+	color:#6559bc;
+}
+.ayanHoverEffect_17 a::before {
+  content: '[';
+  margin-right: 12px;
+  -webkit-transform: translateX(20px);
+  -moz-transform: translateX(20px);
+  transform: translateX(20px);
+}
+.ayanHoverEffect_17 a::after {
+  content: ']';
+  margin-left: 12px;
+  -webkit-transform: translateX(-20px);
+  -moz-transform: translateX(-20px);
+  transform: translateX(-20px);
+}
+.ayanHoverEffect_17 a:hover::before, 
+.ayanHoverEffect_17 a:hover::after, 
+.ayanHoverEffect_17 a:focus::before, 
+.ayanHoverEffect_17 a:focus::after {
+  color:#6559bc;
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+/* ******************************************************
+	Effect 18: Jelly .ayanHoverEffect_18
+*********************************************************/
+
+.ayanHoverEffect_18 li a {
+	padding: 10px;
+}
+.ayanHoverEffect_18 li a:hover, 
+.ayanHoverEffect_18 li a:focus {
+  color:#6559bc;
+  border:solid 2px #6559bc;
+  -webkit-transition-timing-function: cubic-bezier(0.6, 4, 0.3, 0.8);
+  transition-timing-function: cubic-bezier(0.6, 4, 0.3, 0.8);
+  -webkit-animation: jelly 0.5s 1;
+  animation: jelly 0.5s 1;
+}
+.ayanHoverEffect_18 li a:active {
+	color:#6559bc;
+	border:solid 2px #6559bc;
+   border-radius: 5px;
+  -webkit-transition-duration: 0;
+  transition-duration: 0;
+}
+
+/* @keyframes jelly */ 
+@keyframes jelly {
+  from,to {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  25% {
+    -webkit-transform: scale(0.9, 1.1);
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    -webkit-transform: scale(1.1, 0.9);
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    -webkit-transform: scale(0.95, 1.05);
+    transform: scale(0.95, 1.05);
+  }
+  from,to {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  25% {
+    -webkit-transform: scale(0.9, 1.1);
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    -webkit-transform: scale(1.1, 0.9);
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    -webkit-transform: scale(0.95, 1.05);
+    transform: scale(0.95, 1.05);
+  }
+}
+@-webkit-keyframes jelly {
+  from,to {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  25% {
+    -webkit-transform: scale(0.9, 1.1);
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    -webkit-transform: scale(1.1, 0.9);
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    -webkit-transform: scale(0.95, 1.05);
+    transform: scale(0.95, 1.05);
+  }
+  from,to {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  25% {
+    -webkit-transform: scale(0.9, 1.1);
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    -webkit-transform: scale(1.1, 0.9);
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    -webkit-transform: scale(0.95, 1.05);
+    transform: scale(0.95, 1.05);
+  }
+}
+
+/* ******************************************************
+	Effect 19: Slide Top .ayanHoverEffect_19
+*********************************************************/
+
+.ayanHoverEffect_19 li a{
+  padding:10px;
+  background:transparent;
+  box-shadow:inset 0 0 0 0 #6559bc;
+  -webkit-transition: -webkit-box-shadow 300ms ease-in-out;
+  -moz-transition: -moz-box-shadow 300ms ease-in-out;
+  transition: box-shadow 300ms ease-in-out;
+}
+.ayanHoverEffect_19 li a:hover{
+  color:#fff;
+}
+.ayanHoverEffect_19 li a:hover{
+  box-shadow:inset 0 100px 0 0 #6559bc;
+}
+
+/* ******************************************************
+	Effect 20: Slide Bottom .ayanHoverEffect_20
+*********************************************************/
+
+.ayanHoverEffect_20 li a{
+  padding:10px;
+  background:transparent;
+  box-shadow:inset 0 0 0 0 #6559bc;
+  -webkit-transition: -webkit-box-shadow 300ms ease-in-out;
+  -moz-transition: -moz-box-shadow 300ms ease-in-out;
+  transition: box-shadow 300ms ease-in-out;
+}
+.ayanHoverEffect_20 li a:hover{
+  color:#fff;
+}
+.ayanHoverEffect_20 li a:hover{
+  box-shadow:inset 0 -100px 0 0 #6559bc;
+}
+
+/* ******************************************************
+	Effect 21: Slide Right .ayanHoverEffect_21
+*********************************************************/
+
+.ayanHoverEffect_21 li a{
+  padding:10px;
+  background:transparent;
+  box-shadow:inset 0 0 0 0 #6559bc;
+  -webkit-transition: -webkit-box-shadow 300ms ease-in-out;
+  -moz-transition: -moz-box-shadow 300ms ease-in-out;
+  transition: box-shadow 300ms ease-in-out;
+}
+.ayanHoverEffect_21 li a:hover{
+  color:#fff;
+}
+.ayanHoverEffect_21 li a:hover{
+  box-shadow:inset -300px 0 0 0 #6559bc;
+}
+
+
+/* ******************************************************
+	Effect 22: Slide Left .ayanHoverEffect_22
+*********************************************************/
+
+.ayanHoverEffect_22 li a{
+  padding:10px;
+  background:transparent;
+  box-shadow:inset 0 0 0 0 #6559bc;
+  -webkit-transition: -webkit-box-shadow 300ms ease-in-out;
+  -moz-transition: -moz-box-shadow 300ms ease-in-out;
+  transition: box-shadow 300ms ease-in-out;
+}
+.ayanHoverEffect_22 li a:hover{
+  color:#fff;
+}
+.ayanHoverEffect_22 li a:hover{
+  box-shadow:inset 300px 0 0 0 #6559bc;
+}
+
+
+/* ******************************************************
+	Effect 23: Slide Conrner .ayanHoverEffect_23
+*********************************************************/
+
+.ayanHoverEffect_23 li a {
+  padding:12px 20px;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  text-align: center;
+}
+.ayanHoverEffect_23 li a:before {
+  width: 250px;
+  height: 150px;
+  border: none;
+  background: #6559bc;
+  content: "";
+  position: absolute;
+  top: -250px;
+  left: 0;
+  -webkit-transform: skewY(15deg) translateY(0);
+          transform: skewY(15deg) translateY(0);
+  -webkit-transition: all 250ms ease;
+  transition: all 250ms ease;
+}
+.ayanHoverEffect_23 li a:after {
+  content: attr(data-link-alt);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transition: all 250ms ease;
+  transition: all 250ms ease;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+}
+.ayanHoverEffect_23 li a:hover:before {
+  top: -50px;
+}
+.ayanHoverEffect_23 li a:hover:after {
+  color: #fff;
+}
+
+/* ******************************************************
+	Effect 24: Walk Text .ayanHoverEffect_24
+*********************************************************/
+
+
+.ayanHoverEffect_24 li{
+	margin:0;	
+}
+.ayanHoverEffect_24 li a {
+   display: inline-block;
+   padding: 15px 50px;
+   position: relative;
+}
+
+.ayanHoverEffect_24 li a,
+.ayanHoverEffect_24 li a:before,
+.ayanHoverEffect_24 li a:after {
+   transition: 1000ms;
+   -webkit-transition: 1000ms;
+   -ms-transition: 1000ms;
+}
+
+.ayanHoverEffect_24 li a:before {
+   content: attr(data-link-alt);
+   position: absolute;
+   left: 50px;
+   top: 15px;
+   white-space: nowrap;
+   width: 0px;
+   color: #6559bc;
+   overflow: hidden;
+   text-align: initial;
+   transition: 2000ms;
+   -webkit-transition: 2000ms;
+   -ms-transition: 2000ms;
+}
+
+.ayanHoverEffect_24 li a:hover:before {
+   width: 100%;
+}
+
+
+/* ******************************************************
+	Effect 25: Slide Four Slide .ayanHoverEffect_25
+*********************************************************/
+
+
+.ayanHoverEffect_25 li a {
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+   -webkit-transition: all .45s 0s ease-in-out;
+  transition: all .45s 0s ease-in-out;
+}
+.ayanHoverEffect_25 li a .aynText {
+	line-height: 50px;
+	position: relative;
+	z-index: 2;
+	display: block;
+	width: 250px;
+}
+.ayanHoverEffect_25 li a .HoverFrame {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 50px;
+  
+   -webkit-transition: all .45s 0s ease-in-out;
+  transition: all .45s 0s ease-in-out;
+}
+.ayanHoverEffect_25 li a:hover > .HoverFrame {
+  border-top: 25px solid #8400FF;
+  border-bottom: 25px solid #8400FF;
+  border-left: 125px solid #8400FF;
+  border-right: 125px solid #8400FF;
+  width: 0;
+  height: 0;
+}
+.ayanHoverEffect_25 li a:hover > .aynText {
+  color: #fff;
+}
+
+/* ******************************************************
+	Effect 26: Center Out (Left/Right) .ayanHoverEffect_26
+*********************************************************/
+
+.ayanHoverEffect_26 li a{
+    padding: 10px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+}
+.ayanHoverEffect_26 li a:hover{
+   color:#6559bc;
+}
+.ayanHoverEffect_26 li a:before,
+.ayanHoverEffect_26 li a:after{
+  position: absolute;
+  top: 0%;
+  width: 2px;
+  height: 100%;
+  background: #6559bc;
+  content: "";
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.ayanHoverEffect_26 li a:before{
+  left: 0px;
+  transform: translateX(20px);
+}
+
+.ayanHoverEffect_26 li a:after{
+  right: 0px;
+  transform: translateX(-20px);
+}
+
+.ayanHoverEffect_26 li a:hover:before,
+.ayanHoverEffect_26 li a:hover:after{
+  opacity: 1;
+  height: 100%;
+  transform: translateX(0px);
+}
+
+/* ********************************************************
+	Effect 27: Center Out (Top/Bottom) .ayanHoverEffect_27
+***********************************************************/
+
+.ayanHoverEffect_27 li{
+	margin:0;	
+}
+.ayanHoverEffect_27 li a {
+
+  cursor: pointer;
+  display: block;
+  letter-spacing: 0;
+  width: 225px;
+  vertical-align: middle;
+
+  
+   box-sizing: inherit;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: .6s;
+          transition-duration: .6s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+
+.ayanHoverEffect_27 li a:hover,
+.ayanHoverEffect_27 li a:active {
+  letter-spacing: 5px;
+  color:#6559bc;
+}
+
+.ayanHoverEffect_27 li a:after,
+.ayanHoverEffect_27 li a:before {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border: 1px solid rgba(255, 255, 255, 0);
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  -webkit-transition: all 280ms ease-in-out;
+  transition: all 280ms ease-in-out;
+  width: 0;
+}
+
+.ayanHoverEffect_27 li a:hover:after,
+.ayanHoverEffect_27 li a:hover:before {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-color: #6559bc;
+  -webkit-transition: width 350ms ease-in-out;
+  transition: width 350ms ease-in-out;
+  width: 70%;
+}
+
+.ayanHoverEffect_27 li a:hover:before {
+  bottom: auto;
+  top: 0;
+  width: 70%;
+}
+
+/* ********************************************************
+	Effect 28: Double Border .ayanHoverEffect_28
+***********************************************************/
+
+.ayanHoverEffect_28 li a{
+  transition: 0.3s ease;
+    padding: 20px 0; 
+}
+.ayanHoverEffect_28 li a:hover {
+  color:#6559bc;
+  border-top: 2px solid #6559bc;
+  border-bottom: 2px solid #6559bc;
+  padding: 6px 0; 
+  display:block;
+}
+
+/* ********************************************************
+	Effect 29: Cracker .ayanHoverEffect_29
+***********************************************************/
+
+
+.ayanHoverEffect_29 ul {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.ayanHoverEffect_29 li {
+  overflow: hidden;
+  position: relative;
+}
+.ayanHoverEffect_29 li:before,
+.ayanHoverEffect_29 li:after {
+  display: block;
+}
+.ayanHoverEffect_29 li:before {
+  bottom: 0%;
+}
+.ayanHoverEffect_29 li:after {
+  bottom: 50%;
+}
+.ayanHoverEffect_29 a {
+  backface-visibility: hidden;
+  display: block;
+  padding: 0.5em 1em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+}
+.ayanHoverEffect_29 a:before {
+  bottom: 25%;
+}
+.ayanHoverEffect_29 a:after {
+  bottom: 75%;
+}
+.ayanHoverEffect_29 a:hover {
+  color: #ffffff;
+}
+.ayanHoverEffect_29 li:before,
+.ayanHoverEffect_29 li:after,
+.ayanHoverEffect_29 a:before,
+.ayanHoverEffect_29 a:after {
+  background-color: #6559bc;
+  position: absolute;
+  height: 25%;
+  left: 0%;
+  right: 100%;
+  content: '';
+  z-index: -1;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.ayanHoverEffect_29 li:before {
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+.ayanHoverEffect_29 li:after {
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+.ayanHoverEffect_29 a:before {
+  -webkit-transition-delay: 0.05s;
+  transition-delay: 0.05s;
+}
+.ayanHoverEffect_29 a:after {
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+}
+.ayanHoverEffect_29 li:hover:before,
+.ayanHoverEffect_29 li.current:before,
+.ayanHoverEffect_29 li:hover:after,
+.ayanHoverEffect_29 li.current:after,
+.ayanHoverEffect_29 li:hover a:before,
+.ayanHoverEffect_29 li.current a:before,
+.ayanHoverEffect_29 li:hover a:after,
+.ayanHoverEffect_29 li.current a:after {
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+.ayanHoverEffect_29 li:hover:before,
+.ayanHoverEffect_29 li.current:before {
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+.ayanHoverEffect_29 li:hover:after,
+.ayanHoverEffect_29 li.current:after {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+.ayanHoverEffect_29 li:hover a:before,
+.ayanHoverEffect_29 li.current a:before {
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+.ayanHoverEffect_29 li:hover a:after,
+.ayanHoverEffect_29 li.current a:after {
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+/* ********************************************************
+	Effect 30: Multi Steps .ayanHoverEffect_30
+***********************************************************/
+
+
+.ayanHoverEffect_30 ul{
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.ayanHoverEffect_30 li {
+  overflow: hidden;
+  position: relative;
+}
+.ayanHoverEffect_30 li:before,
+.ayanHoverEffect_30 li:after {
+  display: block;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+}
+.ayanHoverEffect_30 li:before {
+  left: 0%;
+}
+.ayanHoverEffect_30 li:after {
+  left: 50%;
+}
+.ayanHoverEffect_30 a {
+  backface-visibility: hidden;
+  display: block;
+  padding: 0.5em 1em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+}
+.ayanHoverEffect_30 a:before,
+.ayanHoverEffect_30 a:after {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+.ayanHoverEffect_30 a:before {
+  left: 25%;
+}
+.ayanHoverEffect_30 a:after {
+  left: 75%;
+}
+.ayanHoverEffect_30 a:hover {
+  color: #ffffff;
+}
+.ayanHoverEffect_30 li:before,
+.ayanHoverEffect_30 li:after,
+.ayanHoverEffect_30 a:before,
+.ayanHoverEffect_30 a:after {
+  background-color: #6559bc;
+  position: absolute;
+  height: 100%;
+  width: 26%;
+  top: 0;
+  content: '';
+  z-index: -1;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.ayanHoverEffect_30 li:before {
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+.ayanHoverEffect_30 li:after {
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+.ayanHoverEffect_30 a:before {
+  -webkit-transition-delay: 0.05s;
+  transition-delay: 0.05s;
+}
+.ayanHoverEffect_30 a:after {
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+}
+.ayanHoverEffect_30 li:hover:before,
+.ayanHoverEffect_30 li.current:before,
+.ayanHoverEffect_30 li:hover:after,
+.ayanHoverEffect_30 li.current:after,
+.ayanHoverEffect_30 li:hover a:before,
+.ayanHoverEffect_30 li.current a:before,
+.ayanHoverEffect_30 li:hover a:after,
+.ayanHoverEffect_30 li.current a:after {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+.ayanHoverEffect_30 li:hover:before,
+.ayanHoverEffect_30 li.current:before {
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+.ayanHoverEffect_30 li:hover:after,
+.ayanHoverEffect_30 li.current:after {
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+}
+.ayanHoverEffect_30 li:hover a:before,
+.ayanHoverEffect_30 li.current a:before {
+  -webkit-transition-delay: 0.075s;
+  transition-delay: 0.075s;
+}
+.ayanHoverEffect_30 li:hover a:after,
+.ayanHoverEffect_30 li.current a:after {
+  -webkit-transition-delay: 0.225s;
+  transition-delay: 0.225s;
+}
+
+/* ********************************************************
+	Effect 31: Upcoming in Next Update .ayanHoverEffect_31
+***********************************************************/
+

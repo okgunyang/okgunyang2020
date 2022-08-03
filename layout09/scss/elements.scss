@@ -1,0 +1,19 @@
+.overlay {
+    background-image: url(../img/overlay1.png);
+    height: 100vh;
+}
+
+section {
+    padding: 50px 0;
+}
+
+.portfolio-box {
+    width: 30%;
+    height: 300px;
+    overflow: hidden;
+    background-size: cover;
+}
+
+.hcontainer {
+    display: inline-block;
+}

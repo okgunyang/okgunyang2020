@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>텍스트 애니메이션 26</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  background-color: #342875;
+  background-image: linear-gradient(to bottom, #15102e 0%, #0b0817 100%);
+}
+
+/*-- Heading Styles --*/
+.heading {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.heading__title {
+  font-size: 4rem;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0;
+  background-image: url("https://www.dropbox.com/s/ac9efh6oqu3docb/stars.png?raw=1");
+  background-repeat: repeat;
+  background-size: 400px auto;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-animation: stars 3s infinite linear;
+  animation: stars 3s infinite linear;
+}
+@media (min-width: 440px) {
+  .heading__title {
+    font-size: 6rem;
+  }
+}
+@media (min-width: 720px) {
+  .heading__title {
+    font-size: 9.5rem;
+  }
+}
+
+@-webkit-keyframes stars {
+  0% {
+    background-position: 0 -400px;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@keyframes stars {
+  0% {
+    background-position: 0 -400px;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+    </style>
+</head>
+<body>
+<div class="heading">
+	<h1 class="heading__title">KIMKITAE</h1>
+</div>
+</body>
+</html>

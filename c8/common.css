@@ -1,0 +1,90 @@
+@charset "utf-8";
+/* font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Sunflower', sans-serif;
+    font-family: 'Black Han Sans', sans-serif;
+*/	
+* { margin: 0; padding: 0;  }
+body, html { width: 100%; font-size:14px; }
+ul { list-style: none; }
+a { text-decoration: none; }
+button, input { outline:0; border: 0; background-color:transparent; }
+:root {    --color-cate-home: #ff1f45;    --color-cate-live: #ff584a;    --color-cate-vod: #387dff;
+    --color-cate-clip: #fd8163;    --color-cate-movie: #7d57fc;    --color-cate-kids: #ffc031; }
+.hd { background-color: #ff1f45; height: 230px; position:fixed; top:0; left:0; width: 100vw; }	
+.hd_wrap { width: 1280px; margin:0 auto; position:relative;}
+.hd .top { height: 38px; background:rgba(0,0,0,0.2); }
+.hd .bottom {  height: 192px; }
+#tnb { float:right;  }
+#tnb li { float:left;   padding-top: 10px; } 
+#tnb li a { display:block; opacity:0.6; color:#fff; line-height:18px; border-left:1px solid #aaa; margin-left: 20px; padding-left: 20px; font-size:0.85em; }
+#tnb li:first-child a { border:0; }
+#tnb li a:hover { opacity:1; } 
+.logo { display:block; float:left; width: 90px; height: 21px; padding-top: 20px; }
+.logo img { display:block; width: 100%; height: auto; }
+
+#gnb { position:absolute;  top:20px; left:50%; width: 540px; margin-left: -220px; }
+#gnb li { float:left; margin-right:2rem; }
+#gnb li a { display:block; color:#fff; font-size:24px; font-family: 'Black Han Sans', sans-serif; font-weight:200; line-height:24px; }
+.search_form { float:right; margin-top:15px; position:relative; }
+#keyword { display:block; border-radius:36px; width:260px; height:36px;  float:left; background-color:rgba(0,0,0,0.5);
+text-indent:1em; font-size:14px; display:none; }
+.search_btn { width: 36px; height: 36px;  background-image:url("./inc/search_ico.svg"); background-size:25px 24px;
+background-position:center center; background-repeat: no-repeat; position:absolute; right:0; top:0; cursor:pointer; }
+
+#footer { clear:both; background-color: #1c1c1c; width: 100%; min-width: 1200px; }
+.footer-top {    border-bottom: 1px solid #252525; }
+#footer .inner-wrap {    width: 1280px;    margin: 0 auto;    position: relative; }
+#footer .footer-notice {    line-height: 50px;    float: left; }
+#footer .footer-notice dt {    float: left;    font-size: 14px; }
+#footer .footer-notice dt a {    font-size: .8125rem;    color: #dedede; }
+#footer .footer-notice dd {    padding: 0 80px 0 70px; }
+#footer .footer-notice dd a {    font-size: .8125rem;    color: #969696; }
+#footer .footer-select-box {    padding-top: 8px;    float: right; }
+#footer .ico-sns {    position: relative;    width: 36px;    height: 36px;    border-radius: 100%;    overflow: hidden;
+    background-color: #141414;    background-image: url("./inc/facebook.svg");    background-position: 50%;
+    background-repeat: no-repeat;    background-size: 15px auto; text-indent:-9999px; display:block; float:left; }
+footer#footer .ico-sns:hover {    background-color: #010101;    background-image: url("./inc/facebook_hover.svg"); }
+#footer .footer-select-box * {    vertical-align: top; }
+#footer .footer-select {    position: relative;    display: inline-block;    background: #141414;
+    border-radius: 18px; }
+#footer .footer-hide {    position: absolute;    border-bottom: 0;    background: rgba(0,0,0,.9);
+    border-top-left-radius: 8px;    border-top-right-radius: 0;    left: 0;
+    bottom: 37px;    width: 170px;    font-size: 12px;    color: #4c4c4c;
+    line-height: 20px;    height: 235px;    overflow-y: auto;    display: block;  display:none;
+    z-index: 100; }
+#footer .scrollbar-inner {    height: 235px;    overflow-y: auto; }
+.scrollbar-inner {    scrollbar-color: #323232 #101010;    scrollbar-width: thin; }
+.scrollbar-inner::-webkit-scrollbar-track {    background-color: #101010; }
+.scrollbar-inner::-webkit-scrollbar-thumb {    background-color: #323232; }
+.scrollbar-inner::-webkit-scrollbar {    width: 8px;    background-color: #323232; }
+
+#footer .footer-hide li {    padding: 5px 20px; }
+#footer .footer-hide li a {    color: #969696; }
+#brandSite div ul li:hover { background-color:#444; }
+#brandSite div ul li:hover a {  color:#fff; font-weight:700; }
+#footer .footer-select .lnk-family {    line-height: 36px;    width: 170px;    position: relative;    display: block;
+    padding-right: 20px;    padding-left: 14px;    color: #4c4c4c;    font-size: 12px; }
+#footer .footer-select .lnk-family:after {    content: "";    position: absolute;    width: 7px;    height: 7px;
+    right: 16px;    top: 50%;    margin-top: -4px;
+    background-image: url("./inc/ft_data1.svg");
+    background-position: 100% 0;    background-repeat: no-repeat;    background-size: 7px auto; }
+#footer .inner-wrap:after {    content: "";    display: block;    clear: both; }
+#footer .footer-contents {    padding: 30px 0 70px;    text-align: center; }
+#footer .footer-util {    line-height: 1em;    color: #707070;    font-size: 14px;    margin-bottom: 22px; }
+#footer .footer-util a {    display: inline-block;    margin: 0 6px;    color: #969697; }
+#footer .footer-util a strong {    font-weight: 600;    color: #fafafa; }
+#footer .copyright-box p {    color: hsla(0,0%,43.1%,.7);    font-size: 12px;    line-height: 22px; }
+#footer .copyright-box p>span {    position: relative;    padding: 0 6px 0 10px; }
+#footer .copyright-box a {    color: hsla(0,0%,58.8%,.7);    position: relative;    padding-left: 10px;
+    margin-left: 6px; }
+#footer .copyright-box a:before {    content: "";    position: absolute;    top: 50%;
+    left: 0;    width: 1px;    height: 11px;    margin-top: -5px;    background-color: #323232; }
+#footer .copyright-box p.copyright {    margin-top: 30px; }
+#footer p.logo {    margin-top: 20px; text-align:center; clear:both; margin:20px auto; }
+#footer p.logo img { display:block; width: 90px; margin:0 auto; }
+
+.page-top-box {    position: fixed;    right: 1.25rem;    bottom: 1.875rem;
+    display:block;    width: 3.125rem;    height: 3.125rem;    text-indent: -999em;
+    overflow: hidden;     background-image: url("./inc/to_top.svg");    background-position: 50%;
+    background-repeat: no-repeat;    background-size: 11px 14px;    background-color: #0a0a0a;
+    border-radius: 100%;  }

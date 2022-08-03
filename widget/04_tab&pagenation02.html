@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>탭&amp;페이지내이션2</title>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%;   }
+    ul { list-style:none; }
+    a { text-decoration: none; }
+    button { outline:0; border:0; background:none; }    
+    .wrap { clear:both; width: 100%; clear:both; margin: 60px auto; position:relative; }
+    .wrap:after { content:""; display:block; clear:both; }    
+    .tit { text-align:center; line-height: 1.8; padding-top: 60px; }
+    </style>
+    <style>
+    /* 탭 - jQuery */ 
+    .tb_box { width: 900px; margin:20px auto;}
+    .tb_box img { display:block; width:100%; }    
+    .tab_item { width: 900px; height: 440px; clear:both; 
+        position:relative; }
+    .lb { display:block; width: 120px; line-height: 40px;
+        text-align:center; color:#fff; background-color:#333; position:absolute; top:0; border-bottom:1px solid #fff; cursor:pointer; border-radius:10px 10px 0px 0px; }   
+    .lb_btn1 { left: 0; }
+    .lb_btn2 { left: 120px; }
+    .lb_btn3 { left: 240px; }  
+    .tab_con_box .tab_fr { position:absolute; top: 41px; left:0; border:1px solid #333; }
+    .tab_con_box .tab_fr { display:none; }
+    .tab_con_box.on .tab_fr { display:block; }
+    .tab_con_box.on .lb { background-color: deeppink; }    
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+        $(".lb").click(function(){
+            //누른 버튼의 부모(.tab_con_box)의 순번 추출
+            var th = $(this).parents(".tab_con_box").index();
+            //모든 .tab_con_box에 on 클래스 제거
+            $(".tab_con_box").removeClass("on");
+            //누른 버튼의 부모에만 on 클래스 추가
+            $(".tab_con_box").eq(th).addClass("on");
+        });
+    });    
+    </script>
+    
+    <style>
+    .page_data { width: 900px; margin: 10px auto; }
+    .page_data img { display:block; width: 100%; }
+    .page_data .item_box { display:none; }
+    .page_data .item_box.on { display:block; } 
+    .btn_box { width: 240px; margin: 20px auto; }
+    .btn_box button { display:block; background-color:#ccc;
+        border:1px solid #eee; width: 40px; height: 40px; line-height: 40px; text-align:center; float:left; margin: 20px; cursor:pointer; color:#333; }
+    .btn_box button.on { background-color:#333; color:#fff; }    
+    </style>
+    <script>
+    $(document).ready(function(){
+        $(".btn_box button").click(function(){
+            var idx = $(this).index();
+            $(".btn_box button").removeClass("on");
+            $(this).addClass("on");
+            $(".page_data .item_box").removeClass("on");
+            $(".page_data .item_box").eq(idx).addClass("on");
+        });
+    });    
+    </script>
+    
+    <style>
+    #wrap1 { width:900px; position:relative; }
+    .more_data { clear:both; width: 900px; margin: 10px auto; position:relative; }   
+    .more_data img { display:block; width: 100%; }
+    .more_data .more_box { display:none; width: 900px; 
+        height: 400px; clear:both; }
+    .more_data .more_box.on { display:block; }
+    .more { display:block; background-color:#ccc;
+        border:1px solid #eee; width:40px; height: 40px; line-height: 40px; text-indent:-9999px; float:left; margin: 20px; cursor:pointer; color:#333; 
+        position:absolute; bottom:0px; right:0px;
+        border-radius:24px; }    
+    .more:before, .more:after { content:""; display:block; width: 20px; height: 3px; position:absolute; top:17px; left:9px; background-color:#333; }    
+    .more:after { transform:rotate(90deg); }    
+    </style>
+    <script>
+    $(document).ready(function(){
+        var cnt = 0;
+        $(".more").click(function(){
+            cnt=cnt+1;
+            $(".more_box").eq(cnt).addClass("on");
+        });
+    });    
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h2 class="tit">탭 - jQuery</h2>
+        <div class="tb_box">
+            <div class="tab_item">
+                <div class="tab_con_box on" id="tab_con1">
+                     <button class="lb lb_btn1">공지사항</button> 
+                     <div class="tab_fr">             
+                        <img src="slider01.jpg" alt="">
+                     </div>    
+                </div>
+                <div class="tab_con_box" id="tab_con2">
+                   <button class="lb lb_btn2">갤러리</button>
+                   <div class="tab_fr">
+                        <img src="slider02.jpg" alt="">
+                    </div>
+                </div>
+                <div class="tab_con_box" id="tab_con3">
+                   <button class="lb lb_btn3">이용후기</button>
+                    <div class="tab_fr">       
+                        <img src="slider03.jpg" alt="">
+                    </div>    
+                </div>
+            </div>
+        </div>       
+    </div>
+    
+    <div class="wrap">
+        <h2 class="tit">페이지내이션 - jQuery</h2>
+        <ul class="page_data">
+            <li class="item_box on"><img src="slider01.jpg" alt=""></li>
+            <li class="item_box"><img src="slider02.jpg" alt=""></li>
+            <li class="item_box"><img src="slider03.jpg" alt=""></li>
+        </ul>
+        <div class="btn_box">
+            <button class="on">1</button>
+            <button>2</button>
+            <button>3</button>
+        </div>
+    </div>
+    
+    <div class="wrap" id="wrap1">
+        <h2 class="tit">더보기 콘텐츠</h2>
+        <ul class="more_data">
+            <li class="more_box on"><img src="slider01.jpg" alt=""></li>
+            <li class="more_box"><img src="slider02.jpg" alt=""></li>
+            <li class="more_box"><img src="slider03.jpg" alt=""></li>
+            <li class="more_box"><img src="slider04.jpg" alt=""></li>
+        </ul>
+        <button class="more">더 보기</button>
+    </div>
+</body>
+</html>

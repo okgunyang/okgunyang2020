@@ -1,0 +1,139 @@
+@media (max-width: 530px){
+
+    .page{
+        display: grid;
+        grid-template-rows: auto auto repeat(9, 1fr) auto;
+    }
+
+    /*=========page elements=========*/
+
+    .side_bar{
+        display: none;
+    }
+    .content_area{
+        grid-area: 2/1/12/13;
+    }
+
+    /*=========transitions=========*/
+
+    .nav_item_toggle.active,
+    .nav_item_toggle:hover{
+        -webkit-text-fill-color: #00FFFF;
+        text-decoration: none;
+    }
+
+    /*=========class elements=========*/
+
+    .nav_item_toggle i {
+        -webkit-transition: color;
+    }
+    .social_flat{
+        padding-right: 20px;
+    }
+    .header_meniu{
+        display: none;
+    }
+    .meniu_flat{
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        grid-column-gap: 0;
+        justify-content: space-evenly;
+    }
+    .meniu_flat .nav_item{
+        justify-self: stretch;
+    }
+    .logo{
+        font-size: 3em;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-shadow: none;
+    }
+
+    /*=========content_area elements=========*/
+
+
+}
+@media (min-width: 531px){
+
+    .page{
+        display: grid;
+        grid-template-rows: auto repeat(10, 1fr) auto;
+    }
+
+    /*=========page elements=========*/
+
+    .side_bar{
+        display: none;
+    }
+    .nav_bar_mobile{
+        display: none;
+    }
+    .content_area{
+        grid-area: 2/1/12/13;
+    }
+
+    /*=========header elements=========*/
+
+    .logo{
+        font-size: 3em;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-shadow: none;
+    }
+
+    /*=========class elements=========*/
+
+    .toogle_meniu{
+        display: none;
+    }
+    .social_flat{
+        padding-right: 20px;
+    }
+
+    /*=========content_area elements=========*/
+
+
+
+}
+@media (min-width: 768px){
+
+    .page{
+        grid-template-columns: auto repeat(11, 1fr);
+    }
+
+    /*=========page elements=========*/
+
+    .header{
+        display: none;
+    }
+    .nav_bar_mobile{
+        display: none;
+    }
+    .side_bar{
+        display: grid;
+    }
+    .content_area{
+        grid-area: 1/2/13/13;
+    }
+    .footer{
+        display: none;
+    }
+
+    /*=========header elements=========*/
+
+    .logo{
+        font-size: 3em;
+        padding-left: 15px;
+        padding-right: 15px;
+
+    }
+
+
+    /*=========content_area elements=========*/
+
+
+
+
+
+}
+

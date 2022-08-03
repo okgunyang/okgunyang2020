@@ -1,0 +1,322 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>글 목록</title>
+
+
+
+
+<!-- 기본 플러그인 연결 -->
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<!-- 문서 메타 데이터 -->
+<meta name="Subject" content="하나이비인후과병원">
+<meta name="Description" content="강남 역삼동, 이비인후과 전문병원, 비중격만곡증, 축농증, 코물혹, 비염, 편도수술, 어지럼증, 코골이, 음성">
+<meta name="Keywords" content="강남 역삼동, 이비인후과 전문병원, 비중격만곡증, 축농증, 코물혹, 비염, 편도수술, 어지럼증, 코골이, 음성">
+<!-- 오픈 그래프 -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="하나이비인후과병원">
+<meta property="og:description" content="강남 역삼동, 이비인후과 전문병원, 비중격만곡증, 축농증, 코물혹, 비염, 편도수술, 어지럼증, 코골이, 음성">
+<meta property="og:image" content="/myapp/data/img_logo.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="326">
+<meta property="og:image:height" content="72">
+<meta property="og:url" content="localhost:8090">
+<!-- 파비콘 -->
+<link rel="apple-touch-icon" sizes="57x57" href="/myapp/data/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/myapp/data/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/myapp/data/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/myapp/data/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/myapp/data/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/myapp/data/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/myapp/data/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/myapp/data/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/myapp/data/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/myapp/data/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/myapp/data/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/myapp/data/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/myapp/data/favicon-16x16.png">
+<link rel="manifest" href="/myapp/data/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/myapp/data/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="/myapp/include/reset.css">
+<link rel="stylesheet" href="/myapp/include/common.css">
+</head>
+<body>
+
+
+
+<header id="hd" class="header">
+    <div class="hd_wrap top">
+        <nav id="tnb" class="nav">
+            <a href="/myapp" class="logo"><img src="/myapp/data/img_logo.png" alt="로고타입"></a>
+            <ul class="right_con top_nav">
+            	<!--  로그인 전 -->
+            	
+                <!--  로그인 후 -->
+                
+                <li><span>admin</span>님</li>
+                <li><a href="/myapp/member/read.do" class="mypage">마이페이지</a></li>
+                <li><a href="/myapp/member/logout.do" class="logout">로그아웃</a></li>
+                
+                <!-- 관리자만 -->
+                
+				<li><a href="/myapp/member/list.do">회원 목록</a></li>
+				<li><a href="/myapp/board/list.do">게시판 목록</a></li>
+				<li><a href="/myapp/board/write_form.do">글 쓰기</a></li>
+				<li><a href="/myapp/databank/list.do">자료실 목록</a></li>
+				<li><a href="/myapp/databank/writeForm.do">자료 등록</a></li>
+				
+            </ul>
+        </nav>
+    </div>
+    <div class="hd_wrap main">
+        <nav id="gnb" class="nav">
+            <ul class="left_con">
+                <li>
+                    <a href="" class="dp1">병원소개</a>
+                    <ul class="sub">
+                        <li><a href="" class="dp2">하나 이야기</a></li>
+                        <li><a href="" class="dp2">의료진 소개</a></li>
+                        <li><a href="/myapp/board/list.do" class="dp2">병원 소식</a></li>
+                        <li><a href="" class="dp2">둘러보기(VR)</a></li>
+                        <li><a href="" class="dp2">안전수술 시스템</a></li>
+                        <li><a href="" class="dp2">진료협력센터</a></li>
+                        <li><a href="" class="dp2">건강정보</a></li>
+                        <li><a href="/myapp/databank/list.do" class="dp2">건강자료실</a></li>
+                        <li><a href="" class="dp2">고객의 소리</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="" class="dp1">진료안내</a>
+                    <ul class="sub">
+                        <li><a href="" class="dp2">진료 일정</a></li>
+                        <li><a href="" class="dp2">외래진료안내</a></li>
+                        <li><a href="" class="dp2">입.퇴원안내</a></li>
+                        <li><a href="" class="dp2">오시는 길</a></li>
+                        <!-- 로그인한 경우만 진료 예약이나 질문 가능 -->
+                        
+                        <li><a href="" class="dp2">자주 묻는 질문</a></li>
+                        <li><a href="/myapp/qna/list.do" class="dp2">질문 및 답변</a></li>
+                        <li><a href="/myapp/email/onlineConsult.do" class="dp2">온라인 상담</a></li>
+                        
+                        <li><a href="" class="dp2">치료사례</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="" class="dp1">코 질환 센터</a>
+                    <ul class="sub">
+                        <li><a href="" class="dp2">센터 소개</a></li>
+                        <li><a href="" class="dp2">축농증</a></li>
+                        <li><a href="" class="dp2">비중격만곡증</a></li>
+                        <li><a href="" class="dp2">알레르기 비염</a></li>
+                        <li><a href="" class="dp2">만성 비염</a></li>
+                        <li><a href="" class="dp2">코 물혹</a></li>
+                        <li><a href="" class="dp2">후각 장애</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="" class="dp1">목 질환 센터</a>
+                    <ul class="sub">
+                        <li><a href="" class="dp2">센터 소개</a></li>
+                        <li><a href="" class="dp2">편도</a></li>
+                        <li><a href="" class="dp2">목의 혹</a></li>
+                        <li><a href="" class="dp2">갑상선</a></li>
+                        <li><a href="" class="dp2">침샘</a></li>
+                        <li><a href="" class="dp2">악성 질환</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="" class="dp1">귀 질환 센터</a>
+                    <ul class="sub">
+                        <li><a href="" class="dp2">센터 소개</a></li>
+                        <li><a href="" class="dp2">어지럼증</a></li>
+                        <li><a href="" class="dp2">만성 중이염</a></li>
+                        <li><a href="" class="dp2">소아 중이염</a></li>
+                        <li><a href="" class="dp2">난청</a></li>
+                        <li><a href="" class="dp2">보청기</a></li>
+                        <li><a href="" class="dp2">이명</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="" class="dp1">수면 센터</a>
+                    <ul class="sub">
+                        <li><a href="" class="dp2">센터 소개</a></li>
+                        <li><a href="" class="dp2">진단과정</a></li>
+                        <li><a href="" class="dp2">수면검사</a></li>
+                        <li><a href="" class="dp2">수술치료</a></li>
+                        <li><a href="" class="dp2">비수술치료</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="" class="dp1">신경과</a>
+                    <ul class="sub">
+                        <li><a href="" class="dp2">신경과 소개</a></li>
+                        <li><a href="" class="dp2">수면장애.불면증</a></li>
+                        <li><a href="" class="dp2">어지럼증</a></li>
+                        <li><a href="" class="dp2">두통</a></li>
+                        <li><a href="" class="dp2">치매초기진단</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<article id="con" class="content">
+<figure class="sub_visual">
+	<img src="/myapp/data/bg_sub_top1.jpg" alt="게시판 비주얼">
+</figure>
+<h2 class="page_tit">글 목록</h2>
+<div class="table_lst_wrap">
+	<table class="table_lst">
+		<thead>
+			<tr>
+				<th>글 번호</th><th>제목</th><th>작성일</th><th>작성자</th>
+			</tr>
+		</thead>
+		<tbody>
+		
+			<tr>
+				<td>8</td>
+				<td><a href="/myapp/board/read.do?seq=8">스프링에서 글쓰기1</a></td>
+				<td>2022-06-17</td>
+				<td>
+					관리자
+					
+				</td>
+			</tr>
+		
+			<tr>
+				<td>7</td>
+				<td><a href="/myapp/board/read.do?seq=7">유닛테스트 제목1</a></td>
+				<td>2022-05-25</td>
+				<td>
+					관리자
+					
+				</td>
+			</tr>
+		
+			<tr>
+				<td>6</td>
+				<td><a href="/myapp/board/read.do?seq=6">유닛테스트 제목1</a></td>
+				<td>2022-05-24</td>
+				<td>
+					관리자
+					
+				</td>
+			</tr>
+		
+			<tr>
+				<td>5</td>
+				<td><a href="/myapp/board/read.do?seq=5">샘플5 제목입니다.</a></td>
+				<td>2022-05-23</td>
+				<td>
+					관리자
+					
+				</td>
+			</tr>
+		
+			<tr>
+				<td>4</td>
+				<td><a href="/myapp/board/read.do?seq=4">샘플4 제목입니다.</a></td>
+				<td>2022-05-23</td>
+				<td>
+					관리자
+					
+				</td>
+			</tr>
+		
+			<tr>
+				<td>3</td>
+				<td><a href="/myapp/board/read.do?seq=3">샘플3 제목입니다.</a></td>
+				<td>2022-05-23</td>
+				<td>
+					관리자
+					
+				</td>
+			</tr>
+		
+			<tr>
+				<td>2</td>
+				<td><a href="/myapp/board/read.do?seq=2">샘플2 제목입니다.</a></td>
+				<td>2022-05-23</td>
+				<td>
+					관리자
+					
+				</td>
+			</tr>
+		
+			<tr>
+				<td>1</td>
+				<td><a href="/myapp/board/read.do?seq=1">샘플 글 제목1입니다.</a></td>
+				<td>2022-05-23</td>
+				<td>
+					관리자
+					
+				</td>
+			</tr>
+		
+		
+			<tr>
+				<td colspan="4">
+					<a href="/myapp/board/write_form.do" class="btn btn-writer" style="width:70px">글 등록</a>
+				</td>
+			</tr>
+			
+		</tbody>
+	</table>
+</div>
+</article>
+
+
+
+
+<footer id="ft" class="footer">
+    <div class="ft_wrap sub1">
+        <nav class="ft_nav sns_link">
+            <ul>
+                <li><strong>하나이비인후과병원 SNS</strong></li>
+                <li class="item1"><a href="">푸터메뉴</a></li>
+                <li class="item2"><a href="">푸터메뉴</a></li>
+                <li class="item3"><a href="">푸터메뉴</a></li>
+                <li class="item4"><a href="">푸터메뉴</a></li>
+                <li class="item5"><a href="">푸터메뉴</a></li>
+                <li class="item6"><a href="">푸터메뉴</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="ft_wrap sub2">
+        <nav class="ft_nav ft_link">
+            <ul class="left_con">
+                <li class="nav_txt"><a href="">이용약관</a></li>
+                <li class="nav_txt"><a href="">개인정보처리방침</a></li>
+                <li class="nav_txt"><a href="">환자의 권리와 의무</a></li>
+                <li class="nav_txt"><a href="">비급여안내</a></li>
+            </ul>
+            <ul class="right_con">    
+                <li class="shortcut"><a href="">하나이비인후과네트워크 <span class="blue_txt">바로가기</span></a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="ft_wrap sub3">
+        <div class="copyright_box">
+            <h4 class="ft_company">하나이비인후과병원</h4>
+            <p class="ft_addr">
+                <span>06225 서울특별시 강남구 역삼로 245 하나이비인후과병원</span><br>
+                <span>대표자 : 이상덕 외 1명</span><span>사업자등록번호 : 220-96-00024</span><span>대표전화 : 02-6925-1111</span>
+            </p> 
+            <p class="copyright">COPYRIGHT&copy; 2015 HANA ENT HOSPITAL. ALL RIGHT RESERVED.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

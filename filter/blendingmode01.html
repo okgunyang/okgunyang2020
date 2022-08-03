@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    * { margin: 0; padding: 0; }    
+    body, html { width: 100%; }    
+    ul { list-style: none; }
+    a { text-decoration: none; }
+    .wrap { clear: both; width: 1200px; margin:50px auto; min-height:100px; }
+    .blending_lst { clear:both; }
+    .blending_lst li { float:left; width: 200px; min-height: 200px; margin: 50px; 
+        text-align: center; background-color:deeppink; /*background-color:deepskyblue;*/ }
+    .blending_lst li img { width: 200px; text-align:center;  }
+    .txt { font-size:18px; font-weight: bold; line-height: 40px; background-color:#fff; display:block; padding: 20px; }    
+    </style>
+    <style>    
+    /* 키워드 값 */
+    .blending_lst li.item1 img { mix-blend-mode: normal; }    
+    .blending_lst li.item2 img { mix-blend-mode: screen; }      
+    .blending_lst li.item3 img { mix-blend-mode: multiply; }
+    .blending_lst li.item4 img { mix-blend-mode: overlay;}
+    .blending_lst li.item5 img { mix-blend-mode: darken;}
+    .blending_lst li.item6 img { mix-blend-mode: lighten;}
+    .blending_lst li.item7 img { mix-blend-mode: color-dodge;}
+    .blending_lst li.item8 img { mix-blend-mode: color-burn;}
+    .blending_lst li.item9 img { mix-blend-mode: hard-light;}
+    .blending_lst li.item10 img { mix-blend-mode: soft-light;}
+    .blending_lst li.item11 img { mix-blend-mode: difference;}
+    .blending_lst li.item12 img { mix-blend-mode: exclusion;}
+    .blending_lst li.item13 img { mix-blend-mode: hue;}
+    .blending_lst li.item14 img { mix-blend-mode: saturation;}
+    .blending_lst li.item15 img { mix-blend-mode: color;}
+    .blending_lst li.item16 img { mix-blend-mode: luminosity; }
+    /* 전역 값 */
+    .blending_lst li.item17 img { mix-blend-mode: initial;}
+    .blending_lst li.item18 img { mix-blend-mode: inherit;}
+    .blending_lst li.item19 img { mix-blend-mode: unset;    }
+    </style>
+</head>
+<body>
+   <div class="wrap">
+       <ul class="blending_lst">
+           <li class="item1">
+               <img src="firefox-logo.svg" alt="logo" class="pic">
+               <span class="txt">normal</span>
+            </li>
+           <li class="item2">
+               <img src="firefox-logo.svg" alt="logo" class="pic">
+               <span class="txt">multiply</span>
+            </li>
+           <li class="item3">
+               <img src="firefox-logo.svg" alt="logo" class="pic">
+               <span class="txt">screen</span>
+            </li>
+           <li class="item4">
+               <img src="firefox-logo.svg" alt="logo" class="pic">
+               <span class="txt">overlay</span>
+            </li>
+           <li class="item5">
+               <img src="firefox-logo.svg" alt="logo" class="pic">
+               <span class="txt">darken</span>
+            </li>
+           <li class="item6">
+               <img src="firefox-logo.svg" alt="logo" class="pic">
+               <span class="txt">lighten</span>
+            </li>
+           <li class="item7">
+                <img src="firefox-logo.svg" alt="logo" class="pic">
+                <span class="txt">color-dodge</span>
+            </li>
+           <li class="item8"><img src="firefox-logo.svg" alt="logo" class="pic"><span class="txt">color-burn</span></li>
+           <li class="item9"><img src="firefox-logo.svg" alt="logo" class="pic"><span class="txt">hard-light</span></li>
+           <li class="item10"><img src="firefox-logo.svg" alt="logo" class="pic"><span class="txt">soft-light</span></li>
+           <li class="item11"><img src="firefox-logo.svg" alt="logo" class="pic"><span class="txt">difference</span></li>
+           <li class="item12"><img src="firefox-logo.svg" alt="logo" class="pic"><span class="txt">exclusion</span></li>
+           <li class="item13"><img src="firefox-logo.svg" alt="logo" class="pic"><span class="txt">hue</span></li>
+           <li class="item14"><img src="firefox-logo.svg" alt="logo" class="pic"><span class="txt">saturation</span></li>
+           <li class="item15"><img src="firefox-logo.svg" alt="logo" class="pic"><span class="txt">color</span></li>
+           <li class="item16"><img src="firefox-logo.svg" alt="logo" class="pic"><span class="txt">luminosity</span></li>
+           <li class="item17"><img src="firefox-logo.svg" alt="logo" class="pic"><span class="txt">initial</span></li>
+           <li class="item18"><img src="firefox-logo.svg" alt="logo" class="pic"><span class="txt">inherit</span></li>
+           <li class="item19"><img src="firefox-logo.svg" alt="logo" class="pic"><span class="txt">unset</span></li>
+       </ul>
+   </div>
+</body>
+</html>

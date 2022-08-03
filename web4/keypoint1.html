@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>빅데이터 수집 및 분석</title>
+</head>
+<body>
+<div class="page" id="page8">
+    <h2 class="tit">공공 DB 데이터와 SNS 수집 실습</h2>
+    <div class="txt2">
+        <h3 class="sec_tit">Open API를 활용한 공공 DB 수집</h3>
+        <ul>
+            <li>Rest API는 Representational State Transfer API의 약자
+            <br>- HTTP 프로토콜을 통해서 정보를 제공하는 함수
+            <br>- 실질적인 API 사용은 정해진 구조의<br><bb style="margin-left:22px">URL 문자열 사용</bb>
+            </li>
+            <li>공공데이터포털, 서울열린데이터광장 등 공공 DB를 수집하기 위해서는 회원가입, Open API 인증키 발급 등을 필수적으로 수행</li>
+            <li>공공 DB 사이트들이 제공하는 데이터 서비스 <br>Open API는 Rest API로 전달해야 하는 Query 문자열의 구조와 원하는 출력형식(XML, JSON)에 따라 URL 문자열을 구성</li>
+        </ul>
+    </div>
+
+    <div class="txt2">
+        <h2 class="sec_tit">Rest API와 SNS API를 활용한 SNS 글 수집</h2>
+        <ul>
+            <li>공공 DB 사이트들이 제공하는 데이터 서비스 <br>Open API는 Rest API로 전달해야 하는 Query 문자열의 구조와 원하는 출력형식(XML, JSON)에 따라 URL 문자열을 구성</li>
+        </ul>
+    </div>
+</div>    
+<hr>
+<div class="page" id="page9">
+    <h2 class="tit">데이터셋 읽어오기와 사용하기</h2>
+    <div class="txt2">
+        <h3 class="sec_tit">Pandas가 제공하는 데이터셋</h3>
+        <ul>
+            <li>Series 타입 <br>: Pandas에서 1차원 데이터를 지원하기 위해 만든 <bb style="margin-left:12px">데이터 타입</bb>
+            <br>- 데이터 접근 방법 : 인덱스 활용, 인덱스에 조건을 <bb style="margin-left:190px">부여할 수도 있음</bb>
+            </li>
+            <li>DataFrame  <br>: Pandas에서 2차원 데이터를 지원하기 위해 만든 <bb style="margin-left:12px">데이터 타입</bb>
+            <br>- iloc 함수 : 인덱스를 이용해 요소에 접근
+            <br>- loc 함수 : 필드명을 이용해 요소에 접근
+            <br>- csv파일이나 excel 파일을 다루기 용이
+            </li>
+        </ul>
+    </div>
+    <div class="txt2">
+        <h3 class="sec_tit"><span>Pandas가 제공하는 데이터셋의 연산</span></h3>
+        <ul>
+            <li>Pandas가 제공하는 데이터셋 <br>: 파이썬이 제공하는 기본 타입과 달리 스칼라 연산이 <bb style="margin-left:12px">아닌 벡터 연산을 수행(for문 필요없음) </bb></li>
+            <li>DataFrame 객체에 원하는 필드를 손쉽게 추가할 수 있음 </li>
+            <li>DataFrame 클래스에서는 새로운 행을 추가하거나 삭제하는 등의 함수를 제공함</li>
+            <li>새로운 행을 추가하거나 삭제 시 결과값을 반환받아야만 하고, 결과값을 반환받지 않으면 추가되거나 삭제된 행은 반영되지 않음</li>
+        </ul>
+    </div>
+
+    <div id="page9_1" style="display: block;">
+        <!-- 문제번호 -->
+        <div class="cssPage2Question">9-1</div>
+        <!-- 문제 -->
+        <div class="cssPage2Title" style="margin-top: 157px; font-size: 32px;">다음 중 Pandas 라이브러리에 대한 설명으로 옳지 <span class="cssPage2Red">않은</span> 것은?</div>
+        <!-- 문제 보기 -->
+        <div class="cssPage2Bogi" style="top: 240px;">
+            <ul>
+                <li class="bogi1"><em>1</em><span>Pandas는 pip나 conda로 설치해야 하는 파이썬의 추가 API이다.</span></li>
+                <li class="bogi2"><em>2</em><span>Pandas는 통계 패키지에 많이 사용하는 데이터 타입이다.</span></li>
+                <li class="bogi3"><em>3</em><span>Anaconda 사용 시에도 별도의 설치를 하여야 한다. </span></li>
+                <li class="bogi4"><em>4</em><span>Pandas 라이브러리는 Series, DataFrame, Panel <br>등의 데이터셋을 지원한다. </span></li>
+            </ul>
+        </div>
+        <div class="cssPage2Feed">
+            <ul>
+                <li class="btn0">3</li>
+                <li class="btn4" style="font-size: 22px;">Anaconda 패키지에는<br>이미 설치되어 있습니다. </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="page9_2" style="display: block;">
+        <!-- 문제번호 -->
+        <div class="cssPage2Question">9-2</div>
+        <!-- 문제 -->
+        <div class="cssPage2Title" style="margin-top: 157px; font-size: 28px;">다음 설명 중 옳지 <span class="cssPage2Red">않은</span> 것은? </div>
+        <!-- 문제 보기 -->
+        <div class="cssPage2Bogi" style="top: 240px;">
+            <ul>
+                <li class="bogi1"><em>1</em><span>Series 객체는 list를 통해서만 만들 수 있다.</span></li>
+                <li class="bogi2"><em>2</em><span>Series 객체는 dict 타입을 통해 직접 Index를 부여할 수 있다. </span></li>
+                <li class="bogi3"><em>3</em><span>DataFrame은 행과 열로 구성된 테이블 형태 구조체이다. </span></li>
+                <li class="bogi4"><em>4</em><span>Panel은 3차원 데이터 구조이다.</span></li>
+            </ul>
+        </div>
+        <div class="cssPage2Feed">
+            <ul>
+                <li class="btn0">1</li>
+                <li class="btn4" style="font-size: 22px;">Series 객체는<br>list, dict 타입 둘 다 가능합니다.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="page9_3" style="display: block;">
+        <!-- 문제번호 -->
+        <div class="cssPage2Question">9-3</div>
+        <!-- 문제 -->
+        <div class="cssPage2Title" style="margin-top: 157px; font-size: 32px;">Pandas에서 제공하는 데이터셋 연산에 대한<br>설명 중 옳지 <span class="cssPage2Red">않은</span> 것은?</div>
+        <!-- 문제 보기 -->
+        <div class="cssPage2Bogi" style="top: 240px;">
+            <ul>
+                <li class="bogi1"><em>1</em><span>연산의 기본 형태는 스칼라 연산이다.</span></li>
+                <li class="bogi2"><em>2</em><span>연산의 기본 형태는 벡터 연산이다.  </span></li>
+                <li class="bogi3"><em>3</em><span>벡터 연산을 기본으로 하기 때문에 for문을 사용하지 <br>않고도 연산이 가능하다.</span></li>
+                <li class="bogi4"><em>4</em><span>DataFrame의 iloc 함수는 인덱스를 <br>이용하여 요소에 접근할 수 있다.</span></li>
+            </ul>
+        </div>
+        <div class="cssPage2Feed">
+            <ul>
+                <li class="btn0">1</li>
+                <li class="btn4" style="font-size: 22px;">Pandas는 연산 시 벡터 연산을 기본으로 합니다.</li>
+            </ul>
+        </div>
+    </div>
+</div>    
+<hr>
+<div class="page" id="page10">
+    <h2 class="tit">Pandas의 데이터 구조와 데이터 타입</h2>
+    <div class="txt2">
+        <h3 class="sec_tit"><span>Pandas의 DataFrame 구조와 데이터 타입</span></h3>
+        <ul>
+            <li>Pandas에서 제공하는 데이터 구조 중에 DataFrame이 가장 많이 쓰임</li>
+            <li>Pandas는 csv나 excel, json 등의 파일을 읽어서 바로 DataFrame 객체로 전달해 줌</li>
+            <li>DataFrame 객체는 for문을 사용하지 않고 조건식으로 인덱스처럼 데이터에 접근할 수 있음</li>
+            <li>DataFrame 객체의 인덱스에 논리식을 사용할 경우 파이썬의 논리식이 아닌 Numpy에서 제공하는 논리함수를 사용해야 함</li>
+        </ul>
+    </div>       
+    <div class="txt2">
+        <h3 class="sec_tit">Pandas의 DataFrame API</h3>
+        <ul>
+            <li>head() <br>: DataFrame의 앞에서부터 5개의 데이터를 보여줌</li>
+            <li>tail() <br>: DataFrame의 뒤에서부터 5개의 데이터를 보여줌 </li>
+            <li>info() <br>:  DataFrame 내의 각 필드의 종류와 데이터 타입, <bb style="margin-left:13px">데이터 개수 등의 정보를	보여줌</bb></li>
+            <li>describe() <br>: 기본 통계값인 max, min, mean, quantile, std 등을 <bb style="margin-left:13px">적용한 통계량을 간략하게 보여줌</bb> </li>
+        </ul>
+    </div>
+
+    <div id="page10_1" style="display: block;">
+        <!-- 문제번호 -->
+        <div class="cssPage2Question">10-1</div>
+        <!-- 문제 -->
+        <div class="cssPage2Title" style="margin-top: 157px; font-size: 22px; line-height: 30px;">제목이 없는 csv파일을 읽었을 때 별도의 컬럼 제목을 붙이고자 한다. 다음 중 파일을 제대로 읽은 명령문은?<br><b style="font-size : 18px">(단, 운영체제는 windows, 파일명은 iris.csv이며 파이썬 파일과 동일한 디렉토리에 있음)</b></div>
+        <!-- 문제 보기 -->
+        <div class="cssPage2Bogi" style="top: 240px;">
+            <ul>
+                <li class="bogi1"><em>1</em><span>data = pd.read_csv(“/pandas_workspace/uni_10/data/iris.csv”)</span></li>
+                <li class="bogi2"><em>2</em><span>data = pd.read_csv(r“c:\pandas_workspace\uni_10<br>\data\iris.csv”)</span></li>
+                <li class="bogi3"><em>3</em><span>data&nbsp;=&nbsp;pd.read_csv(“.\iris.csv”,&nbsp;header=None)</span></li>
+                <li class="bogi4"><em>4</em><span>data = pd.read_csv(“.\\data\<br>\iris.csv”)  </span></li>
+            </ul>
+        </div>
+        <div class="cssPage2Feed">
+            <ul>
+                <li class="btn0">3</li>
+                <li class="btn4" style="font-size: 22px;">제목줄이 없을 때는 헤더 필드에 None 속성을 부여하면 됩니다. 파이썬 파일과 데이터 파일이 동일한 경로일 때는 파일명만 기술하면 됩니다. </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="page10_2" style="display: block;">
+        <!-- 문제번호 -->
+        <div class="cssPage2Question">10-2</div>
+        <!-- 문제 -->
+        <div class="cssPage2Title" style="margin-top: 157px; font-size: 26px; line-height: 30px;">다음 중 auto-mpg.csv 파일을 읽어 각 필드들에 대한 통계량(평균, 표준편차, 분산, 중앙값 등)을 확인하기 위한 함수는? </div>
+        <!-- 문제 보기 -->
+        <div class="cssPage2Bogi" style="top: 240px;">
+            <ul>
+                <li class="bogi1"><em>1</em><span>info()</span></li>
+                <li class="bogi2"><em>2</em><span>describe() </span></li>
+                <li class="bogi3"><em>3</em><span>tail()</span></li>
+                <li class="bogi4"><em>4</em><span>head() </span></li>
+            </ul>
+        </div>
+        <div class="cssPage2Feed">
+            <ul>
+                <li class="btn0">2</li>
+                <li class="btn4" style="font-size: 22px;">통계량을 확인하려면<br>describe 함수를 사용합니다.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="page10_3" style="display: block;">
+        <!-- 문제번호 -->
+        <div class="cssPage2Question"></div>
+        <!-- 문제 -->
+        <div class="cssPage2Title" style="margin-top: 157px; font-size: 32px; line-height: 40px;">다음 중 DataFrame의 컬럼명을 변경하고자 할 때 사용하는 속성은? </div>
+        <!-- 문제 보기 -->
+        <div class="cssPage2Bogi" style="top: 240px;">
+            <ul>
+                <li class="bogi1"><em>1</em><span>info</span></li>
+                <li class="bogi2"><em>2</em><span>shape</span></li>
+                <li class="bogi3"><em>3</em><span>cols</span></li>
+                <li class="bogi4"><em>4</em><span>columns</span></li>
+            </ul>
+        </div>
+        <div class="cssPage2Feed">
+            <ul>
+                <li class="btn0">4</li>
+                <li class="btn4" style="font-size: 22px;">DataFrame의 컬럼명을 변경하고자 할 때는 data.columns=[‘필드명1’, ‘필드명2’, ‘필드명3’] 등으로 부여하면 됩니다. </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="page" id="page11">
+    <h2 class="tit">데이터 정제와 변환</h2>
+    <div class="txt2">
+        <h3 class="sec_tit">데이터 정제</h3>
+        <ul>
+            <li>isnull 함수 등을 이용해 데이터의 누락치가 있는지 먼저 체크함</li>
+            <li>isnull 함수는 True, False 값만 반환하므로 전체적인 누락 여부 확인이 어려움</li>
+            <li>isnull() 결과로 sum() 함수를 호출하면 NaN 데이터가 존재하는지를 쉽게 알 수 있음 </li>
+            <li>누락된 데이터의 처리
+                <br>- 누락 데이터 건수가 적어서 전체 분석에 영향을 <bb style="margin-left:19px;">미치지 않을 거라고 판단될 경우 삭제 진행</bb>
+                <br>- 누락 데이터 건수가 많아서 전체 영향을 미친 거라고 <bb style="margin-left:19px;">판단되면 평균값이나	중간값 등으로 대체해서 사용</bb>
+              </li>
+        </ul>
+    </div>
+    <div class="txt2">
+        <h3 class="sec_tit">데이터 변환</h3>
+        <ul>
+            <li>분석 시 사용하는 데이터
+            <br>- 연속형 : 평균값을 중요하게 여김
+            <br>- 불연속형(비연속형, 범주형) : 개수를 중요하게 여김
+            </li>
+            <li>연속형이 아닌 데이터 타입들은 불연속형으로 다뤄야 하기 때문에 문자열형은  불연속형으로 전환해서 사용</li>
+            <li>연속형 데이터라도 불연속형으로 전환해서 분석해야 할 경우 구간 나누기를 사용</li>
+            <li>구간 나누기 후 실제 분석에서는 데이터를 원핫인코딩 방식으로 전환하여 처리</li>
+        </ul>
+    </div>
+
+    <div id="page11_1" style="display: block;">
+        <!-- 문제번호 -->
+        <div class="cssPage2Question"></div>
+        <!-- 문제 -->
+        <div class="cssPage2Title" style="margin-top: 157px; font-size: 32px; line-height: 40px;">다음 설명 중 옳지 <span class="cssPage2Red">않은</span> 것은?</div>
+        <!-- 문제 보기 -->
+        <div class="cssPage2Bogi" style="top: 240px;">
+            <ul>
+                <li class="bogi1"><em>1</em><span>데이터 누락치는 데이터 분석에 큰 영향을 미치므로 모두 삭제해야 한다.</span></li>
+                <li class="bogi2"><em>2</em><span>데이터 누락치는 데이터 분석에 큰 영향을 미치므로 평균값이나 중간값 <br>등으로 대체해야 한다.</span></li>
+                <li class="bogi3"><em>3</em><span>데이터의 정규화는 분석의 정확도를 위해 필요한 <br>경우가 많다.  </span></li>
+                <li class="bogi4"><em>4</em><span>데이터의 타입이 문자열일 경우 범주형 <br>자료로 전환해야 한다. </span></li>
+            </ul>
+        </div>
+        <div class="cssPage2Feed" style="display: block;">
+            <ul>
+                <li class="btn0">1</li>
+                <li class="btn4" style="font-size: 22px;">누락된 데이터가 너무 많을 경우 <br>모두 삭제는 오히려 분석 결과에 <br>안 좋은 영향을 미칠 수 있으므로 <br>평균치나 중간값으로 대체하는 <br>방법을 취하는 것이 좋습니다.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="page11_2" style="display: block;">
+        <!-- 문제번호 -->
+        <div class="cssPage2Question">11-2</div>
+        <!-- 문제 -->
+        <div class="cssPage2Title" style="margin-top: 157px; font-size: 32px; line-height: 40px;">누락된 데이터(NaN)을 삭제하려고 할 때 적당한 함수는?</div>
+        <!-- 문제 보기 -->
+        <div class="cssPage2Bogi" style="top: 240px;">
+            <ul>
+                <li class="bogi1"><em>1</em><span>isnull</span></li>
+                <li class="bogi2"><em>2</em><span>dropna</span></li>
+                <li class="bogi3"><em>3</em><span>deleterow</span></li>
+                <li class="bogi4"><em>4</em><span>removena</span></li>
+            </ul>
+        </div>
+        <div class="cssPage2Feed" style="display: block;">
+            <ul>
+                <li class="btn0">2</li>
+                <li class="btn4" style="font-size: 22px;">누락된 데이터를 <br>삭제하려고 할 때에는<br> dropna 함수를 사용합니다.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="page11_3" style="display: block;">
+        <!-- 문제번호 -->
+        <div class="cssPage2Question">11-3</div>
+        <!-- 문제 -->
+        <div class="cssPage2Title" style="margin-top: 157px; font-size: 32px; line-height: 40px;">다음 중 잘못된 데이터가 들어온 경우 처리법으로 가장 적절한 것은? </div>
+        <!-- 문제 보기 -->
+        <div class="cssPage2Bogi" style="top: 240px;">
+            <ul>
+                <li class="bogi1"><em>1</em><span>데이터를 메모장에서 직접 수정한다.</span></li>
+                <li class="bogi2"><em>2</em><span>예외 처리를 한다.</span></li>
+                <li class="bogi3"><em>3</em><span>오류 데이터를 NaN 값으로 모두 전환 후 대체 값으로 <br>대신하거나 삭제한다.</span></li>
+                <li class="bogi4"><em>4</em><span>오류 데이터를 엑셀 기능을 이용해 모두 <br>삭제한다. </span></li>
+            </ul>
+        </div>
+        <div class="cssPage2Feed" style="display: block;">
+            <ul>
+                <li class="btn0">3</li>
+                <li class="btn4" style="font-size: 22px;">데이터 건수가 많을 경우에는<br> 일일이 메모장이나 엑셀에서<br> 작업이 어렵습니다. <br>우선 데이터를 읽어서 NaN 값으로 <br>모두 변환 후 한 번에 처리하는 게 편합니다. </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="page" id="page12">
+    <h2 class="tit">문자열 처리와 그룹 연산</h2>
+    <div class="txt2">
+        <h3 class="sec_tit">문자열 처리</h3>
+        <ul>
+            <li>문자열은 인덱싱과 슬라이싱을 통해 접근하거나 추출함</li>
+            <li>파이썬에서 인덱싱을 이용하거나 슬라이싱을 이용해 데이터를 추출할 수 있지만, 데이터의 수정은 불가능함</li>
+            <li>인덱싱과 슬라이싱한 추출한 문자열과 다른 문자열을 결합하여 새로운 문자열을 만들 수 있음</li>
+            <li>index 함수는 서브 문자열의 위치를 알려주는 함수지만, 문자열이 없을 경우 예외 발생</li>
+            <li>프로그램상에서 실제로 적용할 경우 count 함수를 이용해 단어가 존재하는지 확인하거나 in 연산자를 이용해서 확인한 후 사용</li>
+            <li>포매팅(%나 format 함수)으로 다양한 데이터들을 하나의 문자열로 만들어 출력을 아름답게 꾸밀 수 있음</li>
+            <li>가급적 format 함수를 사용하는 것이 좋음</li>
+        </ul>
+    </div>
+    <div class="txt2">
+        <h3 class="sec_tit">그룹 연산과 문자열 함수</h3>
+        <ul>
+            <li>문자열이 숫자만으로 구성되었는지 확인하는 함수에는 isdigit, isdecimal, isnumeric 함수가 있음</li>
+            <li>문자열 양쪽의 쓸데없는 공백을 제거하기 위해서는 strip(양쪽), lstrip(왼쪽), rstrip(오른쪽) 함수를 사용함</li>
+        </ul>
+    </div>
+
+    <div id="page2" style="display: block;">
+
+        <!-- 현재 문제 번호 -->
+        <div class="cssPage2QuestionPosition">
+            <ul>
+                <li class="cssPage2Q1" style="background: url(&quot;./common/img/quiz_up/quiz_q1_u.png&quot;);"><em id="ox1"></em></li>
+                <li class="cssPage2Q2" style="background: url(&quot;./common/img/quiz_up/quiz_q2_d.png&quot;);"><em id="ox2"></em></li>
+                <li class="cssPage2Q3" style="background: url(&quot;./common/img/quiz_up/quiz_q3_d.png&quot;);"><em id="ox3"></em></li>
+            </ul>
+        </div>
+
+        <!-- 문제번호 -->
+        <div class="cssPage2Question" style="background: url(&quot;./common/img/quiz_up/quiz_question1.png&quot;);"></div>
+
+        <!-- 문제 -->
+        <div class="cssPage2Title" style="margin-top: 157px; font-size: 32px; line-height: 40px;">다음 중 에러가 발생하는 부분으로 옳은 것은?</div>
+
+        <!-- 문제 보기 -->
+        <div class="cssPage2Bogi" style="top: 300px;">
+            <ul>
+                <li class="bogi1"><em id="bogiImg-1" style="background: url(&quot;./common/img/quiz_up/quiz_num1_d.png&quot;); cursor: default;"></em><p id="bogiCheck1" style="display: none;"></p><span id="bogi-1" style="color: rgb(36, 36, 36); cursor: default;">s[0]="M"</span></li>
+                <li class="bogi2"><em id="bogiImg-2" style="background: url(&quot;./common/img/quiz_up/quiz_num2_d.png&quot;); cursor: default;"></em><p id="bogiCheck2" style="display: none;"></p><span id="bogi-2" style="color: rgb(36, 36, 36); cursor: default;">s2 = "M" + s2[:1]</span></li>
+                <li class="bogi3"><em id="bogiImg-3" style="background: url(&quot;./common/img/quiz_up/quiz_num3_d.png&quot;); cursor: default;"></em><p id="bogiCheck3" style="display: none;"></p><span id="bogi-3" style="color: rgb(36, 36, 36); cursor: default;">s2 = s[0] + s[1] + s[2] + s[3] + s[4]</span></li>
+                <li class="bogi4"><em id="bogiImg-4" style="background: url(&quot;./common/img/quiz_up/quiz_num4_d.png&quot;); cursor: default;"></em><p id="bogiCheck4" style="display: none;"></p><span id="bogi-4" style="color: rgb(36, 36, 36); cursor: default;">s2 = "machine"*2 </span></li>
+            </ul>
+        </div>
+        <div class="example_div" style="display: block;">s = "machineLearning"</div>
+        <div class="cssPage2Feed">
+            <ul>
+                <li class="btn0">1</li>
+                <li class="btn4" style="font-size: 22px;">인덱스를 이용해서 데이터를 수정할 수 없으므로 s[0]="M"의 경우 에러가 발생합니다.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="page13_2" style="display: block;">
+        <!-- 문제번호 -->
+        <div class="cssPage2Question">13-2</div>
+        <!-- 문제 -->
+        <div class="cssPage2Title" style="margin-top: 157px; font-size: 32px; line-height: 40px;">다음 프로그램의 수행 결과는?</div>
+        <!-- 문제 보기 -->
+        <div class="cssPage2Bogi" style="top: 300px;">
+            <ul>
+                <li class="bogi1"><em>1</em><span>1 2 3 4</span></li>
+                <li class="bogi2"><em>2</em><span>3 2 1 4</span></li>
+                <li class="bogi3"><em>3</em><span>2 4 1 3</span></li>
+                <li class="bogi4"><em>4</em><span>4 3 2 1</span></li>
+            </ul>
+        </div>
+        <div class="example_div" style="display: block;">s = "{1} {3} {0} {2}".format(1,2,3,4) print(s)</div>
+        <div class="cssPage2Feed">
+            <ul>
+                <li class="btn0">3</li>
+                <li class="btn4" style="font-size: 22px;">{1} {3} {0} {2}는 format 함수에 전달되는 인자들의 위치값이며,<br> 1-0, 2-1, 3-2, 4-3 에 해당됩니다. 따라서 2 4 1 3의 결과가 나옵니다.</li>
+            </ul>
+        </div>
+    </div>
+    <div id="page12_3" style="display: block;">
+        <!-- 문제번호 -->
+        <div class="cssPage2Question">12-3</div>
+        <!-- 문제 -->
+        <div class="cssPage2Title" style="margin-top: 157px; font-size: 32px; line-height: 40px;">다음 중 단어를 대문자로 출력하기 위해 <br>사용해야 하는 함수는?</div>
+        <!-- 문제 보기 -->
+        <div class="cssPage2Bogi" style="top: 240px;">
+            <ul>
+                <li class="bogi1"><em>1</em><span>capital</span></li>
+                <li class="bogi2"><em>2</em><span>upper</span></li>
+                <li class="bogi3"><em>3</em><span>lower</span></li>
+                <li class="bogi4"><em>4</em><span>capitalize</span></li>
+            </ul>
+        </div>
+        <div class="cssPage2Feed" style="display: block;">
+            <ul>
+                <li class="btn0">2</li>
+                <li class="btn4" style="font-size: 22px;">단어를 대문자로 변환하는 함수는 upper입니다.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="page" id="page13">
+    <h2 class="tit">정규식 활용과 문자열</h2>
+    <div class="txt2">
+        <h3 class="sec_tit">정규식과 정규식 적용 함수</h3>
+        <ul>
+            <li>정규식
+    <br>- 문자열이 특정 유형을 갖고 있을 때, 각 문자열의 <br><bb style="margin-left:19px;">규칙성을 특정한 문자 형태로 작성하여 문자열을 <br><bb style="margin-left:19px;">검색하거나 추출하고자 할 때, 입력된 값의 형태가 <br><bb style="margin-left:19px;">정해진 규칙에 맞는지 검색하기 위해 사용하는 방식
+    </bb></bb></bb></li>
+    <li>re 모듈을 이용해서 패턴과 매치된 데이터를 찾음
+    <br>- 패턴을 컴파일 후 컴파일된 객체를 이용하여 <br><bb style="margin-left:19px;">데이터를 검색할 수 있음
+    <br>- 컴파일하지 않고 re 모듈을 통해 직접 패턴을 찾을 수 <br><bb style="margin-left:19px;">있음
+    </bb></bb></li>
+    <li>파이썬에서는 match, search, findall, finditer, <br>sub 함수 등을 제공함</li>
+    <li>패턴이 일치하면 일치하는 MatchObject 객체를 <br>주로 반환하는데, 이 객체에는 매칭되는 데이터의 위치값이나 데이터 등에 대한 정보가 있음</li>    
+        </ul>
+    </div>
+    <div class="txt2">
+        <h3 class="sec_tit">정규식 패턴 만들기와 활용</h3>
+        <ul>
+            <li>정규식을 만들기 위해서는 패턴을 만들어야 함</li>
+            <li>패턴은 여러 가지 문자들의 조합으로 이루어짐</li>
+            <li>시작을 영문 대문자만 오게 하고 싶다면 ^[A-Z]라는 패턴을 만들어야 함</li>
+            <li>[], {}, () 등으로 원하는 패턴을 만들어서 사용할 수 있음</li>
+        </ul>
+    </div>
+
+    <div id="page13_1" style="display: block;">
+        <!-- 문제번호 -->
+        <div class="cssPage2Question">13-1</div>
+        <!-- 문제 -->
+        <div class="cssPage2Title" style="margin-top: 157px; font-size: 32px; line-height: 40px;">다음 중 모든 공백문자를 9로 바꾸기 위해 <br>사용할 수 있는 함수는?</div>
+        <!-- 문제 보기 -->
+        <div class="cssPage2Bogi" style="top: 240px;">
+            <ul>
+                <li class="bogi1"><em>1</em><span>match</span></li>
+                <li class="bogi2"><em>2</em><span>search</span></li>
+                <li class="bogi3"><em>3</em><span>findall</span></li>
+                <li class="bogi4"><em>4</em><span>sub </span></li>
+            </ul>
+        </div>
+        <div class="cssPage2Feed">
+            <ul>
+                <li class="btn0">4</li>
+                <li class="btn4" style="font-size: 22px;">매칭되어있는 데이터를 찾아서 대체 문자열로 교환하는 함수는 sub 함수입니다.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="page13_2" style="display: block;">
+        <!-- 문제번호 -->
+        <div class="cssPage2Question">13-2</div>
+        <!-- 문제 -->
+        <div class="cssPage2Title" style="margin-top: 157px; font-size: 32px; line-height: 40px;">다음처럼 그룹을 지정했을 때 패턴이 매칭되었을 경우 group(0)에 들어갈 값은?</div>
+        <!-- 문제 보기 -->
+        <div class="cssPage2Bogi" style="top: 310px;">
+            <ul>
+                <li class="bogi1"><em>1</em><span>010-1111-2222</span></li>
+                <li class="bogi2"><em>2</em><span>010</span></li>
+                <li class="bogi3"><em>3</em><span>1111</span></li>
+                <li class="bogi4"><em>4</em><span>2222</span></li>
+            </ul>
+        </div>
+        <div class="example_div" style="display: block; top: 240px; left: 180px; width: 450px; height: 50px; font-size: 20px;">패턴 : (\d{3})-(\d{4})-(\d{4})<br>문자열 : 내전화 010-1111-2222</div>
+        <div class="cssPage2Feed" style="">
+            <ul>
+                <li class="btn0">1</li>
+                <li class="btn4" style="font-size: 20px;">정규화 그룹을 사용할 경우 <br>group(0)에는 전체 데이터가, <br>group(1)에는 그룹 내의 내용을 분할하여 들어갑니다. <br>따라서 group(0)에는 전체 번호인 010-1111-2222가 <br>다 들어가 있습니다.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="page13_3" style="display: block;">
+        <!-- 문제번호 -->
+        <div class="cssPage2Question">13-3</div>
+        <!-- 문제 -->
+        <div class="cssPage2Title" style="margin-top: 157px; font-size: 32px; line-height: 40px;">패턴이 다음과 같을 때 매칭이 되는 것을 <br>모두 선택한 것은?</div>
+        <!-- 문제 보기 -->
+        <div class="cssPage2Bogi" style="top: 310px;">
+            <ul>
+                <li class="bogi1"><em>"12345", "a1234"</span></li>
+                <li class="bogi2"><em>"12345", "123456"</span></li>
+                <li class="bogi3"><em>"12345", "123456", "1234"</span></li>
+                <li class="bogi4"><em>"12345", "123456", "1abc"</span></li>
+            </ul>
+        </div>
+        <div class="example_div" style="display: block; top: 240px; left: 180px; width: 520px; height: 50px; font-size: 18px;">패턴 : r"\d{5,6}"<br>["12345", "a1234", "123456", "12222222", "1234", "1abc"]</div>
+        <div class="cssPage2Feed">
+            <ul>
+                <li class="btn0">2</li>
+                <li class="btn4" style="font-size: 22px;">r"\d{5,6}는 정수 5자리, 6자리만 해당합니다.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="page" id="page14">
+    <h2 class="tit">시계열 데이터 다루기</h2>
+    <div class="txt2">
+        <h3 class="sec_tit">날짜와 시간 API</h3>
+        <ul>
+            <li>DateTime 모듈에는 Date, Time, DateTime,<br>TimeDelta 클래스가 있음 </li>
+            <li>현재 날짜와 시간은 DateTime클래스의 now 함수를 이용해 얻을 수 있음 </li>
+            <li>TimeDelta 클래스는 두 날짜와의 차이나 두 시간과의 차이를 얻고자 할 때 사용함, 날짜와 날짜는 서로 산술연산이 가능하고 음수도 가질 수 있음</li>
+            <li>각 달의 마지막 날은 calandar 객체의 monthrange 함수를 이용해 얻을 수 있음</li>
+        </ul>
+    </div>
+    <div class="txt2">
+        <h3 class="sec_tit">시계열 데이터 다루기</h3>
+        <ul>
+            <li>Pandas 라이브러리는 to_datetime 함수를 이용해 날짜와 시간 타입을 인덱스로 만들 수 있음</li>
+            <li>날짜 인덱스를 이용해 데이터에 대한 접근 가능</li>
+            <li>날짜 인덱스는 date_range 함수를 이용해<br>특정 기간 동안의 날짜 데이터, 특정 시점부터 원하는 일수만큼(periods), 원하는 특정일에 대한 연속된 데이터를 생성할 수 있음 </li>
+            <li>resampling을 통해 시간 간격을 재조정하는 리샘플링이 가능함</li>
+        </ul>
+    </div>
+    <div id="page14_1" style="display: block;">
+        <!-- 문제번호 -->
+        <div class="cssPage2Question" style="">14-1</div>
+        <!-- 문제 -->
+        <div class="cssPage2Title" style="margin-top: 157px; font-size: 32px; line-height: 40px;">다음 중 오늘 날짜와 시간에 대한 DateTime 객체를 얻는 함수는? </div>
+        <!-- 문제 보기 -->
+        <div class="cssPage2Bogi" style="top: 240px;">
+            <ul>
+                <li class="bogi1"><em style="">1</em><span>today()</span></li>
+                <li class="bogi2"><em style="">2</em><span>weekday()</span></li>
+                <li class="bogi3"><em style="">3</em><span>now()</span></li>
+                <li class="bogi4"><em style="">4</em><span>thistime()</span></li>
+            </ul>
+        </div>
+        <div class="cssPage2Feed" style="">
+            <ul>
+                <li class="">3</li>
+                <li class="btn4" style="font-size: 22px;">오늘 날짜와 시간에 대한 DateTime 객체를 얻기 위해서는 now 함수를 사용합니다. </li>
+            </ul>
+        </div>
+    </div>
+    <div id="page14_2" style="display: block;">
+        <!-- 문제번호 -->
+        <div class="cssPage2Question" style="">14-2</div>
+        <!-- 문제 -->
+        <div class="cssPage2Title" style="margin-top: 157px; font-size: 32px; line-height: 40px;">다음 중 숫자로 요일을 반환하는 함수는?</div>
+        <!-- 문제 보기 -->
+        <div class="cssPage2Bogi" style="top: 240px;">
+            <ul>
+                <li class="bogi1"><em>1</em><span>now</span></li>
+                <li class="bogi2"><em>2</em><span>today</span></li>
+                <li class="bogi3"><em>3</em><span>day</span></li>
+                <li class="bogi4"><em>4</em><span>weekday</span></li>
+            </ul>
+        </div>
+        <div class="cssPage2Feed" style="display: block;">
+            <ul>
+                <li class="btn0">4</li>
+                <li class="btn4" style="font-size: 22px;">weekday 함수는 해당 요일을<br>수치 자료로 반환합니다.<br>월요일을 0으로 보고<br>차례대로 숫자를 부여합니다.</li>
+            </ul>
+        </div>
+    </div>
+    <div id="page14_3" style="display: block;">
+        <!-- 문제 -->
+        <div class="cssPage2Title" style="margin-top: 157px; font-size: 32px; line-height: 40px;">다음 중 DateTime 함수의 서식 문자와 내용을 연결한 것으로 옳지 않은 것은?</div>
+        <!-- 문제 보기 -->
+        <div class="cssPage2Bogi" style="top: 240px;">
+            <ul>
+                <li class="bogi1"><em>1</em><span>%Y  - 연도</span></li>
+                <li class="bogi2"><em>2</em><span>%m - 월</span></li>
+                <li class="bogi3"><em>3</em><span>%M - 월</span></li>
+                <li class="bogi4"><em>4</em><span>%d  - 일</span></li>
+            </ul>
+        </div>
+        <div class="cssPage2Feed" style="display: block;">
+            <ul>
+                <li class="btn0">3</li>
+                <li class="btn4" style="font-size: 22px;">월은 %m을 사용하고,<br>%M은 분을 나타냅니다.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="page" id="page15">
+    <h2 class="tit">KoNLPy를 활용한 한국어 형태소 분석과 시각화</h2>
+    <div class="txt2">
+        <h3 class="sec_tit">KoNLPy를 활용한 한국어 형태소 분석</h3>
+        <ul>
+            <li>형태소 분석이란 형태소보다 단위가 큰 언어 단위인 어절, 혹은 문장을 최소 의미 단위인 형태소로 분절하는 과정임</li>
+            <li>KoNLPy 라이브러리는 한글 형태소를 분석하기 위해 카이스트에서 만든 라이브러리임</li>
+            <li>KoNLPy는 Kkma, Twitter, Hannanum, Komoran 등의 태그 패키지를 지원함</li>
+        </ul>
+    </div>
+    <div class="txt2">
+        <h3 class="sec_tit">시각화</h3>
+        <ul>
+            <li>워드클라우드는 단어를 분석해 시각화하는 차트로<br>가장 인기 있는 차트임</li>
+            <li>pytagcloud, wordcloud 등의 모듈이 있음</li>
+            <li>두 모듈 모두 문장을 형태소 분석하여 단어와 빈도수의 데이터 타입을 만들어 전달해야 함</li>
+            <li>wordcloud 라이브러리는 이미지 마스킹 기능을 이용해 특정한 이미지 모양에 맞는 워드클라우드를 만들 수 있고 사용자가 원하는 색상을 부여할 수 있음</li>
+        </ul>
+    </div>
+    <div id="page15_1">
+        <!-- 문제번호 -->
+        <div class="cssPage2Question" style="">15-1</div>    
+        <!-- 문제 -->
+        <div class="cssPage2Title" style="margin-top: 157px; font-size: 32px; line-height: 40px;">다음 중 형태소 분석에 대한 설명으로<br>옳지 <span class="cssPage2Red">않은</span> 것은?</div>    
+        <!-- 문제 보기 -->
+        <div class="cssPage2Bogi" style="">
+            <ul>
+                <li class="bogi1"><em style="">1</em><span>형태소란 언어에 있어서 최소 의미 단위를 말한다.</span></li>
+                <li class="bogi2"><em style="">2</em><span>자연어 처리에서 가장 중요하다. </span></li>
+                <li class="bogi3"><em style="">3</em><span>말뭉치로부터 사전을 구성하여 형태소 분석에 이용한다. </span></li>
+                <li class="bogi4"><em style="">4</em><span>형태소 분석에 어떤 사전을 사용하는 지는 중요하지 않다. </span></li>
+            </ul>
+        </div>
+        <div class="cssPage2Feed">
+            <ul>
+                <li>정답 : 4</li>
+                <li class="btn4" style="font-size: 22px;">분석할 대상에 다 맞는 사전은 없습니다. 법률 관련 텍스트 분석에는 법률 사전, 영화 관련 텍스트 분석에는 영화 관련 사전 등 관련된 사전을 사용해야 합니다. </li>
+            </ul>
+        </div>
+    </div>
+    <div id="page15_2" style="display: block;">
+        <!-- 문제번호 -->
+        <div class="cssPage2Question" style="">15-2</div>
+        <!-- 문제 -->
+        <div class="cssPage2Title" style="margin-top: 157px; font-size: 32px; line-height: 40px;">다음 중 윈도우를 지원하지 <span class="cssPage2Red">않는</span> 형태소 분석 클래스는?</div>
+        <!-- 문제 보기 -->
+        <div class="cssPage2Bogi" style="top: 240px;">
+            <ul>
+                <li class="bogi1"><em style="">1</em><span>MeCab</span></li>
+                <li class="bogi2"><em style="">2</em><span>Kkma</span></li>
+                <li class="bogi3"><em style="">3</em><span>Twitter</span></li>
+                <li class="bogi4"><em style="">4</em><span>Hannanum</span></li>
+            </ul>
+        </div>
+        <div class="cssPage2Feed">
+            <ul>
+                <li class="">1</li>
+                <li class="btn4" style="font-size: 22px;">MeCab은 윈도우를<br>지원하지 않습니다.</li>
+            </ul>
+        </div>
+    </div>
+    <div id="page15_3" style="display: block;">
+        <!-- 문제번호 -->
+        <div class="cssPage2Question" style="">15-3</div>
+        <!-- 문제 -->
+        <div class="cssPage2Title" style="margin-top: 157px; font-size: 32px; line-height: 40px;">다음 중 Kkma 모듈이 지원하는 형태소 분석 함수의 기능으로 <span class="cssPage2Red">잘못</span> 연결된 것은?</div>
+        <!-- 문제 보기 -->
+        <div class="cssPage2Bogi" style="">
+            <ul>
+                <li class="bogi1"><em id="bogiImg-1" style="">1</em><span>kkma.sentences(msg)&nbsp;- 문장으로 나눔</span></li>
+                <li class="bogi2"><em id="bogiImg-2" style="">2</em><span>kkma.morphs(msg) - 형태소로 나눔</span></li>
+                <li class="bogi3"><em id="bogiImg-3" style="">3</em><span>kkma.nouns(msg) - 명사를 추출</span></li>
+                <li class="bogi4"><em id="bogiImg-4" style="">4</em><span>kkma.pos(msg) – 동사를 추출</span></li>
+            </ul>
+        </div>
+        <div class="cssPage2Feed" style="">
+            <ul>
+                <li class="">4</li>
+                <li class="btn4" style="font-size: 22px;">kkma.pos(msg)는<br>품사 태깅을 합니다.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

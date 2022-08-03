@@ -1,0 +1,9 @@
+ create table mem(
+  idx int primary key auto_increment, 
+  id varchar(20) not null, 
+  pw varchar(100) not null, 
+  name varchar(20) not null, 
+  adress varchar(100) not null, 
+  sex varchar(10) not null, 
+  email varchar(100) not null) 
+  ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -1,0 +1,327 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+@media only screen and (max-width : 1300px)
+  .h1, .h2
+    font-size: 28px !important
+  .container
+    max-width: 750px
+  .wrap
+    max-width: 1300px
+  .section
+    margin-top: 72px
+
+  .title-block
+    span
+      strong
+        font-size: 14px
+
+  .main-header
+    background-position: 85% 15%
+    background-size: 45%
+    .header-content
+      margin-top: 68px
+      .image img
+        top: -27px
+        right: -58px
+        width: 343px
+    .form-order
+      margin-top: 45px
+      input
+        width: 212px
+      .button
+        width: 190px
+  .s-teaser
+    margin-top: -24px
+    .offset-xl-1:first-child
+      margin-left: 0
+    .teaser
+      .heading
+        &::before
+          display: none
+  .s-author
+    .col-xl-8
+      max-width: 83.333%
+      flex: 0 0 83.333%
+    .offset-xl-3
+      margin-left: 16.666%
+    .section-content
+      .a-wrap
+        min-height: 493px
+        padding: 116px 30px 100px 187px
+      .title-block .h2
+        margin: 0
+      p
+        margin: 35px 0 0
+      .text
+        line-height: 1.5
+        margin-top: 20px
+      img
+        top: 55px
+        left: -126px
+        width: 284px
+        height: auto
+
+  .s-learn
+    background: none
+    padding-bottom: 60px
+    .grafic
+      background: none
+      display: none
+    .graf
+      display: none
+    .sm-graf
+      display: flex
+      flex-wrap: wrap
+    .h2
+      margin: 74px 0
+      line-height: 1.4
+    .graf
+      .item
+        align-self: flex-start
+        .dot
+          top: 0
+          left: -30px
+          bottom: auto
+
+  .section.s-timer
+    background-size: 50%
+    padding: 0 0 160px
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+  /**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+  .main-header
+    background-position: center 15%
+    background-size: 70%
+
+  .s-learn
+    .h2
+      span.marker
+        &::after
+          left: 0
+        &::before
+          left: 20px
+  .s-learn
+    .sm-graf
+      .item
+        padding-left: 60px
+  .sm-graf
+    .item
+      .dot
+        left: 0
+      .number
+        left: 30px
+  /**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+  .header-content
+    text-align: center
+    .image-sm
+      display: block
+      height: auto
+      img
+        position: relative
+        top: auto
+        right: 50%
+        margin-right: 80px
+        width: 552px
+        height: auto
+
+  .main-header
+    background-position: center center
+    background-size: 100%
+    .form-order
+      margin-top: 0
+
+  .section.s-teaser
+    margin-top: 220px
+    text-align: center
+    .teaser
+      margin-bottom: 160px
+      p
+        padding: 0 40px
+      &::before
+        left: 50%
+        margin-left: -60px
+      &.bag, &.money
+        &::before
+          margin-left: -35px
+
+
+
+
+  .s-author .offset-xl-3
+    margin-left: 0
+  .s-author .col-xl-8
+    max-width: inherit
+    flex: inherit
+  .s-author
+    margin-top: 0
+    padding-top: 240px
+    .section-content
+      img
+        width: 284px
+        top: -240px
+        left: 50%
+        margin-left: -142px
+      .a-wrap
+        text-align: center
+        padding: 150px 20px 80px
+
+  .section.s-timer
+    background-size: 100%
+
+  .timer
+    ul.countdown
+      list-style: none
+      margin: 75px 0 30px
+      padding: 0
+      display: block
+      text-align: center
+    ul.countdown li
+      display: inline-block
+    ul.countdown li span
+      font-size: 60px
+      font-weight: 300
+      line-height: 80px
+      border-bottom: 2px solid #fff
+      color: #fff
+    ul.countdown li.seperator
+      font-size: 60px
+      line-height: 70px
+      vertical-align: top
+      color: #2a2f36
+    ul.countdown li p
+      color: #a7abb1
+      font-size: 18px
+
+  .form-order input,
+  .form-order .button
+    width: 49%
+
+
+  /**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+  .h1, .h2
+    font-size: 20px !important
+    padd
+  .main-header
+    max-height: 100%
+  .main-header .form-order input,
+  .main-header .form-order .button
+    width: 100%
+    text-align: center
+  .main-header .form-order .button
+    left: 0
+
+
+  .main-header .header-content .image img
+    right: -25px
+    margin-right: 0
+    width: 280px
+
+
+  .section.s-teaser
+    margin-top: 160px
+    .teaser
+      margin-bottom: 140px
+
+  .s-author
+    margin-top: 0
+    padding-top: 150px
+    .section-content
+      img
+        width: 184px
+        top: -140px
+        left: 50%
+        margin-left: -92px
+      .a-wrap
+        text-align: center
+        padding: 120px 20px 80px
+
+  .s-learn
+    .h2
+      margin: 40px 0
+    .sm-graf
+      justify-content: center
+
+
+
+  .form-order input,
+  .form-order .button
+    text-align: center
+    width: 100%
+  .form-order .button
+    left: 0
+
+  .section.s-timer
+    padding: 0 0 100px
+
+  .timer
+    ul.countdown
+      list-style: none
+      margin: 20px 0 30px
+      padding: 0
+      display: block
+      text-align: center
+    ul.countdown li
+      display: inline-block
+    ul.countdown li span
+      font-size: 40px
+      font-weight: 300
+      line-height: 80px
+      border-bottom: 2px solid #fff
+      color: #fff
+    ul.countdown li.seperator
+      font-size: 40px
+      line-height: 70px
+      vertical-align: top
+      color: #2a2f36
+    ul.countdown li p
+      color: #a7abb1
+      font-size: 14px
+
+
+  /**/
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+  /**/
+
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+  /**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+  /**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+  /**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+  /**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+  /**/

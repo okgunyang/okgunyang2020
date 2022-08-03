@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>쉐이프 애니메이션9</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+.spinner-dot-in,
+.spinner-dot-stick,
+.spinner-double-dot-stick,
+.spinner-dot-out,
+.spinner-double-dot-out,
+.spinner-double-dot-in,
+.spinner-wave-out,
+.spinner-wave-in,
+.spinner-double-wave-out,
+.spinner-double-wave-in,
+.spinner-huge-wave-out,
+.spinner-huge-wave-in,
+.spinner-section,
+.spinner-section-in,
+.spinner-double-section-in,
+.spinner-section-out,
+.spinner-double-section-out,
+.spinner-section-far,
+.spinner-double-section-far,
+.spinner-double-section {
+  display: block;
+  float: left;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3.125px solid #aaa;
+  animation: spinner 1.2s linear infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Dots */
+.spinner-dot-in,
+.spinner-dot-stick,
+.spinner-double-dot-stick,
+.spinner-dot-out,
+.spinner-double-dot-out,
+.spinner-double-dot-in {
+  position: relative;
+}
+.spinner-dot-in:before,
+.spinner-dot-stick:before,
+.spinner-double-dot-stick:before,
+.spinner-dot-out:before,
+.spinner-double-dot-out:before,
+.spinner-dot-in:after,
+.spinner-dot-stick:after,
+.spinner-double-dot-stick:after,
+.spinner-dot-out:after,
+.spinner-double-dot-out:after,
+.spinner-double-dot-in:before,
+.spinner-double-dot-in:after {
+  content: '';
+  position: absolute;
+  top: 6.25px;
+  left: 21.875px;
+  width: 6.25px;
+  height: 6.25px;
+  border-radius: 50%;
+  background: tomato;
+}
+.spinner-dot-in:after,
+.spinner-dot-stick:after,
+.spinner-double-dot-stick:after,
+.spinner-dot-out:after,
+.spinner-double-dot-out:after,
+.spinner-double-dot-in:after {
+  top: auto;
+  bottom: 6.25px;
+}
+
+.spinner-dot-in:after {
+  display: none;
+}
+
+.spinner-dot-stick:before,
+.spinner-dot-stick:after,
+.spinner-double-dot-stick:before,
+.spinner-double-dot-stick:after {
+  top: -6.25px;
+}
+.spinner-dot-stick:after,
+.spinner-double-dot-stick:after {
+  top: auto;
+  bottom: -6.25px;
+}
+
+.spinner-dot-stick:after {
+  display: none;
+}
+
+.spinner-dot-out:before,
+.spinner-dot-out:after,
+.spinner-double-dot-out:before,
+.spinner-double-dot-out:after {
+  top: -12.5px;
+}
+.spinner-dot-out:after,
+.spinner-double-dot-out:after {
+  top: auto;
+  bottom: -12.5px;
+}
+
+.spinner-dot-out:after {
+  display: none;
+}
+
+/* Waves */
+.spinner-wave-out {
+  box-shadow: -1.5625px -1.5625px 0 1.5625px tomato;
+}
+
+.spinner-wave-in {
+  box-shadow: inset -1.5625px -1.5625px 0 1.5625px tomato;
+}
+
+.spinner-double-wave-out {
+  box-shadow: -1.5625px -1.5625px 0 1.5625px tomato, 1.5625px 1.5625px 0 1.5625px tomato;
+}
+
+.spinner-double-wave-in {
+  box-shadow: inset -1.5625px -1.5625px 0 1.5625px tomato, inset 1.5625px 1.5625px 0 1.5625px tomato;
+}
+
+.spinner-huge-wave-out {
+  box-shadow: -1.5625px -1.5625px 0 6.25px tomato;
+}
+
+.spinner-huge-wave-in {
+  box-shadow: inset -1.5625px -1.5625px 0 6.25px tomato;
+}
+
+/* Sections */
+.spinner-section,
+.spinner-section-in,
+.spinner-double-section-in,
+.spinner-section-out,
+.spinner-double-section-out,
+.spinner-section-far,
+.spinner-double-section-far,
+.spinner-double-section {
+  position: relative;
+}
+.spinner-section:before,
+.spinner-section-in:before,
+.spinner-double-section-in:before,
+.spinner-section-out:before,
+.spinner-double-section-out:before,
+.spinner-section-far:before,
+.spinner-double-section-far:before,
+.spinner-section:after,
+.spinner-section-in:after,
+.spinner-double-section-in:after,
+.spinner-section-out:after,
+.spinner-double-section-out:after,
+.spinner-section-far:after,
+.spinner-double-section-far:after,
+.spinner-double-section:before,
+.spinner-double-section:after {
+  content: '';
+  position: absolute;
+  top: -3.125px;
+  left: -3.125px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3.125px solid transparent;
+  border-top-color: tomato;
+}
+.spinner-section:after,
+.spinner-section-in:after,
+.spinner-double-section-in:after,
+.spinner-section-out:after,
+.spinner-double-section-out:after,
+.spinner-section-far:after,
+.spinner-double-section-far:after,
+.spinner-double-section:after {
+  border-top-color: transparent;
+  border-bottom-color: tomato;
+}
+
+.spinner-section:after {
+  display: none;
+}
+
+.spinner-section-in:before,
+.spinner-section-in:after,
+.spinner-double-section-in:before,
+.spinner-double-section-in:after {
+  top: 0;
+  left: 0;
+  width: 43.75px;
+  height: 43.75px;
+}
+
+.spinner-section-in:after {
+  display: none;
+}
+
+.spinner-section-out:before,
+.spinner-section-out:after,
+.spinner-double-section-out:before,
+.spinner-double-section-out:after {
+  top: -6.25px;
+  left: -6.25px;
+  width: 56.25px;
+  height: 56.25px;
+}
+
+.spinner-section-out:after {
+  display: none;
+}
+
+.spinner-section-far:before,
+.spinner-section-far:after,
+.spinner-double-section-far:before,
+.spinner-double-section-far:after {
+  top: -9.375px;
+  left: -9.375px;
+  width: 62.5px;
+  height: 62.5px;
+}
+
+.spinner-section-far:after {
+  display: none;
+}
+
+/* --- */
+body {
+  background: #303030;
+  overflow: hidden;
+}
+
+.container {
+  width: 360px;
+  margin: 30px auto;
+}
+
+span {
+  margin: 10px;
+}
+span:nth-child(4n+1) {
+  clear: both;
+}
+    </style>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+
+</script>
+</head>
+<body>
+<div class="container">
+  <span class="spinner-double-dot-in"></span>
+  <span class="spinner-dot-in"></span>
+  <span class="spinner-double-dot-stick"></span>
+  <span class="spinner-dot-stick"></span>
+  <span class="spinner-double-dot-out"></span>
+  <span class="spinner-dot-out"></span>
+
+  <span class="spinner-wave-in"></span>
+  <span class="spinner-double-wave-in"></span>
+  <span class="spinner-huge-wave-in"></span>
+  <span class="spinner-wave-out"></span>
+  <span class="spinner-double-wave-out"></span>
+  <span class="spinner-huge-wave-out"></span>
+
+  <span class="spinner-double-section-in"></span>
+  <span class="spinner-section-in"></span>
+  <span class="spinner-double-section"></span>
+  <span class="spinner-section"></span>
+  <span class="spinner-double-section-out"></span>
+  <span class="spinner-section-out"></span>
+  <span class="spinner-double-section-far"></span>
+  <span class="spinner-section-far"></span>
+</div>
+</body>
+</html>

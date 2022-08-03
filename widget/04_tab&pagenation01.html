@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>탭&amp;페이지내이션1</title>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%;   }
+    ul { list-style:none; }
+    a { text-decoration: none; }
+    button { outline:0; border:0; background:none; }    
+    .wrap { width: 100%; clear:both; margin: 60px auto; }
+    .tit { text-align:center; line-height: 1.8; padding-top: 60px; }
+    </style>
+    <style>
+    /* 탭1 - :target */    
+    .tab_item { width: 900px; height: 440px; clear:both; 
+        position:relative; }
+    .lb { display:block; width: 120px; line-height: 40px;
+        text-align:center; color:#fff; background-color:#333; position:absolute; top:0; border-bottom:1px solid #fff; }
+    .main_lb { display:block; width: 120px; line-height: 40px;
+        text-align:center; color:#fff; background-color:deeppink; position:absolute; top:0; border-bottom:1px solid #fff; }    
+    .lb_btn1 { left: 0; }
+    .lb_btn2 { left: 120px; }
+    .lb_btn3 { left: 240px; }  
+    .tab_con_box { width: 100%; }
+    .tab_con img { display:block; width: 100%; }
+    .tab_con_box .tab_fr, .tab_main .tab_fr { position:absolute; top: 41px; left:0; }
+    .tab_con_box .tab_fr { display:none; width:100%; }
+    .tab_fr img { display:block; max-width:100%; }
+    .tab_con_box:target .tab_fr { display:block; }
+    .tab_con_box:target .lb { background-color: deeppink; }    
+    </style>
+    <style>
+    /* 탭2 - radio */    
+    .rdo { display:none; }
+    .tb_box { width: 900px; margin: 0 auto; }    
+    .tab_con .tb_con_box { display:none; }
+    #rdo1:checked ~ .tab_con #tb_con1 { display:block; }    
+    #rdo2:checked ~ .tab_con #tb_con2 { display:block; }
+    #rdo3:checked ~ .tab_con #tb_con3 { display:block; }
+        
+    .lb_box label { display:block; float:left; width: 120px; line-height: 40px; text-align:center; background-color:#333; color:#fff; border-bottom:1px solid #fff; 
+        border-right:1px solid #fff; cursor:pointer; }
+    #rdo1:checked ~ .lb_box .lb1 {background-color:deeppink;} 
+    #rdo2:checked ~ .lb_box .lb2 {background-color:deeppink;} 
+    #rdo3:checked ~ .lb_box .lb3 {background-color:deeppink;}
+    </style>
+    
+    <style>
+    /* 페이지내이션1 - :target */    
+    .pagenation_box { width: 700px; margin: 10px auto; }
+    .page_table { display:table; border-collapse: collapse; }
+    .page_table tr { display:table-row;  }  
+    .page_table th, .page_table td { display:table-cell; 
+        border-bottom:1px solid #333; line-height: 32px;
+        font-size:14px; }
+    .page_table th { border-top:2px solid #333; color:#fff; background-color:#333; } 
+    .page_table th.col2 { background-color: #555;}    
+    .page_table tr:nth-child(2n) td { background-color:#d4eaf0; }    
+    .page_table .col1 { min-width:60px; text-align:center; }
+    .page_table .col3 { min-width:100px; text-align:center; } 
+    .page_table .col2 a { display:block; color:#333; overflow:hidden; white-space: nowrap; text-overflow:ellipsis; padding-right: 50px; width:450px; padding-left: 1em; }
+    .tb_page { display:none; } 
+    .tb_page:target { display:block; }    
+    .page_num_box { margin: 1em auto; width: 240px; }
+    .page_num { width: 240px; }    
+    .page_num_box li { float:left; margin:1em; }
+    .page_num_box li a, .page_num_box li label { display:block; padding: 1em; 
+        border:1px solid #999; color:#999; }
+    </style>    
+    <style>
+    /* 페이지내이션2 - radio */
+    .pg_ra { display:none; } 
+    .tb2_page { display:none; }
+    #pg_ra1:checked ~ .pagenation_box #tb2_page1 { display:block; }
+    #pg_ra2:checked ~ .pagenation_box #tb2_page2 { display:block; }    
+    #pg_ra3:checked ~ .pagenation_box #tb2_page3 { display:block; }  
+    
+    #pg_ra1:checked ~ .page_num_box .lnk1 { background-color: #333; color:#fff; }
+    #pg_ra2:checked ~ .page_num_box .lnk2 { background-color: #333; color:#fff; }
+    #pg_ra3:checked ~ .page_num_box .lnk3 { background-color: #333; color:#fff; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h2 class="tit">탭1 - :target</h2>
+        <div class="tb_box">
+            <div class="tab_item">
+                <div class="tab_main">
+                   <a href="#tab_con1" class="main_lb">첫 번째</a> 
+                   <div class="tab_fr">
+                        <img src="slider01.jpg" alt="">
+                    </div>
+                </div> 
+                <div class="tab_con_box" id="tab_con1">
+                     <a href="#tab_con1" class="lb lb_btn1">첫 번째</a> 
+                     <div class="tab_fr">             
+                        <img src="slider01.jpg" alt="">
+                     </div>    
+                </div>
+                <div class="tab_con_box" id="tab_con2">
+                   <a href="#tab_con2" class="lb lb_btn2">두 번째</a>
+                   <div class="tab_fr">
+                        <img src="slider02.jpg" alt="">
+                    </div>
+                </div>
+                <div class="tab_con_box" id="tab_con3">
+                   <a href="#tab_con3" class="lb lb_btn3">세 번째</a>
+                    <div class="tab_fr">       
+                        <img src="slider03.jpg" alt="">
+                    </div>    
+                </div>
+            </div>
+        </div>       
+    </div>
+    
+    <div class="wrap">
+        <h2 class="tit">탭2 - radio</h2>
+        <div class="tb_box">
+            <input type="radio" name="radio1" class="rdo" id="rdo1" checked>
+            <input type="radio" name="radio1" class="rdo" id="rdo2">
+            <input type="radio" name="radio1" class="rdo" id="rdo3">
+            <div class="lb_box">
+                <label for="rdo1" class="lb_btn lb1">첫 번째</label>
+                <label for="rdo2" class="lb_btn lb2">두 번째</label>
+                <label for="rdo3" class="lb_btn lb3">세 번째</label>
+            </div>
+            <div class="tab_con">
+                <div class="tb_con_box" id="tb_con1">
+                    <img src="slider01.jpg" alt="">
+                </div>
+                <div class="tb_con_box" id="tb_con2">
+                    <img src="slider02.jpg" alt="">
+                </div>
+                <div class="tb_con_box" id="tb_con3">
+                    <img src="slider03.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="wrap">
+        <h2 class="tit">페이지내이션1 - :target</h2>
+        <div class="pagenation_box">
+            <div class="tb_page" id="tb_page1">
+                <table class="page_table">
+                    <thead>
+                        <tr>
+                            <th class="col1">번호</th>
+                            <th class="col2">제목</th>
+                            <th class="col3">작성일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col1">15</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 15</a>
+                            </td>
+                            <td class="col3">2021-01-26</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">14</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 14</a>
+                            </td>
+                            <td class="col3">2021-01-25</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">13</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 13</a>
+                            </td>
+                            <td class="col3">2021-01-24</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">12</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 12</a>
+                            </td>
+                            <td class="col3">2021-01-23</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">11</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 11</a>
+                            </td>
+                            <td class="col3">2021-01-22</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tb_page" id="tb_page2">
+                <table class="page_table">
+                    <thead>
+                        <tr>
+                            <th class="col1">번호</th>
+                            <th class="col2">제목</th>
+                            <th class="col3">작성일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col1">10</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 10</a>
+                            </td>
+                            <td class="col3">2021-01-21</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">9</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 9</a>
+                            </td>
+                            <td class="col3">2021-01-20</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">8</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 8</a>
+                            </td>
+                            <td class="col3">2021-01-19</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">7</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 7</a>
+                            </td>
+                            <td class="col3">2021-01-18</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">6</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 6</a>
+                            </td>
+                            <td class="col3">2021-01-17</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tb_page" id="tb_page3">
+                <table class="page_table">
+                    <thead>
+                        <tr>
+                            <th class="col1">번호</th>
+                            <th class="col2">제목</th>
+                            <th class="col3">작성일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col1">5</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 5</a>
+                            </td>
+                            <td class="col3">2021-01-26</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">4</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 4</a>
+                            </td>
+                            <td class="col3">2021-01-25</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">3</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 3</a>
+                            </td>
+                            <td class="col3">2021-01-24</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">2</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 2</a>
+                            </td>
+                            <td class="col3">2021-01-23</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">1</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 1</a>
+                            </td>
+                            <td class="col3">2021-01-22</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="page_num_box">
+            <ul class="page_num">
+                <li><a href="#tb_page1" class="pagelnk">1</a></li>
+                <li><a href="#tb_page2" class="pagelnk">2</a></li>
+                <li><a href="#tb_page3" class="pagelnk">3</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="wrap">
+        <h2 class="tit">페이지내이션2 - radio</h2>
+        <input type="radio" name="pg_ra" class="pg_ra" id="pg_ra1" checked>
+        <input type="radio" name="pg_ra" class="pg_ra" id="pg_ra2">
+        <input type="radio" name="pg_ra" class="pg_ra" id="pg_ra3">
+        <div class="pagenation_box">
+            <div class="tb2_page" id="tb2_page1">
+                <table class="page_table">
+                    <thead>
+                        <tr>
+                            <th class="col1">번호</th>
+                            <th class="col2">제목</th>
+                            <th class="col3">작성일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col1">15</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 15</a>
+                            </td>
+                            <td class="col3">2021-01-26</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">14</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 14</a>
+                            </td>
+                            <td class="col3">2021-01-25</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">13</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 13</a>
+                            </td>
+                            <td class="col3">2021-01-24</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">12</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 12</a>
+                            </td>
+                            <td class="col3">2021-01-23</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">11</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 11</a>
+                            </td>
+                            <td class="col3">2021-01-22</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tb2_page" id="tb2_page2">
+                <table class="page_table">
+                    <thead>
+                        <tr>
+                            <th class="col1">번호</th>
+                            <th class="col2">제목</th>
+                            <th class="col3">작성일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col1">10</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 10</a>
+                            </td>
+                            <td class="col3">2021-01-21</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">9</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 9</a>
+                            </td>
+                            <td class="col3">2021-01-20</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">8</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 8</a>
+                            </td>
+                            <td class="col3">2021-01-19</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">7</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 7</a>
+                            </td>
+                            <td class="col3">2021-01-18</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">6</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 6</a>
+                            </td>
+                            <td class="col3">2021-01-17</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tb2_page" id="tb2_page3">
+                <table class="page_table">
+                    <thead>
+                        <tr>
+                            <th class="col1">번호</th>
+                            <th class="col2">제목</th>
+                            <th class="col3">작성일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col1">5</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 5</a>
+                            </td>
+                            <td class="col3">2021-01-26</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">4</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 4</a>
+                            </td>
+                            <td class="col3">2021-01-25</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">3</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 3</a>
+                            </td>
+                            <td class="col3">2021-01-24</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">2</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 2</a>
+                            </td>
+                            <td class="col3">2021-01-23</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">1</td>
+                            <td class="col2">
+                                <a href="">여기는 게시판 제목입니다. 이 글을 클릭하면, 상세한 현재 제목에 대한 글보기를 할 수 있습니다. 1</a>
+                            </td>
+                            <td class="col3">2021-01-22</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="page_num_box">
+            <ul class="page_num">
+                <li><label for="pg_ra1" class="pagelnk lnk1">1</label></li>
+                <li><label for="pg_ra2" class="pagelnk lnk2">2</label></li>
+                <li><label for="pg_ra3" class="pagelnk lnk3">3</label></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

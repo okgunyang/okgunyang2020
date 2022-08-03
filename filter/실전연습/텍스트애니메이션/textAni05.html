@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>텍스트 애니메이션5</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+@import "https://fonts.googleapis.com/css?family=Rubik+Mono+One";
+body {
+  background: #444;
+  overflow-x: hidden;
+  font-family: 'Rubik Mono One', sans-serif;
+  padding: 40px;
+  text-align: center;
+}
+.words {
+  color: #444;
+  font-size: 0;
+  line-height: 1;
+}
+.words span {
+  font-size: 120px;
+  display: inline-block;
+  animation: move 2s ease-in-out infinite;
+}
+.words span:nth-child(2) { animation-delay: 0.5s; }
+.words span:nth-child(3) { animation-delay: 1.0s; }
+.words span:nth-child(4) { animation-delay: 1.5s; }
+@keyframes move {
+  0% {  transform: translate(-33%, 0);  }
+  50% {  text-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);  }
+  100% {  transform: translate(33%, 0);  }
+}
+* {  box-sizing: border-box; }
+    </style>
+</head>
+<body>
+<div class="words words-1">
+  <span>S</span>
+  <span>H</span>
+  <span>O</span>
+  <span>W</span>
+</div>
+<div class="words words-1">
+  <span>A</span>
+  <span>N</span>
+  <span>D</span>
+</div>
+<div class="words words-1">
+  <span>T</span>
+  <span>E</span>
+  <span>L</span>
+  <span>L</span>
+</div>
+</body>
+</html>

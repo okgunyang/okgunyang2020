@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>쉐이프 애니메이션7</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+div{
+	font-family: 'Arial';
+	background-color: #a8cf45;
+	margin: 10px 10px;
+	text-align: center;
+	font-weight: bolder;
+	padding: 15px 30px;
+	width: 80px;
+	display: inline-block;
+	vertical-align: middle;
+
+}
+
+.triangulo_lateral{
+	-webkit-transform: translateX(0);
+}
+
+.triangulo_lateral:before{
+	content: '';
+	-webkit-transition-duration: 0.3s;
+
+	/*width: 30px;
+	height: 30px;
+	background: red;*/
+	position: absolute;
+	left: 0px;
+	top: 50%;
+	margin-top: -15px;
+	border-style: solid;
+	border-width: 15px 15px 15px 0px;
+	border-color: transparent
+	              #a8cf45
+	              transparent
+	              transparent;
+}
+
+.triangulo_lateral:hover:before{
+	left: -15px;
+}
+
+
+
+.triangulo_fijo{
+	-webkit-transform: translateX(0);
+	-webkit-transition-duration: 0.3s;
+}
+
+.triangulo_fijo:before{
+	content: '';
+	-webkit-transition-duration: 0.3s;
+
+	/*width: 30px;
+	height: 30px;
+	background: red;*/
+	position: absolute;
+	left: 50%;
+	top: 0px;
+	margin-left: -15px;
+	border-style: solid;
+	border-width: 0px 15px 15px 15px;
+	border-color: transparent
+	              transparent
+	              #a8cf45
+	              transparent;
+}
+
+.triangulo_fijo:hover{
+	-webkit-transform: translateY(15px);
+}
+
+.triangulo_fijo:hover:before{
+	top: -13px;
+}
+
+.esquina_pagina{
+	-webkit-transform: translateX(0);
+}
+
+.esquina_pagina:before{
+	content: '';
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	width: 0;
+	height: 0;
+	background: -webkit-linear-gradient(45deg, white 45%, #aaa 50%, #ccc 60%, white);
+	-webkit-transition-duration: 0.3s;
+}
+
+.esquina_pagina:hover:before{
+	width: 35px;
+	height: 35px;
+}
+
+.sombra_fija{
+	-webkit-transform: translateX(0);
+}
+
+.sombra_fija:before{
+	content: '';
+	position: absolute;
+	width: 90%;
+	top: 100%;
+	left: 5%;
+	height: 10px;
+	background: -webkit-radial-gradient(
+		center, ellipse,
+		rgba(0,0,0,0.30) 0%,
+		rgba(0,0,0,0) 80%);
+	-webkit-transition-duration: 0.5s;
+	opacity: 0;
+}
+
+.sombra_fija:hover{
+	-webkit-transform: translateY(-5px);	
+}
+.sombra_fija:hover:before{
+	-webkit-transform: translateY(5px);
+    opacity: 1;
+}
+
+.sombra_difuminada{
+	box-shadow: 0px 0px 1px rgba(0,0,0,1);
+	-webkit-transition-duration: 0.3s;
+}
+.sombra_difuminada:hover{
+	box-shadow: 0px 0px 8px rgba(0,0,0,0.6);
+}
+
+.sombra_radial{
+	position: relative;
+	box-shadow: 0px 0px 1px black;
+}
+
+.sombra_radial:before, .sombra_radial:after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 5px;
+	left: 0px;
+	opacity: 0;
+	-webkit-transition-duration: 0.3s;
+}
+
+.sombra_radial:before{
+	bottom: 100%;
+	background: radial-gradient(
+		ellipse at 50% 150%,
+		rgba(0,0,0,0.6) 0%,
+		rgba(0,0,0,0) 80%);
+}
+
+.sombra_radial:after{
+	top: 100%;
+	background: radial-gradient(
+		ellipse at 50% -50%,
+		rgba(0,0,0,0.6) 0%,
+		rgba(0,0,0,0) 80%);
+}
+
+.sombra_radial:hover:before, .sombra_radial:hover:after{
+	opacity: 1;
+}
+
+.sombra_externa {
+	box-shadow: 0px 0px 1px black;
+	webkit-transition-duration: 0.3s;
+}
+
+.sombra_externa:hover{
+	box-shadow: 2px 3px 3px black;
+}
+
+.sombra_interna{
+	-webkit-transition-duration: 0.2s;
+}
+
+.sombra_interna:hover{
+	box-shadow: 2px 2px 4px black inset,
+	           -2px -2px 4px black inset;
+}
+
+.iluminacion{
+	border: 4px solid gray;
+	-webkit-transition-duration: 0.2s;
+}
+
+.iluminacion:hover{
+	background: white;
+}
+
+.resalte_borde{
+	box-shadow: inset 0 0 0 4px #ddd;
+	-webkit-transition-duration: 0.5s;
+}
+
+.resalte_borde:hover{
+	box-shadow: inset 0 0 0 4px #555;
+}
+
+.borde_interno{
+	position: relative;
+}
+
+.borde_interno:before{
+	content: '';
+	position: absolute;
+	border: 4px solid white;
+	top: 4px;
+	bottom: 4px;
+	left: 4px;
+	right: 4px;
+	opacity: 0;
+	-webkit-transition-duration: 0.3s;
+}
+
+.borde_interno:hover:before{
+	opacity: 1;
+}
+
+.expansion_borde{
+	position:relative;
+}
+
+.expansion_borde:before{
+	content: '';
+	position: absolute;
+	border: 4px solid black;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	-webkit-transition-duration: 0.3s;
+}
+
+.expansion_borde:hover:before{
+	top: -8px;
+	bottom: -8px;
+	left: -8px;
+	right: -8px;
+}
+
+.recogida_borde{
+	position:relative;
+}
+
+.recogida_borde:before{
+	content: '';
+	position: absolute;
+	border: 4px solid black;
+	top: -16px;
+	bottom: -16px;
+	left: -16px;
+	right: -16px;
+	opacity: 0;
+	-webkit-transition-duration: 0.15s;
+}
+
+.recogida_borde:hover:before{
+	top: -8px;
+	bottom: -8px;
+	left: -8px;
+	right: -8px;
+	opacity: 1;
+}
+
+.esquina_redondeada{
+	-webkit-transition-duration: 0.2s;
+}
+
+.esquina_redondeada:hover{
+	border-radius: 20px;
+}
+    </style>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+
+</script>
+</head>
+<body>
+   <div class="triangulo_lateral"><p>Triángulo lateral</p></div>
+   <div class="triangulo_fijo"><p>Triángulo Fijo</p></div>
+   <div class="esquina_pagina"><p>Esquina página</p></div>
+   <div class="sombra_fija"><p>Sombra Fija</p></div>
+   <div class="sombra_difuminada"><p>Sombra difuminada</p></div>
+   <div class="sombra_radial"><p>Sombra radial</p></div>
+   <div class="sombra_externa"><p>Sombra externa</p></div>
+   <div class="sombra_interna"><p>Sombra interna</p></div>
+   <div class="iluminacion"><p>Iluminacion interna</p></div>
+   <div class="resalte_borde"><p>Resalte borde</p></div>
+   <div class="borde_interno"><p>Borde interno</p></div>
+   <div class="expansion_borde"><p>expansion borde</p></div>
+   <div class="recogida_borde"><p>recogida borde</p></div>
+   <div class="esquina_redondeada"><p>redondeado esquinas</p></div>
+</body>
+</html>

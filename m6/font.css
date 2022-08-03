@@ -1,0 +1,97 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'NotoSansKR';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Noto Sans Thin'), local('NotoSans-Thin'),
+    url(./fonts/notokr-thin.eot),
+    url(./fonts/notokr-thin.eot?#iefix) format('embedded-opentype'),
+    url(./fonts/notokr-thin.woff) format('woff'),
+    url(./fonts/notokr-thin.otf) format('opentype'),
+    url(./fonts/notokr-thin.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'NotoSansKR';
+    font-style: normal;
+    font-weight: 200;
+    src: local('Noto Sans Light'), local('NotoSans-Light'),
+    url(./fonts/notokr-light.eot),
+    url(./fonts/notokr-light.eot?#iefix) format('embedded-opentype'),
+    url(./fonts/notokr-light.woff) format('woff'),
+    url(./fonts/notokr-light.otf) format('opentype'),
+    url(./fonts/notokr-light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'NotoSansKR';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Noto Sans DemiLight'), local('NotoSans-DemiLight'),
+    url(./fonts/notokr-demilight.eot),
+    url(./fonts/notokr-demilight.eot?#iefix) format('embedded-opentype'),
+    url(./fonts/notokr-demilight.woff) format('woff'),
+    url(./fonts/notokr-demilight.otf) format('opentype'),
+    url(./fonts/notokr-demilight.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'NotoSansKR';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Noto Sans Regular'), local('NotoSans-Regular'),
+    url(./fonts/notokr-regular.eot),
+    url(./fonts/notokr-regular.eot?#iefix) format('embedded-opentype'),
+    url(./fonts/notokr-regular.woff) format('woff'),
+    url(./fonts/notokr-regular.otf) format('opentype'),
+    url(./fonts/notokr-regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'NotoSansKR';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Noto Sans Medium'), local('NotoSans-Medium'),
+    url(./fonts/notokr-medium.eot),
+    url(./fonts/notokr-medium.eot?#iefix) format('embedded-opentype'),
+    url(./fonts/notokr-medium.woff) format('woff'),
+    url(./fonts/notokr-medium.otf) format('opentype'),
+    url(./fonts/notokr-medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'NotoSansKR';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Noto Sans Bold'), local('NotoSans-Bold'),
+    url(./fonts/notokr-bold.eot),
+    url(./fonts/notokr-bold.eot?#iefix) format('embedded-opentype'),
+    url(./fonts/notokr-bold.woff) format('woff'),
+    url(./fonts/notokr-bold.otf) format('opentype'),
+    url(./fonts/notokr-bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'NotoSansKR';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Noto Sans Black'), local('NotoSans-Black'),
+    url(./fonts/notokr-black.eot),
+    url(./fonts/notokr-black.eot?#iefix) format('embedded-opentype'),
+    url(./fonts/notokr-black.woff) format('woff'),
+    url(./fonts/notokr-black.otf) format('opentype'),
+    url(./fonts/notokr-black.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Latte Coffee Script';
+    font-style: normal;
+    src: local('LatteCoffeeScript'), local('Latte Coffee Script'),
+    url(./fonts/LatteCoffeeScript.eot),
+    url(./fonts/LatteCoffeeScript.eot?#iefix) format('embedded-opentype'),
+    url(./fonts/LatteCoffeeScript.woff) format('woff'),
+    url(./fonts/LatteCoffeeScript.otf) format('opentype'),
+    url(./fonts/LatteCoffeeScript.ttf) format('truetype');
+}
+
+@import url('https://fonts.googleapis.com/css?family=Nanum+Brush+Script|Nanum+Gothic|Nanum+Myeongjo|Nanum+Pen+Script');

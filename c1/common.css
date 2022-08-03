@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700&subset=korean');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+@import url('https://fonts.googleapis.com/css?family=Exo+2:400,700,800');
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro:400,500');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600,700');
+@font-face {
+  font-family: 'Godo';
+  font-style: normal;
+  font-weight: 400;
+  src: url('http://cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff2') format('woff2'), url('http://cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Godo';
+  font-style: normal;
+  font-weight: 700;
+  src: url('http://cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff2') format('woff2'), url('http://cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff') format('woff');
+}
+
+@mixin noto() {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+@mixin lato() {
+    font-family: 'Lato', sans-serif;
+}
+@mixin exo() {
+    font-family: 'Exo 2', sans-serif;
+}
+@mixin maven() {
+    font-family: 'Maven Pro', sans-serif;
+}
+@mixin roboto() {
+    font-family: 'Roboto', sans-serif;
+}
+@mixin godo() {
+    font-family: 'Godo', sans-serif;
+}
+@mixin titi() {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+
+@mixin transition($property: all, $duration: .15s, $timing: linear, $delay: 0s) {
+	-webkit-transition-property: $property;
+    transition-property: $property;
+	-webkit-transition-duration: $duration;
+    transition-duration: $duration;
+	-webkit-transition-timing-function: $timing;
+    transition-timing-function: $timing;
+	-webkit-transition-delay: $delay;
+    transition-delay: $delay;
+}
+
+
+/* 초기화 */
+h1, h2, h3,h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+p {
+    margin-bottom: 0;
+}
+ul, ol {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+dl {
+    margin-bottom: 0;
+    dt {
+        font-weight: 400;
+    }
+    dd {
+        font-weight: 400;
+        margin: 0;
+    }
+}
+address {
+    margin-bottom: 0;
+}
+figure {
+    margin-bottom: 0;
+}
+label {
+    margin: 0;
+    font-weight: 400;
+}
+body {
+    position: relative;
+    @include noto();
+    font-size: 13px;
+    color: #666;
+    font-weight: 400;
+    min-width: 1200px !important;
+}
+.container {
+    max-width: 1200px !important;
+}
+a {
+    color: inherit;
+    text-decoration: none !important;
+    &:hover {
+        color: inherit;
+    }
+}
+.btn {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-shadow: none !important;
+    border-radius: 0;
+    background: none;
+}
+.form-group {
+    margin: 0;
+}
+.form-control {
+    border-radius: 0;
+    box-shadow: none !important;
+}

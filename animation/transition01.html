@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>트랜지션 01 - transition-duration</title>
+    <style>
+    .box { width: 100px; height: 100px; background-color: deeppink; line-height: 100px; 
+    text-align: center; color:#fff; margin: 40px auto; opacity:0.3;
+    cursor:crosshair; font-size:16px; 
+    /* 벤더 프리픽스 또는 크로스브라우징 스타일 -> prefixfree.js */
+    -ms-transform: rotate(0deg);
+    transform:rotate(0deg);
+    -ms-transition-duration:1s; /* IE */
+    -o-transition-duration:1s; /* opera */
+    -moz-transition-duration: 1s;  /* firefox */
+    -webkit-transition-duration: 1s; /* chrome, safari */
+    transition-duration:1s; }    
+    .sphere { background:radial-gradient(at 30% 20%, yellow, red, brown); 
+    border-radius:50%; box-shadow:2px 2px 3px #666; margin: 40px auto; }
+    body:hover .box { width: 400px; height: 400px; line-height: 400px; font-size:68px; 
+    opacity:1;  transform:rotate(720deg); }
+    body:active .box { width: 200px; height: 200px; line-height: 200px; font-size:48px;
+    opacity:0.8; }
+    </style>
+</head>
+<body>
+    <div class="box">BOX</div>
+    <div class="sphere box">SPHERE</div>
+</body>
+</html>

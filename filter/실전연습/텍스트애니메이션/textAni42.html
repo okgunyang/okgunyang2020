@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>텍스트 애니메이션18</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+@import url(https://fonts.googleapis.com/css?family=Electrolize);
+body {
+  margin: 0;
+  padding: 0;
+ font-family: 'Electrolize';
+  font-size: 2em;
+  text-transform: ;
+  background-color: hsla(0, 0%, 10%, 1);
+  color: hsla(0, 0%, 93%, 1);
+  width: 100%;
+  overflow: hidden;
+}
+
+p {
+  width: 100%;
+  text-align: center;
+  margin: 15% auto;
+}
+
+button {
+  background: transparent;
+  border: 1px solid hsla(0, 0%, 0%, .8);
+  padding: .5em;
+  width: 5em;
+  font-size: 60%;
+}
+    </style>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+var $ = function(id) {
+  return document.getElementById(id);
+};
+var inc = 0;
+var out = 0;
+var str = 'Do The Type Shuffle...';
+var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@$%&';
+var t;
+
+var anim = function() {
+  inc++;
+  if (inc % 7 === 0 && out < str.length) {
+    $('anim').appendChild(document.createTextNode(str[out]));
+    out++;
+  } else if (out >= str.length) {
+    $('shuffle').innerHTML = '';
+    removeInterval(t);
+  }
+  $('shuffle').innerHTML =
+    chars[Math.floor(Math.random() * chars.length)];
+};
+t = setInterval(anim, 50);
+$('anim').innerHTML = '';
+
+//Do it again
+function reload() {
+  window.location.href = window.location.href;
+}
+document.getElementById('btn').onclick = reload;
+</script>
+</head>
+<body>
+<p>
+  <span id="anim"></span><span id="shuffle"></span>
+  <br />
+  <br />
+  <button id='btn'>
+    Again
+  </button>
+</p>
+</body>
+</html>

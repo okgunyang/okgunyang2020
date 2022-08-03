@@ -1,0 +1,69 @@
+@charset "utf-8";
+@font-face{
+    font-family:"nsm";
+    src:local("NotoSansMedium"),
+        url("./font/NotoSansMedium.eot") format("embedded-opentype"),
+        url("./font/NotoSansMedium.woff2") format("woff2"),
+        url("./font/NotoSansMedium.woff") format("woff"),
+        url("./font/NotoSansMedium.otf") format("opentype");
+    font-weight:400;
+    font-style:normal;
+}
+@font-face{
+    font-family:"nsb";
+    src:local("./font/NotoSansBold"),
+        url("./font/NotoSansBold.eot") format("embedded-opentype"),
+        url("./font/NotoSansBold.woff") format("woff"),
+        url("./font/NotoSansBold.otf") format("opentype");
+    font-style:normal;
+}
+@font-face{
+    font-family:"nsbk";
+    src:local("./font/NotoSansBlack"),
+        url("./font/NotoSansBlack.eot") format("embedded-opentype"),
+        url("./font/NotoSansBlack.woff") format("woff"),
+        url("./font/NotoSansBlack.otf") format("opentype");
+    font-style:normal;
+}
+@font-face{
+    font-family:"nsdl";
+    src:local("NotoSansDemiLight"),
+        url("./font/NotoSansDemiLight.eot") format("embedded-opentype"),
+        url("./font/NotoSansDemiLight.woff2") format("woff2"),
+        url("./font/NotoSansDemiLight.woff") format("woff"),
+        url("./font/NotoSansDemiLight.otf") format("opentype");
+    font-style:normal;
+}
+@font-face{
+    font-family:"nsl";
+    src:local("NotoSansLight"),
+        url("./font/NotoSansLight.eot") format("embedded-opentype"),
+        url("./font/NotoSansLight.woff") format("woff"),
+        url("./font/NotoSansLight.otf") format("opentype");
+    font-style:normal;
+}
+@font-face{
+    font-family:"mg";
+    src:local("MalgunGothic"),
+        url("./font/MalgunGothic.eot") format("embedded-opentype"),
+        url("./font/MalgunGothic.woff") format("woff"),
+        url("./font/MalgunGothic.ttf") format("truetype");
+    font-weight:400;
+    font-style:normal;
+}
+@font-face{
+    font-family:"lb";
+    src:local("lato-bold"),
+        url("./font/lato-bold.eot") format("embedded-opentype"),
+        url("./font/lato-bold.woff") format("woff");
+    font-weight:400;
+    font-style:normal;
+}
+@font-face{
+    font-family:"ll";
+    src:local("lato-light"),
+        url("./font/lato-light.eot") format("embedded-opentype"),
+        url("./font/lato-light.woff") format("woff");
+    font-weight:400;
+    font-style:normal;
+}
