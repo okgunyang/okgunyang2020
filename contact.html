@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 문서 정보 등록 -->
+    <meta name="application-name" content="kmgt Portfolio">
+    <meta name="title" content="KMGT's 포트폴리오">
+    <meta name="description" content="KMGT's의 자바웹개발자 포트폴리오, 인트로, 보유기술, 갤러리, 컨택트, intro, technic, ability, skill, project, gallery, contact">
+    <meta name="keywords" content="웹 프로젝트, web project, 자바, java, jsp, 서블릿, servlet, MVC, MVC2, java framework, spring legacy, spring boot, spring cloud, sts, IntelliJ, html, haml, Markdown, Jade, Slim, css, scss/sass, less, Stylus, 웹표준, SVG, Web Animation, 웹 애니메이션, javascript, typescript, jQuery, Ajax, 자바스크립트, 마크다운, Node, angular, Vue, React, RDBMS, 관계형 데이터베이스, oracle, mysql, mariadb, H2, Postgree, MongoDB, SQLite, SQL Workbench, SQL Developer, mybatis, JSON, 오라클, 마리아DB, Business Logic, 비즈니스로직, Controller, Servicem, DAO, DTO, VO, Mapper, IoC, AOP, JPA, CRUD, Monolothic, DevOps, Cloud Native, AWS, Kubernetes, Azure, Agile, Docker, Jenkins, Git, Github, GitLab, bitbucket, App Deploy, Build, Maven, Gradle, JAR, WAR, EAR, jUnit, PMD, Sparrow, CodeMind, Heuristic, Selenium IDE, Trello, Jira, protoNow, Ovenapp, balsamiq, UML, USECASE, Class Diagram, Sequence Diagram, Amateras, ObjectAid, Task Flow, MindMap, User Scenarios, Comstomer Journey Map">
+    <!-- 파비콘 등록 -->
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <!-- 오픈 그래프 등록 -->
+    <meta property="og:title" content="kmgt Portfolio">
+    <meta property="og:url" content="https://okgunyang.github.io">
+    <meta property="og:description" content="KMGT's의 자바웹개발자 포트폴리오, 인트로, 보유기술, 갤러리, 컨택트, intro, technic, ability, skill, project, gallery, contact">
+    <meta property="og:image" content="portfolio_home.png">
+    <meta name="twitter:card" content="portfolio_card.mp4" /> 
+    <meta name="twitter:title" content="kmgt Portfolio" /> 
+    <meta name="twitter:description" content="KMGT's의 자바웹개발자 포트폴리오, 인트로, 보유기술, 갤러리, 컨택트, intro, technic, ability, skill, project, gallery, contact" /> 
+    <meta name="twitter:image" content="portfolio_home.png" /> 
+    <!-- 모바일 앱 연결시 오픈 그래프 -->
+    <!--iOS-->
+    <meta property="al:ios:url" content=" ios 앱 URL" />
+    <meta property="al:ios:app_store_id" content="ios 앱스토어 ID" /> 
+    <meta property="al:ios:app_name" content="ios 앱 이름" /> 
+    <!--Android-->
+    <meta property="al:android:url" content="안드로이드 앱 URL" />
+    <meta property="al:android:app_name" content="안드로이드 앱 이름" />
+    <meta property="al:android:package" content="안드로이드 패키지 이름" /> 
+    <meta property="al:web:url" content="안드로이드 앱 URL" />
+
+    <!-- 필요 폰트 가져오기 -->
+    <link rel="stylesheet" href="fonts.css">
+    <title>KMGT's 포트폴리오</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+    .sec_tit { text-align: center; }
+    #home { position:fixed; right:50px; top:10px; z-index:999; line-height:60px; 
+    width:180px; height: 60px; text-align: center; font-size:24px; background-color:rgba(255,255,255,0.8); }
+    #home a { display:block; color:#333; font-family: 'CookieRun-Regular', cursive; }
+    .page_tit { text-align: center; padding-top: 3em; line-height: 2.4; font-size:36px; }   
+    #page1 .sec_wrap { clear:both; width: 100%; }
+    </style>
+    <style>
+    #arrow_top { width:50px; height:50px; position:fixed; z-index:999;
+    right:20px; bottom:100px; border-radius:30px; border:3px solid #eee; 
+    line-height: 50px; text-align: center; font-size:32px; font-weight: bold;
+    cursor:pointer; display:none; }
+    #arrow_top.on { display:block; }
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <style>
+    .blank { clear:both; width: 100%; height:120px; }    
+    #page1 { clear:both; padding-top:100px;  min-height:1100px; position:relative; }
+    .iframe_wrap { clear:both; width: 100vw; height:auto; position:absolute; top:0px; left: 0; overflow:hidden; }    
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <header id="hd0">
+        <nav id="gnb">
+            <ul>
+                <li><a href="intro.html">인트로</a></li>
+                <li><a href="portfolio.html">포트폴리오</a></li>
+                <li><a href="ability.html">어빌리티</a></li>
+                <li><a href="contact.html" style="background:gold">컨택트</a></li>
+            </ul>
+        </nav>
+        <nav id="home"><a href="index.html">메인으로</a></nav>
+    </header>
+    <main id="content">
+        <div class="blank"></div>
+        <section class="page" id="page1" style="overflow:hidden;">
+            <div class="iframe_wrap">
+                <iframe src="http://kkt09072.dothome.co.kr/bbs/write.php?bo_table=free" width="100%" height="1100" frameborder="0" id="frame1" name="frame1" scrolling="no"></iframe>
+            </div>
+            <script>
+            $(document).ready(function(){
+                function iframe_load(){
+                    $("#frame1 #hd").css("display","none");
+                    $("#frame1 #ft").css("display","none");
+                    $("#frame1 #hd").remove();
+                    $("#frame1 #ft").remove();
+                    var frame1 = $("#frame1").height();
+                }
+                setTimeout(function(){ iframe_load(); }, 1500);
+                document.load = setTimeout(function(){ iframe_load(); }, 1500);
+            });    
+            </script>
+        </section>
+    </main>
+    <footer id="ft0">
+        <div class="ft_wrap">Copyright 2022. Kmgt inc. All rights reserved.</div>
+    </footer>
+</div>
+<div id="arrow_top">↑</div>
+</body>
+</html>
