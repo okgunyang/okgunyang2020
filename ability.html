@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 문서 정보 등록 -->
+    <meta name="application-name" content="kmgt Portfolio">
+    <meta name="title" content="KMGT's 포트폴리오">
+    <meta name="description" content="KMGT's의 자바웹개발자 포트폴리오, 인트로, 보유기술, 갤러리, 컨택트, intro, technic, ability, skill, project, gallery, contact">
+    <meta name="keywords" content="웹 프로젝트, web project, 자바, java, jsp, 서블릿, servlet, MVC, MVC2, java framework, spring legacy, spring boot, spring cloud, sts, IntelliJ, html, haml, Markdown, Jade, Slim, css, scss/sass, less, Stylus, 웹표준, SVG, Web Animation, 웹 애니메이션, javascript, typescript, jQuery, Ajax, 자바스크립트, 마크다운, Node, angular, Vue, React, RDBMS, 관계형 데이터베이스, oracle, mysql, mariadb, H2, Postgree, MongoDB, SQLite, SQL Workbench, SQL Developer, mybatis, JSON, 오라클, 마리아DB, Business Logic, 비즈니스로직, Controller, Servicem, DAO, DTO, VO, Mapper, IoC, AOP, JPA, CRUD, Monolothic, DevOps, Cloud Native, AWS, Kubernetes, Azure, Agile, Docker, Jenkins, Git, Github, GitLab, bitbucket, App Deploy, Build, Maven, Gradle, JAR, WAR, EAR, jUnit, PMD, Sparrow, CodeMind, Heuristic, Selenium IDE, Trello, Jira, protoNow, Ovenapp, balsamiq, UML, USECASE, Class Diagram, Sequence Diagram, Amateras, ObjectAid, Task Flow, MindMap, User Scenarios, Comstomer Journey Map">
+    <!-- 파비콘 등록 -->
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <!-- 오픈 그래프 등록 -->
+    <meta property="og:title" content="kmgt Portfolio">
+    <meta property="og:url" content="https://okgunyang.github.io">
+    <meta property="og:description" content="KMGT's의 자바웹개발자 포트폴리오, 인트로, 보유기술, 갤러리, 컨택트, intro, technic, ability, skill, project, gallery, contact">
+    <meta property="og:image" content="portfolio_home.png">
+    <meta name="twitter:card" content="portfolio_card.mp4" /> 
+    <meta name="twitter:title" content="kmgt Portfolio" /> 
+    <meta name="twitter:description" content="KMGT's의 자바웹개발자 포트폴리오, 인트로, 보유기술, 갤러리, 컨택트, intro, technic, ability, skill, project, gallery, contact" /> 
+    <meta name="twitter:image" content="portfolio_home.png" /> 
+    <!-- 모바일 앱 연결시 오픈 그래프 -->
+    <!--iOS-->
+    <meta property="al:ios:url" content=" ios 앱 URL" />
+    <meta property="al:ios:app_store_id" content="ios 앱스토어 ID" /> 
+    <meta property="al:ios:app_name" content="ios 앱 이름" /> 
+    <!--Android-->
+    <meta property="al:android:url" content="안드로이드 앱 URL" />
+    <meta property="al:android:app_name" content="안드로이드 앱 이름" />
+    <meta property="al:android:package" content="안드로이드 패키지 이름" /> 
+    <meta property="al:web:url" content="안드로이드 앱 URL" />
+
+    <!-- 필요 폰트 가져오기 -->
+    <link rel="stylesheet" href="fonts.css">
+    <title>KMGT's 포트폴리오</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+    .sec_tit { text-align: center; }
+    #home { position:fixed; right:50px; top:10px; z-index:999; line-height:60px; 
+    width:180px; height: 60px; text-align: center; font-size:24px; background-color:rgba(255,255,255,0.8); }
+    #home a { display:block; color:#333; font-family: 'CookieRun-Regular', cursive; }
+    .page_tit { text-align: center; padding-top: 3em; line-height: 2.4; font-size:36px; }   
+    #page1 .sec_wrap { clear:both; width: 100%; }
+    </style>
+    <style>
+    #quick { width:50px; height: 300px; position:fixed; z-index:999;
+    right:20px; top:100px; }
+    #quick li { clear:both; width: 50px; height: 50px; margin:12px auto; border:3px solid #333; border-radius:28px; position:relative; }
+    #quick li div { width: 45px; height: 45px; box-sizing: border-box;
+    overflow:hidden; margin:2px auto;  
+border-radius:25px; cursor:pointer;  }
+    #quick li:after { content:"data"; width:120px; height:50px; line-height: 50px; position:absolute; top:0;    right:55px; opacity:0; transition-duration:0.4s; 
+    font-size:20px; text-align:right; padding-right:8px; }
+    #quick li:hover::after { opacity:1; }
+    #quick li.item1 div { background-color: deeppink; }
+    #quick li.item2 div { background-color: deepskyblue; }
+    #quick li.item3 div { background-color:gold; }
+    #quick li.item1:after { content:"Backend"; color:deeppink; }
+    #quick li.item2:after { content:"Project&Frontend"; color:deepskyblue; }
+    #quick li.item3:after { content:"Database&ETC"; color:gold; }
+    #quick li div img { display:block; width: 30px; height: 30px; }
+    #arrow_top { width:50px; height:50px; position:fixed; z-index:999;
+    right:20px; bottom:100px; border-radius:30px; border:3px solid #eee; 
+    line-height: 50px; text-align: center; font-size:32px; font-weight: bold;
+    cursor:pointer; display:none; }
+    #arrow_top.on { display:block; }
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+        var tot = parseInt($(".wrap").height());
+        var wd = parseInt($(window).width());
+        var ht = parseInt($(window).height());
+        var hx = (parseInt($(window).width()) - 1280) / 2;
+        var ratio = wd / tot;
+        $(window).scroll(function(){
+            var sc = parseInt($(window).scrollTop());
+            console.log(sc);
+            $("#gage .gagebar").width(hx+(wd*sc/tot));
+            var cat = parseInt($("#page1").height())+parseInt($("#page2").height()) - 100; 
+            if(sc>=cat) {
+                $("#page3").addClass("on");
+            }
+            if(sc>=300){
+                $("#arrow_top").addClass("on");
+            } else {
+                $("#arrow_top").removeClass("on");
+            }
+        });
+        $(".page").each(function(index){
+            var cat = parseInt($(this).offset().top);
+            $("#quick li").eq(index).attr("data-scroll", cat);
+        });
+        $("#quick li").click(function(){
+            var sc_dep = parseInt($(this).attr("data-scroll"));
+            $("body, html").not(":animated").animate({"scrollTop":sc_dep+"px"});
+        });
+        $("#arrow_top").click(function(){
+            $("body, html").not(":animated").animate({"scrollTop":"0px"}, 1500);
+        });
+    });    
+    </script>
+    <script>
+    window.onload = function () {
+//            var elm = ".page";
+        $(".page").each(function (index) {
+            // 개별적으로 Wheel 이벤트 적용
+            var cat = $(this).attr("id");
+            $(this).on("mousewheel DOMMouseScroll", function (e) {
+                //$("#gnb li").removeClass("on");
+                //$("#gnb li").eq(index).addClass("on");
+                e.preventDefault();
+                var delta = 0;
+                if (!event) event = window.event;
+                if (event.wheelDelta) {
+                    delta = event.wheelDelta / 120;
+                    if (window.opera) delta = -delta;
+                } 
+                else if (event.detail)
+                    delta = -event.detail / 3;
+                var moveTop = $(window).scrollTop();
+                var elmSelecter = $(".page").eq(index);
+                // 마우스휠을 위에서 아래로
+                if (delta < 0) {
+                    if ($(elmSelecter).next() != undefined) {
+                        try{
+                            moveTop = $(elmSelecter).next().offset().top;
+                        }catch(e){}
+                    }
+                // 마우스휠을 아래에서 위로
+                } else {
+                    if ($(elmSelecter).prev() != undefined) {
+                        try{
+                            moveTop = $(elmSelecter).prev().offset().top;
+                        }catch(e){}
+                    }
+                }
+                    
+                // 화면 이동 0.8초(800)
+                $("html,body").stop().animate({
+                    scrollTop: moveTop + 'px'
+                }, {
+                    duration: 800, complete: function () {
+                    }
+                });
+            });
+        });
+    }
+    </script>
+    <style>
+    .tech_lst { clear:both; width:1680px; margin: 0 auto; position:relative; height: 750px; padding-top: 50px; }
+    .tech_lst li {float:left; width:25%; height:540px; position:relative;  background-color:transparent; margin-top: 40px; }   
+    
+    .tech_lst li div { width: 280px; box-sizing: border-box;
+        height: 520px; margin:0 auto; border:3px solid #ece8e9; padding: 14px; 
+    background-repeat: no-repeat; background-position:center bottom; background-size: 250px auto; filter:grayscale(100%); cursor:pointer; transition-duration:0.4s; }
+    .tech_lst li:hover div { filter:grayscale(0%); }
+    .tech_lst .item_year { display:block; text-align:center;
+    font-size:24px; width:48px; height: 48px; border-radius:28px;
+    background-color:deeppink; line-height: 48px; position:absolute; top:-24px; left:50%; margin-left: -24px; color:#fff; }
+    .tech_lst .item_tit { display:block; font-size:32px; transition-duration:0.5s; letter-spacing:-2px; text-align:left; padding-top:40px; 
+    margin:0 auto; background-color: #fff; cursor:pointer; font-stretch: semi-condensed; }
+    .tech_lst .item_txt { display:block; word-wrap: break-word; text-align:left; margin:10px auto; line-height: 1.6; font-size:16px; padding-top:10px; }
+
+    .tech_lst .item_num { display:block; text-align:center;
+    font-size:24px; width:48px; height: 48px; border-radius:28px;
+    background-color:deepskyblue; line-height: 48px; position:absolute; top:-24px; left:50%; margin-left: -24px; color:#fff;  }
+    .tech_lst .item_seq { display:block; text-align:center;
+    font-size:24px; width:48px; height: 48px; border-radius:28px;
+    background-color:gold; line-height: 48px; position:absolute; top:-24px; left:50%; margin-left: -24px; color:#fff;  }
+
+    .tech_lst li.item1 div { background-image: url("java.png"); }
+    .tech_lst li.item2 div { background-image: url("jsp.png"); background-size:100px auto;  background-position:center 380px; }
+    .tech_lst li.item3 div { background-image: url("servlet.png"); background-size:180px auto;  background-position:center 380px; }
+    .tech_lst li.item4 div { background-image: url("mvc.png"); background-size:100px auto;  background-position:center 380px;  }
+    .tech_lst li.item5 div { background-image: url("spring.png"); }
+    .tech_lst li.item6 div { background-image: url("springboot.png"); }
+    .tech_lst li.item7 div { background-image: url("html5+css3.png"); }
+    .tech_lst li.item8 div { background-image: url("js+jquery.png"); }
+    .tech_lst li.item9 div { background-image: url("oracle.png"); background-size:100px auto;  background-position:center 380px; }
+    .tech_lst li.item10 div { background-image: url("mysql.png"); background-size:100px auto;  background-position:center 380px; }
+    .tech_lst li.item11 div { background-image: url("python.png"); background-size:100px auto;  background-position:center 380px; }
+    .tech_lst li.item12 div { background-image: url("c.png"); background-size:100px auto;  background-position:center 380px; }
+    </style>
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <header id="hd">
+        <nav id="gnb">
+            <ul>
+                <li><a href="intro.html">인트로</a></li>
+                <li><a href="portfolio.html">포트폴리오</a></li>
+                <li><a href="ability.html" style="background:gold">어빌리티</a></li>
+                <li><a href="contact.html">컨택트</a></li>
+            </ul>
+        </nav>
+        <nav id="home"><a href="index.html">메인으로</a></nav>
+    </header>
+    <main id="content">
+        <section class="page" id="page1">
+            <div class="page_wrap">
+                <h2 class="page_tit" title="보유기술">Technology Possessed</h2>
+                <h2 class="sec_tit" title="기술 축척 및 스킬">Backend</h2>
+                <div class="sec_wrap">
+                    <ul class="tech_lst">
+                        <li class="item1">
+                            <div class="item_box">
+                                <span class="item_year">1</span>
+                                <span class="item_tit">JAVA</span>
+                                <span class="item_txt">변수와 타입, 연산자, 조건문과 반복문, 클래스와 상속, 인터페이스와 추상화, 예외처리, 기본 API, 스레드, 제네릭, 람다식, 컬렉션 프레임워크</span>
+                            </div>
+                        </li>
+                        <li class="item2">
+                            <div class="item_box">
+                                <span class="item_year">2</span>
+                                <span class="item_tit adm">JSP</span>
+                                <span class="item_txt">JSP 플랫폼 구축, 표현식, 스크립트릿, SCOPE, EL, JSTL, 액션 태그, 전역 변수, 요청 객체, 응답 객체, 세션 객체, 애플리케이션 객체, 출력 객체, 페이지 컨텍스트 객체, 데이터 전송 방식</span>
+                            </div>
+                        </li>
+                        <li class="item3">
+                            <div class="item_box">
+                                <span class="item_year">3</span>
+                                <span class="item_tit adm">Servlet</span>
+                                <span class="item_txt">HttpServlet, HttpServletRequest, HttpServletResponse, Session, PrintWriter, applicationContext, init, Service, Destroy, doPost, doGet, Servlet Scope, JAVA Build</span>
+                            </div>
+                        </li>
+                        <li class="item4">
+                            <div class="item_box">
+                                <span class="item_year">4</span>
+                                <span class="item_tit adm">MVC</span>
+                                <span class="item_txt">Controller, Model, View, JDBC, VO(DTO), DAO, Page Modularity, Member Module, Board Module, Payment Module, Databank Module, Product Module, Email Module, File Control, WAR Deploy</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <p class="intro1"></p>    
+                </div>
+            </div>
+        </section>
+        <section class="page" id="page2">
+            <div class="page_wrap">
+                <h2 class="page_tit"></h2>
+                <h2 class="sec_tit" title="기술 축척 및 스킬">Project&Frontend</h2>
+                <div class="sec_wrap">
+                    <ul class="tech_lst">
+                        <li class="item5">
+                            <div class="item_box">
+                                <span class="item_num">5</span>
+                                <span class="item_tit adm">Spring Legacy</span>
+                                <span class="item_txt">Controller, Service, DAO, View, MyBatis, Project Configuration, Context Configure, Mapper, Dependensy Inject, Aspect Oriented Programming, Inversion of Control, Junit, Restful API, AJAX/JSON, Transaction and Logging, Intercepter, Maven/Gradle Build, Deploy</span>
+                            </div>
+                        </li>
+                        <li class="item6">
+                            <div class="item_box">
+                                <span class="item_num">6</span>
+                                <span class="item_tit work">Spring Boot</span>
+                                <span class="item_txt">Dependensy Manage, Spring Test, Logging, Maven/Gradle Build, Deploy, Thymeleaf, JPA, Boot Security, Appication Integration, Business Model Avatar, Micro Services Architecture, Config Server, Gateway Server, Eureka Server</span>
+                            </div>
+                        </li>
+                        <li class="item7">
+                            <div class="item_box">
+                                <span class="item_num">7</span>
+                                <span class="item_tit work">HTML/CSS</span>
+                                <span class="item_txt">폰트 연결, 파비콘, 문서 메타, 오픈그래프, 제목 및 문단 요소, 시멘틱 요소, 메뉴 및 목록 요소, 이미지 및 멀티미디어 요소, 폼 요소, 선택자, 스타일 속성, 레이아웃 설정 및 구현, 애니메이션 구현, 웹 표준 및 접근성</span>
+                            </div>
+                        </li>
+                        <li class="item8">
+                            <div class="item_box">
+                                <span class="item_num">8</span>
+                                <span class="item_tit work">Javascript/jQuery</span>
+                                <span class="item_txt">DOM 선택, DOM 탐색, DOM 조작, DOM 이벤트, DOM 효과, 플러그인 제작, Window, Document, History, Location, Screen, Navigator, Timer, AJAX/JSON, UI 제작 및 구현, 지도 API, 주소 API, GPS 및 날씨 API, 차트 API 등</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="page" id="page3">
+            <div class="page_wrap">
+                <h2 class="page_tit"></h2>
+                <h2 class="sec_tit" title="기술 축척 및 스킬">Database&ETC</h2>
+                <div class="sec_wrap">
+                    <ul class="tech_lst">
+                        <li class="item9">
+                            <div class="item_box">
+                                <span class="item_seq">9</span>
+                                <span class="item_tit work">Oracle</span>
+                                <span class="item_txt">데이터베이스 환경구축, 테이블/시퀀스/뷰 생성 및 제거와 변경, 데이터 무결성 제약조건 수립 및 설정, CRUD(데이터 추가/검색/변경/삭제), 조인, 이중쿼리, 집합연산, 집계, 트랜잭션 처리, 트리거 작업, 프로시저/함수 생성 및 실행, 권한 작업, 백업 및 복구, SQLP/PL, SQL Plus, SQL Developer, Eclipse DataSource</span>
+                            </div>    
+                        </li>
+                        <li class="item10">
+                            <div class="item_box">
+                                <span class="item_seq">10</span>
+                                <span class="item_tit work">MySQL&MariaDB</span>
+                                <span class="item_txt">데이터베이스 구축, 사용자 관리, 권한 작업, 테이블/인덱스 생성 및 제거와 변경, 기본키/외래키 등 제약조건 설정, 레코드 추가/제거/검색/삭제, 필드 연결, 서브쿼리, 그룹화, 웹 연동, 마이그레이션, 테이블 역설계</span>
+                            </div>
+                        </li>
+                        <li class="item11">
+                            <div class="item_box">
+                                <span class="item_seq">11</span>
+                                <span class="item_tit degree">Python</span>
+                                <span class="item_txt">파이썬 개발환경 구축, PyCharm, Anaconda, Google Colab, Data Type, Collection Type, 조건문과 반복문, 함수와 클래스 그리고 모듈, 패키지와 라이브러리, 예외처리, 정규표현식, 웹 크롤링, 필터링과 데이터 처리, beautifulsoup4, selenium, requests, opencv, scikit, Pillow, numpy, pandas, matplotlib, seaborn, sklearn, tensorflow, keras, pythorch, nltk, flask, django</span>
+                            </div>
+                        </li>
+                        <li class="item12">
+                            <div class="item_box">
+                                <span class="item_seq">12</span>
+                                <span class="item_tit degree">C</span>
+                                <span class="item_txt">상수와 변수, 데이터 입력과 출력, 연산자, 조건문, 반복문, 함수, 배열, 포인터, 응용 포인터, 구조체, 공용체, 파일 입출력, 전처리와 분할</span>
+                            </div>
+                        </li>
+                    </ul>
+                <p class="intro3"></p>
+            </div>
+        </section>
+    </main>
+    <footer id="ft">
+        <div class="ft_wrap">Copyright 2022. Kmgt inc. All rights reserved.</div>
+    </footer>
+</div>
+<div id="quick" class="quick">
+    <ul>
+        <li class="item1">
+            <div></div>
+        </li>
+        <li class="item2">
+            <div></div>
+        </li>
+        <li class="item3">
+            <div></div>
+        </li>
+    </ul>
+</div>
+<div id="arrow_top">↑</div>
+</body>
+</html>
