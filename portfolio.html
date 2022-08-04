@@ -38,12 +38,11 @@
     <title>KMGT's 포트폴리오</title>
     <link rel="stylesheet" href="common.css">
     <style>
-    .sec_tit { text-align: center; }
+    .sec_tit { text-align: center; line-height: 2.4; padding-bottom: 30px; }
     #home { position:fixed; right:50px; top:10px; z-index:999; line-height:60px; 
     width:180px; height: 60px; text-align: center; font-size:24px; background-color:rgba(255,255,255,0.8); }
     #home a { display:block; color:#333; font-family: 'CookieRun-Regular', cursive; }
-    .page_tit { text-align: center; padding-top: 3em; line-height: 2.4; font-size:36px; }   
-    #page1 .sec_wrap { clear:both; width: 100%; }
+    .page_tit { text-align: center; padding-top: 2.4em; line-height: 2.4; font-size:36px; }   
     </style>
     <style>
     #quick { width:50px; height: 300px; position:fixed; z-index:999;
@@ -52,15 +51,19 @@
     #quick li div { width: 45px; height: 45px; box-sizing: border-box;
     overflow:hidden; margin:2px auto;  
 border-radius:25px; cursor:pointer;  }
-    #quick li:after { content:"data"; width:120px; height:50px; line-height: 50px; position:absolute; top:0;    right:55px; opacity:0; transition-duration:0.4s; 
+    #quick li:after { content:"data"; width:180px; height:50px; line-height: 50px; position:absolute; top:0;    right:55px; opacity:0; transition-duration:0.4s; 
     font-size:20px; text-align:right; padding-right:8px; }
     #quick li:hover::after { opacity:1; }
     #quick li.item1 div { background-color: deeppink; }
     #quick li.item2 div { background-color: deepskyblue; }
     #quick li.item3 div { background-color:gold; }
-    #quick li.item1:after { content:"Past"; color:deeppink; }
-    #quick li.item2:after { content:"Current"; color:deepskyblue; }
-    #quick li.item3:after { content:"Future"; color:gold; }
+    #quick li.item4 div { background-color:rgb(90, 214, 90); }
+    #quick li.item5 div { background-color:rgb(236, 82, 16); }
+    #quick li.item1:after { content:"삼성디스플레이"; color:deeppink; }
+    #quick li.item2:after { content:"여수문화관광"; color:deepskyblue; }
+    #quick li.item3:after { content:"그리팅몰"; color:gold; }
+    #quick li.item4:after { content:"하나이비인후과병원"; color:rgb(90, 214, 90); }
+    #quick li.item5:after { content:"소녀나라몰"; color:rgb(236, 82, 16); }
     #quick li div img { display:block; width: 30px; height: 30px; }
     #arrow_top { width:50px; height:50px; position:fixed; z-index:999;
     right:20px; bottom:100px; border-radius:30px; border:3px solid #eee; 
@@ -151,9 +154,20 @@ border-radius:25px; cursor:pointer;  }
     }
     </script>
     <style>
-    .gal_lst { clear:both; width:1680px; margin: 0 auto; position:relative; height: 750px; }
-    .frame_wrap { clear:both; width: 800px; height: 480px; 
-    margin: 10px auto; }
+    .pro_mv { clear:both; width:1680px; margin: 0 auto; position:relative; height:auto; }
+    .frame_wrap { width: 800px; height: 480px; float:left; }
+    .sec_wrap { width: 800px; height: 480px; float:right; }
+    .desc_tit { font-size:32px; line-height:1.8; text-align-last: left; }
+    .gal_lst {  clear:both; padding-top: 32px; }
+    .gal_lst li { line-height: 42px; }
+    .pro_desc { clear:both; width: 1680px; margin:40px auto; }
+    .gal_tit { font-size:32px; line-height: 2.4; padding-top:0.7em; padding-bottom:0.3em; }
+    .intro1 { font-size:18px; line-height: 1.6; padding-right: 20em; padding-bottom: 1em; }
+    .btn_lst { clear:both; width: 1680px; margin: 0 auto; }
+    .btn_lst li { float:left; }
+    .btn_lst li .btn { display:block; width: 120px; line-height: 48px; text-align:center;  margin:10px; border-radius:5px; 
+    margin-bottom: 30px; background-color:deepskyblue; color:#fff; }
+    .btn_lst li:hover .btn { background-color:navy; }
     </style>
 </head>
 <body>
@@ -174,38 +188,41 @@ border-radius:25px; cursor:pointer;  }
             <div class="page_wrap">
                 <h2 class="page_tit">삼성 디스플레이</h2>
                 <h2 class="sec_tit">프로젝트1</h2>
-                <div class="frame_wrap">
-                    <!-- 여기는 통합 테스트 영상 영역 -->
-                    <iframe width="800" height="480" src="https://www.youtube.com/embed/giMXyqZRKFY" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <h2 class="desc_tit">Project Description</h2>
-                <div class="sec_wrap">
-                    <ul class="gal_lst">
-                        <li class="item1">
-                            <h3 class="cate_tit">개발 기간 : 2022.04.06~2022.04.22</h3>
-                        </li>
-                        <li class="item2">
-                            <h3 class="cate_tit">참여 : 김기태, 이규호</h3>
-                        </li>
-                        <li class="item3">
-                            <h3 class="cate_tit">Language : Java, JSP, HTML, CSS, Javascript, jQuery</h3>
-                        </li>
-                        <li class="item4">
-                            <h3 class="cate_tit">IDE : eclipse 2021-09 (4.21.0)</h3>
-                        </li>
-                        <li class="item5">
-                            <h3 class="cate_tit">RDBMS : MariaDB</h3>
-                        </li>
-                        <li class="item6">
-                            <h3 class="cate_tit">Server&WAS : Tomcat 9.0</h3>
-                        </li>
-                        <li class="item7">
-                            <h3 class="cate_tit">Biz Model : no MVC -> jsp</h3>
-                        </li>
-                        <li class="item8">
-                            <h3 class="cate_tit">Version Control : Git/GitHub</h3>
-                        </li>
-                    </ul>
+                <figure class="pro_mv">
+                    <div class="frame_wrap">
+                        <!-- 여기는 통합 테스트 영상 영역 -->
+                        <iframe width="800" height="480" src="https://www.youtube.com/embed/giMXyqZRKFY" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="sec_wrap">
+                        <h2 class="desc_tit">Project Description</h2>
+                        <ul class="gal_lst">
+                            <li class="item1">
+                                <h3 class="cate_tit">개발 기간 : 2022.04.06~2022.04.22</h3>
+                            </li>
+                            <li class="item2">
+                                <h3 class="cate_tit">참여 : 김기태, 이규호</h3>
+                            </li>
+                            <li class="item3">
+                                <h3 class="cate_tit">Language : Java, JSP, HTML, CSS, Javascript, jQuery</h3>
+                            </li>
+                            <li class="item4">
+                                <h3 class="cate_tit">IDE : eclipse 2021-09 (4.21.0)</h3>
+                            </li>
+                            <li class="item5">
+                                <h3 class="cate_tit">RDBMS : MariaDB</h3>
+                            </li>
+                            <li class="item6">
+                                <h3 class="cate_tit">Server&WAS : Tomcat 9.0</h3>
+                            </li>
+                            <li class="item7">
+                                <h3 class="cate_tit">Biz Model : no MVC -> jsp</h3>
+                            </li>
+                            <li class="item8">
+                                <h3 class="cate_tit">Version Control : Git/GitHub</h3>
+                            </li>
+                        </ul>
+                </figure>
+                <div class="pro_desc">
                     <h3 class="gal_tit">프로젝트 개요</h3>
                     <p class="intro1">
                         데스크탑 기준으로 기본 유틸리티는 Java로 구현하고, jsp 페이지에서 직접 데이터베이스를 접근하고, 필요한 데이터를 매핑하여 가져와 처리하였으며, jsp에서는 표현식과 스크립트릿, EL, JSTL 등을 활용하였으며, 기본 기능인 회원 로그인, 가입, 로그아웃, 게시판 글 목록, 게시글 보기, 게시판 글쓰기, 게시글 삭제 등의 기능을 구현하였음.
@@ -231,38 +248,42 @@ border-radius:25px; cursor:pointer;  }
             <div class="page_wrap">
                 <h2 class="page_tit">여수 문화관광</h2>
                 <h2 class="sec_tit">프로젝트2</h2>
-                <div class="frame_wrap">
-                    <!-- 여기는 통합 테스트 영상 영역 -->
-                    <iframe width="800" height="480" src="https://www.youtube.com/embed/giMXyqZRKFY" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <h2 class="desc_tit">Project Description</h2>
-                <div class="sec_wrap">
-                    <ul class="gal_lst">
-                        <li class="item1">
-                            <h3 class="cate_tit">개발 기간 : 2022.04.23~2022.05.11</h3>
-                        </li>
-                        <li class="item2">
-                            <h3 class="cate_tit">참여 : 김기태, 김성민</h3>
-                        </li>
-                        <li class="item3">
-                            <h3 class="cate_tit">Language : Java, JSP, Servlet, HTML, CSS, Javascript, jQuery, Ajax</h3>
-                        </li>
-                        <li class="item4">
-                            <h3 class="cate_tit">IDE : eclipse 2021-09 (4.21.0)</h3>
-                        </li>
-                        <li class="item5">
-                            <h3 class="cate_tit">RDBMS : Oracle XE 11g</h3>
-                        </li>
-                        <li class="item6">
-                            <h3 class="cate_tit">Server&WAS : Tomcat 9.0</h3>
-                        </li>
-                        <li class="item7">
-                            <h3 class="cate_tit">Biz Model : MVC Level 1 (Contoller->Model->View)</h3>
-                        </li>
-                        <li class="item8">
-                            <h3 class="cate_tit">Version Control : Git/GitHub</h3>
-                        </li>
-                    </ul>
+                <figure class="pro_mv">
+                    <div class="frame_wrap">
+                        <!-- 여기는 통합 테스트 영상 영역 -->
+                        <iframe width="800" height="480" src="https://www.youtube.com/embed/giMXyqZRKFY" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="sec_wrap">
+                        <h2 class="desc_tit">Project Description</h2>
+                        <ul class="gal_lst">
+                            <li class="item1">
+                                <h3 class="cate_tit">개발 기간 : 2022.04.23~2022.05.11</h3>
+                            </li>
+                            <li class="item2">
+                                <h3 class="cate_tit">참여 : 김기태, 김성민</h3>
+                            </li>
+                            <li class="item3">
+                                <h3 class="cate_tit">Language : Java, JSP, Servlet, HTML, CSS, Javascript, jQuery, Ajax</h3>
+                            </li>
+                            <li class="item4">
+                                <h3 class="cate_tit">IDE : eclipse 2021-09 (4.21.0)</h3>
+                            </li>
+                            <li class="item5">
+                                <h3 class="cate_tit">RDBMS : Oracle XE 11g</h3>
+                            </li>
+                            <li class="item6">
+                                <h3 class="cate_tit">Server&WAS : Tomcat 9.0</h3>
+                            </li>
+                            <li class="item7">
+                                <h3 class="cate_tit">Biz Model : MVC Level 1 (Contoller->Model->View)</h3>
+                            </li>
+                            <li class="item8">
+                                <h3 class="cate_tit">Version Control : Git/GitHub</h3>
+                            </li>
+                        </ul>
+                    </div>
+                </figure>
+                <div class="pro_desc">
                     <h3 class="gal_tit">프로젝트 개요</h3>
                     <p class="intro1">
                         Controller와 데이터베이스 접근 및 처리를 위한 Model을 활용하여 필요한 데이터 처리 및 요청에 따라 서비스를 처리하게 하였으며, VO와 Controller, Model 등은 Java로 작성되었으며, View 부분은 jsp의 표현식과 스크립트릿, EL, JSTL 등을 활용하여, 기본 기능인 회원 로그인, 가입, 로그아웃, 게시판 글 목록, 게시글 보기, 게시판 글쓰기, 게시글 삭제 등의 기능과 관리자의 회원목록, 회원정보변경 등 을 구현하였음.
@@ -288,38 +309,42 @@ border-radius:25px; cursor:pointer;  }
             <div class="page_wrap">
                 <h2 class="page_tit">그리팅 쇼핑몰</h2>
                 <h2 class="sec_tit">프로젝트3</h2>
-                <div class="frame_wrap">
-                    <!-- 여기는 통합 테스트 영상 영역 -->
-                    <iframe width="800" height="480" src="https://www.youtube.com/embed/giMXyqZRKFY" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <h2 class="desc_tit">Project Description</h2>
-                <div class="sec_wrap">
-                    <ul class="gal_lst">
-                        <li class="item1">
-                            <h3 class="cate_tit">개발 기간 : 2022.05.14~2022.05.31</h3>
-                        </li>
-                        <li class="item2">
-                            <h3 class="cate_tit">참여 : 김기태, 김동협</h3>
-                        </li>
-                        <li class="item3">
-                            <h3 class="cate_tit">Language : Java, JSP, Servlet, Global Object, HTML, CSS, Javascript, jQuery, Ajax, JUnit, 다음 Cacao 주소 API, 다음 지도 API</h3>
-                        </li>
-                        <li class="item4">
-                            <h3 class="cate_tit">IDE : eclipse 2021-09 (4.21.0)</h3>
-                        </li>
-                        <li class="item5">
-                            <h3 class="cate_tit">RDBMS : Oracle XE 11g</h3>
-                        </li>
-                        <li class="item6">
-                            <h3 class="cate_tit">Server&WAS : Tomcat 9.0</h3>
-                        </li>
-                        <li class="item7">
-                            <h3 class="cate_tit">Biz Model : MVC Level 2 (Contoller->Model->DAO->View)</h3>
-                        </li>
-                        <li class="item8">
-                            <h3 class="cate_tit">Version Control : Git/GitLab</h3>
-                        </li>
-                    </ul>
+                <figure class="pro_mv">
+                    <div class="frame_wrap">
+                        <!-- 여기는 통합 테스트 영상 영역 -->
+                        <iframe width="800" height="480" src="https://www.youtube.com/embed/giMXyqZRKFY" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="sec_wrap">
+                        <h2 class="desc_tit">Project Description</h2>
+                        <ul class="gal_lst">
+                            <li class="item1">
+                                <h3 class="cate_tit">개발 기간 : 2022.05.14~2022.05.31</h3>
+                            </li>
+                            <li class="item2">
+                                <h3 class="cate_tit">참여 : 김기태, 김동협</h3>
+                            </li>
+                            <li class="item3">
+                                <h3 class="cate_tit">Language : Java, JSP, Servlet, Global Object, HTML, CSS, Javascript, jQuery, Ajax, JUnit, 다음 Cacao 주소 API, 다음 지도 API</h3>
+                            </li>
+                            <li class="item4">
+                                <h3 class="cate_tit">IDE : eclipse 2021-09 (4.21.0)</h3>
+                            </li>
+                            <li class="item5">
+                                <h3 class="cate_tit">RDBMS : Oracle XE 11g</h3>
+                            </li>
+                            <li class="item6">
+                                <h3 class="cate_tit">Server&WAS : Tomcat 9.0</h3>
+                            </li>
+                            <li class="item7">
+                                <h3 class="cate_tit">Biz Model : MVC Level 2 (Contoller->Model->DAO->View)</h3>
+                            </li>
+                            <li class="item8">
+                                <h3 class="cate_tit">Version Control : Git/GitLab</h3>
+                            </li>
+                        </ul>
+                    </div>    
+                </figure>
+                <div class="pro_desc">
                     <h3 class="gal_tit">프로젝트 개요</h3>
                     <p class="intro1">
                         Controller와 데이터베이스 접근 및 처리를 위한 Model과 DAO에서 통합하여 기능이 구현되도록 설계하였으며, 필요한 데이터 처리 및 요청에 따라 서비스를 처리하게 하였으며, VO와 Controller, Model, DAO 등은 Java로 작성되었으며, View 부분은 jsp의 표현식과 스크립트릿, EL, JSTL 등을 활용하여, 기본 기능인 회원 기능, 게시판 기능, 자료실 기능, 장바구니 기능, 구매 및 상품 기능, 결제 기능 등 을 구현하였음.
@@ -345,41 +370,45 @@ border-radius:25px; cursor:pointer;  }
             <div class="page_wrap">
                 <h2 class="page_tit">하나 이비인후과 병원</h2>
                 <h2 class="sec_tit">프로젝트4</h2>
-                <div class="frame_wrap">
-                    <!-- 여기는 통합 테스트 영상 영역 -->
-                    <iframe width="800" height="480" src="https://www.youtube.com/embed/giMXyqZRKFY" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <h2 class="desc_tit">Project Description</h2>
-                <div class="sec_wrap">
-                    <ul class="gal_lst">
-                        <li class="item1">
-                            <h3 class="cate_tit">개발 기간 : 2022.06.08~2022.06.30</h3>
-                        </li>
-                        <li class="item2">
-                            <h3 class="cate_tit">참여 : 김기태, 임소희</h3>
-                        </li>
-                        <li class="item3">
-                            <h3 class="cate_tit">Language : Java, JSP, Servlet, MyBatis, DI, IoC, HTML, CSS, Javascript, jQuery, Ajax, jUnit</h3>
-                        </li>
-                        <li class="item4">
-                            <h3 class="cate_tit">IDE : Spring Studio Suite 3.9.12 Release</h3>
-                        </li>
-                        <li class="item5">
-                            <h3 class="cate_tit">RDBMS : Oracle XE 11g</h3>
-                        </li>
-                        <li class="item6">
-                            <h3 class="cate_tit">Server&WAS : Tomcat 9.0</h3>
-                        </li>
-                        <li class="item7">
-                            <h3 class="cate_tit">Biz Model & Build : Spring Maven MVC Pattern</h3>
-                        </li>
-                        <li class="item8">
-                            <h3 class="cate_tit">Version Control : Git/bitbucket</h3>
-                        </li>
-                        <li class="item9">
-                            <h3 class="cate_tit">Dependensies : lombok, jackson, gson, spring-security, cos, javax.mail, validation, hibernate</h3>
-                        </li>
-                    </ul>
+                <figure class="pro_mv">
+                    <div class="frame_wrap">
+                        <!-- 여기는 통합 테스트 영상 영역 -->
+                        <iframe width="800" height="480" src="https://www.youtube.com/embed/giMXyqZRKFY" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="sec_wrap">
+                        <h2 class="desc_tit">Project Description</h2>
+                        <ul class="gal_lst">
+                            <li class="item1">
+                                <h3 class="cate_tit">개발 기간 : 2022.06.08~2022.06.30</h3>
+                            </li>
+                            <li class="item2">
+                                <h3 class="cate_tit">참여 : 김기태, 임소희</h3>
+                            </li>
+                            <li class="item3">
+                                <h3 class="cate_tit">Language : Java, JSP, Servlet, MyBatis, DI, IoC, HTML, CSS, Javascript, jQuery, Ajax, jUnit</h3>
+                            </li>
+                            <li class="item4">
+                                <h3 class="cate_tit">IDE : Spring Studio Suite 3.9.12 Release</h3>
+                            </li>
+                            <li class="item5">
+                                <h3 class="cate_tit">RDBMS : Oracle XE 11g</h3>
+                            </li>
+                            <li class="item6">
+                                <h3 class="cate_tit">Server&WAS : Tomcat 9.0</h3>
+                            </li>
+                            <li class="item7">
+                                <h3 class="cate_tit">Biz Model & Build : Spring Maven MVC Pattern</h3>
+                            </li>
+                            <li class="item8">
+                                <h3 class="cate_tit">Version Control : Git/bitbucket</h3>
+                            </li>
+                            <li class="item9">
+                                <h3 class="cate_tit">Dependensies : lombok, jackson, gson, spring-security, cos, javax.mail, validation, hibernate</h3>
+                            </li>
+                        </ul>
+                    </div>
+                </figure>
+                <div class="pro_desc">
                     <h3 class="gal_tit">프로젝트 개요</h3>
                     <p class="intro1">
                         Controller 어노테이션을 활용하여 Controller를 만들고, 필요한 Service를 주입하여 각 RequestMapping 어노테이션에서 요청을 파라미터와 함께 접수하고, 요청 정보를 Service 에 전달하여 Repository 어노테이션에 의해 정의된 DAO로 파라미터로 받아 다가  Mapper인 MyBatis 에서 DB에 간접 접근하여 응답 정보를 받아 View 까지 전달하도록 하였고, View 부분은 jsp의 EL, JSTL 등을 활용하여, 기본 기능인 회원 목록, 로그인, 회원가입, 회원정보수정, 비밀번호 암호화, 게시판 목록, 게시글 보기, 응답형 게시판, 자료실 게시판, 게시글 삭제, 게시글 수정, 온라인 상담, 이메일 보내기 등의 기능을 구현하였음.
@@ -406,36 +435,44 @@ border-radius:25px; cursor:pointer;  }
             <div class="page_wrap">
                 <h2 class="page_tit">소녀나라</h2>
                 <h2 class="sec_tit">프로젝트5</h2>
-                <div class="sec_wrap">
-                    <ul class="gal_lst">
-                        <li class="item1">
-                            <h3 class="cate_tit">개발 기간 : 2022.07.02~2022.07.28</h3>
-                        </li>
-                        <li class="item2">
-                            <h3 class="cate_tit">참여 : 김기태, 여승원</h3>
-                        </li>
-                        <li class="item3">
-                            <h3 class="cate_tit">Language : Java, JSP, Servlet, MyBatis, DI, IoC, AOP, HTML, CSS, Javascript, jQuery, Ajax, JSON, JUnit, Spring 5.0.8</h3>
-                        </li>
-                        <li class="item4">
-                            <h3 class="cate_tit">IDE : Spring Studio Suite 3.9.12 Release</h3>
-                        </li>
-                        <li class="item5">
-                            <h3 class="cate_tit">RDBMS : MySQL 8.0.9</h3>
-                        </li>
-                        <li class="item6">
-                            <h3 class="cate_tit">Server&WAS : Tomcat 9.0</h3>
-                        </li>
-                        <li class="item7">
-                            <h3 class="cate_tit">Biz Model & Build : Spring Maven MVC Pattern2</h3>
-                        </li>
-                        <li class="item8">
-                            <h3 class="cate_tit">Version Control : Git/GitLab</h3>
-                        </li>
-                        <li class="item9">
-                            <h3 class="cate_tit">Dependensies : mockito, lombok, spring-tx, HikariCP, jackson, gson, spring-security, commons-fileupload, imgscalr, javax.mail, validation, hibernate</h3>
-                        </li>
-                    </ul>
+                <figure class="pro_mv">
+                    <div class="frame_wrap">
+                        <!-- 여기는 통합 테스트 영상 영역 -->
+                        <iframe width="800" height="480" src="https://www.youtube.com/embed/giMXyqZRKFY" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="sec_wrap">
+                        <ul class="gal_lst">
+                            <li class="item1">
+                                <h3 class="cate_tit">개발 기간 : 2022.07.02~2022.07.28</h3>
+                            </li>
+                            <li class="item2">
+                                <h3 class="cate_tit">참여 : 김기태, 여승원</h3>
+                            </li>
+                            <li class="item3">
+                                <h3 class="cate_tit">Language : Java, JSP, Servlet, MyBatis, DI, IoC, AOP, HTML, CSS, Javascript, jQuery, Ajax, JSON, JUnit, Spring 5.0.8</h3>
+                            </li>
+                            <li class="item4">
+                                <h3 class="cate_tit">IDE : Spring Studio Suite 3.9.12 Release</h3>
+                            </li>
+                            <li class="item5">
+                                <h3 class="cate_tit">RDBMS : MySQL 8.0.9</h3>
+                            </li>
+                            <li class="item6">
+                                <h3 class="cate_tit">Server&WAS : Tomcat 9.0</h3>
+                            </li>
+                            <li class="item7">
+                                <h3 class="cate_tit">Biz Model & Build : Spring Maven MVC Pattern2</h3>
+                            </li>
+                            <li class="item8">
+                                <h3 class="cate_tit">Version Control : Git/GitLab</h3>
+                            </li>
+                            <li class="item9">
+                                <h3 class="cate_tit">Dependensies : mockito, lombok, spring-tx, HikariCP, jackson, gson, spring-security, commons-fileupload, imgscalr, javax.mail, validation, hibernate</h3>
+                            </li>
+                        </ul>
+                    </div>
+                </figure>
+                <div class="pro_desc">
                     <h3 class="gal_tit">프로젝트 개요</h3>
                     <p class="intro1">
                         Controller 어노테이션을 활용하여 Controller를 만들고, 필요한 Service를 주입하여 각 RequestMapping 어노테이션에서 요청을 파라미터와 함께 접수하고, 요청 정보를 Service 에 전달하여 Repository 어노테이션에 의해 정의된 DAO로 파라미터로 받아 다가  Mapper인 MyBatis 에서 DB에 간접 접근하여 응답 정보를 받아 View 까지 전달하도록 하였고, View 부분은 jsp의 EL, JSTL 등을 활용하여, 기본 기능인 회원 기능, 비밀번호 암호화, 일반 게시판 기능, 응답형 게시판 기능, 자료실 게시판 기능, 자료 업로드 기능, 자료 페이징 기능, 상품 기능, 판매 기능, 장바구니 기능, 온라인 상담, 이메일 보내기 등의 기능을 구현하였음.
@@ -472,6 +509,12 @@ border-radius:25px; cursor:pointer;  }
             <div></div>
         </li>
         <li class="item3">
+            <div></div>
+        </li>
+        <li class="item4">
+            <div></div>
+        </li>
+        <li class="item5">
             <div></div>
         </li>
     </ul>
